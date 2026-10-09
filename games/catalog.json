@@ -1,0 +1,93 @@
+[
+  {
+    "id": "unit-garden",
+    "subject": "math",
+    "title": "단위 정원",
+    "description": "길이·무게·퍼센트가 쏙쏙!",
+    "emoji": "🎀",
+    "kind": "external",
+    "url": "../fairy-math-garden/",
+    "progressAdapter": "unit-garden-v1",
+    "levelLabel": "새싹 · 반짝",
+    "questionCount": 48,
+    "status": "published"
+  },
+  {
+    "id": "number-picnic",
+    "subject": "math",
+    "title": "숫자 모험",
+    "description": "사과와 쿠키를 더하고 빼요.",
+    "emoji": "🔢",
+    "kind": "quiz",
+    "source": "./games/number-picnic/game.json",
+    "levelLabel": "20까지 수 세기",
+    "questionCount": 12,
+    "status": "published",
+    "questionIds": [
+      "math-01",
+      "math-02",
+      "math-03",
+      "math-04",
+      "math-05",
+      "math-06",
+      "math-07",
+      "math-08",
+      "math-09",
+      "math-10",
+      "math-11",
+      "math-12"
+    ]
+  },
+  {
+    "id": "word-forest",
+    "subject": "korean",
+    "title": "낱말 탐정",
+    "description": "이야기 속 알맞은 말을 찾아요.",
+    "emoji": "🌷",
+    "kind": "quiz",
+    "source": "./games/word-forest/game.json",
+    "levelLabel": "낱말과 표현",
+    "questionCount": 12,
+    "status": "published",
+    "questionIds": [
+      "korean-01",
+      "korean-02",
+      "korean-03",
+      "korean-04",
+      "korean-05",
+      "korean-06",
+      "korean-07",
+      "korean-08",
+      "korean-09",
+      "korean-10",
+      "korean-11",
+      "korean-12"
+    ]
+  },
+  {
+    "id": "english-rainbow",
+    "subject": "english",
+    "title": "단어 소풍",
+    "description": "과일과 동물, 색깔을 영어로!",
+    "emoji": "🍎",
+    "kind": "quiz",
+    "source": "./games/english-rainbow/game.json",
+    "levelLabel": "첫 영어 단어",
+    "questionCount": 12,
+    "status": "published",
+    "questionIds": [
+      "english-01",
+      "english-02",
+      "english-03",
+      "english-04",
+      "english-05",
+      "english-06",
+      "english-07",
+      "english-08",
+      "english-09",
+      "english-10",
+      "english-11",
+      "english-12"
+    ]
+  }
+]
