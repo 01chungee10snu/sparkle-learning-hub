@@ -35,7 +35,7 @@ export function initMotion(host) {
     return {update() {}, burst() {}, dispose() {}};
   }
 
-  let state = {who: 'tae', mode: 'welcome', equipped: []};
+  let state = {who: 'tae', mode: 'welcome', equipped: [],effect: {}};
   let equipped = cosmetics(state.equipped);
   let scene, camera, renderer, stars, gems, particles, orbit, halo, comet;
   let stopped = false, unavailable = false, frame = 0;
@@ -71,10 +71,11 @@ export function initMotion(host) {
 
   function tint() {
     if (!renderer) return;
-    const color = state.who === 'se' ? 0xb28be9 : 0xef8bb3;
+    const color = state.effect.color || (state.who === 'se' ? 0xb28be9 : 0xef8bb3);
+    const rainbow=[0xef8bb3,0xffbf39,0x39bfa1,0x4b9ce2,0x9470ef];
     stars.forEach((star, i) => {
-      star.material.color.setHex(i % 3 === 0 ? 0xffd879 : color);
-      star.material.emissive.setHex(i % 3 === 0 ? 0xffcf68 : color);
+      star.material.color.setHex(state.effect.rainbow?rainbow[i%rainbow.length]:i % 3 === 0 ? 0xffd879 : color);
+      star.material.emissive.setHex(state.effect.rainbow?rainbow[i%rainbow.length]:i % 3 === 0 ? 0xffcf68 : color);
     });
     gems.forEach(gem => {
       gem.material.color.setHex(color);
@@ -115,10 +116,10 @@ export function initMotion(host) {
 
   function paint(time) {
     if (!canRun()) return;
-    const moodSpeed = state.mode === 'thinking' ? 0.36 : state.mode === 'retry' ? 0.2 : 0.48;
+    const moodSpeed = state.effect.speed || (state.mode === 'thinking' ? 0.36 : state.mode === 'retry' ? 0.2 : 0.48);
     const celebration = BURST_MODES.has(state.mode);
     const orbitX = halfWidth * 0.77, orbitY = halfHeight * 0.74;
-    const starCount = equipped.has('trail-stars') ? stars.length : 5;
+    const starCount = state.effect.count || (equipped.has('trail-stars') ? stars.length : 5);
     stars.forEach((star, index) => {
       const angle = index / starCount * Math.PI * 2 + time * moodSpeed;
       star.position.set(Math.cos(angle) * orbitX, Math.sin(angle) * orbitY, Math.sin(angle) * 0.12);
@@ -131,17 +132,17 @@ export function initMotion(host) {
       const angle = time * -moodSpeed * 0.7 + 0.72 + index * Math.PI;
       gem.position.set(Math.cos(angle) * orbitX * 0.94, Math.sin(angle) * orbitY * 0.94, -0.12);
       gem.rotation.set(time * 0.35, time * 0.4 + index, index * 0.3);
-      gem.scale.setScalar(0.05);
+      gem.scale.setScalar(state.effect.gemScale||0.05);
     });
     orbit.scale.set(orbitX, orbitY, 1);
     orbit.rotation.z = Math.sin(time * 0.25) * 0.025;
-    orbit.material.opacity = state.mode === 'thinking' ? 0.24 : 0.14;
-    halo.visible = equipped.has('halo');
+    orbit.material.opacity = state.effect.ring?0.65:state.mode === 'thinking' ? 0.24 : 0.14;
+    halo.visible = Boolean(state.effect.halo)||equipped.has('halo');
     halo.position.set(0, halfHeight * 0.8, -0.08);
     halo.scale.set(halfWidth * 0.42, halfHeight * 0.15, 0.15);
     halo.rotation.x = 0.35;
     halo.rotation.z = Math.sin(time * 0.6) * 0.08;
-    comet.visible = equipped.has('comet');
+    comet.visible = Boolean(state.effect.comet)||equipped.has('comet');
     const cometAngle = time * 0.8;
     comet.position.set(Math.cos(cometAngle) * orbitX, Math.sin(cometAngle) * orbitY, -0.2);
     comet.rotation.z = cometAngle + Math.PI / 2;
@@ -318,6 +319,7 @@ export function initMotion(host) {
         who: next.who === undefined ? state.who : next.who === 'se' ? 'se' : 'tae',
         mode: MODES.has(next.mode) ? next.mode : state.mode,
         equipped: next.equipped === undefined ? state.equipped : next.equipped,
+        effect: next.effect === undefined ? state.effect : next.effect,
       };
       equipped = cosmetics(state.equipped);
       host.dataset.mode = state.mode;

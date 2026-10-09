@@ -116,6 +116,38 @@ try{
  assert.deepEqual(P.gameProgress(practiceGame.id,'se'),originalAnswer,'Guided retry must not overwrite an independent wrong answer or invent a correct attempt');
  assert.equal(P.gameProgress(practiceGame.id,'se').records[practiceId].attempts[0].correct,false);
  assert.throws(()=>guided.recordEffort({who:'se',eventId:'unanswered-retry',kind:'retry',gameId:'reward-math',questionId:'q-math-12'}),'A known but never answered question cannot certify a practice badge');
+ // A legacy light purchase and a full five-slot outfit must coexist, reload,
+ // and merge without reviving removed gifts or charging for re-equipping.
+ reset();const gifts=await fresh();P.selectLearner('tae');
+ play(quiz('math'));play(quiz('korean'));play(quiz('english'));
+ const catalogIds=new Set(gifts.REWARD_ITEMS.map(item=>item.id));
+ assert.equal(catalogIds.size,48,'All 48 gifts have unique IDs');
+ assert.deepEqual(gifts.REWARD_CATEGORIES.map(c=>gifts.REWARD_ITEMS.filter(i=>i.category===c.id).length),[9,8,8,8,8,7]);
+ gifts.syncRewards(catalog,'tae');
+ const oldFormat=gifts.exportRewards();for(const p of Object.values(oldFormat.state.profiles))delete p.outfit;
+ for(const id of ['trail-stars','bg-sky','friend-rabbit','mark-flower','title-curious']){
+  const purchase=gifts.purchaseReward(id,catalog,'tae');assert.equal(purchase.ok,true,id);
+  const spent=gifts.wallet(catalog,'tae').spent;
+  assert.equal(gifts.purchaseReward(id,catalog,'tae').duplicate,true,id+' cannot charge twice');
+  gifts.equipReward(id,'tae');assert.equal(gifts.wallet(catalog,'tae').spent,spent,'Wearing an owned gift is free');
+ }
+ let outfit=gifts.wallet(catalog,'tae');
+ assert.equal(outfit.equipped,'trail-stars','The original light equipment field remains compatible');
+ assert.equal(Object.values(outfit.look).filter(Boolean).length,5,'Five gift kinds can be worn together');
+ assert.equal(gifts.wallet(catalog,'se').spent,0);assert.equal(Object.values(gifts.wallet(catalog,'se').look).filter(Boolean).length,0);
+ assert.throws(()=>gifts.equipReward('friend-rabbit','se'),'One child cannot use another child’s gifts');
+ const dressed=gifts.exportRewards();gifts.importRewards(oldFormat);
+ assert.equal(gifts.wallet(catalog,'tae').look.friend.id,'friend-rabbit','Old version-1 backups without outfit preserve new equipment');
+ gifts.unequipCategory('friend','tae');gifts.importRewards(dressed);
+ assert.equal(gifts.wallet(catalog,'tae').look.friend,null,'Old backups do not re-equip a removed friend');
+ assert.equal(gifts.wallet(catalog,'tae').items.find(i=>i.id==='friend-rabbit').owned,true,'Removing a gift preserves ownership');
+ assert.equal((await fresh()).wallet(catalog,'tae').look.background.id,'bg-sky','Outfit reloads from storage');
+ const badSlot=gifts.exportRewards();badSlot.state.profiles.tae.outfit.friend={id:'bg-sky',at:now};
+ assert.throws(()=>gifts.importRewards(badSlot),'Equipment cannot cross category slots');
+ const unowned=gifts.exportRewards();unowned.state.profiles.tae.outfit.friend={id:'friend-cat',at:now};
+ assert.throws(()=>gifts.importRewards(unowned),'A backup cannot equip an unowned new gift');
+ const beforeGifts=gifts.wallet(catalog,'tae').spent;
+ gifts.equipReward('friend-rabbit','tae');assert.equal(gifts.wallet(catalog,'tae').spent,beforeGifts);
  assert.ok(writes>0);
- console.log('PASS: preserved legacy stars, two-child isolation, bounded effort, evidence-backed badges, safe spending, double-click prevention, family request completion, monotone old-backup merge, atomic validation, full backup restore and blocked-storage recovery');
+ console.log('PASS: preserved legacy stars, two-child isolation, bounded effort, evidence-backed badges, safe spending, double-click prevention, family request completion, monotone old-backup merge, atomic validation, full backup restore and blocked-storage recovery; 48 unique gifts, five-slot outfits, free re-equipping and old-v1 outfit compatibility');
 }finally{Date.now=originalNow;}
