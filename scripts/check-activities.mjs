@@ -145,7 +145,7 @@ const quotaReload=await import('../platform/progress.js?quota-reload');quotaRelo
 assert.equal(quotaReload.gameProgress(quotaGame.id,'se').round.answers.length,2);
 
 // Reproduce an old v1.1 tab writing its smaller catalog after new games have been
-// played. Its v1 write must never change the independently persisted v2 state.
+// played. Its older-key write must never change the independently persisted state.
 storage.clear();
 const migrationProgress=await import('../platform/progress.js?migration-regression');migrationProgress.configureCatalog(catalog);
 const oldState=empty(),oldGame=games[0],oldIds=oldGame.questions.slice(0,3).map(q=>q.id);
@@ -175,4 +175,4 @@ newerReload.importRecords({format:'sparkle-learning-backup',version:1,platform:o
 assert.equal(newerReload.gameProgress(games[4].id,'se').round.answers.length,1,'Importing an old backup preserves newer game records');
 assert.equal(storage.get(newerReload.PREVIOUS_KEY),JSON.stringify(empty()),'Backup imports write only the new progress key');
 console.log('PASS: all five interactions, strict submissions, catalog levels, legacy answers, restore, learner isolation, 3/5 rounds, level sampling, duplicate prevention and unchanged reward/growth rules');
-console.log('PASS: quota fallback survives profile changes, unsaved export, successful retry, v1→v2 migration, old-tab isolation and v1 backup compatibility');
+console.log('PASS: quota fallback survives profile changes, unsaved export, successful retry, older-key migration, old-tab isolation and v1 backup compatibility');

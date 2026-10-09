@@ -1,0 +1,1113 @@
+{
+  "id": "bebsu-foundation",
+  "subject": "math",
+  "title": "뱁수 기초 연산",
+  "description": "5와 10 안에서 수를 더하고 빼요.",
+  "emoji": "🍬",
+  "growth": false,
+  "gradeBand": "K",
+  "prerequisite": "아이와 보호자가 문제 수준을 보고 직접 선택해요.",
+  "offline": "풀이를 말로 설명하고, 필요한 수나 도형을 종이와 블록으로 확인해 보세요.",
+  "questions": [
+    {
+      "id": "bebsu-ed18713f2f551587",
+      "title": "기초 연산 · 1번",
+      "story": "0 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "0 + 2 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 0,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.001.add-0-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.001.add-0-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_5",
+        "stage": "addition_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-0531b6b85e2cf082",
+      "title": "기초 연산 · 2번",
+      "story": "1 + 1 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "1 + 1 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 1,
+        "operator": "+",
+        "right": 1
+      },
+      "source": {
+        "id": "sehee.foundation.002.add-1-1",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.002.add-1-1",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_5",
+        "stage": "addition_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-aecba4f41d09ef63",
+      "title": "기초 연산 · 3번",
+      "story": "2 - 1 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 10
+      },
+      "explanation": [
+        "2 - 1 = 1입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 2,
+        "operator": "-",
+        "right": 1
+      },
+      "source": {
+        "id": "sehee.foundation.003.sub-2-1",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 1,
+          "raw": "1"
+        },
+        "rawAnswer": "1",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.003.sub-2-1",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_5",
+        "stage": "subtraction_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-e0003e66878e2e0a",
+      "title": "기초 연산 · 4번",
+      "story": "2 + 1 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 10
+      },
+      "explanation": [
+        "2 + 1 = 3입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 2,
+        "operator": "+",
+        "right": 1
+      },
+      "source": {
+        "id": "sehee.foundation.004.add-2-1",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 3,
+          "raw": "3"
+        },
+        "rawAnswer": "3",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.004.add-2-1",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_5",
+        "stage": "addition_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-a2500764d2937d47",
+      "title": "기초 연산 · 5번",
+      "story": "3 - 1 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "3 - 1 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 3,
+        "operator": "-",
+        "right": 1
+      },
+      "source": {
+        "id": "sehee.foundation.005.sub-3-1",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.005.sub-3-1",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_5",
+        "stage": "subtraction_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-de8aae903e1e22ee",
+      "title": "기초 연산 · 6번",
+      "story": "2 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 10
+      },
+      "explanation": [
+        "2 + 2 = 4입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 2,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.006.add-2-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 4,
+          "raw": "4"
+        },
+        "rawAnswer": "4",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.006.add-2-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_5",
+        "stage": "addition_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-bdeca2643ea8b152",
+      "title": "기초 연산 · 7번",
+      "story": "4 - 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "4 - 2 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 4,
+        "operator": "-",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.007.sub-4-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.007.sub-4-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_5",
+        "stage": "subtraction_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-03205b968db01d63",
+      "title": "기초 연산 · 8번",
+      "story": "3 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 10
+      },
+      "explanation": [
+        "3 + 2 = 5입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 3,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.008.add-3-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 5,
+          "raw": "5"
+        },
+        "rawAnswer": "5",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.008.add-3-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_5",
+        "stage": "addition_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-d38ebedcfd6b63e4",
+      "title": "기초 연산 · 9번",
+      "story": "5 - 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 10
+      },
+      "explanation": [
+        "5 - 2 = 3입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 5,
+        "operator": "-",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.009.sub-5-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 3,
+          "raw": "3"
+        },
+        "rawAnswer": "3",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.009.sub-5-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_5",
+        "stage": "subtraction_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-c9bc8aea94bc4801",
+      "title": "기초 연산 · 10번",
+      "story": "5 - 4 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 10
+      },
+      "explanation": [
+        "5 - 4 = 1입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 5,
+        "operator": "-",
+        "right": 4
+      },
+      "source": {
+        "id": "sehee.foundation.010.sub-5-4",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 1,
+          "raw": "1"
+        },
+        "rawAnswer": "1",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.010.sub-5-4",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_5",
+        "stage": "subtraction_within_5",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-4f7f83c14b2b7994",
+      "title": "기초 연산 · 11번",
+      "story": "4 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 10
+      },
+      "explanation": [
+        "4 + 2 = 6입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 4,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.011.add-4-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 6,
+          "raw": "6"
+        },
+        "rawAnswer": "6",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.011.add-4-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-6ea08beed36fbcb4",
+      "title": "기초 연산 · 12번",
+      "story": "6 - 3 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 10
+      },
+      "explanation": [
+        "6 - 3 = 3입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 6,
+        "operator": "-",
+        "right": 3
+      },
+      "source": {
+        "id": "sehee.foundation.012.sub-6-3",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 3,
+          "raw": "3"
+        },
+        "rawAnswer": "3",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.012.sub-6-3",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-4aa59b4271027a37",
+      "title": "기초 연산 · 13번",
+      "story": "5 + 1 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 10
+      },
+      "explanation": [
+        "5 + 1 = 6입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 5,
+        "operator": "+",
+        "right": 1
+      },
+      "source": {
+        "id": "sehee.foundation.013.add-5-1",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 6,
+          "raw": "6"
+        },
+        "rawAnswer": "6",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.013.add-5-1",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-63868bef3af35d52",
+      "title": "기초 연산 · 14번",
+      "story": "7 - 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 10
+      },
+      "explanation": [
+        "7 - 2 = 5입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 7,
+        "operator": "-",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.014.sub-7-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 5,
+          "raw": "5"
+        },
+        "rawAnswer": "5",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.014.sub-7-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-a10eb7deec90b541",
+      "title": "기초 연산 · 15번",
+      "story": "3 + 4 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 10
+      },
+      "explanation": [
+        "3 + 4 = 7입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 3,
+        "operator": "+",
+        "right": 4
+      },
+      "source": {
+        "id": "sehee.foundation.015.add-3-4",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 7,
+          "raw": "7"
+        },
+        "rawAnswer": "7",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.015.add-3-4",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-e59de906ea090112",
+      "title": "기초 연산 · 16번",
+      "story": "8 - 3 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 10
+      },
+      "explanation": [
+        "8 - 3 = 5입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 8,
+        "operator": "-",
+        "right": 3
+      },
+      "source": {
+        "id": "sehee.foundation.016.sub-8-3",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 5,
+          "raw": "5"
+        },
+        "rawAnswer": "5",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.016.sub-8-3",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-6b571e0c8954ed56",
+      "title": "기초 연산 · 17번",
+      "story": "6 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 10
+      },
+      "explanation": [
+        "6 + 2 = 8입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 6,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.017.add-6-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 8,
+          "raw": "8"
+        },
+        "rawAnswer": "8",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.017.add-6-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-780e8261e4f534ad",
+      "title": "기초 연산 · 18번",
+      "story": "9 - 4 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 10
+      },
+      "explanation": [
+        "9 - 4 = 5입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 9,
+        "operator": "-",
+        "right": 4
+      },
+      "source": {
+        "id": "sehee.foundation.018.sub-9-4",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 5,
+          "raw": "5"
+        },
+        "rawAnswer": "5",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.018.sub-9-4",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-d1c887e00bf57ba3",
+      "title": "기초 연산 · 19번",
+      "story": "5 + 4 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 10
+      },
+      "explanation": [
+        "5 + 4 = 9입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 5,
+        "operator": "+",
+        "right": 4
+      },
+      "source": {
+        "id": "sehee.foundation.019.add-5-4",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 9,
+          "raw": "9"
+        },
+        "rawAnswer": "9",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.019.add-5-4",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-b5bde4ed32f36700",
+      "title": "기초 연산 · 20번",
+      "story": "9 - 5 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 10
+      },
+      "explanation": [
+        "9 - 5 = 4입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 9,
+        "operator": "-",
+        "right": 5
+      },
+      "source": {
+        "id": "sehee.foundation.020.sub-9-5",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 4,
+          "raw": "4"
+        },
+        "rawAnswer": "4",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.020.sub-9-5",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-572e9946d2999344",
+      "title": "기초 연산 · 21번",
+      "story": "7 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 10
+      },
+      "explanation": [
+        "7 + 2 = 9입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 7,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.021.add-7-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 9,
+          "raw": "9"
+        },
+        "rawAnswer": "9",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.021.add-7-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-8bfdfe34d18f2534",
+      "title": "기초 연산 · 22번",
+      "story": "8 - 6 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "8 - 6 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 8,
+        "operator": "-",
+        "right": 6
+      },
+      "source": {
+        "id": "sehee.foundation.022.sub-8-6",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.022.sub-8-6",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-a79d170a8ede2777",
+      "title": "기초 연산 · 23번",
+      "story": "8 + 2 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 10
+      },
+      "explanation": [
+        "8 + 2 = 10입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 덧셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 8,
+        "operator": "+",
+        "right": 2
+      },
+      "source": {
+        "id": "sehee.foundation.023.add-8-2",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 10,
+          "raw": "10"
+        },
+        "rawAnswer": "10",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.023.add-8-2",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.addition.addition_within_10",
+        "stage": "addition_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-6f5e4777620d4997",
+      "title": "기초 연산 · 24번",
+      "story": "9 - 7 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 10
+      },
+      "explanation": [
+        "9 - 7 = 2입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 9,
+        "operator": "-",
+        "right": 7
+      },
+      "source": {
+        "id": "sehee.foundation.024.sub-9-7",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 2,
+          "raw": "2"
+        },
+        "rawAnswer": "2",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.024.sub-9-7",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    },
+    {
+      "id": "bebsu-63a9e64d3b336976",
+      "title": "기초 연산 · 25번",
+      "story": "9 - 6 = ?",
+      "prompt": "빈칸에 알맞은 숫자를 적어 주세요.",
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 10
+      },
+      "explanation": [
+        "9 - 6 = 3입니다.",
+        "손가락이나 블록으로 수를 모으고 빼며 확인해 봐요."
+      ],
+      "skill": "한 자리 수 뺄셈",
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 9,
+        "operator": "-",
+        "right": 6
+      },
+      "source": {
+        "id": "sehee.foundation.025.sub-9-6",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "type": "number",
+          "value": 3,
+          "raw": "3"
+        },
+        "rawAnswer": "3",
+        "gradeBand": "K"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "sehee.foundation.025.sub-9-6",
+        "gradeBand": "K",
+        "source": "sehee_foundation",
+        "skillCode": "sehee.foundation.subtraction.subtraction_within_10",
+        "stage": "subtraction_within_10",
+        "answerVerificationStatus": "independently_arithmetic_checked"
+      }
+    }
+  ]
+}

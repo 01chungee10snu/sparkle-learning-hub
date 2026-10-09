@@ -1,10 +1,11 @@
 import {mergeLegacy} from './legacy.js';
-import {gradeResponse} from './activities.js';
+import {gradeResponse,normalizeNumericResponse,NUMERIC_LIMIT} from './activities.js';
 /** Device-local adapter. Keep this API when adding authenticated cloud persistence. */
-// v1.1 tabs only understand the old catalog and can discard newer game records.
+// Older tabs only understand their catalog and can discard newer game records.
 // Keep the new writer isolated; the old key is read once and never modified here.
-export const KEY='sparkle-learning-progress-v2';
-export const PREVIOUS_KEY='sparkle-learning-progress-v1';
+export const KEY='sparkle-learning-progress-v3';
+export const PREVIOUS_KEY='sparkle-learning-progress-v2';
+export const FIRST_KEY='sparkle-learning-progress-v1';
 export const LEARNER_KEY='sparkle-learner-v1';
 export const LEGACY_KEY='fairy-math-garden-v1';
 export const LEARNERS={
@@ -13,8 +14,8 @@ export const LEARNERS={
 };
 const SUBJECT_IDS=['math','korean','english'];
 const ATTEMPT_LIMIT=5,ROUND_LIMIT=100;
-let allowedQuestions=new Map();
-export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));}
+let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map();
+export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));}
 const blankGame=()=>({records:{},round:null,finishedRounds:0,lastPlayed:0,completedRounds:[]});
 const blank=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});
 let memory=blank(),selected='tae',sequence=0,progressDirty=false;
@@ -45,9 +46,9 @@ function cleanCompleted(values,allowed){
 }
 function cleanRound(s,allowed,gameId){
  if(!s||!Array.isArray(s.ids)||![3,5].includes(s.ids.length)||!s.ids.every(id=>knownId(id)&&allowed.has(id))||new Set(s.ids).size!==s.ids.length||!Number.isInteger(s.index)||s.index<0||s.index>s.ids.length||!Array.isArray(s.answers)||s.answers.length<s.index||s.answers.length>Math.min(s.ids.length,s.index+1))return null;
- const validResponse=value=>Number.isInteger(value)?value>=0&&value<=20:Array.isArray(value)&&value.length>=3&&value.length<=5&&value.every(n=>Number.isInteger(n)&&n>=0&&n<value.length)&&new Set(value).size===value.length;
+ const validResponse=value=>{if(typeof value==='string'){if(!numericGames.has(gameId))return false;try{return normalizeNumericResponse(value,NUMERIC_LIMIT,numericMins.get(gameId)??0)===value;}catch{return false;}}return Number.isInteger(value)?value>=0&&value<=20:Array.isArray(value)&&value.length>=3&&value.length<=5&&value.every(n=>Number.isInteger(n)&&n>=0&&n<value.length)&&new Set(value).size===value.length;};
  const response=a=>Object.hasOwn(a,'response')?a.response:a.choice;
- if(!s.answers.every((a,i)=>a&&a.id===s.ids[i]&&validResponse(response(a))&&(a.choice===undefined||(Number.isInteger(a.choice)&&a.choice>=0&&a.choice<3&&response(a)===a.choice))&&[0,2,8,10].includes(a.earned)&&typeof a.correct==='boolean'))return null;
+ if(!s.answers.every((a,i)=>a&&a.id===s.ids[i]&&validResponse(response(a))&&(a.choice===undefined||(Number.isInteger(a.choice)&&a.choice>=0&&a.choice<(choiceLimits.get(gameId)??3)&&response(a)===a.choice))&&[0,2,8,10].includes(a.earned)&&typeof a.correct==='boolean'))return null;
  const updatedAt=validTime(s.updatedAt)?s.updatedAt:0;
  // A stable migrated id keeps a resumed pre-growth round valid across page loads.
  const id=knownId(s.id)?s.id:`round-old-${gameId.slice(0,40)}-${Math.floor(updatedAt).toString(36)}`;
@@ -85,7 +86,7 @@ function load(){
  try{
   const stored=localStorage.getItem(KEY);
   if(stored!==null){memory=clean(JSON.parse(stored));return memory;}
-  const previous=localStorage.getItem(PREVIOUS_KEY);
+  const previous=localStorage.getItem(PREVIOUS_KEY)??localStorage.getItem(FIRST_KEY);
   const migrated=previous!==null?clean(JSON.parse(previous)):blank();
   save(migrated); // The new key itself is the durable one-time migration marker.
  }catch{storageAvailable=false;}
