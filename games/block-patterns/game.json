@@ -1,0 +1,366 @@
+{
+  "id": "block-patterns",
+  "subject": "math",
+  "title": "블록 규칙 공방",
+  "description": "모양의 규칙을 찾고, 순서를 기억해요.",
+  "emoji": "🧩",
+  "minStage": 1,
+  "maxStage": 2,
+  "adventure": true,
+  "prerequisite": "같은 모양을 알아보고 그림 세 장을 살펴봐요.",
+  "offline": "색종이나 큰 블록을 두 색으로 번갈아 놓아요. 아이가 규칙을 말하고 보호자가 다음 블록을 골라 보세요.",
+  "questions": [
+    {
+      "id": "block-patterns-01",
+      "level": 1,
+      "skill": "순서 기억과 재구성",
+      "title": "간식 카드 자리",
+      "story": "{{place}}의 상상 공방에서 간식 카드 세 장의 자리를 기억해요.",
+      "prompt": "카드의 자리를 잘 보고, 가린 뒤 같은 순서로 놓아 보세요.",
+      "explanation": [
+        "처음 본 순서는 사과, 딸기, 귤이에요.",
+        "맨 앞부터 하나씩 짚으며 순서를 다시 말해 보세요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🍓",
+          "🍎",
+          "🍊"
+        ],
+        "order": [
+          1,
+          0,
+          2
+        ],
+        "itemLabels": [
+          "딸기",
+          "사과",
+          "귤"
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-02",
+      "level": 1,
+      "skill": "AB 반복 규칙",
+      "title": "색깔 기차",
+      "story": "{{place}}의 상상 블록 기차가 빨강, 노랑을 번갈아 싣고 가요.",
+      "prompt": "빈칸에 들어갈 색깔은 무엇일까요?",
+      "explanation": [
+        "빨강 다음에는 노랑, 노랑 다음에는 빨강이 와요.",
+        "빨강·노랑이 반복되므로 마지막 빨강 다음은 노랑이에요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "🔴 🟡 🔴 🟡 🔴 ?"
+      },
+      "choices": [
+        "🔴",
+        "🟡",
+        "🔵"
+      ],
+      "answer": 1,
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "빨강 동그라미",
+        "노랑 동그라미",
+        "파랑 동그라미"
+      ]
+    },
+    {
+      "id": "block-patterns-03",
+      "level": 1,
+      "skill": "1~3 수의 순서",
+      "title": "낮은 탑부터",
+      "story": "{{name}}가 블록 탑을 세웠어요. 블록 수가 가장 적은 탑부터 놓으려고 해요.",
+      "prompt": "블록 1개, 2개, 3개 탑을 작은 수부터 놓아요.",
+      "explanation": [
+        "블록 수가 작은 순서는 1, 2, 3이에요.",
+        "한 개씩 더하면 탑의 블록 수가 하나씩 늘어나요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "3개 탑",
+          "1개 탑",
+          "2개 탑"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-04",
+      "level": 1,
+      "skill": "모양으로 분류",
+      "title": "동그라미 상자",
+      "story": "{{place}}의 상상 공방에서 동그라미 모양만 한 상자에 모아요.",
+      "prompt": "상자에 넣을 모양을 골라요.",
+      "explanation": [
+        "동그라미는 뾰족한 꼭짓점 없이 둥글어요.",
+        "노랑 동그라미가 같은 모양 상자에 들어가요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동그라미를 찾아요"
+      },
+      "choices": [
+        "🔺",
+        "🟦",
+        "🟡"
+      ],
+      "answer": 2,
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "빨강 세모",
+        "파랑 네모",
+        "노랑 동그라미"
+      ]
+    },
+    {
+      "id": "block-patterns-05",
+      "level": 1,
+      "skill": "순서 기억과 재구성",
+      "title": "모양 카드 자리",
+      "story": "{{place}}의 상상 공방에서 모양 카드 세 장을 차례로 놓았어요.",
+      "prompt": "카드의 자리를 잘 보고, 가린 뒤 같은 순서로 놓아 보세요.",
+      "explanation": [
+        "처음 본 순서는 빨강 세모, 노랑 동그라미, 파랑 네모예요.",
+        "모양과 자리를 함께 말하면 순서를 살펴보기 쉬워요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🟦",
+          "🟡",
+          "🔺"
+        ],
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "itemLabels": [
+          "파랑 네모",
+          "노랑 동그라미",
+          "빨강 세모"
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-06",
+      "level": 1,
+      "skill": "규칙 비교",
+      "title": "같은 목걸이",
+      "story": "{{name}}가 동그라미·네모·동그라미·네모 목걸이를 만들었어요.",
+      "prompt": "같은 순서의 목걸이를 찾아요.",
+      "explanation": [
+        "첫 모양부터 하나씩 비교해요.",
+        "동그라미·네모가 두 번 이어진 첫 번째 목걸이가 같아요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "🟡 🟦 🟡 🟦"
+      },
+      "choices": [
+        "🟡 🟦 🟡 🟦",
+        "🟡 🟡 🟦 🟦",
+        "🟦 🟡 🟦 🟡"
+      ],
+      "answer": 0,
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "동그라미 네모 동그라미 네모",
+        "동그라미 동그라미 네모 네모",
+        "네모 동그라미 네모 동그라미"
+      ]
+    },
+    {
+      "id": "block-patterns-07",
+      "level": 2,
+      "skill": "2씩 커지는 규칙",
+      "title": "두 개씩 더해요",
+      "story": "{{place}}의 상상 공방에서 탑의 블록 수를 2개부터 시작해 2개씩 늘려요.",
+      "prompt": "작은 수부터 규칙에 맞게 놓아요.",
+      "explanation": [
+        "2에서 2를 더하면 4, 또 2를 더하면 6, 다시 2를 더하면 8이에요.",
+        "올바른 순서는 2개 → 4개 → 6개 → 8개예요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "6개",
+          "2개",
+          "8개",
+          "4개"
+        ],
+        "order": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-08",
+      "level": 2,
+      "skill": "ABB 반복 규칙",
+      "title": "세 칸 무늬",
+      "story": "{{place}}의 상상 공방에서 세모·동그라미·동그라미를 한 묶음으로 반복해요.",
+      "prompt": "물음표에는 어떤 모양이 올까요?",
+      "explanation": [
+        "한 묶음은 세모·동그라미·동그라미예요.",
+        "두 번째 묶음에도 동그라미가 두 개 필요하므로 빈칸은 동그라미예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "🔺 🟡 🟡 | 🔺 🟡 ?"
+      },
+      "choices": [
+        "🔺",
+        "🟡",
+        "🟦"
+      ],
+      "answer": 1,
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "세모",
+        "동그라미",
+        "네모"
+      ]
+    },
+    {
+      "id": "block-patterns-09",
+      "level": 2,
+      "skill": "순서 기억과 재구성",
+      "title": "네 장의 소풍 카드",
+      "story": "{{name}}가 상상 소풍 준비 카드를 네 자리에 놓았어요.",
+      "prompt": "카드의 자리를 잘 보고, 가린 뒤 같은 순서로 놓아 보세요.",
+      "explanation": [
+        "처음 본 순서는 파란 책, 가방, 사과, 모자예요.",
+        "앞의 두 장과 뒤의 두 장으로 나누어 기억해도 좋아요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🎒",
+          "🧢",
+          "🍎",
+          "📘"
+        ],
+        "order": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "itemLabels": [
+          "가방",
+          "모자",
+          "사과",
+          "파란 책"
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-10",
+      "level": 2,
+      "skill": "2씩 작아지는 규칙",
+      "title": "작아지는 탑",
+      "story": "{{place}}의 상상 공방에서 블록 9개 탑부터 시작해 2개씩 덜어 내요.",
+      "prompt": "가장 큰 수부터 2씩 작아지게 놓아요.",
+      "explanation": [
+        "9에서 2를 빼면 7, 다시 2를 빼면 5, 또 빼면 3이에요.",
+        "탑의 블록 수는 9개 → 7개 → 5개 → 3개가 돼요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "5개",
+          "9개",
+          "3개",
+          "7개"
+        ],
+        "order": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "joiner": " "
+      }
+    },
+    {
+      "id": "block-patterns-11",
+      "level": 2,
+      "skill": "AABB 반복 규칙",
+      "title": "짝짝 색종이",
+      "story": "{{place}}의 상상 공방에서 빨강 두 장, 파랑 두 장을 반복해 붙여요.",
+      "prompt": "다음 한 장은 무슨 색일까요?",
+      "explanation": [
+        "빨강·빨강·파랑·파랑이 한 묶음이에요.",
+        "첫 묶음 다음에 빨강 한 장이 있으므로 빨강 한 장을 더 붙여요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "🔴 🔴 🔵 🔵 | 🔴 ?"
+      },
+      "choices": [
+        "🟡",
+        "🔵",
+        "🔴"
+      ],
+      "answer": 2,
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "노랑",
+        "파랑",
+        "빨강"
+      ]
+    },
+    {
+      "id": "block-patterns-12",
+      "level": 2,
+      "skill": "순서 기억과 재구성",
+      "title": "꽃밭 길 기억하기",
+      "story": "{{place}}의 상상 꽃밭 길에 그림 표지 네 장이 있어요.",
+      "prompt": "카드의 자리를 잘 보고, 가린 뒤 같은 순서로 놓아 보세요.",
+      "explanation": [
+        "처음 본 순서는 클로버, 튤립, 나비, 별이에요.",
+        "어떤 그림이 처음과 마지막에 있었는지 다시 살펴보세요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🌷",
+          "⭐",
+          "🍀",
+          "🦋"
+        ],
+        "order": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "itemLabels": [
+          "튤립",
+          "별",
+          "클로버",
+          "나비"
+        ],
+        "joiner": " "
+      }
+    }
+  ]
+}

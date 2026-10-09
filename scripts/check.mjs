@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {answerText} from '../platform/activities.js';
 import {validateCatalog,validateGame} from '../platform/catalog.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const catalog=validateCatalog(JSON.parse(await fs.readFile(path.join(root,'games/catalog.json'),'utf8')));
@@ -19,15 +20,15 @@ for(const entry of catalog){
    assert.ok(['+','-'].includes(operator),q.id);
    const value=operator==='+'?left+right:left-right;
    assert.ok(value>=0&&value<=20,q.id);
-   assert.equal(parseInt(q.choices[q.answer],10),value,q.id);
+   assert.equal(parseInt(answerText(q),10),value,q.id);
   }
-  if(q.speak){assert.equal(q.speak.lang,'en-US',q.id);assert.equal(q.speak.text.toLowerCase(),q.choices[q.answer].toLowerCase(),q.id);}
+  if(q.speak){assert.equal(q.speak.lang,'en-US',q.id);assert.equal(q.speak.text.toLowerCase(),answerText(q).toLowerCase(),q.id);}
   if(q.mathCheck){
    const {expression,value}=q.mathCheck;
    assert.match(expression,/^[0-9+*/. ()-]+$/,q.id);
    assert.ok(Math.abs(Function('"use strict";return ('+expression+')')()-value)<1e-9,q.id);
-   const answer=q.choices[q.answer],fraction=answer.match(/(\d+)\/(\d+)/);
-   const chosen=fraction?Number(fraction[1])/Number(fraction[2]):parseFloat(answer);
+   const answer=answerText(q),fraction=answer.match(/(\d+)\/(\d+)/);
+   const chosen=fraction?Number(fraction[1])/Number(fraction[2]):Number(answer.match(/[0-9]+(?:\.[0-9]+)?/)?.[0]);
    assert.ok(Math.abs(chosen-value)<1e-9,q.id+' numerical answer');
    const units=answer.match(/([0-9.]+)(cm|km|m|kg|g)\s*=\s*([0-9.]+)(cm|km|m|kg|g)/);
    if(units){const scale={cm:1,m:100,km:100000,g:1,kg:1000};assert.ok(Math.abs(Number(units[1])*scale[units[2]]-Number(units[3])*scale[units[4]])<1e-9,q.id+' unit conversion');}

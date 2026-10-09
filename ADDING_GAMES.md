@@ -1,5 +1,7 @@
 # 새 학습 게임 추가
 
+v1.2 기준으로 34개 놀이·396문항을 연결합니다. 내부 33개·348문항 중 생활 모험은 18개·216문항이며, 외부 단위 정원은 48문항입니다. 새 게임은 기존 문항·아이별 기록·장소 설정과 함께 작동해야 합니다.
+
 ## 1. 초안 만들기
 
 저장소 루트에서 실행합니다.
@@ -8,7 +10,7 @@
 npm run new:game -- clock-adventure math "시계 탐험"
 ```
 
-`math`, `korean`, `english` 중 과목을 고릅니다. 스크립트가 `games/clock-adventure/game.json`과 `catalog.json`의 `draft` 항목을 만듭니다. 기존 파일/ID는 덮어쓰지 않습니다. 초안은 어린이에게 보이지 않습니다.
+`math`, `korean`, `english` 중 과목을 고릅니다. 스크립트가 선택형 문항 하나가 담긴 `games/clock-adventure/game.json`과 `catalog.json`의 `draft` 항목을 만듭니다. 기존 파일/ID는 덮어쓰지 않습니다. 초안은 어린이에게 보이지 않습니다. 모험·성장 단계·새 활동 형식은 아래 계약에 따라 직접 작성합니다.
 
 ## 2. 문항 작성
 
@@ -22,10 +24,10 @@ npm run new:game -- clock-adventure math "시계 탐험"
 | title | 짧은 이야기 제목 |
 | story | 친숙한 장면, 최대 두세 문장 |
 | prompt | 무엇을 구하는지 명확한 한 질문 |
-| choices | 서로 다른 보기 3개 |
-| answer | 정답 인덱스 0/1/2 |
+| choices / answer | 선택형에서만 사용: 서로 다른 보기 3개 / 정답 인덱스 0·1·2 |
+| interaction | 쌓기·순서·짝·기억 활동의 구성과 정답. 아래 형식 참고 |
 | explanation | 정답의 이유를 설명하는 짧은 문장 배열 |
-| visual | emoji/word/counters 시각 자료(선택) |
+| visual | emoji/word/counters/groups/bars/fraction 시각 자료(선택) |
 | speak | 영어 정답 발음용 `{text, lang:"en-US"}`(선택) |
 
 그림 형식:
@@ -36,7 +38,25 @@ npm run new:game -- clock-adventure math "시계 탐험"
 {"kind":"counters","emoji":"🍎","left":8,"operator":"-","right":3}
 ```
 
-`counters` 뺄셈은 처음 8개 중 3개를 흐리게 표시합니다. 덧셈은 두 무리를 각각 표시합니다. 현재 수학 검사는 20 이하 정수에 맞춰져 있으므로 다른 수 체계를 추가할 때 검사도 함께 조정합니다.
+`counters` 뺄셈은 처음 8개 중 3개를 흐리게 표시합니다. 덧셈은 두 무리를 각각 표시합니다. 20 이하 정수로 물건을 세는 그림과 쌓기를 사용하고, 돈·단위처럼 다른 수 체계는 문장·선택지·짝 연결로 표현합니다. 새로운 수 체계나 그림 형식을 추가할 때는 해당 검사도 함께 조정합니다.
+
+### 다섯 놀이 방식
+
+`interaction`을 생략하면 기존 `choices`·`answer` 선택형입니다. 선택형 이외에는 `choices`·`answer`를 함께 넣지 않습니다. 채점은 `platform/activities.js`, 누르기 조작은 `platform/activity-ui.js`에서 공통 처리합니다.
+
+| 방식 | `interaction` 필드 | 답 형식 |
+|---|---|---|
+| `choice` | 생략하거나 `{ "type": "choice" }` | 정답 보기 인덱스 |
+| `build` | `target`, `max`, `emoji`, `unit` | 0~max의 정수 |
+| `sequence` | `items`, `order`, 선택 `itemLabels`·`joiner` | 항목 인덱스의 순열 |
+| `match` | `left`, `right`, `pairs`, 선택 `rightLabels`·`leftLang` | 왼쪽 순서별 오른쪽 인덱스 |
+| `memory` | `items`, `order`, `itemLabels`, 선택 `joiner` | 기억한 항목 인덱스의 순열 |
+
+- 쌓기의 `target`은 0 이상, `max` 이하이며 `max`는 20 이하 정수입니다. `unit`은 담는 물건 한 개를 세는 단위입니다. 100원 동전 세 개를 담는 문제라면 `target: 3`, `unit: "개"`로 표현하고 총액은 해설에서 설명합니다.
+- 순서는 서로 다른 항목 3~5개, 기억은 3~4개를 사용합니다. `order`는 각 인덱스를 한 번씩 사용하는 순열입니다. `joiner`는 빈 문자열 또는 공백입니다.
+- 짝은 왼쪽·오른쪽 각각 서로 다른 항목 3개입니다. `pairs[n]`은 왼쪽 n번의 정답 오른쪽 인덱스이며 0·1·2를 한 번씩 사용합니다. 영어 낱말을 누르면 들려주려면 `leftLang: "en-US"`를 설정합니다.
+- 그림에는 아이와 스크린리더가 이해할 `itemLabels`·`rightLabels`를 작성합니다. 기억의 `itemLabels`는 필수입니다. 표시된 그림과 라벨의 뜻을 일치시킵니다.
+- 제출 전 배치 초안은 영구 저장되지 않습니다. 기록 어댑터에는 완성된 답만 전달합니다.
 
 ## 3. 검수·공개
 
@@ -48,7 +68,7 @@ npm run new:game -- clock-adventure math "시계 탐험"
 
 ## 공통 기록 API
 
-`platform/progress.js`의 공개 함수는 `learner`, `selectLearner`, `gameProgress`, `beginRound`, `answerQuestion`, `nextQuestion`, `summary`, `exportRecords`, `importRecords`입니다. 학습 실행기는 이 API를 호출하고 저장 형식을 직접 수정하지 않습니다. 새 게임의 다른 실행 규칙을 지원할 때도 `summary`가 문항별 최고점과 진도를 일관되게 읽도록 유지합니다.
+`platform/progress.js`의 주요 공개 함수는 `learner`, `selectLearner`, `gameProgress`, `beginRound`, `answerQuestion`, `nextQuestion`, `summary`, `exportRecords`, `importRecords`입니다. 학습 실행기는 이 API를 호출하고 저장 형식을 직접 수정하지 않습니다. 새 게임의 다른 실행 규칙을 지원할 때도 `summary`가 문항별 최고점과 진도를 일관되게 읽도록 유지합니다. v1.2의 저장키는 `sparkle-learning-progress-v2`이며, 기존 v1 기록 이관은 공통 어댑터가 담당합니다. 앱 버전·저장키·백업 형식의 버전을 같은 것으로 가정하지 않습니다.
 
 아이별 점수에는 경쟁 순위를 붙이지 않습니다. 실제 이해 여부는 아이가 풀이를 자기 말로 설명하는지, 다른 사례에도 적용하는지 보호자와 함께 관찰합니다.
 
@@ -59,3 +79,21 @@ npm run new:game -- clock-adventure math "시계 탐험"
 그림 보기에는 `choiceMode: "picture"`와 세 개의 `choiceLabels`(한국어 읽어주기·접근성)를 사용합니다. 영어 듣기 자극은 `cue: {text, lang:"en-US"}`로, 정답 확인 후 읽기는 `speak`로 구분합니다. 수량은 `groups`, 비례 길이는 `bars`, 같은 크기 조각은 `fraction` 시각화로 정확하게 표시합니다.
 
 공개 게임의 문항 ID와 의미는 변경하지 말고 새로운 문제에는 새 ID를 부여합니다. 개념·단계·선택지 순서를 바꾸면 진행 중 기록의 해석이 달라질 수 있습니다. 추가 후 `npm run check`로 형식과 진도 호환성을 확인하고, 실제 휴대전화 폭에서 문제·해설을 확인합니다. 교육설계·추천 기준은 [CURRICULUM.md](./CURRICULUM.md)를 참고하세요.
+
+## 생활 모험에 등록하기
+
+카탈로그와 게임 JSON 양쪽에 `adventure: true`, `minStage`, `maxStage`를 작성합니다. 단계는 1~4이며 `minStage <= maxStage`여야 합니다. `growth: true`와 동시에 지정하지 않습니다. 게임에는 `prerequisite`, `offline`을 넣고, 각 문항에는 범위 안의 `level`, `skill`, 최소 두 문장의 `explanation`을 작성합니다.
+
+현재 18개 모험은 각 12문항이며, 처음 단계와 마지막 단계에 각각 6문항을 둡니다. 검증기는 두 끝 단계에 각각 최소 6문항이 있는지 확인합니다. `modes`에는 게임에 실제 포함된 `choice`·`build`·`sequence`·`match`·`memory`만 등록해 목록의 놀이 방식 필터와 맞춥니다.
+
+첫 화면 추천은 현재 과목 단계가 모험의 범위에 들어가는 게임을 고릅니다. 해당 게임이 없으면 시작 단계가 현재 단계 이하인 모험에서 고릅니다. 진행 중 회차를 우선하고 최근에 하지 않은 모험을 먼저 제시합니다. 회차 출제는 선택 단계 이하의 문항을 대상으로 하되, 직접 더 높은 모험을 열면 그 모험의 최소 단계부터 시작합니다. 이미 진행 중인 회차는 우선 이어집니다.
+
+모험의 별·풀이 기록은 공통 기록에 저장됩니다. 단계 상승 추천은 `growth: true`인 기초 경로에서만 계산합니다. 새 주제를 추가할 때 모험 점수가 곧 특정 개념의 숙달을 뜻한다고 표시하지 않습니다.
+
+## 장소 개인화와 백업
+
+친숙한 장소가 필요한 문장에는 `{{place}}`, 아이 이름에는 `{{name}}`를 사용합니다. `platform/settings.js`가 현재 아이의 기기 내 설정으로 치환하며, 화면에 넣을 때는 치환 후 전체 문자열을 HTML 이스케이프합니다. 실제 학교·어린이집 이름을 게임 JSON·문서·예시 링크에 넣지 않습니다. 기본 장소는 ‘우리 학교’와 ‘우리 어린이집’입니다.
+
+보호자 설정은 아이마다 장소 이름을 1~48자로 받습니다. 제어 문자와 `<`, `>`, `&`는 허용하지 않습니다. `#family=` 설정 링크는 UTF-8 JSON을 base64url로 담고 앱이 주소에서 fragment를 제거한 뒤 읽습니다. 이 형식은 암호화가 아니며 개인화된 링크를 공개 저장소나 문서에 넣지 않습니다.
+
+앱의 전체 백업은 `Progress.exportRecords()` 결과에 `familySettings`를 추가합니다. 가져올 때 장소 설정을 먼저 검증하고 기록을 병합한 뒤 장소 설정을 반영합니다. 장소 설정이 없는 기존 백업은 현재 장소를 바꾸지 않습니다. **내보낸 JSON에 장소명이 포함됨**을 안내하고, 설정이 학습 정답이나 점수 계산을 바꾸지 않는지 확인합니다.

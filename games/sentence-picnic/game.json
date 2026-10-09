@@ -1,0 +1,362 @@
+{
+  "id": "sentence-picnic",
+  "subject": "english",
+  "title": "문장 소풍",
+  "description": "짧은 영어 문장을 만들고 이야기 속 정보를 찾아요.",
+  "emoji": "🧺",
+  "minStage": 3,
+  "maxStage": 4,
+  "adventure": true,
+  "offline": "완성한 영어 문장 하나를 그림으로 그려 보세요. 그림의 색이나 개수를 바꾸어 문장도 함께 바꿔 말해요.",
+  "prerequisite": "익숙한 영어 낱말을 읽거나 들어 뜻을 알 수 있고, 세 장의 카드를 차례로 놓을 수 있어요.",
+  "questions": [
+    {
+      "title": "사과를 좋아해요",
+      "story": "{{name}}가 {{place}}의 상상 소풍에서 말해요. “나는 사과를 좋아해.”",
+      "prompt": "I로 시작해서 들은 문장을 그대로 만들어요.",
+      "skill": "주어와 동사 문장 조립",
+      "level": 3,
+      "explanation": [
+        "I like apples.는 나는 사과를 좋아한다는 뜻이에요.",
+        "I는 나를 가리키고 like 뒤에 좋아하는 것을 말해요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "apples.",
+          "I",
+          "like"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "I like apples.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-01"
+    },
+    {
+      "title": "무슨 색 가방?",
+      "story": "{{place}}의 상상 소풍에 이런 가방이 있어요. “My bag is blue.”",
+      "prompt": "가방은 무슨 색인가요?",
+      "choices": [
+        "red",
+        "blue",
+        "green"
+      ],
+      "answer": 1,
+      "explanation": [
+        "My bag is blue.는 내 가방이 파란색이라는 뜻이에요.",
+        "blue가 가방의 색을 알려 줘요."
+      ],
+      "skill": "문장의 색 정보 찾기",
+      "level": 3,
+      "cue": {
+        "text": "My bag is blue.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "blue",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-02"
+    },
+    {
+      "title": "쉬는 고양이",
+      "story": "{{place}}의 상상 그림책에 “그 고양이는 잠을 자요.”라는 장면이 있어요.",
+      "prompt": "The로 시작해서 들은 문장을 그대로 만들어요.",
+      "skill": "주어와 행동 연결",
+      "level": 3,
+      "explanation": [
+        "The cat sleeps.는 그 고양이가 잠을 잔다는 뜻이에요.",
+        "The cat은 누가 행동하는지, sleeps는 무엇을 하는지 알려 줘요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "sleeps.",
+          "cat",
+          "The"
+        ],
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "The cat sleeps.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-03"
+    },
+    {
+      "title": "연필은 몇 자루?",
+      "story": "{{name}}가 {{place}}의 상상 교실에서 말해요. “I have two pencils.”",
+      "prompt": "연필은 몇 자루인가요?",
+      "choices": [
+        "one",
+        "three",
+        "two"
+      ],
+      "answer": 2,
+      "explanation": [
+        "I have two pencils.는 나는 연필 두 자루를 가지고 있다는 뜻이에요.",
+        "two가 연필의 개수를 알려 줘요."
+      ],
+      "skill": "문장의 수량 정보 찾기",
+      "level": 3,
+      "cue": {
+        "text": "I have two pencils.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "two",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-04"
+    },
+    {
+      "title": "내 가방을 소개해요",
+      "story": "{{place}}의 상상 교실에서 “이것은 내 가방이야.”라고 말해요.",
+      "prompt": "This로 시작해서 들은 문장을 그대로 만들어요.",
+      "skill": "소유 표현 문장 조립",
+      "level": 3,
+      "explanation": [
+        "This is my bag.은 이것은 내 가방이라는 뜻이에요.",
+        "my를 bag 앞에 놓으면 내 가방이라고 말할 수 있어요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "bag.",
+          "is",
+          "This",
+          "my"
+        ],
+        "order": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "This is my bag.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-05"
+    },
+    {
+      "title": "어디에서 놀까요?",
+      "story": "{{place}}의 상상 친구들이 말해요. “We play in the park.”",
+      "prompt": "친구들이 노는 곳은 어디인가요?",
+      "choices": [
+        "park",
+        "classroom",
+        "kitchen"
+      ],
+      "answer": 0,
+      "explanation": [
+        "We play in the park.는 우리는 공원에서 논다는 뜻이에요.",
+        "in the park가 놀이 장소를 알려 줘요."
+      ],
+      "skill": "문장의 장소 정보 찾기",
+      "level": 3,
+      "cue": {
+        "text": "We play in the park.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "park",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-06"
+    },
+    {
+      "title": "책을 여기 놓아 줘",
+      "story": "{{place}}의 상상 도서관에서 책 둘 곳을 부탁해요.",
+      "prompt": "Please로 시작해서 “책을 여기 놓아 주세요.”라는 들은 문장을 그대로 만들어요.",
+      "skill": "다섯 낱말 요청 문장",
+      "level": 4,
+      "explanation": [
+        "Please put the book here.는 그 책을 여기 놓아 달라는 부탁이에요.",
+        "Please로 정중하게 부탁하고 here로 놓을 곳을 알려 줘요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "book",
+          "here.",
+          "Please",
+          "the",
+          "put"
+        ],
+        "order": [
+          2,
+          4,
+          3,
+          0,
+          1
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "Please put the book here.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-07"
+    },
+    {
+      "title": "누구의 우산일까?",
+      "story": "{{place}}의 상상 이야기예요. “Mina has a red umbrella. Joon has a blue umbrella.”",
+      "prompt": "파란 우산을 가진 친구는 누구인가요?",
+      "choices": [
+        "Mina",
+        "Joon",
+        "Both"
+      ],
+      "answer": 1,
+      "explanation": [
+        "Joon has a blue umbrella.에서 준이 파란 우산을 가졌다고 했어요.",
+        "미나는 빨간 우산을 가졌으므로 색과 이름을 함께 확인해야 해요."
+      ],
+      "skill": "두 문장 정보 구별",
+      "level": 4,
+      "cue": {
+        "text": "Mina has a red umbrella. Joon has a blue umbrella.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "Joon",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-08"
+    },
+    {
+      "title": "연필을 자세히 소개해요",
+      "story": "{{name}}가 {{place}}의 상상 미술실에서 빨간 연필 두 자루를 보여 줘요.",
+      "prompt": "I로 시작해서 들은 문장을 그대로 만들어요.",
+      "skill": "수와 색을 포함한 문장",
+      "level": 4,
+      "explanation": [
+        "I have two red pencils.는 나는 빨간 연필 두 자루를 가지고 있다는 뜻이에요.",
+        "two는 개수, red는 색을 알려 주며 둘 다 pencils를 꾸며 줘요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "red",
+          "pencils.",
+          "I",
+          "two",
+          "have"
+        ],
+        "order": [
+          2,
+          4,
+          3,
+          0,
+          1
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "I have two red pencils.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-09"
+    },
+    {
+      "title": "무엇을 먼저 할까?",
+      "story": "{{place}}의 상상 소풍 안내예요. “Wash your hands before you eat.”",
+      "prompt": "먹기 전에 먼저 해야 하는 일은 무엇인가요?",
+      "choices": [
+        "eat",
+        "sleep",
+        "wash your hands"
+      ],
+      "answer": 2,
+      "explanation": [
+        "before you eat은 먹기 전에라는 뜻이에요.",
+        "그러므로 먼저 손을 씻으라는 wash your hands를 찾아야 해요."
+      ],
+      "skill": "before 시간 관계 이해",
+      "level": 4,
+      "cue": {
+        "text": "Wash your hands before you eat.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "wash your hands",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-10"
+    },
+    {
+      "title": "점심 뒤에 놀아요",
+      "story": "{{place}}의 상상 소풍에서 “우리는 점심 뒤에 놀아요.”라고 말해요.",
+      "prompt": "We로 시작해서 들은 문장을 그대로 만들어요.",
+      "skill": "after 시간 표현 조립",
+      "level": 4,
+      "explanation": [
+        "We play after lunch.는 우리는 점심을 먹은 뒤에 논다는 뜻이에요.",
+        "after lunch가 놀이가 점심 뒤에 일어난다는 순서를 알려 줘요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "after",
+          "We",
+          "lunch.",
+          "play"
+        ],
+        "order": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "We play after lunch.",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-11"
+    },
+    {
+      "title": "바뀐 장소 찾기",
+      "story": "{{place}}의 상상 그림책에 이렇게 쓰여 있어요. “The cat is not under the chair. It is on the bed.”",
+      "prompt": "고양이는 어디에 있나요?",
+      "choices": [
+        "on the bed",
+        "under the chair",
+        "in the bag"
+      ],
+      "answer": 0,
+      "explanation": [
+        "고양이는 의자 아래에 있지 않고 침대 위에 있어요.",
+        "not이 있는 문장과 그다음 문장을 함께 읽어야 실제 위치를 찾을 수 있어요."
+      ],
+      "skill": "부정과 대명사 문장 이해",
+      "level": 4,
+      "cue": {
+        "text": "The cat is not under the chair. It is on the bed.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "on the bed",
+        "lang": "en-US"
+      },
+      "id": "sentence-picnic-12"
+    }
+  ]
+}
