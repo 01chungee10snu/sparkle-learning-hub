@@ -22,7 +22,17 @@ for(const entry of catalog){
    assert.equal(parseInt(q.choices[q.answer],10),value,q.id);
   }
   if(q.speak){assert.equal(q.speak.lang,'en-US',q.id);assert.equal(q.speak.text.toLowerCase(),q.choices[q.answer].toLowerCase(),q.id);}
+  if(q.mathCheck){
+   const {expression,value}=q.mathCheck;
+   assert.match(expression,/^[0-9+*/. ()-]+$/,q.id);
+   assert.ok(Math.abs(Function('"use strict";return ('+expression+')')()-value)<1e-9,q.id);
+   const answer=q.choices[q.answer],fraction=answer.match(/(\d+)\/(\d+)/);
+   const chosen=fraction?Number(fraction[1])/Number(fraction[2]):parseFloat(answer);
+   assert.ok(Math.abs(chosen-value)<1e-9,q.id+' numerical answer');
+   const units=answer.match(/([0-9.]+)(cm|km|m|kg|g)\s*=\s*([0-9.]+)(cm|km|m|kg|g)/);
+   if(units){const scale={cm:1,m:100,km:100000,g:1,kg:1000};assert.ok(Math.abs(Number(units[1])*scale[units[2]]-Number(units[3])*scale[units[4]])<1e-9,q.id+' unit conversion');}
+  }
  }
  count+=game.questions.length;
 }
-console.log(`PASS: ${catalog.filter(g=>g.status==='published').length} published games; ${count} new questions; catalog, arithmetic and speech answers verified`);
+console.log(`PASS: ${catalog.filter(g=>g.status==='published').length} published games; ${count} hub questions + 48 unit-garden questions; catalog, arithmetic and speech answers verified`);

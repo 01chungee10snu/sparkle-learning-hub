@@ -1,1 +1,11 @@
-{"name":"sparkle-learning-hub","version":"1.0.0","private":true,"type":"module","scripts":{"start":"python3 -m http.server 4179 --bind 127.0.0.1","check":"node --check app.js && node --check platform/progress.js && node scripts/check.mjs","new:game":"node scripts/new-game.mjs"}}
+{
+  "name": "sparkle-learning-hub",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4179 --bind 127.0.0.1",
+    "check": "node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node scripts/check.mjs && node scripts/check-growth.mjs",
+    "new:game": "node scripts/new-game.mjs"
+  }
+}

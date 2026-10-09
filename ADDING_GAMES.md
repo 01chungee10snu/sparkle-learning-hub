@@ -51,3 +51,11 @@ npm run new:game -- clock-adventure math "시계 탐험"
 `platform/progress.js`의 공개 함수는 `learner`, `selectLearner`, `gameProgress`, `beginRound`, `answerQuestion`, `nextQuestion`, `summary`, `exportRecords`, `importRecords`입니다. 학습 실행기는 이 API를 호출하고 저장 형식을 직접 수정하지 않습니다. 새 게임의 다른 실행 규칙을 지원할 때도 `summary`가 문항별 최고점과 진도를 일관되게 읽도록 유지합니다.
 
 아이별 점수에는 경쟁 순위를 붙이지 않습니다. 실제 이해 여부는 아이가 풀이를 자기 말로 설명하는지, 다른 사례에도 적용하는지 보호자와 함께 관찰합니다.
+
+## 성장 경로에 등록하기
+
+성장 놀이의 카탈로그 항목에는 `growth: true`, `stage: 1..4`를 넣습니다. 게임 JSON에도 `stage`, `prerequisite`(앞서 경험할 개념), `offline`(회차 뒤 실물 활동), 각 문항의 `skill`을 작성합니다. 게임별 정답·해설은 기존 스키마를 유지합니다.
+
+그림 보기에는 `choiceMode: "picture"`와 세 개의 `choiceLabels`(한국어 읽어주기·접근성)를 사용합니다. 영어 듣기 자극은 `cue: {text, lang:"en-US"}`로, 정답 확인 후 읽기는 `speak`로 구분합니다. 수량은 `groups`, 비례 길이는 `bars`, 같은 크기 조각은 `fraction` 시각화로 정확하게 표시합니다.
+
+공개 게임의 문항 ID와 의미는 변경하지 말고 새로운 문제에는 새 ID를 부여합니다. 개념·단계·선택지 순서를 바꾸면 진행 중 기록의 해석이 달라질 수 있습니다. 추가 후 `npm run check`로 형식과 진도 호환성을 확인하고, 실제 휴대전화 폭에서 문제·해설을 확인합니다. 교육설계·추천 기준은 [CURRICULUM.md](./CURRICULUM.md)를 참고하세요.
