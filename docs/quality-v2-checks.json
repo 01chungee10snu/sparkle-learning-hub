@@ -1,0 +1,78 @@
+{
+  "result": "PASS",
+  "jobId": "8b687409-ed05-4f01-b62a-4f5c2c21cef8",
+  "exitCode": 0,
+  "elapsedMs": 21792,
+  "events": [
+    {
+      "seq": 1,
+      "stream": "stdout",
+      "text": "\n> sparkle-learning-hub@1.4.0 check\n> node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/build-irt-bank.mjs --verify && node scripts/check-irt.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-reward-integrity.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs && node scripts/check-village-quality.mjs\n\n"
+    },
+    {
+      "seq": 2,
+      "stream": "stdout",
+      "text": "PASS: 46 published games; 4153 hub questions + 48 unit-garden questions; catalog, arithmetic and speech answers verified\n"
+    },
+    {
+      "seq": 3,
+      "stream": "stdout",
+      "text": "PASS: growth state migration, 3/5-question rounds, learner isolation, strict import, duplicate prevention, capped attempts, readiness gates, voluntary progression, review dates and backup roundtrip\n"
+    },
+    {
+      "seq": 4,
+      "stream": "stdout",
+      "text": "VERIFIED: 4153 item descriptors, 7360 source images, 4 quality groups; 98c4aadd6580e6e9f5827c7f29ac1c033861b90aa661ed83f32b999b6b4b8607\n"
+    },
+    {
+      "seq": 5,
+      "stream": "stdout",
+      "text": "PASS: 4153 descriptors, Bayesian updates, concept evidence, uncertainty, per-child isolation, new items, hinted exclusion, repeated-item protection and backup merge\n"
+    },
+    {
+      "seq": 6,
+      "stream": "stdout",
+      "text": "PASS: all five interactions, strict submissions, catalog levels, legacy answers, restore, learner isolation, 3/5 rounds, level sampling, duplicate prevention and unchanged reward/growth rules\n"
+    },
+    {
+      "seq": 7,
+      "stream": "stdout",
+      "text": "PASS: quota fallback survives profile changes, unsaved export, successful retry, older-key migration, old-tab isolation and v1 backup compatibility\n"
+    },
+    {
+      "seq": 8,
+      "stream": "stdout",
+      "text": "PASS: family settings validation, atomic updates, Unicode boundaries, plain-text placeholders, UTF-8 setup, fragment removal, no requests, persistence and blocked-storage fallback\n"
+    },
+    {
+      "seq": 9,
+      "stream": "stdout",
+      "text": "PASS: preserved legacy stars, two-child isolation, bounded effort, evidence-backed badges, safe spending, double-click prevention, family request completion, monotone old-backup merge, atomic validation, full backup restore and blocked-storage recovery; 48 unique gifts, five-slot outfits, free re-equipping and old-v1 outfit compatibility\n"
+    },
+    {
+      "seq": 10,
+      "stream": "stdout",
+      "text": "PASS: verified effort; no unconfigured imports; cleared-wallet memory; purchase write failure rollback and recovery; concurrent spend merge; game-round identity migration; forged receipt and sibling import atomicity; collision-free/long village IDs; derived family plaza; offline village persistence.\n"
+    },
+    {
+      "seq": 11,
+      "stream": "stdout",
+      "text": "PASS: faithful integer numeric grading, optional negative bounds and sign keypad, blank/zero keypad, unsafe input rejection, bounded drafts, >20 and signed response restore, mixed five-choice/numeric bank restore, legacy three-choice validation, 2/10 star rules, duplicate prevention, learner isolation, old backups and v2/v1→v3 migration with old-tab isolation\n"
+    },
+    {
+      "seq": 12,
+      "stream": "stdout",
+      "text": "{\n  \"imported\": 3805,\n  \"arithmeticIndependentlyChecked\": 125,\n  \"originalAnswersMappedUnchanged\": 3680,\n  \"uniqueStableIds\": 3805,\n  \"negativeAnswers\": 1,\n  \"imageFilesVerified\": 0\n}\n"
+    },
+    {
+      "seq": 13,
+      "stream": "stdout",
+      "text": "PASS: Unity village JS bridge; real quiz scoring, 5/3 rounds, learner isolation, duplicate block, no forged round, plaza and personal gardens, backup merge.\n"
+    },
+    {
+      "seq": 14,
+      "stream": "stdout",
+      "text": "PASS: actual-item-bank bridge quality; sequential/concurrent receipt replay, conflicting IDs atomicity, unanswered and replayed NEXT, real hint-assisted IRT exclusion, independent evidence, stale learner isolation and CANCEL late-submit protection; source visual retained.\n"
+    }
+  ]
+}

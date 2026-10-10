@@ -38,7 +38,7 @@ try{
  assert.equal(R.recordEffort({who:'tae',eventId:'reflection-first',kind:'reflection',gameId:'reward-math',roundId:first.id}).earned,0,'Reflection cannot double the completed-round award');
  play(quiz('math'));assert.equal(R.syncRewards(catalog,'tae').effortStars,3,'Multiple same-day rounds share a three-star effort cap');
 
- const questionId='q-math-1';
+ const questionId=first.ids[0];
  assert.equal(R.recordEffort({who:'tae',eventId:'hint-one',kind:'hint',gameId:'reward-math',questionId}).earned,1);
  assert.equal(R.recordEffort({who:'tae',eventId:'hint-one',kind:'hint',gameId:'reward-math',questionId}).earned,0,'Double event submission has no extra credit');
  assert.equal(R.recordEffort({who:'tae',eventId:'retry-two',kind:'retry',gameId:'reward-math',questionId}).earned,1);
@@ -76,6 +76,7 @@ try{
   b=>{b.state.profiles.tae.equipped={id:'comet',at:now};},
   b=>{b.state.profiles.tae.purchases['request-story-1'].completedAt=undefined;},
   b=>{b.state.profiles.tae.purchases['request-story-2'].completedAt=-1;},
+  b=>{b.state.profiles.tae.purchases['request-story-2'].at=b.state.profiles.tae.purchases['request-story-1'].completedAt-1;},
   b=>{b.state.profiles.se=null;},
   b=>{b.state.profiles.tae.events.constructor={id:'constructor',kind:'hint',gameId:'reward-math',questionId:'q-math-1',at:now+86400000};}
  ];
@@ -93,10 +94,11 @@ try{
 
  // If a device refuses writes, continue in memory and preserve that memory when
  // storage becomes readable again, until a successful save flushes it.
+ const offlineQuestion=Object.keys(P.gameProgress('reward-english','se').records)[0];
  blocked=true;const offline=await fresh();offline.wallet(catalog,'se');assert.equal(offline.rewardStorageAvailable(),false);
- assert.equal(offline.recordEffort({who:'se',eventId:'offline-hint',kind:'hint',gameId:'reward-english',questionId:'q-english-1'}).earned,1);
+ assert.equal(offline.recordEffort({who:'se',eventId:'offline-hint',kind:'hint',gameId:'reward-english',questionId:offlineQuestion}).earned,1);
  blocked=false;assert.ok(offline.exportRewards().state.profiles.se.events['offline-hint'],'Recovering reads must not discard unsaved rewards');
- offline.recordEffort({who:'se',eventId:'offline-hint-two',kind:'hint',gameId:'reward-english',questionId:'q-english-1'});
+ offline.recordEffort({who:'se',eventId:'offline-hint-two',kind:'hint',gameId:'reward-english',questionId:offlineQuestion});
  assert.equal(offline.rewardStorageAvailable(),true);assert.ok((await fresh()).exportRewards().state.profiles.se.events['offline-hint']);
  assert.equal(offline.wallet(catalog,'tae').spent,taeBefore.spent,'Storage recovery preserves pre-existing purchase receipts as well as unsaved effort');
  // A graded direct retry receives its motivational badge while preserving the
@@ -115,7 +117,7 @@ try{
  assert.equal(guided.wallet(catalog,'se').badges.find(b=>b.id==='try-again').unlocked,true,'A validated direct retry unlocks the practice badge');
  assert.deepEqual(P.gameProgress(practiceGame.id,'se'),originalAnswer,'Guided retry must not overwrite an independent wrong answer or invent a correct attempt');
  assert.equal(P.gameProgress(practiceGame.id,'se').records[practiceId].attempts[0].correct,false);
- assert.throws(()=>guided.recordEffort({who:'se',eventId:'unanswered-retry',kind:'retry',gameId:'reward-math',questionId:'q-math-12'}),'A known but never answered question cannot certify a practice badge');
+ assert.throws(()=>guided.recordEffort({who:'se',eventId:'unanswered-retry',kind:'retry',gameId:'reward-math',questionId:practiceGame.questions.find(q=>q.id!==practiceId).id}),'A known but never answered question cannot certify a practice badge');
  // A legacy light purchase and a full five-slot outfit must coexist, reload,
  // and merge without reviving removed gifts or charging for re-equipping.
  reset();const gifts=await fresh();P.selectLearner('tae');

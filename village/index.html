@@ -22,7 +22,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #bar{height:100%;width:0;background:#8663c2;transition:width .25s}
 @media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
 </style>
-<link rel="stylesheet" href="./village-ui.css?v=20261010a">
+<link rel="stylesheet" href="./village-ui.css?v=20261010c">
 </head>
 <body>
 <div id="page">
@@ -37,7 +37,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
       <div class="panel">
         <h1>🌸 마법마을 탐험</h1>
         <p>요정을 움직여 동물 친구를 만나고, 문제를 해결해 꽃을 키워요.</p>
-        <p id="status">첫 번째 Unity 3D 마을을 준비하고 있어요.</p>
+        <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
         <div id="meter" hidden><div id="bar"></div></div>
         <button id="start">마법마을 열기</button>
         <p><small>마법마을은 현재 개발 중이며, 기존 문제와 별 기록을 그대로 사용합니다.</small></p>
@@ -46,8 +46,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
   </main>
 </div>
 <script type="module">
-import { createVillageHost } from './village-bridge.js';
-import { createVillageUI } from './village-ui.js?v=20261010a';
+import { createVillageHost } from './village-bridge.js?v=20261010c';
+import { createVillageUI } from './village-ui.js?v=20261010c';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -74,7 +74,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js';
+    const loaderUrl = './Build/' + name + '.loader.js?v=20261010c';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -112,13 +112,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix,
-      frameworkUrl: base + '.framework.js' + suffix,
-      codeUrl: base + '.wasm' + suffix,
+      dataUrl: base + '.data' + suffix + '?v=20261010c',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010c',
+      codeUrl: base + '.wasm' + suffix + '?v=20261010c',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.1.0'
+      productVersion: '0.2.0'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';

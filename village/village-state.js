@@ -4,7 +4,8 @@ export const VILLAGE_KEY = 'sparkle-unity-village-v1';
 const KIDS = new Set(['tae', 'se']);
 const SAFE_ID = /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}$/;
 const MAX_EVENTS = 20000;
-const plain = v => v !== null && typeof v === 'object' && !Array.isArray(v);
+const plain = v => v !== null && typeof v === 'object' && !Array.isArray(v) &&
+  (Object.getPrototypeOf(v) === Object.prototype || Object.getPrototypeOf(v) === null);
 const bag = () => Object.create(null);
 export const emptyVillage = () => ({
   version: 1,
@@ -12,6 +13,8 @@ export const emptyVillage = () => ({
   family: { events: bag() }
 });
 const validId = value => typeof value === 'string' && SAFE_ID.test(value);
+const validEventId = value => typeof value === 'string' &&
+  /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,399}$/.test(value);
 
 function cleanEvents(value) {
   const events = bag();
@@ -19,7 +22,7 @@ function cleanEvents(value) {
   const entries = Object.entries(value);
   if (entries.length > MAX_EVENTS) throw new Error('마을 기록 저장 한도를 초과했어요.');
   for (const [id, enabled] of entries) {
-    if (validId(id) && enabled === true) events[id] = true;
+    if (validEventId(id) && enabled === true) events[id] = true;
   }
   return events;
 }
@@ -30,7 +33,12 @@ export function cleanVillage(raw) {
   for (const who of KIDS) {
     result.profiles[who].events = cleanEvents(raw.profiles?.[who]?.events);
   }
-  result.family.events = cleanEvents(raw.family?.events);
+  // The shared plaza is derived from each child's verified logical events.
+  // A family-only backup row cannot invent flowers or lose a sibling's work.
+  for (const who of KIDS) for (const id of Object.keys(result.profiles[who].events))
+    result.family.events[who + '_' + id] = true;
+  if (Object.keys(result.family.events).length > MAX_EVENTS)
+    throw new Error('마을 기록 저장 한도를 초과했어요.');
   return result;
 }
 
@@ -49,11 +57,14 @@ export function addVillageCompletion(state, { who, gameId, roundId }) {
   if (!KIDS.has(who) || !validId(gameId) || !validId(roundId))
     throw new Error('완료한 학습 회차 정보를 확인해 주세요.');
   const result = cleanVillage(state);
-  const eventId = gameId + '_' + roundId;
+  // Length prefix makes tuples unambiguous, including IDs with underscores.
+  const eventId = 'v2_' + gameId.length + '_' + gameId + '_' + roundId;
+  const legacyId = gameId + '_' + roundId;
   const familyId = who + '_' + eventId;
   const personal = result.profiles[who].events;
   const family = result.family.events;
-  if (personal[eventId]) return { added: false, state: result, ...villageSummary(result, who) };
+  // Existing real game IDs contain no underscore: preserve their v1 receipts.
+  if (personal[eventId] || (!gameId.includes('_') && personal[legacyId])) return { added: false, state: result, ...villageSummary(result, who) };
   if (Object.keys(personal).length >= MAX_EVENTS ||
       Object.keys(family).length >= MAX_EVENTS)
     throw new Error('마을 기록 저장 한도를 초과했어요.');
@@ -63,7 +74,9 @@ export function addVillageCompletion(state, { who, gameId, roundId }) {
 }
 
 let inMemory = emptyVillage();
+let dirty = false;
 export function loadVillage(storage = globalThis.localStorage) {
+  if (dirty) return cleanVillage(inMemory);
   try {
     if (!storage) return cleanVillage(inMemory);
     const value = storage.getItem(VILLAGE_KEY);
@@ -76,10 +89,14 @@ export function loadVillage(storage = globalThis.localStorage) {
 }
 
 export function saveVillage(state, storage = globalThis.localStorage) {
-  const next = cleanVillage(state);
-  inMemory = next;
+  inMemory = dirty ? mergeVillage(inMemory, state) : cleanVillage(state);
+  dirty = true;
+  if (!storage) return false;
   try {
-    storage?.setItem(VILLAGE_KEY, JSON.stringify(next));
+    const value = storage.getItem(VILLAGE_KEY);
+    if (value) inMemory = mergeVillage(cleanVillage(JSON.parse(value)), inMemory);
+    storage.setItem(VILLAGE_KEY, JSON.stringify(inMemory));
+    dirty = false;
     return true;
   } catch {
     return false;

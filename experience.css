@@ -102,3 +102,8 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 .village-launch-copy small{font-size:13px;line-height:1.45;color:#555576}
 .village-launch-arrow{font-size:25px;font-weight:700;color:#6747a1}
 @media(max-width:420px){.village-launch{gap:10px;padding:11px}.village-launch-icon{font-size:29px}.village-launch-copy strong{font-size:17px}.village-launch-copy small{font-size:12px}}
+
+/* Provisional IRT learning evidence: accessible text, no ranking or competition. */
+.irt-evidence{font-size:clamp(13px,2.8vw,16px);line-height:1.55;color:#403958;background:#f6f2ff;border:1px solid #dcd0f1;border-radius:14px;padding:10px 13px;margin:8px 0}
+.workbook-suggestion{font-size:clamp(14px,2.7vw,17px);line-height:1.6;background:#f0f8fb;border:1px solid #b6d9e7;color:#30435b;border-radius:14px;padding:12px 14px;margin:12px 0}
+.workbook-suggestion button{margin-left:6px;vertical-align:middle;white-space:normal}

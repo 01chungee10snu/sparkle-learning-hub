@@ -1,0 +1,320 @@
+{
+  "createdAt": "2026-10-10T05:26:50.864Z",
+  "mode": "headless-webgl",
+  "origin": "http://127.0.0.1:4179",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "realDevice": false,
+  "childStorage": "isolated synthetic browser contexts",
+  "sourceHashes": {
+    "village/village-ui.js": "deffb599b1522b5e91a06fa4a177be380bf1deb24839aa23c27843cdd55a7b4f",
+    "village/village-bridge.js": "f452c21b5b025bc088559b8414d0e0996a6eeeed591ff037e56eac6a37dec2da",
+    "village/village-ui.css": "d9187bcfe5622f96914b999f1d39c29937e9f7cc05c1450a1a7ec3b2ee18539c",
+    "village/index.html": "678a54e281bfaca82492ff09320da5958c4fa360726987e51ef6a2ae627a02bb",
+    "village/village-state.js": "f1b8684dbb2ddcbfd9c1b9949cbcdd5cd09ec5804478df53ceaa0d2045ca1b71",
+    "platform/progress.js": "cfba29c15e3e000cbfb252c45f3ca4bf15be8713ca73dc6ff12ee50304b2be6a",
+    "platform/rewards.js": "fe49083c4212805fe95938ab6dbcb9b22a4f5c923978cd7dde638fdef50487b8",
+    "platform/reward-catalog.js": "7d0fbb85d21433a15efacbe8267c5f36c516184423e78f37d22ec2986204bd21",
+    "platform/irt.js": "5e9866910364b38fd314be17477493463a5e725a659ea233b691fd297316ee38",
+    "games/catalog.json": "90f86693df31e705b2fc773c92e2cecb2329ec795572db09c2934490f8066fc3",
+    "games/irt-bank.json": "82b1096d23e973d94c0ebd2d32737f0103f4ca59cca7f166dbc74eeb5a6f91f8",
+    "games/snack-count/game.json": "e4b7b6d57405df14a028fc1ceaad3d5a22cd6cc2ac1c30e340a45c6757875990",
+    "games/measure-lab/game.json": "dee09f8b494a1e8a43124b9d1b3536849203ff26373b96ca0de7ede96adbb84c",
+    "games/kind-dialogue/game.json": "729611157ce17ff71499d5a9eecbcbe2cb8c3512e40e6961eec5ce141d4065d6",
+    "scripts/village-browser-qa.mjs": "a830aec46628214ea6f4bd4f8e3edad65199678509312db134fa3c56a9440e0d",
+    "village/assets/ui_mission_panel.png": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+    "village/assets/ui_star_pill.png": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+    "village/assets/ui_button.png": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+    "village/assets/star_yellow.png": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+    "village/assets/sprout.png": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+    "village/assets/bloom.png": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+  },
+  "buildHashes": {
+    "village/Build/WebGL.loader.js": "59b7e452e45d35dba9e441069f7d058cade758e15f9cfe2a1686d953caef7f24",
+    "village/Build/WebGL.data.unityweb": "a03037268fdcc06bd5cbfdcb1c39dc19e7e30027372e002daaf2373b2e10d1c3",
+    "village/Build/WebGL.framework.js.unityweb": "7a90566ab9764877e68d06d371017b373fde158d284628f01486ba079d3f7eb2",
+    "village/Build/WebGL.wasm.unityweb": "87dadf29ea8ef303186ee00dc6e9aea5fb8c635417decc2b634381edd09eeaac"
+  },
+  "tests": [
+    {
+      "viewport": "webgl-tae",
+      "name": "actual selected profile and Unity INIT with empty isolated records",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-tae",
+      "name": "real 5-question round submits and completes through Unity bridge",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-tae",
+      "name": "one personal and one family flower with bounded stars and sibling isolation",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-tae",
+      "name": "return village then family plaza and own village retain exact rewards",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-tae",
+      "name": "reload preserves selected profile flowers stars and completed round without replay credit",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-se",
+      "name": "actual selected profile and Unity INIT with empty isolated records",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-se",
+      "name": "real 3-question round submits and completes through Unity bridge",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-se",
+      "name": "one personal and one family flower with bounded stars and sibling isolation",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-se",
+      "name": "return village then family plaza and own village retain exact rewards",
+      "pass": true
+    },
+    {
+      "viewport": "webgl-se",
+      "name": "reload preserves selected profile flowers stars and completed round without replay credit",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "screenshots": [
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-world.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-completed-round.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-family-plaza.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-reloaded-world.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-floor-pointer-after-1s.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-tae-npc-pointer-question.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-world.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-completed-round.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-family-plaza.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-reloaded-world.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-floor-pointer-after-1s.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-quality-20261010/browser/webgl-se-npc-pointer-question.png"
+  ],
+  "roundEvidence": [
+    {
+      "profile": "tae",
+      "expectedQuestions": 5,
+      "who": "tae",
+      "wallet": {
+        "available": 53,
+        "lifetime": 53,
+        "learningStars": 50,
+        "effortStars": 3,
+        "spent": 0
+      },
+      "siblingAvailable": 0,
+      "siblingGames": [],
+      "flowers": {
+        "who": "tae",
+        "flowers": 1,
+        "familyFlowers": 1
+      },
+      "games": [
+        {
+          "id": "measure-lab",
+          "finishedRounds": 1,
+          "records": [
+            "measure-lab-01",
+            "measure-lab-02",
+            "measure-lab-04",
+            "measure-lab-05",
+            "measure-lab-03"
+          ],
+          "round": {
+            "id": "round-f1273740-1186-4421-b320-af8396789a92",
+            "ids": [
+              "measure-lab-01",
+              "measure-lab-02",
+              "measure-lab-04",
+              "measure-lab-05",
+              "measure-lab-03"
+            ],
+            "index": 5,
+            "answers": [
+              {
+                "id": "measure-lab-01",
+                "choice": 1,
+                "response": 1,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "measure-lab-02",
+                "choice": 0,
+                "response": 0,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "measure-lab-04",
+                "choice": 2,
+                "response": 2,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "measure-lab-05",
+                "choice": 0,
+                "response": 0,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "measure-lab-03",
+                "response": [
+                  1,
+                  2,
+                  0
+                ],
+                "correct": true,
+                "earned": 10
+              }
+            ],
+            "finished": true,
+            "updatedAt": 1791609972394,
+            "shownAt": 1791609972394,
+            "hinted": false
+          },
+          "completedRounds": [
+            {
+              "id": "round-f1273740-1186-4421-b320-af8396789a92",
+              "at": 1791609972394,
+              "questionIds": [
+                "measure-lab-01",
+                "measure-lab-02",
+                "measure-lab-04",
+                "measure-lab-05",
+                "measure-lab-03"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "se",
+      "expectedQuestions": 3,
+      "who": "se",
+      "wallet": {
+        "available": 33,
+        "lifetime": 33,
+        "learningStars": 30,
+        "effortStars": 3,
+        "spent": 0
+      },
+      "siblingAvailable": 0,
+      "siblingGames": [],
+      "flowers": {
+        "who": "se",
+        "flowers": 1,
+        "familyFlowers": 1
+      },
+      "games": [
+        {
+          "id": "snack-count",
+          "finishedRounds": 1,
+          "records": [
+            "snack-count-02",
+            "snack-count-04",
+            "snack-count-06"
+          ],
+          "round": {
+            "id": "round-d2341e19-5fce-4504-8338-2a6eee24efc4",
+            "ids": [
+              "snack-count-02",
+              "snack-count-04",
+              "snack-count-06"
+            ],
+            "index": 3,
+            "answers": [
+              {
+                "id": "snack-count-02",
+                "choice": 1,
+                "response": 1,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "snack-count-04",
+                "choice": 2,
+                "response": 2,
+                "correct": true,
+                "earned": 10
+              },
+              {
+                "id": "snack-count-06",
+                "choice": 0,
+                "response": 0,
+                "correct": true,
+                "earned": 10
+              }
+            ],
+            "finished": true,
+            "updatedAt": 1791609991471,
+            "shownAt": 1791609991471,
+            "hinted": false
+          },
+          "completedRounds": [
+            {
+              "id": "round-d2341e19-5fce-4504-8338-2a6eee24efc4",
+              "at": 1791609991471,
+              "questionIds": [
+                "snack-count-02",
+                "snack-count-04",
+                "snack-count-06"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pointerObservations": [
+    {
+      "profile": "tae",
+      "input": "headless mouse click on actual Unity canvas",
+      "floor": {
+        "x": 793.6,
+        "y": 480.51
+      },
+      "afterOneSecond": "webgl-tae-floor-pointer-after-1s.png",
+      "movementAssertion": "manual visual observation only; no transform measurement",
+      "npc": {
+        "x": 553.0238175675676,
+        "y": 375.28513513513514,
+        "opened": true,
+        "gameId": "snack-count",
+        "error": ""
+      }
+    },
+    {
+      "profile": "se",
+      "input": "headless mouse click on actual Unity canvas",
+      "floor": {
+        "x": 241.8,
+        "y": 505.59
+      },
+      "afterOneSecond": "webgl-se-floor-pointer-after-1s.png",
+      "movementAssertion": "manual visual observation only; no transform measurement",
+      "npc": {
+        "x": 132.4375,
+        "y": 412.22222222222223,
+        "opened": true,
+        "gameId": "snack-count",
+        "error": ""
+      }
+    }
+  ],
+  "pass": true
+}

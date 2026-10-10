@@ -1,0 +1,19 @@
+{
+  "createdAt": "2026-10-10T05:32:19.709Z",
+  "scope": "Node model only: deferred actual game fetch, tae→se profile switch, rejected START, both profile progress and persisted progress key unchanged",
+  "pass": true,
+  "jobId": "764cb4d4-657a-4593-b498-748fbe5829f9",
+  "state": "succeeded",
+  "exitCode": 0,
+  "nextCursor": 3,
+  "hasMoreOutput": false,
+  "sourceHashes": {
+    "village/village-bridge.js": "5e3847e1e0ad5eaca547c28e9385d23092c8ef23bc37fff8542f4b55df61c77f",
+    "scripts/check-village-quality.mjs": "a212d2414942ad433ce6a2730dc383b1529d39041d3fc5430359358763c3649c"
+  },
+  "priorBrowserHostSHA": "f452c21b5b025bc088559b8414d0e0996a6eeeed591ff037e56eac6a37dec2da",
+  "notes": [
+    "Existing DOM/WebGL/console evidence retained without changing execution-time hashes.",
+    "No Unity rebuild or browser rerun for this post-WebGL host guard."
+  ]
+}

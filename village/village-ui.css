@@ -44,9 +44,22 @@
 .vh-secondary { background:#eaf2ff!important;color:#3a5687!important;border-radius:15px!important;font-size:14px!important;padding:9px 14px!important;min-height:43px!important;}
 .vh-feedback {font-size:21px;font-weight:950;line-height:1.4;color:#44336a;margin:2px 0 14px}
 .vh-explanation {font-size:16px;line-height:1.8;white-space:pre-wrap;color:#424b60;background:#f5f1e7;border-radius:14px;padding:13px}
-.vh-dialog-footer{border-top:1px solid #ebdff0;padding:11px 18px;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fffdfa;flex:none}
+.vh-dialog-footer{flex-wrap:wrap;border-top:1px solid #ebdff0;padding:11px 18px;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fffdfa;flex:none}
 .vh-small {margin:0;color:#62677e;font-size:12px;line-height:1.5}
 #village-dialog-wrap[aria-busy="true"] .vh-option,#village-dialog-wrap[aria-busy="true"] .vh-wide {opacity:.65;}
+#village-dialog-wrap[aria-busy="true"] .vh-option,#village-dialog-wrap[aria-busy="true"] .vh-stepper,#village-dialog-wrap[aria-busy="true"] .vh-wide,#village-dialog-wrap[aria-busy="true"] select {pointer-events:none;}
+.vh-dialog-footer .vh-small{flex-basis:100%;}
+.vh-hint-text{border:2px solid #dec7a0;background:#fff6dd;}
+.vh-visual{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;background:#fff5df;border:2px solid #f0dfbe;border-radius:18px;padding:12px;margin:12px 0;}
+.vh-visual-group{flex:1 1 110px;text-align:center;background:#fffdf9;border-radius:12px;padding:9px;}
+.vh-visual-label{display:block;font-size:14px;font-weight:750;margin-bottom:7px;}
+.vh-counted{font-size:clamp(22px,6vw,30px);line-height:1.6;word-break:keep-all;}
+.vh-operator,.vh-visual-word{font-size:23px;font-weight:900;}
+
+.vh-dialog-title{background-image:url('./assets/ui_mission_panel.png');background-position:center;background-size:100% 100%;}
+.vh-stars{background-image:url('./assets/ui_star_pill.png');background-size:100% 100%;}
+.vh-dialog-title,.vh-stars{background-blend-mode:soft-light;}
+
 @media(max-width:520px){#village-info{top:7px;left:7px;right:7px;padding:8px 11px;max-width:none} .vh-avatar{width:46px;height:46px} .vh-avatar::after{left:11px;top:7px} .vh-help{top:81px;left:8px;right:8px} #village-controls{gap:6px;left:5px;right:5px}.vh-action{min-height:64px;padding:6px 2px!important;font-size:12px!important}.vh-action>span:first-child{font-size:22px}.vh-dialog-body{padding:12px 14px 15px}.vh-dialog-footer{padding:9px 13px}.vh-dialog-title{padding:13px 14px}}
 @media(max-height:540px) and (orientation:landscape){#village-info{top:5px;left:8px;width:240px;padding:5px 10px} .vh-avatar{width:36px;height:36px}.vh-help{top:67px;width:230px} #village-controls{left:auto;right:7px;bottom:7px;width:290px;gap:5px}.vh-action{min-height:55px} .vh-dialog{max-height:calc(100% - 10px)} .vh-dialog-body{padding:8px 12px} .vh-dialog-title{padding:8px 12px}.vh-dialog-footer{padding:7px 12px}}
 @media(prefers-reduced-motion: reduce){.vh-option:active{transform:none;}*{scroll-behavior:auto!important;}}
@@ -55,3 +68,6 @@
 .vh-avatar {background-image:url('./assets/fairy-companions.webp');background-repeat:no-repeat;background-size:200% auto;background-position:left 30%;}
 #village-ui[data-who="se"] .vh-avatar {background-image:url('./assets/fairy-companions.webp');background-size:200% auto;background-position:right 30%;}
 .vh-avatar::after,#village-ui[data-who="se"] .vh-avatar::after {content:"";}
+
+.vh-reward-art{text-align:center;margin:0 auto 8px;height:88px}.vh-reward-art img{height:88px;width:88px;object-fit:contain;filter:drop-shadow(0 5px 6px #b9a5cc44)}
+@media(max-height:500px){.vh-reward-art,.vh-reward-art img{height:54px}.vh-reward-art img{width:54px}}

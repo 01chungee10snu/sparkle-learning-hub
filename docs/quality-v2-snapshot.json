@@ -1,0 +1,421 @@
+{
+  "createdAt": "2026-10-10T05:34:12.704548+00:00",
+  "sourceRoot": "/Users/01chungee10/Github/sparkle-learning-hub",
+  "snapshotRoot": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2",
+  "sourceBranch": "feat/magic-village-25d-art-kit",
+  "snapshotBranch": "feat/magic-village-quality-v2",
+  "originalWorkspaceUnchanged": true,
+  "files": [
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/CURRICULUM.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/CURRICULUM.md",
+      "relative": "CURRICULUM.md",
+      "sha256": "f431611f6c98f880f91410950cbe8638260209bed9ae56941d8717d5fe55cb32",
+      "bytes": 11066
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/README.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/README.md",
+      "relative": "README.md",
+      "sha256": "dceabb1e27942c26e3b24d637e78025c9edf434b91802e452b11fef07256fbcf",
+      "bytes": 18636
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/app.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/app.js",
+      "relative": "app.js",
+      "sha256": "ff4d6231d52c160523b04a2618f4f882d1eda7bc2c7b4a5e9444e5725ee15607",
+      "bytes": 58312
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/docs/IRT_CHANGELOG_20261010.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/IRT_CHANGELOG_20261010.md",
+      "relative": "docs/IRT_CHANGELOG_20261010.md",
+      "sha256": "228f7cd173ea2b8595a59b7214db9428aeb0ced1a7dadf7cfd2a5823236ba204",
+      "bytes": 2322
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/docs/IRT_ITEM_INVENTORY.csv",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/IRT_ITEM_INVENTORY.csv",
+      "relative": "docs/IRT_ITEM_INVENTORY.csv",
+      "sha256": "8e7fb1ae7ec80f696029a3ed069aa601e2900f88b5f96a31d3c93906f4fd9ba7",
+      "bytes": 587802
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/docs/IRT_QUESTION_AUDIT_20261010.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/IRT_QUESTION_AUDIT_20261010.md",
+      "relative": "docs/IRT_QUESTION_AUDIT_20261010.md",
+      "sha256": "6af61032663eecb17ff96d014295dfc2b81fcb402471123b4565342a24cfddad",
+      "bytes": 3502
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/docs/REWARD_INTEGRITY_20261010.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/REWARD_INTEGRITY_20261010.md",
+      "relative": "docs/REWARD_INTEGRITY_20261010.md",
+      "sha256": "c02dcc7a66578799f85c865cc98f5d967a305b86d61718458f3c0f1f4d3e84d0",
+      "bytes": 7318
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/docs/VILLAGE_QUALITY_QA_20261010.md",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/VILLAGE_QUALITY_QA_20261010.md",
+      "relative": "docs/VILLAGE_QUALITY_QA_20261010.md",
+      "sha256": "ee73f21b459c6a28624a6678f53aad8fbd7527003b9ac64852bf54c2ba6c7ecf",
+      "bytes": 20742
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/experience.css",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/experience.css",
+      "relative": "experience.css",
+      "sha256": "452cb1e678da6fc803423383a3bfde92813a201751f821a9575ac5f00b9cb691",
+      "bytes": 41193
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/games/irt-bank.json",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/games/irt-bank.json",
+      "relative": "games/irt-bank.json",
+      "sha256": "82b1096d23e973d94c0ebd2d32737f0103f4ca59cca7f166dbc74eeb5a6f91f8",
+      "bytes": 969456
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/index.html",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/index.html",
+      "relative": "index.html",
+      "sha256": "b4a48fe993e49617b1fcc1386864002608027fba90c86a536b0039f1583889e7",
+      "bytes": 1864
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/package.json",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/package.json",
+      "relative": "package.json",
+      "sha256": "7ee8d4e2af958db6c4de09ebaecdb61ca80db70377ba0a4ab6e0592796003ccd",
+      "bytes": 945
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/platform/growth.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/platform/growth.js",
+      "relative": "platform/growth.js",
+      "sha256": "ab2f76c1c45a76d9403cd90ce5d028f271d6037d83a4e377c5a7f70622260ac4",
+      "bytes": 4718
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/platform/irt.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/platform/irt.js",
+      "relative": "platform/irt.js",
+      "sha256": "5e9866910364b38fd314be17477493463a5e725a659ea233b691fd297316ee38",
+      "bytes": 7803
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/platform/progress.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/platform/progress.js",
+      "relative": "platform/progress.js",
+      "sha256": "cfba29c15e3e000cbfb252c45f3ca4bf15be8713ca73dc6ff12ee50304b2be6a",
+      "bytes": 16018
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/platform/rewards.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/platform/rewards.js",
+      "relative": "platform/rewards.js",
+      "sha256": "fe49083c4212805fe95938ab6dbcb9b22a4f5c923978cd7dde638fdef50487b8",
+      "bytes": 21417
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/build-irt-bank.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/build-irt-bank.mjs",
+      "relative": "scripts/build-irt-bank.mjs",
+      "sha256": "2adbfec06b36f665ed6ffad4af77ddbf70a549820da9eeb0bab669781ed51b86",
+      "bytes": 8523
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/check-irt.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/check-irt.mjs",
+      "relative": "scripts/check-irt.mjs",
+      "sha256": "a7da712f6ea8f430798d2c46236397a33d6c79904a60ddf615a368cf2e247475",
+      "bytes": 4051
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/check-reward-integrity.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/check-reward-integrity.mjs",
+      "relative": "scripts/check-reward-integrity.mjs",
+      "sha256": "0524408281bd5f09cfac279dcbd5ee88de9a57bc3b8bcf99263c714fb6e2b5d0",
+      "bytes": 9018
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/check-rewards.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/check-rewards.mjs",
+      "relative": "scripts/check-rewards.mjs",
+      "sha256": "b35c30349f66d2c613498f947ba4c76e8736f12a74c0c9272f261e100f11d0f1",
+      "bytes": 15073
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/check-village-quality.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/check-village-quality.mjs",
+      "relative": "scripts/check-village-quality.mjs",
+      "sha256": "a212d2414942ad433ce6a2730dc383b1529d39041d3fc5430359358763c3649c",
+      "bytes": 8619
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/scripts/village-browser-qa.mjs",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/village-browser-qa.mjs",
+      "relative": "scripts/village-browser-qa.mjs",
+      "sha256": "a830aec46628214ea6f4bd4f8e3edad65199678509312db134fa3c56a9440e0d",
+      "bytes": 24570
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.data.unityweb",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb",
+      "relative": "village/Build/WebGL.data.unityweb",
+      "sha256": "a03037268fdcc06bd5cbfdcb1c39dc19e7e30027372e002daaf2373b2e10d1c3",
+      "bytes": 10284550
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.framework.js.unityweb",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb",
+      "relative": "village/Build/WebGL.framework.js.unityweb",
+      "sha256": "7a90566ab9764877e68d06d371017b373fde158d284628f01486ba079d3f7eb2",
+      "bytes": 70680
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.loader.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js",
+      "relative": "village/Build/WebGL.loader.js",
+      "sha256": "59b7e452e45d35dba9e441069f7d058cade758e15f9cfe2a1686d953caef7f24",
+      "bytes": 117894
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.wasm.unityweb",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb",
+      "relative": "village/Build/WebGL.wasm.unityweb",
+      "sha256": "87dadf29ea8ef303186ee00dc6e9aea5fb8c635417decc2b634381edd09eeaac",
+      "bytes": 6001512
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/bloom.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/bloom.png",
+      "relative": "village/assets/bloom.png",
+      "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+      "bytes": 1562752
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/sprout.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/sprout.png",
+      "relative": "village/assets/sprout.png",
+      "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+      "bytes": 947347
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/star_yellow.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_yellow.png",
+      "relative": "village/assets/star_yellow.png",
+      "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+      "bytes": 1151038
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_button.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_button.png",
+      "relative": "village/assets/ui_button.png",
+      "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+      "bytes": 1487956
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_mission_panel.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_mission_panel.png",
+      "relative": "village/assets/ui_mission_panel.png",
+      "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+      "bytes": 1339577
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_star_pill.png",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_star_pill.png",
+      "relative": "village/assets/ui_star_pill.png",
+      "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+      "bytes": 1316094
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/index.html",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html",
+      "relative": "village/index.html",
+      "sha256": "678a54e281bfaca82492ff09320da5958c4fa360726987e51ef6a2ae627a02bb",
+      "bytes": 6741
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-bridge.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-bridge.js",
+      "relative": "village/village-bridge.js",
+      "sha256": "5e3847e1e0ad5eaca547c28e9385d23092c8ef23bc37fff8542f4b55df61c77f",
+      "bytes": 11044
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-state.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-state.js",
+      "relative": "village/village-state.js",
+      "sha256": "f1b8684dbb2ddcbfd9c1b9949cbcdd5cd09ec5804478df53ceaa0d2045ca1b71",
+      "bytes": 4741
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.css",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.css",
+      "relative": "village/village-ui.css",
+      "sha256": "d9187bcfe5622f96914b999f1d39c29937e9f7cc05c1450a1a7ec3b2ee18539c",
+      "bytes": 9032
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.js",
+      "destination": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.js",
+      "relative": "village/village-ui.js",
+      "sha256": "deffb599b1522b5e91a06fa4a177be380bf1deb24839aa23c27843cdd55a7b4f",
+      "bytes": 18212
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-desktop-choice.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 84031,
+      "sha256": "cb20fa6c3660c6d0063fede4b442d945d00cd257eecaa690a1899bee7b78c0f9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-desktop-matching.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 94310,
+      "sha256": "926af4c387ab707dfecb427518e0829eb17de39d0c56fe763d4f99d8e5c512f5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-phone-landscape-choice.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 56129,
+      "sha256": "d9d595ae1134aec6fdaba07f56100456daeaf0700aa42bede9015b1b3b0c8569"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-phone-landscape-matching.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 55460,
+      "sha256": "e30bfa91dc9799f4493ffc6f12ad2a5e0eba1bf11c25fcdcb6b212e9b9c30108"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-phone-portrait-choice.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 61991,
+      "sha256": "023910e2030ea30fa556504cc331e22588733a04a67c585f50a9e243b60c8e11"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-phone-portrait-matching.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 69989,
+      "sha256": "5613cfd7838e5f1e922cd7f31cd5651dd0d8b2a44bcb339673903e76afbf4f88"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-tablet-choice.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 79080,
+      "sha256": "0cf01d9b1748ffde64e2814bed6115206186ed89b0940e8e6aa317719c0ecf52"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-dom-tablet-matching.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 90033,
+      "sha256": "b764a0f8bd022fd499a35f0e4491f48928e00ef06cf7460e81b94edecd5a586d"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-completed-round.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 87101,
+      "sha256": "b67a32b88c68c81abb7efd01483b877866279281b2016ea47fb612f2cef2ca41"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-family-plaza.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 217479,
+      "sha256": "cb521a71d7864063b4b00e6e10e9dbb275516419d12899e4942157cb91caa1bf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-floor-pointer-after-1s.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 171335,
+      "sha256": "08fd10d34a51f7a6a34f697645ca85ae4da88c7b9fc35445b1434ccb06dfdab0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-npc-pointer-question.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 75965,
+      "sha256": "0875d767e5ef003a40fe96d7cbb9eb39e1afc416d10841822204ca30320af818"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-reloaded-world.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 176638,
+      "sha256": "fef4ea13dc7d8f5e9d8c30a034deff132ca5e4c65e4dbf2f46e7dc3b6c73e2fb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-se-world.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 176395,
+      "sha256": "56ab5eff07bae421f66eeb34e6b385f8277a22b298a03471e93c1bd408418809"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-completed-round.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 247002,
+      "sha256": "6e597783e6f092559586d007a5396be272d65f047d808d2972bc4eccfcc01add"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-family-plaza.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 415524,
+      "sha256": "4a3ade9c3b0fff57076b583d0d3e6948d6da46bbac9044b7b0d11104d59788de"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-floor-pointer-after-1s.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 349780,
+      "sha256": "edf7686bc9df5d0cd1c01a365e0c48030e6e45047c32b95fd1b772000e0a438b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-npc-pointer-question.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 186032,
+      "sha256": "ccde6847b7d59760d78581adbe07cd00f6290d51efcc76c25fd2512d6dcb4d15"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-reloaded-world.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 352698,
+      "sha256": "d4c4f51a7f56efd964dc373bfe9c7ca618171411a46d5a93d63cbff493daf194"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/preview/quality-v2-tae-world.png",
+      "role": "actual-browser-qa-output",
+      "bytes": 352210,
+      "sha256": "559b9f8ad9c1d8d8da88b6045a879681f1822197bd382d2b35ef022bbd65f6a2"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/quality-v2-checks.json",
+      "role": "verification-output",
+      "bytes": 4584,
+      "sha256": "c04a0015cd0a8470dff48377c184f70861128962fe5345e983e3cf50ff3bfa20"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/quality-v2-console.json",
+      "role": "verification-output",
+      "bytes": 8819,
+      "sha256": "a58904713cd36798411003730708bca5b451aeab35be21e94f53c960feea197f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/quality-v2-dom.json",
+      "role": "verification-output",
+      "bytes": 8061,
+      "sha256": "5a6cac3c9da49b55b109fff18647a8aac8f3f5cca925918e53e498346fb3d6f5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/quality-v2-start-race.json",
+      "role": "verification-output",
+      "bytes": 867,
+      "sha256": "2aa137f039c13a1aa6761d6f1f1de5f569c12e7f6cab4be03c9a70c5ab7acd9c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/quality-v2-webgl.json",
+      "role": "verification-output",
+      "bytes": 11317,
+      "sha256": "da7978a8f2eb26e3a50a23debc1616e6740efe9f425c75c9c1b4fc333cf70a28"
+    }
+  ]
+}

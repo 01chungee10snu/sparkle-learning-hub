@@ -14,16 +14,33 @@ export function createVillageHost(emit) {
   let catalog;
   let currentGame;
   let currentGameId = '';
+  let currentWho = '';
+  let preparation = null;
+  const receipts = new Map();
   const cache = new Map();
 
   async function prepare() {
     if (catalog) return catalog;
+    if (preparation) return preparation;
+    preparation = initialize().finally(() => { preparation = null; });
+    return preparation;
+  }
+
+  async function initialize() {
     const url = new URL('../games/catalog.json', import.meta.url);
     const result = await fetch(url);
     if (!result.ok) throw new Error('학습 게임 목록을 불러오지 못했어요.');
-    catalog = validateCatalog(await result.json());
-    Progress.configureCatalog(catalog);
-    Rewards.syncRewards(catalog, Progress.learner());
+    const entries = validateCatalog(await result.json());
+    Progress.configureCatalog(entries);
+    try {
+      const bankResponse = await fetch(new URL('../games/irt-bank.json', import.meta.url));
+      if (!bankResponse.ok) throw new Error('문항 색인을 불러오지 못했어요.');
+      Progress.configureIrtBank(await bankResponse.json());
+    } catch (error) {
+      console.warn('마법마을 기본 출제 방식 사용:', error);
+    }
+    Rewards.syncRewards(entries, Progress.learner());
+    catalog = entries;
     return catalog;
   }
 
@@ -43,6 +60,17 @@ export function createVillageHost(emit) {
 
   function decorate(text, who) {
     return Settings.personalize(String(text ?? ''), who, CHILDREN[who]);
+  }
+
+  function hintFor(item, game) {
+    if(typeof item.hint==='string'&&item.hint.trim())return item.hint;
+    if(game.id==='measure-lab')return '무엇을 재는지와 숫자 뒤의 단위를 먼저 살펴봐요. 단위가 다르면 같은 단위로 바꾼 뒤 비교해요.';
+    if(game.id==='kind-dialogue')return '이야기의 친구가 원하는 일을 먼저 생각해요. 각 말이 어떤 뜻을 전하는지 하나씩 비교해요.';
+    const mode=item.interaction?.type??'choice';
+    if(mode==='build')return '이야기에서 필요한 개수를 찾아요. 하나씩 담거나 덜면서 손가락으로 세어 봐요.';
+    if(item.visual?.kind==='groups')return '그림의 물건을 하나씩 짚어 세어요. 물어본 것이 전체 개수인지, 더 많은 쪽인지도 확인해요.';
+    if(item.visual?.kind==='counters')return '처음에 몇 개였는지 찾아요. 더하는지 덜어 내는지 살펴보고 한 개씩 세어 봐요.';
+    return '이야기에서 물어본 것을 찾아요. 그림과 보기를 하나씩 살펴보고 내 생각을 말해 봐요.';
   }
 
   function publicQuestion(game, round, who) {
@@ -65,6 +93,9 @@ export function createVillageHost(emit) {
       unit: item.interaction?.unit ?? '',
       target: mode === 'build' ? item.interaction.target : 0,
       max: mode === 'build' ? item.interaction.max : 0,
+      hintAvailable: Boolean(hintFor(item, game)),
+      visual: item.visual ?? null,
+      hinted: round.hinted === true,
       index: round.index + 1,
       total: round.ids.length
     };
@@ -95,16 +126,39 @@ export function createVillageHost(emit) {
     const who = Progress.learner();
 
     if (action === 'INIT') return snapshot(action, requestId);
+    if (action === 'CANCEL') {
+      currentGame = null; currentGameId = ''; currentWho = '';
+      return snapshot(action, requestId);
+    }
     if (action === 'START') {
       const game = await loadGame(gameId);
+      if (Progress.learner() !== who)
+        throw new Error('아이가 바뀌었어요. 새로 미션을 열어 주세요.');
       const round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize});
       currentGame = game;
       currentGameId = gameId;
-      return snapshot(action, requestId, {question: publicQuestion(game, round, who)});
+      currentWho = who;
+      const answered = round.answers[round.index];
+      const item = game.questions.find(q=>q.id===round.ids[round.index]);
+      return snapshot(action, requestId, {
+        question: publicQuestion(game, round, who),
+        answered: Boolean(answered), correct: answered?.correct ?? false, earned: 0,
+        explanation: answered ? (item.explanation||[]).map(t=>decorate(t,who)).join('\n') : ''
+      });
+    }
+    if (currentWho && currentWho !== who) {
+      currentGame = null; currentGameId = ''; currentWho = '';
+      throw new Error('아이가 바뀌었어요. 새로 미션을 열어 주세요.');
     }
     if (!currentGame || currentGameId !== gameId)
       throw new Error('현재 미션이 일치하지 않아요.');
 
+    if (action === 'HINT') {
+      const round = Progress.gameProgress(gameId, who).round;
+      const question = currentGame.questions.find(q => q.id === round?.ids[round.index]);
+      if (!question || !Progress.markHint(gameId)) throw new Error('지금은 힌트를 볼 수 없어요.');
+      return snapshot(action, requestId, {hint: decorate(hintFor(question, currentGame), who)});
+    }
     if (action === 'SUBMIT') {
       if (typeof response !== 'string' || response.length > 1024)
         throw new Error('답안 형식을 확인해 주세요.');
@@ -139,7 +193,7 @@ export function createVillageHost(emit) {
       const updated = addVillageCompletion(loadVillage(), {who, gameId, roundId});
       if (updated.added && !saveVillage(updated.state))
         throw new Error('마을 기록을 저장할 수 없어요. 브라우저 저장 공간을 확인해 주세요.');
-      return snapshot(action, requestId, {finished: true, roundId});
+      return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added});
     }
     throw new Error('지원하지 않는 Unity 요청이에요.');
   }
@@ -151,7 +205,19 @@ export function createVillageHost(emit) {
       let command;
       try {
         command = JSON.parse(raw);
-        emit(await execute(command));
+        const key = command?.requestId;
+        if (typeof key !== 'string' || !/^[a-zA-Z0-9_-]{1,100}$/.test(key)) throw new Error('요청 식별자를 확인해 주세요.');
+        const old = receipts.get(key);
+        if (old) {
+          if (old.raw !== raw) throw new Error('같은 요청 번호에 다른 내용을 보낼 수 없어요.');
+          if (old.reply.who !== Progress.learner()) throw new Error('아이가 바뀌었어요. 새로 미션을 열어 주세요.');
+          emit(old.reply);
+          return;
+        }
+        const reply = await execute(command);
+        receipts.set(key, {raw, reply});
+        if (receipts.size > 128) receipts.delete(receipts.keys().next().value);
+        emit(reply);
       } catch (error) {
         emit({
           action: command?.action || 'ERROR',

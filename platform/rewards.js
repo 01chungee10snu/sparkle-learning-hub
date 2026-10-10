@@ -10,7 +10,7 @@ const LEARNERS=['tae','se'],KINDS=['hint','retry','session','reflection'];
 const MAX_ENTRIES=50000,MAX_RECEIPTS=3000;
 const profile=()=>({events:{},purchases:{},equipped:null,outfit:{}});
 const blank=()=>({version:1,profiles:{tae:profile(),se:profile()}});
-let memory=blank(),dirty=false,storageOK=true,configuredCatalog=null;
+let memory=blank(),dirty=false,storageOK=true,writeFailed=false,configuredCatalog=null;
 const copy=value=>JSON.parse(JSON.stringify(value));
 const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&(Object.getPrototypeOf(value)===Object.prototype||Object.getPrototypeOf(value)===null);
 const validId=value=>typeof value==='string'&&/^[a-z][a-z0-9-]{0,159}$/.test(value);
@@ -40,7 +40,7 @@ function validate(raw){
    if(item.kind==='cosmetic'){if(id!==`cosmetic-${item.id}`||purchase.completedAt!==undefined)fail();}
    else{
     const match=id.match(new RegExp(`^request-${item.id}-([1-9][0-9]{0,3})$`));if(!match)fail();
-    const list=familyOrdinals.get(item.id)||[];list.push({ordinal:Number(match[1]),pending:purchase.completedAt===undefined});familyOrdinals.set(item.id,list);
+    const list=familyOrdinals.get(item.id)||[];list.push({ordinal:Number(match[1]),pending:purchase.completedAt===undefined,at:purchase.at,completedAt:purchase.completedAt});familyOrdinals.set(item.id,list);
    }
    dest.purchases[id]={id,rewardId:item.id,cost:item.cost,at:purchase.at,...(purchase.completedAt!==undefined?{completedAt:purchase.completedAt}:{})};
   }
@@ -48,7 +48,7 @@ function validate(raw){
   // preceding activity was explicitly marked complete by a parent.
   for(const list of familyOrdinals.values()){
    list.sort((a,b)=>a.ordinal-b.ordinal);
-   if(list.some((p,i)=>p.ordinal!==i+1||(p.pending&&i!==list.length-1)))fail();
+   if(list.some((p,i)=>p.ordinal!==i+1||(p.pending&&i!==list.length-1)||(i>0&&p.at<list[i-1].completedAt)))fail();
   }
   if(src.equipped!==null){
    keys(src.equipped,['id','at']);const item=BY_ID.get(src.equipped.id);
@@ -68,7 +68,7 @@ function validate(raw){
 }
 function load(){
  if(dirty)return memory;
- try{const value=globalThis.localStorage.getItem(REWARDS_KEY);if(value!==null)memory=validate(JSON.parse(value));}
+ try{const value=globalThis.localStorage.getItem(REWARDS_KEY);memory=value===null?blank():validate(JSON.parse(value));storageOK=!writeFailed;}
  catch{storageOK=false;}
  return memory;
 }
@@ -77,7 +77,7 @@ function mergeStates(current,incoming){
  for(const who of LEARNERS){
   const dest=merged.profiles[who],src=incoming.profiles[who];
   for(const [id,event] of Object.entries(src.events)){
-   const old=dest.events[id];
+   const old=Object.hasOwn(dest.events,id)?dest.events[id]:undefined;
    if(old&&(old.kind!==event.kind||old.gameId!==event.gameId||old.questionId!==event.questionId||old.roundId!==event.roundId))throw new Error('같은 노력 기록의 내용이 달라요.');
    if(!old||event.at<old.at)dest.events[id]=copy(event);
   }
@@ -95,15 +95,32 @@ function mergeStates(current,incoming){
  }
  return validate(merged);
 }
-function save(state){
+function assertFunding(state){
+ if(!configuredCatalog)throw new Error('놀이 목록을 먼저 불러 주세요.');
+ for(const who of LEARNERS){
+  const p=state.profiles[who],spent=Object.values(p.purchases).reduce((sum,r)=>sum+r.cost,0),earned=Progress.summary(configuredCatalog,who).stars+effortTotal(p);
+  if(spent>earned)throw new Error('이 보상에 연결된 학습 기록을 먼저 가져와 주세요.');
+ }
+}
+function save(state,{spending=false}={}){
+ // Purchases must commit against the latest durable balance. If storage is
+ // unavailable, keep the old wallet and let learning continue in memory.
+ if(spending){
+  let persisted,candidate;
+  try{persisted=globalThis.localStorage.getItem(REWARDS_KEY);}catch{storageOK=false;return {ok:false,reason:'storage-unavailable'};}
+  try{candidate=persisted===null?validate(state):mergeStates(validate(JSON.parse(persisted)),state);assertFunding(candidate);}
+  catch{return {ok:false,reason:'balance-changed'};}
+  try{globalThis.localStorage.setItem(REWARDS_KEY,JSON.stringify(candidate));}catch{writeFailed=true;storageOK=false;return {ok:false,reason:'storage-unavailable'};}
+  memory=candidate;dirty=false;writeFailed=false;storageOK=true;return {ok:true};
+ }
  memory=state;dirty=true;
  try{
   // Recovering from a blocked first read must preserve the older on-device
   // spending ledger, even when the new effort initially existed only in memory.
   const persisted=globalThis.localStorage.getItem(REWARDS_KEY);
   if(persisted!==null)memory=mergeStates(validate(JSON.parse(persisted)),memory);
-  globalThis.localStorage.setItem(REWARDS_KEY,JSON.stringify(memory));dirty=false;storageOK=true;
- }catch{storageOK=false;}
+  globalThis.localStorage.setItem(REWARDS_KEY,JSON.stringify(memory));dirty=false;writeFailed=false;storageOK=true;
+ }catch{writeFailed=true;storageOK=false;}
 }
 function configure(catalog){if(!Array.isArray(catalog))throw new Error('놀이 목록을 확인해 주세요.');configuredCatalog=catalog;return catalog;}
 const quizEntry=(catalog,id)=>catalog.find(game=>game.id===id&&game.status==='published'&&game.kind==='quiz');
@@ -120,8 +137,9 @@ function effortTotal(p){
  }
  return total;
 }
-function evidence(catalog,who){
- const results=Progress.summary(catalog,who),subjects=new Set(),correctDates=new Set(),events=Object.values(load().profiles[who].events);let completed=0,retry=false;
+function evidence(catalog,who,p){
+ const results=Progress.summary(catalog,who),subjects=new Set(),correctDates=new Set(),retryTimes=new Map();let completed=0,retry=false;
+ for(const event of Object.values(p.events))if(event.kind==='retry'){const key=`${event.gameId}/${event.questionId}`;retryTimes.set(key,Math.max(retryTimes.get(key)||0,event.at));}
  for(const entry of catalog.filter(g=>g.status==='published')){
   const game=entry.progressAdapter==='unit-garden-v1'?Progress.legacyProgress(who):Progress.gameProgress(entry.id,who);
   completed+=game.finishedRounds||0;
@@ -130,7 +148,8 @@ function evidence(catalog,who){
    // The app emits retry only after grading a guided re-practice as correct.
    // It remains separate from the original independent-answer/growth evidence.
    const firstAttempt=Math.min(...(record.attempts||[]).map(attempt=>attempt.at));
-   if(entry.kind==='quiz'&&entry.questionIds?.includes(questionId)&&events.some(event=>event.kind==='retry'&&event.gameId===entry.id&&event.questionId===questionId&&(!Number.isFinite(firstAttempt)||event.at>=firstAttempt)))retry=true;
+   const retryAt=retryTimes.get(`${entry.id}/${questionId}`);
+   if(entry.kind==='quiz'&&entry.questionIds?.includes(questionId)&&retryAt!==undefined&&(!Number.isFinite(firstAttempt)||retryAt>=firstAttempt))retry=true;
    let wrong=false;
    for(const attempt of [...(record.attempts||[])].sort((a,b)=>a.at-b.at)){
     if(!attempt.correct)wrong=true;
@@ -140,21 +159,27 @@ function evidence(catalog,who){
  }
  return {results,completed,subjects:subjects.size,retry,correctDays:correctDates.size};
 }
+// Include the game in the session identity: imported rounds can share an ID.
+function gameToken(id){let a=2166136261,b=2246822507;for(const c of id){a=Math.imul(a^c.charCodeAt(0),16777619);b=Math.imul(b^c.charCodeAt(0),3266489909);}return (a>>>0).toString(16).padStart(8,'0')+(b>>>0).toString(16).padStart(8,'0');}
+function hasQuestionEvidence(game,questionId){return Object.hasOwn(game.records,questionId)||(game.round&&!game.round.finished&&game.round.ids[game.round.index]===questionId);}
 export function syncRewards(catalog,who=Progress.learner()){
- configure(catalog);whoId(who);const state=load(),p=state.profiles[who];let changed=false;
+ configure(catalog);whoId(who);const state=load(),p=state.profiles[who];let changed=false,eventCount=Object.keys(p.events).length;
+ const seenRounds=new Set(Object.values(p.events).filter(e=>['session','reflection'].includes(e.kind)).map(e=>`${e.gameId}/${e.roundId}`));
  for(const entry of catalog.filter(g=>g.status==='published'&&g.kind==='quiz')){
   const game=Progress.gameProgress(entry.id,who);
   for(const round of game.completedRounds||[]){
-   // Long ids are shortened deterministically without exposing learner names.
-   const id=`session-${round.id}`;
-   if(validId(id)&&!p.events[id]&&Object.keys(p.events).length<MAX_ENTRIES){p.events[id]={id,kind:'session',gameId:entry.id,roundId:round.id,at:round.at};changed=true;}
+   // Preserve old session IDs without rewarding them again after migration.
+   const logicalId=`${entry.id}/${round.id}`;
+   if(seenRounds.has(logicalId))continue;
+   const id=`session-${gameToken(entry.id)}-${round.id}`;
+   if(validId(id)&&!Object.hasOwn(p.events,id)&&eventCount<MAX_ENTRIES){p.events[id]={id,kind:'session',gameId:entry.id,roundId:round.id,at:round.at};seenRounds.add(logicalId);eventCount++;changed=true;}
   }
  }
  if(changed)save(state);
  return wallet(catalog,who);
 }
 export function wallet(catalog,who=Progress.learner()){
- configure(catalog);whoId(who);const p=load().profiles[who],ev=evidence(catalog,who),effortStars=effortTotal(p);
+ configure(catalog);whoId(who);const p=load().profiles[who],ev=evidence(catalog,who,p),effortStars=effortTotal(p);
  const learningStars=ev.results.stars,lifetime=learningStars+effortStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
  const badges=[
   {id:'first-round',title:'첫 모험 완주',emoji:'🌱',description:'놀이 한 판을 끝까지 해냈어요.',unlocked:ev.completed>=1,progress:Math.min(1,ev.completed),target:1},
@@ -181,7 +206,9 @@ export function recordEffort({who=Progress.learner(),eventId,kind,gameId,questio
  let event;
  if(['hint','retry'].includes(kind)){
   if(!entry.questionIds?.includes(questionId))throw new Error('노력한 문제를 확인해 주세요.');
-  if(kind==='retry'&&!Object.hasOwn(Progress.gameProgress(gameId,who).records,questionId))throw new Error('먼저 풀어 본 문제를 다시 연습해 주세요.');
+  const game=Progress.gameProgress(gameId,who);
+  if(!hasQuestionEvidence(game,questionId))throw new Error('지금 풀고 있거나 풀어 본 문제에서 도움을 받아 주세요.');
+  if(kind==='retry'&&!Object.hasOwn(game.records,questionId))throw new Error('먼저 풀어 본 문제를 다시 연습해 주세요.');
   const count=Object.values(p.events).filter(e=>e.gameId===gameId&&e.questionId===questionId).length;
   // Two hint credits cannot erase later successful practice. Keep one capped
   // retry as badge evidence, while effortTotal still awards at most two stars.
@@ -192,7 +219,7 @@ export function recordEffort({who=Progress.learner(),eventId,kind,gameId,questio
   const round=completed.find(r=>r.id===id);
   if(!round)throw new Error('끝까지 마친 놀이에서 느낌을 나눠 주세요.');
   event={id:eventId,kind,gameId,roundId:round.id,at:round.at};
-  if(Object.values(p.events).some(e=>['session','reflection'].includes(e.kind)&&(e.roundId===round.id||day(e.at)===day(round.at))))return {added:false,earned:0,reason:'daily-cap'};
+  if(Object.values(p.events).some(e=>['session','reflection'].includes(e.kind)&&((e.gameId===gameId&&e.roundId===round.id)||day(e.at)===day(round.at))))return {added:false,earned:0,reason:'daily-cap'};
  }
  if(Object.keys(p.events).length>=MAX_ENTRIES)return {added:false,earned:0,reason:'ledger-full'};
  const before=effortTotal(p);p.events[eventId]=event;const earned=effortTotal(p)-before;save(state);
@@ -200,14 +227,16 @@ export function recordEffort({who=Progress.learner(),eventId,kind,gameId,questio
 }
 export function purchaseReward(id,catalog,who=Progress.learner()){
  configure(catalog);whoId(who);const item=BY_ID.get(id);if(!item)throw new Error('별로 고를 선물을 확인해 주세요.');
- syncRewards(catalog,who);const balance=wallet(catalog,who),state=load(),p=state.profiles[who];
+ syncRewards(catalog,who);const balance=wallet(catalog,who),state=copy(load()),p=state.profiles[who];
  const existing=item.kind==='cosmetic'?p.purchases[`cosmetic-${id}`]:Object.values(p.purchases).find(receipt=>receipt.rewardId===id&&receipt.completedAt===undefined);
  if(existing)return {ok:true,duplicate:true,purchase:copy(existing),wallet:balance};
  if(balance.available<item.cost)return {ok:false,reason:'insufficient-stars',wallet:balance};
  if(Object.keys(p.purchases).length>=MAX_RECEIPTS)return {ok:false,reason:'ledger-full',wallet:balance};
  const number=Object.values(p.purchases).filter(receipt=>receipt.rewardId===id).length+1;
  const receipt={id:item.kind==='cosmetic'?`cosmetic-${id}`:`request-${id}-${number}`,rewardId:id,cost:item.cost,at:Date.now()};
- p.purchases[receipt.id]=receipt;if(item.kind==='cosmetic')wear(p,item,receipt.at);save(state);
+ p.purchases[receipt.id]=receipt;if(item.kind==='cosmetic')wear(p,item,receipt.at);
+ const saved=save(state,{spending:true});
+ if(!saved.ok)return {...saved,wallet:wallet(catalog,who)};
  return {ok:true,duplicate:false,purchase:copy(receipt),wallet:wallet(catalog,who)};
 }
 function wear(p,item,at=Date.now()){
@@ -238,18 +267,31 @@ export function completeFamilyReward(requestId,who=Progress.learner()){
 export function exportRewards(){return {format:'sparkle-rewards-backup',version:1,state:copy(load())};}
 export function importRewards(raw){
  keys(raw,['format','version','state']);if(raw.format!=='sparkle-rewards-backup'||raw.version!==1)fail();
+ if(!configuredCatalog)throw new Error('놀이 목록을 먼저 불러 주세요.');
  const incoming=validate(raw.state),current=copy(load());
  if(configuredCatalog)for(const who of LEARNERS)for(const event of Object.values(incoming.profiles[who].events)){
   const entry=quizEntry(configuredCatalog,event.gameId);
   if(!entry||(['hint','retry'].includes(event.kind)&&!entry.questionIds?.includes(event.questionId)))throw new Error('보상에 연결된 놀이와 문제를 확인해 주세요.');
+  const game=Progress.gameProgress(event.gameId,who);
+  if(['hint','retry'].includes(event.kind)&&(!hasQuestionEvidence(game,event.questionId)||(event.kind==='retry'&&!Object.hasOwn(game.records,event.questionId))))throw new Error('노력에 연결된 학습 기록을 먼저 가져와 주세요.');
+  const round=game.completedRounds?.find(r=>r.id===event.roundId);
+  if(['session','reflection'].includes(event.kind)&&round&&event.at!==round.at)throw new Error('완료 회차와 노력 기록의 시간이 달라요.');
  }
  const merged=mergeStates(current,incoming);
  // A standalone reward backup cannot restore the learning stars that funded
  // its purchases. Import the associated learning backup first.
- if(configuredCatalog)for(const who of LEARNERS){
-  const p=merged.profiles[who],spent=Object.values(p.purchases).reduce((sum,r)=>sum+r.cost,0),earned=Progress.summary(configuredCatalog,who).stars+effortTotal(p);
-  if(spent>earned)throw new Error('이 보상에 연결된 학습 기록을 먼저 가져와 주세요.');
+ for(const who of LEARNERS){
+  const roundsByGame=new Map();
+  for(const e of Object.values(merged.profiles[who].events))if(['session','reflection'].includes(e.kind)){
+   const ids=roundsByGame.get(e.gameId)||new Set();ids.add(e.roundId);roundsByGame.set(e.gameId,ids);
+  }
+  // Progress retains only the latest 100 round receipts. Historical backups
+  // may contain older rewards, but never more unique rounds than were played.
+  for(const [gameId,ids] of roundsByGame)if(ids.size>Progress.gameProgress(gameId,who).finishedRounds)throw new Error('완료한 학습 회차보다 노력 기록이 많아요.');
  }
- save(merged);return exportRewards();
+ assertFunding(merged);
+ const saved=save(merged,{spending:true});
+ if(!saved.ok)throw new Error(saved.reason==='storage-unavailable'?'보상 기록을 저장할 수 없어요. 저장 공간을 확인해 주세요.':'보상 기록이 바뀌었어요. 다시 확인해 주세요.');
+ return exportRewards();
 }
 export function rewardStorageAvailable(){load();return storageOK;}
