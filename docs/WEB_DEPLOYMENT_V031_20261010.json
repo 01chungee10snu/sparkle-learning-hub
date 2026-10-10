@@ -1,0 +1,3401 @@
+{
+  "createdAtUTC": "2026-10-10T06:58:57.025322+00:00",
+  "runtimeVersion": "0.3.1",
+  "runtimeCommit": "66c650b9bc8ed96ee6c5afe35f1a4b25ad8d67f3",
+  "publicRoot": "https://01chungee10snu.github.io/sparkle-learning-hub/",
+  "publicVillage": "https://01chungee10snu.github.io/sparkle-learning-hub/village/",
+  "deployment": "GitHub Pages main fast-forward; no force push",
+  "previousMainCommit": "3c829e853b4a094eaad0ef2f27c405df99c12efc",
+  "pagesBuild": {
+    "url": "https://api.github.com/repos/01chungee10snu/sparkle-learning-hub/pages/builds/1273541870",
+    "status": "built",
+    "error": {
+      "message": null
+    },
+    "pusher": {
+      "login": "01chungee10snu",
+      "id": 211262061,
+      "node_id": "U_kgDODJeabQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/211262061?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/01chungee10snu",
+      "html_url": "https://github.com/01chungee10snu",
+      "followers_url": "https://api.github.com/users/01chungee10snu/followers",
+      "following_url": "https://api.github.com/users/01chungee10snu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/01chungee10snu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/01chungee10snu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/01chungee10snu/subscriptions",
+      "organizations_url": "https://api.github.com/users/01chungee10snu/orgs",
+      "repos_url": "https://api.github.com/users/01chungee10snu/repos",
+      "events_url": "https://api.github.com/users/01chungee10snu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/01chungee10snu/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "commit": "66c650b9bc8ed96ee6c5afe35f1a4b25ad8d67f3",
+    "duration": 55547,
+    "created_at": "2026-10-10T06:52:57Z",
+    "updated_at": "2026-10-10T06:53:52Z"
+  },
+  "publicByteVerification": {
+    "createdAtUTC": "2026-10-10T06:54:32.722399+00:00",
+    "commit": "66c650b9bc8ed96ee6c5afe35f1a4b25ad8d67f3",
+    "origin": "https://01chungee10snu.github.io/sparkle-learning-hub/",
+    "checks": [
+      {
+        "relative": "index.html",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/index.html?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1882,
+        "sha256": "d7c38af4ec8951930d19a8fe58ad453bd5b925e2a10fe68cf534935e54ed9265",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/index.html"
+      },
+      {
+        "relative": "app.js",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/app.js?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 60673,
+        "sha256": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/app.js"
+      },
+      {
+        "relative": "experience.css",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/experience.css?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 43767,
+        "sha256": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/experience.css"
+      },
+      {
+        "relative": "village/index.html",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/index.html?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 6741,
+        "sha256": "c9ff11c225843be7360e1c66762015d77fad71adf335b3ae747bdf632cce94dc",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html"
+      },
+      {
+        "relative": "village/village-ui.js",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/village-ui.js?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 19223,
+        "sha256": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.js"
+      },
+      {
+        "relative": "village/village-ui.css",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/village-ui.css?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 9825,
+        "sha256": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.css"
+      },
+      {
+        "relative": "village/Build/WebGL.loader.js",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/Build/WebGL.loader.js?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 117894,
+        "sha256": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js"
+      },
+      {
+        "relative": "village/Build/WebGL.data.unityweb",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/Build/WebGL.data.unityweb?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 10296797,
+        "sha256": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb"
+      },
+      {
+        "relative": "village/Build/WebGL.framework.js.unityweb",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/Build/WebGL.framework.js.unityweb?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 70673,
+        "sha256": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb"
+      },
+      {
+        "relative": "village/Build/WebGL.wasm.unityweb",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/Build/WebGL.wasm.unityweb?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 6000903,
+        "sha256": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb"
+      },
+      {
+        "relative": "village/assets/badge_book.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/badge_book.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 2147136,
+        "sha256": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_book.png"
+      },
+      {
+        "relative": "village/assets/badge_crown.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/badge_crown.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 2355807,
+        "sha256": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_crown.png"
+      },
+      {
+        "relative": "village/assets/badge_leaf.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/badge_leaf.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1901901,
+        "sha256": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_leaf.png"
+      },
+      {
+        "relative": "village/assets/bloom.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/bloom.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1562752,
+        "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/bloom.png"
+      },
+      {
+        "relative": "village/assets/bud.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/bud.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 836237,
+        "sha256": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/bud.png"
+      },
+      {
+        "relative": "village/assets/gift.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/gift.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1940964,
+        "sha256": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/gift.png"
+      },
+      {
+        "relative": "village/assets/heart.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/heart.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1233195,
+        "sha256": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/heart.png"
+      },
+      {
+        "relative": "village/assets/magic_dust.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/magic_dust.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 834689,
+        "sha256": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/magic_dust.png"
+      },
+      {
+        "relative": "village/assets/seed.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/seed.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1317427,
+        "sha256": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/seed.png"
+      },
+      {
+        "relative": "village/assets/sehee_original.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/sehee_original.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1263286,
+        "sha256": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/sehee_original.png"
+      },
+      {
+        "relative": "village/assets/sprout.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/sprout.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 947347,
+        "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/sprout.png"
+      },
+      {
+        "relative": "village/assets/star_blue.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/star_blue.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1179054,
+        "sha256": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_blue.png"
+      },
+      {
+        "relative": "village/assets/star_purple.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/star_purple.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1280536,
+        "sha256": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_purple.png"
+      },
+      {
+        "relative": "village/assets/star_rainbow.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/star_rainbow.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1254130,
+        "sha256": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_rainbow.png"
+      },
+      {
+        "relative": "village/assets/star_yellow.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/star_yellow.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1151038,
+        "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_yellow.png"
+      },
+      {
+        "relative": "village/assets/taehee_original.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/taehee_original.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1274731,
+        "sha256": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/taehee_original.png"
+      },
+      {
+        "relative": "village/assets/ui_button.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/ui_button.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1487956,
+        "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_button.png"
+      },
+      {
+        "relative": "village/assets/ui_mission_panel.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/ui_mission_panel.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1339577,
+        "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_mission_panel.png"
+      },
+      {
+        "relative": "village/assets/ui_star_pill.png",
+        "url": "https://01chungee10snu.github.io/sparkle-learning-hub/village/assets/ui_star_pill.png?deploy=66c650b9bc8e",
+        "status": 200,
+        "bytes": 1316094,
+        "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+        "match": true,
+        "localSource": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_star_pill.png"
+      }
+    ],
+    "pass": true
+  },
+  "actualPublicWebGL": {
+    "createdAt": "2026-10-10T06:57:41.982Z",
+    "mode": "headless-webgl",
+    "origin": "https://01chungee10snu.github.io/sparkle-learning-hub",
+    "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "realDevice": false,
+    "childStorage": "isolated synthetic browser contexts",
+    "sourceHashes": {
+      "app.js": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e",
+      "experience.css": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f",
+      "village/village-ui.js": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46",
+      "village/village-bridge.js": "5e3847e1e0ad5eaca547c28e9385d23092c8ef23bc37fff8542f4b55df61c77f",
+      "village/village-ui.css": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462",
+      "village/index.html": "c9ff11c225843be7360e1c66762015d77fad71adf335b3ae747bdf632cce94dc",
+      "village/village-state.js": "f1b8684dbb2ddcbfd9c1b9949cbcdd5cd09ec5804478df53ceaa0d2045ca1b71",
+      "platform/progress.js": "cfba29c15e3e000cbfb252c45f3ca4bf15be8713ca73dc6ff12ee50304b2be6a",
+      "platform/rewards.js": "fe49083c4212805fe95938ab6dbcb9b22a4f5c923978cd7dde638fdef50487b8",
+      "platform/reward-catalog.js": "7d0fbb85d21433a15efacbe8267c5f36c516184423e78f37d22ec2986204bd21",
+      "platform/irt.js": "5e9866910364b38fd314be17477493463a5e725a659ea233b691fd297316ee38",
+      "games/catalog.json": "90f86693df31e705b2fc773c92e2cecb2329ec795572db09c2934490f8066fc3",
+      "games/irt-bank.json": "82b1096d23e973d94c0ebd2d32737f0103f4ca59cca7f166dbc74eeb5a6f91f8",
+      "games/snack-count/game.json": "e4b7b6d57405df14a028fc1ceaad3d5a22cd6cc2ac1c30e340a45c6757875990",
+      "games/measure-lab/game.json": "dee09f8b494a1e8a43124b9d1b3536849203ff26373b96ca0de7ede96adbb84c",
+      "games/kind-dialogue/game.json": "729611157ce17ff71499d5a9eecbcbe2cb8c3512e40e6961eec5ce141d4065d6",
+      "scripts/village-browser-qa.mjs": "4d7e66fcc82369c2c0aab6e702c1f9fbc2d4437ea0f806b0f875fb1992e0fd23",
+      "village/assets/star_yellow.png": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+      "village/assets/star_blue.png": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+      "village/assets/star_purple.png": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+      "village/assets/star_rainbow.png": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+      "village/assets/seed.png": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+      "village/assets/sprout.png": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+      "village/assets/bud.png": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+      "village/assets/bloom.png": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+      "village/assets/gift.png": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+      "village/assets/heart.png": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+      "village/assets/badge_book.png": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+      "village/assets/badge_leaf.png": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+      "village/assets/badge_crown.png": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+      "village/assets/magic_dust.png": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+      "village/assets/ui_mission_panel.png": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+      "village/assets/ui_star_pill.png": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+      "village/assets/ui_button.png": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+      "village/assets/taehee_original.png": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+      "village/assets/sehee_original.png": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f",
+      "scripts/check-native-art.mjs": "4119e3e8aa7a6dce77f13843142249ede5e4635d74b22a3a80d4aa9b02194aee"
+    },
+    "buildHashes": {
+      "village/Build/WebGL.loader.js": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f",
+      "village/Build/WebGL.data.unityweb": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0",
+      "village/Build/WebGL.framework.js.unityweb": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a",
+      "village/Build/WebGL.wasm.unityweb": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336"
+    },
+    "tests": [
+      {
+        "viewport": "webgl-tae",
+        "name": "actual selected profile and Unity INIT with empty isolated records",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-tae",
+        "name": "real 5-question round submits and completes through Unity bridge",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-tae",
+        "name": "one personal and one family flower with bounded stars and sibling isolation",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-tae",
+        "name": "return village then family plaza and own village retain exact rewards",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-tae",
+        "name": "reload preserves selected profile flowers stars and completed round without replay credit",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-se",
+        "name": "actual selected profile and Unity INIT with empty isolated records",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-se",
+        "name": "real 3-question round submits and completes through Unity bridge",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-se",
+        "name": "one personal and one family flower with bounded stars and sibling isolation",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-se",
+        "name": "return village then family plaza and own village retain exact rewards",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-se",
+        "name": "reload preserves selected profile flowers stars and completed round without replay credit",
+        "pass": true
+      },
+      {
+        "viewport": "webgl-union",
+        "name": "all 46 required runtime prefabs instantiated and no missing prefab errors",
+        "pass": true
+      }
+    ],
+    "pageErrors": [],
+    "screenshots": [
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-world.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-completed-round.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-family-plaza.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-reloaded-world.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-floor-pointer-after-1s.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-npc-pointer-question.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-world.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-completed-round.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-family-plaza.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-reloaded-world.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-floor-pointer-after-1s.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-npc-pointer-question.png"
+    ],
+    "roundEvidence": [
+      {
+        "profile": "tae",
+        "expectedQuestions": 5,
+        "who": "tae",
+        "wallet": {
+          "available": 53,
+          "lifetime": 53,
+          "learningStars": 50,
+          "effortStars": 3,
+          "spent": 0
+        },
+        "siblingAvailable": 0,
+        "siblingGames": [],
+        "flowers": {
+          "who": "tae",
+          "flowers": 1,
+          "familyFlowers": 1
+        },
+        "games": [
+          {
+            "id": "measure-lab",
+            "finishedRounds": 1,
+            "records": [
+              "measure-lab-01",
+              "measure-lab-02",
+              "measure-lab-04",
+              "measure-lab-05",
+              "measure-lab-03"
+            ],
+            "round": {
+              "id": "round-1919a047-378d-4498-9a3d-9ca535a7f7a4",
+              "ids": [
+                "measure-lab-01",
+                "measure-lab-02",
+                "measure-lab-04",
+                "measure-lab-05",
+                "measure-lab-03"
+              ],
+              "index": 5,
+              "answers": [
+                {
+                  "id": "measure-lab-01",
+                  "choice": 1,
+                  "response": 1,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "measure-lab-02",
+                  "choice": 0,
+                  "response": 0,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "measure-lab-04",
+                  "choice": 2,
+                  "response": 2,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "measure-lab-05",
+                  "choice": 0,
+                  "response": 0,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "measure-lab-03",
+                  "response": [
+                    1,
+                    2,
+                    0
+                  ],
+                  "correct": true,
+                  "earned": 10
+                }
+              ],
+              "finished": true,
+              "updatedAt": 1791615422473,
+              "shownAt": 1791615422473,
+              "hinted": false
+            },
+            "completedRounds": [
+              {
+                "id": "round-1919a047-378d-4498-9a3d-9ca535a7f7a4",
+                "at": 1791615422473,
+                "questionIds": [
+                  "measure-lab-01",
+                  "measure-lab-02",
+                  "measure-lab-04",
+                  "measure-lab-05",
+                  "measure-lab-03"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profile": "se",
+        "expectedQuestions": 3,
+        "who": "se",
+        "wallet": {
+          "available": 33,
+          "lifetime": 33,
+          "learningStars": 30,
+          "effortStars": 3,
+          "spent": 0
+        },
+        "siblingAvailable": 0,
+        "siblingGames": [],
+        "flowers": {
+          "who": "se",
+          "flowers": 1,
+          "familyFlowers": 1
+        },
+        "games": [
+          {
+            "id": "snack-count",
+            "finishedRounds": 1,
+            "records": [
+              "snack-count-02",
+              "snack-count-04",
+              "snack-count-06"
+            ],
+            "round": {
+              "id": "round-d867557a-3d0d-40d9-938d-15a4ed8a1c07",
+              "ids": [
+                "snack-count-02",
+                "snack-count-04",
+                "snack-count-06"
+              ],
+              "index": 3,
+              "answers": [
+                {
+                  "id": "snack-count-02",
+                  "choice": 1,
+                  "response": 1,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "snack-count-04",
+                  "choice": 2,
+                  "response": 2,
+                  "correct": true,
+                  "earned": 10
+                },
+                {
+                  "id": "snack-count-06",
+                  "choice": 0,
+                  "response": 0,
+                  "correct": true,
+                  "earned": 10
+                }
+              ],
+              "finished": true,
+              "updatedAt": 1791615445553,
+              "shownAt": 1791615445553,
+              "hinted": false
+            },
+            "completedRounds": [
+              {
+                "id": "round-d867557a-3d0d-40d9-938d-15a4ed8a1c07",
+                "at": 1791615445553,
+                "questionIds": [
+                  "snack-count-02",
+                  "snack-count-04",
+                  "snack-count-06"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pointerObservations": [
+      {
+        "profile": "tae",
+        "input": "headless mouse click on actual Unity canvas",
+        "floor": {
+          "x": 793.6,
+          "y": 480.51
+        },
+        "afterOneSecond": "webgl-tae-floor-pointer-after-1s.png",
+        "movementAssertion": "manual visual observation only; no transform measurement",
+        "npc": {
+          "x": 553.0238175675676,
+          "y": 375.28513513513514,
+          "opened": true,
+          "gameId": "snack-count",
+          "error": ""
+        }
+      },
+      {
+        "profile": "se",
+        "input": "headless mouse click on actual Unity canvas",
+        "floor": {
+          "x": 241.8,
+          "y": 505.59
+        },
+        "afterOneSecond": "webgl-se-floor-pointer-after-1s.png",
+        "movementAssertion": "manual visual observation only; no transform measurement",
+        "npc": {
+          "x": 132.4375,
+          "y": 412.22222222222223,
+          "opened": true,
+          "gameId": "snack-count",
+          "error": ""
+        }
+      }
+    ],
+    "prefabUsage": {
+      "scope": "actual instantiated World 43 + Characters 2 + confirmed Rewards/bloom, across isolated profile contexts and home/plaza",
+      "expectedIds": [
+        "Characters/sehee_original",
+        "Characters/taehee_original",
+        "Rewards/bloom",
+        "World/balloon",
+        "World/banner",
+        "World/bench",
+        "World/bridge_stone",
+        "World/bridge_wood",
+        "World/butterfly",
+        "World/family_gazebo",
+        "World/fence",
+        "World/flowers_blue",
+        "World/flowers_coral",
+        "World/flowers_lilac",
+        "World/flowers_pink",
+        "World/flowers_sun",
+        "World/flowers_white",
+        "World/fountain",
+        "World/gift_chest",
+        "World/grass_tuft",
+        "World/house_cake",
+        "World/house_flower",
+        "World/house_leaf",
+        "World/house_library",
+        "World/house_moon",
+        "World/house_shop",
+        "World/lamp",
+        "World/learning_castle",
+        "World/mailbox",
+        "World/mushroom",
+        "World/npc_bunny",
+        "World/npc_cat",
+        "World/npc_owl",
+        "World/npc_squirrel",
+        "World/picnic_basket",
+        "World/pond",
+        "World/post_office",
+        "World/signpost",
+        "World/stepping_stones",
+        "World/tree_blush",
+        "World/tree_fir",
+        "World/tree_gold",
+        "World/tree_lilac",
+        "World/tree_mint",
+        "World/tree_oak",
+        "World/waterfall"
+      ],
+      "usedIds": [
+        "Characters/sehee_original",
+        "Characters/taehee_original",
+        "Rewards/bloom",
+        "World/balloon",
+        "World/banner",
+        "World/bench",
+        "World/bridge_stone",
+        "World/bridge_wood",
+        "World/butterfly",
+        "World/family_gazebo",
+        "World/fence",
+        "World/flowers_blue",
+        "World/flowers_coral",
+        "World/flowers_lilac",
+        "World/flowers_pink",
+        "World/flowers_sun",
+        "World/flowers_white",
+        "World/fountain",
+        "World/gift_chest",
+        "World/grass_tuft",
+        "World/house_cake",
+        "World/house_flower",
+        "World/house_leaf",
+        "World/house_library",
+        "World/house_moon",
+        "World/house_shop",
+        "World/lamp",
+        "World/learning_castle",
+        "World/mailbox",
+        "World/mushroom",
+        "World/npc_bunny",
+        "World/npc_cat",
+        "World/npc_owl",
+        "World/npc_squirrel",
+        "World/picnic_basket",
+        "World/pond",
+        "World/post_office",
+        "World/signpost",
+        "World/stepping_stones",
+        "World/tree_blush",
+        "World/tree_fir",
+        "World/tree_gold",
+        "World/tree_lilac",
+        "World/tree_mint",
+        "World/tree_oak",
+        "World/waterfall"
+      ],
+      "missingIds": [],
+      "unexpectedIds": [],
+      "events": [
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/family_gazebo",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/family_gazebo\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/learning_castle",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/learning_castle\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_shop",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_shop\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_cake",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_cake\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/fountain",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fountain\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_mint",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_mint\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_gold",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_gold\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bridge_stone",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_stone\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/stepping_stones",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/stepping_stones\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/banner",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/banner\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/grass_tuft",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/grass_tuft\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_owl",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_owl\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_blue",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_blue\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_coral",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_coral\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_sun",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_sun\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-tae",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/sehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/sehee_original\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/family_gazebo",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/family_gazebo\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/learning_castle",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/learning_castle\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_shop",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_shop\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_cake",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_cake\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/fountain",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fountain\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_mint",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_mint\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_gold",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_gold\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bridge_stone",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_stone\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/stepping_stones",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/stepping_stones\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/banner",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/banner\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/grass_tuft",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/grass_tuft\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_owl",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_owl\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_blue",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_blue\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_coral",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_coral\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_sun",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_sun\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/sehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/sehee_original\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_blush",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_blush\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_oak",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_oak\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_flower",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_flower\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/post_office",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/post_office\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_moon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_moon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_bunny",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_bunny\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_library",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_library\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/house_leaf",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/house_leaf\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/pond",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/pond\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/waterfall",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/waterfall\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bridge_wood",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bridge_wood\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/tree_fir",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/tree_fir\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mushroom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mushroom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/picnic_basket",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/picnic_basket\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_cat",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_cat\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/npc_squirrel",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/npc_squirrel\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/mailbox",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/mailbox\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/bench",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/bench\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/fence",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/fence\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/balloon",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/balloon\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/gift_chest",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/gift_chest\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/butterfly",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/butterfly\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/signpost",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/signpost\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/lamp",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/lamp\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_pink",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_pink\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_lilac",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_lilac\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "World/flowers_white",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=World/flowers_white\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/taehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/taehee_original\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Rewards/bloom",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Rewards/bloom\n"
+        },
+        {
+          "viewport": "webgl-se",
+          "id": "Characters/sehee_original",
+          "type": "log",
+          "text": "MAGIC_VILLAGE_PREFAB_USED id=Characters/sehee_original\n"
+        }
+      ]
+    },
+    "unityArtErrors": [],
+    "consoleErrors": [],
+    "pass": true
+  },
+  "actualPublicHubUI": {
+    "timestamp": "2026-10-10T06:56:04.267Z",
+    "scope": "headless Chrome isolated synthetic context; actual root hub UI; no physical-device claim",
+    "origin": "https://01chungee10snu.github.io/sparkle-learning-hub",
+    "checks": [
+      {
+        "name": "served source and 19 native PNGs match the isolated repo byte-for-byte",
+        "passed": true
+      },
+      {
+        "name": "fresh context has zero stars, no purchased gifts, and four locked badges",
+        "passed": true
+      },
+      {
+        "name": "header and fairy portrait use real native images and semantic action buttons",
+        "passed": true
+      },
+      {
+        "name": "locked badge cards show only seed images and keep their locked text",
+        "passed": true
+      },
+      {
+        "name": "all 48 gifts keep their wallet prices, disabled purchase state, and native mapped artwork",
+        "passed": true
+      },
+      {
+        "name": "browsing the full gift and badge collection does not change stars or receipts",
+        "passed": true
+      },
+      {
+        "name": "an unanswered round starts with a seed cue and a real mission panel",
+        "passed": true
+      },
+      {
+        "name": "actual answers and one retry drive the cue and show the same-unit Korean star image",
+        "passed": true
+      },
+      {
+        "name": "only actual earned badges switch to leaf and crown; book and two-day badges remain locked",
+        "passed": true
+      },
+      {
+        "name": "three actual subject rounds unlock the book badge and render all fourteen native reward images",
+        "passed": true
+      },
+      {
+        "name": "native character switch preserves separate wallets and all nineteen images load in real UI",
+        "passed": true
+      },
+      {
+        "name": "root UI completed without page errors or console errors",
+        "passed": true
+      }
+    ],
+    "sourceHashes": {
+      "app.js": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e",
+      "experience.css": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f",
+      "index.html": "d7c38af4ec8951930d19a8fe58ad453bd5b925e2a10fe68cf534935e54ed9265",
+      "village/village-ui.js": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46",
+      "village/village-ui.css": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462",
+      "village/assets/star_yellow.png": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+      "village/assets/star_blue.png": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+      "village/assets/star_purple.png": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+      "village/assets/star_rainbow.png": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+      "village/assets/seed.png": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+      "village/assets/sprout.png": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+      "village/assets/bud.png": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+      "village/assets/bloom.png": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+      "village/assets/gift.png": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+      "village/assets/heart.png": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+      "village/assets/badge_book.png": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+      "village/assets/badge_leaf.png": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+      "village/assets/badge_crown.png": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+      "village/assets/magic_dust.png": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+      "village/assets/ui_mission_panel.png": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+      "village/assets/ui_star_pill.png": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+      "village/assets/ui_button.png": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+      "village/assets/taehee_original.png": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+      "village/assets/sehee_original.png": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f"
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "screenshots": [
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-locked.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-earned.png",
+      "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-three-subjects.png"
+    ],
+    "siblingWallet": {
+      "who": "se",
+      "available": 0,
+      "unlockedBadges": 0
+    },
+    "passed": true,
+    "nativeArtUsage": {
+      "expectedIds": [
+        "star_yellow",
+        "star_blue",
+        "star_purple",
+        "star_rainbow",
+        "seed",
+        "sprout",
+        "bud",
+        "bloom",
+        "gift",
+        "heart",
+        "badge_book",
+        "badge_leaf",
+        "badge_crown",
+        "magic_dust",
+        "ui_mission_panel",
+        "ui_star_pill",
+        "ui_button",
+        "taehee_original",
+        "sehee_original"
+      ],
+      "usedIds": [
+        "badge_book",
+        "badge_crown",
+        "badge_leaf",
+        "bloom",
+        "bud",
+        "gift",
+        "heart",
+        "magic_dust",
+        "seed",
+        "sehee_original",
+        "sprout",
+        "star_blue",
+        "star_purple",
+        "star_rainbow",
+        "star_yellow",
+        "taehee_original",
+        "ui_button",
+        "ui_mission_panel",
+        "ui_star_pill"
+      ],
+      "missingIds": []
+    },
+    "giftIds": [
+      "bg-leaf",
+      "bg-lemon",
+      "bg-lilac",
+      "bg-ocean",
+      "bg-peach",
+      "bg-rainbow",
+      "bg-rose",
+      "bg-sky",
+      "comet",
+      "cooking",
+      "coral-orbit",
+      "drawing",
+      "experiment",
+      "friend-bear",
+      "friend-butterfly",
+      "friend-cat",
+      "friend-fox",
+      "friend-owl",
+      "friend-penguin",
+      "friend-rabbit",
+      "friend-whale",
+      "galaxy-glow",
+      "halo",
+      "mark-cherry",
+      "mark-clover",
+      "mark-flower",
+      "mark-heart",
+      "mark-leaf",
+      "mark-moon",
+      "mark-palette",
+      "mark-ribbon",
+      "mint-gems",
+      "ocean-stars",
+      "paperfold",
+      "picnic",
+      "rainbow-orbit",
+      "story",
+      "sun-spark",
+      "title-curious",
+      "title-hello",
+      "title-maker",
+      "title-number",
+      "title-space",
+      "title-story",
+      "title-thinker",
+      "title-word",
+      "trail-stars",
+      "walk"
+    ],
+    "nativeGiftIds": [
+      "bloom",
+      "gift",
+      "heart",
+      "sprout",
+      "star_blue",
+      "star_purple",
+      "star_rainbow",
+      "star_yellow"
+    ],
+    "finalWallet": {
+      "look": {
+        "light": null,
+        "background": null,
+        "friend": null,
+        "mark": null,
+        "title": null
+      },
+      "who": "tae",
+      "learningStars": 150,
+      "effortStars": 4,
+      "lifetime": 154,
+      "spent": 0,
+      "available": 154,
+      "items": [
+        {
+          "id": "sun-spark",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 10,
+          "title": "햇살 반짝이",
+          "description": "요정 곁에 노란 별 여섯 개가 반짝여요.",
+          "emoji": "☀️",
+          "effect": {
+            "color": 16760633,
+            "count": 6
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mint-gems",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 25,
+          "title": "민트 보석빛",
+          "description": "작은 보석들이 민트빛으로 빙글 돌아요.",
+          "emoji": "💎",
+          "effect": {
+            "color": 3784609,
+            "count": 5,
+            "gemScale": 0.09
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "trail-stars",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 30,
+          "title": "반짝 별 꼬리",
+          "description": "요정 뒤에 작은 별이 따라와요.",
+          "emoji": "✨",
+          "effect": {
+            "count": 9
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "coral-orbit",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 35,
+          "title": "살구빛 궤도",
+          "description": "따뜻한 살구빛 고리가 요정을 감싸요.",
+          "emoji": "🟠",
+          "effect": {
+            "color": 16750196,
+            "count": 7,
+            "ring": true
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "ocean-stars",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 55,
+          "title": "바다 별빛",
+          "description": "푸른 별들이 요정 주변을 천천히 돌아요.",
+          "emoji": "💙",
+          "effect": {
+            "color": 4955362,
+            "count": 8,
+            "speed": 0.3
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "halo",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 60,
+          "title": "빛나는 꽃 고리",
+          "description": "요정 머리 위에 꽃빛이 떠올라요.",
+          "emoji": "🌸",
+          "effect": {
+            "halo": true
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "rainbow-orbit",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 80,
+          "title": "무지개 별빛",
+          "description": "알록달록한 별들이 요정을 감싸요.",
+          "emoji": "🌈",
+          "effect": {
+            "rainbow": true,
+            "count": 9,
+            "ring": true
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "comet",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 100,
+          "title": "혜성 날개",
+          "description": "요정이 혜성빛을 펼쳐요.",
+          "emoji": "☄️",
+          "effect": {
+            "comet": true
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "galaxy-glow",
+          "category": "light",
+          "kind": "cosmetic",
+          "cost": 110,
+          "title": "은하수 반짝임",
+          "description": "보라빛 별과 혜성이 함께 반짝여요.",
+          "emoji": "🌌",
+          "effect": {
+            "color": 9728239,
+            "count": 9,
+            "halo": true,
+            "comet": true
+          },
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-sky",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "하늘빛 배움터",
+          "description": "배움터 배경을 맑은 하늘빛으로 꾸며요.",
+          "emoji": "🩵",
+          "colors": [
+            "#e3f4ff",
+            "#f5fbff"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-leaf",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 25,
+          "title": "새싹빛 배움터",
+          "description": "배움터 배경을 연두빛으로 꾸며요.",
+          "emoji": "🌱",
+          "colors": [
+            "#e8f8dc",
+            "#f7fcf1"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-peach",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 25,
+          "title": "복숭아빛 배움터",
+          "description": "배움터 배경을 따뜻한 복숭아빛으로 꾸며요.",
+          "emoji": "🍑",
+          "colors": [
+            "#ffe7dc",
+            "#fff8f3"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-ocean",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 35,
+          "title": "바다빛 배움터",
+          "description": "배움터 배경을 시원한 바다빛으로 꾸며요.",
+          "emoji": "🌊",
+          "colors": [
+            "#dff7f3",
+            "#f4fcfb"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-lemon",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "레몬빛 배움터",
+          "description": "배움터 배경을 환한 레몬빛으로 꾸며요.",
+          "emoji": "🍋",
+          "colors": [
+            "#fff7d4",
+            "#fffdf3"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-lilac",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 40,
+          "title": "라일락빛 배움터",
+          "description": "배움터 배경을 포근한 보라빛으로 꾸며요.",
+          "emoji": "💜",
+          "colors": [
+            "#ece3fc",
+            "#faf7ff"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-rose",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 40,
+          "title": "장미빛 배움터",
+          "description": "배움터 배경을 다정한 분홍빛으로 꾸며요.",
+          "emoji": "🌷",
+          "colors": [
+            "#ffe3ed",
+            "#fff6fa"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "bg-rainbow",
+          "category": "background",
+          "kind": "cosmetic",
+          "cost": 70,
+          "title": "무지개빛 배움터",
+          "description": "배움터 배경에 여러 색이 함께 어울려요.",
+          "emoji": "🌈",
+          "colors": [
+            "#e7f4ff",
+            "#fff0db",
+            "#f0e6ff"
+          ],
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-rabbit",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 15,
+          "title": "토끼 친구",
+          "description": "토끼가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🐰",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-cat",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "고양이 친구",
+          "description": "고양이가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🐱",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-bear",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 30,
+          "title": "곰 친구",
+          "description": "곰이 요정 곁에서 배움을 함께해요.",
+          "emoji": "🐻",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-fox",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 35,
+          "title": "여우 친구",
+          "description": "여우가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🦊",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-owl",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 45,
+          "title": "부엉이 친구",
+          "description": "부엉이가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🦉",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-butterfly",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 40,
+          "title": "나비 친구",
+          "description": "나비가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🦋",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-penguin",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 50,
+          "title": "펭귄 친구",
+          "description": "펭귄이 요정 곁에서 배움을 함께해요.",
+          "emoji": "🐧",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "friend-whale",
+          "category": "friend",
+          "kind": "cosmetic",
+          "cost": 65,
+          "title": "고래 친구",
+          "description": "고래가 요정 곁에서 배움을 함께해요.",
+          "emoji": "🐳",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-flower",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 10,
+          "title": "꽃 응원 마크",
+          "description": "요정 옆에 꽃 마크를 달아요.",
+          "emoji": "🌼",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-leaf",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 15,
+          "title": "새싹 응원 마크",
+          "description": "요정 옆에 새싹 마크를 달아요.",
+          "emoji": "🌱",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-ribbon",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "리본 응원 마크",
+          "description": "요정 옆에 리본 마크를 달아요.",
+          "emoji": "🎀",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-heart",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 25,
+          "title": "하트 응원 마크",
+          "description": "요정 옆에 하트 마크를 달아요.",
+          "emoji": "💗",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-clover",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 30,
+          "title": "네잎클로버 마크",
+          "description": "요정 옆에 클로버 마크를 달아요.",
+          "emoji": "🍀",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-cherry",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "체리 응원 마크",
+          "description": "요정 옆에 체리 마크를 달아요.",
+          "emoji": "🍒",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-moon",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 35,
+          "title": "달 응원 마크",
+          "description": "요정 옆에 초승달 마크를 달아요.",
+          "emoji": "🌙",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "mark-palette",
+          "category": "mark",
+          "kind": "cosmetic",
+          "cost": 40,
+          "title": "알록달록 응원 마크",
+          "description": "요정 옆에 팔레트 마크를 달아요.",
+          "emoji": "🎨",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-curious",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 10,
+          "title": "궁금한 탐험가",
+          "description": "요정 아래에 이름표를 달아요.",
+          "emoji": "🔎",
+          "label": "궁금한 탐험가",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-number",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "숫자 여행자",
+          "description": "요정 아래에 숫자 여행자 이름표를 달아요.",
+          "emoji": "🔢",
+          "label": "숫자 여행자",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-word",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 20,
+          "title": "낱말 수집가",
+          "description": "요정 아래에 낱말 수집가 이름표를 달아요.",
+          "emoji": "📚",
+          "label": "낱말 수집가",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-hello",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 25,
+          "title": "인사 여행자",
+          "description": "요정 아래에 인사 여행자 이름표를 달아요.",
+          "emoji": "👋",
+          "label": "인사 여행자",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-thinker",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 30,
+          "title": "생각 정원사",
+          "description": "요정 아래에 생각 정원사 이름표를 달아요.",
+          "emoji": "🌻",
+          "label": "생각 정원사",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-maker",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 35,
+          "title": "상상 발명가",
+          "description": "요정 아래에 상상 발명가 이름표를 달아요.",
+          "emoji": "💡",
+          "label": "상상 발명가",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-story",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 40,
+          "title": "이야기 작가",
+          "description": "요정 아래에 이야기 작가 이름표를 달아요.",
+          "emoji": "✏️",
+          "label": "이야기 작가",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "title-space",
+          "category": "title",
+          "kind": "cosmetic",
+          "cost": 55,
+          "title": "별빛 모험가",
+          "description": "요정 아래에 별빛 모험가 이름표를 달아요.",
+          "emoji": "🚀",
+          "label": "별빛 모험가",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "story",
+          "category": "family",
+          "kind": "family",
+          "cost": 40,
+          "title": "함께 이야기 읽기",
+          "description": "보호자에게 함께 읽을 시간을 부탁해요.",
+          "emoji": "📖",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "drawing",
+          "category": "family",
+          "kind": "family",
+          "cost": 45,
+          "title": "함께 그림 그리기",
+          "description": "보호자와 함께 그릴 주제와 시간을 정해요.",
+          "emoji": "🖍️",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "paperfold",
+          "category": "family",
+          "kind": "family",
+          "cost": 60,
+          "title": "함께 종이접기",
+          "description": "보호자와 접고 싶은 모양을 함께 정해요.",
+          "emoji": "🧩",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "walk",
+          "category": "family",
+          "kind": "family",
+          "cost": 80,
+          "title": "함께 산책하기",
+          "description": "보호자와 산책할 날을 함께 정해요.",
+          "emoji": "🌳",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "experiment",
+          "category": "family",
+          "kind": "family",
+          "cost": 90,
+          "title": "함께 작은 실험",
+          "description": "보호자와 안전한 놀이 실험을 골라요.",
+          "emoji": "🔬",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "cooking",
+          "category": "family",
+          "kind": "family",
+          "cost": 100,
+          "title": "함께 간식 만들기",
+          "description": "보호자와 만들 수 있는 간식을 의논해요.",
+          "emoji": "🥣",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        },
+        {
+          "id": "picnic",
+          "category": "family",
+          "kind": "family",
+          "cost": 120,
+          "title": "함께 소풍 계획하기",
+          "description": "보호자와 작은 소풍을 의논해요.",
+          "emoji": "🧺",
+          "owned": false,
+          "equipped": false,
+          "pending": null,
+          "canPurchase": true
+        }
+      ],
+      "equipped": null,
+      "badges": [
+        {
+          "id": "first-round",
+          "title": "첫 모험 완주",
+          "emoji": "🌱",
+          "description": "놀이 한 판을 끝까지 해냈어요.",
+          "unlocked": true,
+          "progress": 1,
+          "target": 1
+        },
+        {
+          "id": "three-subjects",
+          "title": "세 가지 탐험가",
+          "emoji": "🧭",
+          "description": "수학·국어·영어를 골고루 만났어요.",
+          "unlocked": true,
+          "progress": 3,
+          "target": 3
+        },
+        {
+          "id": "try-again",
+          "title": "다시 생각하는 힘",
+          "emoji": "💪",
+          "description": "풀이를 보고 다시 연습해 답을 찾았어요.",
+          "unlocked": true,
+          "progress": 1,
+          "target": 1
+        },
+        {
+          "id": "two-days",
+          "title": "다시 만난 배움",
+          "emoji": "🌈",
+          "description": "서로 다른 두 날에 정답을 발견했어요.",
+          "unlocked": false,
+          "progress": 1,
+          "target": 2
+        }
+      ],
+      "milestones": [
+        {
+          "id": "stars-10",
+          "stars": 10,
+          "title": "10별의 발자국",
+          "unlocked": true
+        },
+        {
+          "id": "stars-30",
+          "stars": 30,
+          "title": "30별의 발자국",
+          "unlocked": true
+        },
+        {
+          "id": "stars-60",
+          "stars": 60,
+          "title": "60별의 발자국",
+          "unlocked": true
+        },
+        {
+          "id": "stars-100",
+          "stars": 100,
+          "title": "100별의 발자국",
+          "unlocked": true
+        },
+        {
+          "id": "stars-200",
+          "stars": 200,
+          "title": "200별의 발자국",
+          "unlocked": false
+        },
+        {
+          "id": "stars-400",
+          "stars": 400,
+          "title": "400별의 발자국",
+          "unlocked": false
+        }
+      ],
+      "nextMilestone": {
+        "id": "stars-200",
+        "stars": 200,
+        "title": "200별의 발자국",
+        "unlocked": false
+      },
+      "purchases": [],
+      "requests": [],
+      "storageAvailable": true
+    }
+  },
+  "files": [
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser/qa-webgl.json",
+      "role": "verification-artifact",
+      "bytes": 18997,
+      "sha256": "990a2c3d89aa8ad22fed54c7a5714bec9b41de924aa0192c54e50161f9f459e3"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/qa-webgl.json",
+      "role": "verification-artifact",
+      "bytes": 52681,
+      "sha256": "b9561836c0db727eb12a1e210d2e7465b57bb4da702b7a7fe6d60a0c89b59315"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-completed-round.png",
+      "role": "verification-artifact",
+      "bytes": 109414,
+      "sha256": "a6a463cb2c8f3874135b5a7ead64c691e702d2a0156868aacbfa84130bcf4525"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-family-plaza.png",
+      "role": "verification-artifact",
+      "bytes": 183835,
+      "sha256": "23d746508d4f6170c5a8f6ee8a9d94b666fbe770ef7e94d971c8c4782d01654f"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-floor-pointer-after-1s.png",
+      "role": "verification-artifact",
+      "bytes": 176807,
+      "sha256": "2f1c138405851f025e415f9501505b400298e10dd02f2db14ad16bb4583f3dc0"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-npc-pointer-question.png",
+      "role": "verification-artifact",
+      "bytes": 88012,
+      "sha256": "97c1990cd4e797f0ec4814c6946da599bee96f2cecc293672bef8b78e598fa44"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-reloaded-world.png",
+      "role": "verification-artifact",
+      "bytes": 182677,
+      "sha256": "5bd7ff278f483a8696fd1d78b3c40ea8a3983dbc74986019c0abcbb926e0d16d"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-se-world.png",
+      "role": "verification-artifact",
+      "bytes": 182230,
+      "sha256": "3691472911d8031c440a684ae427449722ebc00ab4f4ed19ee04e6e921934747"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-completed-round.png",
+      "role": "verification-artifact",
+      "bytes": 238430,
+      "sha256": "9b1e0cf309875b5d5d376a80507228018f93050c5de5ca5909242e0e2b07e56c"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-family-plaza.png",
+      "role": "verification-artifact",
+      "bytes": 446897,
+      "sha256": "a0db4e5cc27c50e3fbfc549006a1b758d7b8e1c9ce29302e56af008501ad7082"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-floor-pointer-after-1s.png",
+      "role": "verification-artifact",
+      "bytes": 355700,
+      "sha256": "459d3f5f015928792e7985b3a1c5819faf9179e5ceb484954716d43e6a39788c"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-npc-pointer-question.png",
+      "role": "verification-artifact",
+      "bytes": 199716,
+      "sha256": "b33b43bda4a2f324df3ffae37ee33c57127471c2fa346098ed5e530d4fc4b594"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-reloaded-world.png",
+      "role": "verification-artifact",
+      "bytes": 359170,
+      "sha256": "7ebe1ae0e4b8aad4402b0502ef80f75f6485c934fc62383ea4587712fc0971ee"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/browser-final/webgl-tae-world.png",
+      "role": "verification-artifact",
+      "bytes": 358082,
+      "sha256": "cc418ad9bef51fffd18078b79a4750ea7498ac6be308c11ff2d01f6cd67f26c1"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-earned.png",
+      "role": "verification-artifact",
+      "bytes": 161255,
+      "sha256": "f960273ef943c53fc2d3d15585eef030b2e0b907347bbeb478c03d2b57ee05e7"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-locked.png",
+      "role": "verification-artifact",
+      "bytes": 148903,
+      "sha256": "1b2f032a2453206e91ed000d416108b45261713980c62641ed71dc4b8ba55143"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-hub-badges-three-subjects.png",
+      "role": "verification-artifact",
+      "bytes": 165306,
+      "sha256": "f0132bc72b22c62b6b61ffcb1c920289b0d6dd82a3161d3ad69fbc99510310f2"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-browser/native-rewards-browser-qa.json",
+      "role": "verification-artifact",
+      "bytes": 28348,
+      "sha256": "e54e7063b89f04197e431bf2e467fbaba4d6f77f586873edf4a175920520796f"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/native-qa-adapter-receipt.json",
+      "role": "verification-artifact",
+      "bytes": 567,
+      "sha256": "77bfc9c0a6aab42da8b755cf71a67db8f7c7ebdae472f6a3d011707f4f0eac28"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/pages-build.json",
+      "role": "verification-artifact",
+      "bytes": 1450,
+      "sha256": "24cf5cd4276cbb0ee46f22b02b1b5ce0fe159988041a6bdd5f0823881425f4c7"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/public-file-verification.json",
+      "role": "verification-artifact",
+      "bytes": 9702,
+      "sha256": "edbda7231e7b95a1d99200572a4d9c00ee3bf8c0461fa47583e5a1e460fd4fb4"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/public-native-ui-qa.mjs",
+      "role": "test-adapter",
+      "bytes": 16076,
+      "sha256": "fa76e740d6b56131c6d8145991231590d309d1772ecce910f5b18e1f51a70450"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/public-webgl-qa.before-fetch-prefix.mjs",
+      "role": "test-adapter",
+      "bytes": 30441,
+      "sha256": "f644db00ab76af6bd89ca8c1e1bc178fe619e957fdde6b179a3b081ef5aa4534"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/public-webgl-qa.mjs",
+      "role": "test-adapter",
+      "bytes": 30483,
+      "sha256": "ef2e76ed979fa92f8438d8b595d994d7719516917b9470d21ced62eb8109b233"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/qa-adapter-receipt.json",
+      "role": "verification-artifact",
+      "bytes": 829,
+      "sha256": "a5a04d063bc6ca3f3c8a95a430581bc8ee82b6e1dd706adf2ed9056f49464183"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/app.js",
+      "role": "source-original-unchanged",
+      "sha256": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/experience.css",
+      "role": "source-original-unchanged",
+      "sha256": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/index.html",
+      "role": "source-original-unchanged",
+      "sha256": "d7c38af4ec8951930d19a8fe58ad453bd5b925e2a10fe68cf534935e54ed9265"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/native-rewards-browser-qa.mjs",
+      "role": "source-original-unchanged",
+      "sha256": "c63ce0e78e06870d50bad167c454482279e1f6ea7ef647e8ae7a31b8af74a9ea"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/village-browser-qa.mjs",
+      "role": "source-original-unchanged",
+      "sha256": "4d7e66fcc82369c2c0aab6e702c1f9fbc2d4437ea0f806b0f875fb1992e0fd23"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb",
+      "role": "source-original-unchanged",
+      "sha256": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb",
+      "role": "source-original-unchanged",
+      "sha256": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js",
+      "role": "source-original-unchanged",
+      "sha256": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb",
+      "role": "source-original-unchanged",
+      "sha256": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_book.png",
+      "role": "source-original-unchanged",
+      "sha256": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_crown.png",
+      "role": "source-original-unchanged",
+      "sha256": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/badge_leaf.png",
+      "role": "source-original-unchanged",
+      "sha256": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/bloom.png",
+      "role": "source-original-unchanged",
+      "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/bud.png",
+      "role": "source-original-unchanged",
+      "sha256": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/gift.png",
+      "role": "source-original-unchanged",
+      "sha256": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/heart.png",
+      "role": "source-original-unchanged",
+      "sha256": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/magic_dust.png",
+      "role": "source-original-unchanged",
+      "sha256": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/seed.png",
+      "role": "source-original-unchanged",
+      "sha256": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/sehee_original.png",
+      "role": "source-original-unchanged",
+      "sha256": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/sprout.png",
+      "role": "source-original-unchanged",
+      "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_blue.png",
+      "role": "source-original-unchanged",
+      "sha256": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_purple.png",
+      "role": "source-original-unchanged",
+      "sha256": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_rainbow.png",
+      "role": "source-original-unchanged",
+      "sha256": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/star_yellow.png",
+      "role": "source-original-unchanged",
+      "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/taehee_original.png",
+      "role": "source-original-unchanged",
+      "sha256": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_button.png",
+      "role": "source-original-unchanged",
+      "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_mission_panel.png",
+      "role": "source-original-unchanged",
+      "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/assets/ui_star_pill.png",
+      "role": "source-original-unchanged",
+      "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html",
+      "role": "source-original-unchanged",
+      "sha256": "c9ff11c225843be7360e1c66762015d77fad71adf335b3ae747bdf632cce94dc"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.css",
+      "role": "source-original-unchanged",
+      "sha256": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/village-ui.js",
+      "role": "source-original-unchanged",
+      "sha256": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46"
+    }
+  ],
+  "directoryTree": {
+    "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2": [
+      "docs/WEB_DEPLOYMENT_V031_20261010.json",
+      "scripts/village-browser-qa.mjs",
+      "scripts/native-rewards-browser-qa.mjs"
+    ],
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010": [
+      "browser/qa-webgl.json",
+      "browser-final/qa-webgl.json",
+      "browser-final/webgl-se-completed-round.png",
+      "browser-final/webgl-se-family-plaza.png",
+      "browser-final/webgl-se-floor-pointer-after-1s.png",
+      "browser-final/webgl-se-npc-pointer-question.png",
+      "browser-final/webgl-se-reloaded-world.png",
+      "browser-final/webgl-se-world.png",
+      "browser-final/webgl-tae-completed-round.png",
+      "browser-final/webgl-tae-family-plaza.png",
+      "browser-final/webgl-tae-floor-pointer-after-1s.png",
+      "browser-final/webgl-tae-npc-pointer-question.png",
+      "browser-final/webgl-tae-reloaded-world.png",
+      "browser-final/webgl-tae-world.png",
+      "native-browser/native-hub-badges-earned.png",
+      "native-browser/native-hub-badges-locked.png",
+      "native-browser/native-hub-badges-three-subjects.png",
+      "native-browser/native-rewards-browser-qa.json",
+      "native-qa-adapter-receipt.json",
+      "pages-build.json",
+      "public-file-verification.json",
+      "public-native-ui-qa.mjs",
+      "public-webgl-qa.before-fetch-prefix.mjs",
+      "public-webgl-qa.mjs",
+      "qa-adapter-receipt.json"
+    ]
+  },
+  "outputs": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/docs/WEB_DEPLOYMENT_V031_20261010.json",
+      "role": "canonical-deployment-verification",
+      "backup": null,
+      "operation": "new file"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-web-deploy-v031-20261010/WEB_DEPLOYMENT_V031_20261010.json",
+      "role": "identical-copy",
+      "backup": null,
+      "operation": "new copy"
+    }
+  ],
+  "limitations": [
+    "Headless Chrome public-origin tests; physical iPhone/iPad Safari is not directly tested."
+  ],
+  "initialTestAdapterIssue": "Preserved failed first WebGL helper result; corrected project-prefix fetch paths only. Final public WebGL11 passed."
+}
