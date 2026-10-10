@@ -1,0 +1,338 @@
+{
+  "id": "measure-lab",
+  "subject": "math",
+  "title": "길이 무게 탐험실",
+  "description": "리본, 화분, 산책길로 단위를 연결해요.",
+  "emoji": "📏",
+  "minStage": 3,
+  "maxStage": 4,
+  "adventure": true,
+  "prerequisite": "길이와 무게를 구분하고 100까지의 수를 읽어요.",
+  "offline": "자로 책의 길이를 재 보고, 저울로 물건의 무게를 읽어 보세요. 같은 물건의 길이와 무게가 서로 다른 양이라는 점도 이야기해요.",
+  "questions": [
+    {
+      "id": "measure-lab-01",
+      "level": 3,
+      "skill": "cm와 m의 관계",
+      "title": "책상 옆 리본",
+      "story": "{{place}}의 상상 공방에서 길이가 1m인 리본을 펼쳤어요.",
+      "prompt": "같은 길이를 cm로 쓰면 얼마일까요?",
+      "explanation": [
+        "1m는 100cm와 같은 길이예요.",
+        "단위 이름이 달라져도 리본의 실제 길이는 같아요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "1m = ?cm"
+      },
+      "mathCheck": {
+        "expression": "1*100",
+        "value": 100
+      },
+      "choices": [
+        "10cm",
+        "100cm",
+        "1000cm"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "measure-lab-02",
+      "level": 3,
+      "skill": "같은 단위의 길이 합",
+      "title": "리본을 이어요",
+      "story": "{{place}}의 상상 공방에서 30cm 리본과 20cm 리본을 겹치지 않게 끝끼리 이어 붙였어요.",
+      "prompt": "이어진 리본의 길이는 얼마일까요?",
+      "explanation": [
+        "두 리본을 겹치지 않고 이었으므로 길이를 더해요.",
+        "30 + 20 = 50이므로 전체 길이는 50cm예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "30cm + 20cm"
+      },
+      "mathCheck": {
+        "expression": "30+20",
+        "value": 50
+      },
+      "choices": [
+        "50cm",
+        "10cm",
+        "60cm"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "measure-lab-03",
+      "level": 3,
+      "skill": "cm와 m의 같은 길이",
+      "title": "화단 길이표",
+      "story": "{{place}}의 상상 화단에 같은 길이끼리 이름표를 달아요.",
+      "prompt": "길이가 같은 두 이름표를 짝지어요.",
+      "explanation": [
+        "1m마다 100cm예요.",
+        "1m = 100cm, 2m = 200cm, 3m = 300cm로 짝지어요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "1m",
+          "2m",
+          "3m"
+        ],
+        "right": [
+          "300cm",
+          "100cm",
+          "200cm"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "measure-lab-04",
+      "level": 3,
+      "skill": "측정하는 양과 단위",
+      "title": "사과 저울 읽기",
+      "story": "{{name}}가 상상 간식방 저울에 사과를 올렸어요. 저울에 200g이라고 나왔어요.",
+      "prompt": "200g은 사과의 무엇을 나타낼까요?",
+      "explanation": [
+        "g은 그램이라고 읽으며 무게를 나타내는 단위예요.",
+        "200g은 사과의 무게예요. 길이는 cm 같은 단위로 나타내요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "저울 표시: 200g"
+      },
+      "choices": [
+        "길이",
+        "개수",
+        "무게"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "measure-lab-05",
+      "level": 3,
+      "skill": "g와 kg의 관계",
+      "title": "흙 한 봉지",
+      "story": "{{place}}의 상상 화분 만들기에 무게가 1kg인 흙 한 봉지를 준비했어요.",
+      "prompt": "같은 무게를 g으로 쓰면 얼마일까요?",
+      "explanation": [
+        "1kg은 1000g과 같은 무게예요.",
+        "단위를 kg에서 g으로 바꾸어도 흙의 양은 그대로예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "1kg = ?g"
+      },
+      "mathCheck": {
+        "expression": "1*1000",
+        "value": 1000
+      },
+      "choices": [
+        "1000g",
+        "100g",
+        "10g"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "measure-lab-06",
+      "level": 3,
+      "skill": "측정 대상의 단위",
+      "title": "알맞은 단위 상자",
+      "story": "{{place}}의 상상 탐험실에서 이미 잰 값을 단위 상자와 짝지어요.",
+      "prompt": "각 측정값에서 실제로 쓰인 단위를 골라요.",
+      "explanation": [
+        "숫자 뒤의 단위를 살펴보세요.",
+        "15cm는 cm, 5g은 g, 2m는 m 단위를 쓴 측정값이에요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "연필 길이 15cm",
+          "종이 무게 5g",
+          "책장 높이 2m"
+        ],
+        "right": [
+          "m",
+          "cm",
+          "g"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "measure-lab-07",
+      "level": 4,
+      "skill": "서로 다른 길이 단위의 합",
+      "title": "긴 리본 만들기",
+      "story": "{{place}}의 상상 공방에서 1m 리본과 50cm 리본을 겹치지 않게 이었어요.",
+      "prompt": "전체 길이를 바르게 쓴 것은 무엇일까요?",
+      "explanation": [
+        "1m를 100cm로 바꾸고 50cm를 더하면 150cm예요.",
+        "150cm는 100cm와 50cm이므로 1.5m와 같아요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "1m + 50cm"
+      },
+      "mathCheck": {
+        "expression": "100+50",
+        "value": 150
+      },
+      "choices": [
+        "51cm = 0.51m",
+        "150cm = 1.5m",
+        "150cm = 15m"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "measure-lab-08",
+      "level": 4,
+      "skill": "g와 kg의 같은 무게",
+      "title": "화분 흙 이름표",
+      "story": "{{place}}의 상상 정원에서 흙 주머니에 같은 무게의 이름표를 붙여요.",
+      "prompt": "같은 무게끼리 짝지어요.",
+      "explanation": [
+        "1kg = 1000g이고 그 절반인 0.5kg = 500g이에요.",
+        "1.5kg은 1kg과 0.5kg을 모은 무게라서 1500g이에요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "0.5kg",
+          "1kg",
+          "1.5kg"
+        ],
+        "right": [
+          "1500g",
+          "500g",
+          "1000g"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "measure-lab-09",
+      "level": 4,
+      "skill": "km와 m 변환",
+      "title": "상상 산책길",
+      "story": "{{place}}에서 떠나는 상상 산책길은 2km예요. 길 안내판을 m로 바꿔 적어요.",
+      "prompt": "몇 m라고 적어야 할까요?",
+      "explanation": [
+        "1km는 1000m예요.",
+        "2km는 1000m를 두 번 이은 길이이므로 2000m예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "2km = ?m"
+      },
+      "mathCheck": {
+        "expression": "2*1000",
+        "value": 2000
+      },
+      "choices": [
+        "200m",
+        "20m",
+        "2000m"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "measure-lab-10",
+      "level": 4,
+      "skill": "kg에서 g으로 바꿔 빼기",
+      "title": "사용하고 남은 흙",
+      "story": "{{place}}의 상상 정원에서 흙 1kg 중 250g을 화분에 담았어요.",
+      "prompt": "봉지에 남은 흙은 몇 g일까요?",
+      "explanation": [
+        "먼저 1kg을 1000g으로 바꿔 단위를 맞춰요.",
+        "1000 - 250 = 750이므로 750g이 남아요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "처음 1kg · 사용 250g"
+      },
+      "mathCheck": {
+        "expression": "1000-250",
+        "value": 750
+      },
+      "choices": [
+        "750g",
+        "1250g",
+        "250g"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "measure-lab-11",
+      "level": 4,
+      "skill": "m와 km의 같은 거리",
+      "title": "탐험 지도 거리표",
+      "story": "{{name}}가 상상 탐험 지도에 같은 거리를 두 단위로 적어요.",
+      "prompt": "같은 거리끼리 짝지어요.",
+      "explanation": [
+        "1km = 1000m를 기준으로 비교해요.",
+        "0.5km = 500m, 1km = 1000m, 2km = 2000m예요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "0.5km",
+          "1km",
+          "2km"
+        ],
+        "right": [
+          "1000m",
+          "2000m",
+          "500m"
+        ],
+        "pairs": [
+          2,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "measure-lab-12",
+      "level": 4,
+      "skill": "단위를 맞춰 길이 비교",
+      "title": "어느 길이 더 길까",
+      "story": "{{place}}의 상상 지도에 꽃길 900m와 나무길 1km가 그려져 있어요.",
+      "prompt": "어떤 길이 얼마나 더 길까요?",
+      "explanation": [
+        "나무길 1km를 1000m로 바꾸어요.",
+        "1000 - 900 = 100이므로 나무길이 꽃길보다 100m 더 길어요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "꽃길 900m · 나무길 1km"
+      },
+      "mathCheck": {
+        "expression": "1000-900",
+        "value": 100
+      },
+      "choices": [
+        "꽃길이 899m 더 길어요",
+        "나무길이 100m 더 길어요",
+        "두 길이 같아요"
+      ],
+      "answer": 1
+    }
+  ]
+}

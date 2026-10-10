@@ -1,0 +1,336 @@
+{
+  "id": "listening-missions",
+  "subject": "english",
+  "title": "귀 쫑긋 미션",
+  "description": "영어 지시를 듣고 행동과 순서를 찾아요.",
+  "emoji": "🎧",
+  "minStage": 2,
+  "maxStage": 4,
+  "adventure": true,
+  "offline": "앱에서 들은 짧은 지시를 인형 놀이로 해 보세요. 아이가 지시하는 역할도 맡고, 몸으로 움직일 때는 주변 공간을 먼저 살펴요.",
+  "prerequisite": "기본 영어 낱말을 들어 본 적이 있고, 먼저·다음·마지막의 순서를 이해할 수 있어요.",
+  "questions": [
+    {
+      "title": "얼굴 미션",
+      "story": "{{place}}의 상상 몸 놀이에서 {{name}}가 영어 미션을 받아요.",
+      "prompt": "영어를 듣고 하라는 행동을 골라요.",
+      "choices": [
+        "귀를 짚어요.",
+        "코를 짚어요.",
+        "손을 들어요."
+      ],
+      "answer": 1,
+      "explanation": [
+        "Touch your nose.는 코를 짚으라는 뜻이에요.",
+        "nose가 코를 가리키므로 다른 신체 부위와 구별해서 들어요."
+      ],
+      "skill": "한 가지 행동 지시 듣기",
+      "level": 2,
+      "cue": {
+        "text": "Touch your nose.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-01"
+    },
+    {
+      "title": "책 가방 미션",
+      "story": "{{place}}의 상상 교실에서 가방을 정리해요. 영어 지시를 천천히 들어요.",
+      "prompt": "들은 순서대로 세 행동 카드를 놓아요.",
+      "skill": "세 단계 지시 듣기",
+      "level": 2,
+      "explanation": [
+        "먼저 책을 집고, 다음에 가방에 넣고, 마지막으로 지퍼를 닫아요.",
+        "First, next, last가 행동의 순서를 알려 줘요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "가방 지퍼 닫기",
+          "책 집기",
+          "가방에 책 넣기"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, pick up the book. Next, put it in the bag. Last, zip the bag.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-02"
+    },
+    {
+      "title": "손뼉 미션",
+      "story": "{{name}}가 {{place}}의 상상 리듬 놀이를 시작해요.",
+      "prompt": "영어를 듣고 맞는 행동을 골라요.",
+      "choices": [
+        "박수 두 번 치기",
+        "박수 한 번 치기",
+        "발 두 번 구르기"
+      ],
+      "answer": 0,
+      "explanation": [
+        "Clap twice.는 박수를 두 번 치라는 뜻이에요.",
+        "clap은 박수 치기이고 twice는 두 번을 뜻해요."
+      ],
+      "skill": "행동과 횟수 듣기",
+      "level": 2,
+      "cue": {
+        "text": "Clap twice.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-03"
+    },
+    {
+      "title": "간식 전 미션",
+      "story": "{{place}}의 상상 간식 놀이에서 영어 안내를 들어요.",
+      "prompt": "영어로 들은 순서대로 행동 카드를 놓아요.",
+      "skill": "생활 행동 순서 듣기",
+      "level": 2,
+      "explanation": [
+        "먼저 손을 씻고, 다음에 손을 말린 뒤, 마지막으로 간식을 먹어요.",
+        "wash는 씻다, dry는 말리다, eat은 먹다라는 뜻이에요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "간식 먹기",
+          "손 말리기",
+          "손 씻기"
+        ],
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, wash your hands. Next, dry your hands. Last, eat your snack.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-04"
+    },
+    {
+      "title": "공은 어디로?",
+      "story": "{{place}}의 상상 놀이방에서 공을 정리하려고 해요.",
+      "prompt": "영어를 듣고 공을 놓을 곳을 골라요.",
+      "choices": [
+        "의자 위",
+        "가방 안",
+        "의자 아래"
+      ],
+      "answer": 2,
+      "explanation": [
+        "Put the ball under the chair.는 공을 의자 아래에 놓으라는 뜻이에요.",
+        "under는 아래를 뜻하므로 의자 위와 구별해야 해요."
+      ],
+      "skill": "위치가 포함된 지시 듣기",
+      "level": 2,
+      "cue": {
+        "text": "Put the ball under the chair.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-05"
+    },
+    {
+      "title": "그림 완성 미션",
+      "story": "{{name}}가 {{place}}의 상상 미술실에서 영어 안내대로 그림을 그려요.",
+      "prompt": "들은 순서대로 그림 카드를 놓아요.",
+      "skill": "세 그림 지시 순서",
+      "level": 2,
+      "explanation": [
+        "영어 안내는 해를 그리고, 달을 그리고, 마지막에 별을 그리라고 했어요.",
+        "sun, moon, star의 뜻과 말한 순서를 함께 기억해요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "별 그리기",
+          "해 그리기",
+          "달 그리기"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, draw a sun. Next, draw a moon. Last, draw a star.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-06"
+    },
+    {
+      "title": "색과 모양 미션",
+      "story": "{{place}}의 상상 미술실에서 두 가지 정보가 담긴 영어 지시를 들어요.",
+      "prompt": "사용할 색과 그릴 모양이 모두 맞는 행동을 골라요.",
+      "choices": [
+        "파란 연필로 동그라미 그리기",
+        "빨간 연필로 동그라미 그리기",
+        "빨간 연필로 네모 그리기"
+      ],
+      "answer": 1,
+      "explanation": [
+        "Pick up the red pencil and draw a circle.은 빨간 연필을 집어 동그라미를 그리라는 뜻이에요.",
+        "red와 circle을 모두 들어야 색과 모양이 맞는 행동을 고를 수 있어요."
+      ],
+      "skill": "두 조건 지시 듣기",
+      "level": 4,
+      "cue": {
+        "text": "Pick up the red pencil and draw a circle.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-07"
+    },
+    {
+      "title": "씨앗 정원 미션",
+      "story": "{{place}}의 상상 정원에서 씨앗 심기 안내를 들어요.",
+      "prompt": "영어 안내에 나온 네 행동을 순서대로 놓아요.",
+      "skill": "네 단계 지시 듣기",
+      "level": 4,
+      "explanation": [
+        "작은 구멍을 파고 씨앗을 넣은 다음 흙으로 덮고 물을 줘요.",
+        "dig, put, cover, water가 각각 어떤 행동인지 생각하며 순서를 이어 봐요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "씨앗 넣기",
+          "물 주기",
+          "작은 구멍 파기",
+          "흙으로 덮기"
+        ],
+        "order": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, dig a small hole. Next, put a seed in it. Then, cover it with soil. Last, water it.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-08"
+    },
+    {
+      "title": "가져갈 것과 둘 것",
+      "story": "{{place}}의 상상 책방에서 {{name}}가 짐을 정리해요.",
+      "prompt": "영어를 듣고 하라는 행동을 골라요.",
+      "choices": [
+        "책을 가져가고 공은 두기",
+        "공을 가져가고 책은 두기",
+        "책과 공을 모두 가져가기"
+      ],
+      "answer": 0,
+      "explanation": [
+        "Take a book, but leave the ball.은 책은 가져가고 공은 그대로 두라는 뜻이에요.",
+        "take와 leave의 뜻을 구별해야 두 물건을 다 가져가는 실수를 피할 수 있어요."
+      ],
+      "skill": "대조되는 지시 듣기",
+      "level": 4,
+      "cue": {
+        "text": "Take a book, but leave the ball.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-09"
+    },
+    {
+      "title": "소풍 준비 미션",
+      "story": "{{place}}의 상상 소풍 안내를 들어요. 말한 순서대로 준비할 거예요.",
+      "prompt": "들은 네 행동을 순서대로 놓아요.",
+      "skill": "네 생활 행동 순서",
+      "level": 4,
+      "explanation": [
+        "도시락을 챙기고 모자를 쓴 뒤 신발을 신고 마지막에 문을 열어요.",
+        "안내에서 first, next, then, last를 듣고 각 행동의 자리를 정해요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "문 열기",
+          "모자 쓰기",
+          "도시락 챙기기",
+          "신발 신기"
+        ],
+        "order": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, pack your lunch. Next, put on your hat. Then, put on your shoes. Last, open the door.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-10"
+    },
+    {
+      "title": "가방에 들어간 과일",
+      "story": "{{place}}의 상상 과일 가게에서 물건을 옮기는 영어 안내를 들어요.",
+      "prompt": "안내대로 옮긴 뒤 가방 안에 있는 과일은 무엇인가요?",
+      "choices": [
+        "apple",
+        "banana",
+        "pear"
+      ],
+      "answer": 2,
+      "explanation": [
+        "처음에는 사과를 배 옆에 놓고, 그다음 배를 가방에 넣으라고 했어요.",
+        "가방에 들어간 것은 pear, 즉 배예요."
+      ],
+      "skill": "연속 지시 결과 추적",
+      "level": 4,
+      "cue": {
+        "text": "Put the apple next to the pear. Then, put the pear in the bag.",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "pear",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-11"
+    },
+    {
+      "title": "그림 편지 보내기",
+      "story": "{{name}}가 {{place}}의 상상 친구에게 그림 편지를 보내요. 영어 안내를 끝까지 들어요.",
+      "prompt": "안내에 맞게 네 행동을 순서대로 놓아요.",
+      "skill": "after와 before 순서 이해",
+      "level": 4,
+      "explanation": [
+        "먼저 그림을 그리고 이름을 써요.",
+        "이름을 쓴 다음 편지를 봉투에 넣고, 편지를 넣은 뒤에 봉투를 닫아요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "봉투에 편지 넣기",
+          "이름 쓰기",
+          "그림 그리기",
+          "봉투 닫기"
+        ],
+        "order": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "joiner": " "
+      },
+      "cue": {
+        "text": "First, draw a picture. Write your name before you put the letter in the envelope. Close the envelope after you put the letter inside.",
+        "lang": "en-US"
+      },
+      "id": "listening-missions-12"
+    }
+  ]
+}

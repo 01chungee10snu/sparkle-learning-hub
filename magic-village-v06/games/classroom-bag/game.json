@@ -1,0 +1,420 @@
+{
+  "id": "classroom-bag",
+  "subject": "english",
+  "title": "교실 가방 탐험",
+  "description": "준비물의 영어 이름을 연결하고 가방에 넣을 순서를 기억해요.",
+  "emoji": "🎒",
+  "minStage": 1,
+  "maxStage": 3,
+  "adventure": true,
+  "offline": "실제 가방과 준비물 세 개로 차례 놀이를 해 보세요. 영어 이름을 함께 말하고, 기억이 어려우면 두 개부터 시작해요.",
+  "prerequisite": "물건 그림을 구별하고, 어른과 함께 세 개의 순서를 살펴볼 수 있어요.",
+  "questions": [
+    {
+      "title": "첫 가방 꾸리기",
+      "story": "{{name}}가 {{place}}로 떠나는 상상 놀이를 해요. 준비물 카드의 순서를 기억해요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "세 준비물 순서 기억",
+      "level": 1,
+      "explanation": [
+        "이번 순서는 연필 → 책 → 곰 인형이에요.",
+        "영어로는 pencil → book → teddy bear라고 말해요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "📕",
+          "✏️",
+          "🧸"
+        ],
+        "order": [
+          1,
+          0,
+          2
+        ],
+        "itemLabels": [
+          "책",
+          "연필",
+          "곰 인형"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-01"
+    },
+    {
+      "title": "그림책 가방",
+      "story": "{{place}}의 상상 책방에서 준비물을 골라요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "기본 준비물 낱말",
+      "level": 1,
+      "explanation": [
+        "book은 책, pencil은 연필, bag은 가방이에요.",
+        "실제 물건이 있다면 영어 이름을 들으며 가리켜 보세요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "book",
+          "pencil",
+          "bag"
+        ],
+        "right": [
+          "🎒",
+          "📕",
+          "✏️"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "가방",
+          "책",
+          "연필"
+        ]
+      },
+      "id": "classroom-bag-02"
+    },
+    {
+      "title": "비 오는 날 가방",
+      "story": "{{place}}로 가는 상상 길에 필요한 카드를 살펴봐요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "생활 물건 순서 기억",
+      "level": 1,
+      "explanation": [
+        "이번 순서는 우산 → 장화 → 모자예요.",
+        "umbrella는 우산, boot는 장화, cap은 모자예요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🧢",
+          "☂️",
+          "👢"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "itemLabels": [
+          "모자",
+          "우산",
+          "장화"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-03"
+    },
+    {
+      "title": "깨끗한 생활 카드",
+      "story": "{{place}}의 상상 생활 놀이에서 물건 이름을 연결해요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "생활 준비물 낱말",
+      "level": 1,
+      "explanation": [
+        "hat은 모자, soap은 비누, toothbrush는 칫솔이에요.",
+        "비누는 손을 씻을 때, 칫솔은 이를 닦을 때 사용해요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "hat",
+          "soap",
+          "toothbrush"
+        ],
+        "right": [
+          "🧼",
+          "🧢",
+          "🪥"
+        ],
+        "pairs": [
+          1,
+          0,
+          2
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "비누",
+          "모자",
+          "칫솔"
+        ]
+      },
+      "id": "classroom-bag-04"
+    },
+    {
+      "title": "공원에 갈까요?",
+      "story": "{{name}}가 {{place}}의 상상 공원 놀이를 준비해요. 카드가 보이는 동안 순서를 익혀요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "세 그림 위치 기억",
+      "level": 1,
+      "explanation": [
+        "이번 순서는 모자 → 로션 → 공이에요.",
+        "cap은 모자, lotion은 로션, ball은 공이에요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "⚽",
+          "🧴",
+          "🧢"
+        ],
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "itemLabels": [
+          "공",
+          "로션",
+          "모자"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-05"
+    },
+    {
+      "title": "간식 가방",
+      "story": "{{place}}의 상상 소풍에서 간식 준비물을 찾아요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "간식 준비물 낱말",
+      "level": 1,
+      "explanation": [
+        "spoon은 숟가락, cup은 컵, apple은 사과예요.",
+        "영어 이름을 들으며 물건과 음식의 짝을 찾아요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "spoon",
+          "cup",
+          "apple"
+        ],
+        "right": [
+          "🍎",
+          "🥄",
+          "🥤"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "사과",
+          "숟가락",
+          "컵"
+        ]
+      },
+      "id": "classroom-bag-06"
+    },
+    {
+      "title": "네 가지 준비물",
+      "story": "{{name}}가 {{place}}의 상상 미술실에서 쓸 준비물을 챙겨요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "네 준비물 순서 기억",
+      "level": 3,
+      "explanation": [
+        "이번 순서는 책 → 연필 → 자 → 가방이에요.",
+        "영어로는 book → pencil → ruler → bag이라고 해요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "✏️",
+          "📏",
+          "📕",
+          "🎒"
+        ],
+        "order": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "itemLabels": [
+          "연필",
+          "자",
+          "책",
+          "가방"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-07"
+    },
+    {
+      "title": "색깔 책 정리",
+      "story": "{{place}}의 상상 책꽂이에 책을 꽂아요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "색과 준비물 결합",
+      "level": 3,
+      "explanation": [
+        "a red book은 빨간 책, a blue book은 파란 책, a green book은 초록 책이에요.",
+        "book 앞에 색깔 말을 넣으면 어떤 책인지 더 자세히 말할 수 있어요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "a red book",
+          "a blue book",
+          "a green book"
+        ],
+        "right": [
+          "📗",
+          "📕",
+          "📘"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "초록 책",
+          "빨간 책",
+          "파란 책"
+        ]
+      },
+      "id": "classroom-bag-08"
+    },
+    {
+      "title": "자연 탐험 가방",
+      "story": "{{place}}의 상상 자연 탐험대가 네 카드를 준비했어요. 카드를 가리기 전에 순서를 살펴봐요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "네 물건 순서 기억",
+      "level": 3,
+      "explanation": [
+        "이번 순서는 모자 → 돋보기 → 연필 → 책이에요.",
+        "모자를 cap, 돋보기를 magnifying glass, 연필을 pencil, 책을 book이라고 해요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🔎",
+          "📕",
+          "✏️",
+          "🧢"
+        ],
+        "order": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "itemLabels": [
+          "돋보기",
+          "책",
+          "연필",
+          "모자"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-09"
+    },
+    {
+      "title": "몇 개를 가져갈까?",
+      "story": "{{name}}가 {{place}}의 상상 준비물 표를 읽어요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "수량과 준비물 결합",
+      "level": 3,
+      "explanation": [
+        "one pencil은 연필 하나, two books는 책 두 권, three apples는 사과 세 개예요.",
+        "숫자 말과 물건 이름을 함께 확인해야 준비물을 정확히 고를 수 있어요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "one pencil",
+          "two books",
+          "three apples"
+        ],
+        "right": [
+          "🍎 🍎 🍎",
+          "✏️",
+          "📕 📕"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "사과 세 개",
+          "연필 하나",
+          "책 두 권"
+        ]
+      },
+      "id": "classroom-bag-10"
+    },
+    {
+      "title": "음악 놀이 준비",
+      "story": "{{place}}의 상상 음악 교실에 가져갈 카드를 기억해요.",
+      "prompt": "준비물 순서를 살펴봐요. 가린 뒤 같은 순서로 눌러요.",
+      "skill": "분류가 다른 네 물건 기억",
+      "level": 3,
+      "explanation": [
+        "이번 순서는 북 → 책 → 헤드폰 → 마이크예요.",
+        "drum은 북, book은 책, headphones는 헤드폰, microphone은 마이크예요."
+      ],
+      "interaction": {
+        "type": "memory",
+        "items": [
+          "🎤",
+          "🥁",
+          "🎧",
+          "📕"
+        ],
+        "order": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "itemLabels": [
+          "마이크",
+          "북",
+          "헤드폰",
+          "책"
+        ],
+        "joiner": " "
+      },
+      "id": "classroom-bag-11"
+    },
+    {
+      "title": "가방 속 위치",
+      "story": "{{place}}의 상상 교실에서 위치 카드와 뜻을 연결해요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "준비물 위치 표현",
+      "level": 3,
+      "explanation": [
+        "in the bag은 가방 안, on the desk는 책상 위, under the chair는 의자 아래예요.",
+        "in, on, under는 물건이 어디 있는지 알려 주는 말이에요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "in the bag",
+          "on the desk",
+          "under the chair"
+        ],
+        "right": [
+          "의자 아래",
+          "가방 안",
+          "책상 위"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US"
+      },
+      "id": "classroom-bag-12"
+    }
+  ]
+}

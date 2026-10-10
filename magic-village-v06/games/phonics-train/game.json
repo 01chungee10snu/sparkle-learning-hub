@@ -1,0 +1,338 @@
+{
+  "id": "phonics-train",
+  "subject": "english",
+  "title": "소리 글자 기차",
+  "description": "단어 전체를 듣고 글자를 조립하며 첫소리를 비교해요.",
+  "emoji": "🚂",
+  "minStage": 2,
+  "maxStage": 3,
+  "adventure": true,
+  "offline": "cat, dog처럼 짧은 단어를 쓴 카드를 오려 섞어 보세요. 단어 전체를 듣고 글자를 나란히 놓아 다시 만들어요.",
+  "prerequisite": "알파벳 글자 모양을 살펴보고, 짧은 영어 단어 소리를 들으며 카드를 고를 수 있어요.",
+  "questions": [
+    {
+      "title": "고양이 기차",
+      "story": "{{place}}의 상상 기차가 고양이 단어를 싣고 가요.",
+      "prompt": "cat을 듣고 c로 시작하는 cat을 만들어요.",
+      "skill": "CVC 단어 조립",
+      "level": 2,
+      "explanation": [
+        "고양이를 뜻하는 cat은 c → a → t 순서로 써요.",
+        "세 글자를 함께 놓고 cat이라는 단어 전체를 다시 들어 보세요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "t",
+          "c",
+          "a"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "cat",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-01"
+    },
+    {
+      "title": "해의 첫 글자",
+      "story": "{{name}}가 {{place}}의 상상 해님 역에서 단어를 들어요.",
+      "prompt": "해를 뜻하는 sun을 듣고, sun의 맨 앞 글자를 골라요.",
+      "choices": [
+        "m",
+        "s",
+        "p"
+      ],
+      "answer": 1,
+      "explanation": [
+        "sun은 해라는 뜻이고 s로 시작해요.",
+        "s, u, n이 함께 모여 sun이라는 단어를 만들어요."
+      ],
+      "skill": "단어 첫 글자 찾기",
+      "level": 2,
+      "cue": {
+        "text": "sun",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-02"
+    },
+    {
+      "title": "강아지 기차",
+      "story": "{{place}}의 상상 강아지 역에 글자들이 모였어요.",
+      "prompt": "dog를 듣고 d로 시작하는 dog를 만들어요.",
+      "skill": "CVC 글자 순서",
+      "level": 2,
+      "explanation": [
+        "개를 뜻하는 dog는 d → o → g 순서예요.",
+        "같은 글자라도 순서를 바꾸면 dog가 되지 않아요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "g",
+          "d",
+          "o"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "dog",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-03"
+    },
+    {
+      "title": "물고기 첫 글자",
+      "story": "{{place}}의 상상 수족관 역에서 물고기 이름을 들어요.",
+      "prompt": "물고기를 뜻하는 fish의 첫 글자는 무엇일까요?",
+      "choices": [
+        "t",
+        "m",
+        "f"
+      ],
+      "answer": 2,
+      "explanation": [
+        "fish는 물고기이며 f로 시작해요.",
+        "단어 전체를 듣고 맨 앞 글자 f를 눈으로도 찾아보세요."
+      ],
+      "skill": "단어 첫 글자 찾기",
+      "level": 2,
+      "cue": {
+        "text": "fish",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-04"
+    },
+    {
+      "title": "지도 기차",
+      "story": "{{name}}가 {{place}}의 상상 기차 지도를 펼쳐요.",
+      "prompt": "map을 듣고 m으로 시작하는 map을 만들어요.",
+      "skill": "CVC 단어 조립",
+      "level": 2,
+      "explanation": [
+        "map은 지도라는 뜻이고 m → a → p로 써요.",
+        "글자를 이어 놓은 뒤 map을 다시 들어 보세요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "a",
+          "p",
+          "m"
+        ],
+        "order": [
+          2,
+          0,
+          1
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "map",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-05"
+    },
+    {
+      "title": "펜 역에서 출발",
+      "story": "{{place}}의 상상 필기구 역에 펜이 있어요.",
+      "prompt": "펜을 뜻하는 pen의 첫 글자를 찾아요.",
+      "choices": [
+        "p",
+        "d",
+        "b"
+      ],
+      "answer": 0,
+      "explanation": [
+        "pen은 펜이라는 뜻이고 p로 시작해요.",
+        "p 다음에 e와 n을 쓰면 pen이 돼요."
+      ],
+      "skill": "모양이 비슷한 첫 글자 구별",
+      "level": 2,
+      "cue": {
+        "text": "pen",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-06"
+    },
+    {
+      "title": "돼지 단어 조립",
+      "story": "{{place}}의 상상 동물 기차가 돼지를 만나러 가요.",
+      "prompt": "영어를 듣고 돼지를 뜻하는 단어를 만들어요.",
+      "skill": "CVC 음성과 철자 연결",
+      "level": 3,
+      "explanation": [
+        "pig는 돼지이며 p → i → g 순서로 써요.",
+        "가운데 글자는 i이고 마지막 글자는 g예요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "i",
+          "g",
+          "p"
+        ],
+        "order": [
+          2,
+          0,
+          1
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "pig",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-07"
+    },
+    {
+      "title": "같은 소리로 출발",
+      "story": "{{place}}의 상상 소리 기차에서 첫소리가 같은 친구를 찾아요.",
+      "prompt": "fish를 들어요. fish와 같은 첫소리로 시작하는 단어는 무엇일까요?",
+      "choices": [
+        "cat",
+        "fan",
+        "sun"
+      ],
+      "answer": 1,
+      "explanation": [
+        "fish와 fan은 모두 f로 시작하고 첫소리도 같아요.",
+        "fan은 부채나 선풍기를 뜻하며, 두 단어의 시작 소리를 비교해 볼 수 있어요."
+      ],
+      "skill": "첫소리 공통점 찾기",
+      "level": 3,
+      "cue": {
+        "text": "fish",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "fan",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-08"
+    },
+    {
+      "title": "컵을 실어요",
+      "story": "{{name}}가 {{place}}의 상상 간식 기차에 컵을 실어요.",
+      "prompt": "영어를 듣고 컵을 뜻하는 단어를 만들어요.",
+      "skill": "CVC 단어 비교와 조립",
+      "level": 3,
+      "explanation": [
+        "컵을 뜻하는 cup은 c → u → p 순서예요.",
+        "cat과 cup은 c로 시작하지만 가운데와 끝 글자는 달라요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "p",
+          "c",
+          "u"
+        ],
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "cup",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-09"
+    },
+    {
+      "title": "b 소리 친구",
+      "story": "{{place}}의 상상 잠자리 역에서 bed를 들어요.",
+      "prompt": "bed와 같은 첫소리로 시작하는 단어를 골라요.",
+      "choices": [
+        "ball",
+        "dog",
+        "hen"
+      ],
+      "answer": 0,
+      "explanation": [
+        "bed와 ball은 모두 b로 시작하고 첫소리가 같아요.",
+        "bed는 침대, ball은 공이라는 뜻이에요."
+      ],
+      "skill": "첫소리 낱말 비교",
+      "level": 3,
+      "cue": {
+        "text": "bed",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "ball",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-10"
+    },
+    {
+      "title": "암탉의 글자표",
+      "story": "{{place}}의 상상 농장 역에 암탉이 기다려요.",
+      "prompt": "영어를 듣고 암탉을 뜻하는 단어를 만들어요.",
+      "skill": "CVC 끝 글자까지 조립",
+      "level": 3,
+      "explanation": [
+        "hen은 암탉이며 h → e → n으로 써요.",
+        "마지막 n까지 차례대로 놓아야 hen이 완성돼요."
+      ],
+      "interaction": {
+        "type": "sequence",
+        "items": [
+          "n",
+          "e",
+          "h"
+        ],
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "joiner": ""
+      },
+      "cue": {
+        "text": "hen",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-11"
+    },
+    {
+      "title": "d 소리 친구",
+      "story": "{{name}}가 {{place}}의 상상 연못 역에서 dog를 들어요.",
+      "prompt": "dog와 같은 첫소리로 시작하는 단어를 골라요.",
+      "choices": [
+        "sun",
+        "cat",
+        "duck"
+      ],
+      "answer": 2,
+      "explanation": [
+        "dog와 duck은 모두 d로 시작하고 첫소리가 같아요.",
+        "dog는 개, duck은 오리예요."
+      ],
+      "skill": "첫소리 일반화",
+      "level": 3,
+      "cue": {
+        "text": "dog",
+        "lang": "en-US"
+      },
+      "speak": {
+        "text": "duck",
+        "lang": "en-US"
+      },
+      "id": "phonics-train-12"
+    }
+  ]
+}

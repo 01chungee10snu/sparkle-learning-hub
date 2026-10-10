@@ -1,0 +1,369 @@
+{
+  "id": "sharing-kitchen",
+  "subject": "math",
+  "title": "반반 요리 정원",
+  "description": "공평하게 나누며 절반, 분수, 백분율을 만나요.",
+  "emoji": "🍪",
+  "minStage": 2,
+  "maxStage": 4,
+  "adventure": true,
+  "prerequisite": "작은 수를 세고 두 접시에 같은 수로 나누어 봐요.",
+  "offline": "종이 국수 한 가닥과 종이 쿠키를 만들어 둘 또는 넷으로 똑같이 나눠요. 나눈 한 조각이 전체에서 얼마인지 아이가 자기 말로 설명해 보게 해요.",
+  "questions": [
+    {
+      "id": "sharing-kitchen-01",
+      "level": 2,
+      "skill": "동일 수로 둘 나누기",
+      "title": "두 접시의 딸기",
+      "story": "{{place}}의 상상 요리방에서 딸기 6개를 두 접시에 같은 수로 나눠요.",
+      "prompt": "한 접시에 놓을 딸기 수를 만들어요.",
+      "explanation": [
+        "두 접시에 하나씩 번갈아 담으면 각 접시에 3개가 담겨요.",
+        "3 + 3 = 6이므로 한 접시에 3개씩이에요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "나누기 전 딸기",
+            "emoji": "🍓",
+            "count": 6
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "6/2",
+        "value": 3
+      },
+      "interaction": {
+        "type": "build",
+        "target": 3,
+        "max": 10,
+        "emoji": "🍓",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "sharing-kitchen-02",
+      "level": 2,
+      "skill": "절반의 의미",
+      "title": "빵을 반으로",
+      "story": "{{place}}의 상상 요리방에서 빵 한 개를 크기가 같은 두 조각으로 나눴어요.",
+      "prompt": "그중 한 조각을 무엇이라고 할까요?",
+      "explanation": [
+        "절반은 전체를 같은 크기로 둘로 나눈 한쪽이에요.",
+        "크기가 같은 두 조각 중 한 조각이 빵의 절반이에요."
+      ],
+      "visual": {
+        "kind": "fraction",
+        "parts": 2,
+        "filled": 1,
+        "label": "전체 빵 · 두 조각 중 한 조각에 색칠"
+      },
+      "choices": [
+        "빵 전체",
+        "빵의 절반",
+        "빵 두 개"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "sharing-kitchen-03",
+      "level": 2,
+      "skill": "절반을 먹고 남은 수",
+      "title": "쿠키 반은 남겨요",
+      "story": "{{name}}가 상상 요리방의 쿠키 10개를 같은 수의 두 묶음으로 나눴어요. 한 묶음을 먹었어요.",
+      "prompt": "남은 쿠키 수만큼 담아요.",
+      "explanation": [
+        "10개를 같은 수로 둘로 나누면 각 묶음은 5개예요.",
+        "한 묶음을 먹었으므로 남은 절반은 5개예요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "처음 쿠키",
+            "emoji": "🍪",
+            "count": 10
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "10/2",
+        "value": 5
+      },
+      "interaction": {
+        "type": "build",
+        "target": 5,
+        "max": 10,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "sharing-kitchen-04",
+      "level": 2,
+      "skill": "공평한 나눔 판별",
+      "title": "같은 수로 나눴을까",
+      "story": "{{place}}의 상상 요리방에서 사과 8개를 두 접시에 같은 수로 나누려고 해요.",
+      "prompt": "알맞게 나눈 것은 무엇일까요?",
+      "explanation": [
+        "모두 8개가 되어야 하고 두 접시의 수가 같아야 해요.",
+        "4개와 4개는 전체가 8개이고 두 접시의 수도 같아요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "나누기 전 사과",
+            "emoji": "🍎",
+            "count": 8
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "8/2",
+        "value": 4
+      },
+      "choices": [
+        "3개와 5개",
+        "2개와 6개",
+        "4개와 4개"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "sharing-kitchen-05",
+      "level": 2,
+      "skill": "빈 접시와 같은 수 만들기",
+      "title": "나머지 접시 채우기",
+      "story": "{{place}}의 상상 요리방에서 쿠키 8개를 같은 수로 나눠요. 첫 접시에 4개를 담았어요.",
+      "prompt": "나머지 쿠키를 둘째 접시에 담아요.",
+      "explanation": [
+        "전체 8개 중 첫 접시에 4개가 있으니 4개가 남아요.",
+        "둘째 접시에 4개를 담으면 두 접시에 같은 수가 놓여요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "첫 접시",
+            "emoji": "🍪",
+            "count": 4
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "8-4",
+        "value": 4
+      },
+      "interaction": {
+        "type": "build",
+        "target": 4,
+        "max": 10,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "sharing-kitchen-06",
+      "level": 2,
+      "skill": "절반 두 개의 합",
+      "title": "반쪽을 다시 모아요",
+      "story": "{{name}}가 종이 피자 한 판을 같은 크기의 두 조각으로 잘랐어요. 두 조각을 모두 다시 모았어요.",
+      "prompt": "피자가 얼마나 되었나요?",
+      "explanation": [
+        "한 판의 절반 두 조각을 빠짐없이 모았어요.",
+        "절반과 절반을 합하면 원래 한 판 전체가 돼요."
+      ],
+      "visual": {
+        "kind": "fraction",
+        "parts": 2,
+        "filled": 2,
+        "label": "절반 두 조각을 모두 모은 피자"
+      },
+      "choices": [
+        "한 판 전체",
+        "한 판의 절반",
+        "두 판"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sharing-kitchen-07",
+      "level": 4,
+      "skill": "4분의 1을 수량으로",
+      "title": "쿠키의 네 묶음",
+      "story": "{{place}}의 상상 요리방에서 쿠키 12개를 같은 수의 네 묶음으로 나눠요. 한 묶음은 전체의 4분의 1이에요.",
+      "prompt": "한 묶음에 놓을 쿠키 수를 만들어요.",
+      "explanation": [
+        "12개를 네 묶음으로 똑같이 나누면 한 묶음에 3개씩이에요.",
+        "3 + 3 + 3 + 3 = 12이므로 전체의 4분의 1은 쿠키 3개예요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "나누기 전 쿠키",
+            "emoji": "🍪",
+            "count": 12
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "12/4",
+        "value": 3
+      },
+      "interaction": {
+        "type": "build",
+        "target": 3,
+        "max": 20,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "sharing-kitchen-08",
+      "level": 4,
+      "skill": "분수와 백분율 연결",
+      "title": "네 조각 중 한 조각",
+      "story": "{{place}}의 상상 요리방에서 종이 피자 한 판을 같은 크기의 네 조각으로 나눴어요. 한 조각을 골랐어요.",
+      "prompt": "고른 한 조각은 전체의 몇 %일까요?",
+      "explanation": [
+        "전체 100%를 같은 크기의 네 부분으로 나누면 한 부분은 25%예요.",
+        "4분의 1은 25%와 같은 비율이에요."
+      ],
+      "visual": {
+        "kind": "fraction",
+        "parts": 4,
+        "filled": 1,
+        "label": "전체 피자 · 고른 한 조각에 색칠"
+      },
+      "mathCheck": {
+        "expression": "100/4",
+        "value": 25
+      },
+      "choices": [
+        "50%",
+        "25%",
+        "75%"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "sharing-kitchen-09",
+      "level": 4,
+      "skill": "남은 비율과 길이 변환",
+      "title": "긴 국수 한 가닥",
+      "story": "{{name}}가 상상 요리방에서 1m 국수 한 가닥의 절반인 50%를 먹었어요.",
+      "prompt": "남은 국수 길이를 바르게 쓴 것은 무엇일까요?",
+      "explanation": [
+        "1m는 100cm예요. 절반을 먹고 남은 절반도 50%예요.",
+        "100cm의 절반은 50cm이고, m로 쓰면 0.5m예요."
+      ],
+      "visual": {
+        "kind": "fraction",
+        "parts": 2,
+        "filled": 1,
+        "label": "처음 1m · 남은 절반에 색칠"
+      },
+      "mathCheck": {
+        "expression": "100*(1-0.5)",
+        "value": 50
+      },
+      "choices": [
+        "50cm = 5m",
+        "100cm = 1m",
+        "50cm = 0.5m"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "sharing-kitchen-10",
+      "level": 4,
+      "skill": "25%를 수량으로",
+      "title": "소풍 쿠키 한 봉지",
+      "story": "{{place}}의 상상 소풍 쿠키 20개 중 25%를 한 봉지에 담아요. 25%는 전체의 4분의 1이에요.",
+      "prompt": "그 봉지에 들어갈 쿠키 수를 만들어요.",
+      "explanation": [
+        "20개를 같은 수의 네 묶음으로 나누면 한 묶음은 5개예요.",
+        "25%는 4분의 1이므로 쿠키 5개를 담아요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "전체 쿠키",
+            "emoji": "🍪",
+            "count": 20
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "20*0.25",
+        "value": 5
+      },
+      "interaction": {
+        "type": "build",
+        "target": 5,
+        "max": 20,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "sharing-kitchen-11",
+      "level": 4,
+      "skill": "남은 백분율과 무게",
+      "title": "반죽을 쓰고 남겨요",
+      "story": "{{place}}의 상상 요리방에서 반죽 1kg 중 25%를 썼어요.",
+      "prompt": "남은 비율과 무게를 바르게 쓴 것은 무엇일까요?",
+      "explanation": [
+        "전체 100%에서 쓴 25%를 빼면 75%가 남아요.",
+        "1kg = 1000g이고 네 묶음 중 세 묶음이 남으므로 250g × 3 = 750g이에요."
+      ],
+      "visual": {
+        "kind": "fraction",
+        "parts": 4,
+        "filled": 3,
+        "label": "처음 1kg · 남은 세 부분에 색칠"
+      },
+      "mathCheck": {
+        "expression": "100*(1-0.25)",
+        "value": 75
+      },
+      "choices": [
+        "75% · 750g",
+        "25% · 250g",
+        "75% · 75g"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sharing-kitchen-12",
+      "level": 4,
+      "skill": "전체가 다르면 절반도 달라짐",
+      "title": "두 리본의 절반",
+      "story": "{{name}}가 상상 요리방 선물에 쓸 분홍 리본 1m와 초록 리본 2m를 준비했어요. 각각의 50%를 잘랐어요.",
+      "prompt": "잘라 낸 리본의 길이는 어떻게 다를까요?",
+      "explanation": [
+        "분홍 리본 1m의 절반은 0.5m, 즉 50cm예요.",
+        "초록 리본 2m의 절반은 1m, 즉 100cm예요. 같은 50%라도 전체 길이가 다르면 잘라 낸 길이가 달라요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "분홍 1m의 50% · 초록 2m의 50%"
+      },
+      "mathCheck": {
+        "expression": "100*0.5",
+        "value": 50
+      },
+      "choices": [
+        "둘 다 50cm예요",
+        "분홍 50cm · 초록 100cm예요",
+        "분홍 100cm · 초록 50cm예요"
+      ],
+      "answer": 1
+    }
+  ]
+}

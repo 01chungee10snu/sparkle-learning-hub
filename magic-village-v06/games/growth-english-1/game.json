@@ -1,0 +1,261 @@
+{
+  "id": "growth-english-1",
+  "subject": "english",
+  "title": "소리 친구",
+  "description": "영어 소리를 듣고 그림을 찾아요.",
+  "emoji": "🎧",
+  "stage": 1,
+  "strand": "듣기와 그림 연결",
+  "prerequisite": "그림 세 개를 살펴보고 원하는 그림을 누를 수 있어요.",
+  "offline": "인형이나 과일 두 개를 놓고 어른이 영어 이름을 말하면 아이가 가리켜 보세요.",
+  "questions": [
+    {
+      "id": "growth-english-1-01",
+      "title": "누가 왔을까?",
+      "skill": "동물 이름 듣기",
+      "story": "소리 친구가 찾아왔어요.",
+      "prompt": "영어를 듣고 그림을 골라요.",
+      "cue": {
+        "text": "cat",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🐱",
+        "🐶",
+        "🐟"
+      ],
+      "choiceLabels": [
+        "고양이",
+        "개",
+        "물고기"
+      ],
+      "answer": 0,
+      "explanation": [
+        "cat은 고양이예요.",
+        "소리를 한 번 더 듣고 그림을 가리켜 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-02",
+      "title": "소리를 찾아요",
+      "skill": "동물 이름 듣기",
+      "story": "다른 소리 친구도 인사해요.",
+      "prompt": "영어를 듣고 그림을 골라요.",
+      "cue": {
+        "text": "dog",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🐟",
+        "🐶",
+        "🐱"
+      ],
+      "choiceLabels": [
+        "물고기",
+        "개",
+        "고양이"
+      ],
+      "answer": 1,
+      "explanation": [
+        "dog는 개예요.",
+        "강아지 인형이 있다면 dog라고 말하며 안아 주세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-03",
+      "title": "그림 친구 찾기",
+      "skill": "동물 이름 듣기",
+      "story": "그림 친구들이 기다려요.",
+      "prompt": "영어를 듣고 그림을 골라요.",
+      "cue": {
+        "text": "fish",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🐶",
+        "🐱",
+        "🐟"
+      ],
+      "choiceLabels": [
+        "개",
+        "고양이",
+        "물고기"
+      ],
+      "answer": 2,
+      "explanation": [
+        "fish는 물고기예요.",
+        "손으로 헤엄치는 모습을 만들며 fish를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-04",
+      "title": "소리 바구니",
+      "skill": "음식 이름 듣기",
+      "story": "바구니에 담을 것을 찾아요.",
+      "prompt": "영어를 듣고 그림을 골라요.",
+      "cue": {
+        "text": "apple",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🍎",
+        "🍌",
+        "🍇"
+      ],
+      "choiceLabels": [
+        "사과",
+        "바나나",
+        "포도"
+      ],
+      "answer": 0,
+      "explanation": [
+        "apple은 사과예요.",
+        "사과를 먹기 전에 apple이라고 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-05",
+      "title": "소리 장보기",
+      "skill": "음식 이름 듣기",
+      "story": "바구니에 하나 더 담아요.",
+      "prompt": "영어를 듣고 그림을 골라요.",
+      "cue": {
+        "text": "banana",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🍇",
+        "🍌",
+        "🍎"
+      ],
+      "choiceLabels": [
+        "포도",
+        "바나나",
+        "사과"
+      ],
+      "answer": 1,
+      "explanation": [
+        "banana는 바나나예요.",
+        "소리를 천천히 듣고 banana를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-06",
+      "title": "소리 색연필",
+      "skill": "색 이름 듣기",
+      "story": "색연필 하나를 고르려 해요.",
+      "prompt": "영어를 듣고 색을 골라요.",
+      "cue": {
+        "text": "red",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🔵",
+        "🟡",
+        "🔴"
+      ],
+      "choiceLabels": [
+        "파란색",
+        "노란색",
+        "빨간색"
+      ],
+      "answer": 2,
+      "explanation": [
+        "red는 빨간색이에요.",
+        "주변에서 빨간 물건을 찾아 red라고 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-07",
+      "title": "다음 색 찾기",
+      "skill": "색 이름 듣기",
+      "story": "다른 색도 칠해 볼까요?",
+      "prompt": "영어를 듣고 색을 골라요.",
+      "cue": {
+        "text": "blue",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🔵",
+        "🔴",
+        "🟡"
+      ],
+      "choiceLabels": [
+        "파란색",
+        "빨간색",
+        "노란색"
+      ],
+      "answer": 0,
+      "explanation": [
+        "blue는 파란색이에요.",
+        "파란 색연필을 들어 blue라고 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    },
+    {
+      "id": "growth-english-1-08",
+      "title": "마지막 색 찾기",
+      "skill": "색 이름 듣기",
+      "story": "그림에 색을 하나 더 넣어요.",
+      "prompt": "영어를 듣고 색을 골라요.",
+      "cue": {
+        "text": "yellow",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choices": [
+        "🔴",
+        "🟡",
+        "🔵"
+      ],
+      "choiceLabels": [
+        "빨간색",
+        "노란색",
+        "파란색"
+      ],
+      "answer": 1,
+      "explanation": [
+        "yellow는 노란색이에요.",
+        "노란 물건을 하나 찾아 yellow라고 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎧"
+      }
+    }
+  ]
+}

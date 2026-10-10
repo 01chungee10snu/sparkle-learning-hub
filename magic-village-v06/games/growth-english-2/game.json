@@ -1,0 +1,229 @@
+{
+  "id": "growth-english-2",
+  "subject": "english",
+  "title": "글자 소리 씨앗",
+  "description": "익숙한 단어와 첫 글자를 만나요.",
+  "emoji": "🌱",
+  "stage": 2,
+  "strand": "기초 단어와 소리·글자 연결",
+  "prerequisite": "익숙한 영어 이름을 듣고 그림을 찾을 수 있어요.",
+  "offline": "cat, dog, sun을 함께 말한 뒤 종이에 c, d, s를 쓰고 첫 글자를 찾아보세요.",
+  "questions": [
+    {
+      "id": "growth-english-2-01",
+      "title": "그림 이름표",
+      "skill": "기초 단어 읽기",
+      "story": "그림에 영어 이름표를 붙여요.",
+      "prompt": "그림과 맞는 이름표는 무엇일까요?",
+      "choices": [
+        "cat",
+        "dog",
+        "fish"
+      ],
+      "answer": 0,
+      "explanation": [
+        "고양이의 이름표는 cat이에요.",
+        "c, a, t가 모여 cat이라는 단어가 돼요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🐱"
+      },
+      "speak": {
+        "text": "cat",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-02",
+      "title": "과일 이름표",
+      "skill": "기초 단어 읽기",
+      "story": "소풍 바구니에 이름표를 붙여요.",
+      "prompt": "그림과 맞는 이름표는 무엇일까요?",
+      "choices": [
+        "banana",
+        "apple",
+        "fish"
+      ],
+      "answer": 1,
+      "explanation": [
+        "사과의 이름표는 apple이에요.",
+        "apple을 말하며 그림과 글자를 함께 살펴보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍎"
+      },
+      "speak": {
+        "text": "apple",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-03",
+      "title": "색 이름표",
+      "skill": "기초 단어 읽기",
+      "story": "물감에 영어 이름표가 필요해요.",
+      "prompt": "그림의 색 이름을 골라요.",
+      "choices": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "answer": 2,
+      "explanation": [
+        "파란색은 blue예요.",
+        "blue라는 글자를 보며 파란색 물건을 찾아보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🔵"
+      },
+      "speak": {
+        "text": "blue",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-04",
+      "title": "하늘 이름표",
+      "skill": "기초 단어 읽기",
+      "story": "하늘 그림에 이름표를 붙여요.",
+      "prompt": "그림과 맞는 이름표는 무엇일까요?",
+      "choices": [
+        "sun",
+        "cat",
+        "bus"
+      ],
+      "answer": 0,
+      "explanation": [
+        "해는 영어로 sun이에요.",
+        "s, u, n 세 글자를 차례로 살펴보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "☀️"
+      },
+      "speak": {
+        "text": "sun",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-05",
+      "title": "첫 글자 찾기",
+      "skill": "단어 첫소리와 글자 연결",
+      "story": "단어의 맨 앞 글자가 비었어요.",
+      "prompt": "소리를 듣고 빈칸에 올 글자를 골라요.",
+      "cue": {
+        "text": "cat",
+        "lang": "en-US"
+      },
+      "choices": [
+        "m",
+        "c",
+        "s"
+      ],
+      "answer": 1,
+      "explanation": [
+        "cat의 첫 글자는 c예요.",
+        "이 단어에서 c는 /k/ 소리를 내요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "_at"
+      },
+      "speak": {
+        "text": "c",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-06",
+      "title": "소리 씨앗 찾기",
+      "skill": "단어 첫소리와 글자 연결",
+      "story": "빈칸에 글자 씨앗을 심어요.",
+      "prompt": "소리를 듣고 빈칸에 올 글자를 골라요.",
+      "cue": {
+        "text": "dog",
+        "lang": "en-US"
+      },
+      "choices": [
+        "s",
+        "c",
+        "d"
+      ],
+      "answer": 2,
+      "explanation": [
+        "dog의 첫 글자는 d예요.",
+        "d, o, g를 이으면 dog가 돼요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "_og"
+      },
+      "speak": {
+        "text": "d",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-07",
+      "title": "단어 문 열기",
+      "skill": "단어 첫소리와 글자 연결",
+      "story": "첫 글자를 찾아 단어 문을 열어요.",
+      "prompt": "소리를 듣고 빈칸에 올 글자를 골라요.",
+      "cue": {
+        "text": "sun",
+        "lang": "en-US"
+      },
+      "choices": [
+        "s",
+        "m",
+        "d"
+      ],
+      "answer": 0,
+      "explanation": [
+        "sun의 첫 글자는 s예요.",
+        "이 단어에서 s는 /s/ 소리를 내요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "_un"
+      },
+      "speak": {
+        "text": "s",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "growth-english-2-08",
+      "title": "마지막 씨앗",
+      "skill": "단어 첫소리와 글자 연결",
+      "story": "단어 하나를 더 완성해요.",
+      "prompt": "소리를 듣고 빈칸에 올 글자를 골라요.",
+      "cue": {
+        "text": "map",
+        "lang": "en-US"
+      },
+      "choices": [
+        "t",
+        "m",
+        "s"
+      ],
+      "answer": 1,
+      "explanation": [
+        "map의 첫 글자는 m이에요.",
+        "map은 길을 찾을 때 보는 지도예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "_ap"
+      },
+      "speak": {
+        "text": "m",
+        "lang": "en-US"
+      }
+    }
+  ]
+}

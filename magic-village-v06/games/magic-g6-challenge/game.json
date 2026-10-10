@@ -1,0 +1,1963 @@
+{
+  "id": "magic-g6-challenge",
+  "subject": "math",
+  "title": "초등 6학년 마법 수학 도전",
+  "description": "공개용으로 새로 제작한 25문제 연습 시험지",
+  "emoji": "🏆",
+  "growth": false,
+  "gradeBand": "G6",
+  "prerequisite": "학년은 보호자가 직접 선택해요.",
+  "offline": "종이·블록으로 생각을 설명하고 함께 검토해 보세요.",
+  "questions": [
+    {
+      "id": "magic-g6-basic-01",
+      "title": "초등 6학년 · 기본 1번",
+      "story": "마법 리본의 길이가 6m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "6 × 100 = 600이므로 정답은 600입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "596",
+        "600",
+        "604"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-02",
+      "title": "초등 6학년 · 기본 2번",
+      "story": "요정이 가진 마법 가루가 420g 있어요.",
+      "prompt": "그중 10%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "420 × 10 / 100 = 42이므로 정답은 42입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 42,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-03",
+      "title": "초등 6학년 · 기본 3번",
+      "story": "마법 주문에는 8 × □ + 8 = 64라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(64 − 8) ÷ 8 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "7",
+        "3",
+        "11"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-04",
+      "title": "초등 6학년 · 기본 4번",
+      "story": "마법 정원의 노란 꽃이 10송이, 분홍 꽃이 95송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "10 + 95 = 105이므로 정답은 105입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "101",
+        "105",
+        "109"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-05",
+      "title": "초등 6학년 · 기본 5번",
+      "story": "별빛 상자에 16개의 별이 있었고, 요정이 3개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "16 − 3 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "17",
+        "13"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-06",
+      "title": "초등 6학년 · 기본 6번",
+      "story": "발판에 16, 17, 18이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 1씩 커지므로 다음은 19이므로 정답은 19입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 19,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-07",
+      "title": "초등 6학년 · 기본 7번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 36개가 되었어요. 새로 넣은 구슬은 17개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "36 − 17 = 19이므로 정답은 19입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "15",
+        "19",
+        "23"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-08",
+      "title": "초등 6학년 · 기본 8번",
+      "story": "한 상자에 마법 열매가 5개씩, 상자는 4개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "4 × 5 = 20이므로 정답은 20입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "16",
+        "24",
+        "20"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-09",
+      "title": "초등 6학년 · 기본 9번",
+      "story": "사탕 30개를 친구 5명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "30 ÷ 5 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "2",
+        "10"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-10",
+      "title": "초등 6학년 · 기본 10번",
+      "story": "마법 정원의 직사각형 화단은 가로 11m, 세로 12m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(11 + 12) × 2 = 46이므로 정답은 46입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 46,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-11",
+      "title": "초등 6학년 · 기본 11번",
+      "story": "마법 리본의 길이가 7m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "7 × 100 = 700이므로 정답은 700입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "696",
+        "704",
+        "700"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-12",
+      "title": "초등 6학년 · 기본 12번",
+      "story": "요정이 가진 마법 가루가 420g 있어요.",
+      "prompt": "그중 25%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "420 × 25 / 100 = 105이므로 정답은 105입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "105",
+        "101",
+        "109"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-13",
+      "title": "초등 6학년 · 기본 13번",
+      "story": "마법 주문에는 4 × □ + 9 = 77라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(77 − 9) ÷ 4 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "13",
+        "17",
+        "21"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-14",
+      "title": "초등 6학년 · 기본 14번",
+      "story": "마법 정원의 노란 꽃이 40송이, 분홍 꽃이 66송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "40 + 66 = 106이므로 정답은 106입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 106,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-15",
+      "title": "초등 6학년 · 기본 15번",
+      "story": "별빛 상자에 116개의 별이 있었고, 요정이 73개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "116 − 73 = 43이므로 정답은 43입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "43",
+        "39",
+        "47"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-16",
+      "title": "초등 6학년 · 기본 16번",
+      "story": "발판에 46, 49, 52이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 55이므로 정답은 55입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "51",
+        "55",
+        "59"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-17",
+      "title": "초등 6학년 · 기본 17번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 136개가 되었어요. 새로 넣은 구슬은 87개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "136 − 87 = 49이므로 정답은 49입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "45",
+        "53",
+        "49"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-18",
+      "title": "초등 6학년 · 기본 18번",
+      "story": "한 상자에 마법 열매가 1개씩, 상자는 6개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "6 × 1 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-19",
+      "title": "초등 6학년 · 기본 19번",
+      "story": "사탕 14개를 친구 7명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "14 ÷ 7 = 2이므로 정답은 2입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "0",
+        "2",
+        "6"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-basic-20",
+      "title": "초등 6학년 · 기본 20번",
+      "story": "마법 정원의 직사각형 화단은 가로 21m, 세로 14m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(21 + 14) × 2 = 70이므로 정답은 70입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "66",
+        "74",
+        "70"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-21",
+      "title": "초등 6학년 · 기본 21번",
+      "story": "마법 리본의 길이가 8m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "8 × 100 = 800이므로 정답은 800입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "800",
+        "796",
+        "804"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-22",
+      "title": "초등 6학년 · 기본 22번",
+      "story": "요정이 가진 마법 가루가 420g 있어요.",
+      "prompt": "그중 10%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "420 × 10 / 100 = 42이므로 정답은 42입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 42,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-basic-23",
+      "title": "초등 6학년 · 기본 23번",
+      "story": "마법 주문에는 7 × □ + 10 = 87라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(87 − 10) ÷ 7 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "7",
+        "15",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-basic-24",
+      "title": "초등 6학년 · 기본 24번",
+      "story": "마법 정원의 노란 꽃이 70송이, 분홍 꽃이 37송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "70 + 37 = 107이므로 정답은 107입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "107",
+        "103",
+        "111"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-basic-25",
+      "title": "초등 6학년 · 기본 25번",
+      "story": "별빛 상자에 117개의 별이 있었고, 요정이 44개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "117 − 44 = 73이므로 정답은 73입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-basic:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "69",
+        "73",
+        "77"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-01",
+      "title": "초등 6학년 · 도전 1번",
+      "story": "발판에 84, 85, 86이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 1씩 커지므로 다음은 87이므로 정답은 87입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 87,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-02",
+      "title": "초등 6학년 · 도전 2번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 203개가 되었어요. 새로 넣은 구슬은 116개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "203 − 116 = 87이므로 정답은 87입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "87",
+        "83",
+        "91"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-03",
+      "title": "초등 6학년 · 도전 3번",
+      "story": "한 상자에 마법 열매가 5개씩, 상자는 4개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "4 × 5 = 20이므로 정답은 20입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "16",
+        "20",
+        "24"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-04",
+      "title": "초등 6학년 · 도전 4번",
+      "story": "사탕 30개를 친구 5명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "30 ÷ 5 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "2",
+        "10",
+        "6"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-05",
+      "title": "초등 6학년 · 도전 5번",
+      "story": "마법 정원의 직사각형 화단은 가로 11m, 세로 12m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(11 + 12) × 2 = 46이므로 정답은 46입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 46,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-06",
+      "title": "초등 6학년 · 도전 6번",
+      "story": "마법 리본의 길이가 7m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "7 × 100 = 700이므로 정답은 700입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "696",
+        "700",
+        "704"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-07",
+      "title": "초등 6학년 · 도전 7번",
+      "story": "요정이 가진 마법 가루가 540g 있어요.",
+      "prompt": "그중 25%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "540 × 25 / 100 = 135이므로 정답은 135입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "131",
+        "139",
+        "135"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-08",
+      "title": "초등 6학년 · 도전 8번",
+      "story": "마법 주문에는 4 × □ + 9 = 77라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(77 − 9) ÷ 4 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "17",
+        "13",
+        "21"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-09",
+      "title": "초등 6학년 · 도전 9번",
+      "story": "마법 정원의 노란 꽃이 108송이, 분홍 꽃이 33송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "108 + 33 = 141이므로 정답은 141입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 141,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-10",
+      "title": "초등 6학년 · 도전 10번",
+      "story": "별빛 상자에 151개의 별이 있었고, 요정이 40개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "151 − 40 = 111이므로 정답은 111입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "107",
+        "115",
+        "111"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-11",
+      "title": "초등 6학년 · 도전 11번",
+      "story": "발판에 114, 117, 120이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 123이므로 정답은 123입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "123",
+        "119",
+        "127"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-12",
+      "title": "초등 6학년 · 도전 12번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 171개가 되었어요. 새로 넣은 구슬은 54개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "171 − 54 = 117이므로 정답은 117입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "113",
+        "117",
+        "121"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-13",
+      "title": "초등 6학년 · 도전 13번",
+      "story": "한 상자에 마법 열매가 1개씩, 상자는 6개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "6 × 1 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-14",
+      "title": "초등 6학년 · 도전 14번",
+      "story": "사탕 14개를 친구 7명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "14 ÷ 7 = 2이므로 정답은 2입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "2",
+        "0",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-15",
+      "title": "초등 6학년 · 도전 15번",
+      "story": "마법 정원의 직사각형 화단은 가로 21m, 세로 14m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(21 + 14) × 2 = 70이므로 정답은 70입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "66",
+        "70",
+        "74"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-16",
+      "title": "초등 6학년 · 도전 16번",
+      "story": "마법 리본의 길이가 8m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "8 × 100 = 800이므로 정답은 800입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "796",
+        "804",
+        "800"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-17",
+      "title": "초등 6학년 · 도전 17번",
+      "story": "요정이 가진 마법 가루가 540g 있어요.",
+      "prompt": "그중 10%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "540 × 10 / 100 = 54이므로 정답은 54입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 54,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-18",
+      "title": "초등 6학년 · 도전 18번",
+      "story": "마법 주문에는 7 × □ + 10 = 87라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(87 − 10) ÷ 7 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "7",
+        "11",
+        "15"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-19",
+      "title": "초등 6학년 · 도전 19번",
+      "story": "마법 정원의 노란 꽃이 4송이, 분홍 꽃이 103송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "4 + 103 = 107이므로 정답은 107입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "103",
+        "111",
+        "107"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-20",
+      "title": "초등 6학년 · 도전 20번",
+      "story": "별빛 상자에 117개의 별이 있었고, 요정이 110개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "117 − 110 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "7",
+        "3",
+        "11"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-21",
+      "title": "초등 6학년 · 도전 21번",
+      "story": "발판에 10, 15, 20이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 5씩 커지므로 다음은 25이므로 정답은 25입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 25,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-challenge-22",
+      "title": "초등 6학년 · 도전 22번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 137개가 되었어요. 새로 넣은 구슬은 124개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "137 − 124 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "17",
+        "13"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-challenge-23",
+      "title": "초등 6학년 · 도전 23번",
+      "story": "한 상자에 마법 열매가 11개씩, 상자는 8개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "8 × 11 = 88이므로 정답은 88입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "88",
+        "84",
+        "92"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-challenge-24",
+      "title": "초등 6학년 · 도전 24번",
+      "story": "사탕 108개를 친구 9명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "108 ÷ 9 = 12이므로 정답은 12입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "8",
+        "12",
+        "16"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-challenge-25",
+      "title": "초등 6학년 · 도전 25번",
+      "story": "마법 정원의 직사각형 화단은 가로 7m, 세로 16m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(7 + 16) × 2 = 46이므로 정답은 46입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-challenge:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 46,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-01",
+      "title": "초등 6학년 · 심화 1번",
+      "story": "마법 리본의 길이가 7m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "7 × 100 = 700이므로 정답은 700입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "700",
+        "695",
+        "705"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-02",
+      "title": "초등 6학년 · 심화 2번",
+      "story": "요정이 가진 마법 가루가 700g 있어요.",
+      "prompt": "그중 25%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "700 × 25 / 100 = 175이므로 정답은 175입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "170",
+        "175",
+        "180"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-03",
+      "title": "초등 6학년 · 심화 3번",
+      "story": "마법 주문에는 4 × □ + 9 = 77라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(77 − 9) ÷ 4 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "12",
+        "22",
+        "17"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-04",
+      "title": "초등 6학년 · 심화 4번",
+      "story": "마법 정원의 노란 꽃이 70송이, 분홍 꽃이 51송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "70 + 51 = 121이므로 정답은 121입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 121,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-05",
+      "title": "초등 6학년 · 심화 5번",
+      "story": "별빛 상자에 131개의 별이 있었고, 요정이 58개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "131 − 58 = 73이므로 정답은 73입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "68",
+        "73",
+        "78"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-06",
+      "title": "초등 6학년 · 심화 6번",
+      "story": "발판에 76, 79, 82이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 85이므로 정답은 85입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "80",
+        "90",
+        "85"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-07",
+      "title": "초등 6학년 · 심화 7번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 151개가 되었어요. 새로 넣은 구슬은 72개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "151 − 72 = 79이므로 정답은 79입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "79",
+        "74",
+        "84"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-08",
+      "title": "초등 6학년 · 심화 8번",
+      "story": "한 상자에 마법 열매가 1개씩, 상자는 6개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "6 × 1 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-09",
+      "title": "초등 6학년 · 심화 9번",
+      "story": "사탕 14개를 친구 7명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "14 ÷ 7 = 2이므로 정답은 2입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "0",
+        "7",
+        "2"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-10",
+      "title": "초등 6학년 · 심화 10번",
+      "story": "마법 정원의 직사각형 화단은 가로 21m, 세로 14m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(21 + 14) × 2 = 70이므로 정답은 70입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "70",
+        "65",
+        "75"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-11",
+      "title": "초등 6학년 · 심화 11번",
+      "story": "마법 리본의 길이가 8m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "8 × 100 = 800이므로 정답은 800입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "795",
+        "800",
+        "805"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-12",
+      "title": "초등 6학년 · 심화 12번",
+      "story": "요정이 가진 마법 가루가 700g 있어요.",
+      "prompt": "그중 10%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "700 × 10 / 100 = 70이므로 정답은 70입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 70,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-13",
+      "title": "초등 6학년 · 심화 13번",
+      "story": "마법 주문에는 7 × □ + 10 = 87라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(87 − 10) ÷ 7 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "11",
+        "6",
+        "16"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-14",
+      "title": "초등 6학년 · 심화 14번",
+      "story": "마법 정원의 노란 꽃이 100송이, 분홍 꽃이 121송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "100 + 121 = 221이므로 정답은 221입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "216",
+        "221",
+        "226"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-15",
+      "title": "초등 6학년 · 심화 15번",
+      "story": "별빛 상자에 231개의 별이 있었고, 요정이 128개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "231 − 128 = 103이므로 정답은 103입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "98",
+        "108",
+        "103"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-16",
+      "title": "초등 6학년 · 심화 16번",
+      "story": "발판에 106, 111, 116이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 5씩 커지므로 다음은 121이므로 정답은 121입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 121,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-17",
+      "title": "초등 6학년 · 심화 17번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 251개가 되었어요. 새로 넣은 구슬은 142개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "251 − 142 = 109이므로 정답은 109입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "104",
+        "109",
+        "114"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-18",
+      "title": "초등 6학년 · 심화 18번",
+      "story": "한 상자에 마법 열매가 11개씩, 상자는 8개 있어요.",
+      "prompt": "마법 열매는 모두 몇 개일까요?",
+      "skill": "곱셈",
+      "explanation": [
+        "8 × 11 = 88이므로 정답은 88입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "83",
+        "93",
+        "88"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-19",
+      "title": "초등 6학년 · 심화 19번",
+      "story": "사탕 108개를 친구 9명에게 똑같이 나누어요.",
+      "prompt": "한 명에게 돌아가는 사탕은 몇 개일까요?",
+      "skill": "나눗셈",
+      "explanation": [
+        "108 ÷ 9 = 12이므로 정답은 12입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "12",
+        "7",
+        "17"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-20",
+      "title": "초등 6학년 · 심화 20번",
+      "story": "마법 정원의 직사각형 화단은 가로 7m, 세로 16m예요.",
+      "prompt": "화단 둘레는 몇 m일까요?",
+      "skill": "직사각형 둘레",
+      "explanation": [
+        "(7 + 16) × 2 = 46이므로 정답은 46입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 46,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-21",
+      "title": "초등 6학년 · 심화 21번",
+      "story": "마법 리본의 길이가 9m예요.",
+      "prompt": "리본 길이를 cm로 바꾸면 얼마일까요?",
+      "skill": "길이 단위 환산",
+      "explanation": [
+        "9 × 100 = 900이므로 정답은 900입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "895",
+        "905",
+        "900"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g6-advanced-22",
+      "title": "초등 6학년 · 심화 22번",
+      "story": "요정이 가진 마법 가루가 700g 있어요.",
+      "prompt": "그중 25%는 몇 g일까요?",
+      "skill": "백분율",
+      "explanation": [
+        "700 × 25 / 100 = 175이므로 정답은 175입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "175",
+        "170",
+        "180"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g6-advanced-23",
+      "title": "초등 6학년 · 심화 23번",
+      "story": "마법 주문에는 3 × □ + 2 = 17라고 쓰여 있어요.",
+      "prompt": "□에 알맞은 수는 무엇일까요?",
+      "skill": "일차방정식",
+      "explanation": [
+        "(17 − 2) ÷ 3 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "0",
+        "5",
+        "10"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g6-advanced-24",
+      "title": "초등 6학년 · 심화 24번",
+      "story": "마법 정원의 노란 꽃이 130송이, 분홍 꽃이 21송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "130 + 21 = 151이므로 정답은 151입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 151,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g6-advanced-25",
+      "title": "초등 6학년 · 심화 25번",
+      "story": "별빛 상자에 161개의 별이 있었고, 요정이 28개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "161 − 28 = 133이므로 정답은 133입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g6-advanced:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "133",
+        "128",
+        "138"
+      ],
+      "answer": 0
+    }
+  ]
+}
