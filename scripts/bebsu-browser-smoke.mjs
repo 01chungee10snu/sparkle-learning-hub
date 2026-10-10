@@ -111,13 +111,18 @@ async function start(name,width,height,learner,complete){
    console.log('PASS actual shop buy + world equip + restore after reload + sibling isolation');
   }
   console.log('PASS',name,'question count',limit,'Unity actual startup / image / answer / bonus');
- }finally{await ctx.close();}
+ }finally{
+  // Unity WebGL may stall page teardown in headless Chrome; keep the test
+  // bounded after all gameplay assertions have completed.
+  await Promise.race([ctx.close(),new Promise(resolve=>setTimeout(resolve,12000))]);
+ }
 }
 try{
  await start('tae-desktop',1280,800,'tae',true);
  await start('se-mobile',390,844,'se',false);
 }finally{
- await browser.close();
  await writeFile(path.join(OUTPUT,'report.json'),JSON.stringify({results:evidence,errors,createdAt:new Date().toISOString()},null,2));
  console.log('BROWSER_ERRORS',errors.length,JSON.stringify(errors).slice(0,2000));
+ await Promise.race([browser.close(),new Promise(resolve=>setTimeout(resolve,12000))]);
 }
+
