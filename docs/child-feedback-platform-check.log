@@ -1,6 +1,6 @@
 
 > sparkle-learning-hub@1.4.0 check
-> node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/build-irt-bank.mjs --verify && node scripts/check-irt.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-reward-integrity.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs && node scripts/check-village-quality.mjs && node scripts/check-native-art.mjs
+> node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/build-irt-bank.mjs --verify && node scripts/check-irt.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-reward-integrity.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs && node scripts/check-village-quality.mjs && node scripts/check-native-art.mjs && node scripts/check-care-garden.mjs
 
 PASS: 46 published games; 4153 hub questions + 48 unit-garden questions; catalog, arithmetic and speech answers verified
 PASS: growth state migration, 3/5-question rounds, learner isolation, strict import, duplicate prevention, capped attempts, readiness gates, voluntary progression, review dates and backup roundtrip
@@ -73,3 +73,4 @@ PASS actual gift catalog preserves specific art and fallback emoji
 PASS round cue counts confirmed answers and never mutates a round
 PASS native UI images are referenced by actual controls in both surfaces
 native-art PASS 50 checks; Rewards 14 + UI 3 + Characters 2 bytes verified; live Unity comparison false ; baseline model comparison false
+CARE_GARDEN_PASS 25 checks

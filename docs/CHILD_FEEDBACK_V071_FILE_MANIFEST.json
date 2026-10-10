@@ -1,0 +1,89 @@
+{
+  "version": "0.7.1",
+  "files": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/app.js",
+      "sha256": "a8f7c3099627d6d31fd0918f132882fdb83afb60947441cac573753763390700"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/CHILD_FEEDBACK_V07.md",
+      "sha256": "7eacf19eb63f24a7937efc812e13906f2d178b84aa6501656b475ab760fef1c8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-platform-check.log",
+      "sha256": "d03f9eb716880caf12ebddbd8852c9ef855dcad72afc85e3d83f18c38760853e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-garden-world.png",
+      "sha256": "f7c141e4da8f7226b79f8cdd1e10188355400c1f4b9fa4de3ccd39c579e8622f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-grown-flower.png",
+      "sha256": "557b3868c6a899b0df4ce3e4dabd35b8ce9ce4907f5654558b89cf7627a6c175"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-grown-tree.png",
+      "sha256": "51bf23fc3fca335cbadb27984acedc0d45f1f8866549e3516a986bf99f939e38"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-world.png",
+      "sha256": "3e3b38db846676bd848acbfe548cd4c41b70a205b7bdebd3ca3a8c25b4fb670b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-garden-world.png",
+      "sha256": "d1d1055cca99c5cec97e8e6cc2d319b10704d57f7cca6b28096b478135a52d52"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-grown-flower.png",
+      "sha256": "bdde5f0333cc1c8ded7851a1aa6da3fd456a1261ef107f104102dbdc46fe3db2"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-grown-tree.png",
+      "sha256": "cf24fa0f9d49b4cb01ba5c27f89c36da95e24ccc44c83078d1c543b5759134f6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-world.png",
+      "sha256": "26d72c8d434ea521fa66b763ec69eb3ad97ae18b70f82359f68de97e42984b76"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/results.json",
+      "sha256": "3046a5bdf70f264bba76ea175531b7ea3ae36c38955ebf29dacdf41e9e66bdd4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/index.html",
+      "sha256": "42561e59b065cffb44c2ac8c220509f83bbba560f7fbb62cea994005c4eeda5f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/major-patch.css",
+      "sha256": "91ed091f019f2ca9b9f58108762f1edd8df29a778e5bb9e261ed859d5a8de559"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/village-ui.js",
+      "sha256": "d19bb56d7d741949cd656651d46fdcb9406f657a59576487dbaadefd28f941c0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/index.html",
+      "sha256": "f6b11f1a0cf8209c063e6792fd362ebf35102ae2b3ef56bb42c572359139c9ac"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/major-patch.css",
+      "sha256": "91ed091f019f2ca9b9f58108762f1edd8df29a778e5bb9e261ed859d5a8de559"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/village-ui.js",
+      "sha256": "55f3d4ab37a4881c02f935f0fe9ff2243a879be453d3e0199a3782f0467ba80a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/package.json",
+      "sha256": "04b2189d4bf82808f05991ec8ceff8d9970ea58fdc152793fb660deb855a570f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/scripts/check-care-garden.mjs",
+      "sha256": "39d9ea4806b58a4190d5b80218aff36cdcef820f5061fade4cc03c023cf2ef6e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/scripts/child-feedback-browser-qa.mjs",
+      "sha256": "463d66190f658317b5bf096fa24a9bbee06300cba71ac905c1fa60544d7ea525"
+    }
+  ]
+}

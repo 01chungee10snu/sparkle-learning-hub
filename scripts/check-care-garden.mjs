@@ -17,4 +17,8 @@ ok(()=>mutateGarden({who:'tae',area:'plaza',action:'GARDEN_PLANT',slot:2,species
 ok(()=>assert.equal(gardenSnapshot('se','plaza',storage).plants[0].species,'tree_gold'));
 for(let i=0;i<6;i++)ok(()=>assert.equal(mutateGarden({who:'se',area:'plaza',action:'GARDEN_CARE',slot:2,care:['water','sun','song'][i%3],expectedStage:i},storage).garden.plants[0].stage,i+1));
 ok(()=>assert.throws(()=>mutateGarden({who:'tae',area:'home',action:'GARDEN_PLANT',slot:1,species:'tree_oak'},{getItem:()=>null,setItem:()=>{throw Error('full')}})));
+ok(()=>mutateGarden({who:'se',area:'home',action:'GARDEN_PLANT',slot:0,species:'tree_mint'},storage));
+ok(()=>assert.equal(gardenSnapshot('tae','home',storage).plants[0].species,'flowers_pink'));
+ok(()=>assert.equal(gardenSnapshot('se','home',storage).plants[0].species,'tree_mint'));
+ok(()=>assert.throws(()=>mutateGarden({who:'se',area:'plaza',action:'GARDEN_CARE',slot:2,care:'water',expectedStage:6},storage)));
 console.log('CARE_GARDEN_PASS '+tests+' checks');

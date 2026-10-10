@@ -27,12 +27,15 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 탐험 지도</button>',
     ' <button id="vh-garden" type="button" class="vh-shortcut">🌱 나무·꽃 키우기</button>',
+    ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
+    ' <div id="vh-extra-tools" hidden>',
     ' <button id="vh-run" type="button" class="vh-shortcut" aria-pressed="false">🏃 달리기</button>',
     ' <button id="vh-hop" type="button" class="vh-shortcut">🪽 살짝 날기</button>',
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false">🎭 8방향 시안</button>',
+    ' </div>',
     '</aside>',
     '<p id="village-toast" role="alert" hidden></p>',
     '<div id="village-dialog-wrap" hidden aria-busy="false">',
@@ -119,6 +122,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
 
   let careGarden=null, runActive=false;
+  function collapseTools(){ $('vh-extra-tools').hidden=true;$('vh-more').setAttribute('aria-expanded','false'); }
+  $('vh-more').addEventListener('click',()=>{
+    if(!safeExplore())return;
+    const expanded=$('vh-extra-tools').hidden;
+    $('vh-extra-tools').hidden=!expanded;$('vh-more').setAttribute('aria-expanded',String(expanded));
+  });
   const safeExplore=()=>phase==='explore'&&!busy&&root.dataset.ready==='true';
   $('vh-map').addEventListener('click',()=>{
     if(!safeExplore())return;
@@ -166,6 +175,22 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       ui.body.append(seeds);
     } else {
       const kind=SPECIES[plant.species],finished=plant.stage>=kind.steps;
+      const scene=label('figure','','vh-growing-scene');
+      scene.setAttribute('aria-label',kind.title+' 성장 모습');
+      const visual=label('div','','vh-growing-plant');
+      const art=plant.stage===0?'seed':plant.stage===1?'sprout':plant.stage===2?'bud':null;
+      if(art){const image=document.createElement('img');image.src='./assets/'+art+'.png';image.alt='';visual.append(image);}
+      else if(['flowers_pink','flowers_sun'].includes(plant.species)){
+        const image=document.createElement('img');image.src='./assets/gameplay/'+plant.species+'.png';image.alt='';visual.append(image);
+      } else visual.textContent=kind.emoji;
+      visual.style.setProperty('--plant-scale',String(.65+.35*plant.stage/kind.steps));
+      scene.append(visual,label('figcaption',plant.stage===0?'내가 심은 씨앗':plant.stage===1?'작은 새싹':plant.stage===2?'쑥쑥 자라는 중':finished?'내가 가꾼 '+kind.title:'더 크게 자라는 '+kind.title));
+      if(data.action==='GARDEN_CARE'){
+        const effect=label('span',['💧','☀️','🎵'][(plant.stage-1)%3],'vh-care-effect');
+        effect.setAttribute('aria-hidden','true');scene.append(effect);
+        scene.dataset.cared='true';
+      }
+      ui.body.append(scene);
       const progress=document.createElement('progress');progress.max=kind.steps;progress.value=plant.stage;
       progress.setAttribute('aria-label',kind.title+' 성장 '+plant.stage+'/'+kind.steps);ui.body.append(progress);
       paragraph(finished?'내가 가꾼 '+kind.title+'! 마을에서도 구경해요.':
@@ -253,6 +278,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     (lastFocus?.isConnected ? lastFocus : ui.quest).focus({preventScroll:true});
   }
   function open() {
+    collapseTools();
     sendToUnity("PAUSE_EXPLORE");
     if (phase === 'explore') lastFocus = document.activeElement;
     ui.dialog.hidden = false;
@@ -844,7 +870,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     if(Number.isFinite(data.reinforcementStars))reinforcementStars=data.reinforcementStars;
     if (Number.isFinite(data.flowers) && Number.isFinite(data.familyFlowers)) {
-      ui.progress.textContent='내 꽃 '+data.flowers+'송이 · 가족 꽃 '+data.familyFlowers+'송이'+
+      ui.progress.textContent='배움 꽃 '+data.flowers+'송이 · 가족 꽃 '+data.familyFlowers+'송이'+
+        (data.garden?' · 가꾸는 식물 '+data.garden.plants.length+'개':'')+
         (reinforcementStars>0?' · 생각·복습 별 '+reinforcementStars+'개':'');
     }
     if(data.action.startsWith('GARDEN_'))showGarden(data);

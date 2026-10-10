@@ -8,6 +8,11 @@
       },
       "checks": [
         "Unity boot",
+        "compact control row",
+        "collapsible play tools",
+        "growth preview",
+        "six-stage tree care",
+        "tree reload persistence",
         "five destinations",
         "run toggle",
         "hop and wave commands",
@@ -29,6 +34,11 @@
       },
       "checks": [
         "Unity boot",
+        "compact control row",
+        "collapsible play tools",
+        "growth preview",
+        "six-stage tree care",
+        "tree reload persistence",
         "five destinations",
         "run toggle",
         "hop and wave commands",

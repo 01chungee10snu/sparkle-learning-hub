@@ -140,3 +140,31 @@
 - `/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.loader.js`
 - `/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageEditorBuild.cs`
 - `/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageMajorPatchAudit.cs`
+
+## v0.7.1 후속 개선
+
+- 지도·정원·더 놀기만 한 줄로 표시하고 동작·상점 버튼은 펼쳐서 사용합니다.
+- 정원 창에 씨앗→새싹→성장 모습을 표시하고 돌봄 직후 물·햇빛·음표 반응을 보여줍니다.
+- 배움 꽃과 가꾸는 식물 수를 구분합니다.
+- 세로 390×844, 가로 844×390 실제 WebGL 브라우저 검사 각각 16개 통과. 나무 6단계 성장·재접속 저장·가족 정원 분리·44px 터치 크기를 확인했습니다. 상태 검사 25개 통과. 삼성 실기기 검사는 미실시.
+- Unity 월드의 기존 성장 반영은 유지하며, 이번 돌봄 애니메이션은 정원 창에 추가되었습니다.
+
+작업 경로: `/Users/01chungee10/Github/sparkle-learning-feedback-v07`
+
+```text
+magic-village-{kma-v06,v06}/village/
+  index.html
+  village-ui.js
+  major-patch.css
+scripts/
+  check-care-garden.mjs
+  child-feedback-browser-qa.mjs
+docs/child-feedback-qa/
+  *-world.png
+  *-grown-tree.png
+  *-grown-flower.png
+  *-garden-world.png
+  results.json
+```
+
+변경된 전체 파일의 절대 경로와 해시는 `CHILD_FEEDBACK_V071_FILE_MANIFEST.json`에 기록했습니다.

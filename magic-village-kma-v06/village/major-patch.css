@@ -256,3 +256,20 @@
 .vh-garden-care .vh-garden-slot {flex:1;}
 [data-mode="garden"] progress {width:100%;height:22px;accent-color:#63965f;}
 @media(max-width:480px) {#vh-world-shortcuts{max-width:calc(100% - 20px);bottom:94px;} #vh-world-shortcuts .vh-shortcut{font-size:12px;padding:7px 9px;min-height:44px;}}
+
+/* Keep exploration visible; optional play tools open above the compact row. */
+#vh-world-shortcuts{max-width:430px;left:auto;right:10px;top:auto;bottom:100px;}
+#vh-extra-tools{position:absolute;bottom:calc(100% + 8px);right:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:260px;padding:10px;border:2px solid #b5a0cd;border-radius:18px;background:#fff8edf5;box-shadow:0 8px 22px #36427144;}
+#vh-extra-tools[hidden]{display:none!important;}
+#vh-world-shortcuts>.vh-shortcut{min-width:0;}
+.vh-growing-scene{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:154px;margin:12px 0;padding:10px;border-radius:22px;background:radial-gradient(ellipse at 50% 10%,#fffde0,#dbf1cd 70%);border:2px solid #a7c696;}
+.vh-growing-plant{display:flex;align-items:center;justify-content:center;height:110px;font-size:82px;transform:scale(var(--plant-scale));transform-origin:bottom center;}
+.vh-growing-plant img{width:110px;height:110px;object-fit:contain;}
+.vh-growing-scene figcaption{font-size:15px;font-weight:800;color:#31593e;}
+.vh-care-effect{position:absolute;top:15px;right:24%;font-size:36px;animation:vh-care-gift 1.4s ease-out both;}
+.vh-growing-scene[data-cared="true"] .vh-growing-plant{animation:vh-care-bounce .8s ease-out;}
+@keyframes vh-care-gift{0%{opacity:0;transform:translateY(-14px) scale(.6)}35%{opacity:1}100%{opacity:.8;transform:translateY(20px) scale(1.1)}}
+@keyframes vh-care-bounce{40%{transform:scale(calc(var(--plant-scale) * 1.12)) rotate(5deg)}}
+@media(max-width:480px){#vh-world-shortcuts{left:10px;right:10px;max-width:none;bottom:94px;justify-content:flex-end;}#vh-world-shortcuts>.vh-shortcut{flex:1;padding:7px 5px;}#vh-extra-tools{max-width:calc(100vw - 20px);}}
+@media(max-height:590px) and (orientation:landscape){#vh-world-shortcuts{bottom:94px;top:auto;}#vh-extra-tools{grid-template-columns:repeat(3,minmax(0,1fr));width:390px;}}
+@media(prefers-reduced-motion:reduce){.vh-care-effect,.vh-growing-scene[data-cared="true"] .vh-growing-plant{animation:none;}}

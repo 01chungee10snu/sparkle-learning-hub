@@ -22,11 +22,15 @@ try {
   await page.goto(url);
   await page.locator('#start').click();
   await page.waitForFunction(()=>document.querySelector('#village-ui')?.dataset.ready==='true'&&!document.querySelector('#village-ui').hidden,{},{timeout:120000});
+  await page.waitForTimeout(1500);
+  assert.equal(await page.locator('#vh-extra-tools').isVisible(),false);
+  const compact=await page.locator('#vh-world-shortcuts').boundingBox();assert.ok(compact.height<65,'compact controls exceed one row');
   await page.screenshot({path:out+'/'+folder+'-world.png'});
   await page.getByRole('button',{name:'🗺️ 탐험 지도',exact:true}).click();
   await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.mode==='map');
   assert.equal(await page.locator('.vh-garden-grid button').count(),5);
   await page.getByRole('button',{name:'✨ 별빛 언덕',exact:true}).click();
+  await page.locator('#vh-more').click();
   await page.getByRole('button',{name:'🏃 달리기',exact:true}).click();
   assert.equal(await page.locator('#vh-run').getAttribute('aria-pressed'),'true');
   await page.getByRole('button',{name:'🪽 살짝 날기',exact:true}).click();
@@ -40,6 +44,17 @@ try {
    await page.waitForFunction(stage=>Number(document.querySelector('[data-mode="garden"] progress')?.value)===stage,i+1);
   }
   assert.equal(await page.locator('progress').getAttribute('max'),'3');
+  assert.equal(await page.locator('.vh-growing-scene').count(),1);
+  await page.getByRole('button',{name:'🌰 2번 흙자리',exact:true}).click();
+  await page.getByRole('button',{name:'🌳 참나무',exact:true}).click();
+  for(let i=0;i<6;i++){
+    await page.getByRole('button',{name:['💧 물주기','☀️ 햇빛','🎵 노래'][i%3],exact:true}).click();
+    await page.waitForFunction(stage=>document.querySelector('progress')?.value===stage,i+1);
+    assert.equal(await page.locator('.vh-care-effect').count(),1);
+  }
+  assert.equal(await page.locator('progress').getAttribute('max'),'6');
+  await page.screenshot({path:out+'/'+folder+'-grown-tree.png'});
+  await page.getByRole('button',{name:'🌸 분홍 꽃 3/3',exact:true}).click();
   await page.screenshot({path:out+'/'+folder+'-grown-flower.png'});
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   assert.equal(overflow,false,'mobile horizontal overflow');
@@ -54,13 +69,15 @@ try {
   await page.getByRole('button',{name:'🌱 나무·꽃 키우기',exact:true}).click();
   await page.getByRole('button',{name:'🌸 분홍 꽃 3/3',exact:true}).click();
   assert.equal(await page.locator('progress').evaluate(p=>p.value),3);
+  await page.getByRole('button',{name:'🌳 참나무 6/6',exact:true}).click();
+  assert.equal(await page.locator('progress').evaluate(p=>p.value),6);
   await page.getByRole('button',{name:'잠깐 쉬기',exact:true}).click();
   await page.locator('#vh-plaza').click();
   await page.waitForFunction(()=>!document.querySelector('#vh-plaza').disabled);
   await page.getByRole('button',{name:'🌱 나무·꽃 키우기',exact:true}).click();
   assert.equal(await page.getByRole('button',{name:'🌰 1번 흙자리',exact:true}).count(),1);
   assert.equal(localErrors.length,0,JSON.stringify(localErrors));
-  results.push({folder,viewport,checks:['Unity boot','five destinations','run toggle','hop and wave commands','plant','water sun song','44px targets','no horizontal overflow','reload persistence','family garden separation','no runtime errors'],pass:true});
+  results.push({folder,viewport,checks:['Unity boot','compact control row','collapsible play tools','growth preview','six-stage tree care','tree reload persistence','five destinations','run toggle','hop and wave commands','plant','water sun song','44px targets','no horizontal overflow','reload persistence','family garden separation','no runtime errors'],pass:true});
   console.log('BROWSER_FEEDBACK_PASS',folder);
   await context.close();
  }
