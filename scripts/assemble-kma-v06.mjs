@@ -93,7 +93,7 @@ patch('village/village-bridge.js',[
 ]);
 patch('village/index.html',[
  ['<title>태희·세희의 마법마을 · 반짝 배움터</title>','<title>태희·세희의 마법마을 · 벡수 경시대회 v0.6</title>'],
- ['<a href="../">← 반짝 배움터</a>','<a href="../">← 마법마을 경시대회 안내</a>'],
+ ['<a href="../">← 반짝 배움터</a>','<a href="../../">← 반짝 배움터</a>'],
  ['productVersion: \'0.6.0-dev\'','productVersion: \'0.6.0-kma\'']
 ]);
 // Standardized cache key prevents old public practice chunks from being reused.
