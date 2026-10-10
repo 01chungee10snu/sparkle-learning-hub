@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#7655af"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ctext x=%273%27 y=%2753%27 font-size=%2750%27%3E🌸%3C/text%3E%3C/svg%3E"/>
-<title>태희·세희의 마법마을 · 공개 연습판 v0.6</title>
+<title>태희·세희의 마법마을 · 공개 연습판 v0.7</title>
 <style>
 *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:system-ui,sans-serif;background:#e8f0e8;color:#263551}
 #page{display:flex;flex-direction:column;height:100dvh;min-height:400px;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
@@ -22,8 +22,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #bar{height:100%;width:0;background:#8663c2;transition:width .25s}
 @media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
 </style>
-<link rel="stylesheet" href="./village-ui.css?v=20261010pub3">
-<link rel="stylesheet" href="./major-patch.css?v=20261010pub3">
+<link rel="stylesheet" href="./village-ui.css?v=20261011-garden-v07">
+<link rel="stylesheet" href="./major-patch.css?v=20261011-garden-v07">
 </head>
 <body>
 <div id="page">
@@ -47,8 +47,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
   </main>
 </div>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=20261010pub3';
-import { createVillageUI } from './village-ui.js?v=20261010pub3';
+import { createVillageHost } from './village-bridge.js?v=20261011-garden-v07';
+import { createVillageUI } from './village-ui.js?v=20261011-garden-v07';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -59,6 +59,7 @@ const bar = document.querySelector('#bar');
 let instance = null;
 const queued = [];
 let queuedCosmetics = null;
+let queuedGarden = null;
 const uiRoot = document.querySelector('#village-ui');
 const ui = createVillageUI({
   root:uiRoot,
@@ -75,13 +76,19 @@ const deliver = message => {
   const payload = JSON.stringify(message);
   if (!instance) queued.push(payload);
   else instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+  if(message?.ok && message.garden) {
+    const garden=JSON.stringify(message.garden);
+    if(instance)instance.SendMessage('VillageRuntime','OnGardenMessage',garden);
+    else queuedGarden=garden;
+  }
+
 };
 const host = createVillageHost(deliver);
 window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=20261010pub2';
+    const loaderUrl = './Build/' + name + '.loader.js?v=20261011-garden-v072';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -119,13 +126,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=20261010pub2',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010pub2',
-      codeUrl: base + '.wasm' + suffix + '?v=20261010pub2',
+      dataUrl: base + '.data' + suffix + '?v=20261011-garden-v072',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=20261011-garden-v072',
+      codeUrl: base + '.wasm' + suffix + '?v=20261011-garden-v072',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.6.0-dev'
+      productVersion: '0.7.0-dev'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
@@ -136,6 +143,7 @@ start.addEventListener('click', async () => {
       instance.SendMessage('VillageRuntime','OnCosmeticsMessage',queuedCosmetics);
       queuedCosmetics=null;
     }
+    if(queuedGarden){instance.SendMessage('VillageRuntime','OnGardenMessage',queuedGarden);queuedGarden=null;}
     overlay.hidden = true;
     uiRoot.hidden = false;
   } catch (error) {

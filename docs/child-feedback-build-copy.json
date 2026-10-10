@@ -1,0 +1,42 @@
+[
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.wasm.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.wasm.unityweb",
+    "sha256": "d312b2d3fc82e499e6caf7f179d6ff8012114258ff99d6142d99b4e40805429c"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.data.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.data.unityweb",
+    "sha256": "3f57c35407023b3db8e3997d500ff34bbc29fcdb0c1ff0297d4e8d08747b0954"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.framework.js.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.framework.js.unityweb",
+    "sha256": "1962831dee2240127a4d4365d5487aa39098dba493e17ab65c263d9e726e66ed"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.loader.js",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.loader.js",
+    "sha256": "bae8a1d2b2e2a01a2422e423165ed1b8584d236ded773ca4a3cce151a3097a0e"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.wasm.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.wasm.unityweb",
+    "sha256": "d312b2d3fc82e499e6caf7f179d6ff8012114258ff99d6142d99b4e40805429c"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.data.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.data.unityweb",
+    "sha256": "3f57c35407023b3db8e3997d500ff34bbc29fcdb0c1ff0297d4e8d08747b0954"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.framework.js.unityweb",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.framework.js.unityweb",
+    "sha256": "1962831dee2240127a4d4365d5487aa39098dba493e17ab65c263d9e726e66ed"
+  },
+  {
+    "source": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.loader.js",
+    "output": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.loader.js",
+    "sha256": "bae8a1d2b2e2a01a2422e423165ed1b8584d236ded773ca4a3cce151a3097a0e"
+  }
+]

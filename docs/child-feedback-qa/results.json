@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "folder": "magic-village-kma-v06",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "checks": [
+        "Unity boot",
+        "five destinations",
+        "run toggle",
+        "hop and wave commands",
+        "plant",
+        "water sun song",
+        "44px targets",
+        "no horizontal overflow",
+        "reload persistence",
+        "family garden separation",
+        "no runtime errors"
+      ],
+      "pass": true
+    },
+    {
+      "folder": "magic-village-v06",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "checks": [
+        "Unity boot",
+        "five destinations",
+        "run toggle",
+        "hop and wave commands",
+        "plant",
+        "water sun song",
+        "44px targets",
+        "no horizontal overflow",
+        "reload persistence",
+        "family garden separation",
+        "no runtime errors"
+      ],
+      "pass": true
+    }
+  ],
+  "errors": []
+}

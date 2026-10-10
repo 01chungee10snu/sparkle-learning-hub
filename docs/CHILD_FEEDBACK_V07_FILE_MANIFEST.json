@@ -1,0 +1,380 @@
+{
+  "version": "0.7.0",
+  "movementBoundsBefore": [
+    -12,
+    12,
+    -10.5,
+    10.5
+  ],
+  "movementBoundsAfter": [
+    -24,
+    24,
+    -21,
+    21
+  ],
+  "areaMultiplier": 4,
+  "routeChecks": 26,
+  "gardenStateChecks": 21,
+  "browserChecks": {
+    "results": [
+      {
+        "folder": "magic-village-kma-v06",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "checks": [
+          "Unity boot",
+          "five destinations",
+          "run toggle",
+          "hop and wave commands",
+          "plant",
+          "water sun song",
+          "44px targets",
+          "no horizontal overflow",
+          "reload persistence",
+          "family garden separation",
+          "no runtime errors"
+        ],
+        "pass": true
+      },
+      {
+        "folder": "magic-village-v06",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "checks": [
+          "Unity boot",
+          "five destinations",
+          "run toggle",
+          "hop and wave commands",
+          "plant",
+          "water sun song",
+          "44px targets",
+          "no horizontal overflow",
+          "reload persistence",
+          "family garden separation",
+          "no runtime errors"
+        ],
+        "pass": true
+      }
+    ],
+    "errors": []
+  },
+  "buildEvidence": [
+    "MAGIC_MAJOR_PATCH_AUDIT_PASS premium_art_views=8 independent_prototype_views=16 heading_states=8 motions=9 preview_quality=thumbnail_based_not_full_resolution reward_writer=JS_only unity_world=read_only",
+    "MAGIC_VILLAGE_WEB_BUILD_OK /Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL"
+  ],
+  "routeEvidence": [
+    "CHILD_FEEDBACK_AUDIT_PASS routes=26 regions=5 beds=8 area_multiplier=4 living_friends=verified"
+  ],
+  "limitations": [
+    "Samsung Galaxy physical device not tested",
+    "Browser verification uses Chrome software WebGL with isolated storage",
+    "Existing high-resolution-art work remains separate; no new high-resolution art claimed"
+  ],
+  "sourceOriginals": [
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageRuntime.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageDirectionalHero.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBillboard.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBridge.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageNpcSpeech.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageEditorBuild.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageMajorPatchAudit.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageArt.cs",
+    "/Users/01chungee10/Github/sparkle-village-kma-public-pages/package.json",
+    "/Users/01chungee10/Github/sparkle-village-kma-public-pages/magic-village-kma-v06/village/index.html",
+    "/Users/01chungee10/Github/sparkle-village-kma-public-pages/magic-village-kma-v06/village/village-bridge.js",
+    "/Users/01chungee10/Github/sparkle-village-kma-public-pages/magic-village-kma-v06/village/village-ui.js",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageEditorBuild.cs",
+    "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageMajorPatchAudit.cs"
+  ],
+  "copiesModifiedInPlace": [
+    "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07",
+    "/Users/01chungee10/Github/sparkle-learning-feedback-v07"
+  ],
+  "baselineCommits": {
+    "unity": "878558d",
+    "web": "c5d50a4"
+  },
+  "files": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageChildFeedbackAudit.cs",
+      "relative": "Assets/Editor/VillageChildFeedbackAudit.cs",
+      "role": "verification artifact",
+      "sha256": "471c3950d5aaee7dde7f40cab5c330f63fc4e8525ff51cee379b7e466d265acf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageChildFeedbackAudit.cs.meta",
+      "relative": "Assets/Editor/VillageChildFeedbackAudit.cs.meta",
+      "role": "verification artifact",
+      "sha256": "ee3cc71fec2527838dc7318046b2d85b5e01f473a1673effd2d659500ed0b381"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageCareGarden.cs",
+      "relative": "Assets/Scripts/VillageCareGarden.cs",
+      "role": "output/current",
+      "sha256": "5b3becfd8bc0d13eb136d6ebb4ab649be1b2cb04cb871fdb3fccb14257b7cdb0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageCareGarden.cs.meta",
+      "relative": "Assets/Scripts/VillageCareGarden.cs.meta",
+      "role": "output/current",
+      "sha256": "27ed8529f5f533dad53be8320cb458c3813c68fe31880d0ce96db81b4b2477b3"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Art/Generated/runtime-prefab-verification.json",
+      "relative": "Assets/Art/Generated/runtime-prefab-verification.json",
+      "role": "output/current",
+      "sha256": "cfb076dd4ecd848e6963497d72f8d63c38ee99e87f6b008113f9ce47d039a7d2"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageEditorBuild.cs",
+      "relative": "Assets/Editor/VillageEditorBuild.cs",
+      "role": "output/current",
+      "sha256": "7a600dc112e922a55fd95d0a6be892ecfff5b101e921edfdefb81ccae8091388"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Editor/VillageMajorPatchAudit.cs",
+      "relative": "Assets/Editor/VillageMajorPatchAudit.cs",
+      "role": "output/current",
+      "sha256": "ddf252aef8924ad6aa8eeb51092f70615b8618b83f4c1560940c315659022783"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageBillboard.cs",
+      "relative": "Assets/Scripts/VillageBillboard.cs",
+      "role": "output/current",
+      "sha256": "296d412183ff45e0736519046086ab277600f7fab660ee841ff9460d96d4e456"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageDirectionalHero.cs",
+      "relative": "Assets/Scripts/VillageDirectionalHero.cs",
+      "role": "output/current",
+      "sha256": "e2a1173f1e83ad6e16dc46860771086eedc15391ef1839f98627c0d09866eb62"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageRuntime.cs",
+      "relative": "Assets/Scripts/VillageRuntime.cs",
+      "role": "output/current",
+      "sha256": "0bc41364f3edb012127c4ab7d4623b360ebf9a2bb3604e48ef6c5eb1d19e8a5f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Assets/Scripts/VillageWorld.cs",
+      "relative": "Assets/Scripts/VillageWorld.cs",
+      "role": "output/current",
+      "sha256": "5746095429636bcfb9e83a23772204630a4e2ff797c55d1e7f78012e8dda7f35"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/ProjectSettings/ProjectSettings.asset",
+      "relative": "ProjectSettings/ProjectSettings.asset",
+      "role": "output/current",
+      "sha256": "e62b38227fab561f5327c1980281a60ef568383b0d01f5cba34246810724f387"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/CHILD_FEEDBACK_V07_FILE_MANIFEST.json",
+      "relative": "docs/CHILD_FEEDBACK_V07_FILE_MANIFEST.json",
+      "role": "verification artifact",
+      "sha256": "043486f21f07eb50dd1936221e1d28bbc07a89d572a4a18a3f5dee8203d99c15"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-build-copy.json",
+      "relative": "docs/child-feedback-build-copy.json",
+      "role": "verification artifact",
+      "sha256": "4d1c6854e640364e25064ae54be9a9a0577672e846ea38906a8b0bcfa03cb5b0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-platform-check.log",
+      "relative": "docs/child-feedback-platform-check.log",
+      "role": "verification artifact",
+      "sha256": "573d2503df7b969125cdffef3d0ecf633ede1fd8f96bdd3115962d6490be06cd"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-garden-world.png",
+      "relative": "docs/child-feedback-qa/magic-village-kma-v06-garden-world.png",
+      "role": "verification artifact",
+      "sha256": "49d1f1c09c21f9bad8ba495163a5e09232eaa25ffc556ed208f355623c5bb59d"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-grown-flower.png",
+      "relative": "docs/child-feedback-qa/magic-village-kma-v06-grown-flower.png",
+      "role": "verification artifact",
+      "sha256": "772d5bcbe5e6f26a963e5f23047d94e5ffb8f1c0ffa6987f5ace1f4cf91b6154"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-kma-v06-world.png",
+      "relative": "docs/child-feedback-qa/magic-village-kma-v06-world.png",
+      "role": "verification artifact",
+      "sha256": "78b92ba56c5430679f75abba622b04bd070ca4a56224c3c713fd409b3a874bd1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-garden-world.png",
+      "relative": "docs/child-feedback-qa/magic-village-v06-garden-world.png",
+      "role": "verification artifact",
+      "sha256": "de098e4c3796521732be6f108881b923bb298bd488ca0a98c3190b002d016be3"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-grown-flower.png",
+      "relative": "docs/child-feedback-qa/magic-village-v06-grown-flower.png",
+      "role": "verification artifact",
+      "sha256": "09ce16edff1c8efb51585eb51db412d32404f95569780bdf1916ff34d29e3b1f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/magic-village-v06-world.png",
+      "relative": "docs/child-feedback-qa/magic-village-v06-world.png",
+      "role": "verification artifact",
+      "sha256": "6060a89060ef42adfbb426d59715a16fe279a077215a9de61b57cbc1f7adef67"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/docs/child-feedback-qa/results.json",
+      "relative": "docs/child-feedback-qa/results.json",
+      "role": "verification artifact",
+      "sha256": "9f3e74a1692916a05836693012e65a16bc5dedf0352e34d6f8dae941cf377584"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/garden-state.js",
+      "relative": "magic-village-kma-v06/village/garden-state.js",
+      "role": "output/current",
+      "sha256": "99e52fc602844dee88bbce39718608c3573f3a2e718dcd0ea4b7f1faedda097c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/garden-state.js",
+      "relative": "magic-village-v06/village/garden-state.js",
+      "role": "output/current",
+      "sha256": "99e52fc602844dee88bbce39718608c3573f3a2e718dcd0ea4b7f1faedda097c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/scripts/check-care-garden.mjs",
+      "relative": "scripts/check-care-garden.mjs",
+      "role": "verification artifact",
+      "sha256": "61433c32be60a871e9cb9e3a94f855f4391f8e8b830b6677f2cc442542d22620"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/scripts/child-feedback-browser-qa.mjs",
+      "relative": "scripts/child-feedback-browser-qa.mjs",
+      "role": "verification artifact",
+      "sha256": "10026aace1c47dc5c0778d731023b68f5e1cbd3efe2399020b0843ace647d9cd"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/app.js",
+      "relative": "app.js",
+      "role": "output/current",
+      "sha256": "d65ec9a7dea7aa4b3c9d421e3719bd6eec197dd80670a188ed0dc39166022e16"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/index.html",
+      "relative": "index.html",
+      "role": "output/current",
+      "sha256": "0e278f398dc16c925a04f1f970dd47460ffb780d7c110ad44b8926463a54de9c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.data.unityweb",
+      "relative": "magic-village-kma-v06/village/Build/WebGL.data.unityweb",
+      "role": "output/current",
+      "sha256": "3f57c35407023b3db8e3997d500ff34bbc29fcdb0c1ff0297d4e8d08747b0954"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.loader.js",
+      "relative": "magic-village-kma-v06/village/Build/WebGL.loader.js",
+      "role": "output/current",
+      "sha256": "bae8a1d2b2e2a01a2422e423165ed1b8584d236ded773ca4a3cce151a3097a0e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/Build/WebGL.wasm.unityweb",
+      "relative": "magic-village-kma-v06/village/Build/WebGL.wasm.unityweb",
+      "role": "output/current",
+      "sha256": "d312b2d3fc82e499e6caf7f179d6ff8012114258ff99d6142d99b4e40805429c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/index.html",
+      "relative": "magic-village-kma-v06/village/index.html",
+      "role": "output/current",
+      "sha256": "29d09c210e722754506c3632265ea29b65b48c2ac733b2364f92a1957debe4cc"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/major-patch.css",
+      "relative": "magic-village-kma-v06/village/major-patch.css",
+      "role": "output/current",
+      "sha256": "a36b0b9df42d596222816100cec80f1d3fde8016086b266bb665bca143e905b6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/village-bridge.js",
+      "relative": "magic-village-kma-v06/village/village-bridge.js",
+      "role": "output/current",
+      "sha256": "b4733dd17e0c63de43c1e8fd7f605572afa3b4acf93d802c51790f001d3e62f8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-kma-v06/village/village-ui.js",
+      "relative": "magic-village-kma-v06/village/village-ui.js",
+      "role": "output/current",
+      "sha256": "02b33300ef51b5e1a124d09e6d48c6529a2a189e51f537eb8cb4504bd51a6f24"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.data.unityweb",
+      "relative": "magic-village-v06/village/Build/WebGL.data.unityweb",
+      "role": "output/current",
+      "sha256": "3f57c35407023b3db8e3997d500ff34bbc29fcdb0c1ff0297d4e8d08747b0954"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.loader.js",
+      "relative": "magic-village-v06/village/Build/WebGL.loader.js",
+      "role": "output/current",
+      "sha256": "bae8a1d2b2e2a01a2422e423165ed1b8584d236ded773ca4a3cce151a3097a0e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/Build/WebGL.wasm.unityweb",
+      "relative": "magic-village-v06/village/Build/WebGL.wasm.unityweb",
+      "role": "output/current",
+      "sha256": "d312b2d3fc82e499e6caf7f179d6ff8012114258ff99d6142d99b4e40805429c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/index.html",
+      "relative": "magic-village-v06/village/index.html",
+      "role": "output/current",
+      "sha256": "0550664156a1f5618f3534e5cab5a7cdb83c97d35eeb35680f354ed1d04e4064"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/major-patch.css",
+      "relative": "magic-village-v06/village/major-patch.css",
+      "role": "output/current",
+      "sha256": "a36b0b9df42d596222816100cec80f1d3fde8016086b266bb665bca143e905b6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/village-bridge.js",
+      "relative": "magic-village-v06/village/village-bridge.js",
+      "role": "output/current",
+      "sha256": "22437dd9d7e672b7a63e106f1e12f538b8d8e814dc3640d319958d6587b920f1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-feedback-v07/magic-village-v06/village/village-ui.js",
+      "relative": "magic-village-v06/village/village-ui.js",
+      "role": "output/current",
+      "sha256": "259599ab80febc002f3fcc7de21d2daece99c8c21c19ce371f20fcf19bc447f5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.wasm.unityweb",
+      "relative": "Builds/WebGL/Build/WebGL.wasm.unityweb",
+      "role": "output/current build",
+      "sha256": "d312b2d3fc82e499e6caf7f179d6ff8012114258ff99d6142d99b4e40805429c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.data.unityweb",
+      "relative": "Builds/WebGL/Build/WebGL.data.unityweb",
+      "role": "output/current build",
+      "sha256": "3f57c35407023b3db8e3997d500ff34bbc29fcdb0c1ff0297d4e8d08747b0954"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.framework.js.unityweb",
+      "relative": "Builds/WebGL/Build/WebGL.framework.js.unityweb",
+      "role": "output/current build",
+      "sha256": "1962831dee2240127a4d4365d5487aa39098dba493e17ab65c263d9e726e66ed"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village-feedback-v07/Builds/WebGL/Build/WebGL.loader.js",
+      "relative": "Builds/WebGL/Build/WebGL.loader.js",
+      "role": "output/current build",
+      "sha256": "bae8a1d2b2e2a01a2422e423165ed1b8584d236ded773ca4a3cce151a3097a0e"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+
+> sparkle-learning-hub@1.4.0 check
+> node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/build-irt-bank.mjs --verify && node scripts/check-irt.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-reward-integrity.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs && node scripts/check-village-quality.mjs && node scripts/check-native-art.mjs
+
+PASS: 46 published games; 4153 hub questions + 48 unit-garden questions; catalog, arithmetic and speech answers verified
+PASS: growth state migration, 3/5-question rounds, learner isolation, strict import, duplicate prevention, capped attempts, readiness gates, voluntary progression, review dates and backup roundtrip
+VERIFIED: 4153 item descriptors, 7360 source images, 4 quality groups; 98c4aadd6580e6e9f5827c7f29ac1c033861b90aa661ed83f32b999b6b4b8607
+PASS: 4153 descriptors, Bayesian updates, concept evidence, uncertainty, per-child isolation, new items, hinted exclusion, repeated-item protection and backup merge
+PASS: all five interactions, strict submissions, catalog levels, legacy answers, restore, learner isolation, 3/5 rounds, level sampling, duplicate prevention and unchanged reward/growth rules
+PASS: quota fallback survives profile changes, unsaved export, successful retry, older-key migration, old-tab isolation and v1 backup compatibility
+PASS: family settings validation, atomic updates, Unicode boundaries, plain-text placeholders, UTF-8 setup, fragment removal, no requests, persistence and blocked-storage fallback
+PASS: preserved legacy stars, two-child isolation, bounded effort, evidence-backed badges, safe spending, double-click prevention, family request completion, monotone old-backup merge, atomic validation, full backup restore and blocked-storage recovery; 48 unique gifts, five-slot outfits, free re-equipping and old-v1 outfit compatibility
+PASS: verified effort; no unconfigured imports; cleared-wallet memory; purchase write failure rollback and recovery; concurrent spend merge; game-round identity migration; forged receipt and sibling import atomicity; collision-free/long village IDs; derived family plaza; offline village persistence.
+PASS: faithful integer numeric grading, optional negative bounds and sign keypad, blank/zero keypad, unsafe input rejection, bounded drafts, >20 and signed response restore, mixed five-choice/numeric bank restore, legacy three-choice validation, 2/10 star rules, duplicate prevention, learner isolation, old backups and v2/v1→v3 migration with old-tab isolation
+{
+  "imported": 3805,
+  "arithmeticIndependentlyChecked": 125,
+  "originalAnswersMappedUnchanged": 3680,
+  "uniqueStableIds": 3805,
+  "negativeAnswers": 1,
+  "imageFilesVerified": 0
+}
+PASS: Unity village JS bridge; real quiz scoring, 5/3 rounds, learner isolation, duplicate block, no forged round, plaza and personal gardens, backup merge.
+PASS: actual-item-bank bridge quality; sequential/concurrent receipt replay, conflicting IDs atomicity, unanswered and replayed NEXT, real hint-assisted IRT exclusion, independent evidence, stale learner isolation, deferred START profile-switch atomicity and CANCEL late-submit protection; source visual retained.
+PASS exact native PNG taehee_original
+PASS exact native PNG sehee_original
+PASS exact native PNG star_yellow
+PASS exact native PNG star_blue
+PASS exact native PNG star_purple
+PASS exact native PNG star_rainbow
+PASS exact native PNG seed
+PASS exact native PNG sprout
+PASS exact native PNG bud
+PASS exact native PNG bloom
+PASS exact native PNG gift
+PASS exact native PNG heart
+PASS exact native PNG badge_book
+PASS exact native PNG badge_leaf
+PASS exact native PNG badge_crown
+PASS exact native PNG magic_dust
+PASS exact native PNG ui_mission_panel
+PASS exact native PNG ui_star_pill
+PASS exact native PNG ui_button
+PASS complete native art category contract
+PASS actual allowlist contains only the fourteen approved reward IDs
+PASS unknown and path-like native IDs render no image
+PASS decorative images have empty alt fixed dimensions and safe classes
+PASS actual app and village stage boundary 0/5
+PASS actual app and village stage boundary 1/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 3/5
+PASS actual app and village stage boundary 4/5
+PASS actual app and village stage boundary 5/5
+PASS actual app and village stage boundary 6/5
+PASS actual app and village stage boundary -2/5
+PASS actual app and village stage boundary 0.9/5
+PASS actual app and village stage boundary 1.9/5
+PASS actual app and village stage boundary 2/4
+PASS actual app and village stage boundary 1/3
+PASS actual app and village stage boundary 2/3
+PASS actual app and village stage boundary 3/3
+PASS actual app and village stage boundary NaN/5
+PASS actual app and village stage boundary Infinity/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 1/0
+PASS actual app and village stage boundary 1/-1
+PASS actual app and village stage boundary 1/1.5
+PASS actual app and village stage boundary 1/NaN
+PASS subject star variants follow the actual subject
+PASS locked and truthy-but-unconfirmed badges remain neutral
+PASS only confirmed known badges get earned art
+PASS actual gift catalog preserves specific art and fallback emoji
+PASS round cue counts confirmed answers and never mutates a round
+PASS native UI images are referenced by actual controls in both surfaces
+native-art PASS 50 checks; Rewards 14 + UI 3 + Characters 2 bytes verified; live Unity comparison false ; baseline model comparison false

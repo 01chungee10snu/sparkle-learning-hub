@@ -1,4 +1,5 @@
 import * as Progress from '../platform/progress.js';
+import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
@@ -21,6 +22,7 @@ export function createVillageHost(emit) {
   let currentGame;
   let currentGameId = '';
   let currentWho = '';
+  let currentArea = 'home';
   let preparation = null;
   const receipts = new Map();
   const cache = new Map();
@@ -131,6 +133,7 @@ export function createVillageHost(emit) {
         title: equipment.title?.id || ''
       },
       who,
+      garden: gardenSnapshot(who,currentArea),
       displayName: CHILDREN[who],
       available: wallet.available,
       lifetime: wallet.lifetime,
@@ -152,6 +155,12 @@ export function createVillageHost(emit) {
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
     const who = Progress.learner();
+    if (request.area==='home'||request.area==='plaza')currentArea=request.area;
+    if(action.startsWith('GARDEN_')) {
+      const selectedSlot=request.slot ?? (typeof response==='string'&&/^\d$/.test(response)?Number(response):-1);
+      return snapshot(action,requestId,mutateGarden({who,area:currentArea,action,slot:selectedSlot,
+        species:request.species,care:request.care,expectedStage:request.expectedStage}));
+    }
 
     if (action === 'INIT') return snapshot(action, requestId);
     const shopState = () => {
