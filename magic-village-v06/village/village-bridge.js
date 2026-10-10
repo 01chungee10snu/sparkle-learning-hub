@@ -1,9 +1,9 @@
-import * as Progress from '../platform/progress.js';
-import * as Rewards from '../platform/rewards.js';
-import * as Settings from '../platform/settings.js';
-import {recommendVillageRoutes} from '../platform/village-adaptive.js';
+import * as Progress from '../platform/progress.js?v=public-isolated-2';
+import * as Rewards from '../platform/rewards.js?v=public-isolated-2';
+import * as Settings from '../platform/settings.js?v=public-isolated-2';
+import {recommendVillageRoutes} from '../platform/village-adaptive.js?v=public-isolated-2';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
-import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
+import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js?v=public-isolated-2';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
   .map(grade=>'magic-'+grade+'-challenge');

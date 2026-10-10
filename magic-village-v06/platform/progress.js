@@ -1,14 +1,14 @@
 import {mergeLegacy} from './legacy.js';
 import {gradeResponse,normalizeNumericResponse,NUMERIC_LIMIT} from './activities.js';
-import * as IRT from './irt.js';
+import * as IRT from './irt.js?v=public-isolated-2';
 /** Device-local adapter. Keep this API when adding authenticated cloud persistence. */
 // Older tabs only understand their catalog and can discard newer game records.
 // Keep the new writer isolated; the old key is read once and never modified here.
-export const KEY='sparkle-learning-progress-v3';
-export const PREVIOUS_KEY='sparkle-learning-progress-v2';
-export const FIRST_KEY='sparkle-learning-progress-v1';
+export const KEY='sparkle-public-village-progress-v06';
+export const PREVIOUS_KEY='sparkle-public-village-progress-v06-previous';
+export const FIRST_KEY='sparkle-public-village-progress-v06-first';
 export const LEARNER_KEY='sparkle-learner-v1';
-export const LEGACY_KEY='fairy-math-garden-v1';
+export const LEGACY_KEY='sparkle-public-village-unit-garden-v06';
 export const LEARNERS={
  tae:{name:'태희',emoji:'🌸',defaultStage:{math:3,korean:3,english:2},roundSize:5},
  se:{name:'세희',emoji:'🌙',defaultStage:{math:1,korean:1,english:1},roundSize:3}

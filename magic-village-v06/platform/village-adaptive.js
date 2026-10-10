@@ -2,8 +2,8 @@
  * sources of item difficulty. Never silently change the child's grade.
  * Provisional editorial parameters are recommendations, not a diagnosis.
  */
-import * as IRT from './irt.js';
-import * as Progress from './progress.js';
+import * as IRT from './irt.js?v=public-isolated-2';
+import * as Progress from './progress.js?v=public-isolated-2';
 
 const SUBJECTS = new Set(['math', 'korean', 'english']);
 const GRADE_ORDER = Object.freeze({K:0,G1:1,G2:2,G3:3,G4:4,G5:5,G6:6,M:7,M1:7,M2:8,M3:9});

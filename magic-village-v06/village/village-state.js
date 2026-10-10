@@ -1,6 +1,6 @@
 // Device-local village state, independent of learning stars and legacy keys.
 // No identifiers other than approved internal learner and round IDs are stored.
-export const VILLAGE_KEY = 'sparkle-unity-village-v1';
+export const VILLAGE_KEY = 'sparkle-public-village-garden-v06';
 const KIDS = new Set(['tae', 'se']);
 const SAFE_ID = /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}$/;
 const MAX_EVENTS = 20000;

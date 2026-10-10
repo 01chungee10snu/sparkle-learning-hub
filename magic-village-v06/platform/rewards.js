@@ -1,8 +1,8 @@
-import * as Progress from './progress.js';
+import * as Progress from './progress.js?v=public-isolated-2';
 
 /** Rewards never rewrite learning stars. The separate ledger keeps two siblings
  * isolated and makes spending, repeat clicks and backup merges idempotent. */
-export const REWARDS_KEY='sparkle-rewards-v1';
+export const REWARDS_KEY='sparkle-public-village-rewards-v06';
 export {REWARD_ITEMS,REWARD_CATEGORIES} from './reward-catalog.js';
 import {REWARD_ITEMS,OUTFIT_SLOTS} from './reward-catalog.js';
 const BY_ID=new Map(REWARD_ITEMS.map(item=>[item.id,item]));

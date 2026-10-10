@@ -22,8 +22,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #bar{height:100%;width:0;background:#8663c2;transition:width .25s}
 @media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
 </style>
-<link rel="stylesheet" href="./village-ui.css?v=20261010h">
-<link rel="stylesheet" href="./major-patch.css?v=20261010h">
+<link rel="stylesheet" href="./village-ui.css?v=20261010pub2">
+<link rel="stylesheet" href="./major-patch.css?v=20261010pub2">
 </head>
 <body>
 <div id="page">
@@ -41,14 +41,14 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
         <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
         <div id="meter" hidden><div id="bar"></div></div>
         <button id="start">마법마을 열기</button>
-        <p><small>마법마을은 현재 개발 중이며, 기존 문제와 별 기록을 그대로 사용합니다.</small></p>
+        <p><small>공개 연습판의 학습·별 기록은 기존 원본 경시대회 기록과 별도로 안전하게 저장됩니다.</small></p>
       </div>
     </section>
   </main>
 </div>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=20261010h';
-import { createVillageUI } from './village-ui.js?v=20261010h';
+import { createVillageHost } from './village-bridge.js?v=20261010pub2';
+import { createVillageUI } from './village-ui.js?v=20261010pub2';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -81,7 +81,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=20261010h';
+    const loaderUrl = './Build/' + name + '.loader.js?v=20261010pub2';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -119,9 +119,9 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=20261010h',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010h',
-      codeUrl: base + '.wasm' + suffix + '?v=20261010h',
+      dataUrl: base + '.data' + suffix + '?v=20261010pub2',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010pub2',
+      codeUrl: base + '.wasm' + suffix + '?v=20261010pub2',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',

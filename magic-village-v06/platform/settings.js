@@ -1,5 +1,5 @@
 /** Family labels stay on this device. All returned labels are plain text, never HTML. */
-export const SETTINGS_KEY='sparkle-family-settings-v1';
+export const SETTINGS_KEY='sparkle-public-village-family-settings-v06';
 const learners=['tae','se'];
 const defaults=()=>({tae:{place:'우리 학교'},se:{place:'우리 어린이집'}});
 const clone=value=>({tae:{place:value.tae.place},se:{place:value.se.place}});
