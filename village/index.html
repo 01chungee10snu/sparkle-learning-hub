@@ -22,6 +22,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #bar{height:100%;width:0;background:#8663c2;transition:width .25s}
 @media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
 </style>
+<link rel="stylesheet" href="./village-ui.css?v=20261010a">
 </head>
 <body>
 <div id="page">
@@ -31,6 +32,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
   </header>
   <main id="game">
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
+    <div id="village-ui" hidden></div>
     <section id="loading" aria-live="polite">
       <div class="panel">
         <h1>🌸 마법마을 탐험</h1>
@@ -45,6 +47,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 </div>
 <script type="module">
 import { createVillageHost } from './village-bridge.js';
+import { createVillageUI } from './village-ui.js?v=20261010a';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -54,7 +57,14 @@ const meter = document.querySelector('#meter');
 const bar = document.querySelector('#bar');
 let instance = null;
 const queued = [];
+const uiRoot = document.querySelector('#village-ui');
+const ui = createVillageUI({
+  root:uiRoot,
+  sendToUnity: command => instance?.SendMessage('VillageRuntime','OnUiCommand',command),
+  sendRequest: request => host.handle(JSON.stringify(request))
+});
 const deliver = message => {
+  ui.update(message);
   const payload = JSON.stringify(message);
   if (!instance) queued.push(payload);
   else instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
@@ -98,11 +108,13 @@ start.addEventListener('click', async () => {
     if (typeof createUnityInstance !== 'function')
       throw new Error('Unity 실행 모듈을 찾지 못했어요.');
     const base = './Build/' + build.name;
+    const compressed = await fetch(base + '.data.unityweb',{method:'HEAD'}).then(r=>r.ok).catch(()=>false);
+    const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data',
-      frameworkUrl: base + '.framework.js',
-      codeUrl: base + '.wasm',
+      dataUrl: base + '.data' + suffix,
+      frameworkUrl: base + '.framework.js' + suffix,
+      codeUrl: base + '.wasm' + suffix,
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
@@ -114,6 +126,7 @@ start.addEventListener('click', async () => {
     for (const payload of queued.splice(0))
       instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
     overlay.hidden = true;
+    uiRoot.hidden = false;
   } catch (error) {
     canvas.style.display = 'none';
     start.disabled = false;

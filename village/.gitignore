@@ -1,3 +1,6 @@
-# WebGL runtime is provided by a tested release bundle, not in the source PR.
-Build/
+# Legacy uncompressed Unity WebGL files are not distributed.
+# Public GitHub Pages serves the compressed .unityweb artifacts below.
+Build/*.data
+Build/*.wasm
+Build/*.framework.js
 StreamingAssets/
