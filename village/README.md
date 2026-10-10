@@ -36,3 +36,13 @@ npm run check 및 실제 Chrome 브라우저에서 진행한 두 아이의 5/3�
 
 현재 건물·3D 요정은 최초 출시용 Low-poly 모델입니다. 얼굴·원본 요정 초상과 HUD를 개선했으나 최종 아트 제작은 후속 과제입니다.
 실제 iPhone/iPad/Android 장치에서의 WebGL 속도·발열·터치 안정성은 아직 별도로 확인해야 합니다.
+
+## v0.5.0 개발 패치: 게임형 UX / 적응형 / 별 상점
+
+- 상세 명세: `docs/MAGIC_VILLAGE_MAJOR_PATCH_V1_20261010.md` (저장소 루트 기준).
+- 마법책(경시 25문항)·NPC 의뢰서·수정판 UI는 `major-patch.css`에서 변경합니다.
+- `platform/village-adaptive.js`는 잠정 1PL IRT 추정/미확인 문항 기반으로 학습 게임을 추천하며 학년을 자동 변경하지 않습니다.
+- `village-bridge.js`의 SHOP_* 요청은 기존 Rewards 원장만 수정합니다. Unity가 구매/별 지급을 직접 수행하지 않습니다.
+- 캐릭터는 독립 4시점 원화+중간 4시점 알파 합성으로 8방향 이동을 제공합니다(실제 사선 독립 원화는 별도 제작 필요).
+- 테스트: `npm run check`, `node scripts/major-patch-visual-qa.mjs`, `SPARKLE_QA_ORIGIN=http://127.0.0.1:4191 node scripts/bebsu-browser-smoke.mjs`.
+- 새 벡수 원본 그림은 `private_reference_only` 표시를 존중하여 명시적 재배포 허락 전에는 공개 서비스로 출시하지 않습니다.

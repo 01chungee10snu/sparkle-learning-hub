@@ -1,6 +1,7 @@
 import * as Progress from '../platform/progress.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
+import {recommendVillageRoutes} from '../platform/village-adaptive.js';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 
@@ -118,7 +119,15 @@ export function createVillageHost(emit) {
     const who = Progress.learner();
     const wallet = Rewards.wallet(catalog, who);
     const flowers = villageSummary(loadVillage(), who);
+    const equipment = wallet.look || {};
     return respond(action, requestId, {
+      cosmetics: {
+        light: wallet.equipped || '',
+        background: equipment.background?.id || '',
+        friend: equipment.friend?.id || '',
+        mark: equipment.mark?.id || '',
+        title: equipment.title?.id || ''
+      },
       who,
       displayName: CHILDREN[who],
       available: wallet.available,
@@ -132,13 +141,47 @@ export function createVillageHost(emit) {
   async function execute(request) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
-    const {action, requestId, gameId = '', response = '', roundId = '', paperId = ''} = request;
+    const {action, requestId, gameId = '', response = '', roundId = '', paperId = '',
+      itemId = '', category = '', subject = 'math', grade = ''} = request;
     if (typeof action !== 'string' || typeof requestId !== 'string' ||
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
     const who = Progress.learner();
 
     if (action === 'INIT') return snapshot(action, requestId);
+    const shopState = () => {
+      const wallet = Rewards.wallet(catalog,who);
+      return {available:wallet.available,look:wallet.look,
+        items:wallet.items.filter(item=>item.kind==='cosmetic').map(item=>({
+          id:item.id,category:item.category,title:item.title,description:item.description,
+          emoji:item.emoji,cost:item.cost,owned:item.owned,equipped:item.equipped,
+          canPurchase:item.canPurchase
+        }))};
+    };
+    if (action === 'SHOP_OPEN') return snapshot(action, requestId, {shop:shopState()});
+    if (action === 'SHOP_BUY') {
+      if (typeof itemId!=='string' || itemId.length>80) throw new Error('선물 이름을 확인해 주세요.');
+      const outcome=Rewards.purchaseReward(itemId,catalog,who);
+      if (!outcome.ok) throw new Error(outcome.reason==='insufficient-stars'?
+        '별이 조금 더 필요해요. 학습을 하며 모아 볼까요?': '별 상점의 결제를 기록하지 못했어요.');
+      return snapshot(action, requestId, {shop:shopState(),itemChanged:itemId});
+    }
+    if (action === 'SHOP_EQUIP') {
+      if (typeof itemId!=='string' || itemId.length>80) throw new Error('장착할 선물을 확인해 주세요.');
+      Rewards.equipReward(itemId,who);
+      return snapshot(action, requestId, {shop:shopState(),itemChanged:itemId});
+    }
+    if (action === 'SHOP_UNEQUIP') {
+      if (!['light','background','friend','mark','title'].includes(category))
+        throw new Error('장착 해제할 부위를 확인해 주세요.');
+      Rewards.unequipCategory(category,who);
+      return snapshot(action, requestId, {shop:shopState(),itemChanged:category});
+    }
+    if (action === 'ADAPTIVE_OFFER') {
+      return snapshot(action, requestId, {adaptive:recommendVillageRoutes(catalog, {
+        who,subject,grade:grade||(who==='se'?'K':'G1')
+      })});
+    }
     if (action === 'SHOW_BEBSU') return snapshot(action, requestId, {
       challenges: challenges.grades.map(({grade,title,gameId,papers})=>({
         grade,title,gameId,papers:papers.map(({paperId,difficulty,label,title})=>({paperId,difficulty,label,title}))

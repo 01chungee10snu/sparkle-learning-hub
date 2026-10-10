@@ -1,0 +1,64 @@
+{
+  "version": "0.5.0-dev",
+  "purpose": "Auditable developer verification only — not a public content license.",
+  "unitTests": {
+    "normalHub": "npm run check (2026-10-10; success observed)",
+    "adaptiveShop": "scripts/check-village-major-patch.mjs — pass",
+    "KMA25": "scripts/check-bebsu-village.mjs — pass",
+    "directionalUnity": "MAGIC_MAJOR_PATCH_AUDIT_PASS views=8 headings=8 states=6",
+    "WebGL": "MAGIC_VILLAGE_WEB_BUILD_OK (Unity 6000.3.26f1)",
+    "chromeVisual": "15 captures; 0 page errors; phone/tablet/desktop",
+    "chromeRealGame": "two children, v0.5.0 WebGL, 3 portals and KMA source image, 0 page errors",
+    "chromeFullFlow": "Taehee real KMA 25/25 +160 stars; shop buy/equip/reload; sibling separated, 0 page errors"
+  },
+  "locationOfRawBrowserProof": "/Users/01chungee10/AI-Interop/evidence/sparkle-major-v1-20261010",
+  "sourceOfUnityProject": "/Users/01chungee10/Github/sparkle-fairy-village",
+  "files": {
+    "games/bebsu-challenges.json": {
+      "sha256": "46c72d386e7b5715bfbae69cb211b775bac8d4b42e7f5d308f316c70d209c8be"
+    },
+    "games/irt-bank.json": {
+      "sha256": "82b1096d23e973d94c0ebd2d32737f0103f4ca59cca7f166dbc74eeb5a6f91f8"
+    },
+    "platform/village-adaptive.js": {
+      "sha256": "4c71613d2d2c1b115392223f19ede63d1c0771166e6819e4957c474f137b5bce"
+    },
+    "platform/progress.js": {
+      "sha256": "a6801a2417a9d68a7f8df01df957958ab57fb569361a88150a2e06fc8a0ecbb7"
+    },
+    "platform/rewards.js": {
+      "sha256": "bcaf64514ad5fbda0ed7a66e57fd4e9fba8507ce3e2083f938022f33a13b6d7d"
+    },
+    "village/major-patch.css": {
+      "sha256": "c244aa90e3a99212881e8bd30a5de3550fa17448d648c8cfa1bdb71e9dca5451"
+    },
+    "village/village-ui.js": {
+      "sha256": "80b1debdb0243309c6ec7d4c4418a21e34597920f2d9713803af185bb4922e72"
+    },
+    "village/village-bridge.js": {
+      "sha256": "064dfe9f0b497937b0690e773bb614f5c95178f4f3cbdd18d73739bc709c8949"
+    },
+    "village/index.html": {
+      "sha256": "d5fa277b03a818d75d62ce305ae6059b5fdbc9f71d2de3c248f33f14ec959697"
+    },
+    "village/Build/WebGL.data.unityweb": {
+      "sha256": "6dbbc177193b6c0563a3975a609e4a0f38a065c5280baba5249d5ad36883664c"
+    },
+    "village/Build/WebGL.wasm.unityweb": {
+      "sha256": "ff6b991eb38ca14ceec4332747e46dc70f7404fa29987e1882f674c0527841a4"
+    },
+    "village/Build/WebGL.framework.js.unityweb": {
+      "sha256": "1962831dee2240127a4d4365d5487aa39098dba493e17ab65c263d9e726e66ed"
+    },
+    "village/Build/WebGL.loader.js": {
+      "sha256": "ea32b88e9d83f0f01ba0ce915db33aa7837134b05c726845211e9703c2df0499"
+    }
+  },
+  "limitations": [
+    "Only 4 original perspective poses per fairy; four intermediate headings are blended.",
+    "IRT difficulty and guessing are editorial/provisional, not independently calibrated.",
+    "KMA source metadata records originalLicenseStatus=private_reference_only.",
+    "Real iOS, iPadOS, Android physical performance not yet certified.",
+    "Some virtual companions still show a neutral gift icon instead of unique animal art."
+  ]
+}

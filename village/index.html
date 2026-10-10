@@ -22,7 +22,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #bar{height:100%;width:0;background:#8663c2;transition:width .25s}
 @media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
 </style>
-<link rel="stylesheet" href="./village-ui.css?v=20261010f">
+<link rel="stylesheet" href="./village-ui.css?v=20261010g">
+<link rel="stylesheet" href="./major-patch.css?v=20261010g">
 </head>
 <body>
 <div id="page">
@@ -46,8 +47,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
   </main>
 </div>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=20261010f';
-import { createVillageUI } from './village-ui.js?v=20261010f';
+import { createVillageHost } from './village-bridge.js?v=20261010g';
+import { createVillageUI } from './village-ui.js?v=20261010g';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -57,6 +58,7 @@ const meter = document.querySelector('#meter');
 const bar = document.querySelector('#bar');
 let instance = null;
 const queued = [];
+let queuedCosmetics = null;
 const uiRoot = document.querySelector('#village-ui');
 const ui = createVillageUI({
   root:uiRoot,
@@ -65,6 +67,11 @@ const ui = createVillageUI({
 });
 const deliver = message => {
   ui.update(message);
+  if(message?.ok && message.cosmetics){
+    const wear=JSON.stringify(message.cosmetics);
+    if(instance)instance.SendMessage('VillageRuntime','OnCosmeticsMessage',wear);
+    else queuedCosmetics=wear;
+  }
   const payload = JSON.stringify(message);
   if (!instance) queued.push(payload);
   else instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
@@ -74,7 +81,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=20261010f';
+    const loaderUrl = './Build/' + name + '.loader.js?v=20261010g';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -112,19 +119,23 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=20261010f',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010f',
-      codeUrl: base + '.wasm' + suffix + '?v=20261010f',
+      dataUrl: base + '.data' + suffix + '?v=20261010g',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010g',
+      codeUrl: base + '.wasm' + suffix + '?v=20261010g',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.4.0'
+      productVersion: '0.5.0-dev'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
     });
     for (const payload of queued.splice(0))
       instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+    if(queuedCosmetics){
+      instance.SendMessage('VillageRuntime','OnCosmeticsMessage',queuedCosmetics);
+      queuedCosmetics=null;
+    }
     overlay.hidden = true;
     uiRoot.hidden = false;
   } catch (error) {

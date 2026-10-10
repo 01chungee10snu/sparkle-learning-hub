@@ -68,6 +68,38 @@ async function start(name,width,height,learner,complete){
    const snapshot=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const catalog=await (await fetch('/games/catalog.json')).json();return R.wallet(catalog);});
    assert.equal(snapshot.challengeStars,160);
    await save(page,name+'-completed');
+   // Actual Unity+browser shop: purchase, equip, world projection, reload.
+   await page.getByRole('button',{name:/마을로 돌아가기/}).click();
+   await page.waitForFunction(()=>document.querySelector('#village-dialog-wrap').hidden,undefined,{timeout:12000});
+   await page.locator('#vh-shop').click();
+   await page.getByRole('heading',{name:/별빛 마법상점/}).waitFor({timeout:12000});
+   const firstStar=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const c=await (await fetch('/games/catalog.json')).json();return R.wallet(c).available;});
+   const sun=page.locator('.vh-shop-item').filter({hasText:'햇살 반짝이'});
+   await sun.getByRole('button',{name:/받기/}).click();
+   await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.light==='sun-spark',undefined,{timeout:12000});
+   assert.equal(await sun.getAttribute('data-equipped'),'true');
+   const purchased=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const c=await (await fetch('/games/catalog.json')).json();return R.wallet(c);});
+   assert.equal(purchased.spent,10);
+   assert.equal(purchased.available,firstStar-10);
+   await save(page,name+'-equipped-shop');
+   await page.locator('#vh-exit').click();
+   await page.waitForFunction(()=>document.querySelector('#village-dialog-wrap').hidden,undefined,{timeout:12000});
+   await page.waitForTimeout(500);
+   await save(page,name+'-equipped-world');
+   await page.reload({waitUntil:'networkidle'});
+   await page.locator('#start').click();
+   await page.waitForFunction(()=>document.querySelector('#loading').hidden,undefined,{timeout:180000});
+   await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.light==='sun-spark',undefined,{timeout:30000});
+   const persisted=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const c=await (await fetch('/games/catalog.json')).json();return R.wallet(c);});
+   assert.equal(persisted.spent,10,'purchased gift persisted after browser reload');
+   assert.equal(persisted.look.light.id,'sun-spark');
+   await page.evaluate(async()=>{const P=await import('/platform/progress.js');P.selectLearner('se');});
+   await page.reload({waitUntil:'networkidle'});
+   await page.locator('#start').click();
+   await page.waitForFunction(()=>document.querySelector('#loading').hidden,undefined,{timeout:180000});
+   await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.who==='se',undefined,{timeout:30000});
+   assert.equal(await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const c=await (await fetch('/games/catalog.json')).json();return R.wallet(c).spent;}),0,'sibling purchase leak');
+   console.log('PASS actual shop buy + world equip + restore after reload + sibling isolation');
   }
   console.log('PASS',name,'question count',limit,'Unity actual startup / image / answer / bonus');
  }finally{await ctx.close();}
