@@ -21,6 +21,14 @@ try{
    await page.waitForFunction(()=>document.querySelector('#loading').hidden,undefined,{timeout:180000});
    await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.ready==='true',undefined,{timeout:30000});
    assert.equal(await page.locator('#village-ui').getAttribute('data-who'),learner.id);
+   const toggle=page.locator('#vh-pose');
+   await toggle.click();
+   assert.equal(await toggle.getAttribute('aria-pressed'),'true');
+   assert.equal(await page.locator('#village-ui').getAttribute('data-prototype-art'),'eight');
+   const artFile=path.join(output,'eight-pose-'+learner.id+'.png');
+   await page.screenshot({path:artFile});
+   await toggle.click();
+   assert.equal(await toggle.getAttribute('aria-pressed'),'false');
    await page.locator('#vh-shop').click();
    await page.getByRole('heading',{name:/별빛 마법상점/}).waitFor({timeout:15000});
    assert(await page.locator('.vh-shop-item').count()>0);
@@ -45,5 +53,5 @@ try{
 }finally{await browser.close();}
 const receipt={createdAt:new Date().toISOString(),results,errors,pass:results.length===2&&!errors.length};
 await writeFile(path.join(output,'result.json'),JSON.stringify(receipt,null,2));
-console.log(receipt.pass?'PASS':'FAIL','final native Unity WebGL v0.5.0: shop + IRT adaptive + KMA 25 original figure for two learners, pageErrors',errors.length);
+console.log(receipt.pass?'PASS':'FAIL','final native Unity WebGL v0.6.0: eight-pose preview + shop + IRT adaptive + KMA 25 original figure for two learners, pageErrors',errors.length);
 if(!receipt.pass)process.exitCode=1;

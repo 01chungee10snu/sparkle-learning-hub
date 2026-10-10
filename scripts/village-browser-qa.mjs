@@ -168,7 +168,7 @@ try{
    });
    await check(size.name,'build stepper and numeric widget retain selected answer',async()=>{
     const q=publicItem(snacks.questions[0]);await show(page,q);
-    for(let i=0;i<3;i++)await page.getByRole('button',{name:'하나 늘리기'}).click();
+    for(let i=0;i<3;i++)await page.getByRole('button',{name:/^(하나 늘리기|바구니에 하나 넣기)$/}).click();
     await page.locator('.vh-wide').click();let submitted=await lastRequest(page,'SUBMIT');assert.equal(JSON.parse(submitted.response),3);
     await show(page,{...choice,questionId:'synthetic-numeric',interactionType:'numeric',choices:[],visual:null});
     await page.getByRole('textbox',{name:'숫자 답'}).fill('12');await page.getByRole('textbox',{name:'숫자 답'}).press('Enter');

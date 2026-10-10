@@ -1,15 +1,16 @@
 {
-  "version": "0.5.0-dev",
+  "version": "0.6.0-dev",
   "purpose": "Auditable developer verification only — not a public content license.",
   "unitTests": {
     "normalHub": "npm run check (2026-10-10; success observed)",
     "adaptiveShop": "scripts/check-village-major-patch.mjs — pass",
     "KMA25": "scripts/check-bebsu-village.mjs — pass",
-    "directionalUnity": "MAGIC_MAJOR_PATCH_AUDIT_PASS views=8 headings=8 states=6",
+    "directionalUnity": "MAGIC_MAJOR_PATCH_AUDIT_PASS premium=8 thumbnail-prototype=16 heading_states=8 motion_states=6",
+    "reinforcement": "scripts/check-learning-reinforcement.mjs — genuine second-round corrections +12 and explanations +4; cap and sibling protection",
     "WebGL": "MAGIC_VILLAGE_WEB_BUILD_OK (Unity 6000.3.26f1)",
-    "chromeVisual": "15 captures; 0 page errors; phone/tablet/desktop",
-    "chromeRealGame": "two children, v0.5.0 WebGL, 3 portals and KMA source image, 0 page errors",
-    "chromeFullFlow": "Taehee real KMA 25/25 +160 stars; shop buy/equip/reload; sibling separated, 0 page errors"
+    "chromeVisual": "24 captures; 0 page errors; phone/tablet/desktop including space-interaction and reflection",
+    "chromeRealGame": "two children, v0.6.0 WebGL, 8-angle concept toggle + shop + IRT + KMA source images; 0 page errors",
+    "chromeFullFlow": "Taehee KMA 25/25 +160 and learning-explanation +2; shop buy/equip/reload; sibling separated, 0 page errors"
   },
   "locationOfRawBrowserProof": "/Users/01chungee10/AI-Interop/evidence/sparkle-major-v1-20261010",
   "sourceOfUnityProject": "/Users/01chungee10/Github/sparkle-fairy-village",
@@ -27,38 +28,51 @@
       "sha256": "a6801a2417a9d68a7f8df01df957958ab57fb569361a88150a2e06fc8a0ecbb7"
     },
     "platform/rewards.js": {
-      "sha256": "bcaf64514ad5fbda0ed7a66e57fd4e9fba8507ce3e2083f938022f33a13b6d7d"
+      "sha256": "58b863a04877e89613270e11c370791751d2cda60b2842131fba4a24869f9b68"
     },
     "village/major-patch.css": {
-      "sha256": "c244aa90e3a99212881e8bd30a5de3550fa17448d648c8cfa1bdb71e9dca5451"
+      "sha256": "5d8ff12b75ae16bd8a9e5772d4f8abc4f3aaf09c4936e3954eafecce2658ba70"
     },
     "village/village-ui.js": {
-      "sha256": "80b1debdb0243309c6ec7d4c4418a21e34597920f2d9713803af185bb4922e72"
+      "sha256": "8a428487eba70181bfd4242981c351aec56f9d64ea32a3e99b615beec270e01f"
     },
     "village/village-bridge.js": {
-      "sha256": "064dfe9f0b497937b0690e773bb614f5c95178f4f3cbdd18d73739bc709c8949"
+      "sha256": "ce8a0485b4e5a0e365685a4dd1d753be19d16d3181e4d6803fc5a84c46db04bd"
     },
     "village/index.html": {
-      "sha256": "d5fa277b03a818d75d62ce305ae6059b5fdbc9f71d2de3c248f33f14ec959697"
+      "sha256": "3eb993f1cc73bb4eeb042572d576864ccabc9fcea94321d29c41617874686637"
     },
     "village/Build/WebGL.data.unityweb": {
-      "sha256": "6dbbc177193b6c0563a3975a609e4a0f38a065c5280baba5249d5ad36883664c"
+      "sha256": "343e2d26f76b044114a107e5910b232e21ff6d739ee222d52aff3cefd672b84b"
     },
     "village/Build/WebGL.wasm.unityweb": {
-      "sha256": "ff6b991eb38ca14ceec4332747e46dc70f7404fa29987e1882f674c0527841a4"
+      "sha256": "27976d2d15bfa21915278f357f02e09a67044995946a49986ce500bab0439848"
     },
     "village/Build/WebGL.framework.js.unityweb": {
       "sha256": "1962831dee2240127a4d4365d5487aa39098dba493e17ab65c263d9e726e66ed"
     },
     "village/Build/WebGL.loader.js": {
-      "sha256": "ea32b88e9d83f0f01ba0ce915db33aa7837134b05c726845211e9703c2df0499"
+      "sha256": "c17af38ae5f863d58598ab26793ec0092e6d8835dd04ad6184a74fb89eeeaf35"
+    },
+    "scripts/check-learning-reinforcement.mjs": {
+      "sha256": "7828f653252137f52dcda41d5b2a4f420f0e73648f3e25b3b9f1a5c601f84c7c"
+    },
+    "scripts/major-patch-visual-qa.mjs": {
+      "sha256": "3dd1bddf936166f8f013e8de3487c65098aa25720aba05c3f8696c13bd923762"
+    },
+    "village/assets/gameplay/npc_bunny.png": {
+      "sha256": "6451f84feef18d92c8ece2fe54046c9c75262282ddd797c4fa8497374ae52d64"
+    },
+    "docs/VILLAGE_V06_LEARNING_BOOST_20261010.md": {
+      "sha256": "26a596eaada7e0c50b741a13c4b00a5997c0ed554e60e4d37a40a0241fec478c"
     }
   },
   "limitations": [
-    "Only 4 original perspective poses per fairy; four intermediate headings are blended.",
+    "Default premium art: 4 true perspectives + 4 blended angles; experimental 8-way art uses 200x133 Canva preview only, pending high-resolution originals.",
     "IRT difficulty and guessing are editorial/provisional, not independently calibrated.",
     "KMA source metadata records originalLicenseStatus=private_reference_only.",
     "Real iOS, iPadOS, Android physical performance not yet certified.",
-    "Some virtual companions still show a neutral gift icon instead of unique animal art."
+    "Some virtual companions still show a neutral gift icon instead of unique animal art.",
+    "KMA source image data is still private_reference_only and has not been publicly deployed by this patch."
   ]
 }

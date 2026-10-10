@@ -51,8 +51,9 @@ for(const size of [{id:'phone',width:390,height:844},{id:'tablet',width:1024,hei
   const {createVillageUI}=await import('/village/village-ui.js?major-visual');
   document.querySelector('#loading').hidden=true;
   const root=document.querySelector('#village-ui');root.hidden=false;
-  const ui=createVillageUI({root,sendToUnity:()=>{},sendRequest:()=>{}});
-  window.majorQA={ui};
+  const requests=[];
+  const ui=createVillageUI({root,sendToUnity:()=>{},sendRequest:r=>{requests.push(r);}});
+  window.majorQA={ui,requests};
   root.dataset.ready='true';
   ui.update({action:'INIT',requestId:'major-init',ok:true,who:'tae',displayName:'태희',available:155,flowers:2,familyFlowers:4,
     cosmetics:{light:'rainbow-orbit',friend:'friend-rabbit',mark:'mark-heart',background:'bg-lilac',title:'title-number'}});
@@ -80,6 +81,52 @@ for(const size of [{id:'phone',width:390,height:844},{id:'tablet',width:1024,hei
  assert.equal(await page.locator('.vh-dialog').getAttribute('data-theme'),'crystal');
  assert.equal(await page.locator('.vh-route').count(),2);
  file=path.join(OUTPUT,size.id+'-adaptive.png');await page.screenshot({path:file});captures.push(file);
+ await page.evaluate(()=>window.majorQA.ui.close());
+ // Native item identity/answer stays constant; only spatial presentation changes.
+ for(const [type,item] of [['choice',sourceSnack.questions.find(q=>q.id==='snack-count-06')],
+  ['build',sourceSnack.questions.find(q=>q.id==='snack-count-01')]]){
+   const q=toQuestion(sourceSnack,item);
+   await page.evaluate(q=>window.majorQA.ui.update({action:'START',requestId:'fixture-spatial-'+Date.now(),
+     ok:true,who:'tae',available:155,flowers:2,familyFlowers:4,question:q}),q);
+   assert.equal(await page.locator('.vh-spatial-stage').count(),1,'spatial interaction should be in-scene');
+   assert.equal(await page.locator(type==='choice'?'.vh-spatial-gate':'.vh-spatial-basket').count(),
+     type==='choice'?item.choices.length:1);
+   if(type==='build'){
+     const add=page.getByRole('button',{name:'바구니에 하나 넣기'});
+     await add.click();await add.click();
+     assert.match(await page.locator('.vh-spatial-count').textContent(),/2/);
+     await page.getByRole('button',{name:/이만큼 모았어요/}).click();
+     const request=await page.evaluate(()=>window.majorQA.requests.at(-1));
+     assert.equal(request.action,'SUBMIT');
+     assert.equal(JSON.parse(request.response),2,'physical basket submits 2, not an unrelated answer');
+   } else {
+     await page.locator('.vh-spatial-gate').nth(1).click();
+     const request=await page.evaluate(()=>window.majorQA.requests.at(-1));
+     assert.equal(request.action,'SUBMIT');
+     assert.equal(JSON.parse(request.response),1,'second gate maps to choice index 1');
+   }
+   file=path.join(OUTPUT,size.id+'-spatial-'+type+'.png');
+   await page.screenshot({path:file});captures.push(file);
+   await page.evaluate(()=>window.majorQA.ui.close());
+ }
+ // A real completed round is required by the ledger; the UI is visually
+ // inspected using fixture transition only, without minting stars.
+ const done=toQuestion(sourceSnack,sourceSnack.questions[0],1,3);
+ await page.evaluate(q=>{
+  const ui=window.majorQA.ui;
+  ui.update({action:'START',requestId:'fixture-finish-start',ok:true,who:'tae',question:q});
+  ui.update({action:'SUBMIT',requestId:'fixture-finish-answer',ok:true,correct:true,earned:10,available:165});
+  ui.update({action:'NEXT',requestId:'fixture-finish-next',ok:true,finished:true,roundId:'round-fixture'});
+  ui.update({action:'COMPLETE_WORLD',requestId:'fixture-finish-world',ok:true,roundId:'round-fixture',flowers:3,familyFlowers:5});
+ },done);
+ await page.locator('.vh-reflect-cta').waitFor({state:'visible'});
+ await page.locator('.vh-reflect-cta').click();
+ assert.equal(await page.locator('.vh-strategy').count(),5);
+ const select=page.locator('.vh-strategy').first();
+ await select.click();
+ assert.equal(await select.getAttribute('aria-pressed'),'true');
+ file=path.join(OUTPUT,size.id+'-explain.png');
+ await page.screenshot({path:file});captures.push(file);
  await context.close();
 }
 await browser.close();

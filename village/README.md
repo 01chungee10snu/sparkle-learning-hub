@@ -46,3 +46,13 @@ npm run check 및 실제 Chrome 브라우저에서 진행한 두 아이의 5/3�
 - 캐릭터는 독립 4시점 원화+중간 4시점 알파 합성으로 8방향 이동을 제공합니다(실제 사선 독립 원화는 별도 제작 필요).
 - 테스트: `npm run check`, `node scripts/major-patch-visual-qa.mjs`, `SPARKLE_QA_ORIGIN=http://127.0.0.1:4191 node scripts/bebsu-browser-smoke.mjs`.
 - 새 벡수 원본 그림은 `private_reference_only` 표시를 존중하여 명시적 재배포 허락 전에는 공개 서비스로 출시하지 않습니다.
+
+## v0.6.0 개발 패치: 학습 강화 보상 / 공간 조작 수학 / 8방향 시안
+
+- 구현/검증/불확실성 보고: `docs/VILLAGE_V06_LEARNING_BOOST_20261010.md` (저장소 루트).
+- 설명 전략 기록(+2별; 완료한 회차 1회·하루 2회)과 다른 회차 정답으로 오답을 교정(+4별; 문항 최초·하루 3건) 보상을 기존 원장에 추가했습니다.
+- 일반 선택형·수량형의 약 40%를 마법문/마법 바구니 직접 조작 방식으로 표현합니다. KMA 25문항은 원문 그대로 유지합니다.
+- `🎭 8방향 시안`에서 두 아이 각각 8개 독립 시점 **축소 원화 기반 시제품**을 비교할 수 있습니다. 원화 품질은 부족해 기본 모드는 이전 고화질 캐릭터입니다.
+- 비교/복귀는 게임 안에서 `🎭 8방향 시안` / `🎨 고화질 원화` 버튼을 사용합니다.
+- 검증: `npm run check`, `node scripts/major-patch-visual-qa.mjs`, `node scripts/major-patch-webgl-smoke.mjs`, `node scripts/bebsu-browser-smoke.mjs`.
+- 공개 GitHub Pages 운영 버전 교체는 하지 않았으며, 현재 제작본은 로컬 전용 시험 버전입니다.

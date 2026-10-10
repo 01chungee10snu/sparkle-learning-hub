@@ -132,6 +132,9 @@ export function createVillageHost(emit) {
       displayName: CHILDREN[who],
       available: wallet.available,
       lifetime: wallet.lifetime,
+      reinforcementStars: wallet.reinforcementStars,
+      explanationStars: wallet.explanationStars,
+      recoveryStars: wallet.recoveryStars,
       flowers: flowers.flowers,
       familyFlowers: flowers.familyFlowers,
       ...extras
@@ -142,7 +145,7 @@ export function createVillageHost(emit) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
     const {action, requestId, gameId = '', response = '', roundId = '', paperId = '',
-      itemId = '', category = '', subject = 'math', grade = ''} = request;
+      itemId = '', category = '', subject = 'math', grade = '',strategy = ''} = request;
     if (typeof action !== 'string' || typeof requestId !== 'string' ||
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
@@ -236,13 +239,23 @@ export function createVillageHost(emit) {
       const round = Progress.gameProgress(gameId, who).round;
       const question = currentGame.questions.find(q => q.id === round?.ids[round.index]);
       if (!question) throw new Error('현재 문제를 찾지 못했어요.');
+      const before=Rewards.wallet(catalog,who).recoveryStars;
       const result = Progress.answerQuestion(currentGame, answer);
       if (!result) throw new Error('이미 답안을 제출했어요. 다음 문제로 이동해 주세요.');
+      const refreshed=Rewards.syncRewards(catalog,who);
       return snapshot(action, requestId, {
+        recoveryEarned: Math.max(0,refreshed.recoveryStars-before),
         correct: result.correct,
         earned: result.earned,
         explanation: (question.explanation || []).map(t => decorate(t, who)).join('\n')
       });
+    }
+    if (action === 'REFLECT') {
+      if(typeof roundId!=='string'||roundId.length>128||typeof strategy!=='string')
+        throw new Error('완주 기록과 생각한 방법을 확인해 주세요.');
+      const reflection=Rewards.recordLearningExplanation({who,gameId,roundId,strategy});
+      return snapshot(action,requestId,{reflectionEarned:reflection.earned,
+        reflectionReason:reflection.reason,reflectionAdded:reflection.added});
     }
     if (action === 'NEXT') {
       const round = Progress.nextQuestion(currentGameId);

@@ -26,6 +26,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
+    ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false">🎭 8방향 시안</button>',
     '</aside>',
     '<p id="village-toast" role="alert" hidden></p>',
     '<div id="village-dialog-wrap" hidden aria-busy="false">',
@@ -46,7 +47,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     name:$('vh-name'), area:$('vh-area'), stars:$('vh-stars'),
     progress:$('vh-progress'), outfit:$('vh-outfit'), help:$('vh-help'),
     home:$('vh-home'), plaza:$('vh-plaza'), quest:$('vh-quest'), bebsu:$('vh-bebsu'),
-    adaptive:$('vh-adaptive'), shop:$('vh-shop'), shortcuts:$('vh-world-shortcuts'),
+    adaptive:$('vh-adaptive'), shop:$('vh-shop'), pose:$('vh-pose'), shortcuts:$('vh-world-shortcuts'),
     dialog:$('village-dialog-wrap'), title:$('vh-title'),
     counter:$('vh-counter'), body:$('vh-body'), exit:$('vh-exit'),
     listen:$('vh-listen'), hint:$('vh-hint'), note:$('vh-note'), controls:$('village-controls'),
@@ -55,6 +56,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   let who = 'tae', zone = 'home', gameId = '', question = null;
   let phase = 'explore', busy = false, lastFocus = null, voiceText = '';
   let requestNumber = 0, pendingRequest = '', sessionRounds = 0;
+  let mostRecentRoundId = '', reinforcementStars = 0;
+  let experimentalArt=false;
   let shopCategory='light', shopData=null, adaptiveSubject='math', adaptiveGrade='';
   let contentTarget=ui.body;
   const theme = value => {
@@ -121,6 +124,16 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   });
   ui.shop.addEventListener('click',()=>{
     if (phase==='explore'&&!busy&&root.dataset.ready==='true') request('SHOP_OPEN');
+  });
+  ui.pose.addEventListener('click',()=>{
+    if(phase!=='explore'||busy||root.dataset.ready!=='true')return;
+    experimentalArt=!experimentalArt;
+    ui.pose.setAttribute('aria-pressed',String(experimentalArt));
+    ui.pose.textContent=experimentalArt?'🎨 고화질 원화':'🎭 8방향 시안';
+    root.dataset.prototypeArt=experimentalArt?'eight':'premium';
+    sendToUnity(experimentalArt?'ART_PREVIEW8':'ART_PREMIUM');
+    announce(experimentalArt?
+      '8방향 독립 원화 시안이에요. 고해상도 최종본은 아직 추가 작업이 필요해요.':'고화질 캐릭터 원화로 돌아왔어요.');
   });
   ui.adaptive.addEventListener('click',()=>{
     if (phase==='explore'&&!busy&&root.dataset.ready==='true') {
@@ -430,6 +443,64 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.title.focus({preventScroll:true});
   }
 
+  // About 40% of eligible non-exam questions are presented as touchable
+  // world actions; IDs, source answers, scoring and IRT evidence stay unchanged.
+  function useSpatialInteraction(q) {
+    if(q.total===25||!['choice','build'].includes(q.interactionType||'choice'))return false;
+    if(q.interactionType==='choice'&&(!q.choices?.length||q.choices.length>5))return false;
+    const hash=[...(q.questionId||'')].reduce((value,char)=>
+      (Math.imul(value,31)+char.charCodeAt(0))>>>0,2166136261);
+    return hash%5<2;
+  }
+  function spatialStage(q){
+    const stage=label('section','','vh-spatial-stage');
+    stage.setAttribute('aria-label','마법마을 안에서 직접 움직이는 학습');
+    const scenery=label('div','','vh-spatial-landscape');
+    const guide=document.createElement('img');
+    guide.src='./assets/gameplay/npc_bunny.png';guide.alt='토끼 친구';guide.className='vh-spatial-guide';
+    scenery.append(guide);
+    scenery.append(label('span','✨ 마법 수학 정원','vh-spatial-place'));
+    stage.append(scenery);
+    contentTarget.append(stage);
+    return stage;
+  }
+  function spatialChoice(q){
+    const stage=spatialStage(q);
+    const hint=label('p','정답이 있다고 생각하는 마법문을 눌러 열어 봐요.','vh-spatial-instruction');
+    stage.append(hint);
+    const gates=label('div','','vh-spatial-gates');
+    for(let i=0;i<q.choices.length;i++){
+      const gate=button((i+1)+'번 문 · '+q.choices[i],()=>submit(i),'vh-spatial-gate');
+      gate.setAttribute('aria-label',(i+1)+'번째 마법문 '+q.choices[i]);
+      gate.prepend(label('span','✦','vh-gate-star'));
+      gates.append(gate);
+    }
+    stage.append(gates);
+  }
+  function spatialBuild(q){
+    const stage=spatialStage(q);
+    stage.append(label('p','마법 열매를 장바구니에 하나씩 넣어 보세요.','vh-spatial-instruction'));
+    let total=0;
+    const basket=label('div','','vh-spatial-basket');
+    const value=label('output','0','vh-spatial-count');value.setAttribute('aria-live','polite');
+    const items=label('div','','vh-spatial-collected');
+    const icon=q.emoji||'🍎';
+    const refresh=()=>{
+      value.textContent=total+(q.unit||'개');
+      items.textContent=(Array(Math.min(16,total)).fill(icon).join(' ')||'비어 있어요')+
+        (total>16?' 외 '+(total-16)+'개':'');
+    };
+    basket.append(label('strong','🧺 마법 바구니','vh-spatial-basket-title'),value,items);
+    stage.append(basket);
+    const controls=label('div','','vh-spatial-controls');
+    const add=button('➕ '+icon+' 담기',()=>{total=Math.min(q.max||20,total+1);refresh()},'vh-spatial-add');
+    const remove=button('➖ 한 개 꺼내기',()=>{total=Math.max(0,total-1);refresh()},'vh-spatial-remove');
+    add.setAttribute('aria-label','바구니에 하나 넣기');remove.setAttribute('aria-label','바구니에서 하나 빼기');
+    controls.append(add,remove);
+    stage.append(controls,button('🌟 이만큼 모았어요 · 정답 확인',()=>submit(total),'vh-wide'));
+    refresh();
+  }
+
   function showQuestion(q) {
     if (!q) return;
     phase='question'; question=q; gameId=q.gameId;
@@ -453,7 +524,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     paragraph(q.prompt || '무엇을 선택할까요?','vh-prompt');
     showVisual(q.visual);
     const mode=q.interactionType || 'choice';
-    if (mode==='choice') {
+    if(useSpatialInteraction(q)){
+      if(mode==='choice')spatialChoice(q);
+      else spatialBuild(q);
+    } else if (mode==='choice') {
       const options = label('div','', 'vh-options');
       (q.choices||[]).forEach((text,i)=>{
         options.append(button((i+1)+'. '+text,()=>submit(i)));
@@ -493,6 +567,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showOriginalImage(question?.solutionImage,'경시대회 '+(question?.index||1)+'번 풀이 그림');
     paragraph(result.correct ? '좋아요! 생각한 답이 맞았어요.' : '다른 방법을 하나 배웠어요.','vh-feedback');
     paragraph((result.earned??0)>0 ? '새롭게 모은 별 '+result.earned+'개' : '이미 만난 문제를 다시 생각하는 힘이 자랐어요.','vh-prompt');
+    if((result.recoveryEarned??0)>0)paragraph('🌱 오답을 새 회차에서 스스로 고쳐 +'+result.recoveryEarned+'별!','vh-learning-bonus');
     paragraph(result.explanation || '차근차근 생각해 봐요.','vh-explanation');
     voiceText=result.explanation||'';
     ui.body.append(button('다음 이야기 →',()=>request('NEXT'),'vh-wide'));
@@ -516,10 +591,47 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     paragraph('내 마을의 꽃 '+(result.flowers ?? 0)+'송이 · 가족 광장 '+(result.familyFlowers ?? 0)+'송이','vh-prompt');
     paragraph('어떤 단서를 보고 답을 골랐나요? 가족에게 내 생각을 한 문장으로 들려주세요.','vh-explanation');
     if(sessionRounds>=3)paragraph('세 번의 이야기를 마쳤어요. 눈과 몸도 잠깐 쉬어볼까요?','vh-small');
+    mostRecentRoundId=result.roundId||'';
     voiceText='오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
+    if(mostRecentRoundId)ui.body.append(button('💬 배운 방법을 말로 설명하고 기록하기',()=>showReflection(mostRecentRoundId),'vh-reflect-cta'));
     ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
     ui.exit.hidden=true;
     ui.listen.hidden=false;
+    ui.title.focus({preventScroll:true});
+  }
+  function showReflection(roundId){
+    phase='reflecting';open();resetBody();theme('scroll');root.dataset.mode='reflection';
+    ui.title.textContent='📣 나의 생각 설명하기';ui.counter.textContent='하루 최대 2번 · 각 +2별';
+    ui.hint.hidden=true;ui.listen.hidden=false;
+    voiceText='가족이나 요정에게 내가 어떻게 생각해서 풀었는지 말로 설명해 주세요. 그리고 사용한 방법을 골라요.';
+    paragraph('방금 푼 문제에서 어떤 방법이 도움이 되었나요? 직접 말로 설명한 다음 방법을 골라 주세요.','vh-story');
+    const choices=[['count','🔢 하나씩 세어 보기'],['compare','⚖️ 서로 비교하기'],
+      ['pattern','🧠 규칙 찾아보기'],['draw','✏️ 그림 그려보기'],['explain','💡 다른 말로 설명하기']];
+    const grid=label('div','','vh-strategy-grid');let selected='';
+    const confirm=button('✨ 이야기 마쳤어요 · 생각 기록하기',()=>{
+      if(!selected)return;
+      request('REFLECT',{roundId,strategy:selected});
+    },'vh-wide');confirm.disabled=true;
+    for(const [code,text] of choices){
+      const choice=button(text,()=>{
+        selected=code;confirm.disabled=false;
+        for(const b of grid.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b===choice));
+      },'vh-strategy');choice.setAttribute('aria-pressed','false');grid.append(choice);
+    }
+    ui.body.append(grid,confirm);
+    paragraph('이 보상은 설명 행동을 기록하는 작은 응원 별이에요. 정답 실력 측정에는 포함되지 않아요.','vh-small');
+    ui.note.textContent='실제 설명 내용을 검사하거나 음성을 저장하지 않아요.';
+    ui.title.focus({preventScroll:true});
+  }
+  function showReflectionResult(result){
+    phase='reflection-result';open();resetBody();theme('celebrate');
+    ui.title.textContent=result.reflectionEarned>0?'🌟 생각을 설명했어요!':'🌱 오늘의 생각을 기억해요';
+    ui.counter.textContent='설명 보상';showRewardArt(result.reflectionEarned>0?'star_blue':'sprout');
+    paragraph(result.reflectionEarned>0?'설명하며 배운 힘! +'+result.reflectionEarned+'별':
+      result.reflectionReason==='daily-cap'?'오늘의 설명 별은 모두 받았어요. 다음에 또 도전해요!':
+      '이미 기록한 생각이에요. 같은 완료 회차에는 별을 중복 지급하지 않아요.','vh-learning-bonus');
+    ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
+    ui.listen.hidden=true;ui.exit.hidden=true;
     ui.title.focus({preventScroll:true});
   }
   function update(data) {
@@ -527,6 +639,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     if(retiredRequests.has(data.requestId)||data.action==='CANCEL')return;
     if((data.action==='SUBMIT'||data.action==='HINT')&&phase!=='question')return;
     if(data.action==='NEXT'&&phase!=='feedback'&&phase!=='waiting')return;
+    if(data.action==='REFLECT'&&phase!=='reflecting')return;
     if(data.action==='COMPLETE_WORLD'&&phase!=='waiting')return;
     if(data.requestId?.startsWith('webui-') && pendingRequest && data.requestId!==pendingRequest)return;
     if(data.requestId===pendingRequest)pendingRequest='';
@@ -556,8 +669,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       root.dataset.friend=data.cosmetics.friend||'';
       root.dataset.background=data.cosmetics.background||'';
     }
+    if(Number.isFinite(data.reinforcementStars))reinforcementStars=data.reinforcementStars;
     if (Number.isFinite(data.flowers) && Number.isFinite(data.familyFlowers)) {
-      ui.progress.textContent='내 꽃 '+data.flowers+'송이 · 가족 꽃 '+data.familyFlowers+'송이';
+      ui.progress.textContent='내 꽃 '+data.flowers+'송이 · 가족 꽃 '+data.familyFlowers+'송이'+
+        (reinforcementStars>0?' · 생각·복습 별 '+reinforcementStars+'개':'');
     }
     if(data.action==='SHOW_BEBSU')showChallengePicker(data);
     else if(['SHOP_OPEN','SHOP_BUY','SHOP_EQUIP','SHOP_UNEQUIP'].includes(data.action))showShop(data.shop);
@@ -580,6 +695,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       showFeedback(data);
     } else if(data.action==='COMPLETE_WORLD') {
       complete(data);
+    } else if(data.action==='REFLECT') {
+      showReflectionResult(data);
     }
   }
   return {update,announce,close};

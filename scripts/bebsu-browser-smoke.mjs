@@ -68,6 +68,15 @@ async function start(name,width,height,learner,complete){
    const snapshot=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const catalog=await (await fetch('/games/catalog.json')).json();return R.wallet(catalog);});
    assert.equal(snapshot.challengeStars,160);
    await save(page,name+'-completed');
+   await page.locator('.vh-reflect-cta').click();
+   await page.getByRole('heading',{name:/나의 생각 설명하기/}).waitFor({timeout:15000});
+   await page.locator('.vh-strategy').first().click();
+   await page.getByRole('button',{name:/이야기 마쳤어요/}).click();
+   await page.getByRole('heading',{name:/생각을 설명했어요/}).waitFor({timeout:15000});
+   assert.match(await page.locator('.vh-learning-bonus').textContent(),/\+2별/);
+   const reflected=await page.evaluate(async()=>{const R=await import('/platform/rewards.js');const c=await (await fetch('/games/catalog.json')).json();return R.wallet(c);});
+   assert.equal(reflected.explanationStars,2,'first verified round explanation +2');
+   await save(page,name+'-learning-reflection');
    // Actual Unity+browser shop: purchase, equip, world projection, reload.
    await page.getByRole('button',{name:/마을로 돌아가기/}).click();
    await page.waitForFunction(()=>document.querySelector('#village-dialog-wrap').hidden,undefined,{timeout:12000});

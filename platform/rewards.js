@@ -6,7 +6,8 @@ export const REWARDS_KEY='sparkle-rewards-v1';
 export {REWARD_ITEMS,REWARD_CATEGORIES} from './reward-catalog.js';
 import {REWARD_ITEMS,OUTFIT_SLOTS} from './reward-catalog.js';
 const BY_ID=new Map(REWARD_ITEMS.map(item=>[item.id,item]));
-const LEARNERS=['tae','se'],KINDS=['hint','retry','session','reflection'];
+const LEARNERS=['tae','se'],KINDS=['hint','retry','session','reflection','explain','recovery'];
+const THINKING_STRATEGIES=new Set(['count','compare','pattern','draw','explain']);
 const MAX_ENTRIES=50000,MAX_RECEIPTS=3000;
 const profile=()=>({events:{},purchases:{},equipped:null,outfit:{}});
 const blank=()=>({version:1,profiles:{tae:profile(),se:profile()}});
@@ -26,11 +27,17 @@ function validate(raw){
  for(const who of LEARNERS){
   const src=raw.profiles[who];keys(src,['events','purchases','equipped','outfit']);const dest=next.profiles[who];
   for(const [id,event] of boundedMap(src.events,MAX_ENTRIES)){
-   keys(event,['id','kind','gameId','questionId','roundId','at']);
+   keys(event,['id','kind','gameId','questionId','roundId','strategy','at']);
    if(!validId(id)||event.id!==id||!KINDS.includes(event.kind)||!validId(event.gameId)||!validTime(event.at))fail();
-   if(['hint','retry'].includes(event.kind)){if(!validId(event.questionId)||event.roundId!==undefined)fail();}
-   else if(!validId(event.roundId)||event.questionId!==undefined)fail();
-   dest.events[id]={id,kind:event.kind,gameId:event.gameId,...(event.questionId?{questionId:event.questionId}:{roundId:event.roundId}),at:event.at};
+   if(['hint','retry','recovery'].includes(event.kind)){
+    if(!validId(event.questionId)||event.roundId!==undefined||event.strategy!==undefined)fail();
+   }else{
+    if(!validId(event.roundId)||event.questionId!==undefined)fail();
+    if(event.kind==='explain'?!THINKING_STRATEGIES.has(event.strategy):event.strategy!==undefined)fail();
+   }
+   dest.events[id]={id,kind:event.kind,gameId:event.gameId,
+    ...(event.questionId?{questionId:event.questionId}:{roundId:event.roundId}),
+    ...(event.kind==='explain'?{strategy:event.strategy}:{}),at:event.at};
   }
   const familyOrdinals=new Map();
   for(const [id,purchase] of boundedMap(src.purchases,MAX_RECEIPTS)){
@@ -78,7 +85,7 @@ function mergeStates(current,incoming){
   const dest=merged.profiles[who],src=incoming.profiles[who];
   for(const [id,event] of Object.entries(src.events)){
    const old=Object.hasOwn(dest.events,id)?dest.events[id]:undefined;
-   if(old&&(old.kind!==event.kind||old.gameId!==event.gameId||old.questionId!==event.questionId||old.roundId!==event.roundId))throw new Error('같은 노력 기록의 내용이 달라요.');
+   if(old&&(old.kind!==event.kind||old.gameId!==event.gameId||old.questionId!==event.questionId||old.roundId!==event.roundId||old.strategy!==event.strategy))throw new Error('같은 노력 기록의 내용이 달라요.');
    if(!old||event.at<old.at)dest.events[id]=copy(event);
   }
   for(const [id,receipt] of Object.entries(src.purchases)){
@@ -154,19 +161,34 @@ export function challengeRoundBonus(catalog,who,gameId,roundId){
   .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))[0];
  return first?.id===roundId?BEBSU_CHALLENGE_BONUS[who]:0;
 }
-function effortTotal(p){
- const questionCounts=new Map(),rounds=new Set(),dates=new Set();let total=0;
+function effortBreakdown(p){
+ const questionCounts=new Map(),rounds=new Set(),dates=new Set(),
+  explained=new Set(),recovered=new Set(),explainPerDay=new Map(),recoverPerDay=new Map();
+ const earned={traditional:0,explain:0,recovery:0};
  for(const event of Object.values(p.events).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))){
+  const key=`${event.gameId}/${event.questionId||event.roundId}`,date=day(event.at);
   if(['hint','retry'].includes(event.kind)){
-   const key=`${event.gameId}/${event.questionId}`,count=questionCounts.get(key)||0;
-   if(count<2){total++;questionCounts.set(key,count+1);}
-  }else{
-   const key=`${event.gameId}/${event.roundId}`,date=day(event.at);
-   if(!rounds.has(key)&&!dates.has(date)){total+=3;rounds.add(key);dates.add(date);}
+   const count=questionCounts.get(key)||0;
+   if(count<2){earned.traditional++;questionCounts.set(key,count+1);}
+  }else if(event.kind==='session'||event.kind==='reflection'){
+   if(!rounds.has(key)&&!dates.has(date)){
+    earned.traditional+=3;rounds.add(key);dates.add(date);
+   }
+  }else if(event.kind==='explain'){
+   const count=explainPerDay.get(date)||0;
+   if(!explained.has(key)&&count<2){
+    earned.explain+=2;explained.add(key);explainPerDay.set(date,count+1);
+   }
+  }else if(event.kind==='recovery'){
+   const count=recoverPerDay.get(date)||0;
+   if(!recovered.has(key)&&count<3){
+    earned.recovery+=4;recovered.add(key);recoverPerDay.set(date,count+1);
+   }
   }
  }
- return total;
+ return earned;
 }
+function effortTotal(p){const x=effortBreakdown(p);return x.traditional+x.explain+x.recovery;}
 function evidence(catalog,who,p){
  const results=Progress.summary(catalog,who),subjects=new Set(),correctDates=new Set(),retryTimes=new Map();let completed=0,retry=false;
  for(const event of Object.values(p.events))if(event.kind==='retry'){const key=`${event.gameId}/${event.questionId}`;retryTimes.set(key,Math.max(retryTimes.get(key)||0,event.at));}
@@ -192,11 +214,53 @@ function evidence(catalog,who,p){
 // Include the game in the session identity: imported rounds can share an ID.
 function gameToken(id){let a=2166136261,b=2246822507;for(const c of id){a=Math.imul(a^c.charCodeAt(0),16777619);b=Math.imul(b^c.charCodeAt(0),3266489909);}return (a>>>0).toString(16).padStart(8,'0')+(b>>>0).toString(16).padStart(8,'0');}
 function hasQuestionEvidence(game,questionId){return Object.hasOwn(game.records,questionId)||(game.round&&!game.round.finished&&game.round.ids[game.round.index]===questionId);}
+function successfulRecovery(record){
+ const first=record?.firstAttempt;
+ if(!first||first.correct!==false||!validTime(first.at))return null;
+ const attempts=[...(record.attempts||[])].filter(a=>a.correct===true&&
+  a.at>first.at&&a.roundId!==first.roundId&&validTime(a.at))
+  .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id));
+ return attempts[0]||null;
+}
+/** Self-reported strategy (not mastery evidence): one completed round, maximum
+ * two 2-star reflections per local day. No child voice/text stored. */
+export function recordLearningExplanation({who=Progress.learner(),gameId,roundId,strategy}={}){
+ whoId(who);
+ if(!configuredCatalog||!quizEntry(configuredCatalog,gameId)||!THINKING_STRATEGIES.has(strategy))
+  throw new Error('학습을 설명한 방법을 확인해 주세요.');
+ const round=Progress.gameProgress(gameId,who).completedRounds?.find(r=>r.id===roundId);
+ if(!round||!Array.isArray(round.questionIds)||!round.questionIds.length)
+  throw new Error('실제로 완료한 학습 후에만 생각을 기록할 수 있어요.');
+ const state=load(),p=state.profiles[who];
+ const id=`explain-${gameToken(gameId)}-${round.id}`;
+ if(!validId(id))throw new Error('완료 기록이 올바르지 않아요.');
+ if(Object.hasOwn(p.events,id))return {added:false,earned:0,reason:'duplicate'};
+ const at=Math.max(Date.now(),round.at);
+ if(Object.values(p.events).filter(e=>e.kind==='explain'&&day(e.at)===day(at)).length>=2)
+  return {added:false,earned:0,reason:'daily-cap'};
+ if(Object.keys(p.events).length>=MAX_ENTRIES)return {added:false,earned:0,reason:'ledger-full'};
+ const before=effortTotal(p);
+ p.events[id]={id,kind:'explain',gameId,roundId:round.id,strategy,at};
+ const earned=effortTotal(p)-before;
+ save(state);
+ return {added:true,earned,reason:earned?'earned':'capped',strategy};
+}
 export function syncRewards(catalog,who=Progress.learner()){
  configure(catalog);whoId(who);const state=load(),p=state.profiles[who];let changed=false,eventCount=Object.keys(p.events).length;
  const seenRounds=new Set(Object.values(p.events).filter(e=>['session','reflection'].includes(e.kind)).map(e=>`${e.gameId}/${e.roundId}`));
  for(const entry of catalog.filter(g=>g.status==='published'&&g.kind==='quiz')){
   const game=Progress.gameProgress(entry.id,who);
+  for(const [questionId,record] of Object.entries(game.records||{})){
+   if(!entry.questionIds?.includes(questionId))continue;
+   const improvement=successfulRecovery(record);
+   if(!improvement)continue;
+   const id=`recovery-${gameToken(entry.id)}-${questionId}`;
+   if(!validId(id)||Object.hasOwn(p.events,id)||eventCount>=MAX_ENTRIES)continue;
+   const perDay=Object.values(p.events).filter(e=>e.kind==='recovery'&&day(e.at)===day(improvement.at)).length;
+   if(perDay>=3)continue;
+   p.events[id]={id,kind:'recovery',gameId:entry.id,questionId,at:improvement.at};
+   eventCount++;changed=true;
+  }
   for(const round of game.completedRounds||[]){
    // Preserve old session IDs without rewarding them again after migration.
    const logicalId=`${entry.id}/${round.id}`;
@@ -210,6 +274,7 @@ export function syncRewards(catalog,who=Progress.learner()){
 }
 export function wallet(catalog,who=Progress.learner()){
  configure(catalog);whoId(who);const p=load().profiles[who],ev=evidence(catalog,who,p),effortStars=effortTotal(p);
+ const reinforcement=effortBreakdown(p);
  const learningStars=ev.results.stars,challengeStars=bebsuChallengeStars(catalog,who),lifetime=learningStars+effortStars+challengeStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
  const badges=[
   {id:'first-round',title:'첫 모험 완주',emoji:'🌱',description:'놀이 한 판을 끝까지 해냈어요.',unlocked:ev.completed>=1,progress:Math.min(1,ev.completed),target:1},
@@ -225,7 +290,8 @@ export function wallet(catalog,who=Progress.learner()){
   return {...item,owned,equipped:(item.category==='light'?p.equipped?.id:p.outfit[item.category]?.id)===item.id,pending:pending?copy(pending):null,canPurchase:!owned&&!pending&&available>=item.cost};
  });
  const look=Object.fromEntries(['light',...OUTFIT_SLOTS].map(slot=>[slot,BY_ID.get(slot==='light'?p.equipped?.id:p.outfit[slot]?.id)||null]));
- return {look,who,learningStars,effortStars,challengeStars,lifetime,spent,available,items,equipped:p.equipped?.id||null,badges,milestones,nextMilestone:milestones.find(mark=>!mark.unlocked)||null,purchases:copy(purchases),requests:copy(purchases.filter(receipt=>BY_ID.get(receipt.rewardId).kind==='family')),storageAvailable:storageOK};
+ return {look,who,learningStars,effortStars,reinforcementStars:reinforcement.explain+reinforcement.recovery,
+  explanationStars:reinforcement.explain,recoveryStars:reinforcement.recovery,challengeStars,lifetime,spent,available,items,equipped:p.equipped?.id||null,badges,milestones,nextMilestone:milestones.find(mark=>!mark.unlocked)||null,purchases:copy(purchases),requests:copy(purchases.filter(receipt=>BY_ID.get(receipt.rewardId).kind==='family')),storageAvailable:storageOK};
 }
 export function recordEffort({who=Progress.learner(),eventId,kind,gameId,questionId,roundId,at=Date.now()}={}){
  whoId(who);if(!configuredCatalog)throw new Error('놀이 목록을 먼저 불러 주세요.');
@@ -301,11 +367,15 @@ export function importRewards(raw){
  const incoming=validate(raw.state),current=copy(load());
  if(configuredCatalog)for(const who of LEARNERS)for(const event of Object.values(incoming.profiles[who].events)){
   const entry=quizEntry(configuredCatalog,event.gameId);
-  if(!entry||(['hint','retry'].includes(event.kind)&&!entry.questionIds?.includes(event.questionId)))throw new Error('보상에 연결된 놀이와 문제를 확인해 주세요.');
+  if(!entry||(['hint','retry','recovery'].includes(event.kind)&&!entry.questionIds?.includes(event.questionId)))throw new Error('보상에 연결된 놀이와 문제를 확인해 주세요.');
   const game=Progress.gameProgress(event.gameId,who);
-  if(['hint','retry'].includes(event.kind)&&(!hasQuestionEvidence(game,event.questionId)||(event.kind==='retry'&&!Object.hasOwn(game.records,event.questionId))))throw new Error('노력에 연결된 학습 기록을 먼저 가져와 주세요.');
+  if(['hint','retry','recovery'].includes(event.kind)&&(!hasQuestionEvidence(game,event.questionId)||(event.kind==='retry'&&!Object.hasOwn(game.records,event.questionId))))throw new Error('노력에 연결된 학습 기록을 먼저 가져와 주세요.');
+  if(event.kind==='recovery'&&successfulRecovery(game.records[event.questionId])?.at!==event.at)
+   throw new Error('오답 후 재도전 보상은 실제 다른 회차의 정답 기록이 필요해요.');
   const round=game.completedRounds?.find(r=>r.id===event.roundId);
   if(['session','reflection'].includes(event.kind)&&round&&event.at!==round.at)throw new Error('완료 회차와 노력 기록의 시간이 달라요.');
+  if(event.kind==='explain'&&(!round||event.at<round.at))
+   throw new Error('풀이 설명 기록에 연결된 완료 회차가 필요해요.');
  }
  const merged=mergeStates(current,incoming);
  // A standalone reward backup cannot restore the learning stars that funded
