@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 const SERVER=process.env.MAGIC_KMA_ORIGIN||'http://127.0.0.1:4198';
-const BASE='/magic-village-kma-v06';
+const BASE=process.env.MAGIC_KMA_BASE||'/magic-village-kma-v06';
 const OUTPUT='/Users/01chungee10/AI-Interop/evidence/magic-kma-public-20261010';
 const pk=await import('/Users/01chungee10/Library/Caches/ms-playwright-go/1.57.0/package/index.js');
 const {chromium}=pk.chromium?pk:pk.default;
@@ -21,7 +21,7 @@ async function test(who,width,height,complete){
    for(const key of ['sparkle-learning-progress-v3','sparkle-rewards-v1','sparkle-public-village-progress-v06'])
     localStorage.setItem(key,value);
   },sentinel);
-  await page.evaluate(async who=>{const p=await import('/magic-village-kma-v06/platform/progress.js');p.selectLearner(who);},who);
+  await page.evaluate(async ({who,base})=>{const p=await import(base+'/platform/progress.js');p.selectLearner(who);},{who,base:BASE});
   await page.locator('#start').click();
   await page.waitForFunction(()=>document.querySelector('#loading').hidden,undefined,{timeout:180000});
   await page.waitForFunction(()=>document.querySelector('#village-ui').dataset.ready==='true',undefined,{timeout:30000});
@@ -59,7 +59,7 @@ async function test(who,width,height,complete){
   if(complete){
    await page.waitForFunction(()=>document.querySelector('#vh-counter')?.textContent==='완료',undefined,{timeout:25000});
    assert.match(await page.locator('.vh-challenge-bonus').textContent(),/160별/);
-   const wallet=await page.evaluate(async()=>{const r=await import('/magic-village-kma-v06/platform/rewards.js');const c=await (await fetch('/magic-village-kma-v06/games/catalog.json')).json();return r.wallet(c);});
+   const wallet=await page.evaluate(async base=>{const r=await import(base+'/platform/rewards.js');const c=await (await fetch(base+'/games/catalog.json')).json();return r.wallet(c);},BASE);
    assert.equal(wallet.challengeStars,160);
    await page.screenshot({path:path.join(OUTPUT,'tae-kma-25-complete.png')});
   }

@@ -94,6 +94,9 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 
 /* Unity magic village link - visually distinct, accessible and responsive. */
 .village-launch{display:flex;align-items:center;gap:14px;margin:14px 0 20px;padding:15px 17px;border:2px solid #bca8e7;border-radius:20px;text-decoration:none;background:linear-gradient(115deg,#f7edff,#edf9ee);color:#352e58;box-shadow:0 4px 14px #5b4e781a}
+.village-launch-kma{margin-bottom:8px;border-color:#e4c16f;background:linear-gradient(110deg,#fff4ce,#f7edff);box-shadow:0 5px 15px #a9843724}
+.village-launch-kma .village-launch-copy strong{color:#76511e}
+.village-launch-kma .village-launch-arrow{color:#a47828}
 .village-launch:hover,.village-launch:focus-visible{border-color:#845ac0;box-shadow:0 6px 20px #7662ac35}
 .village-launch:focus-visible{outline:3px solid #875dc1;outline-offset:3px}
 .village-launch-icon{flex:0 0 auto;font-size:34px}
