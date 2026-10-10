@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "source": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+  "sourceSHA256": "2b919a1ec3c093fdd73ececd74fb5eb7276204eb8189849e3e95fc413208bee9",
+  "scope": "GrowthGarden plaza layout only; source geometry proof, final actual WebGL screenshot remains root QA",
+  "bed": {
+    "primitive": "Unity Cylinder",
+    "center": [
+      0,
+      0.08,
+      3.9
+    ],
+    "scale": [
+      4.1,
+      0.1,
+      2.4
+    ],
+    "groundSemiaxes": [
+      2.05,
+      1.2
+    ],
+    "topY": 0.18
+  },
+  "earnedCountInvariant": "Clamp(count,0,32) independent blooms; cumulative count/fullness unchanged",
+  "layout": {
+    "type": "fixed sunflower spiral",
+    "iRange": [
+      0,
+      31
+    ],
+    "radialFormula": "sqrt(i/31)",
+    "angleFormula": "i*2.39996323",
+    "xRadius": 1.2,
+    "zRadius": 0.55,
+    "anchorY": 0.2,
+    "maxIdleAmplitude": 0.012,
+    "minimumFootY": 0.188,
+    "minimumFootYAboveBedTop": 0.008,
+    "firstBloom": [
+      0,
+      0.2,
+      3.9
+    ],
+    "firstSoloScale": 0.33,
+    "multipleBloomBaseScale": 0.18,
+    "maxFullness": 1.2,
+    "maximumMultipleScale": 0.216
+  },
+  "nativeOpaqueBounds": {
+    "catalog": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/asset-catalog.json",
+    "spriteMeta": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/bloom.png.meta",
+    "layout": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/art-layout.json",
+    "width": 2.7271711108887047,
+    "height": 3.2200000019934656,
+    "targetPixelsPerUnit": 361.180124
+  },
+  "conservativeVisualCheck": {
+    "cameraOffset": [
+      19,
+      21,
+      -19
+    ],
+    "right": [
+      0.7071067811865476,
+      0,
+      0.7071067811865476
+    ],
+    "upGroundComponents": [
+      -0.43542608183583387,
+      0.43542608183583387
+    ],
+    "method": "For each of the32 opaque alpha rectangles at maximum scale .216, project four billboard corners into XZ using actual camera right/up. All corners satisfy (x/2.05)^2+((z-3.9)/1.2)^2<1; convexity contains the whole rectangle. Native alpha dimensions are conservative if GPU import reduces physical bounds.",
+    "maxProjectedOpaqueCornerMetric": 0.7393067036655137,
+    "worstCorner": {
+      "i": 27,
+      "xx": -0.5269330570487128,
+      "zz": 0.9846121586001518
+    },
+    "soloScale33Metric": 0.4284113347570622,
+    "centerMaxMetric": 0.3232638862064918,
+    "distinctCenters": 32,
+    "passes": true
+  },
+  "homeCheck": {
+    "changed": false,
+    "centerXRange": [
+      6.8,
+      10.25
+    ],
+    "centerZRange": [
+      -8.9,
+      -2.25
+    ],
+    "worldBoundsX": [
+      -12,
+      12
+    ],
+    "worldBoundsZ": [
+      -10.5,
+      10.5
+    ],
+    "dedicatedSoilBed": false
+  },
+  "centers": [
+    {
+      "i": 0,
+      "x": 0,
+      "z": 3.9,
+      "y": 0.2,
+      "ellipseMetric": 0
+    },
+    {
+      "i": 1,
+      "x": -0.15892243210238524,
+      "z": 3.966726901054583,
+      "y": 0.2,
+      "ellipseMetric": 0.009101836395838885
+    },
+    {
+      "i": 2,
+      "x": 0.026647387705910137,
+      "z": 3.7608347664325086,
+      "y": 0.2,
+      "ellipseMetric": 0.013618246199182362
+    },
+    {
+      "i": 3,
+      "x": 0.22713181465031487,
+      "z": 4.035782731343302,
+      "y": 0.2,
+      "ellipseMetric": 0.02507919279061123
+    },
+    {
+      "i": 4,
+      "x": -0.4244634309743051,
+      "z": 3.8655875978028043,
+      "y": 0.2,
+      "ellipseMetric": 0.04369428101925678
+    },
+    {
+      "i": 5,
+      "x": 0.40663233734522775,
+      "z": 3.7814446550386025,
+      "y": 0.2,
+      "ellipseMetric": 0.04910626724498783
+    },
+    {
+      "i": 6,
+      "x": -0.13705280132938208,
+      "z": 4.133671893720965,
+      "y": 0.2,
+      "ellipseMetric": 0.042388034591776994
+    },
+    {
+      "i": 7,
+      "x": -0.26282262272349244,
+      "z": 3.668060889080917,
+      "y": 0.2,
+      "ellipseMetric": 0.053794979339418986
+    },
+    {
+      "i": 8,
+      "x": 0.5726108343963585,
+      "z": 3.995845089881074,
+      "y": 0.2,
+      "ellipseMetric": 0.08440034179610316
+    },
+    {
+      "i": 9,
+      "x": -0.5976625066365432,
+      "z": 4.01307376340528,
+      "y": 0.2,
+      "ellipseMetric": 0.0938760795020913
+    },
+    {
+      "i": 10,
+      "x": 0.2888740202178647,
+      "z": 3.6170676260296504,
+      "y": 0.2,
+      "ellipseMetric": 0.07544758291898486
+    },
+    {
+      "i": 11,
+      "x": 0.2139341128770623,
+      "z": 4.2126088488520885,
+      "y": 0.2,
+      "ellipseMetric": 0.07875470576858729
+    },
+    {
+      "i": 12,
+      "x": -0.6459712045634718,
+      "z": 3.7284213034697626,
+      "y": 0.2,
+      "ellipseMetric": 0.11973691457064
+    },
+    {
+      "i": 13,
+      "x": 0.7589662969704143,
+      "z": 3.8235240544308664,
+      "y": 0.2,
+      "ellipseMetric": 0.14112988069069232
+    },
+    {
+      "i": 14,
+      "x": -0.4637992159767181,
+      "z": 4.202365549254178,
+      "y": 0.2,
+      "ellipseMetric": 0.11467566184781022
+    },
+    {
+      "i": 15,
+      "x": -0.10727172631601896,
+      "z": 3.520587754885037,
+      "y": 0.2,
+      "ellipseMetric": 0.10270599890192991
+    },
+    {
+      "i": 16,
+      "x": 0.6592080637000083,
+      "z": 4.154641410314148,
+      "y": 0.2,
+      "ellipseMetric": 0.14843332956109623
+    },
+    {
+      "i": 17,
+      "x": -0.8878791087594858,
+      "z": 3.9168284345996627,
+      "y": 0.2,
+      "ellipseMetric": 0.18778246100668575
+    },
+    {
+      "i": 18,
+      "x": 0.6481542677439726,
+      "z": 3.6043749724774967,
+      "y": 0.2,
+      "ellipseMetric": 0.1606556347522817
+    },
+    {
+      "i": 19,
+      "x": -0.04339491132985529,
+      "z": 4.330125144795311,
+      "y": 0.2,
+      "ellipseMetric": 0.12892562269027663
+    },
+    {
+      "i": 20,
+      "x": -0.6175559593111728,
+      "z": 3.560815714223927,
+      "y": 0.2,
+      "ellipseMetric": 0.17064268165621443
+    },
+    {
+      "i": 21,
+      "x": 0.978845433109805,
+      "z": 3.960363542373628,
+      "y": 0.2,
+      "ellipseMetric": 0.23052286334175373
+    },
+    {
+      "i": 22,
+      "x": -0.829812465911609,
+      "z": 4.164624200878997,
+      "y": 0.2,
+      "ellipseMetric": 0.21248131045992913
+    },
+    {
+      "i": 23,
+      "x": 0.22686212203366327,
+      "z": 3.437805277932562,
+      "y": 0.2,
+      "ellipseMetric": 0.16059659343442398
+    },
+    {
+      "i": 24,
+      "x": 0.524953008927629,
+      "z": 4.319885129834482,
+      "y": 0.2,
+      "ellipseMetric": 0.1880072220503124
+    },
+    {
+      "i": 25,
+      "x": -1.0266520417009755,
+      "z": 3.749882078469243,
+      "y": 0.2,
+      "ellipseMetric": 0.26645610007554327
+    },
+    {
+      "i": 26,
+      "x": 0.9976380646573326,
+      "z": 3.688738546007807,
+      "y": 0.2,
+      "ellipseMetric": 0.267824893625102
+    },
+    {
+      "i": 27,
+      "x": -0.43235283650703316,
+      "z": 4.373497281889934,
+      "y": 0.2,
+      "ellipseMetric": 0.20017464183841005
+    },
+    {
+      "i": 28,
+      "x": -0.38599070717113837,
+      "z": 3.408138427460895,
+      "y": 0.2,
+      "ellipseMetric": 0.20345784857879073
+    },
+    {
+      "i": 29,
+      "x": 1.027390674374016,
+      "z": 4.147485221026011,
+      "y": 0.2,
+      "ellipseMetric": 0.2937015249827486
+    },
+    {
+      "i": 30,
+      "x": -1.1414950437757927,
+      "z": 4.037909942610388,
+      "y": 0.2,
+      "ellipseMetric": 0.3232638862064918
+    },
+    {
+      "i": 31,
+      "x": 0.6490052945200231,
+      "z": 3.437380181718123,
+      "y": 0.2,
+      "ellipseMetric": 0.2488509126836471
+    }
+  ]
+}

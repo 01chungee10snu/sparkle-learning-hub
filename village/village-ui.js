@@ -1,5 +1,10 @@
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
 // It never scores an answer: the established learning platform remains authoritative.
+function nativeProgressArt(answered,total){
+ if(!Number.isInteger(total)||total<=0)return 'seed';
+ const count=Number.isFinite(answered)?Math.min(total,Math.max(0,Math.floor(answered))):0;
+ return count===0?'seed':count>=total?'bloom':count/total<.5?'sprout':'bud';
+}
 export function createVillageUI({root, sendToUnity, sendRequest}) {
   if (!root || typeof sendToUnity !== 'function' || typeof sendRequest !== 'function')
     throw new TypeError('village UI needs an element and bridge callbacks');
@@ -7,7 +12,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<section id="village-info" class="vh-card" aria-label="마을 상태">',
     ' <div class="vh-avatar" aria-hidden="true"></div>',
     ' <div class="vh-meta"><h2 id="vh-name">마법마을</h2>',
-    ' <p><span id="vh-area">내 마을</span> · <span class="vh-stars">⭐ <span id="vh-stars">0</span>개</span></p>',
+    ' <p><span id="vh-area">내 마을</span> · <span class="vh-stars"><img class="vh-currency-art" src="./assets/star_yellow.png" alt="" width="20" height="20"> <span id="vh-stars">0</span>개</span></p>',
     ' <p id="vh-progress">오늘도 나만의 속도로 탐험해요</p></div>',
     '</section>',
     '<p id="vh-help" class="vh-help">바닥을 터치해 이동하고 친구를 만나보세요.</p>',
@@ -250,6 +255,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     open(); resetBody();
     ui.title.textContent='🧩 '+(q.title || '생각해 볼까요?');
     ui.counter.textContent=(q.index || 1)+' / '+(q.total || 3);
+    showRoundCue(Math.max(0,(q.index||1)-1),q.total||3);
     voiceText=[q.story,q.prompt,...(q.choices||[])].filter(Boolean).join('. ');
     if (q.story) paragraph(q.story,'vh-story');
     paragraph(q.prompt || '무엇을 선택할까요?','vh-prompt');
@@ -271,6 +277,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.exit.hidden = false;
     ui.title.focus({preventScroll:true});
   }
+  function showRoundCue(answered,total) {
+    const stage=nativeProgressArt(answered,total),image=document.createElement('img');
+    image.src='./assets/'+stage+'.png';image.alt='';image.width=20;image.height=20;image.className='vh-round-image';
+    ui.counter.dataset.stage=stage;ui.counter.setAttribute('aria-label',Math.min(total,Math.max(0,answered))+' / '+total+'개 답 확인');
+    ui.counter.prepend(image);
+  }
   function showRewardArt(id) {
     const holder=label('div','','vh-reward-art');
     const img=document.createElement('img');
@@ -281,7 +293,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     phase='feedback'; open();resetBody();
     ui.title.textContent=result.correct ? '🌟 멋진 발견!' : '🌱 다시 생각하는 힘';
     ui.counter.textContent='이번 문제';
-    showRewardArt(result.correct && (result.earned??0)>0 ? 'star_yellow' : 'sprout');
+    showRoundCue(question?.index||1,question?.total||3);
+    showRewardArt(result.correct && (result.earned??0)>0 ? (gameId==='kind-dialogue'?'star_purple':'star_yellow') : 'sprout');
     paragraph(result.correct ? '좋아요! 생각한 답이 맞았어요.' : '다른 방법을 하나 배웠어요.','vh-feedback');
     paragraph((result.earned??0)>0 ? '새롭게 모은 별 '+result.earned+'개' : '이미 만난 문제를 다시 생각하는 힘이 자랐어요.','vh-prompt');
     paragraph(result.explanation || '차근차근 생각해 봐요.','vh-explanation');
@@ -295,6 +308,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     phase='complete';open();resetBody();
     ui.title.textContent='🌷 오늘의 마법 성공!';
     ui.counter.textContent='완료';
+    showRoundCue(question?.total||3,question?.total||3);
     showRewardArt('bloom');
     if(result.gardenAdded!==false)sessionRounds++;
     paragraph(result.gardenAdded===false?'이 이야기의 꽃은 이미 정원에 피어 있어요.':'마을에 새로운 꽃이 피었어요!','vh-feedback');
@@ -340,7 +354,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         ui.dialog.setAttribute('aria-busy','true');
         return;
       }
-      if(data.answered){gameId=data.question.gameId;showFeedback(data);}
+      if(data.answered){question=data.question;gameId=data.question.gameId;showFeedback(data);}
       else if (data.question) showQuestion(data.question);
     } else if(data.action==='HINT' && phase==='question') {
       const old=ui.body.querySelector('.vh-hint-text');

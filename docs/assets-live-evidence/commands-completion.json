@@ -1,0 +1,27 @@
+{
+  "createdAtUTC": "2026-10-10T06:37:30.448340+00:00",
+  "unityFinalBuild": {
+    "jobId": "a830be4d-df60-4441-844b-867b2d90153c",
+    "state": "succeeded",
+    "exitCode": 0,
+    "elapsedMs": 106642,
+    "hasMoreOutput": false
+  },
+  "webglFinalBrowser": {
+    "jobId": "776d0168-a652-408a-b211-311eb7d764a0",
+    "state": "succeeded",
+    "exitCode": 0,
+    "elapsedMs": 101820,
+    "lastOutputCursor": 24,
+    "hasMoreOutput": false,
+    "report": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser-final/qa-webgl.json",
+    "sha256": "a52bcf19b0855b06ec12203b3592392be2aaf0b4ae9a91370545e1dcfe0f3cc5"
+  },
+  "nativeHubBrowser": {
+    "jobId": "0a7dca4b-2d04-49af-b657-1029627e1f14",
+    "state": "succeeded",
+    "exitCode": 0,
+    "report": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/native-rewards-browser-qa.json",
+    "sha256": "569809bfbfe34d5bc7c31618264737a814dcadcadb4133b956a9e3f9446bea26"
+  }
+}

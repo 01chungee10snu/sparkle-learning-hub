@@ -1,0 +1,4549 @@
+{
+  "schemaVersion": 1,
+  "capturedAtUTC": "2026-10-10T06:30:25.953471+00:00",
+  "projectRoot": "/Users/01chungee10/Github/sparkle-fairy-village",
+  "htmlProjectRoot": "/Users/01chungee10/Github/sparkle-learning-hub",
+  "artifact": {
+    "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/runtime-assets-file-manifest.json",
+    "metaPath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/runtime-assets-file-manifest.json.meta",
+    "metaGuid": "3247d2b25bdf4e95ba670c0c41584b6e"
+  },
+  "scope": "Independent native asset files and authored prefab/library integration. Player binary/source compilation evidence is recorded separately.",
+  "counts": {
+    "nativePNGs": 62,
+    "pngMetas": 62,
+    "authoredPrefabs": 62,
+    "prefabMetas": 62,
+    "assetCategories": {
+      "Characters": 2,
+      "World": 43,
+      "Rewards": 14,
+      "UI": 3
+    },
+    "unityPlayerDistinctAssetIds": 46,
+    "htmlDistinctNativeAssetIds": 19,
+    "libraryReferences": 62,
+    "previousFirstPassPNGBackups": 62
+  },
+  "baselineValidation": {
+    "baselineInventoryPath": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/before-integration-asset-inventory.json",
+    "nativeGenerationHashInventoryPath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/native-v2-source-hashes.json",
+    "comparedNativePNGs": 62,
+    "matchingBeforeIntegrationByteCounts": 62,
+    "matchingBeforeIntegrationSHA256": 62,
+    "matchingNativeGenerationSHA256": 62,
+    "mismatches": [],
+    "allNativePNGBytesUnchanged": true,
+    "exactHTMLNativeCopies": 19
+  },
+  "categoryUsage": [
+    {
+      "category": "World",
+      "count": 43,
+      "unityPlayer": true,
+      "htmlLearningUI": false,
+      "evidencePaths": [
+        "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/runtime-prefab-verification.json",
+        "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs"
+      ]
+    },
+    {
+      "category": "Characters",
+      "count": 2,
+      "unityPlayer": true,
+      "htmlLearningUI": true,
+      "evidencePaths": [
+        "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+        "/Users/01chungee10/Github/sparkle-learning-hub/experience.css",
+        "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.css"
+      ]
+    },
+    {
+      "category": "Rewards",
+      "count": 14,
+      "unityPlayerIds": [
+        "Rewards/bloom"
+      ],
+      "htmlLearningUIIds": [
+        "Rewards/badge_book",
+        "Rewards/badge_crown",
+        "Rewards/badge_leaf",
+        "Rewards/bloom",
+        "Rewards/bud",
+        "Rewards/gift",
+        "Rewards/heart",
+        "Rewards/magic_dust",
+        "Rewards/seed",
+        "Rewards/sprout",
+        "Rewards/star_blue",
+        "Rewards/star_purple",
+        "Rewards/star_rainbow",
+        "Rewards/star_yellow"
+      ],
+      "evidencePaths": [
+        "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+        "/Users/01chungee10/Github/sparkle-learning-hub/app.js",
+        "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.js"
+      ]
+    },
+    {
+      "category": "UI",
+      "count": 3,
+      "unityPlayer": false,
+      "htmlLearningUI": true,
+      "evidencePaths": [
+        "/Users/01chungee10/Github/sparkle-learning-hub/experience.css",
+        "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.css"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "Characters/taehee_original",
+      "category": "Characters",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Chosen learner avatar."
+      },
+      "files": [
+        {
+          "id": "Characters/taehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Characters/taehee_original.png",
+          "role": "current-native-png",
+          "bytes": 1274731,
+          "sha256": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c"
+        },
+        {
+          "id": "Characters/taehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Characters/taehee_original.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3617,
+          "sha256": "426eb66e6342fc3d6733d265b1ea0a7cdcc42fe437d43386646c5334e610648b",
+          "guid": "b420714f8852141a4a677e6d3c85a17e"
+        },
+        {
+          "id": "Characters/taehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Characters/taehee_original.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4068,
+          "sha256": "3581b5d31414b1a2f4dbc7c787243bb5c803ba0fc2e53a6fd6b683bcbcf07a22"
+        },
+        {
+          "id": "Characters/taehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Characters/taehee_original.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "17071c94f00f3304605e13cabe2736ebf11250ea7b1953015bbea0b39a8ea422",
+          "guid": "4a888b43934994f99bd69bab21631770"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1274731,
+        "pngSha256": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Characters/sehee_original",
+      "category": "Characters",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Chosen learner avatar."
+      },
+      "files": [
+        {
+          "id": "Characters/sehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Characters/sehee_original.png",
+          "role": "current-native-png",
+          "bytes": 1263286,
+          "sha256": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f"
+        },
+        {
+          "id": "Characters/sehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Characters/sehee_original.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3620,
+          "sha256": "9b76a5ed2dbc55b4f598862172ad89ce460177b41d20913090021815193199d0",
+          "guid": "f3dfed0a5d72c4686b6869bda9552828"
+        },
+        {
+          "id": "Characters/sehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Characters/sehee_original.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4071,
+          "sha256": "cd2a9eba210c11c3e5deb3319564a214984d34388a79a81589f8d7208ab8e62c"
+        },
+        {
+          "id": "Characters/sehee_original",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Characters/sehee_original.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "a9f3f1b2f1218eaec1d3799d504994a7c16e75477b9e039ce616f5650d9376f7",
+          "guid": "dffe4a8321e214818a48ea5d905f24e6"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1263286,
+        "pngSha256": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_flower",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_flower",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_flower.png",
+          "role": "current-native-png",
+          "bytes": 1750540,
+          "sha256": "156bf23c475a77e03d8d6a2e85613ceda24532a89d0a9d52693824e2050a8343"
+        },
+        {
+          "id": "World/house_flower",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_flower.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3614,
+          "sha256": "da6eb4d1ddec96f032ff4f06be992c39586ad3add2b0b6c50a336a2f6311425c",
+          "guid": "5a2c23491349748e19c31df59c2957c2"
+        },
+        {
+          "id": "World/house_flower",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_flower.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 5799,
+          "sha256": "a8c71bdab9cbafdc0335d6a0aa7f8ed119e498f1d353b9a4c7c52d6636fa8308"
+        },
+        {
+          "id": "World/house_flower",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_flower.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "23630dd0a0cec34220f164c02ee054c78ba22828b8e2912d014554937a6c2c0a",
+          "guid": "9ad0966705d6a40638a520913c9316e2"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1750540,
+        "pngSha256": "156bf23c475a77e03d8d6a2e85613ceda24532a89d0a9d52693824e2050a8343",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_leaf",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_leaf.png",
+          "role": "current-native-png",
+          "bytes": 1943060,
+          "sha256": "cbe34ff0a239b698f0ab305d1aec6de7643fe24dc53e1238523671fdcb7cf2d4"
+        },
+        {
+          "id": "World/house_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_leaf.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3608,
+          "sha256": "fd924c54a85bbc18fd0f3c5b8edbd9f9a69c8e6bc92d2938c919890929ed2ff7",
+          "guid": "19c010bb70b7b4ca8a9c34bcd0d74634"
+        },
+        {
+          "id": "World/house_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_leaf.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "51bbeb4af14d590478a961e3ccc5ef35623c447c7c5179dd73fa5511dce6fa62"
+        },
+        {
+          "id": "World/house_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_leaf.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "bce1ee5a9b73c15635346f120ad4f0946e3b680c60af2d9deee89837a8f77382",
+          "guid": "fcb71b951a62b4fbc9edf9f20173ade8"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1943060,
+        "pngSha256": "cbe34ff0a239b698f0ab305d1aec6de7643fe24dc53e1238523671fdcb7cf2d4",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_moon",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_moon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_moon.png",
+          "role": "current-native-png",
+          "bytes": 1575332,
+          "sha256": "ac7d5a4f80b5f3701317768dc2195191d32b745e306e360365f6d9c4e6089f62"
+        },
+        {
+          "id": "World/house_moon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_moon.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "e8ac6ac199f9a6386662511bc7dc48a601b59dd83042f6eb728ee69ac1dc2c0f",
+          "guid": "bf474ee98c2074eabaff83fd8ba8d9a6"
+        },
+        {
+          "id": "World/house_moon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_moon.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 5797,
+          "sha256": "f5d53c743dbd1c45832a072b9044cce6672e99e23ee08afc9e99829d7e53b457"
+        },
+        {
+          "id": "World/house_moon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_moon.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "796a9381c2adcf2d7aa8a597ec3cc02252b524a7efc3c0cde0a00c48be020fdd",
+          "guid": "9aa63fd5c4765450698a8d8e7d908a6b"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1575332,
+        "pngSha256": "ac7d5a4f80b5f3701317768dc2195191d32b745e306e360365f6d9c4e6089f62",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_library",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_library",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_library.png",
+          "role": "current-native-png",
+          "bytes": 1941941,
+          "sha256": "6126a2104ee4ad2c911f62c84281c5de5efea039219c0d2b066010b5741cb70f"
+        },
+        {
+          "id": "World/house_library",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_library.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3618,
+          "sha256": "3de500345cd4ac1a05f41b5c1f5e9407668cd9eb5f54b9b4fbaa7d0ac3135ba4",
+          "guid": "91b1ef13604934d6492e06d42dfd0861"
+        },
+        {
+          "id": "World/house_library",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_library.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "74bdf8adbabcc23ca0ea9f892557761309926e8edc97aa5123b068873cda0cb0"
+        },
+        {
+          "id": "World/house_library",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_library.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "2aeb2a7ef5fcfa75350f953b8e0894f6119dc5c088f3907e59df81d81084bec1",
+          "guid": "ba188134e65ab44eea4ae837a235ddbd"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1941941,
+        "pngSha256": "6126a2104ee4ad2c911f62c84281c5de5efea039219c0d2b066010b5741cb70f",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_shop",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_shop",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_shop.png",
+          "role": "current-native-png",
+          "bytes": 1907237,
+          "sha256": "d7a4579a04ca8fb5be4e41670c0e3e1942932ae9c4f108bdcd047d218dab8bfb"
+        },
+        {
+          "id": "World/house_shop",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_shop.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3610,
+          "sha256": "597a429380239eedd1362236feb6b95bc78b65ddd5547206b1cda2f22631bde2",
+          "guid": "b49efec8a3af84ab884560a6c01544b7"
+        },
+        {
+          "id": "World/house_shop",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_shop.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4059,
+          "sha256": "91cfca0b6387f52786d9dea7da610eb7517f3e1860ee8fd519ab2314a3264174"
+        },
+        {
+          "id": "World/house_shop",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_shop.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "9bc7d71f40c311a3f063e9e24ee9481ddfaf0b4087e00fc7ea7c788249b0c15b",
+          "guid": "9469cddd85b154714a7ab2a72250e93c"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1907237,
+        "pngSha256": "d7a4579a04ca8fb5be4e41670c0e3e1942932ae9c4f108bdcd047d218dab8bfb",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/post_office",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/post_office",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/post_office.png",
+          "role": "current-native-png",
+          "bytes": 1728718,
+          "sha256": "3a5c6883424b8ce058b3d390ed9dfc530573f3837add3651b5c00fcf4b8db69e"
+        },
+        {
+          "id": "World/post_office",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/post_office.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3614,
+          "sha256": "d5da6739a8802ff7475e319634fda1ffd45545325ba9f894610ed6e5ae6589b9",
+          "guid": "edd0ad21784c0477da1ba881dc538a08"
+        },
+        {
+          "id": "World/post_office",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/post_office.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 5797,
+          "sha256": "d7e584de18b1594595a0500dd94a48c8e417360fcfdcc18eac5b58dc342da521"
+        },
+        {
+          "id": "World/post_office",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/post_office.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "c9d6f54b3ccb85ffa0e8c26633c914b0d72fe565d16ee0a64350146292bb7217",
+          "guid": "2bc5bb8d4b8d745f5baebaad2a2ad7ae"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1728718,
+        "pngSha256": "3a5c6883424b8ce058b3d390ed9dfc530573f3837add3651b5c00fcf4b8db69e",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/house_cake",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/house_cake",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_cake.png",
+          "role": "current-native-png",
+          "bytes": 1834117,
+          "sha256": "d6979c41ca3a1e1561f36d9a03e9bb36bf26baed096145a66812a8cfc2625150"
+        },
+        {
+          "id": "World/house_cake",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/house_cake.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3610,
+          "sha256": "2602a89f6ce6fd91d599ffbe2e8cc7cb6e69d9e011def94e4eccf0a0be81ba72",
+          "guid": "81763595076724493b96aa12b2209aeb"
+        },
+        {
+          "id": "World/house_cake",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_cake.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "ec3efba495704e4687f5f66701021a8c8e3a473ba5e2681bbef791a6a3f53a42"
+        },
+        {
+          "id": "World/house_cake",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/house_cake.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "43c7402d4d444b2bf9bb452c2e865c7669e8b0e8a5106c50295658e5d629b03a",
+          "guid": "2c12eac89370e41d4a3aa59b0868b361"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1834117,
+        "pngSha256": "d6979c41ca3a1e1561f36d9a03e9bb36bf26baed096145a66812a8cfc2625150",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/learning_castle",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/learning_castle",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/learning_castle.png",
+          "role": "current-native-png",
+          "bytes": 1531555,
+          "sha256": "adcc978e96d51e79f76bc63f2625654cba2e10a0a48b7228273d062aec2a9992"
+        },
+        {
+          "id": "World/learning_castle",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/learning_castle.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3620,
+          "sha256": "8d1d19c2dd5056ca6b5f8fd3a0fb369167032c12dbdff3f79e95cc2acc66430c",
+          "guid": "73c9e2541ae2046cab1b07fa466b54a9"
+        },
+        {
+          "id": "World/learning_castle",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/learning_castle.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4069,
+          "sha256": "d78af51d382f57e0c136db55d2a29f46801d9b300d94eadbf902ba220bc7d722"
+        },
+        {
+          "id": "World/learning_castle",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/learning_castle.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "2d26eef15098f5957f35e6a116f35b420fb1e9db83b63ebc5a7654cde9193c90",
+          "guid": "875bb010e018740caae02136d472688d"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1531555,
+        "pngSha256": "adcc978e96d51e79f76bc63f2625654cba2e10a0a48b7228273d062aec2a9992",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_blush",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_blush",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_blush.png",
+          "role": "current-native-png",
+          "bytes": 1836319,
+          "sha256": "3bdfda55468fed55e4d838d78d74b6d585489ed05f325ca51952b6c0af581e9e"
+        },
+        {
+          "id": "World/tree_blush",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_blush.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "fd12011af8359ce3d388d63a6289a5585a8e91e364205065d1ba446e867d5699",
+          "guid": "9cc0db332ee02480ab0ae2be944e98d4"
+        },
+        {
+          "id": "World/tree_blush",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_blush.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "3fc3992e30d1e6f79f0f0d1651a701a4dc17edbdffb5bd4d09396b1affeefd8f"
+        },
+        {
+          "id": "World/tree_blush",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_blush.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "2c567161081f997eb9ab0bb07a2468f077af23879ae9534fe9164d7ec0d60a91",
+          "guid": "2130d48fc7ee747959b8c5dc8910454f"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1836319,
+        "pngSha256": "3bdfda55468fed55e4d838d78d74b6d585489ed05f325ca51952b6c0af581e9e",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_lilac",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_lilac.png",
+          "role": "current-native-png",
+          "bytes": 2014439,
+          "sha256": "ae400d15da4ab810de2cf93c23634bc59f718d2e0047a60b084eb88923044881"
+        },
+        {
+          "id": "World/tree_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_lilac.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3611,
+          "sha256": "5e59460161cfb6c2a2eec40deee03aa9be23056b548888b9c1914d360ea1b477",
+          "guid": "46a28eb6af20141c8a46998f1a6a41a8"
+        },
+        {
+          "id": "World/tree_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_lilac.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "fe8a27964cb31c2cfd6e5cf669712c1f56bb51bb9fa5079ae8802252765d64f4"
+        },
+        {
+          "id": "World/tree_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_lilac.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "d1501d3f51f4ba7e2337b33c9d1cce0b49cdf4ad27eab86379e4f7ccbefd54b5",
+          "guid": "ac792b507b27b4506b4e0ba6a6af1373"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 2014439,
+        "pngSha256": "ae400d15da4ab810de2cf93c23634bc59f718d2e0047a60b084eb88923044881",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_mint",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_mint",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_mint.png",
+          "role": "current-native-png",
+          "bytes": 1767496,
+          "sha256": "937b2bd9fe40422e2f6f4349c8651fc2a85b6584cef802ea60bd38829f5141c1"
+        },
+        {
+          "id": "World/tree_mint",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_mint.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "e51563eba442092c94ea41962c72f2a227ae4f6b8b9dbe047eabda4c8287b153",
+          "guid": "481d79b867a164f24a8e24b2aad5a742"
+        },
+        {
+          "id": "World/tree_mint",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_mint.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4060,
+          "sha256": "e6218ac6d60c490f04629fbf5eeb8de8232d2202d03d200c68c0327ad4e805d6"
+        },
+        {
+          "id": "World/tree_mint",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_mint.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "913133cf12447f9355e3499e097ca4bd9f2696fada957a0b429bfbda8ec2fde9",
+          "guid": "ac6defb110e3841cb9abef11a7075c37"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1767496,
+        "pngSha256": "937b2bd9fe40422e2f6f4349c8651fc2a85b6584cef802ea60bd38829f5141c1",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_oak",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_oak",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_oak.png",
+          "role": "current-native-png",
+          "bytes": 1863973,
+          "sha256": "a6cebc1f541fea2a0b95fc61de9a71f8271bdd89a9509606555bf89a7b1757f7"
+        },
+        {
+          "id": "World/tree_oak",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_oak.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3606,
+          "sha256": "509c7804ebc9e5fa6a8567e1a928d0807f7408468670b1f634ae4fc059bc4860",
+          "guid": "49dac4310ca3240b490a36834f51d4a3"
+        },
+        {
+          "id": "World/tree_oak",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_oak.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4063,
+          "sha256": "366a4e1fc79ddc95b2a03a005ba626999721acb7ed489a70f3072cdadc091e2b"
+        },
+        {
+          "id": "World/tree_oak",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_oak.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "9c1ddb318620aa983cc296dc14482899a15385f0802d1d2f45bdeeeeef58823b",
+          "guid": "607232fb4f35d4bb5a02e7b9e48a5f84"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1863973,
+        "pngSha256": "a6cebc1f541fea2a0b95fc61de9a71f8271bdd89a9509606555bf89a7b1757f7",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_gold",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_gold",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_gold.png",
+          "role": "current-native-png",
+          "bytes": 1619202,
+          "sha256": "6a539795ef245517a22f617bf979566147601e8fdfff6fe2b3eb58cb15a16206"
+        },
+        {
+          "id": "World/tree_gold",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_gold.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3608,
+          "sha256": "0bfb406f5fde9593dd9a3a8d9f197f0a1fb818d7170330ed7192c2c37eab1679",
+          "guid": "4393506012c5a4cad81dec1bcd6b4957"
+        },
+        {
+          "id": "World/tree_gold",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_gold.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "89cfc712c80a406c6bbda5ff0f069467acd7cef0fc9309657f525e8fb9baea03"
+        },
+        {
+          "id": "World/tree_gold",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_gold.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "8648834cc48e0ebc5d85790eec9b9eb2220520e4b417554c2f08e2f0c70033b3",
+          "guid": "eeb89aadbfc7a447380dbfc2838207d3"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1619202,
+        "pngSha256": "6a539795ef245517a22f617bf979566147601e8fdfff6fe2b3eb58cb15a16206",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/tree_fir",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/tree_fir",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_fir.png",
+          "role": "current-native-png",
+          "bytes": 1114716,
+          "sha256": "0317a36124a77ea3e295250a94fd21550548db13d474c66b6187769b3258df0f"
+        },
+        {
+          "id": "World/tree_fir",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/tree_fir.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3607,
+          "sha256": "d6f2bfb0c35c6da113affbf647ff441621f5477ab26dce3162293e2dc7230518",
+          "guid": "790558a9ce03a4c0e81bd7790bd2347a"
+        },
+        {
+          "id": "World/tree_fir",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_fir.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4062,
+          "sha256": "9c2580fcb96d785fb505233b0d90f86a412c8308c47c3d62028f1378079c622e"
+        },
+        {
+          "id": "World/tree_fir",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/tree_fir.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "bf9216ba41847648bdf3389525970750e4f33c49658ee0d6177d03380b42918b",
+          "guid": "4a867e1e02db3494b874c7b6dd4b5b24"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1114716,
+        "pngSha256": "0317a36124a77ea3e295250a94fd21550548db13d474c66b6187769b3258df0f",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_pink",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_pink",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_pink.png",
+          "role": "current-native-png",
+          "bytes": 1922053,
+          "sha256": "1db6cd03f0c734036a6d79a1b7eaba96ed07fd385665c03fdaa54ae53d93c927"
+        },
+        {
+          "id": "World/flowers_pink",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_pink.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3613,
+          "sha256": "0a71d9a9e041215d204f18ee654f6c06e0b4cbb13b80f85530b8381e622c6900",
+          "guid": "2535e88418d8047a984be3353f9bc17a"
+        },
+        {
+          "id": "World/flowers_pink",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_pink.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4066,
+          "sha256": "6d0c30e0a1dd7cd62eee94588c9e3fe8d49e1720fd3f78828e4f164be77cfdb6"
+        },
+        {
+          "id": "World/flowers_pink",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_pink.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "717a32e0b2672d22b7abdc7360623b2c84643c4ff5abd45a2d6b1471b7d7ff7b",
+          "guid": "bad5c6e0ed00c4d639c1e37fab740e96"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1922053,
+        "pngSha256": "1db6cd03f0c734036a6d79a1b7eaba96ed07fd385665c03fdaa54ae53d93c927",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_lilac",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_lilac.png",
+          "role": "current-native-png",
+          "bytes": 1771016,
+          "sha256": "e4a4a892d2678fa45c79e98d4853576f4b94e131a4d063b5b8eba9ae0bab5834"
+        },
+        {
+          "id": "World/flowers_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_lilac.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3615,
+          "sha256": "94db21695572d20a7cceca224c383d79001fc5f95766009e2372f577f86e4e33",
+          "guid": "340594c4026b8459fa2cb8a823c45406"
+        },
+        {
+          "id": "World/flowers_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_lilac.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "8bae4359cd850cc50d5c49dade6a8a4d09722705a01a1db92c41ce5c496954fb"
+        },
+        {
+          "id": "World/flowers_lilac",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_lilac.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "cc94e91108fd09119b6816ae985c6a29ce549a14f7f0079fb00906f70aa4d870",
+          "guid": "d7180c40cd87c49a29c5120416a2ee5d"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1771016,
+        "pngSha256": "e4a4a892d2678fa45c79e98d4853576f4b94e131a4d063b5b8eba9ae0bab5834",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_white",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_white",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_white.png",
+          "role": "current-native-png",
+          "bytes": 1609008,
+          "sha256": "7453d30e9e59a0996be1c60c3039cafb5509c92eb9088331cc73a7fff8445e9d"
+        },
+        {
+          "id": "World/flowers_white",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_white.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3615,
+          "sha256": "dfa07e63888f91eb1a57e7d563f46350670ca16c8180448fe15867772236a557",
+          "guid": "2ea2f800037b84c5ab3305a0102501dd"
+        },
+        {
+          "id": "World/flowers_white",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_white.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4066,
+          "sha256": "d4cda814f58caefb9b9717d6864a145831e8511d252a8c698bccf00cb58f9818"
+        },
+        {
+          "id": "World/flowers_white",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_white.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "153dddbec6c536f5877db6bdaab4f65d2fc9bdfc7504e2e1b669681fb3a85a0e",
+          "guid": "a1eb425b974204e6bba46fb67cf8fea8"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1609008,
+        "pngSha256": "7453d30e9e59a0996be1c60c3039cafb5509c92eb9088331cc73a7fff8445e9d",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_sun",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_sun",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_sun.png",
+          "role": "current-native-png",
+          "bytes": 1894049,
+          "sha256": "217877c5a718d779bc4356dcd8d8810e090ac87e17c16d5bd5901ff6922dd4eb"
+        },
+        {
+          "id": "World/flowers_sun",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_sun.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3613,
+          "sha256": "1c1dd8692dc93c67cfa0c0adfc5664b6e813575670c09bcbbd500487a155cf22",
+          "guid": "565991531f6c44391a3e0fe27b9401c5"
+        },
+        {
+          "id": "World/flowers_sun",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_sun.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "fb3c1a8a89467fd608b386bf06e59842f4a99d819651b41db428d126da2cff5c"
+        },
+        {
+          "id": "World/flowers_sun",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_sun.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "62a03d89110b9a36e5237022ce55571268ce5bd02ac17193a363361ec8bae68e",
+          "guid": "ca157f4bca3c4406e8e5df4a4395f4fa"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1894049,
+        "pngSha256": "217877c5a718d779bc4356dcd8d8810e090ac87e17c16d5bd5901ff6922dd4eb",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_blue",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_blue.png",
+          "role": "current-native-png",
+          "bytes": 1786656,
+          "sha256": "247a5fcce559b98301be55398d4a19fe7ae3e3287845ef1b9e1b0e2498196905"
+        },
+        {
+          "id": "World/flowers_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_blue.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3615,
+          "sha256": "25be90d5a366e4ab350145c7b6108aa01c0f9dbcf503a323c56da5c6ff269b42",
+          "guid": "d797f490f21b34fe8b9bd82d3c7a41b2"
+        },
+        {
+          "id": "World/flowers_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_blue.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4062,
+          "sha256": "1ef37bfb982cb16b388056e047a6a1c48ea20fe687a2d80b293fad5edfe22605"
+        },
+        {
+          "id": "World/flowers_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_blue.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "9a8e82cd36d98b0f7499fcfa2f0d22f80e019e5c1fc5c7786bc8a89063863083",
+          "guid": "1235b9875d28b4aaf9a5e268160486d3"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1786656,
+        "pngSha256": "247a5fcce559b98301be55398d4a19fe7ae3e3287845ef1b9e1b0e2498196905",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/flowers_coral",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/flowers_coral",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_coral.png",
+          "role": "current-native-png",
+          "bytes": 1948275,
+          "sha256": "1293dc6e608dab192f295455f2f3b8689cc4578a6d4351ba122821688dfeeba9"
+        },
+        {
+          "id": "World/flowers_coral",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/flowers_coral.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3615,
+          "sha256": "67700b91ea1a5f042c6847204256bd3ff006abcf5372ebadb8667095c6d027c0",
+          "guid": "0d6c3d31893424386aab1e5f697b13e6"
+        },
+        {
+          "id": "World/flowers_coral",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_coral.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4066,
+          "sha256": "f22623c4229006b80d46ff00ac6263fcc4a8b2b9e1a687c33591013e9da500e5"
+        },
+        {
+          "id": "World/flowers_coral",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/flowers_coral.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "7661185bd4f1ea55e9f12933f5cd6b478d460d9a00b9f474c6e0497ad3efbf5e",
+          "guid": "66d5c40fc9b164857bcdfa8b7b6d49d6"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1948275,
+        "pngSha256": "1293dc6e608dab192f295455f2f3b8689cc4578a6d4351ba122821688dfeeba9",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/pond",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/pond",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/pond.png",
+          "role": "current-native-png",
+          "bytes": 1387463,
+          "sha256": "698a27386f0fcc321b0a10d6c81ddfed180cd674d63d54227a24c382bfa3f29e"
+        },
+        {
+          "id": "World/pond",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/pond.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3596,
+          "sha256": "5274cbd0797f4fbb5c32a03c5e54ae25bbe6d1032d0ebdc814d64e55e3208fcb",
+          "guid": "6e71c5a0775764b7fb549f030f33b08b"
+        },
+        {
+          "id": "World/pond",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/pond.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4055,
+          "sha256": "2e783b6c4c0110cf3c36c4bd87a7a21f6b0c5f396d9c1613e636d7edef9fd41f"
+        },
+        {
+          "id": "World/pond",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/pond.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "a10e8e16944fdfee1b834557c7b4b59114514ebf3c2c2aef0d1077cbc1538d49",
+          "guid": "781d0a486588b499ba2bd86c7cf9198e"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1387463,
+        "pngSha256": "698a27386f0fcc321b0a10d6c81ddfed180cd674d63d54227a24c382bfa3f29e",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/waterfall",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/waterfall",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/waterfall.png",
+          "role": "current-native-png",
+          "bytes": 1705479,
+          "sha256": "29573b7ce7b8bcc9746ea5ef3c17f9fd5deef8cda988e7729be4353df67eb213"
+        },
+        {
+          "id": "World/waterfall",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/waterfall.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3606,
+          "sha256": "e6954c5ffc5ce4e1fca60ee30d8f93cef9cdd4837508650a8d8c4c8658b810e7",
+          "guid": "03aeb252b0a654d0bad983cf9d6678d3"
+        },
+        {
+          "id": "World/waterfall",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/waterfall.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4063,
+          "sha256": "e88b6d5d2011a5daf41ae7e69c2dc0382f561f2bcc3954533f5d7c1d2a264967"
+        },
+        {
+          "id": "World/waterfall",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/waterfall.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "550cc577c84b308ac1197b26d4e4ed2c528a2585b258d7cebcb46cd54e7bdd7e",
+          "guid": "aae1d577ac10c4385a60f0d97b438279"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1705479,
+        "pngSha256": "29573b7ce7b8bcc9746ea5ef3c17f9fd5deef8cda988e7729be4353df67eb213",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/bridge_wood",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/bridge_wood",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bridge_wood.png",
+          "role": "current-native-png",
+          "bytes": 1417780,
+          "sha256": "d6070f87a97b6c3d79629e9a490ab7963ed24244db3dc8a56bd260a3cf61c214"
+        },
+        {
+          "id": "World/bridge_wood",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bridge_wood.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3611,
+          "sha256": "e71de400ad75b07ea131d041481c85448962a94d9fead62cc17a4c262216652c",
+          "guid": "02ef575c0b498455e8acdc3654fa7e1b"
+        },
+        {
+          "id": "World/bridge_wood",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bridge_wood.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "6de597ea8cfb25f8dab9cfde809afd89bd77a052c10811822e0a88d1f564e3fe"
+        },
+        {
+          "id": "World/bridge_wood",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bridge_wood.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "18648a843a0d7522cacf9909492f14e0aaae0a28e5c058d3744226089dd277b2",
+          "guid": "02eac68b7a4ed482dbd63ee76e031aab"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1417780,
+        "pngSha256": "d6070f87a97b6c3d79629e9a490ab7963ed24244db3dc8a56bd260a3cf61c214",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/bridge_stone",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/bridge_stone",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bridge_stone.png",
+          "role": "current-native-png",
+          "bytes": 1302908,
+          "sha256": "cb93e1262d562aaf389af895e0f247520b8241b2bf817db2eee63c389df94ad1"
+        },
+        {
+          "id": "World/bridge_stone",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bridge_stone.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3612,
+          "sha256": "02b45aa99f483d70ac6a4d076d1deb9bd76c46957d9aba347dcc0b0353acf694",
+          "guid": "fe26a1679dd0349a6bcc7f1c55f3b4a5"
+        },
+        {
+          "id": "World/bridge_stone",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bridge_stone.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4062,
+          "sha256": "5ac0110621443c0dde91268eb9718cc853d62ec869108bfc30beaa0b06b1d405"
+        },
+        {
+          "id": "World/bridge_stone",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bridge_stone.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "82f647cf34ac1bdce22c68e742aa51986711fd1caa3074bd2a7db66e73ab94eb",
+          "guid": "13be00a6476a24d4787ba501972a9752"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1302908,
+        "pngSha256": "cb93e1262d562aaf389af895e0f247520b8241b2bf817db2eee63c389df94ad1",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/family_gazebo",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/family_gazebo",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/family_gazebo.png",
+          "role": "current-native-png",
+          "bytes": 1901075,
+          "sha256": "e2a075d5a287b13803cea004d8ee47626f1e0125ad5d5a4ccadaa6751b5f4aee"
+        },
+        {
+          "id": "World/family_gazebo",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/family_gazebo.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3616,
+          "sha256": "9bd6aab41e4c4ca09f8b351415e3d272008ea6a65a8bb3950d49fb8dd1ba8e3a",
+          "guid": "dc1c4de68c8a74f1bbbba2347b17d690"
+        },
+        {
+          "id": "World/family_gazebo",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/family_gazebo.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4065,
+          "sha256": "91c30a6cb315ed7802e61bc32b525f1e90eaedc5d33626c4703e9fa74c5fc942"
+        },
+        {
+          "id": "World/family_gazebo",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/family_gazebo.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "06e732276a7680ae6bd83e1963e76fc4f93fe3c0ea16127e20c874135625a0f7",
+          "guid": "1e90a4a9b92df4eeb981ff2d60befff4"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1901075,
+        "pngSha256": "e2a075d5a287b13803cea004d8ee47626f1e0125ad5d5a4ccadaa6751b5f4aee",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/lamp",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/lamp",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/lamp.png",
+          "role": "current-native-png",
+          "bytes": 786854,
+          "sha256": "c86e2dc8c1f7f4d5c7e1f80ea35d0d0ba9d8c00f5ef6e6aea99a897650d863e3"
+        },
+        {
+          "id": "World/lamp",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/lamp.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3597,
+          "sha256": "7e39513eb07dc98ccc89cca649385a75ad74cb706491aedfe0b3f86e05724802",
+          "guid": "ef2b731bb1d8c45d8b39fb7a2c875877"
+        },
+        {
+          "id": "World/lamp",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/lamp.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4055,
+          "sha256": "b289a43679447ea719ce75d8ca70ef1ea643d2617c26e6fba00cbc10fd0de21a"
+        },
+        {
+          "id": "World/lamp",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/lamp.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "a492c780767dafbd522de27b88b1f16ae4d7d656ae2c117a2d41c0e2dbb5dcbc",
+          "guid": "bbcae846625d24da989e65e165d3ff8e"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 786854,
+        "pngSha256": "c86e2dc8c1f7f4d5c7e1f80ea35d0d0ba9d8c00f5ef6e6aea99a897650d863e3",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/mailbox",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/mailbox",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/mailbox.png",
+          "role": "current-native-png",
+          "bytes": 995200,
+          "sha256": "504f7ac499cf007081c1467b75ddbbedb77e49ff14eee7d21209604e9036168a"
+        },
+        {
+          "id": "World/mailbox",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/mailbox.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3602,
+          "sha256": "dcfae2029f9aeb1c1e36009fa8c9ec57f1dbaeabbd6903bff726f613c36f7fef",
+          "guid": "36eab37a3f7a84509af40726af8b9753"
+        },
+        {
+          "id": "World/mailbox",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/mailbox.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4057,
+          "sha256": "6ead43636c30a8cb827ff94f41b88ce3b23b69ad9446bea1b712b3fb5ca114c6"
+        },
+        {
+          "id": "World/mailbox",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/mailbox.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "e32981560c4f3b16baf6d7b15ac4b1d32b360d3c7668f44303879ac33c851328",
+          "guid": "dd02c63f6ed3944cdb41282bdf3688ba"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 995200,
+        "pngSha256": "504f7ac499cf007081c1467b75ddbbedb77e49ff14eee7d21209604e9036168a",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/signpost",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/signpost",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/signpost.png",
+          "role": "current-native-png",
+          "bytes": 1037847,
+          "sha256": "6a53af898c39e4d60f776528f1cfcd91a3421b907b75ecc713f609a6c89cd525"
+        },
+        {
+          "id": "World/signpost",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/signpost.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3607,
+          "sha256": "b17bb38e8637a7904f68de555307d31f6f135624fe55fb60e831e47f8c373973",
+          "guid": "5d5bb46746f4644769513cdfde5b8a48"
+        },
+        {
+          "id": "World/signpost",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/signpost.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4062,
+          "sha256": "caf06f359acc5914a3c4cce9e123a6e449f258eb50c3e050d0e64c5be1220683"
+        },
+        {
+          "id": "World/signpost",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/signpost.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "81210fac8130f48110ebaec337ca961064b1d12d82cc98935b47a79ef16e8f8e",
+          "guid": "184a4064fb93b4f62b971585b0fec108"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1037847,
+        "pngSha256": "6a53af898c39e4d60f776528f1cfcd91a3421b907b75ecc713f609a6c89cd525",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/bench",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/bench",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bench.png",
+          "role": "current-native-png",
+          "bytes": 1259039,
+          "sha256": "5669197251d6c082546a7d49a756240c5788c31632dabfabe08bd3ed21a58429"
+        },
+        {
+          "id": "World/bench",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/bench.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3601,
+          "sha256": "87ddddd8e02e8edb353e5b1c7da895c91beb1e1e6314d390b4a749271606ec76",
+          "guid": "631c345206ed6446998a1b130836da79"
+        },
+        {
+          "id": "World/bench",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bench.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4059,
+          "sha256": "c8cf13ccc5e4ebc9d211c82848718cc8d21f025b14674363a6034d7c8c9488f4"
+        },
+        {
+          "id": "World/bench",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/bench.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "4e87bcd75c4600e56f236e956d780df851338929a2fccbe9b4512269ac1e9b95",
+          "guid": "bbd4e895ccd154ec796f95be5f3c03f9"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1259039,
+        "pngSha256": "5669197251d6c082546a7d49a756240c5788c31632dabfabe08bd3ed21a58429",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/fence",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/fence",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/fence.png",
+          "role": "current-native-png",
+          "bytes": 1214012,
+          "sha256": "3f8449d324a59e56499c636fcfcdf1f5ff3952c3d2c95d80c24e72fa2cb224ac"
+        },
+        {
+          "id": "World/fence",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/fence.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3599,
+          "sha256": "87ee19b7468eef5ff21e1f91220022cd14e6f1fe46910d9065dc9b48261f7bf9",
+          "guid": "ed79136da708b4b48b97d68988da22a5"
+        },
+        {
+          "id": "World/fence",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/fence.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4053,
+          "sha256": "99cdae11b831b38dc6fbb2c9dd554b8b3a4c071a0e7542abb44db1c9ae489806"
+        },
+        {
+          "id": "World/fence",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/fence.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "0dbc41c8028f29809b7db7c7ee4050faf34d6d342fcf468bbf74f106339cb606",
+          "guid": "2c74a29f8c6f84ea58ae2a3acaa2e875"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1214012,
+        "pngSha256": "3f8449d324a59e56499c636fcfcdf1f5ff3952c3d2c95d80c24e72fa2cb224ac",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/mushroom",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/mushroom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/mushroom.png",
+          "role": "current-native-png",
+          "bytes": 1340910,
+          "sha256": "cb5c3da6d6d8c2065e279acbd401f5c310479f5aa9f5bb382c9baffe76d5f841"
+        },
+        {
+          "id": "World/mushroom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/mushroom.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3603,
+          "sha256": "e50a6f4c314c5ea207becc167c639e600d41b6540dfdc4bf30cf14ed15cf4e4b",
+          "guid": "73852c48e346545cf84daf658dad7720"
+        },
+        {
+          "id": "World/mushroom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/mushroom.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "a3bfb4947e565d482f823526de7410b5d984f8d8ce0ba6e2a7a8fa13fe0b7cf4"
+        },
+        {
+          "id": "World/mushroom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/mushroom.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "dd69d1502b64b1c723ccf4ee24630ea29357b1bb74642971107cc3ed133996ad",
+          "guid": "c57de4bf72b994cff8d1c3597730d4b3"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1340910,
+        "pngSha256": "cb5c3da6d6d8c2065e279acbd401f5c310479f5aa9f5bb382c9baffe76d5f841",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/butterfly",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/butterfly",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/butterfly.png",
+          "role": "current-native-png",
+          "bytes": 1315075,
+          "sha256": "6912bce0186f9cae9420b30c1996c358d30d929591f2bfdc3fb34744341b76e7"
+        },
+        {
+          "id": "World/butterfly",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/butterfly.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3606,
+          "sha256": "3702c0405fc5414dc97b821a93a6dfbb9856cfb782078e83f9dffda79c33db3c",
+          "guid": "a3bf90e8347c84d2b8bea32512e21f1e"
+        },
+        {
+          "id": "World/butterfly",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/butterfly.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4057,
+          "sha256": "fb3a89bcd0efa6560ace623533aac280aeda81f6f13959088d76045e153ce08b"
+        },
+        {
+          "id": "World/butterfly",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/butterfly.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "84d67c2bc968d5dd25ed2ad20c3e0312679ab7b9f8c450499d48652ae09ef180",
+          "guid": "51ab39c9410a148b6bbfe5d4a114503f"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1315075,
+        "pngSha256": "6912bce0186f9cae9420b30c1996c358d30d929591f2bfdc3fb34744341b76e7",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/banner",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/banner",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/banner.png",
+          "role": "current-native-png",
+          "bytes": 732389,
+          "sha256": "232a2f3f00f35638f517f730be070118c30eaa386d4a7a23633eafe4e177a183"
+        },
+        {
+          "id": "World/banner",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/banner.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3600,
+          "sha256": "638053ebca765658d0253e948787403f90c55248d9aa3e4d0ed964fdcf2746fe",
+          "guid": "2c0fe7a1e787b465980720fbb4720267"
+        },
+        {
+          "id": "World/banner",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/banner.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4058,
+          "sha256": "2c4692087e72d5c3af48a4d8baacf184d2624dd7448e43b6ad7c0d3d4fb2332e"
+        },
+        {
+          "id": "World/banner",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/banner.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "cf4a7faf14f7ecba2fa0f114bfa00adf5a0ea76598a6d35ceb191c0d7f68d791",
+          "guid": "0e2e016b2cd5149fe85e8869d926352a"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 732389,
+        "pngSha256": "232a2f3f00f35638f517f730be070118c30eaa386d4a7a23633eafe4e177a183",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/gift_chest",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/gift_chest",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/gift_chest.png",
+          "role": "current-native-png",
+          "bytes": 1544419,
+          "sha256": "3698218093a79d5681bf427aba0f26135799ad537b1b9da6830ecb26f2dbf125"
+        },
+        {
+          "id": "World/gift_chest",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/gift_chest.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "5663e05d4c0d680f88454673f3c7d35d80a9decbf48c870cdfdaa73a24df2420",
+          "guid": "e423e2359aa2f4881abc316291542ed4"
+        },
+        {
+          "id": "World/gift_chest",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/gift_chest.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4057,
+          "sha256": "25ffbef0943805701f5560d58a03aba7ca7942bfa343f9553ce6e7a0e23de5ac"
+        },
+        {
+          "id": "World/gift_chest",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/gift_chest.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "01203ffda869cdd5176bc4910b2f8e95d7d880989069bc76c3e21f623de56325",
+          "guid": "ef848c1feb77448a597cdf09fd8f275b"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1544419,
+        "pngSha256": "3698218093a79d5681bf427aba0f26135799ad537b1b9da6830ecb26f2dbf125",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/stepping_stones",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/stepping_stones",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/stepping_stones.png",
+          "role": "current-native-png",
+          "bytes": 859680,
+          "sha256": "5f6f1bff931bc705f303295d8eab58c5f92410415081f809d46baf5355114f08"
+        },
+        {
+          "id": "World/stepping_stones",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/stepping_stones.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3620,
+          "sha256": "3d9860bd2d96efcdf0c0185cb023a69536bbcc65ab326c320c1537b729d0b274",
+          "guid": "7d9c456f3b8c44bb6a33c9cacc59ad38"
+        },
+        {
+          "id": "World/stepping_stones",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/stepping_stones.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4068,
+          "sha256": "026be9daf7ec7fac3a532b057b1e1a5e66ac8546795d525b047314b758573d6a"
+        },
+        {
+          "id": "World/stepping_stones",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/stepping_stones.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "e3e53a31fa69c70f9730a292583a0c4c8bbfbdbfee7b7b3478e0c23974b70fac",
+          "guid": "3675a882edba949b79dd02a269e5dad4"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 859680,
+        "pngSha256": "5f6f1bff931bc705f303295d8eab58c5f92410415081f809d46baf5355114f08",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/fountain",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/fountain",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/fountain.png",
+          "role": "current-native-png",
+          "bytes": 1496476,
+          "sha256": "be73c6415869e7906b3d49ef0ea8ca03838dabf201101a8662f719d86fc282d5"
+        },
+        {
+          "id": "World/fountain",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/fountain.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3604,
+          "sha256": "cb5f6d834bf8d1f00fbb5c76eb4bc7013da70157c2968dbd050aa2db8f29ac80",
+          "guid": "70884c711a701492b8fa7ee57b7775d1"
+        },
+        {
+          "id": "World/fountain",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/fountain.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4065,
+          "sha256": "97d56a96cd079351ba524cabdd5f775249d21b1b7c62b506a2a545b5e113d2d9"
+        },
+        {
+          "id": "World/fountain",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/fountain.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "7660fbb1c80f1e53025e74df6054ef9401419b4a32bc8d84a77919f2e6638896",
+          "guid": "b58529de0a6d44e289d06443abf1af7c"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1496476,
+        "pngSha256": "be73c6415869e7906b3d49ef0ea8ca03838dabf201101a8662f719d86fc282d5",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/balloon",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/balloon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/balloon.png",
+          "role": "current-native-png",
+          "bytes": 1017214,
+          "sha256": "718061a7c1bcf059ffbd4a4886c4a8dd77f7a8e1be34fc20751375020213f4ff"
+        },
+        {
+          "id": "World/balloon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/balloon.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3603,
+          "sha256": "b0c60b1db8e5a279c9e08f37691435cbe8bfd3867d4456b4717e6a3ba7dde521",
+          "guid": "ee40100a4d0c2491d866f31497fd33bb"
+        },
+        {
+          "id": "World/balloon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/balloon.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "823bb266a11e3bc5e711650a751f1a7c1f864eb3154ada5dea3567e415b71c8d"
+        },
+        {
+          "id": "World/balloon",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/balloon.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "dba8442292c7cf94067cecaaaecbb3f9b09b77ca47a7ea793ac42e2e6f671d08",
+          "guid": "e843db3d2bba644099c96de9238a18b1"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1017214,
+        "pngSha256": "718061a7c1bcf059ffbd4a4886c4a8dd77f7a8e1be34fc20751375020213f4ff",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/picnic_basket",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/picnic_basket",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/picnic_basket.png",
+          "role": "current-native-png",
+          "bytes": 1500352,
+          "sha256": "82542d2a954acc9126dca7649ab4a386dc03a35ff8225b8dbf34962b77cf2508"
+        },
+        {
+          "id": "World/picnic_basket",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/picnic_basket.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3617,
+          "sha256": "cc56a3af68fe8090dadd4634a6fe059c9be3cc001db5ea5822d8f216f28d6a64",
+          "guid": "b91fdaa1123fe4e0a840526c2a8b3da3"
+        },
+        {
+          "id": "World/picnic_basket",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/picnic_basket.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4069,
+          "sha256": "6a7ff264a2cc4847d132e5c0a89c451a1fe12095c98173ee7c6e84ea3636ea3d"
+        },
+        {
+          "id": "World/picnic_basket",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/picnic_basket.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "b8de931979efead32d9dc4729cdf36dab3b979515b32aba62badddcc4d7af0e2",
+          "guid": "d7afaf398ca134c9f868470303aa458e"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1500352,
+        "pngSha256": "82542d2a954acc9126dca7649ab4a386dc03a35ff8225b8dbf34962b77cf2508",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/grass_tuft",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/grass_tuft",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/grass_tuft.png",
+          "role": "current-native-png",
+          "bytes": 1186767,
+          "sha256": "89ab0ebc1dd5be461a80dce81d93ed36b648ff1d11a4e4063ba867fafe6c0408"
+        },
+        {
+          "id": "World/grass_tuft",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/grass_tuft.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3605,
+          "sha256": "bce96d2f452146f25844fc2792788ad38cd526e532be4c461d514360760e1958",
+          "guid": "d7b3e19a657e24812912fcd41f5db958"
+        },
+        {
+          "id": "World/grass_tuft",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/grass_tuft.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "a0890c17a30d67a2adbfbcbe0de81d54e2d282d8ad927d4754c971c97d8892cf"
+        },
+        {
+          "id": "World/grass_tuft",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/grass_tuft.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "9409017cb19123439b6d0f61f13d1b6e874c87750160a221ec6cb95cae0e8720",
+          "guid": "42dc617b0ab744e459dc1cffe4e8ebdd"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1186767,
+        "pngSha256": "89ab0ebc1dd5be461a80dce81d93ed36b648ff1d11a4e4063ba867fafe6c0408",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/npc_bunny",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/npc_bunny",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_bunny.png",
+          "role": "current-native-png",
+          "bytes": 1350421,
+          "sha256": "6451f84feef18d92c8ece2fe54046c9c75262282ddd797c4fa8497374ae52d64"
+        },
+        {
+          "id": "World/npc_bunny",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_bunny.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "8e40a5a6016d5ea1ae3ff156f446632a132e46cf01067159cdc0950cf63c5a50",
+          "guid": "789e586f5a4fb4997b30dd831d76fd33"
+        },
+        {
+          "id": "World/npc_bunny",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_bunny.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 5792,
+          "sha256": "39814c0a7faa7704e4d4fb3cd9eff00b65965b9b0303b9689e5fd1526df2805d"
+        },
+        {
+          "id": "World/npc_bunny",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_bunny.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "432c9e3bc13cbdd95eee3ef963ee628ea1ba996d561f5ccaf81e5c1b293f52a9",
+          "guid": "b3ad3a23dff514fdd813c2133b278576"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1350421,
+        "pngSha256": "6451f84feef18d92c8ece2fe54046c9c75262282ddd797c4fa8497374ae52d64",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/npc_squirrel",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/npc_squirrel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_squirrel.png",
+          "role": "current-native-png",
+          "bytes": 1470948,
+          "sha256": "b447fe22a6de453208b39881d5a8cf089327d026338c79d8b605e3c8c3c539dd"
+        },
+        {
+          "id": "World/npc_squirrel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_squirrel.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3612,
+          "sha256": "6878af00977ab6c79fd09a8da3657c2039ed2f6d63852b30037d6baa9be9e93a",
+          "guid": "6d76d406756b34d38bd564c93bcc3dd4"
+        },
+        {
+          "id": "World/npc_squirrel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_squirrel.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4063,
+          "sha256": "4d8252ecfe2f823d12d5d1a401ccd2db2965467d6b8aa9ac782aa0b88e229757"
+        },
+        {
+          "id": "World/npc_squirrel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_squirrel.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "4ebe4aa8d4201f7af7bd8a4c90aa0a513f7c2dae693daec338e004f8ce0e99ff",
+          "guid": "cb036eb59432949a1ace9629be10be94"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1470948,
+        "pngSha256": "b447fe22a6de453208b39881d5a8cf089327d026338c79d8b605e3c8c3c539dd",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/npc_owl",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/npc_owl",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_owl.png",
+          "role": "current-native-png",
+          "bytes": 1240731,
+          "sha256": "a39a61970769ccc25787b1182ab147aade8e89ea40df85795ba8041b2530366f"
+        },
+        {
+          "id": "World/npc_owl",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_owl.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3603,
+          "sha256": "8550be9a4fc0dcff66f14f7495768a7a8b0fa5bd23507dc7ffe186a5a1e16174",
+          "guid": "5d4a7204c768f4428b68a7225ed08c68"
+        },
+        {
+          "id": "World/npc_owl",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_owl.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4059,
+          "sha256": "9e1a8c671b43f925ea4869abdfc482032248a93047df2fabbced60283eb6504a"
+        },
+        {
+          "id": "World/npc_owl",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_owl.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "a69ec6b92d0188f4e9f15accd3b7950bbb499d723935b80c604f08df15bc145f",
+          "guid": "8e752ca80dbb444ddaaca6188d592efe"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1240731,
+        "pngSha256": "a39a61970769ccc25787b1182ab147aade8e89ea40df85795ba8041b2530366f",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "World/npc_cat",
+      "category": "World",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": false,
+        "unityReviewSnapshot": true,
+        "conditional": "Placed by runtime Home/Plaza world construction."
+      },
+      "files": [
+        {
+          "id": "World/npc_cat",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_cat.png",
+          "role": "current-native-png",
+          "bytes": 1297724,
+          "sha256": "2a7a2e63e6a82a4e3c0a605e99322ed5ed8e093af6df2158a949fdc9ceba9d76"
+        },
+        {
+          "id": "World/npc_cat",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/World/npc_cat.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3603,
+          "sha256": "c0df1cbc7b23a018fe12da1232c2699d95cfeeb6f3ae61aa6425a00553229bbd",
+          "guid": "83377072b604c47f39d0f79376f07667"
+        },
+        {
+          "id": "World/npc_cat",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_cat.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4055,
+          "sha256": "fca4f3ea872ae34e3b917f0c36324cce37e5cdb1eef6cded3b0a238070fba4c8"
+        },
+        {
+          "id": "World/npc_cat",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/World/npc_cat.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "681aca237a2ef802aff79a19c24fad82cf4c6aca5fcdb86dbd5eda91ece0f793",
+          "guid": "df0d81195df2b4988ba263862b1edb3c"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1297724,
+        "pngSha256": "2a7a2e63e6a82a4e3c0a605e99322ed5ed8e093af6df2158a949fdc9ceba9d76",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/star_yellow",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/star_yellow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_yellow.png",
+          "role": "current-native-png",
+          "bytes": 1151038,
+          "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1"
+        },
+        {
+          "id": "Rewards/star_yellow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_yellow.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3611,
+          "sha256": "b544945740e8b381f045ea314968b3adbf1cbcb0a77d28cd0dad53a1a8d111fd",
+          "guid": "5e47b5b7cfa4e449eb26a0889756ee82"
+        },
+        {
+          "id": "Rewards/star_yellow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_yellow.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4064,
+          "sha256": "5c4638b216e753f880d5f955c159f8b9430ae267082653e399244e4d4213d4bd"
+        },
+        {
+          "id": "Rewards/star_yellow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_yellow.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "00baa0a8e4705b9f8e6b631fc38aaacb512def209660001577b7382604a3c738",
+          "guid": "c63e8e73e59bf423a9ba7389fb1918d0"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1151038,
+        "pngSha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/star_blue",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/star_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_blue.png",
+          "role": "current-native-png",
+          "bytes": 1179054,
+          "sha256": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf"
+        },
+        {
+          "id": "Rewards/star_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_blue.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "381f568b18c6188908a1ae6124300a9be6c9cfb2a2aa50c894358d111948344e",
+          "guid": "75ce7cda356c54571a134b2030df1c20"
+        },
+        {
+          "id": "Rewards/star_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_blue.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4060,
+          "sha256": "e61472474b8bf0785cdf9c269a2c32bc8f4e704feb6eb3ea7fca8e14b82fb7dc"
+        },
+        {
+          "id": "Rewards/star_blue",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_blue.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "0c0c844af6d01239b0424d63f453e46a320c6d5a656f260ad9bebc497f5a7fcd",
+          "guid": "3cf5119949c3443d698125dd035d96f9"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1179054,
+        "pngSha256": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/star_purple",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/star_purple",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_purple.png",
+          "role": "current-native-png",
+          "bytes": 1280536,
+          "sha256": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87"
+        },
+        {
+          "id": "Rewards/star_purple",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_purple.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3613,
+          "sha256": "ae07bfd618cee07753a37c2d347945e57dfffc78e254cf79a742660989fcb4f1",
+          "guid": "0adf1168bc7e645bdabb08adfd888a34"
+        },
+        {
+          "id": "Rewards/star_purple",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_purple.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4065,
+          "sha256": "d90147db47a83889762ff03556785b83239918c404d4ecae1be51cb8566646a2"
+        },
+        {
+          "id": "Rewards/star_purple",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_purple.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "93bcc4c52a8381af56613ad967c25fac15527dd4ecbce9fa70da72ec43c0864d",
+          "guid": "db81f8b06c2d442e5a215a7ffefbd6dd"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1280536,
+        "pngSha256": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/star_rainbow",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/star_rainbow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_rainbow.png",
+          "role": "current-native-png",
+          "bytes": 1254130,
+          "sha256": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13"
+        },
+        {
+          "id": "Rewards/star_rainbow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/star_rainbow.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3615,
+          "sha256": "c82f31f7f12482b6d88ec91464eb09e8d18bf2b75c73cb53cb0742a20b09a30d",
+          "guid": "9e2f3984bc2734b1a9324fe32292d7ad"
+        },
+        {
+          "id": "Rewards/star_rainbow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_rainbow.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4053,
+          "sha256": "f1391853afe725b98cae12ed63876945abb97a97721b54e67134dee39c8aab4d"
+        },
+        {
+          "id": "Rewards/star_rainbow",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/star_rainbow.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "566133c1ddbeebb0537822899121baef3eed7ae086c551846e3bdf25cb4dcf21",
+          "guid": "0a73d98cae77b46639afde51f84f9f27"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1254130,
+        "pngSha256": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/seed",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/seed",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/seed.png",
+          "role": "current-native-png",
+          "bytes": 1317427,
+          "sha256": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a"
+        },
+        {
+          "id": "Rewards/seed",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/seed.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3596,
+          "sha256": "aea1ba67fedcbcda09a1388f2eb44f0dcdf074800e032ee5378099199fe18dc6",
+          "guid": "174bacf129e3540978ae07aaf528aab7"
+        },
+        {
+          "id": "Rewards/seed",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/seed.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4056,
+          "sha256": "6994b0c7ae30c1d5eb849ac2877387ed64143e92454538c59fd4bc3f1b790145"
+        },
+        {
+          "id": "Rewards/seed",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/seed.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "4fc61c5a392cb485c3e6a3fe0c0e07a58961337b37f2d878379eddf789b6c1d0",
+          "guid": "7c641a24858fd4e3a90ee3024fcaf68b"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1317427,
+        "pngSha256": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/sprout",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/sprout",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/sprout.png",
+          "role": "current-native-png",
+          "bytes": 947347,
+          "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf"
+        },
+        {
+          "id": "Rewards/sprout",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/sprout.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3603,
+          "sha256": "54819ca33fade8e080b65b1ac935799e78cdf5f117681e933d9d46ee0fd8ca4c",
+          "guid": "fd4f4fb5db0cc410fa40e67e3d5cc05b"
+        },
+        {
+          "id": "Rewards/sprout",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/sprout.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "e1e85ed152bd051974f2bf98650bf00c096dcf80a73b3a543bd48619c4edffdc"
+        },
+        {
+          "id": "Rewards/sprout",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/sprout.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "284001f00e18cfd9bf1908102e0a77a0ab1d40fdee7b8eef0b5c19896ef03995",
+          "guid": "8b7730947cd3e4f20a0306550f919d60"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 947347,
+        "pngSha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/bud",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/bud",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/bud.png",
+          "role": "current-native-png",
+          "bytes": 836237,
+          "sha256": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e"
+        },
+        {
+          "id": "Rewards/bud",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/bud.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3593,
+          "sha256": "4a162ffd974ba29984ec5361c14a72cc4f90427873808635fa72e76ce9dea66f",
+          "guid": "5bea7ebec508743ef8878654067b2284"
+        },
+        {
+          "id": "Rewards/bud",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/bud.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4056,
+          "sha256": "5bebaaa8ed927f6b35c2535742da4f915eece060c958912260443bc2bf75e639"
+        },
+        {
+          "id": "Rewards/bud",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/bud.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "0fa276be6f6d6a432d050c8045b408b534ccb35971810cf7253e0f011f4c6e32",
+          "guid": "c5a0ba321853a4241896dc0bcedf948b"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 836237,
+        "pngSha256": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/bloom",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": true,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Instantiated for confirmed earned flower growth."
+      },
+      "files": [
+        {
+          "id": "Rewards/bloom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/bloom.png",
+          "role": "current-native-png",
+          "bytes": 1562752,
+          "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+        },
+        {
+          "id": "Rewards/bloom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/bloom.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3600,
+          "sha256": "656ffd2bd42cc8e486cf5557794409e73dd5ed926eac6ff08d97ac0b1397dbd5",
+          "guid": "81cee8c1e36fc449c9eefdb32f77f563"
+        },
+        {
+          "id": "Rewards/bloom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/bloom.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4062,
+          "sha256": "10b8a3177e12cfc6d4997768e44fbf7bc5607fedfe81b8d93f76da581f64063b"
+        },
+        {
+          "id": "Rewards/bloom",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/bloom.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "ba53086a08afbf26ee7f2b75f125d8aaaa35fc520dd9d7ad7535607d8a183251",
+          "guid": "5a09160ce3fc245728ad4869edb945e3"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1562752,
+        "pngSha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/gift",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/gift",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/gift.png",
+          "role": "current-native-png",
+          "bytes": 1940964,
+          "sha256": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882"
+        },
+        {
+          "id": "Rewards/gift",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/gift.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3598,
+          "sha256": "c2b36877be9148e42deed69b3fbade7ccf6a074e4c3f5dd9a85f10a792cf774d",
+          "guid": "aaa4686963c774995ba2a4452f05e7f3"
+        },
+        {
+          "id": "Rewards/gift",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/gift.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4055,
+          "sha256": "53c35d9243c2bc7524873329c75d42c8d2643c82485fa6d46f057aaba2fdf5e5"
+        },
+        {
+          "id": "Rewards/gift",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/gift.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "af103b957241ebd2a4da870239c492f427c9744efb4959cd44d72baaba9bffae",
+          "guid": "92f37120647ab4305b971290381c2559"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1940964,
+        "pngSha256": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/heart",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/heart",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/heart.png",
+          "role": "current-native-png",
+          "bytes": 1233195,
+          "sha256": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a"
+        },
+        {
+          "id": "Rewards/heart",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/heart.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3599,
+          "sha256": "ce0d54fc888ea21cfc45c221bc77619f970066fd5f88f41203e2762fd47bef95",
+          "guid": "90dd5821cad3d4ec48616abc3e992620"
+        },
+        {
+          "id": "Rewards/heart",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/heart.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4056,
+          "sha256": "e1993b71fd58ab299db4a3ba46b9ba4cdcb6d823d8f9b0f83bb5c83ec4ae8889"
+        },
+        {
+          "id": "Rewards/heart",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/heart.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "c11205765724a68139e149f2e0ad4740aa578ba6f951ffaa2ba58a0da2115ba0",
+          "guid": "1cc05f48bde874c0c8904ec64d5dd506"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1233195,
+        "pngSha256": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/badge_book",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/badge_book",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_book.png",
+          "role": "current-native-png",
+          "bytes": 2147136,
+          "sha256": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857"
+        },
+        {
+          "id": "Rewards/badge_book",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_book.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "68fc026f0cbf0e7d376f812cb6865cbc3250f552ef0b751d844399ecd1388703",
+          "guid": "dd5845543f695425681054ee3839948a"
+        },
+        {
+          "id": "Rewards/badge_book",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_book.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4066,
+          "sha256": "a93500a6a7b6f4d44d7f13b2cbbf7e5dcc58d4048cc174640f891e202c15119b"
+        },
+        {
+          "id": "Rewards/badge_book",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_book.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "74041d29f2e257b5badf49c396d7864efd4358ac7d7abecd6a0deb0d471d17a5",
+          "guid": "1f8f896e14eff436da0fdf1b6b8724cf"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 2147136,
+        "pngSha256": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/badge_leaf",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/badge_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_leaf.png",
+          "role": "current-native-png",
+          "bytes": 1901901,
+          "sha256": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4"
+        },
+        {
+          "id": "Rewards/badge_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_leaf.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3610,
+          "sha256": "d24fe0e7a4773f5472b26010acb38170d2aac4da49f7a5bbc7b93995ba2baac3",
+          "guid": "3a8b54775eaeb42318cd5d793bd80ba4"
+        },
+        {
+          "id": "Rewards/badge_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_leaf.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4065,
+          "sha256": "7b1a79aded97119a052808111cabc858d09b7a26f7bdb0e216bfde0720d55b20"
+        },
+        {
+          "id": "Rewards/badge_leaf",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_leaf.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "8ab352db0f6268584e83f634cd4eb0f17b648622123ff6a7c2a9ab8d565b7ba8",
+          "guid": "f38bc0d0779c94642b17ef347fc11050"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1901901,
+        "pngSha256": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/badge_crown",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/badge_crown",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_crown.png",
+          "role": "current-native-png",
+          "bytes": 2355807,
+          "sha256": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee"
+        },
+        {
+          "id": "Rewards/badge_crown",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/badge_crown.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3611,
+          "sha256": "bfcd34609e8890ecbedb0640a788a3b0562fde3494d4a351bc66c89bba4807f3",
+          "guid": "b3728b60cfdf94d5fa62da7147017bd5"
+        },
+        {
+          "id": "Rewards/badge_crown",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_crown.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4061,
+          "sha256": "bf0a1d2f53d9da4917cf9cadb5ba687a7c1f0dfc981cb320ba2a885bf5b9574f"
+        },
+        {
+          "id": "Rewards/badge_crown",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/badge_crown.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "619edd394931fb6db544e6f610e69b1f76ed671551cac56c6c36774a7fa1c870",
+          "guid": "eeaa337fcabdb455496a2c6ae5f55133"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 2355807,
+        "pngSha256": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "Rewards/magic_dust",
+      "category": "Rewards",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "Displayed by reward, badge, collection, or growth state."
+      },
+      "files": [
+        {
+          "id": "Rewards/magic_dust",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/magic_dust.png",
+          "role": "current-native-png",
+          "bytes": 834689,
+          "sha256": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7"
+        },
+        {
+          "id": "Rewards/magic_dust",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/Rewards/magic_dust.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3609,
+          "sha256": "afd84ce087532fc6cdf954b93147abad518150c68d0cb3d4765c4a6063644868",
+          "guid": "773e210c98ce547b7a9b2c7f9288286d"
+        },
+        {
+          "id": "Rewards/magic_dust",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/magic_dust.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 4060,
+          "sha256": "f3b7384facc34955abd2bd2abe7df9ec184cc81acf2ec6a2c9b983f28de1f508"
+        },
+        {
+          "id": "Rewards/magic_dust",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/Rewards/magic_dust.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "84aa8d4372a48c454b550abb1e8cd65c2e878e3b870daa61461d1d01b7744082",
+          "guid": "58c2d418a52124e90a08ae7c3be1f259"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 834689,
+        "pngSha256": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "UI/ui_mission_panel",
+      "category": "UI",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "HTML panel, star counter, or button decoration."
+      },
+      "files": [
+        {
+          "id": "UI/ui_mission_panel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_mission_panel.png",
+          "role": "current-native-png",
+          "bytes": 1339577,
+          "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628"
+        },
+        {
+          "id": "UI/ui_mission_panel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_mission_panel.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3624,
+          "sha256": "c2336e9783590d107bd8836ba822f4eb8e739e902429fafbf45ad9aa311739c3",
+          "guid": "75d59a1edc3f24d07b12aac840378e45"
+        },
+        {
+          "id": "UI/ui_mission_panel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_mission_panel.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 3488,
+          "sha256": "6da414526317a3b36a81b73233c1bb58bb0b32e3edb57237ee74690c8926f006"
+        },
+        {
+          "id": "UI/ui_mission_panel",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_mission_panel.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "3ad4d4e872f9f5fdbeb17ac6f9aabc5b2a16b1185f07f4c32254e4393451aaa0",
+          "guid": "5b77fcc78c9144c3ab38b4502c470c04"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1339577,
+        "pngSha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "UI/ui_star_pill",
+      "category": "UI",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "HTML panel, star counter, or button decoration."
+      },
+      "files": [
+        {
+          "id": "UI/ui_star_pill",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_star_pill.png",
+          "role": "current-native-png",
+          "bytes": 1316094,
+          "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4"
+        },
+        {
+          "id": "UI/ui_star_pill",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_star_pill.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3610,
+          "sha256": "6ea44e9f13590ad501d0a61ec9216a716fccb6e5628e316a7c1e58bfccdfb601",
+          "guid": "eb98483b28871430db59ced80bc6f57c"
+        },
+        {
+          "id": "UI/ui_star_pill",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_star_pill.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 3482,
+          "sha256": "54ae27110e98ab1bfcefa3890cb0f7acc2e3919bb4cb25b660565b68a1042374"
+        },
+        {
+          "id": "UI/ui_star_pill",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_star_pill.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "d105904a638fbb68568ca8734666340774a8f15b80b4b50731dec3069f5a0cc4",
+          "guid": "6520580bb2e334d028d55390f1620b9d"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1316094,
+        "pngSha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+        "unchanged": true
+      }
+    },
+    {
+      "id": "UI/ui_button",
+      "category": "UI",
+      "usage": {
+        "unityPlayer": false,
+        "htmlLearningUI": true,
+        "unityReviewSnapshot": true,
+        "conditional": "HTML panel, star counter, or button decoration."
+      },
+      "files": [
+        {
+          "id": "UI/ui_button",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_button.png",
+          "role": "current-native-png",
+          "bytes": 1487956,
+          "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75"
+        },
+        {
+          "id": "UI/ui_button",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/Sprites/UI/ui_button.png.meta",
+          "role": "current-png-meta",
+          "bytes": 3611,
+          "sha256": "498fadcc0189f8aa7a624edca94486867ff3d198a0a3c9071c74068e01f631ac",
+          "guid": "0b6b114f92f44450ab90c163ded57618"
+        },
+        {
+          "id": "UI/ui_button",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_button.prefab",
+          "role": "current-authored-prefab",
+          "bytes": 3481,
+          "sha256": "77b586a0f246148659eb9b5c2b96d812f4e3c0cf5265e6c1bbbca7965c6782ec"
+        },
+        {
+          "id": "UI/ui_button",
+          "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Prefabs/2_5D/UI/ui_button.prefab.meta",
+          "role": "current-prefab-meta",
+          "bytes": 154,
+          "sha256": "52e3f29eae3f856e1d766fafeae0af75932b8bbb99797fdc2b9b2207f1ee5a10",
+          "guid": "d9917af15fbcb415b85d8d7ab9ea43dd"
+        }
+      ],
+      "baseline": {
+        "pngBytes": 1487956,
+        "pngSha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+        "unchanged": true
+      }
+    }
+  ],
+  "library": {
+    "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/village-assets.asset",
+    "role": "runtime-prefab-library",
+    "bytes": 7655,
+    "sha256": "a48fc8c374442bd4d2a62613c03b9beae235714c930825553847adacc0bcc1ae",
+    "meta": {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/village-assets.asset.meta",
+      "role": "runtime-prefab-library-meta",
+      "bytes": 189,
+      "sha256": "4e191d1dce13e42db0cff1d1d5bb112e6ca15bb62705e2d20fb517a182ecd1d3",
+      "guid": "38a1e2d7aa31a47e9906dfb3ed796fc5"
+    },
+    "referenceCount": 62,
+    "uniqueIdCount": 62,
+    "ids": [
+      "Characters/sehee_original",
+      "Characters/taehee_original",
+      "Rewards/badge_book",
+      "Rewards/badge_crown",
+      "Rewards/badge_leaf",
+      "Rewards/bloom",
+      "Rewards/bud",
+      "Rewards/gift",
+      "Rewards/heart",
+      "Rewards/magic_dust",
+      "Rewards/seed",
+      "Rewards/sprout",
+      "Rewards/star_blue",
+      "Rewards/star_purple",
+      "Rewards/star_rainbow",
+      "Rewards/star_yellow",
+      "UI/ui_button",
+      "UI/ui_mission_panel",
+      "UI/ui_star_pill",
+      "World/balloon",
+      "World/banner",
+      "World/bench",
+      "World/bridge_stone",
+      "World/bridge_wood",
+      "World/butterfly",
+      "World/family_gazebo",
+      "World/fence",
+      "World/flowers_blue",
+      "World/flowers_coral",
+      "World/flowers_lilac",
+      "World/flowers_pink",
+      "World/flowers_sun",
+      "World/flowers_white",
+      "World/fountain",
+      "World/gift_chest",
+      "World/grass_tuft",
+      "World/house_cake",
+      "World/house_flower",
+      "World/house_leaf",
+      "World/house_library",
+      "World/house_moon",
+      "World/house_shop",
+      "World/lamp",
+      "World/learning_castle",
+      "World/mailbox",
+      "World/mushroom",
+      "World/npc_bunny",
+      "World/npc_cat",
+      "World/npc_owl",
+      "World/npc_squirrel",
+      "World/picnic_basket",
+      "World/pond",
+      "World/post_office",
+      "World/signpost",
+      "World/stepping_stones",
+      "World/tree_blush",
+      "World/tree_fir",
+      "World/tree_gold",
+      "World/tree_lilac",
+      "World/tree_mint",
+      "World/tree_oak",
+      "World/waterfall"
+    ]
+  },
+  "authoringScenes": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_HomeAssets.unity",
+      "role": "authoring-snapshot-scene",
+      "bytes": 284598,
+      "sha256": "9074992c958290bfe563304c11663360d2ce1ad7b9d2c6f0cf4e8476c70c7cda",
+      "meta": {
+        "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_HomeAssets.unity.meta",
+        "role": "authoring-snapshot-scene-meta",
+        "bytes": 155,
+        "sha256": "9a3f7096f1235578e58ad41e34310d5147f279c956f4a5adc68fc6593de4ce47",
+        "guid": "db9ede7230a914d87b941ffc52452a8a"
+      },
+      "prefabInstanceCount": 53
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_PlazaAssets.unity",
+      "role": "authoring-snapshot-scene",
+      "bytes": 263282,
+      "sha256": "3769668f485674e6ee978e2901a1e084e8676f8024144f321c4228cb7d04b009",
+      "meta": {
+        "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_PlazaAssets.unity.meta",
+        "role": "authoring-snapshot-scene-meta",
+        "bytes": 155,
+        "sha256": "6c9ea6fcbd077bdc1e8471d8f42e298a8dd9566b1ad93a2c4729a40b6f831398",
+        "guid": "e2f4d630e65d74d5dab8ffb543f44e0d"
+      },
+      "prefabInstanceCount": 48
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_AssetReview.unity",
+      "role": "authoring-snapshot-scene",
+      "bytes": 236478,
+      "sha256": "f219d1bc9549427fc36e44e9a044e0f915e4a2fdcc693e97bbd78a0c23e5f01f",
+      "meta": {
+        "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage_AssetReview.unity.meta",
+        "role": "authoring-snapshot-scene-meta",
+        "bytes": 155,
+        "sha256": "5ec5562c91aa991286d8e46558860877085c3f21dabbf94e35367916391d9506",
+        "guid": "0e0f2f3ea8fe548dabf3abff9328a520"
+      },
+      "prefabInstanceCount": 62
+    }
+  ],
+  "runtimePlacementAuthority": {
+    "sourcePath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+    "runtimeConstructionPath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageRuntime.cs",
+    "prefabInstantiationPath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageArt.cs",
+    "buildScenePath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scenes/MagicVillage.unity",
+    "buildSourcePath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageEditorBuild.cs",
+    "authoringSnapshotsAreRuntimeBuildScenes": false,
+    "description": "HomeAssets, PlazaAssets and AssetReview are editable inspection snapshots. The WebGL build includes the canonical MagicVillage scene; VillageRuntime constructs positions through VillageWorld and VillageArt instantiates serialized library prefab references. Editing snapshot placement alone does not change runtime world placement. Prefab/art changes may affect both snapshot instances and runtime references after a rebuild.",
+    "finalCompiledSourceEvidencePath": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/compiled-runtime-sources.json",
+    "worldSourceSHA256RecordedInSeparateCompiledReceipt": true
+  },
+  "verification": {
+    "runtimeAuditReceiptPath": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/runtime-prefab-verification.json",
+    "auditLogPath": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/unity-authoring-preserve-final.log",
+    "independentPrefabs": 62,
+    "worldAssetsUsed": 43,
+    "homeInstances": 53,
+    "plazaInstances": 48,
+    "existingAuthoringScenesPreserved": true,
+    "originalEditorStatePreserved": true,
+    "emptyBatchEditorBootstrapped": true
+  },
+  "supportingFiles": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/art-layout.json",
+      "role": "runtime-layout",
+      "bytes": 7306,
+      "sha256": "2ba7ff91feb56a0d0c2475a6614610b66555624d04a114f8d8568095be4c5ea8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/art-layout.json.meta",
+      "role": "runtime-layout-meta",
+      "bytes": 158,
+      "sha256": "c2e8ee499827e53902595ab34710d8818aeb4976e1d81bd9ef79443eecf55893",
+      "guid": "d34d92b08dd36400e8fd3f19ba50f021"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Source/Characters/fairy-companions_original.webp",
+      "role": "original-character-art-reference",
+      "bytes": 202242,
+      "sha256": "179393483a16f5e2812b2dc47c63e129716c338e950fb3c330daa36537be60d5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Source/Characters/fairy-companions_original.webp.meta",
+      "role": "original-character-art-reference-meta",
+      "bytes": 155,
+      "sha256": "bb0ed052fd77fb998fb0e9c12abd4f027ae0bdf85a3dc51164d401b1d7b578aa",
+      "guid": "ebe81bba45a844a29b32bff7f27ad8b8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageAssetLibrary.cs",
+      "role": "current-integration-source",
+      "bytes": 392,
+      "sha256": "c6571056287b8d2092e607b1f49b6a4069a2cbce3423315b63af6449ff77f50e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageAssetLibrary.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "2ad2704847780f7fdbdabaee4e0a237814a8e614a6f2442e7f2b8053144e4361",
+      "guid": "843f430e1e2cc406988c0837e027af52"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageArt.cs",
+      "role": "current-integration-source",
+      "bytes": 4585,
+      "sha256": "66759cb7a830be63a4477357a2cdd2f64a9716bfd0731742b91e3b238b0fdff6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageArt.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "34a125d6f27b8d37936dd7c793582fa309a56b60c5440604c23f533bee912bcd",
+      "guid": "816bb053f435242d98ebb3910901464b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBillboard.cs",
+      "role": "current-integration-source",
+      "bytes": 1838,
+      "sha256": "a97b67257ec677c4793a4520f4879ed66a899f77d461a5be8d91e02ca381fe40"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBillboard.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "808669b31fb483298644826068a1c55e05d0f30be4164954aa2c77935758bda3",
+      "guid": "8bb7c150f9b08467da54f108633dfd47"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageHotspot.cs",
+      "role": "current-integration-source",
+      "bytes": 296,
+      "sha256": "503b5134211d2054649ff52a014f35bca920a95e5169e9344e45f272bfa2e4b9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageHotspot.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "20d1f25bb41509b31057d458311fe94f5ff5d440d2686ac7d8827d3e2a05a2bb",
+      "guid": "9f9818e851c3d4785bc259929eba2316"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageRuntime.cs",
+      "role": "current-integration-source",
+      "bytes": 28711,
+      "sha256": "6af41a4f7eb29c49f51cfd61a2a6065aceb276df083060d034779842af273d20"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageRuntime.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "903dd8e8b1055011e31530fc9a7a0573638ac15b18b09f9188c9dbfe8123543e",
+      "guid": "12cff683564d94ba89f67154a3ba0ec4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBridge.cs",
+      "role": "current-integration-source",
+      "bytes": 4678,
+      "sha256": "4a2f0f103bb462f79abf599add10d9cd358188b433930529157632356a8870f4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBridge.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "71b7fcf1b5a150fddd0b7adf055bcfb4a28eec637a8de7802c9d6e45f38270cd",
+      "guid": "30b08e089e7904a83865d830cddb3709"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageAssetAudit.cs",
+      "role": "current-integration-source",
+      "bytes": 15265,
+      "sha256": "1e1bf8454634bb3d697966029dec62a343f01f04e1284319393dfa5fcce9377b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageAssetAudit.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "7e408ca675213bd095bf7e07b286f67a740e96ee02203f7801bbd7cb8f9e13be",
+      "guid": "658546bd2489e4de281bac301b734867"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageEditorBuild.cs",
+      "role": "current-integration-source",
+      "bytes": 2907,
+      "sha256": "b05edfe245255b27ba5487eedea79a4e45b251f7bc8b327b00af96b25b451c6e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageEditorBuild.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "ef466843dd5788d8c5fa89d47cfc46783e1b3ad5893fea00479d72c3cf6f981e",
+      "guid": "66af090b32b8e4ed6913944923f04740"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillagePrefabGenerator.cs",
+      "role": "current-integration-source",
+      "bytes": 6269,
+      "sha256": "bccb9efc4995703547dd75d03c82f7d0f1a095ac4203edf554c6b887c138f33b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillagePrefabGenerator.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "d3875c275da0cfa8c49dc1f7dd5c515fce1dd0b7ecc472df23c0a8448dfa13a8",
+      "guid": "992aa99c4fa004f2097dfa55465db7ae"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageSpriteImporter.cs",
+      "role": "current-integration-source",
+      "bytes": 4074,
+      "sha256": "b0fdabe83d4cf7585837702cd76b3962834853ddd452c318179296f19ad1bef3"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Editor/VillageSpriteImporter.cs.meta",
+      "role": "current-integration-source-meta",
+      "bytes": 59,
+      "sha256": "3caae0bf420d952374fe93e046a7a31ad96aa10ec0d97d359d1063b9e73b2caa",
+      "guid": "c762617ce4f034b9ba0f5d5588b2a609"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/before-integration-asset-inventory.json",
+      "role": "verification-evidence",
+      "bytes": 23539,
+      "sha256": "2c98d708cdfe86c5547575396931dfc71372960a0e80272bfa45cf2cacbad00c"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/world-usage-audit.json",
+      "role": "verification-evidence",
+      "bytes": 2849,
+      "sha256": "f9ae25f94991a99878f783553f463e0b0b8e8528db0e1cdc653e3fc64aa72b53"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/unity-authoring-preserve-final.log",
+      "role": "verification-evidence",
+      "bytes": 22203,
+      "sha256": "8b4981dadb5d8a3f15ec2bde044e7c31bb4d72655e114bb6cd966a76e2f193b6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/native-v2-source-hashes.json",
+      "role": "verification-evidence",
+      "bytes": 5586,
+      "sha256": "297ae07f1b33437ff42a91ae1cb0c711606686661b237d5640edd505aea6a6ac"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/native-v2-import-receipt.json",
+      "role": "verification-evidence",
+      "bytes": 1711,
+      "sha256": "65a4177ce13fec93f621deb76162e89e90d5866a08a5023da6ba352714e3d9cb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/native-v2-file-manifest.json",
+      "role": "verification-evidence",
+      "bytes": 94698,
+      "sha256": "e7c3787887632b7f02fd59327f77c4ac5fe8802a47df3dc3f0875cb704b54f14"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/runtime-prefab-verification.json",
+      "role": "verification-evidence",
+      "bytes": 1659,
+      "sha256": "75e359263dceb9d6156c48ce3fa023c9d2c9b0dc483422b83b4ae809578a8129"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Generated/native-v2-visual-qa.json",
+      "role": "verification-evidence",
+      "bytes": 36489,
+      "sha256": "ab5040f9bd94e021c34b3a5ba37f940c622755b0c14ee69d872276689a7e6d6b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/app.js",
+      "role": "current-html-ui-source",
+      "bytes": 60673,
+      "sha256": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/experience.css",
+      "role": "current-html-ui-source",
+      "bytes": 43767,
+      "sha256": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.js",
+      "role": "current-html-ui-source",
+      "bytes": 19223,
+      "sha256": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/village-ui.css",
+      "role": "current-html-ui-source",
+      "bytes": 9825,
+      "sha256": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462"
+    },
+    {
+      "id": "Characters/taehee_original",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/taehee_original.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1274731,
+      "sha256": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c"
+    },
+    {
+      "id": "Characters/sehee_original",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/sehee_original.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1263286,
+      "sha256": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f"
+    },
+    {
+      "id": "Rewards/star_yellow",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/star_yellow.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1151038,
+      "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1"
+    },
+    {
+      "id": "Rewards/star_blue",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/star_blue.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1179054,
+      "sha256": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf"
+    },
+    {
+      "id": "Rewards/star_purple",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/star_purple.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1280536,
+      "sha256": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87"
+    },
+    {
+      "id": "Rewards/star_rainbow",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/star_rainbow.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1254130,
+      "sha256": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13"
+    },
+    {
+      "id": "Rewards/seed",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/seed.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1317427,
+      "sha256": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a"
+    },
+    {
+      "id": "Rewards/sprout",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/sprout.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 947347,
+      "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf"
+    },
+    {
+      "id": "Rewards/bud",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/bud.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 836237,
+      "sha256": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e"
+    },
+    {
+      "id": "Rewards/bloom",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/bloom.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1562752,
+      "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+    },
+    {
+      "id": "Rewards/gift",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/gift.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1940964,
+      "sha256": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882"
+    },
+    {
+      "id": "Rewards/heart",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/heart.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1233195,
+      "sha256": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a"
+    },
+    {
+      "id": "Rewards/badge_book",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/badge_book.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 2147136,
+      "sha256": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857"
+    },
+    {
+      "id": "Rewards/badge_leaf",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/badge_leaf.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1901901,
+      "sha256": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4"
+    },
+    {
+      "id": "Rewards/badge_crown",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/badge_crown.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 2355807,
+      "sha256": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee"
+    },
+    {
+      "id": "Rewards/magic_dust",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/magic_dust.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 834689,
+      "sha256": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7"
+    },
+    {
+      "id": "UI/ui_mission_panel",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_mission_panel.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1339577,
+      "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628"
+    },
+    {
+      "id": "UI/ui_star_pill",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_star_pill.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1316094,
+      "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4"
+    },
+    {
+      "id": "UI/ui_button",
+      "path": "/Users/01chungee10/Github/sparkle-learning-hub/village/assets/ui_button.png",
+      "role": "current-html-native-png-copy",
+      "bytes": 1487956,
+      "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75"
+    }
+  ],
+  "backupRoots": {
+    "firstPassArt": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass",
+    "previousSourcesAndWebArt": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous"
+  },
+  "previousFiles": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Characters/sehee_original.png",
+      "role": "previous-first-pass-art",
+      "bytes": 249792,
+      "sha256": "09c371322f88b0dbe70fb9345d7c4bc1f4469cbd44b9e9f5596f8ee4d680173d"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Characters/sehee_original.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "08fbe0671b93ea7c39dc88b17b4cc4ddde1503a15a3efb2c62142e01295c696a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Characters/taehee_original.png",
+      "role": "previous-first-pass-art",
+      "bytes": 224845,
+      "sha256": "5027278858c89ea68d1c36fbf265697544049c4a435742c0a77e50e0e51cb310"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Characters/taehee_original.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "7872cc2794d31d480f7f8e9449458f4d56dc26bc6576e9beba3c709b009bc055"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Characters.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 172,
+      "sha256": "010e6eb9232595ef43052d67c959c7c5900d7aeb576f34fccfd819f7428c3ed1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_book.png",
+      "role": "previous-first-pass-art",
+      "bytes": 25637,
+      "sha256": "f7f1e20adfe4d2f8a9162b9354cde7a1216327aacb8c734a6d83e521460275b7"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_book.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "956f26f6a2f3fc344feffbca901dfaf064d75c694ae39791d003d6db71bd16ea"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_crown.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27867,
+      "sha256": "0b3c3b34933b97570ddb8d93fc5fb0a6a3f0ad1f06fa9da882aee72b26eb52b9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_crown.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "56122e97bab1dc644c64e6927d0220ee17a995b30a41e8ca149248d8fa167f6c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_leaf.png",
+      "role": "previous-first-pass-art",
+      "bytes": 28889,
+      "sha256": "c4c21b0bcbb45a00e0b6e818f6dc192896c67b1c7ccbec31b06936e71c610e46"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/badge_leaf.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "0197654494049494117787a11426a350db4dcea2c9956cf7702c897de64aa6fb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/bloom.png",
+      "role": "previous-first-pass-art",
+      "bytes": 30655,
+      "sha256": "01fd8fdae5870a3ff72d65f390d8cc04413191d39a440eade4aaf02cff13261b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/bloom.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "dc6aa8256d0c2770ef9dc260e99d7ec5e8bbd2ab1ba52af442b87652d9374015"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/bud.png",
+      "role": "previous-first-pass-art",
+      "bytes": 21257,
+      "sha256": "ac3c7bb2cfd95fc33c8d6442570cbdd61a234dbffb76f89a03ab4fefe5f4d964"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/bud.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "c7f67a101fa370d6e9a9ff76a512f216704e2a782f8b2667d778d0de79497e58"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/gift.png",
+      "role": "previous-first-pass-art",
+      "bytes": 23109,
+      "sha256": "7a7617bf841cc1189a699e8d2458a49192de9c9a4d1006fec8b98ca6c849ca7e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/gift.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "f25020d1e257202adaa942273b7fbfa70983b7bccf0f71ec0d651d846fa24a62"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/heart.png",
+      "role": "previous-first-pass-art",
+      "bytes": 23888,
+      "sha256": "dca77cb2b9892c3dd5340537f26705c172f4a2b6c6ca49125ad4a03a95d764a4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/heart.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "70f4f58b65feac8776fba5c798787257f8a86567496767f465d787e90da2e09f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/magic_dust.png",
+      "role": "previous-first-pass-art",
+      "bytes": 103475,
+      "sha256": "065880a10a2a965dc32e4484c60d0f3b2c36524f815176473124a95bb7ebd512"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/magic_dust.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "d90b8c1916f4829da25e7570f8371064599df987ea8123aaa39b685582d5e94e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/seed.png",
+      "role": "previous-first-pass-art",
+      "bytes": 15575,
+      "sha256": "2e0291720455f09f7f5e4187f9c5a944df5e472ca6965d5c0628547ff4154da3"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/seed.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "dab5f9427d0f374206d6efecfd7c8fc3d44a19f546bff006b7f09beca3c13d98"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/sprout.png",
+      "role": "previous-first-pass-art",
+      "bytes": 16413,
+      "sha256": "1bf75b604c2873017997be925f4491368cac900aa40dd47006b8875dd29d3535"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/sprout.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "a3041e125fa43e89a3319b6662f511c47b6855227aaf3f635f520747bfdc578b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_blue.png",
+      "role": "previous-first-pass-art",
+      "bytes": 76988,
+      "sha256": "0da04f31edaffcf5ae245c2519c219debac5436bde43386d1a6d3aae768b79f8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_blue.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "3e72a62975c67ca990d0b827dea6ca49ba029cd62380940605442fe26802ba74"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_purple.png",
+      "role": "previous-first-pass-art",
+      "bytes": 76677,
+      "sha256": "7d45b909d2b1e94200d0322cd1b19838ddf0d6ebf68e1cc014b0182642d054e9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_purple.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "59a97a662ae182a11845614c41d9cf4e45cd2bfaea5a17978c2fc0daabd971fd"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_rainbow.png",
+      "role": "previous-first-pass-art",
+      "bytes": 76722,
+      "sha256": "5067f6dc27c0a17d2e79bf50a57c14c4aba000eff3f28d233c9f086bca180c71"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_rainbow.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "0324aae3aa370412edbf14406fba6edfbfd60b82f0fd5feaf4e5b1c5f41edd4f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_yellow.png",
+      "role": "previous-first-pass-art",
+      "bytes": 76127,
+      "sha256": "6124140cf489667b4f2036c3e8b7abaf891329e5813849184ab05e421b75e9db"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards/star_yellow.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "fbdd299d9b23b7d2210e7ddc375dc7b8d69421efc765aee1d71aceafc16dc2fe"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/Rewards.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 172,
+      "sha256": "923844d704799dbc0d723f5191835cedc1b4eea112a8dc5b246470dfe82f7e52"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_button.png",
+      "role": "previous-first-pass-art",
+      "bytes": 71551,
+      "sha256": "bbbd8b9ce17e8f1ffa650dd8178aa3f7c0754ac20f09bf60f4e26e27f4de6a98"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_button.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "cc7a43c5280f3b1e07f970540b59cd1c7b75a4181e437063aedc69b1d237063f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_mission_panel.png",
+      "role": "previous-first-pass-art",
+      "bytes": 18329,
+      "sha256": "c083c60fd42092c67c57244fd1161dfda0a8a13f24f081709c9d611af9d42632"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_mission_panel.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "f4b5d5cceb62d023bbfa60363434631605b4befd22d81fe7a5e84e3055283cdf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_star_pill.png",
+      "role": "previous-first-pass-art",
+      "bytes": 26283,
+      "sha256": "6dcb3466d0451eecd5d258f39176685fd05b0a9c1ea8941b6df607de6804c73e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI/ui_star_pill.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "f073ecc23bf043a3178cee29904a743963f0c5869cf36b35817464e73195d21a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/UI.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 172,
+      "sha256": "8d0c405177f1dd59be1fb250f3ac4b1b9d1cec67f2ed839ce44b87c3e41bca43"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/balloon.png",
+      "role": "previous-first-pass-art",
+      "bytes": 30690,
+      "sha256": "948059d0c8aecddf089f8bebb641d2f8aa39edf75fe702cb98efbba4d9e45c6d"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/balloon.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "56f9d40640c15daad996aed93e560f30d5510f693f84e1e28a09a8292037cb2d"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/banner.png",
+      "role": "previous-first-pass-art",
+      "bytes": 20657,
+      "sha256": "466d5f0709c234b71e48b8de86239333c8a631784b497b6508ae6b9a2a1b8f7f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/banner.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "a8a6158628670786373b088e950b0d1da98d5a315bedcb9e5b7f16b6faf7b157"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bench.png",
+      "role": "previous-first-pass-art",
+      "bytes": 20187,
+      "sha256": "2bad0a6d7953fb0ce607d8db1b09af421cf8593465eb22b89ac468aaf261d7a2"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bench.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "55f2239aac79e56edfd0768327beca2f9ddbf2f932c3c762aab7cb82a5b13354"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bridge_stone.png",
+      "role": "previous-first-pass-art",
+      "bytes": 28327,
+      "sha256": "155076b1f47d556a827b6496f3c06b27d9a9852afa34834775ccc5085d4e18d7"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bridge_stone.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "489c43b21af64f57b200c0d2fafb4c34ae7c806e05dab208b72ff0469d53a876"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bridge_wood.png",
+      "role": "previous-first-pass-art",
+      "bytes": 40852,
+      "sha256": "d3913e38644692d6c397e2669e0b7059b666aae45d6b6eed0faca6e089ebb47a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/bridge_wood.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "0121628f6b9ede0a2d73909f2781d0f7d563d473aaeeab58d341d25d6a43459c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/butterfly.png",
+      "role": "previous-first-pass-art",
+      "bytes": 26446,
+      "sha256": "3c8376355e3c045bd6ac3c0b2bb3ab6e86d2e09afb2f6265d8281ca88130ee71"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/butterfly.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "616f17d9cf4f546c7954d544cefff66dd300ca6d03f75f56c30f24dbc58d22f4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/family_gazebo.png",
+      "role": "previous-first-pass-art",
+      "bytes": 40846,
+      "sha256": "28c61f3f1be6719d39d0b7fbe912dbdd93aca3ef7693fb6ef529a851576369bb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/family_gazebo.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "db1e72570d391886792bb8b9ea70df7da71aa9cf990c2da727426548aefa41e9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/fence.png",
+      "role": "previous-first-pass-art",
+      "bytes": 22359,
+      "sha256": "caca16e09768dca1485ffbd22e2dbe92d5ce7082e31c662a2fc88453158b88b4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/fence.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "1d06857b387952e386fdf88be3f39433ce21c1a9eb4308ace720b7076d155299"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_blue.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27458,
+      "sha256": "cbb88e6a104192e2c09a340230d79879a608c5ee736203ea5e3ca7dfe5ace7bb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_blue.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "73fa27e538a7bafad4b7561fd5154257a1c177ed2be3fce85ab2beba53c0ee44"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_coral.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27007,
+      "sha256": "297f960f23edd8fedeaf0abf4da422882306c183ba4a253e6c1d78ca7b3e85dd"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_coral.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "341ab59f94ea16abfba1a73404d289c6f478e999669400f7f5f5cb8016e13dba"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_lilac.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27651,
+      "sha256": "9ada10d0eff740cfb1f0e1353577e58ac348de2bd46fdb24d7f8f6fe6bd1b729"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_lilac.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "ca5f82f31e4be2176f32e409c7b463f9c5b18bcb7894a0466b74e15373b49f67"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_pink.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27882,
+      "sha256": "4d170317d22a34c126898d57765f1838c3cf0296cc1de4ad52e8788c972996fb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_pink.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "a616c98ede451223e36209544f775e6a950a3781cf69db2515bea4622bdeb114"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_sun.png",
+      "role": "previous-first-pass-art",
+      "bytes": 26200,
+      "sha256": "cc7940b59ad0e0a8b5f5e750f5a9e2e246502879670a3688bec5e91c4c379504"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_sun.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "9735eabb1d4dc441e6c3806c79ef64c9291e89bcd1db4adcf9522fef823b2b5a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_white.png",
+      "role": "previous-first-pass-art",
+      "bytes": 26767,
+      "sha256": "249246c25c85a24f991e32af31e6a02ce7e66d5bbde5e01d1bdb9287eb0271e4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/flowers_white.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "537b39b4ea7ad8fd1c7b5a64343e2343a9d092b6463ce8324df62685e5ab7be1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/fountain.png",
+      "role": "previous-first-pass-art",
+      "bytes": 37144,
+      "sha256": "7f5948ac91ead35265b0e6a215e8fed46b082ee8b8184bff91687d619e59dcb5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/fountain.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "1f3c28c5929c78dbd151915d36837ac0821b85f5b2fb12600f23477a864d023e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/gift_chest.png",
+      "role": "previous-first-pass-art",
+      "bytes": 19848,
+      "sha256": "bba13bf0b0ba8af8d6b979519a30a7a273afcec996989b9780b07d7ae94f0ff1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/gift_chest.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "464044d9cf35146a3752811d67aa756038ee6a728710c98e8c36be78db8e30c6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/grass_tuft.png",
+      "role": "previous-first-pass-art",
+      "bytes": 20872,
+      "sha256": "503a64d9b3b319b6bb23150d11d3992b12e3447c313604092f55e60eab5d673a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/grass_tuft.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "bf8e53e594eb19ec0faab885068694b15cd2d8e9e7dedbae3e4e9d5c2d2493bf"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_cake.png",
+      "role": "previous-first-pass-art",
+      "bytes": 65268,
+      "sha256": "9d55b4326ffab12dc854118c00559d7769ad9088053e9971cfd83d51456ecfa1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_cake.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "6a3d833e75e68f00113168edc66bb84a5b733c5eca8bc9fc135451a7e7ddd542"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_flower.png",
+      "role": "previous-first-pass-art",
+      "bytes": 66304,
+      "sha256": "5a8f95016b1f27b6e06446e5d24d3a01d2b5a6757e458fd86d4af3a28e909fa8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_flower.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "efca27fdb7e6cb1a8709dfb3b3cfd279360613ab62bd3dcd45b042547653eae0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_leaf.png",
+      "role": "previous-first-pass-art",
+      "bytes": 57721,
+      "sha256": "a0a61174b252205cd87e861d50cd07fb91e3db12f0337f9cd25dd07650d57c26"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_leaf.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "d57e53f656f7af92258d90b36570d0f06a55830a7e31518e316089d7d6e53959"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_library.png",
+      "role": "previous-first-pass-art",
+      "bytes": 53722,
+      "sha256": "f29a730f87b6946e844642f6bb5c1ca5f5c86df2f9dbc9b54c82505038cd4338"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_library.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "de801995caec950254b1b97867549aa43e0698f8b95814e02fca1080388d2403"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_moon.png",
+      "role": "previous-first-pass-art",
+      "bytes": 56269,
+      "sha256": "4bf80996d1be88cd2f66614c164edebce4149f62c64eff6050ddb0d6c00ffa2a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_moon.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "eb9a2e5b0c4d44ce0b2ddfbdfec0b8cbf768785b1b1eb6b4dd32e506842daa9f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_shop.png",
+      "role": "previous-first-pass-art",
+      "bytes": 55540,
+      "sha256": "a0d9b5a1917e1ef881d3d603c0ad704c071f1ed5f6537392a3e85f6f910f0d5b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/house_shop.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "5443b49fa535d11f174b8c2f32e6f415952b21ec1f78cdcdea492b8a70490dfe"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/lamp.png",
+      "role": "previous-first-pass-art",
+      "bytes": 27975,
+      "sha256": "0f3a3add3d2a8b087144a757ff290b44bfa4f689e5594365345c46ee56af39f5"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/lamp.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "afaee2dc794ecbb6775042b96f494d7868c7011f6dc495434091c0a0b891edff"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/learning_castle.png",
+      "role": "previous-first-pass-art",
+      "bytes": 35309,
+      "sha256": "95e2e3b81829d8486ab19ba0e9f3b085c8b40c2381b707cf9c15484080c3214b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/learning_castle.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "0a116667165922d913e455b947cad535b178e7c6210d3708508490d4158571dc"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/mailbox.png",
+      "role": "previous-first-pass-art",
+      "bytes": 25939,
+      "sha256": "3f1a40b34b5813ba75285c988050a513b386088fa5ed9c8f7b2d9f5933b1c18c"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/mailbox.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "b05ab7cbb6b137d566532bcad1c4785d9cb8e01a77e903d37bb15b672a2bfaa1"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/mushroom.png",
+      "role": "previous-first-pass-art",
+      "bytes": 25371,
+      "sha256": "9611e9c9586e8d0ccc05dbaef4a19810d5e99ad644e1fe2ab927f7bb3d889176"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/mushroom.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "aa5261582edfa3d611fd11f0a1f491587969b178d90c369cd17b68eacc74aec3"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_bunny.png",
+      "role": "previous-first-pass-art",
+      "bytes": 30108,
+      "sha256": "b92b589dad7a6b0189027299036833a36411dfb81b54be0ff1bae6b399becc93"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_bunny.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "ec28e647da56d5ee435c2b87f8ed6cfb5c035ebc2fe81ce4ac61c7162d368c09"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_cat.png",
+      "role": "previous-first-pass-art",
+      "bytes": 28496,
+      "sha256": "550b6c47f49c40ddcf4c0d51eec84f3a7c57c68263e03240167f4d768f1d9c05"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_cat.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "563057d44accc94cc30df41589c7bf1f8389a4e01c2c55f9627faddab6d9962a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_owl.png",
+      "role": "previous-first-pass-art",
+      "bytes": 28412,
+      "sha256": "03624b75d6f8c9878295d39cfd8f802fad0704cbe63328da1f0a41163c35d755"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_owl.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "cd8d0887fb7d4c1e853d6368a2e36b50d55cdec514c0749c3e3da44cd71207d8"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_squirrel.png",
+      "role": "previous-first-pass-art",
+      "bytes": 38157,
+      "sha256": "1b1664b4327e232ddb6f7d575be2c02a269a4d02db4b535b8c41aaf3565fe2da"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/npc_squirrel.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "7a27154f3a25771974bc53214c72fd0f02bcb43b6bf9853f79da591e826f6a1b"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/picnic_basket.png",
+      "role": "previous-first-pass-art",
+      "bytes": 19564,
+      "sha256": "e5d3c2c56329b9e689471704e44fa106c477779224f69d5725fd726b1fa8765e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/picnic_basket.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "c7d6f28f7605ee1c9b906dd0273512e8b2ed7be6a993d19fa78bb7203443cebe"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/pond.png",
+      "role": "previous-first-pass-art",
+      "bytes": 22991,
+      "sha256": "af6016ae2b12721375ec882ba47dfefe0f9cae6b588cae28a072284598528f47"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/pond.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "441d718979f242643d6c18a656bae9682d797af2f11c7bde29c7196989422c23"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/post_office.png",
+      "role": "previous-first-pass-art",
+      "bytes": 63175,
+      "sha256": "aef60f00904b3d4f5f5169463535672478ec8de4273a62ea76acef79fc04dfa6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/post_office.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "bd917330ea54c421a86e3102d33eb73a7210046f711fed39be420b3bea157d54"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/signpost.png",
+      "role": "previous-first-pass-art",
+      "bytes": 26451,
+      "sha256": "3c5f97e7b2983c679f9e812290a93f69368758b4a4f702b946693f1a91be30b7"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/signpost.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "9b647de43263d2278fb604474b643bc682e1b6ecc48ac7dab7bea0669ef1c363"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/stepping_stones.png",
+      "role": "previous-first-pass-art",
+      "bytes": 25124,
+      "sha256": "57ec8d8ad3b359ef8b70b31f1ce9f0415272bfdb35bba8dd7b1f6fb21fe9c03a"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/stepping_stones.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "6dc6fc96b749a9f9c29ccde13cc517a0ab38805b856ffe5aa293d093a9292dd0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_blush.png",
+      "role": "previous-first-pass-art",
+      "bytes": 53880,
+      "sha256": "321deca2e5cd6e647102c1a0568515c8d77ad563749aaeb3036912a787d08a02"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_blush.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "bbc26f39d18435e21f7314504353651cb944fe9da8d328529e8bb8952452eb21"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_fir.png",
+      "role": "previous-first-pass-art",
+      "bytes": 31547,
+      "sha256": "08a8a0d0c445274b41117fd897f53cc0f0006cf74b2c97f2f3ddc918044eece4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_fir.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "16f872a95b16d2dd68e415ef7c3886cdd173444a318e31197a356e016b2466b4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_gold.png",
+      "role": "previous-first-pass-art",
+      "bytes": 48626,
+      "sha256": "69421636580dba75151e5aa7cf966a0a6c33648b8c8542f326c7fd90f63d7688"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_gold.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "cffab2c09d775f77511110156dc546b573cdf0ba8ed7d8985f6eac75719103d7"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_lilac.png",
+      "role": "previous-first-pass-art",
+      "bytes": 53694,
+      "sha256": "df0a3c00267f257ecc28b968de04b385ca5b05bfc11f53dcaa425b7c05cd4e9f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_lilac.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "9aa6fe7642caf05b1568e212762ce2a4a1749439ee5a2da4acd2900c2f538c8f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_mint.png",
+      "role": "previous-first-pass-art",
+      "bytes": 48075,
+      "sha256": "a089812c997cbc78d5def514965414d2b731edce52e1bb82da619bbd04a2e53f"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_mint.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "eec6a506adec3e1ed95c61b2407f07f96a36aa34490411355fb37f68cbbad611"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_oak.png",
+      "role": "previous-first-pass-art",
+      "bytes": 44660,
+      "sha256": "1c5532bde6aa56c4783f527983805143675a1b1496a8440a18576e8625a2fea2"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/tree_oak.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "e00b741bee6cda2afdc2eb821ab65cd95d88533fd8901556e2d8fce5f22ae140"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/waterfall.png",
+      "role": "previous-first-pass-art",
+      "bytes": 29622,
+      "sha256": "4f048f1e6ed75acd0da33fbc0d8ebd107485aa84bf01b54d566206d1e733849e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World/waterfall.png.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 3007,
+      "sha256": "3753453d6814bb387868314ff76a903fdca401523e266489cc1ad896edb93bbb"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites/World.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 172,
+      "sha256": "fbb911e18ef98d81594b6a26b95925edfe2c19d71080a369b5b0a59f271a4a24"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/Sprites.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 172,
+      "sha256": "98c2ef7acbe32750133361b801a6f017fd7f4b0a471787ce800c331a7e2b0233"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/asset-catalog.json",
+      "role": "previous-first-pass-art",
+      "bytes": 24691,
+      "sha256": "0dc85fb6c0acccdaa29316c2f1fb40b002a47bf8b49139b1cb79c50fae8e96f0"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Art/Previous/20261010-first-pass/asset-catalog.json.meta",
+      "role": "previous-first-pass-art",
+      "bytes": 158,
+      "sha256": "99cc5e860ab1f71de71c93b7bc090c41a0a0075f2271538796803c4af7977985"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/Assets/Editor/VillageEditorBuild.cs",
+      "role": "previous-source-or-web-art",
+      "bytes": 2856,
+      "sha256": "650c7e805160590e48fb9bea09d019aaa8d7b874524ef4d8f7c0106d8658d8e0"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/Assets/Editor/VillagePrefabGenerator.cs",
+      "role": "previous-source-or-web-art",
+      "bytes": 5522,
+      "sha256": "a0233c1b059f6febdab4da9cbe9c8aba158cf4c53757eacb5ea3f9f114408214"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/Assets/Scripts/VillageArt.cs",
+      "role": "previous-source-or-web-art",
+      "bytes": 2633,
+      "sha256": "9502833081123c3de3ed37baa466f3d650a2fa9e95c08e49c369a71378f2dc86"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/VillageAssetAudit.before-preserve.cs",
+      "role": "previous-source-or-web-art",
+      "bytes": 6111,
+      "sha256": "aa62c31c856e570cbb08cf0d10d795d89dc84945061a39e8c7763d0925484418"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/VillageWorld.cs",
+      "role": "previous-source-or-web-art",
+      "bytes": 25467,
+      "sha256": "48408cd649674aa52c3e52a081387ba351dd7632210fa273b7318c4e2eca174a"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-fairy-village/ProjectSettings/ProjectSettings.asset",
+      "role": "previous-source-or-web-art",
+      "bytes": 22661,
+      "sha256": "1d52c2150a453f86e346159a410ac6853dfbd00b33721c4416075b6ada57a9cb"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-fairy-village/README.md",
+      "role": "previous-source-or-web-art",
+      "bytes": 3571,
+      "sha256": "a44c64a481af0e853384d2a5df9febef32e0e546ad0a42991f27b37946f9f254"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/app.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 58312,
+      "sha256": "ff4d6231d52c160523b04a2618f4f882d1eda7bc2c7b4a5e9444e5725ee15607"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/experience-before-pager-fix.css",
+      "role": "previous-source-or-web-art",
+      "bytes": 43519,
+      "sha256": "4838f476ebfc9c45ea852616870d15ea34d791bd25bdabbc87779fae4ead2962"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/experience.css",
+      "role": "previous-source-or-web-art",
+      "bytes": 41193,
+      "sha256": "452cb1e678da6fc803423383a3bfde92813a201751f821a9575ac5f00b9cb691"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/index-before-art-cache.html",
+      "role": "previous-source-or-web-art",
+      "bytes": 1864,
+      "sha256": "b4a48fe993e49617b1fcc1386864002608027fba90c86a536b0039f1583889e7"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/Build/WebGL.data.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 10284550,
+      "sha256": "a03037268fdcc06bd5cbfdcb1c39dc19e7e30027372e002daaf2373b2e10d1c3"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/Build/WebGL.framework.js.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 70680,
+      "sha256": "7a90566ab9764877e68d06d371017b373fde158d284628f01486ba079d3f7eb2"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/Build/WebGL.loader.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 117894,
+      "sha256": "59b7e452e45d35dba9e441069f7d058cade758e15f9cfe2a1686d953caef7f24"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/Build/WebGL.wasm.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 6001512,
+      "sha256": "87dadf29ea8ef303186ee00dc6e9aea5fb8c635417decc2b634381edd09eeaac"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/bloom.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1562752,
+      "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/sprout.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 947347,
+      "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/star_yellow.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1151038,
+      "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/ui_button.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1487956,
+      "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/ui_mission_panel.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1339577,
+      "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/assets/ui_star_pill.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1316094,
+      "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/index.html",
+      "role": "previous-source-or-web-art",
+      "bytes": 6741,
+      "sha256": "678a54e281bfaca82492ff09320da5958c4fa360726987e51ef6a2ae627a02bb"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/village-ui.css",
+      "role": "previous-source-or-web-art",
+      "bytes": 9032,
+      "sha256": "d9187bcfe5622f96914b999f1d39c29937e9f7cc05c1450a1a7ec3b2ee18539c"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub/village/village-ui.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 18212,
+      "sha256": "deffb599b1522b5e91a06fa4a177be380bf1deb24839aa23c27843cdd55a7b4f"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 10284550,
+      "sha256": "a03037268fdcc06bd5cbfdcb1c39dc19e7e30027372e002daaf2373b2e10d1c3"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 70680,
+      "sha256": "7a90566ab9764877e68d06d371017b373fde158d284628f01486ba079d3f7eb2"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 117894,
+      "sha256": "59b7e452e45d35dba9e441069f7d058cade758e15f9cfe2a1686d953caef7f24"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb",
+      "role": "previous-source-or-web-art",
+      "bytes": 6001512,
+      "sha256": "87dadf29ea8ef303186ee00dc6e9aea5fb8c635417decc2b634381edd09eeaac"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/bloom.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1562752,
+      "sha256": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/sprout.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 947347,
+      "sha256": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/star_yellow.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1151038,
+      "sha256": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/ui_button.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1487956,
+      "sha256": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/ui_mission_panel.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1339577,
+      "sha256": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-assets/ui_star_pill.png",
+      "role": "previous-source-or-web-art",
+      "bytes": 1316094,
+      "sha256": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-source/app.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 58312,
+      "sha256": "ff4d6231d52c160523b04a2618f4f882d1eda7bc2c7b4a5e9444e5725ee15607"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-source/experience.css",
+      "role": "previous-source-or-web-art",
+      "bytes": 41193,
+      "sha256": "452cb1e678da6fc803423383a3bfde92813a201751f821a9575ac5f00b9cb691"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-source/village/village-ui.css",
+      "role": "previous-source-or-web-art",
+      "bytes": 9032,
+      "sha256": "d9187bcfe5622f96914b999f1d39c29937e9f7cc05c1450a1a7ec3b2ee18539c"
+    },
+    {
+      "path": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous/web-source/village/village-ui.js",
+      "role": "previous-source-or-web-art",
+      "bytes": 18212,
+      "sha256": "deffb599b1522b5e91a06fa4a177be380bf1deb24839aa23c27843cdd55a7b4f"
+    }
+  ],
+  "limitations": [
+    "File hashes describe the capture time; final WebGL binaries and compiled runtime source hashes are verified in separate build receipts.",
+    "All 62 assets have independently authored prefabs and review snapshot instances. This does not assert that all 62 are simultaneously rendered in a single player scene.",
+    "The 14 reward PNGs and three UI PNGs are used by the surrounding HTML learning interface; only the earned-flower bloom reward is instantiated by the Unity world."
+  ]
+}

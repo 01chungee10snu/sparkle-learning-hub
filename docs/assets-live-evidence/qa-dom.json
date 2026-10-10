@@ -1,0 +1,247 @@
+{
+  "createdAt": "2026-10-10T06:14:25.204Z",
+  "mode": "headless-dom-fixtures",
+  "origin": "http://127.0.0.1:4179",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "realDevice": false,
+  "childStorage": "isolated synthetic browser contexts",
+  "sourceHashes": {
+    "app.js": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e",
+    "experience.css": "4838f476ebfc9c45ea852616870d15ea34d791bd25bdabbc87779fae4ead2962",
+    "village/village-ui.js": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46",
+    "village/village-bridge.js": "5e3847e1e0ad5eaca547c28e9385d23092c8ef23bc37fff8542f4b55df61c77f",
+    "village/village-ui.css": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462",
+    "village/index.html": "c252cbf5ca928452d3d02efe90df06b41d6254a800c2755e6a0b59a6d914cbee",
+    "village/village-state.js": "f1b8684dbb2ddcbfd9c1b9949cbcdd5cd09ec5804478df53ceaa0d2045ca1b71",
+    "platform/progress.js": "cfba29c15e3e000cbfb252c45f3ca4bf15be8713ca73dc6ff12ee50304b2be6a",
+    "platform/rewards.js": "fe49083c4212805fe95938ab6dbcb9b22a4f5c923978cd7dde638fdef50487b8",
+    "platform/reward-catalog.js": "7d0fbb85d21433a15efacbe8267c5f36c516184423e78f37d22ec2986204bd21",
+    "platform/irt.js": "5e9866910364b38fd314be17477493463a5e725a659ea233b691fd297316ee38",
+    "games/catalog.json": "90f86693df31e705b2fc773c92e2cecb2329ec795572db09c2934490f8066fc3",
+    "games/irt-bank.json": "82b1096d23e973d94c0ebd2d32737f0103f4ca59cca7f166dbc74eeb5a6f91f8",
+    "games/snack-count/game.json": "e4b7b6d57405df14a028fc1ceaad3d5a22cd6cc2ac1c30e340a45c6757875990",
+    "games/measure-lab/game.json": "dee09f8b494a1e8a43124b9d1b3536849203ff26373b96ca0de7ede96adbb84c",
+    "games/kind-dialogue/game.json": "729611157ce17ff71499d5a9eecbcbe2cb8c3512e40e6961eec5ce141d4065d6",
+    "scripts/village-browser-qa.mjs": "4d7e66fcc82369c2c0aab6e702c1f9fbc2d4437ea0f806b0f875fb1992e0fd23",
+    "village/assets/star_yellow.png": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+    "village/assets/star_blue.png": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+    "village/assets/star_purple.png": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+    "village/assets/star_rainbow.png": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+    "village/assets/seed.png": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+    "village/assets/sprout.png": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+    "village/assets/bud.png": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+    "village/assets/bloom.png": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+    "village/assets/gift.png": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+    "village/assets/heart.png": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+    "village/assets/badge_book.png": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+    "village/assets/badge_leaf.png": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+    "village/assets/badge_crown.png": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+    "village/assets/magic_dust.png": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+    "village/assets/ui_mission_panel.png": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+    "village/assets/ui_star_pill.png": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+    "village/assets/ui_button.png": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+    "village/assets/taehee_original.png": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+    "village/assets/sehee_original.png": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f",
+    "scripts/check-native-art.mjs": "4119e3e8aa7a6dce77f13843142249ede5e4635d74b22a3a80d4aa9b02194aee"
+  },
+  "buildHashes": {},
+  "tests": [
+    {
+      "viewport": "phone-portrait",
+      "name": "real counted orange visual and responsive dialog",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "modal focus containment and pause return",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "hint UI single display and double submit guard",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "pause drops pending and already consumed stale replies",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "stale unrelated response cannot replace pending question",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "answered resume renders feedback and one NEXT",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "empty matching defaults and duplicate mapping ownership",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "real zero group has no phantom object",
+      "pass": true
+    },
+    {
+      "viewport": "phone-portrait",
+      "name": "build stepper and numeric widget retain selected answer",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "real counted orange visual and responsive dialog",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "modal focus containment and pause return",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "hint UI single display and double submit guard",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "pause drops pending and already consumed stale replies",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "stale unrelated response cannot replace pending question",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "answered resume renders feedback and one NEXT",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "empty matching defaults and duplicate mapping ownership",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "real zero group has no phantom object",
+      "pass": true
+    },
+    {
+      "viewport": "phone-landscape",
+      "name": "build stepper and numeric widget retain selected answer",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "real counted orange visual and responsive dialog",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "modal focus containment and pause return",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "hint UI single display and double submit guard",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "pause drops pending and already consumed stale replies",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "stale unrelated response cannot replace pending question",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "answered resume renders feedback and one NEXT",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "empty matching defaults and duplicate mapping ownership",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "real zero group has no phantom object",
+      "pass": true
+    },
+    {
+      "viewport": "tablet",
+      "name": "build stepper and numeric widget retain selected answer",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "real counted orange visual and responsive dialog",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "modal focus containment and pause return",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "hint UI single display and double submit guard",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "pause drops pending and already consumed stale replies",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "stale unrelated response cannot replace pending question",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "answered resume renders feedback and one NEXT",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "empty matching defaults and duplicate mapping ownership",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "real zero group has no phantom object",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "name": "build stepper and numeric widget retain selected answer",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "screenshots": [
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/phone-portrait-choice.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/phone-portrait-matching.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/phone-landscape-choice.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/phone-landscape-matching.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/tablet-choice.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/tablet-matching.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/desktop-choice.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/desktop-matching.png"
+  ],
+  "roundEvidence": [],
+  "pointerObservations": [],
+  "prefabUsage": null,
+  "unityArtErrors": [],
+  "consoleErrors": [],
+  "pass": true
+}

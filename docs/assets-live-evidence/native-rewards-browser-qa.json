@@ -1,0 +1,1006 @@
+{
+  "timestamp": "2026-10-10T06:23:12.547Z",
+  "scope": "headless Chrome isolated synthetic context; actual root hub UI; no physical-device claim",
+  "origin": "http://127.0.0.1:4179",
+  "checks": [
+    {
+      "name": "served source and 19 native PNGs match the isolated repo byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "fresh context has zero stars, no purchased gifts, and four locked badges",
+      "passed": true
+    },
+    {
+      "name": "header and fairy portrait use real native images and semantic action buttons",
+      "passed": true
+    },
+    {
+      "name": "locked badge cards show only seed images and keep their locked text",
+      "passed": true
+    },
+    {
+      "name": "all 48 gifts keep their wallet prices, disabled purchase state, and native mapped artwork",
+      "passed": true
+    },
+    {
+      "name": "browsing the full gift and badge collection does not change stars or receipts",
+      "passed": true
+    },
+    {
+      "name": "an unanswered round starts with a seed cue and a real mission panel",
+      "passed": true
+    },
+    {
+      "name": "actual answers and one retry drive the cue and show the same-unit Korean star image",
+      "passed": true
+    },
+    {
+      "name": "only actual earned badges switch to leaf and crown; book and two-day badges remain locked",
+      "passed": true
+    },
+    {
+      "name": "three actual subject rounds unlock the book badge and render all fourteen native reward images",
+      "passed": true
+    },
+    {
+      "name": "native character switch preserves separate wallets and all nineteen images load in real UI",
+      "passed": true
+    },
+    {
+      "name": "root UI completed without page errors or console errors",
+      "passed": true
+    }
+  ],
+  "sourceHashes": {
+    "app.js": "e30df7c853146fa5dcdac835d0bbf91ea2131d302344cba522837a4f2f5d8e7e",
+    "experience.css": "41dffa963867e026f24a5e6db5bcdcaf35e2ba03de2cf1fb664004a7ce43ea7f",
+    "index.html": "b4a48fe993e49617b1fcc1386864002608027fba90c86a536b0039f1583889e7",
+    "village/village-ui.js": "cb6845cb2da39c2d7edf3296d66b3f898b610d14633b00dc8c2d866c43b91f46",
+    "village/village-ui.css": "2da7f021aa207cb5179cbcbedb808cb0987b332930c72ae74718d240a1d2c462",
+    "village/assets/star_yellow.png": "1339b0adb2b66b80f71050d15f765df2bcf6898714ba0f4e80fd92934eabd0b1",
+    "village/assets/star_blue.png": "413274ccca15646789c93e4be8bca8cb7371a2c6d10aa0b220e6f6fe3fa34dcf",
+    "village/assets/star_purple.png": "7afb1bafbdc6395ded3ef9fa5b081d49738887d8a8ec8b31b8a0ed102a820e87",
+    "village/assets/star_rainbow.png": "6054a6a4bac57295bb1dff136e9dcb08e921cee67371532d4a3a470c4db4cd13",
+    "village/assets/seed.png": "8d55b672e00e0b377d97fafd22f0217f97ad1c7bff770e1fb02fcb064d04805a",
+    "village/assets/sprout.png": "8f751d56534fca3efca213d8361ff50b6680bb439a091a2c8ab20bd74906b4cf",
+    "village/assets/bud.png": "b833782b42a2cf0f4acf24bb3b3ea1b448cd282eb0a9305a6403cbd8b1c5196e",
+    "village/assets/bloom.png": "822c49a1b4b81d67869c2ffe6b120ae0624829f49ee17587f980f92fde223d44",
+    "village/assets/gift.png": "13399e047f4ec479712bd6d51faf329306d9f332d683b61684d03e3762897882",
+    "village/assets/heart.png": "9ba1376c789041173391b15c57f5c781322a790203083d37fc267c9b0b7eef0a",
+    "village/assets/badge_book.png": "a0f4fbd387f52eb510d1112daf3c0ba74a30ac891ad7e0ef6f21365bc95d3857",
+    "village/assets/badge_leaf.png": "d0dfdc9759accf33ba834ebadc125f7dc984ee24569876244584232e6a99ddd4",
+    "village/assets/badge_crown.png": "bb2106ffd706a8306f2fd41a5617aa9a8e2ecf8a6cc6ceca39273e77136963ee",
+    "village/assets/magic_dust.png": "8e9e53d93393409eeeb8d009cf7a78ad9aec4ccfcbd1a78bf314d693a39122f7",
+    "village/assets/ui_mission_panel.png": "39b8b5f9fec708a48c687304f17bd9cd7065fe5c008efc7e4f796d2283c80628",
+    "village/assets/ui_star_pill.png": "4cfe2b9bf556c942e337249993e18fca8c44cbce551563d167202e0e28241ad4",
+    "village/assets/ui_button.png": "3a8b734f1460ae3c7f090f09847c221cfd4a78f97813ae27e21b9aa399e6dd75",
+    "village/assets/taehee_original.png": "29a25499f32ac5f6f2ae83250b53239a55f963eaa3fb1d1b91b604fd4695b65c",
+    "village/assets/sehee_original.png": "cc68444107297e904c292233e2b804dfbb3fb5395fc41b64b5e1ee850446cc6f"
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "screenshots": [
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/native-hub-badges-locked.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/native-hub-badges-earned.png",
+    "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/native-hub-badges-three-subjects.png"
+  ],
+  "siblingWallet": {
+    "who": "se",
+    "available": 0,
+    "unlockedBadges": 0
+  },
+  "passed": true,
+  "nativeArtUsage": {
+    "expectedIds": [
+      "star_yellow",
+      "star_blue",
+      "star_purple",
+      "star_rainbow",
+      "seed",
+      "sprout",
+      "bud",
+      "bloom",
+      "gift",
+      "heart",
+      "badge_book",
+      "badge_leaf",
+      "badge_crown",
+      "magic_dust",
+      "ui_mission_panel",
+      "ui_star_pill",
+      "ui_button",
+      "taehee_original",
+      "sehee_original"
+    ],
+    "usedIds": [
+      "badge_book",
+      "badge_crown",
+      "badge_leaf",
+      "bloom",
+      "bud",
+      "gift",
+      "heart",
+      "magic_dust",
+      "seed",
+      "sehee_original",
+      "sprout",
+      "star_blue",
+      "star_purple",
+      "star_rainbow",
+      "star_yellow",
+      "taehee_original",
+      "ui_button",
+      "ui_mission_panel",
+      "ui_star_pill"
+    ],
+    "missingIds": []
+  },
+  "giftIds": [
+    "bg-leaf",
+    "bg-lemon",
+    "bg-lilac",
+    "bg-ocean",
+    "bg-peach",
+    "bg-rainbow",
+    "bg-rose",
+    "bg-sky",
+    "comet",
+    "cooking",
+    "coral-orbit",
+    "drawing",
+    "experiment",
+    "friend-bear",
+    "friend-butterfly",
+    "friend-cat",
+    "friend-fox",
+    "friend-owl",
+    "friend-penguin",
+    "friend-rabbit",
+    "friend-whale",
+    "galaxy-glow",
+    "halo",
+    "mark-cherry",
+    "mark-clover",
+    "mark-flower",
+    "mark-heart",
+    "mark-leaf",
+    "mark-moon",
+    "mark-palette",
+    "mark-ribbon",
+    "mint-gems",
+    "ocean-stars",
+    "paperfold",
+    "picnic",
+    "rainbow-orbit",
+    "story",
+    "sun-spark",
+    "title-curious",
+    "title-hello",
+    "title-maker",
+    "title-number",
+    "title-space",
+    "title-story",
+    "title-thinker",
+    "title-word",
+    "trail-stars",
+    "walk"
+  ],
+  "nativeGiftIds": [
+    "bloom",
+    "gift",
+    "heart",
+    "sprout",
+    "star_blue",
+    "star_purple",
+    "star_rainbow",
+    "star_yellow"
+  ],
+  "finalWallet": {
+    "look": {
+      "light": null,
+      "background": null,
+      "friend": null,
+      "mark": null,
+      "title": null
+    },
+    "who": "tae",
+    "learningStars": 150,
+    "effortStars": 4,
+    "lifetime": 154,
+    "spent": 0,
+    "available": 154,
+    "items": [
+      {
+        "id": "sun-spark",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 10,
+        "title": "햇살 반짝이",
+        "description": "요정 곁에 노란 별 여섯 개가 반짝여요.",
+        "emoji": "☀️",
+        "effect": {
+          "color": 16760633,
+          "count": 6
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mint-gems",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 25,
+        "title": "민트 보석빛",
+        "description": "작은 보석들이 민트빛으로 빙글 돌아요.",
+        "emoji": "💎",
+        "effect": {
+          "color": 3784609,
+          "count": 5,
+          "gemScale": 0.09
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "trail-stars",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 30,
+        "title": "반짝 별 꼬리",
+        "description": "요정 뒤에 작은 별이 따라와요.",
+        "emoji": "✨",
+        "effect": {
+          "count": 9
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "coral-orbit",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 35,
+        "title": "살구빛 궤도",
+        "description": "따뜻한 살구빛 고리가 요정을 감싸요.",
+        "emoji": "🟠",
+        "effect": {
+          "color": 16750196,
+          "count": 7,
+          "ring": true
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "ocean-stars",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 55,
+        "title": "바다 별빛",
+        "description": "푸른 별들이 요정 주변을 천천히 돌아요.",
+        "emoji": "💙",
+        "effect": {
+          "color": 4955362,
+          "count": 8,
+          "speed": 0.3
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "halo",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 60,
+        "title": "빛나는 꽃 고리",
+        "description": "요정 머리 위에 꽃빛이 떠올라요.",
+        "emoji": "🌸",
+        "effect": {
+          "halo": true
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "rainbow-orbit",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 80,
+        "title": "무지개 별빛",
+        "description": "알록달록한 별들이 요정을 감싸요.",
+        "emoji": "🌈",
+        "effect": {
+          "rainbow": true,
+          "count": 9,
+          "ring": true
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "comet",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 100,
+        "title": "혜성 날개",
+        "description": "요정이 혜성빛을 펼쳐요.",
+        "emoji": "☄️",
+        "effect": {
+          "comet": true
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "galaxy-glow",
+        "category": "light",
+        "kind": "cosmetic",
+        "cost": 110,
+        "title": "은하수 반짝임",
+        "description": "보라빛 별과 혜성이 함께 반짝여요.",
+        "emoji": "🌌",
+        "effect": {
+          "color": 9728239,
+          "count": 9,
+          "halo": true,
+          "comet": true
+        },
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-sky",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "하늘빛 배움터",
+        "description": "배움터 배경을 맑은 하늘빛으로 꾸며요.",
+        "emoji": "🩵",
+        "colors": [
+          "#e3f4ff",
+          "#f5fbff"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-leaf",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 25,
+        "title": "새싹빛 배움터",
+        "description": "배움터 배경을 연두빛으로 꾸며요.",
+        "emoji": "🌱",
+        "colors": [
+          "#e8f8dc",
+          "#f7fcf1"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-peach",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 25,
+        "title": "복숭아빛 배움터",
+        "description": "배움터 배경을 따뜻한 복숭아빛으로 꾸며요.",
+        "emoji": "🍑",
+        "colors": [
+          "#ffe7dc",
+          "#fff8f3"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-ocean",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 35,
+        "title": "바다빛 배움터",
+        "description": "배움터 배경을 시원한 바다빛으로 꾸며요.",
+        "emoji": "🌊",
+        "colors": [
+          "#dff7f3",
+          "#f4fcfb"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-lemon",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "레몬빛 배움터",
+        "description": "배움터 배경을 환한 레몬빛으로 꾸며요.",
+        "emoji": "🍋",
+        "colors": [
+          "#fff7d4",
+          "#fffdf3"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-lilac",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 40,
+        "title": "라일락빛 배움터",
+        "description": "배움터 배경을 포근한 보라빛으로 꾸며요.",
+        "emoji": "💜",
+        "colors": [
+          "#ece3fc",
+          "#faf7ff"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-rose",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 40,
+        "title": "장미빛 배움터",
+        "description": "배움터 배경을 다정한 분홍빛으로 꾸며요.",
+        "emoji": "🌷",
+        "colors": [
+          "#ffe3ed",
+          "#fff6fa"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "bg-rainbow",
+        "category": "background",
+        "kind": "cosmetic",
+        "cost": 70,
+        "title": "무지개빛 배움터",
+        "description": "배움터 배경에 여러 색이 함께 어울려요.",
+        "emoji": "🌈",
+        "colors": [
+          "#e7f4ff",
+          "#fff0db",
+          "#f0e6ff"
+        ],
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-rabbit",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 15,
+        "title": "토끼 친구",
+        "description": "토끼가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🐰",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-cat",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "고양이 친구",
+        "description": "고양이가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🐱",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-bear",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 30,
+        "title": "곰 친구",
+        "description": "곰이 요정 곁에서 배움을 함께해요.",
+        "emoji": "🐻",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-fox",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 35,
+        "title": "여우 친구",
+        "description": "여우가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🦊",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-owl",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 45,
+        "title": "부엉이 친구",
+        "description": "부엉이가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🦉",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-butterfly",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 40,
+        "title": "나비 친구",
+        "description": "나비가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🦋",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-penguin",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 50,
+        "title": "펭귄 친구",
+        "description": "펭귄이 요정 곁에서 배움을 함께해요.",
+        "emoji": "🐧",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "friend-whale",
+        "category": "friend",
+        "kind": "cosmetic",
+        "cost": 65,
+        "title": "고래 친구",
+        "description": "고래가 요정 곁에서 배움을 함께해요.",
+        "emoji": "🐳",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-flower",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 10,
+        "title": "꽃 응원 마크",
+        "description": "요정 옆에 꽃 마크를 달아요.",
+        "emoji": "🌼",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-leaf",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 15,
+        "title": "새싹 응원 마크",
+        "description": "요정 옆에 새싹 마크를 달아요.",
+        "emoji": "🌱",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-ribbon",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "리본 응원 마크",
+        "description": "요정 옆에 리본 마크를 달아요.",
+        "emoji": "🎀",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-heart",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 25,
+        "title": "하트 응원 마크",
+        "description": "요정 옆에 하트 마크를 달아요.",
+        "emoji": "💗",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-clover",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 30,
+        "title": "네잎클로버 마크",
+        "description": "요정 옆에 클로버 마크를 달아요.",
+        "emoji": "🍀",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-cherry",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "체리 응원 마크",
+        "description": "요정 옆에 체리 마크를 달아요.",
+        "emoji": "🍒",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-moon",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 35,
+        "title": "달 응원 마크",
+        "description": "요정 옆에 초승달 마크를 달아요.",
+        "emoji": "🌙",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "mark-palette",
+        "category": "mark",
+        "kind": "cosmetic",
+        "cost": 40,
+        "title": "알록달록 응원 마크",
+        "description": "요정 옆에 팔레트 마크를 달아요.",
+        "emoji": "🎨",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-curious",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 10,
+        "title": "궁금한 탐험가",
+        "description": "요정 아래에 이름표를 달아요.",
+        "emoji": "🔎",
+        "label": "궁금한 탐험가",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-number",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "숫자 여행자",
+        "description": "요정 아래에 숫자 여행자 이름표를 달아요.",
+        "emoji": "🔢",
+        "label": "숫자 여행자",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-word",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 20,
+        "title": "낱말 수집가",
+        "description": "요정 아래에 낱말 수집가 이름표를 달아요.",
+        "emoji": "📚",
+        "label": "낱말 수집가",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-hello",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 25,
+        "title": "인사 여행자",
+        "description": "요정 아래에 인사 여행자 이름표를 달아요.",
+        "emoji": "👋",
+        "label": "인사 여행자",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-thinker",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 30,
+        "title": "생각 정원사",
+        "description": "요정 아래에 생각 정원사 이름표를 달아요.",
+        "emoji": "🌻",
+        "label": "생각 정원사",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-maker",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 35,
+        "title": "상상 발명가",
+        "description": "요정 아래에 상상 발명가 이름표를 달아요.",
+        "emoji": "💡",
+        "label": "상상 발명가",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-story",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 40,
+        "title": "이야기 작가",
+        "description": "요정 아래에 이야기 작가 이름표를 달아요.",
+        "emoji": "✏️",
+        "label": "이야기 작가",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "title-space",
+        "category": "title",
+        "kind": "cosmetic",
+        "cost": 55,
+        "title": "별빛 모험가",
+        "description": "요정 아래에 별빛 모험가 이름표를 달아요.",
+        "emoji": "🚀",
+        "label": "별빛 모험가",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "story",
+        "category": "family",
+        "kind": "family",
+        "cost": 40,
+        "title": "함께 이야기 읽기",
+        "description": "보호자에게 함께 읽을 시간을 부탁해요.",
+        "emoji": "📖",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "drawing",
+        "category": "family",
+        "kind": "family",
+        "cost": 45,
+        "title": "함께 그림 그리기",
+        "description": "보호자와 함께 그릴 주제와 시간을 정해요.",
+        "emoji": "🖍️",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "paperfold",
+        "category": "family",
+        "kind": "family",
+        "cost": 60,
+        "title": "함께 종이접기",
+        "description": "보호자와 접고 싶은 모양을 함께 정해요.",
+        "emoji": "🧩",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "walk",
+        "category": "family",
+        "kind": "family",
+        "cost": 80,
+        "title": "함께 산책하기",
+        "description": "보호자와 산책할 날을 함께 정해요.",
+        "emoji": "🌳",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "experiment",
+        "category": "family",
+        "kind": "family",
+        "cost": 90,
+        "title": "함께 작은 실험",
+        "description": "보호자와 안전한 놀이 실험을 골라요.",
+        "emoji": "🔬",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "cooking",
+        "category": "family",
+        "kind": "family",
+        "cost": 100,
+        "title": "함께 간식 만들기",
+        "description": "보호자와 만들 수 있는 간식을 의논해요.",
+        "emoji": "🥣",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      },
+      {
+        "id": "picnic",
+        "category": "family",
+        "kind": "family",
+        "cost": 120,
+        "title": "함께 소풍 계획하기",
+        "description": "보호자와 작은 소풍을 의논해요.",
+        "emoji": "🧺",
+        "owned": false,
+        "equipped": false,
+        "pending": null,
+        "canPurchase": true
+      }
+    ],
+    "equipped": null,
+    "badges": [
+      {
+        "id": "first-round",
+        "title": "첫 모험 완주",
+        "emoji": "🌱",
+        "description": "놀이 한 판을 끝까지 해냈어요.",
+        "unlocked": true,
+        "progress": 1,
+        "target": 1
+      },
+      {
+        "id": "three-subjects",
+        "title": "세 가지 탐험가",
+        "emoji": "🧭",
+        "description": "수학·국어·영어를 골고루 만났어요.",
+        "unlocked": true,
+        "progress": 3,
+        "target": 3
+      },
+      {
+        "id": "try-again",
+        "title": "다시 생각하는 힘",
+        "emoji": "💪",
+        "description": "풀이를 보고 다시 연습해 답을 찾았어요.",
+        "unlocked": true,
+        "progress": 1,
+        "target": 1
+      },
+      {
+        "id": "two-days",
+        "title": "다시 만난 배움",
+        "emoji": "🌈",
+        "description": "서로 다른 두 날에 정답을 발견했어요.",
+        "unlocked": false,
+        "progress": 1,
+        "target": 2
+      }
+    ],
+    "milestones": [
+      {
+        "id": "stars-10",
+        "stars": 10,
+        "title": "10별의 발자국",
+        "unlocked": true
+      },
+      {
+        "id": "stars-30",
+        "stars": 30,
+        "title": "30별의 발자국",
+        "unlocked": true
+      },
+      {
+        "id": "stars-60",
+        "stars": 60,
+        "title": "60별의 발자국",
+        "unlocked": true
+      },
+      {
+        "id": "stars-100",
+        "stars": 100,
+        "title": "100별의 발자국",
+        "unlocked": true
+      },
+      {
+        "id": "stars-200",
+        "stars": 200,
+        "title": "200별의 발자국",
+        "unlocked": false
+      },
+      {
+        "id": "stars-400",
+        "stars": 400,
+        "title": "400별의 발자국",
+        "unlocked": false
+      }
+    ],
+    "nextMilestone": {
+      "id": "stars-200",
+      "stars": 200,
+      "title": "200별의 발자국",
+      "unlocked": false
+    },
+    "purchases": [],
+    "requests": [],
+    "storageAvailable": true
+  }
+}

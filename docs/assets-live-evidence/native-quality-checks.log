@@ -1,0 +1,138 @@
+RUN node --check scripts/check-native-art.mjs
+EXIT 0
+RUN node --check scripts/village-browser-qa.mjs
+EXIT 0
+RUN node --check scripts/native-rewards-browser-qa.mjs
+EXIT 0
+RUN node scripts/check-native-art.mjs --unity-root /Users/01chungee10/Github/sparkle-fairy-village --baseline-root /Users/01chungee10/Github/sparkle-learning-hub
+PASS exact native PNG taehee_original
+PASS exact native PNG sehee_original
+PASS exact native PNG star_yellow
+PASS exact native PNG star_blue
+PASS exact native PNG star_purple
+PASS exact native PNG star_rainbow
+PASS exact native PNG seed
+PASS exact native PNG sprout
+PASS exact native PNG bud
+PASS exact native PNG bloom
+PASS exact native PNG gift
+PASS exact native PNG heart
+PASS exact native PNG badge_book
+PASS exact native PNG badge_leaf
+PASS exact native PNG badge_crown
+PASS exact native PNG magic_dust
+PASS exact native PNG ui_mission_panel
+PASS exact native PNG ui_star_pill
+PASS exact native PNG ui_button
+PASS complete native art category contract
+PASS live Unity original and manifest taehee_original
+PASS live Unity original and manifest sehee_original
+PASS live Unity original and manifest star_yellow
+PASS live Unity original and manifest star_blue
+PASS live Unity original and manifest star_purple
+PASS live Unity original and manifest star_rainbow
+PASS live Unity original and manifest seed
+PASS live Unity original and manifest sprout
+PASS live Unity original and manifest bud
+PASS live Unity original and manifest bloom
+PASS live Unity original and manifest gift
+PASS live Unity original and manifest heart
+PASS live Unity original and manifest badge_book
+PASS live Unity original and manifest badge_leaf
+PASS live Unity original and manifest badge_crown
+PASS live Unity original and manifest magic_dust
+PASS live Unity original and manifest ui_mission_panel
+PASS live Unity original and manifest ui_star_pill
+PASS live Unity original and manifest ui_button
+PASS actual allowlist contains only the fourteen approved reward IDs
+PASS unknown and path-like native IDs render no image
+PASS decorative images have empty alt fixed dimensions and safe classes
+PASS actual app and village stage boundary 0/5
+PASS actual app and village stage boundary 1/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 3/5
+PASS actual app and village stage boundary 4/5
+PASS actual app and village stage boundary 5/5
+PASS actual app and village stage boundary 6/5
+PASS actual app and village stage boundary -2/5
+PASS actual app and village stage boundary 0.9/5
+PASS actual app and village stage boundary 1.9/5
+PASS actual app and village stage boundary 2/4
+PASS actual app and village stage boundary 1/3
+PASS actual app and village stage boundary 2/3
+PASS actual app and village stage boundary 3/3
+PASS actual app and village stage boundary NaN/5
+PASS actual app and village stage boundary Infinity/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 1/0
+PASS actual app and village stage boundary 1/-1
+PASS actual app and village stage boundary 1/1.5
+PASS actual app and village stage boundary 1/NaN
+PASS subject star variants follow the actual subject
+PASS locked and truthy-but-unconfirmed badges remain neutral
+PASS only confirmed known badges get earned art
+PASS actual gift catalog preserves specific art and fallback emoji
+PASS round cue counts confirmed answers and never mutates a round
+PASS native UI images are referenced by actual controls in both surfaces
+PASS authoritative model unchanged platform/rewards.js
+PASS authoritative model unchanged platform/reward-catalog.js
+PASS authoritative model unchanged platform/progress.js
+PASS authoritative model unchanged platform/irt.js
+PASS authoritative model unchanged village/village-state.js
+PASS authoritative model unchanged village/village-bridge.js
+native-art PASS 75 checks; Rewards 14 + UI 3 + Characters 2 bytes verified; live Unity comparison true ; baseline model comparison true
+EXIT 0
+RUN node scripts/village-browser-qa.mjs
+PASS phone-portrait real counted orange visual and responsive dialog
+PASS phone-portrait modal focus containment and pause return
+PASS phone-portrait hint UI single display and double submit guard
+PASS phone-portrait pause drops pending and already consumed stale replies
+PASS phone-portrait stale unrelated response cannot replace pending question
+PASS phone-portrait answered resume renders feedback and one NEXT
+PASS phone-portrait empty matching defaults and duplicate mapping ownership
+PASS phone-portrait real zero group has no phantom object
+PASS phone-portrait build stepper and numeric widget retain selected answer
+PASS phone-landscape real counted orange visual and responsive dialog
+PASS phone-landscape modal focus containment and pause return
+PASS phone-landscape hint UI single display and double submit guard
+PASS phone-landscape pause drops pending and already consumed stale replies
+PASS phone-landscape stale unrelated response cannot replace pending question
+PASS phone-landscape answered resume renders feedback and one NEXT
+PASS phone-landscape empty matching defaults and duplicate mapping ownership
+PASS phone-landscape real zero group has no phantom object
+PASS phone-landscape build stepper and numeric widget retain selected answer
+PASS tablet real counted orange visual and responsive dialog
+PASS tablet modal focus containment and pause return
+PASS tablet hint UI single display and double submit guard
+PASS tablet pause drops pending and already consumed stale replies
+PASS tablet stale unrelated response cannot replace pending question
+PASS tablet answered resume renders feedback and one NEXT
+PASS tablet empty matching defaults and duplicate mapping ownership
+PASS tablet real zero group has no phantom object
+PASS tablet build stepper and numeric widget retain selected answer
+PASS desktop real counted orange visual and responsive dialog
+PASS desktop modal focus containment and pause return
+PASS desktop hint UI single display and double submit guard
+PASS desktop pause drops pending and already consumed stale replies
+PASS desktop stale unrelated response cannot replace pending question
+PASS desktop answered resume renders feedback and one NEXT
+PASS desktop empty matching defaults and duplicate mapping ownership
+PASS desktop real zero group has no phantom object
+PASS desktop build stepper and numeric widget retain selected answer
+REPORT /Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/qa-dom.json PASS true TESTS 36 ERRORS 0
+EXIT 0
+RUN node scripts/native-rewards-browser-qa.mjs
+PASS served source and 19 native PNGs match the isolated repo byte-for-byte
+PASS fresh context has zero stars, no purchased gifts, and four locked badges
+locator.evaluate: Error: strict mode violation: locator('.fairy-portrait') resolved to 2 elements:
+    1) <span role="img" aria-label="태희의 분홍 별 요정" class="fairy-portrait tae tiny"></span> aka getByRole('button', { name: '아이 바꾸기, 현재 태희' })
+    2) <span role="img" aria-label="태희의 분홍 별 요정" class="fairy-portrait tae "></span> aka locator('#main').getByRole('img', { name: '태희의 분홍 별 요정' })
+
+Call log:
+[2m  - waiting for locator('.fairy-portrait')[22m
+
+    at /Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/native-rewards-browser-qa.mjs:57:54
+    at async check (/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/native-rewards-browser-qa.mjs:17:32)
+    at async file:///Users/01chungee10/Github/sparkle-learning-hub-quality-v2/scripts/native-rewards-browser-qa.mjs:53:2
+Native rewards browser QA FAIL (2 checks), /Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/browser/native-rewards-browser-qa.json
+EXIT 1

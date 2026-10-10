@@ -1,0 +1,104 @@
+{
+  "createdAt": "2026-10-10T06:31:13.903695+00:00",
+  "buildJob": "a830be4d-df60-4441-844b-867b2d90153c",
+  "buildSuccessLog": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/unity-assets-final-build.log",
+  "version": "0.3.1",
+  "cacheVersion": "20261010e",
+  "files": [
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.loader.js",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub-quality-v2/village/Build/WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.data.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub-quality-v2/village/Build/WebGL.data.unityweb",
+      "bytes": 10296797,
+      "sha256": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.framework.js.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub-quality-v2/village/Build/WebGL.framework.js.unityweb",
+      "bytes": 70673,
+      "sha256": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.wasm.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub-quality-v2/village/Build/WebGL.wasm.unityweb",
+      "bytes": 6000903,
+      "sha256": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.loader.js",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.loader.js",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub/village/Build/WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.data.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.data.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub/village/Build/WebGL.data.unityweb",
+      "bytes": 10296797,
+      "sha256": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.framework.js.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.framework.js.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub/village/Build/WebGL.framework.js.unityweb",
+      "bytes": 70673,
+      "sha256": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-fairy-village/Builds/WebGL/Build/WebGL.wasm.unityweb",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub/village/Build/WebGL.wasm.unityweb",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub/village/Build/WebGL.wasm.unityweb",
+      "bytes": 6000903,
+      "sha256": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336"
+    }
+  ],
+  "indexFiles": [
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub-quality-v2/village/index.html",
+      "sha256": "c9ff11c225843be7360e1c66762015d77fad71adf335b3ae747bdf632cce94dc",
+      "previousSha256": "c252cbf5ca928452d3d02efe90df06b41d6254a800c2755e6a0b59a6d914cbee"
+    },
+    {
+      "source": "/Users/01chungee10/Github/sparkle-learning-hub-quality-v2/village/index.html",
+      "output": "/Users/01chungee10/Github/sparkle-learning-hub/village/index.html",
+      "backup": "/Users/01chungee10/AI-Interop/evidence/sparkle-assets-live-20261010/previous-before-garden-fit/sparkle-learning-hub/village/index.html",
+      "sha256": "c9ff11c225843be7360e1c66762015d77fad71adf335b3ae747bdf632cce94dc",
+      "previousSha256": "c252cbf5ca928452d3d02efe90df06b41d6254a800c2755e6a0b59a6d914cbee"
+    }
+  ],
+  "servedByteChecks": [
+    {
+      "path": "village/Build/WebGL.loader.js",
+      "sha256": "722800244716e2e99378d47d8eb9e4fa5c44421e78b4051fe6ecd8e5e48ca49f",
+      "match": true
+    },
+    {
+      "path": "village/Build/WebGL.data.unityweb",
+      "sha256": "df7b394809ea00d82f0714f893f7c96f70f34b84d38dc5c6d864411c0cd96df0",
+      "match": true
+    },
+    {
+      "path": "village/Build/WebGL.framework.js.unityweb",
+      "sha256": "31ba57ed63b2bbd47de2d730d8f427914cd9d9079cb3098aa3f2bf5fcbb8634a",
+      "match": true
+    },
+    {
+      "path": "village/Build/WebGL.wasm.unityweb",
+      "sha256": "58141db26efd6b0a252134bc85b4f9cc24a8a067071ca457f0b17499c873d336",
+      "match": true
+    }
+  ],
+  "servedIndexMatches": true
+}

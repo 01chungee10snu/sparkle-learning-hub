@@ -1,0 +1,38 @@
+{
+  "buildJob": "a830be4d-df60-4441-844b-867b2d90153c",
+  "runtimeSources": [
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageArt.cs",
+      "sha256": "66759cb7a830be63a4477357a2cdd2f64a9716bfd0731742b91e3b238b0fdff6"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageAssetLibrary.cs",
+      "sha256": "c6571056287b8d2092e607b1f49b6a4069a2cbce3423315b63af6449ff77f50e"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBillboard.cs",
+      "sha256": "a97b67257ec677c4793a4520f4879ed66a899f77d461a5be8d91e02ca381fe40"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageHotspot.cs",
+      "sha256": "503b5134211d2054649ff52a014f35bca920a95e5169e9344e45f272bfa2e4b9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageWorld.cs",
+      "sha256": "2b919a1ec3c093fdd73ececd74fb5eb7276204eb8189849e3e95fc413208bee9"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageRuntime.cs",
+      "sha256": "6af41a4f7eb29c49f51cfd61a2a6065aceb276df083060d034779842af273d20"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Scripts/VillageBridge.cs",
+      "sha256": "4a2f0f103bb462f79abf599add10d9cd358188b433930529157632356a8870f4"
+    },
+    {
+      "path": "/Users/01chungee10/Github/sparkle-fairy-village/Assets/Resources/village-assets.asset",
+      "sha256": "a48fc8c374442bd4d2a62613c03b9beae235714c930825553847adacc0bcc1ae"
+    }
+  ],
+  "runtimeVersion": "0.3.1"
+}

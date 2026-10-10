@@ -71,3 +71,10 @@
 
 .vh-reward-art{text-align:center;margin:0 auto 8px;height:88px}.vh-reward-art img{height:88px;width:88px;object-fit:contain;filter:drop-shadow(0 5px 6px #b9a5cc44)}
 @media(max-height:500px){.vh-reward-art,.vh-reward-art img{height:54px}.vh-reward-art img{width:54px}}
+
+/* Native UI and independent fairy sprites retain semantic controls and state guards. */
+.vh-action,.vh-wide,.vh-secondary{background-image:url('./assets/ui_button.png')!important;background-size:100% 100%!important;background-repeat:no-repeat!important;background-position:center!important;background-blend-mode:soft-light}
+.vh-currency-art,.vh-round-image{width:20px;height:20px;object-fit:contain;vertical-align:middle;flex-shrink:0}
+.vh-progress{display:inline-flex;align-items:center;gap:4px}
+.vh-avatar{background-image:url('./assets/taehee_original.png');background-size:contain;background-position:center bottom;mix-blend-mode:normal}
+#village-ui[data-who="se"] .vh-avatar{background-image:url('./assets/sehee_original.png');background-size:contain;background-position:center bottom}

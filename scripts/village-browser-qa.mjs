@@ -11,7 +11,23 @@ await Promise.all([access(CHROME),access(PLAYWRIGHT),mkdir(OUTPUT,{recursive:tru
 const playwrightModule=await import(PLAYWRIGHT);
 const {chromium}=playwrightModule.chromium?playwrightModule:playwrightModule.default;
 const browser=await chromium.launch({headless:true,executablePath:CHROME,args:['--enable-webgl','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
-const results=[],pageErrors=[],screenshots=[],roundEvidence=[],pointerObservations=[];
+const results=[],pageErrors=[],screenshots=[],roundEvidence=[],pointerObservations=[],prefabEvents=[],unityArtErrors=[],consoleErrors=[];
+const expectedPrefabIds=["Characters/sehee_original","Characters/taehee_original","Rewards/bloom","World/balloon","World/banner","World/bench","World/bridge_stone","World/bridge_wood","World/butterfly","World/family_gazebo","World/fence","World/flowers_blue","World/flowers_coral","World/flowers_lilac","World/flowers_pink","World/flowers_sun","World/flowers_white","World/fountain","World/gift_chest","World/grass_tuft","World/house_cake","World/house_flower","World/house_leaf","World/house_library","World/house_moon","World/house_shop","World/lamp","World/learning_castle","World/mailbox","World/mushroom","World/npc_bunny","World/npc_cat","World/npc_owl","World/npc_squirrel","World/picnic_basket","World/pond","World/post_office","World/signpost","World/stepping_stones","World/tree_blush","World/tree_fir","World/tree_gold","World/tree_lilac","World/tree_mint","World/tree_oak","World/waterfall"];
+function prefabUsage(){
+ const usedIds=[...new Set(prefabEvents.map(event=>event.id))].sort();
+ return {scope:'actual instantiated World 43 + Characters 2 + confirmed Rewards/bloom, across isolated profile contexts and home/plaza',
+  expectedIds:expectedPrefabIds,usedIds,missingIds:expectedPrefabIds.filter(id=>!usedIds.includes(id)),
+  unexpectedIds:usedIds.filter(id=>!expectedPrefabIds.includes(id)),events:prefabEvents};
+}
+function monitorUnity(page,viewport){
+ page.on('console',message=>{
+  const text=message.text(),match=text.match(/MAGIC_VILLAGE_PREFAB_USED id=([A-Za-z0-9_/-]+)/);
+  if(match)prefabEvents.push({viewport,id:match[1],type:message.type(),text});
+  if(message.type()==='error')consoleErrors.push({viewport,text});
+  if(/(?:village|independent).*?(?:prefab|asset).*?(?:missing|no sprite)|Required village asset missing/i.test(text))
+   unityArtErrors.push({viewport,type:message.type(),text});
+ });
+}
 async function check(viewport,name,fn){
  try{await fn();results.push({viewport,name,pass:true});console.log('PASS',viewport,name);}
  catch(error){results.push({viewport,name,pass:false,error:error.message});console.error('FAIL',viewport,name,error.message);}
@@ -26,7 +42,7 @@ function publicItem(item,gameId='snack-count'){
  emoji:item.interaction?.emoji??'⭐',unit:item.interaction?.unit??'',target:kind==='build'?item.interaction.target:0,max:kind==='build'?item.interaction.max:0,
  hintAvailable:true,index:1,total:3};
 }
-const sourceFiles=['village/village-ui.js','village/village-bridge.js','village/village-ui.css','village/index.html','village/village-state.js','platform/progress.js','platform/rewards.js','platform/reward-catalog.js','platform/irt.js','games/catalog.json','games/irt-bank.json','games/snack-count/game.json','games/measure-lab/game.json','games/kind-dialogue/game.json','scripts/village-browser-qa.mjs','village/assets/ui_mission_panel.png','village/assets/ui_star_pill.png','village/assets/ui_button.png','village/assets/star_yellow.png','village/assets/sprout.png','village/assets/bloom.png'];
+const sourceFiles=["app.js","experience.css","village/village-ui.js","village/village-bridge.js","village/village-ui.css","village/index.html","village/village-state.js","platform/progress.js","platform/rewards.js","platform/reward-catalog.js","platform/irt.js","games/catalog.json","games/irt-bank.json","games/snack-count/game.json","games/measure-lab/game.json","games/kind-dialogue/game.json","scripts/village-browser-qa.mjs","village/assets/star_yellow.png","village/assets/star_blue.png","village/assets/star_purple.png","village/assets/star_rainbow.png","village/assets/seed.png","village/assets/sprout.png","village/assets/bud.png","village/assets/bloom.png","village/assets/gift.png","village/assets/heart.png","village/assets/badge_book.png","village/assets/badge_leaf.png","village/assets/badge_crown.png","village/assets/magic_dust.png","village/assets/ui_mission_panel.png","village/assets/ui_star_pill.png","village/assets/ui_button.png","village/assets/taehee_original.png","village/assets/sehee_original.png","scripts/check-native-art.mjs"];
 const sourceHashes={},buildHashes={};
 if(full)for(const name of ['WebGL','sparkle-fairy-village'])for(const ext of ['loader.js','data','data.unityweb','framework.js','framework.js.unityweb','wasm','wasm.unityweb']){
  const relative='village/Build/'+name+'.'+ext;
@@ -63,6 +79,8 @@ try{
     assert.ok(box.x>=-1&&box.y>=-1&&box.x+box.width<=size.width+1&&box.y+box.height<=size.height+1,'Dialog remains in the viewport');
     const spill=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);assert.equal(spill,false);
     assert.equal(await page.locator('#vh-hint').isVisible(),true);
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'seed');
+    assert.equal(await page.locator('.vh-round-image').getAttribute('src'),'./assets/seed.png');
     const file=path.join(OUTPUT,size.name+'-choice.png');await page.screenshot({path:file});screenshots.push(file);
    });
    await check(size.name,'modal focus containment and pause return',async()=>{
@@ -84,6 +102,9 @@ try{
     await respond(page,submit,{correct:true,earned:10,explanation:'물건을 하나씩 세어 네 개를 찾았어요.'});
     assert.match(await page.locator('#vh-title').textContent(),/발견/);
     assert.equal(await page.locator('#vh-hint').isVisible(),false);
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'sprout','The first graded answer counts as one of three confirmed answers');
+    assert.equal(await page.locator('.vh-round-image').getAttribute('src'),'./assets/sprout.png');
+    assert.equal(await page.locator('.vh-reward-art img').getAttribute('src'),'./assets/star_yellow.png');
    });
    await check(size.name,'pause drops pending and already consumed stale replies',async()=>{
     await show(page,choice);await page.locator('.vh-option').first().click();
@@ -109,7 +130,19 @@ try{
     assert.match(await page.locator('.vh-prompt').textContent(),/다시 생각/);
     await page.getByRole('button',{name:'다음 이야기 →'}).dblclick();
     const next=await lastRequest(page,'NEXT');assert.equal(await page.evaluate(()=>window.qa.requests.filter(r=>r.action==='NEXT').length),1);
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'sprout','An answered resume preserves its one confirmed answer');
     await respond(page,next,{question:{...choice,index:2}});assert.equal(await page.locator('#vh-counter').textContent(),'2 / 3');
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'sprout','NEXT presents question two without crediting a second answer');
+    await show(page,{...choice,index:3});
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'bud','Two confirmed answers precede the third question');
+    await page.locator('.vh-option').first().click();
+    const finalAnswer=await lastRequest(page,'SUBMIT');await respond(page,finalAnswer,{correct:true,earned:10,explanation:'마지막 답도 확인했어요.'});
+    await page.getByRole('button',{name:'다음 이야기 →'}).click();
+    const finalNext=await lastRequest(page,'NEXT');await respond(page,finalNext,{finished:true});
+    await page.evaluate(()=>window.qa.ui.update({action:'COMPLETE_WORLD',requestId:'fixture-complete-art',ok:true,who:'se',available:30,flowers:2,familyFlowers:4,gardenAdded:true}));
+    assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),'bloom','A completed round has all confirmed answers');
+    assert.equal(await page.locator('.vh-round-image').getAttribute('src'),'./assets/bloom.png');
+    assert.equal(await page.locator('.vh-reward-art img').getAttribute('src'),'./assets/bloom.png');
    });
    await check(size.name,'empty matching defaults and duplicate mapping ownership',async()=>{
     const q=publicItem(measure.questions.find(q=>q.interaction?.type==='match'),'measure-lab');
@@ -169,7 +202,7 @@ try{
   }
   for(const child of [{who:'tae',name:'태희',total:5,viewport:{width:1280,height:800}},{who:'se',name:'세희',total:3,viewport:{width:390,height:844}}]){
    const context=await browser.newContext({viewport:child.viewport,locale:'ko-KR',reducedMotion:'reduce'});
-   const page=await context.newPage(),label='webgl-'+child.who;page.on('pageerror',e=>pageErrors.push({viewport:label,error:e.message}));
+   const page=await context.newPage(),label='webgl-'+child.who;page.on('pageerror',e=>pageErrors.push({viewport:label,error:e.message}));monitorUnity(page,label);
    let completed;
    try{
     await page.goto(ORIGIN+'/village/',{waitUntil:'networkidle'});
@@ -196,7 +229,10 @@ try{
       else if(mode==='numeric'){await page.getByRole('textbox',{name:'숫자 답'}).fill(String(q.interaction.target));await page.locator('.vh-wide').click();}
       else{const selections=mode==='match'?q.interaction.pairs:q.interaction.order;for(let i=0;i<selections.length;i++)await page.locator('.vh-pair select').nth(i).selectOption(String(selections[i]));await page.locator('.vh-wide').click();}
       await page.getByRole('button',{name:'다음 이야기 →'}).waitFor({state:'visible',timeout:30000});
-      assert.equal(await page.locator('.vh-reward-art img').getAttribute('src'),'./assets/star_yellow.png');
+      const rewardId={'measure-lab':'star_yellow','snack-count':'star_yellow','kind-dialogue':'star_purple'}[data.gameId];
+      assert.ok(rewardId,'The current actual game must have an explicit subject star mapping');
+      assert.equal(await page.locator('.vh-reward-art img').getAttribute('src'),'./assets/'+rewardId+'.png');
+      assert.equal(await page.locator('#vh-counter').getAttribute('data-stage'),count+1===child.total?'bloom':(count+1)/child.total<.5?'sprout':'bud');
       const graded=await snapshot(page,child.who),game=graded.games.find(g=>g.id===data.gameId);
       assert.equal(game.round.answers.length,count+1);assert.equal(game.round.answers[count].correct,true);
       await page.getByRole('button',{name:'다음 이야기 →'}).click();
@@ -261,11 +297,21 @@ try{
     console.log('POINTER',child.who,'NPC_OPENED',npcOpened);
    }finally{await context.close();}
   }
+  await check('webgl-union','all 46 required runtime prefabs instantiated and no missing prefab errors',async()=>{
+   const coverage=prefabUsage();
+   assert.equal(coverage.expectedIds.length,46);
+   assert.ok(coverage.events.length>0,'The built Unity runtime must emit actual prefab usage receipts');
+   assert.deepEqual(coverage.missingIds,[],'Every required World/Characters/bloom ID must occur in the actual Unity console logs');
+   assert.deepEqual(coverage.unexpectedIds,[],'Runtime prefab receipts stay within the expected art contract');
+   assert.deepEqual(unityArtErrors,[],'No missing library, prefab, or sprite error may occur');
+   assert.deepEqual(consoleErrors,[],'Actual WebGL runs must have no console errors');
+  });
  }
 }finally{
  await browser.close();
  const report={createdAt:new Date().toISOString(),mode:full?'headless-webgl':'headless-dom-fixtures',origin:ORIGIN,chrome:CHROME,
  realDevice:false,childStorage:'isolated synthetic browser contexts',sourceHashes,buildHashes,tests:results,pageErrors,screenshots,roundEvidence,pointerObservations,
+ prefabUsage:full?prefabUsage():null,unityArtErrors,consoleErrors,
  pass:results.length>0&&results.every(r=>r.pass)&&pageErrors.length===0};
  const output=path.join(OUTPUT,full?'qa-webgl.json':'qa-dom.json');await writeFile(output,JSON.stringify(report,null,2)+'\n');
  console.log('REPORT',output,'PASS',report.pass,'TESTS',results.length,'ERRORS',pageErrors.length);
