@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 4179 --bind 127.0.0.1",
-    "check": "node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final",
+    "check": "node --check app.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs",
     "new:game": "node scripts/new-game.mjs"
   },
   "dependencies": {
