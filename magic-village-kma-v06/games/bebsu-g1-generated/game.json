@@ -1,0 +1,4613 @@
+{
+  "id": "bebsu-g1-generated",
+  "subject": "math",
+  "title": "뱁수 초1 수학",
+  "description": "수 세기·연산·자릿값·규칙·시계·길이를 만나요.",
+  "emoji": "🔢",
+  "growth": false,
+  "gradeBand": "G1",
+  "prerequisite": "아이와 보호자가 문제 수준을 보고 직접 선택해요.",
+  "offline": "풀이를 말로 설명하고, 필요한 수나 도형을 종이와 블록으로 확인해 보세요.",
+  "questions": [
+    {
+      "id": "bebsu-8f23f51b3f744e5c",
+      "title": "초1 수학 · 1번",
+      "story": "상자 안에 구슬이 7개 있습니다. 구슬은 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "문장에 구슬이 7개 있다고 했으므로 모두 7개입니다."
+      ],
+      "skill": "counting",
+      "originalStem": "상자 안에 구슬이 7개 있습니다. 구슬은 모두 몇 개입니까?",
+      "originalExplanation": "문장에 구슬이 7개 있다고 했으므로 모두 7개입니다.",
+      "source": {
+        "id": "gen:g1:s01:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s01:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -2,
+        "skillCode": "core.g1.counting",
+        "examQuestionNo": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-5a2c89bd4aafc507",
+      "title": "초1 수학 · 1번",
+      "story": "상자 안에 연필이 8개 있습니다. 연필은 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "문장에 연필이 8개 있다고 했으므로 모두 8개입니다."
+      ],
+      "skill": "counting",
+      "originalStem": "상자 안에 연필이 8개 있습니다. 연필은 모두 몇 개입니까?",
+      "originalExplanation": "문장에 연필이 8개 있다고 했으므로 모두 8개입니다.",
+      "source": {
+        "id": "gen:g1:s01:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s01:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -2,
+        "skillCode": "core.g1.counting",
+        "examQuestionNo": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-512eee4e49f71859",
+      "title": "초1 수학 · 1번",
+      "story": "상자 안에 연필이 5개 있습니다. 연필은 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "문장에 연필이 5개 있다고 했으므로 모두 5개입니다."
+      ],
+      "skill": "counting",
+      "originalStem": "상자 안에 연필이 5개 있습니다. 연필은 모두 몇 개입니까?",
+      "originalExplanation": "문장에 연필이 5개 있다고 했으므로 모두 5개입니다.",
+      "source": {
+        "id": "gen:g1:s01:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s01:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -2,
+        "skillCode": "core.g1.counting",
+        "examQuestionNo": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-b66bd4247e2e3605",
+      "title": "초1 수학 · 1번",
+      "story": "상자 안에 사과가 3개 있습니다. 사과는 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "문장에 사과가 3개 있다고 했으므로 모두 3개입니다."
+      ],
+      "skill": "counting",
+      "originalStem": "상자 안에 사과가 3개 있습니다. 사과는 모두 몇 개입니까?",
+      "originalExplanation": "문장에 사과가 3개 있다고 했으므로 모두 3개입니다.",
+      "source": {
+        "id": "gen:g1:s01:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "3",
+          "tolerance": 0,
+          "type": "number",
+          "value": 3
+        },
+        "rawAnswer": "3",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s01:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -2,
+        "skillCode": "core.g1.counting",
+        "examQuestionNo": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-411d1399624116db",
+      "title": "초1 수학 · 2번",
+      "story": "13 다음에 오는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "13에서 하나 더 세면 14입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "13 다음에 오는 수는 무엇입니까?",
+      "originalExplanation": "13에서 하나 더 세면 14입니다.",
+      "source": {
+        "id": "gen:g1:s02:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s02:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.83,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 2
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-c734d0aa39de6f3f",
+      "title": "초1 수학 · 2번",
+      "story": "10 다음에 오는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10에서 하나 더 세면 11입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "10 다음에 오는 수는 무엇입니까?",
+      "originalExplanation": "10에서 하나 더 세면 11입니다.",
+      "source": {
+        "id": "gen:g1:s02:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s02:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.83,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 2
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-c0552d13958eb807",
+      "title": "초1 수학 · 2번",
+      "story": "8 다음에 오는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "8에서 하나 더 세면 9입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "8 다음에 오는 수는 무엇입니까?",
+      "originalExplanation": "8에서 하나 더 세면 9입니다.",
+      "source": {
+        "id": "gen:g1:s02:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "9",
+          "tolerance": 0,
+          "type": "number",
+          "value": 9
+        },
+        "rawAnswer": "9",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s02:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.83,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 2
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-dd64af555efcf850",
+      "title": "초1 수학 · 2번",
+      "story": "1 다음에 오는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "1에서 하나 더 세면 2입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "1 다음에 오는 수는 무엇입니까?",
+      "originalExplanation": "1에서 하나 더 세면 2입니다.",
+      "source": {
+        "id": "gen:g1:s02:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "2",
+          "tolerance": 0,
+          "type": "number",
+          "value": 2
+        },
+        "rawAnswer": "2",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s02:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.83,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 2
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-d42a47eb0c8bba9e",
+      "title": "초1 수학 · 3번",
+      "story": "2 + 7 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "2에서 7만큼 더 세면 답은 9입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "2 + 7 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "2에서 7만큼 더 세면 답은 9입니다.",
+      "source": {
+        "id": "gen:g1:s03:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "9",
+          "tolerance": 0,
+          "type": "number",
+          "value": 9
+        },
+        "rawAnswer": "9",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s03:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.67,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 3
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-eb07b1d0120df5d0",
+      "title": "초1 수학 · 3번",
+      "story": "2 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "2에서 5만큼 더 세면 답은 7입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "2 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "2에서 5만큼 더 세면 답은 7입니다.",
+      "source": {
+        "id": "gen:g1:s03:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s03:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.67,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 3
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-1f56d5fa28cd9633",
+      "title": "초1 수학 · 3번",
+      "story": "1 + 6 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "1에서 6만큼 더 세면 답은 7입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "1 + 6 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "1에서 6만큼 더 세면 답은 7입니다.",
+      "source": {
+        "id": "gen:g1:s03:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s03:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.67,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 3
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-e5d2b4d65c9b00c1",
+      "title": "초1 수학 · 3번",
+      "story": "5 + 3 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "5에서 3만큼 더 세면 답은 8입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "5 + 3 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "5에서 3만큼 더 세면 답은 8입니다.",
+      "source": {
+        "id": "gen:g1:s03:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s03:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.67,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 3
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-da89de3e78f77f73",
+      "title": "초1 수학 · 4번",
+      "story": "10 - 9 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10에서 9만큼 빼면 남는 수는 1입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "10 - 9 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "10에서 9만큼 빼면 남는 수는 1입니다.",
+      "source": {
+        "id": "gen:g1:s04:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "1",
+          "tolerance": 0,
+          "type": "number",
+          "value": 1
+        },
+        "rawAnswer": "1",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s04:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.5,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 4
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-f8c7ebbd309a97b8",
+      "title": "초1 수학 · 4번",
+      "story": "7 - 2 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "7에서 2만큼 빼면 남는 수는 5입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "7 - 2 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "7에서 2만큼 빼면 남는 수는 5입니다.",
+      "source": {
+        "id": "gen:g1:s04:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s04:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.5,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 4
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-3b93cf0be391d85b",
+      "title": "초1 수학 · 4번",
+      "story": "6 - 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "6에서 5만큼 빼면 남는 수는 1입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "6 - 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "6에서 5만큼 빼면 남는 수는 1입니다.",
+      "source": {
+        "id": "gen:g1:s04:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "1",
+          "tolerance": 0,
+          "type": "number",
+          "value": 1
+        },
+        "rawAnswer": "1",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s04:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.5,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 4
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-0edce1c2a3eca86c",
+      "title": "초1 수학 · 4번",
+      "story": "6 - 1 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "6에서 1만큼 빼면 남는 수는 5입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "6 - 1 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "6에서 1만큼 빼면 남는 수는 5입니다.",
+      "source": {
+        "id": "gen:g1:s04:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s04:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.5,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 4
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-c3e4d74e87f246d8",
+      "title": "초1 수학 · 5번",
+      "story": "두 수 14, 7 중 더 큰 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 수를 비교하면 더 큰 수는 14입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 14, 7 중 더 큰 수는 무엇입니까?",
+      "originalExplanation": "두 수를 비교하면 더 큰 수는 14입니다.",
+      "source": {
+        "id": "gen:g1:s05:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s05:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 5
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-b871c83f7fe36758",
+      "title": "초1 수학 · 5번",
+      "story": "두 수 11, 17 중 더 큰 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 수를 비교하면 더 큰 수는 17입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 11, 17 중 더 큰 수는 무엇입니까?",
+      "originalExplanation": "두 수를 비교하면 더 큰 수는 17입니다.",
+      "source": {
+        "id": "gen:g1:s05:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "17",
+          "tolerance": 0,
+          "type": "number",
+          "value": 17
+        },
+        "rawAnswer": "17",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s05:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 5
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a419416e872dab90",
+      "title": "초1 수학 · 5번",
+      "story": "두 수 17, 14 중 더 큰 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 수를 비교하면 더 큰 수는 17입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 17, 14 중 더 큰 수는 무엇입니까?",
+      "originalExplanation": "두 수를 비교하면 더 큰 수는 17입니다.",
+      "source": {
+        "id": "gen:g1:s05:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "17",
+          "tolerance": 0,
+          "type": "number",
+          "value": 17
+        },
+        "rawAnswer": "17",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s05:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 5
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-5f02410f58c37b4b",
+      "title": "초1 수학 · 5번",
+      "story": "두 수 2, 6 중 더 큰 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 수를 비교하면 더 큰 수는 6입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 2, 6 중 더 큰 수는 무엇입니까?",
+      "originalExplanation": "두 수를 비교하면 더 큰 수는 6입니다.",
+      "source": {
+        "id": "gen:g1:s05:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "6",
+          "tolerance": 0,
+          "type": "number",
+          "value": 6
+        },
+        "rawAnswer": "6",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s05:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 5
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-225bb12bdda99657",
+      "title": "초1 수학 · 6번",
+      "story": "9 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "9에서 10이 되려면 1만큼 더해야 합니다."
+      ],
+      "skill": "addition",
+      "originalStem": "9 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "9에서 10이 되려면 1만큼 더해야 합니다.",
+      "source": {
+        "id": "gen:g1:s06:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "1",
+          "tolerance": 0,
+          "type": "number",
+          "value": 1
+        },
+        "rawAnswer": "1",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s06:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 6
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-87d89fa4b1d68dd4",
+      "title": "초1 수학 · 6번",
+      "story": "1 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "1에서 10이 되려면 9만큼 더해야 합니다."
+      ],
+      "skill": "addition",
+      "originalStem": "1 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "1에서 10이 되려면 9만큼 더해야 합니다.",
+      "source": {
+        "id": "gen:g1:s06:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "9",
+          "tolerance": 0,
+          "type": "number",
+          "value": 9
+        },
+        "rawAnswer": "9",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s06:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 6
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-84ddd64c756b7cf2",
+      "title": "초1 수학 · 6번",
+      "story": "6 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "6에서 10이 되려면 4만큼 더해야 합니다."
+      ],
+      "skill": "addition",
+      "originalStem": "6 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "6에서 10이 되려면 4만큼 더해야 합니다.",
+      "source": {
+        "id": "gen:g1:s06:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s06:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 6
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-d4ad89da9d86917e",
+      "title": "초1 수학 · 6번",
+      "story": "8 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "8에서 10이 되려면 2만큼 더해야 합니다."
+      ],
+      "skill": "addition",
+      "originalStem": "8 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "8에서 10이 되려면 2만큼 더해야 합니다.",
+      "source": {
+        "id": "gen:g1:s06:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "2",
+          "tolerance": 0,
+          "type": "number",
+          "value": 2
+        },
+        "rawAnswer": "2",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s06:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 6
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-802e3fe72f42f279",
+      "title": "초1 수학 · 7번",
+      "story": "십의 자리 숫자가 1이고 일의 자리 숫자가 7인 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 7이고, 10에 그 수를 더하면 17입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십의 자리 숫자가 1이고 일의 자리 숫자가 7인 수는 무엇입니까?",
+      "originalExplanation": "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 7이고, 10에 그 수를 더하면 17입니다.",
+      "source": {
+        "id": "gen:g1:s07:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "17",
+          "tolerance": 0,
+          "type": "number",
+          "value": 17
+        },
+        "rawAnswer": "17",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s07:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-1ba4ba5c712abd84",
+      "title": "초1 수학 · 7번",
+      "story": "십의 자리 숫자가 1이고 일의 자리 숫자가 6인 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 6이고, 10에 그 수를 더하면 16입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십의 자리 숫자가 1이고 일의 자리 숫자가 6인 수는 무엇입니까?",
+      "originalExplanation": "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 6이고, 10에 그 수를 더하면 16입니다.",
+      "source": {
+        "id": "gen:g1:s07:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "16",
+          "tolerance": 0,
+          "type": "number",
+          "value": 16
+        },
+        "rawAnswer": "16",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s07:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 16,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-4b1f608058499cb0",
+      "title": "초1 수학 · 7번",
+      "story": "십의 자리 숫자가 1이고 일의 자리 숫자가 1인 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 1이고, 10에 그 수를 더하면 11입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십의 자리 숫자가 1이고 일의 자리 숫자가 1인 수는 무엇입니까?",
+      "originalExplanation": "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 1이고, 10에 그 수를 더하면 11입니다.",
+      "source": {
+        "id": "gen:g1:s07:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s07:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-69054916595796f6",
+      "title": "초1 수학 · 7번",
+      "story": "십의 자리 숫자가 1이고 일의 자리 숫자가 5인 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 5이고, 10에 그 수를 더하면 15입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십의 자리 숫자가 1이고 일의 자리 숫자가 5인 수는 무엇입니까?",
+      "originalExplanation": "십의 자리 1은 10을 뜻합니다. 일의 자리 수는 5이고, 10에 그 수를 더하면 15입니다.",
+      "source": {
+        "id": "gen:g1:s07:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s07:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -1,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-187b60a831b0628e",
+      "title": "초1 수학 · 8번",
+      "story": "사과가 2개 있었는데 2개를 더 받았습니다. 사과는 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "처음 2개에 2개를 더하므로 2 + 2 = 4입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "사과가 2개 있었는데 2개를 더 받았습니다. 사과는 모두 몇 개입니까?",
+      "originalExplanation": "처음 2개에 2개를 더하므로 2 + 2 = 4입니다.",
+      "source": {
+        "id": "gen:g1:s08:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s08:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.83,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 8
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-cfe1631250b97990",
+      "title": "초1 수학 · 8번",
+      "story": "블록이 3개 있었는데 2개를 더 받았습니다. 블록은 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "처음 3개에 2개를 더하므로 3 + 2 = 5입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "블록이 3개 있었는데 2개를 더 받았습니다. 블록은 모두 몇 개입니까?",
+      "originalExplanation": "처음 3개에 2개를 더하므로 3 + 2 = 5입니다.",
+      "source": {
+        "id": "gen:g1:s08:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s08:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.83,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 8
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-eec860ce33084192",
+      "title": "초1 수학 · 8번",
+      "story": "사과가 4개 있었는데 6개를 더 받았습니다. 사과는 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "처음 4개에 6개를 더하므로 4 + 6 = 10입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "사과가 4개 있었는데 6개를 더 받았습니다. 사과는 모두 몇 개입니까?",
+      "originalExplanation": "처음 4개에 6개를 더하므로 4 + 6 = 10입니다.",
+      "source": {
+        "id": "gen:g1:s08:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s08:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.83,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 8
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-c82be157104c44c7",
+      "title": "초1 수학 · 8번",
+      "story": "스티커가 3개 있었는데 7개를 더 받았습니다. 스티커는 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "처음 3개에 7개를 더하므로 3 + 7 = 10입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "스티커가 3개 있었는데 7개를 더 받았습니다. 스티커는 모두 몇 개입니까?",
+      "originalExplanation": "처음 3개에 7개를 더하므로 3 + 7 = 10입니다.",
+      "source": {
+        "id": "gen:g1:s08:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s08:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.83,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 8
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-7ed37d92ce260054",
+      "title": "초1 수학 · 9번",
+      "story": "공이 12개 있었습니다. 그중 6개를 사용했습니다. 남은 공은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "전체 12개에서 6개를 빼면 12 - 6 = 6입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "공이 12개 있었습니다. 그중 6개를 사용했습니다. 남은 공은 몇 개입니까?",
+      "originalExplanation": "전체 12개에서 6개를 빼면 12 - 6 = 6입니다.",
+      "source": {
+        "id": "gen:g1:s09:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "6",
+          "tolerance": 0,
+          "type": "number",
+          "value": 6
+        },
+        "rawAnswer": "6",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s09:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.67,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 9
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-cbebf01d62b223ae",
+      "title": "초1 수학 · 9번",
+      "story": "블록이 14개 있었습니다. 그중 6개를 사용했습니다. 남은 블록은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "전체 14개에서 6개를 빼면 14 - 6 = 8입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "블록이 14개 있었습니다. 그중 6개를 사용했습니다. 남은 블록은 몇 개입니까?",
+      "originalExplanation": "전체 14개에서 6개를 빼면 14 - 6 = 8입니다.",
+      "source": {
+        "id": "gen:g1:s09:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s09:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.67,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 9
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-6c0a64b007d9361e",
+      "title": "초1 수학 · 9번",
+      "story": "구슬이 8개 있었습니다. 그중 7개를 사용했습니다. 남은 구슬은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "전체 8개에서 7개를 빼면 8 - 7 = 1입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "구슬이 8개 있었습니다. 그중 7개를 사용했습니다. 남은 구슬은 몇 개입니까?",
+      "originalExplanation": "전체 8개에서 7개를 빼면 8 - 7 = 1입니다.",
+      "source": {
+        "id": "gen:g1:s09:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "1",
+          "tolerance": 0,
+          "type": "number",
+          "value": 1
+        },
+        "rawAnswer": "1",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s09:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.67,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 9
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-fa8595bbcce9e2c5",
+      "title": "초1 수학 · 9번",
+      "story": "공이 13개 있었습니다. 그중 5개를 사용했습니다. 남은 공은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "전체 13개에서 5개를 빼면 13 - 5 = 8입니다."
+      ],
+      "skill": "subtraction",
+      "originalStem": "공이 13개 있었습니다. 그중 5개를 사용했습니다. 남은 공은 몇 개입니까?",
+      "originalExplanation": "전체 13개에서 5개를 빼면 13 - 5 = 8입니다.",
+      "source": {
+        "id": "gen:g1:s09:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s09:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.67,
+        "skillCode": "core.g1.subtraction",
+        "examQuestionNo": 9
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-2d31fbda9cf77329",
+      "title": "초1 수학 · 10번",
+      "story": "3보다 크고 5보다 작은 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "3, 4, 5 순서이므로 가운데 수는 4입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "3보다 크고 5보다 작은 수는 무엇입니까?",
+      "originalExplanation": "3, 4, 5 순서이므로 가운데 수는 4입니다.",
+      "source": {
+        "id": "gen:g1:s10:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s10:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.5,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 10
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-eaed1dd38262261f",
+      "title": "초1 수학 · 10번",
+      "story": "17보다 크고 19보다 작은 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "17, 18, 19 순서이므로 가운데 수는 18입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "17보다 크고 19보다 작은 수는 무엇입니까?",
+      "originalExplanation": "17, 18, 19 순서이므로 가운데 수는 18입니다.",
+      "source": {
+        "id": "gen:g1:s10:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "18",
+          "tolerance": 0,
+          "type": "number",
+          "value": 18
+        },
+        "rawAnswer": "18",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s10:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.5,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 10
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 18,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-76429db21c65ef75",
+      "title": "초1 수학 · 10번",
+      "story": "14보다 크고 16보다 작은 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "14, 15, 16 순서이므로 가운데 수는 15입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "14보다 크고 16보다 작은 수는 무엇입니까?",
+      "originalExplanation": "14, 15, 16 순서이므로 가운데 수는 15입니다.",
+      "source": {
+        "id": "gen:g1:s10:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s10:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.5,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 10
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-dc654b50b6099609",
+      "title": "초1 수학 · 10번",
+      "story": "12보다 크고 14보다 작은 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "12, 13, 14 순서이므로 가운데 수는 13입니다."
+      ],
+      "skill": "number order",
+      "originalStem": "12보다 크고 14보다 작은 수는 무엇입니까?",
+      "originalExplanation": "12, 13, 14 순서이므로 가운데 수는 13입니다.",
+      "source": {
+        "id": "gen:g1:s10:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "13",
+          "tolerance": 0,
+          "type": "number",
+          "value": 13
+        },
+        "rawAnswer": "13",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s10:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.5,
+        "skillCode": "core.g1.number_order",
+        "examQuestionNo": 10
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-3204a722095be78e",
+      "title": "초1 수학 · 11번",
+      "story": "두 수 12, 1의 차는 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "큰 수에서 작은 수를 빼면 됩니다. 12 - 1 = 11입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 12, 1의 차는 얼마입니까?",
+      "originalExplanation": "큰 수에서 작은 수를 빼면 됩니다. 12 - 1 = 11입니다.",
+      "source": {
+        "id": "gen:g1:s11:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s11:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 11
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-ec44b9dd120ee4c2",
+      "title": "초1 수학 · 11번",
+      "story": "두 수 18, 8의 차는 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "큰 수에서 작은 수를 빼면 됩니다. 18 - 8 = 10입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 18, 8의 차는 얼마입니까?",
+      "originalExplanation": "큰 수에서 작은 수를 빼면 됩니다. 18 - 8 = 10입니다.",
+      "source": {
+        "id": "gen:g1:s11:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s11:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 11
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-d4cd0a3be2f816fa",
+      "title": "초1 수학 · 11번",
+      "story": "두 수 18, 2의 차는 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "큰 수에서 작은 수를 빼면 됩니다. 18 - 2 = 16입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 18, 2의 차는 얼마입니까?",
+      "originalExplanation": "큰 수에서 작은 수를 빼면 됩니다. 18 - 2 = 16입니다.",
+      "source": {
+        "id": "gen:g1:s11:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "16",
+          "tolerance": 0,
+          "type": "number",
+          "value": 16
+        },
+        "rawAnswer": "16",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s11:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 11
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 16,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-47eb440451867d1c",
+      "title": "초1 수학 · 11번",
+      "story": "두 수 15, 2의 차는 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "큰 수에서 작은 수를 빼면 됩니다. 15 - 2 = 13입니다."
+      ],
+      "skill": "comparison",
+      "originalStem": "두 수 15, 2의 차는 얼마입니까?",
+      "originalExplanation": "큰 수에서 작은 수를 빼면 됩니다. 15 - 2 = 13입니다.",
+      "source": {
+        "id": "gen:g1:s11:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "13",
+          "tolerance": 0,
+          "type": "number",
+          "value": 13
+        },
+        "rawAnswer": "13",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s11:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.33,
+        "skillCode": "core.g1.comparison",
+        "examQuestionNo": 11
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-663061a540df35f7",
+      "title": "초1 수학 · 12번",
+      "story": "4, 6, 8, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 커집니다. 8에서 2만큼 더 세면 10입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "4, 6, 8, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 커집니다. 8에서 2만큼 더 세면 10입니다.",
+      "source": {
+        "id": "gen:g1:s12:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s12:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.17,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 12
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-fadfbe1aa9b9a8c4",
+      "title": "초1 수학 · 12번",
+      "story": "8, 10, 12, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 커집니다. 12에서 2만큼 더 세면 14입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "8, 10, 12, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 커집니다. 12에서 2만큼 더 세면 14입니다.",
+      "source": {
+        "id": "gen:g1:s12:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s12:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.17,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 12
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-62bfaac983ae2861",
+      "title": "초1 수학 · 12번",
+      "story": "6, 9, 12, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 3씩 커집니다. 12에서 3만큼 더 세면 15입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "6, 9, 12, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 3씩 커집니다. 12에서 3만큼 더 세면 15입니다.",
+      "source": {
+        "id": "gen:g1:s12:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s12:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.17,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 12
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-94ef428c416dd8c2",
+      "title": "초1 수학 · 12번",
+      "story": "7, 9, 11, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 커집니다. 11에서 2만큼 더 세면 13입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "7, 9, 11, □ 순서로 수가 늘어납니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 커집니다. 11에서 2만큼 더 세면 13입니다.",
+      "source": {
+        "id": "gen:g1:s12:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "13",
+          "tolerance": 0,
+          "type": "number",
+          "value": 13
+        },
+        "rawAnswer": "13",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s12:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": -0.17,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 12
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-d4dae9cafd085435",
+      "title": "초1 수학 · 13번",
+      "story": "4 + □ = 6 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "합이 6이 되려면 4에서 2만큼 더해야 하므로 □는 2입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "4 + □ = 6 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "합이 6이 되려면 4에서 2만큼 더해야 하므로 □는 2입니다.",
+      "source": {
+        "id": "gen:g1:s13:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "2",
+          "tolerance": 0,
+          "type": "number",
+          "value": 2
+        },
+        "rawAnswer": "2",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s13:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 13
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 2,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-dbb812755c0e8984",
+      "title": "초1 수학 · 13번",
+      "story": "5 + □ = 11 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "합이 11이 되려면 5에서 6만큼 더해야 하므로 □는 6입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "5 + □ = 11 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "합이 11이 되려면 5에서 6만큼 더해야 하므로 □는 6입니다.",
+      "source": {
+        "id": "gen:g1:s13:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "6",
+          "tolerance": 0,
+          "type": "number",
+          "value": 6
+        },
+        "rawAnswer": "6",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s13:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 13
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-348725f4deb98a8f",
+      "title": "초1 수학 · 13번",
+      "story": "5 + □ = 8 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "합이 8이 되려면 5에서 3만큼 더해야 하므로 □는 3입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "5 + □ = 8 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "합이 8이 되려면 5에서 3만큼 더해야 하므로 □는 3입니다.",
+      "source": {
+        "id": "gen:g1:s13:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "3",
+          "tolerance": 0,
+          "type": "number",
+          "value": 3
+        },
+        "rawAnswer": "3",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s13:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 13
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-d2209c2ff633f5f2",
+      "title": "초1 수학 · 13번",
+      "story": "2 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "합이 10이 되려면 2에서 8만큼 더해야 하므로 □는 8입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "2 + □ = 10 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "합이 10이 되려면 2에서 8만큼 더해야 하므로 □는 8입니다.",
+      "source": {
+        "id": "gen:g1:s13:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s13:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 13
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-0a8e9b6733ee449c",
+      "title": "초1 수학 · 14번",
+      "story": "4 + 5 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 4 + 5 = 9이고, 마지막으로 5만큼 더하면 14입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "4 + 5 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "먼저 4 + 5 = 9이고, 마지막으로 5만큼 더하면 14입니다.",
+      "source": {
+        "id": "gen:g1:s14:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s14:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 14
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a5cbca4aeb705fa3",
+      "title": "초1 수학 · 14번",
+      "story": "3 + 3 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 3 + 3 = 6이고, 마지막으로 5만큼 더하면 11입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "3 + 3 + 5 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "먼저 3 + 3 = 6이고, 마지막으로 5만큼 더하면 11입니다.",
+      "source": {
+        "id": "gen:g1:s14:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s14:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 14
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-3b1b076d8685707e",
+      "title": "초1 수학 · 14번",
+      "story": "5 + 5 + 1 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 5 + 5 = 10이고, 마지막으로 1만큼 더하면 11입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "5 + 5 + 1 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "먼저 5 + 5 = 10이고, 마지막으로 1만큼 더하면 11입니다.",
+      "source": {
+        "id": "gen:g1:s14:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s14:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 14
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-5a98d3f52d764b3b",
+      "title": "초1 수학 · 14번",
+      "story": "1 + 5 + 2 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 1 + 5 = 6이고, 마지막으로 2만큼 더하면 8입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "1 + 5 + 2 = □ 입니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "먼저 1 + 5 = 6이고, 마지막으로 2만큼 더하면 8입니다.",
+      "source": {
+        "id": "gen:g1:s14:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s14:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.17,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 14
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-391cfcac6f6b0d66",
+      "title": "초1 수학 · 15번",
+      "story": "사과가 5개 있었습니다. 3개를 더 받고 4개를 나누어 주었습니다. 남은 사과는 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 5 + 3 = 8입니다. 그다음 4개를 빼면 4개가 남습니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "사과가 5개 있었습니다. 3개를 더 받고 4개를 나누어 주었습니다. 남은 사과는 몇 개입니까?",
+      "originalExplanation": "먼저 5 + 3 = 8입니다. 그다음 4개를 빼면 4개가 남습니다.",
+      "source": {
+        "id": "gen:g1:s15:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s15:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.33,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 15
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-37c85d2725d6e4a9",
+      "title": "초1 수학 · 15번",
+      "story": "스티커가 7개 있었습니다. 3개를 더 받고 3개를 나누어 주었습니다. 남은 스티커는 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 7 + 3 = 10입니다. 그다음 3개를 빼면 7개가 남습니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "스티커가 7개 있었습니다. 3개를 더 받고 3개를 나누어 주었습니다. 남은 스티커는 몇 개입니까?",
+      "originalExplanation": "먼저 7 + 3 = 10입니다. 그다음 3개를 빼면 7개가 남습니다.",
+      "source": {
+        "id": "gen:g1:s15:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s15:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.33,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 15
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a5f2a96b649c00ff",
+      "title": "초1 수학 · 15번",
+      "story": "사과가 12개 있었습니다. 2개를 더 받고 2개를 나누어 주었습니다. 남은 사과는 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 12 + 2 = 14입니다. 그다음 2개를 빼면 12개가 남습니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "사과가 12개 있었습니다. 2개를 더 받고 2개를 나누어 주었습니다. 남은 사과는 몇 개입니까?",
+      "originalExplanation": "먼저 12 + 2 = 14입니다. 그다음 2개를 빼면 12개가 남습니다.",
+      "source": {
+        "id": "gen:g1:s15:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "12",
+          "tolerance": 0,
+          "type": "number",
+          "value": 12
+        },
+        "rawAnswer": "12",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s15:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.33,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 15
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 12,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a0df4c2ba9d8cb38",
+      "title": "초1 수학 · 15번",
+      "story": "스티커가 5개 있었습니다. 2개를 더 받고 4개를 나누어 주었습니다. 남은 스티커는 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 5 + 2 = 7입니다. 그다음 4개를 빼면 3개가 남습니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "스티커가 5개 있었습니다. 2개를 더 받고 4개를 나누어 주었습니다. 남은 스티커는 몇 개입니까?",
+      "originalExplanation": "먼저 5 + 2 = 7입니다. 그다음 4개를 빼면 3개가 남습니다.",
+      "source": {
+        "id": "gen:g1:s15:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "3",
+          "tolerance": 0,
+          "type": "number",
+          "value": 3
+        },
+        "rawAnswer": "3",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s15:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.33,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 15
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-f425dbb424dd4d4b",
+      "title": "초1 수학 · 16번",
+      "story": "십 모형이 4개, 낱개가 2개 있습니다. 나타내는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십 모형 4개는 40이고 낱개 2개를 더하면 42입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십 모형이 4개, 낱개가 2개 있습니다. 나타내는 수는 무엇입니까?",
+      "originalExplanation": "십 모형 4개는 40이고 낱개 2개를 더하면 42입니다.",
+      "source": {
+        "id": "gen:g1:s16:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "42",
+          "tolerance": 0,
+          "type": "number",
+          "value": 42
+        },
+        "rawAnswer": "42",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s16:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 16
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 42,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-96b3ef921e67e8f5",
+      "title": "초1 수학 · 16번",
+      "story": "십 모형이 5개, 낱개가 5개 있습니다. 나타내는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십 모형 5개는 50이고 낱개 5개를 더하면 55입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십 모형이 5개, 낱개가 5개 있습니다. 나타내는 수는 무엇입니까?",
+      "originalExplanation": "십 모형 5개는 50이고 낱개 5개를 더하면 55입니다.",
+      "source": {
+        "id": "gen:g1:s16:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "55",
+          "tolerance": 0,
+          "type": "number",
+          "value": 55
+        },
+        "rawAnswer": "55",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s16:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 16
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 55,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-de71f297ac48f42a",
+      "title": "초1 수학 · 16번",
+      "story": "십 모형이 5개, 낱개가 4개 있습니다. 나타내는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십 모형 5개는 50이고 낱개 4개를 더하면 54입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십 모형이 5개, 낱개가 4개 있습니다. 나타내는 수는 무엇입니까?",
+      "originalExplanation": "십 모형 5개는 50이고 낱개 4개를 더하면 54입니다.",
+      "source": {
+        "id": "gen:g1:s16:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "54",
+          "tolerance": 0,
+          "type": "number",
+          "value": 54
+        },
+        "rawAnswer": "54",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s16:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 16
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 54,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-781967e14a961c97",
+      "title": "초1 수학 · 16번",
+      "story": "십 모형이 5개, 낱개가 0개 있습니다. 나타내는 수는 무엇입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "십 모형 5개는 50이고 낱개 0개를 더하면 50입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "십 모형이 5개, 낱개가 0개 있습니다. 나타내는 수는 무엇입니까?",
+      "originalExplanation": "십 모형 5개는 50이고 낱개 0개를 더하면 50입니다.",
+      "source": {
+        "id": "gen:g1:s16:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "50",
+          "tolerance": 0,
+          "type": "number",
+          "value": 50
+        },
+        "rawAnswer": "50",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s16:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 16
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 50,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-3a640083abae2a4f",
+      "title": "초1 수학 · 17번",
+      "story": "40, 50, 60, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10씩 커지는 규칙입니다. 60에 10을 더하면 70입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "40, 50, 60, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "10씩 커지는 규칙입니다. 60에 10을 더하면 70입니다.",
+      "source": {
+        "id": "gen:g1:s17:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "70",
+          "tolerance": 0,
+          "type": "number",
+          "value": 70
+        },
+        "rawAnswer": "70",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s17:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.67,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 17
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 70,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-c7cee0a5f8dc340a",
+      "title": "초1 수학 · 17번",
+      "story": "30, 40, 50, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10씩 커지는 규칙입니다. 50에 10을 더하면 60입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "30, 40, 50, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "10씩 커지는 규칙입니다. 50에 10을 더하면 60입니다.",
+      "source": {
+        "id": "gen:g1:s17:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "60",
+          "tolerance": 0,
+          "type": "number",
+          "value": 60
+        },
+        "rawAnswer": "60",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s17:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.67,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 17
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 60,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a77311ea2da15cca",
+      "title": "초1 수학 · 17번",
+      "story": "20, 30, 40, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10씩 커지는 규칙입니다. 40에 10을 더하면 50입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "20, 30, 40, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "10씩 커지는 규칙입니다. 40에 10을 더하면 50입니다.",
+      "source": {
+        "id": "gen:g1:s17:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "50",
+          "tolerance": 0,
+          "type": "number",
+          "value": 50
+        },
+        "rawAnswer": "50",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s17:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.67,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 17
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 50,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-46639dda0dbd43d0",
+      "title": "초1 수학 · 17번",
+      "story": "10, 20, 30, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10씩 커지는 규칙입니다. 30에 10을 더하면 40입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "10, 20, 30, □ 순서로 10씩 뛰어 셉니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "10씩 커지는 규칙입니다. 30에 10을 더하면 40입니다.",
+      "source": {
+        "id": "gen:g1:s17:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "40",
+          "tolerance": 0,
+          "type": "number",
+          "value": 40
+        },
+        "rawAnswer": "40",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s17:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.67,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 17
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 40,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-136e3c0c92627d74",
+      "title": "초1 수학 · 18번",
+      "story": "긴바늘이 12에 있고 짧은바늘이 3에 있습니다. 몇 시입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "긴바늘이 12에 있고 짧은바늘이 3에 있으므로 3시입니다."
+      ],
+      "skill": "time",
+      "originalStem": "긴바늘이 12에 있고 짧은바늘이 3에 있습니다. 몇 시입니까?",
+      "originalExplanation": "긴바늘이 12에 있고 짧은바늘이 3에 있으므로 3시입니다.",
+      "source": {
+        "id": "gen:g1:s18:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "3",
+          "tolerance": 0,
+          "type": "number",
+          "value": 3
+        },
+        "rawAnswer": "3",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s18:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.83,
+        "skillCode": "core.g1.time",
+        "examQuestionNo": 18
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-8936fee492969588",
+      "title": "초1 수학 · 18번",
+      "story": "긴바늘이 12에 있고 짧은바늘이 7에 있습니다. 몇 시입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "긴바늘이 12에 있고 짧은바늘이 7에 있으므로 7시입니다."
+      ],
+      "skill": "time",
+      "originalStem": "긴바늘이 12에 있고 짧은바늘이 7에 있습니다. 몇 시입니까?",
+      "originalExplanation": "긴바늘이 12에 있고 짧은바늘이 7에 있으므로 7시입니다.",
+      "source": {
+        "id": "gen:g1:s18:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s18:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.83,
+        "skillCode": "core.g1.time",
+        "examQuestionNo": 18
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-9204daa75d80b326",
+      "title": "초1 수학 · 18번",
+      "story": "긴바늘이 12에 있고 짧은바늘이 4에 있습니다. 몇 시입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "긴바늘이 12에 있고 짧은바늘이 4에 있으므로 4시입니다."
+      ],
+      "skill": "time",
+      "originalStem": "긴바늘이 12에 있고 짧은바늘이 4에 있습니다. 몇 시입니까?",
+      "originalExplanation": "긴바늘이 12에 있고 짧은바늘이 4에 있으므로 4시입니다.",
+      "source": {
+        "id": "gen:g1:s18:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s18:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.83,
+        "skillCode": "core.g1.time",
+        "examQuestionNo": 18
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-88e435a454fc8b4f",
+      "title": "초1 수학 · 18번",
+      "story": "긴바늘이 12에 있고 짧은바늘이 1에 있습니다. 몇 시입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "긴바늘이 12에 있고 짧은바늘이 1에 있으므로 1시입니다."
+      ],
+      "skill": "time",
+      "originalStem": "긴바늘이 12에 있고 짧은바늘이 1에 있습니다. 몇 시입니까?",
+      "originalExplanation": "긴바늘이 12에 있고 짧은바늘이 1에 있으므로 1시입니다.",
+      "source": {
+        "id": "gen:g1:s18:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "1",
+          "tolerance": 0,
+          "type": "number",
+          "value": 1
+        },
+        "rawAnswer": "1",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s18:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 0.83,
+        "skillCode": "core.g1.time",
+        "examQuestionNo": 18
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 1,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-7129bfaba795f495",
+      "title": "초1 수학 · 19번",
+      "story": "빨간 끈은 9cm, 파란 끈은 8cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 길이 9cm, 8cm 중 더 긴 길이는 9cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "빨간 끈은 9cm, 파란 끈은 8cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "originalExplanation": "두 길이 9cm, 8cm 중 더 긴 길이는 9cm입니다.",
+      "source": {
+        "id": "gen:g1:s19:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "9",
+          "tolerance": 0,
+          "type": "number",
+          "value": 9
+        },
+        "rawAnswer": "9",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s19:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 19
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-6e90765145f1a74b",
+      "title": "초1 수학 · 19번",
+      "story": "빨간 끈은 8cm, 파란 끈은 16cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 길이 8cm, 16cm 중 더 긴 길이는 16cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "빨간 끈은 8cm, 파란 끈은 16cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "originalExplanation": "두 길이 8cm, 16cm 중 더 긴 길이는 16cm입니다.",
+      "source": {
+        "id": "gen:g1:s19:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "16",
+          "tolerance": 0,
+          "type": "number",
+          "value": 16
+        },
+        "rawAnswer": "16",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s19:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 19
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 16,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-e403346f658fe9f9",
+      "title": "초1 수학 · 19번",
+      "story": "빨간 끈은 9cm, 파란 끈은 5cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 길이 9cm, 5cm 중 더 긴 길이는 9cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "빨간 끈은 9cm, 파란 끈은 5cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "originalExplanation": "두 길이 9cm, 5cm 중 더 긴 길이는 9cm입니다.",
+      "source": {
+        "id": "gen:g1:s19:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "9",
+          "tolerance": 0,
+          "type": "number",
+          "value": 9
+        },
+        "rawAnswer": "9",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s19:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 19
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-4365fc103401cefa",
+      "title": "초1 수학 · 19번",
+      "story": "빨간 끈은 16cm, 파란 끈은 18cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "두 길이 16cm, 18cm 중 더 긴 길이는 18cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "빨간 끈은 16cm, 파란 끈은 18cm입니다. 더 긴 끈의 길이는 몇 cm입니까?",
+      "originalExplanation": "두 길이 16cm, 18cm 중 더 긴 길이는 18cm입니다.",
+      "source": {
+        "id": "gen:g1:s19:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "18",
+          "tolerance": 0,
+          "type": "number",
+          "value": 18
+        },
+        "rawAnswer": "18",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s19:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 19
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 18,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-e21f70e23fd1f27b",
+      "title": "초1 수학 · 20번",
+      "story": "오각형의 꼭짓점은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "오각형에는 꼭짓점이 5개 있습니다."
+      ],
+      "skill": "geometry",
+      "originalStem": "오각형의 꼭짓점은 몇 개입니까?",
+      "originalExplanation": "오각형에는 꼭짓점이 5개 있습니다.",
+      "source": {
+        "id": "gen:g1:s20:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s20:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.17,
+        "skillCode": "core.g1.geometry",
+        "examQuestionNo": 20
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-7097dd0a81e3f40d",
+      "title": "초1 수학 · 20번",
+      "story": "오각형의 변은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "오각형에는 변이 5개 있습니다."
+      ],
+      "skill": "geometry",
+      "originalStem": "오각형의 변은 몇 개입니까?",
+      "originalExplanation": "오각형에는 변이 5개 있습니다.",
+      "source": {
+        "id": "gen:g1:s20:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "5",
+          "tolerance": 0,
+          "type": "number",
+          "value": 5
+        },
+        "rawAnswer": "5",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s20:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.17,
+        "skillCode": "core.g1.geometry",
+        "examQuestionNo": 20
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-fb10819414a5b25b",
+      "title": "초1 수학 · 20번",
+      "story": "사각형의 변은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "사각형에는 변이 4개 있습니다."
+      ],
+      "skill": "geometry",
+      "originalStem": "사각형의 변은 몇 개입니까?",
+      "originalExplanation": "사각형에는 변이 4개 있습니다.",
+      "source": {
+        "id": "gen:g1:s20:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "4",
+          "tolerance": 0,
+          "type": "number",
+          "value": 4
+        },
+        "rawAnswer": "4",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s20:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.17,
+        "skillCode": "core.g1.geometry",
+        "examQuestionNo": 20
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 4,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-eafa25804421d8d2",
+      "title": "초1 수학 · 20번",
+      "story": "삼각형의 꼭짓점은 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "삼각형에는 꼭짓점이 3개 있습니다."
+      ],
+      "skill": "geometry",
+      "originalStem": "삼각형의 꼭짓점은 몇 개입니까?",
+      "originalExplanation": "삼각형에는 꼭짓점이 3개 있습니다.",
+      "source": {
+        "id": "gen:g1:s20:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "3",
+          "tolerance": 0,
+          "type": "number",
+          "value": 3
+        },
+        "rawAnswer": "3",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s20:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.17,
+        "skillCode": "core.g1.geometry",
+        "examQuestionNo": 20
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 3,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-de2c3d6e8e90e5f3",
+      "title": "초1 수학 · 21번",
+      "story": "한 봉지에 블록이 2개씩 들어 있습니다. 9봉지에는 블록이 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "2개씩 9번 더하면 18개입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "한 봉지에 블록이 2개씩 들어 있습니다. 9봉지에는 블록이 모두 몇 개입니까?",
+      "originalExplanation": "2개씩 9번 더하면 18개입니다.",
+      "source": {
+        "id": "gen:g1:s21:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "18",
+          "tolerance": 0,
+          "type": "number",
+          "value": 18
+        },
+        "rawAnswer": "18",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s21:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.33,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 21
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 18,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-62524d23bae31787",
+      "title": "초1 수학 · 21번",
+      "story": "한 봉지에 블록이 4개씩 들어 있습니다. 3봉지에는 블록이 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "4개씩 3번 더하면 12개입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "한 봉지에 블록이 4개씩 들어 있습니다. 3봉지에는 블록이 모두 몇 개입니까?",
+      "originalExplanation": "4개씩 3번 더하면 12개입니다.",
+      "source": {
+        "id": "gen:g1:s21:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "12",
+          "tolerance": 0,
+          "type": "number",
+          "value": 12
+        },
+        "rawAnswer": "12",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s21:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.33,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 21
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 12,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-5952696eb2e3ce12",
+      "title": "초1 수학 · 21번",
+      "story": "한 봉지에 블록이 5개씩 들어 있습니다. 3봉지에는 블록이 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "5개씩 3번 더하면 15개입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "한 봉지에 블록이 5개씩 들어 있습니다. 3봉지에는 블록이 모두 몇 개입니까?",
+      "originalExplanation": "5개씩 3번 더하면 15개입니다.",
+      "source": {
+        "id": "gen:g1:s21:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s21:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.33,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 21
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-a594ab2ffe8c6106",
+      "title": "초1 수학 · 21번",
+      "story": "한 봉지에 블록이 3개씩 들어 있습니다. 5봉지에는 블록이 모두 몇 개입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "3개씩 5번 더하면 15개입니다."
+      ],
+      "skill": "addition",
+      "originalStem": "한 봉지에 블록이 3개씩 들어 있습니다. 5봉지에는 블록이 모두 몇 개입니까?",
+      "originalExplanation": "3개씩 5번 더하면 15개입니다.",
+      "source": {
+        "id": "gen:g1:s21:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s21:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.33,
+        "skillCode": "core.g1.addition",
+        "examQuestionNo": 21
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-e47441540223d0b6",
+      "title": "초1 수학 · 22번",
+      "story": "10이 2개, 1이 6개이면 모두 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10이 2개이면 20이고, 1이 6개이면 6입니다. 모두 26입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "10이 2개, 1이 6개이면 모두 얼마입니까?",
+      "originalExplanation": "10이 2개이면 20이고, 1이 6개이면 6입니다. 모두 26입니다.",
+      "source": {
+        "id": "gen:g1:s22:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "26",
+          "tolerance": 0,
+          "type": "number",
+          "value": 26
+        },
+        "rawAnswer": "26",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s22:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 22
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 26,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-87aa18648c75fd14",
+      "title": "초1 수학 · 22번",
+      "story": "10이 3개, 1이 9개이면 모두 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10이 3개이면 30이고, 1이 9개이면 9입니다. 모두 39입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "10이 3개, 1이 9개이면 모두 얼마입니까?",
+      "originalExplanation": "10이 3개이면 30이고, 1이 9개이면 9입니다. 모두 39입니다.",
+      "source": {
+        "id": "gen:g1:s22:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "39",
+          "tolerance": 0,
+          "type": "number",
+          "value": 39
+        },
+        "rawAnswer": "39",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s22:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 22
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 39,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-80324b22321bd58c",
+      "title": "초1 수학 · 22번",
+      "story": "10이 1개, 1이 1개이면 모두 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10이 1개이면 10이고, 1이 1개이면 1입니다. 모두 11입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "10이 1개, 1이 1개이면 모두 얼마입니까?",
+      "originalExplanation": "10이 1개이면 10이고, 1이 1개이면 1입니다. 모두 11입니다.",
+      "source": {
+        "id": "gen:g1:s22:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s22:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 22
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-ff8df2bdf67394ec",
+      "title": "초1 수학 · 22번",
+      "story": "10이 2개, 1이 8개이면 모두 얼마입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "10이 2개이면 20이고, 1이 8개이면 8입니다. 모두 28입니다."
+      ],
+      "skill": "place value",
+      "originalStem": "10이 2개, 1이 8개이면 모두 얼마입니까?",
+      "originalExplanation": "10이 2개이면 20이고, 1이 8개이면 8입니다. 모두 28입니다.",
+      "source": {
+        "id": "gen:g1:s22:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "28",
+          "tolerance": 0,
+          "type": "number",
+          "value": 28
+        },
+        "rawAnswer": "28",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s22:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.5,
+        "skillCode": "core.g1.place_value",
+        "examQuestionNo": 22
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 28,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-7eb43cec9cd902ec",
+      "title": "초1 수학 · 23번",
+      "story": "7cm 끈과 7cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "길이를 합하면 7 + 7 = 14cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "7cm 끈과 7cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "originalExplanation": "길이를 합하면 7 + 7 = 14cm입니다.",
+      "source": {
+        "id": "gen:g1:s23:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s23:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.67,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 23
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-f316aeb9e56bf212",
+      "title": "초1 수학 · 23번",
+      "story": "5cm 끈과 5cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "길이를 합하면 5 + 5 = 10cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "5cm 끈과 5cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "originalExplanation": "길이를 합하면 5 + 5 = 10cm입니다.",
+      "source": {
+        "id": "gen:g1:s23:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s23:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.67,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 23
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-f9ae90eaf46e62a3",
+      "title": "초1 수학 · 23번",
+      "story": "5cm 끈과 9cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "길이를 합하면 5 + 9 = 14cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "5cm 끈과 9cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "originalExplanation": "길이를 합하면 5 + 9 = 14cm입니다.",
+      "source": {
+        "id": "gen:g1:s23:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s23:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.67,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 23
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-91910926cae1f026",
+      "title": "초1 수학 · 23번",
+      "story": "9cm 끈과 7cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "길이를 합하면 9 + 7 = 16cm입니다."
+      ],
+      "skill": "measurement",
+      "originalStem": "9cm 끈과 7cm 끈을 이어 붙였습니다. 전체 길이는 몇 cm입니까?",
+      "originalExplanation": "길이를 합하면 9 + 7 = 16cm입니다.",
+      "source": {
+        "id": "gen:g1:s23:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "16",
+          "tolerance": 0,
+          "type": "number",
+          "value": 16
+        },
+        "rawAnswer": "16",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s23:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.67,
+        "skillCode": "core.g1.measurement",
+        "examQuestionNo": 23
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 16,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-1f1eea6500643b1e",
+      "title": "초1 수학 · 24번",
+      "story": "19, 16, 13, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 3씩 작아집니다. 13에서 3만큼 빼면 10입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "19, 16, 13, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 3씩 작아집니다. 13에서 3만큼 빼면 10입니다.",
+      "source": {
+        "id": "gen:g1:s24:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "10",
+          "tolerance": 0,
+          "type": "number",
+          "value": 10
+        },
+        "rawAnswer": "10",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s24:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.83,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 24
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 10,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-323f3d847887e88b",
+      "title": "초1 수학 · 24번",
+      "story": "20, 18, 16, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 작아집니다. 16에서 2만큼 빼면 14입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "20, 18, 16, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 작아집니다. 16에서 2만큼 빼면 14입니다.",
+      "source": {
+        "id": "gen:g1:s24:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "14",
+          "tolerance": 0,
+          "type": "number",
+          "value": 14
+        },
+        "rawAnswer": "14",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s24:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.83,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 24
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 14,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-ff059fba5874655b",
+      "title": "초1 수학 · 24번",
+      "story": "14, 12, 10, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 작아집니다. 10에서 2만큼 빼면 8입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "14, 12, 10, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 작아집니다. 10에서 2만큼 빼면 8입니다.",
+      "source": {
+        "id": "gen:g1:s24:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "8",
+          "tolerance": 0,
+          "type": "number",
+          "value": 8
+        },
+        "rawAnswer": "8",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s24:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.83,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 24
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 8,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-e68c3e4af9acb42b",
+      "title": "초1 수학 · 24번",
+      "story": "12, 10, 8, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "앞의 수보다 2씩 작아집니다. 8에서 2만큼 빼면 6입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "12, 10, 8, □ 순서로 수가 줄어듭니다. □에 알맞은 수를 쓰세요.",
+      "originalExplanation": "앞의 수보다 2씩 작아집니다. 8에서 2만큼 빼면 6입니다.",
+      "source": {
+        "id": "gen:g1:s24:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "6",
+          "tolerance": 0,
+          "type": "number",
+          "value": 6
+        },
+        "rawAnswer": "6",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s24:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 1.83,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 24
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 6,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-501f1fbd45312446",
+      "title": "초1 수학 · 25번",
+      "story": "수 카드가 12장에서 시작했습니다. 6장을 더 받고 3장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 12 + 6 = 18입니다. 여기서 3만큼 빼면 15입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "수 카드가 12장에서 시작했습니다. 6장을 더 받고 3장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "originalExplanation": "먼저 12 + 6 = 18입니다. 여기서 3만큼 빼면 15입니다.",
+      "source": {
+        "id": "gen:g1:s25:v01",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s25:v01",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 2,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 25
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-0c8b0626fc1d3cfd",
+      "title": "초1 수학 · 25번",
+      "story": "수 카드가 12장에서 시작했습니다. 3장을 더 받고 8장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 12 + 3 = 15입니다. 여기서 8만큼 빼면 7입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "수 카드가 12장에서 시작했습니다. 3장을 더 받고 8장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "originalExplanation": "먼저 12 + 3 = 15입니다. 여기서 8만큼 빼면 7입니다.",
+      "source": {
+        "id": "gen:g1:s25:v02",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "7",
+          "tolerance": 0,
+          "type": "number",
+          "value": 7
+        },
+        "rawAnswer": "7",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s25:v02",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 2,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 25
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 7,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-fe16636663f0635f",
+      "title": "초1 수학 · 25번",
+      "story": "수 카드가 13장에서 시작했습니다. 6장을 더 받고 4장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 13 + 6 = 19입니다. 여기서 4만큼 빼면 15입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "수 카드가 13장에서 시작했습니다. 6장을 더 받고 4장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "originalExplanation": "먼저 13 + 6 = 19입니다. 여기서 4만큼 빼면 15입니다.",
+      "source": {
+        "id": "gen:g1:s25:v03",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "15",
+          "tolerance": 0,
+          "type": "number",
+          "value": 15
+        },
+        "rawAnswer": "15",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s25:v03",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 2,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 25
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 99
+      }
+    },
+    {
+      "id": "bebsu-643c5ee7492aaaab",
+      "title": "초1 수학 · 25번",
+      "story": "수 카드가 9장에서 시작했습니다. 4장을 더 받고 2장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "prompt": "답을 숫자로 적어 주세요.",
+      "explanation": [
+        "먼저 9 + 4 = 13입니다. 여기서 2만큼 빼면 11입니다."
+      ],
+      "skill": "pattern logic",
+      "originalStem": "수 카드가 9장에서 시작했습니다. 4장을 더 받고 2장을 냈습니다. 지금 수 카드는 몇 장입니까?",
+      "originalExplanation": "먼저 9 + 4 = 13입니다. 여기서 2만큼 빼면 11입니다.",
+      "source": {
+        "id": "gen:g1:s25:v04",
+        "repo": "01chungee10snu/Bebsu",
+        "format": "numeric_input",
+        "answer": {
+          "raw": "11",
+          "tolerance": 0,
+          "type": "number",
+          "value": 11
+        },
+        "rawAnswer": "11",
+        "gradeBand": "G1"
+      },
+      "provenance": {
+        "repo": "01chungee10snu/Bebsu",
+        "itemKey": "gen:g1:s25:v04",
+        "gradeBand": "G1",
+        "source": "generated_g1_variant",
+        "sourceStatus": "active",
+        "legacySourceStatus": null,
+        "sourceUrl": null,
+        "eventTitle": null,
+        "sourceLicenseStatus": null,
+        "originalLicenseStatus": null,
+        "answerVerificationStatus": "machine_checked",
+        "difficultyB": 2,
+        "skillCode": "core.g1.pattern_logic",
+        "examQuestionNo": 25
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 11,
+        "max": 99
+      }
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "id": "picture-pairs",
+  "subject": "english",
+  "title": "그림 소리 짝꿍",
+  "description": "영어를 듣고 동물·음식·자연의 그림 짝을 찾아요.",
+  "emoji": "🖼️",
+  "minStage": 1,
+  "maxStage": 2,
+  "adventure": true,
+  "offline": "집 안의 물건 세 개를 골라 영어 이름을 듣고 가리켜 보세요. 익숙해지면 아이가 문제를 내 보세요.",
+  "prerequisite": "그림 세 개 중 하나를 고를 수 있어요. 글을 몰라도 영어 소리를 여러 번 들으며 함께 할 수 있어요.",
+  "questions": [
+    {
+      "title": "동물 친구 세 팀",
+      "story": "{{place}}의 상상 동물 교실에 그림 친구들이 왔어요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "동물 이름 연결",
+      "level": 1,
+      "explanation": [
+        "cat은 고양이, dog는 개, fish는 물고기예요.",
+        "그림을 하나씩 가리키며 영어 이름을 다시 들어 보세요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "cat",
+          "dog",
+          "fish"
+        ],
+        "right": [
+          "🐟",
+          "🐱",
+          "🐶"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "물고기",
+          "고양이",
+          "개"
+        ]
+      },
+      "id": "picture-pairs-01"
+    },
+    {
+      "title": "누가 짹짹 할까?",
+      "story": "{{name}}가 {{place}}의 상상 정원에서 소리를 들어요.",
+      "prompt": "영어를 듣고 알맞은 동물 그림을 골라요.",
+      "choices": [
+        "🐰",
+        "🐦",
+        "🐻"
+      ],
+      "answer": 1,
+      "explanation": [
+        "bird는 새예요.",
+        "새 그림을 가리키고 bird를 한 번 더 들어 보세요."
+      ],
+      "skill": "동물 낱말 듣기",
+      "level": 1,
+      "cue": {
+        "text": "bird",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "토끼",
+        "새",
+        "곰"
+      ],
+      "id": "picture-pairs-02"
+    },
+    {
+      "title": "도시락 그림 카드",
+      "story": "{{place}}의 상상 소풍에 음식 그림 카드를 가져왔어요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "음식 이름 연결",
+      "level": 1,
+      "explanation": [
+        "apple은 사과, pear는 배, carrot은 당근이에요.",
+        "세 가지는 생김새도 영어 이름도 서로 달라요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "apple",
+          "pear",
+          "carrot"
+        ],
+        "right": [
+          "🥕",
+          "🍐",
+          "🍎"
+        ],
+        "pairs": [
+          2,
+          1,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "당근",
+          "배",
+          "사과"
+        ]
+      },
+      "id": "picture-pairs-03"
+    },
+    {
+      "title": "컵에 든 것은?",
+      "story": "{{name}}가 {{place}}의 상상 간식 가게에서 주문을 들어요.",
+      "prompt": "영어를 듣고 주문한 것을 찾아요.",
+      "choices": [
+        "🥛",
+        "🍎",
+        "🍞"
+      ],
+      "answer": 0,
+      "explanation": [
+        "milk는 우유예요.",
+        "우유 그림은 milk와 짝이 되고, 사과는 apple, 빵은 bread예요."
+      ],
+      "skill": "음식 낱말 듣기",
+      "level": 1,
+      "cue": {
+        "text": "milk",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "우유",
+        "사과",
+        "빵"
+      ],
+      "id": "picture-pairs-04"
+    },
+    {
+      "title": "놀이 상자를 열어요",
+      "story": "{{place}}의 상상 놀이방에서 물건들의 이름을 알아봐요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "놀이 물건 이름 연결",
+      "level": 1,
+      "explanation": [
+        "ball은 공, teddy bear는 곰 인형, kite는 연이에요.",
+        "좋아하는 그림을 가리키고 그 영어 이름을 들어 보세요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "ball",
+          "teddy bear",
+          "kite"
+        ],
+        "right": [
+          "🪁",
+          "⚽",
+          "🧸"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "연",
+          "공",
+          "곰 인형"
+        ]
+      },
+      "id": "picture-pairs-05"
+    },
+    {
+      "title": "밤하늘 카드",
+      "story": "{{place}}에서 {{name}}가 상상 밤하늘을 꾸며요.",
+      "prompt": "영어를 듣고 필요한 그림을 골라요.",
+      "choices": [
+        "⭐",
+        "☀️",
+        "🌙"
+      ],
+      "answer": 2,
+      "explanation": [
+        "moon은 달이에요.",
+        "해는 sun, 별은 star라고 해요."
+      ],
+      "skill": "자연 낱말 듣기",
+      "level": 1,
+      "cue": {
+        "text": "moon",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "별",
+        "해",
+        "달"
+      ],
+      "id": "picture-pairs-06"
+    },
+    {
+      "title": "창밖 날씨 그림",
+      "story": "{{place}}의 상상 날씨판에 영어 카드를 붙여요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "자연 이름 연결",
+      "level": 2,
+      "explanation": [
+        "sun은 해, rain은 비, snow는 눈이에요.",
+        "날씨를 보며 알맞은 영어 카드를 찾아볼 수 있어요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "sun",
+          "rain",
+          "snow"
+        ],
+        "right": [
+          "❄️",
+          "☀️",
+          "🌧️"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "눈",
+          "해",
+          "비"
+        ]
+      },
+      "id": "picture-pairs-07"
+    },
+    {
+      "title": "색깔과 모양을 함께",
+      "story": "{{name}}가 {{place}}의 상상 초대장을 꾸며요.",
+      "prompt": "영어를 듣고 색깔과 모양이 모두 맞는 그림을 골라요.",
+      "choices": [
+        "❤️",
+        "🔷",
+        "⭐"
+      ],
+      "answer": 2,
+      "explanation": [
+        "a yellow star는 노란 별이라는 뜻이에요.",
+        "yellow는 색깔을, star는 모양의 이름을 알려 줘요."
+      ],
+      "skill": "색과 사물 결합 듣기",
+      "level": 2,
+      "cue": {
+        "text": "a yellow star",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "빨간 하트",
+        "파란 마름모",
+        "노란 별"
+      ],
+      "id": "picture-pairs-08"
+    },
+    {
+      "title": "작은 자연 박물관",
+      "story": "{{place}}의 상상 박물관에서 자연 그림을 분류해요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "자연 부분과 전체 낱말",
+      "level": 2,
+      "explanation": [
+        "tree는 나무, flower는 꽃, leaf는 잎이에요.",
+        "나무 전체와 나무에서 자라는 잎은 서로 다른 말로 불러요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "tree",
+          "flower",
+          "leaf"
+        ],
+        "right": [
+          "🍃",
+          "🌸",
+          "🌳"
+        ],
+        "pairs": [
+          2,
+          1,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "잎",
+          "꽃",
+          "나무"
+        ]
+      },
+      "id": "picture-pairs-09"
+    },
+    {
+      "title": "몇 개의 사과일까?",
+      "story": "{{place}}의 상상 과일 가게에서 {{name}}가 주문을 들어요.",
+      "prompt": "영어를 듣고 개수가 맞는 그림을 골라요.",
+      "choices": [
+        "🍎 🍎",
+        "🍎",
+        "🍐 🍐"
+      ],
+      "answer": 0,
+      "explanation": [
+        "two apples는 사과 두 개예요.",
+        "two는 둘을 뜻하고, apples는 여기서 여러 개의 사과를 가리켜요."
+      ],
+      "skill": "수와 사물 결합 듣기",
+      "level": 2,
+      "cue": {
+        "text": "two apples",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "사과 두 개",
+        "사과 한 개",
+        "배 두 개"
+      ],
+      "id": "picture-pairs-10"
+    },
+    {
+      "title": "상상 여행 출발",
+      "story": "{{place}}의 상상 여행 안내판에 탈것 이름을 붙여요.",
+      "prompt": "영어를 누르고, 뜻이 맞는 짝을 찾아요.",
+      "skill": "탈것 낱말 연결",
+      "level": 2,
+      "explanation": [
+        "bus는 버스, train은 기차, bicycle은 자전거예요.",
+        "같은 여행에서도 여러 가지 탈것을 이용할 수 있어요."
+      ],
+      "interaction": {
+        "type": "match",
+        "left": [
+          "bus",
+          "train",
+          "bicycle"
+        ],
+        "right": [
+          "🚲",
+          "🚌",
+          "🚆"
+        ],
+        "pairs": [
+          1,
+          2,
+          0
+        ],
+        "leftLang": "en-US",
+        "rightLabels": [
+          "자전거",
+          "버스",
+          "기차"
+        ]
+      },
+      "id": "picture-pairs-11"
+    },
+    {
+      "title": "빨간 것은 무엇?",
+      "story": "{{name}}가 {{place}}의 상상 과일 바구니를 채워요.",
+      "prompt": "영어를 듣고 과일과 색이 모두 맞는 그림을 골라요.",
+      "choices": [
+        "🍓",
+        "🍎",
+        "🍏"
+      ],
+      "answer": 1,
+      "explanation": [
+        "a red apple은 빨간 사과예요.",
+        "red만 듣지 말고 apple까지 들어야 딸기와 초록 사과를 구별할 수 있어요."
+      ],
+      "skill": "두 단서 함께 듣기",
+      "level": 2,
+      "cue": {
+        "text": "a red apple",
+        "lang": "en-US"
+      },
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "빨간 딸기",
+        "빨간 사과",
+        "초록 사과"
+      ],
+      "id": "picture-pairs-12"
+    }
+  ]
+}

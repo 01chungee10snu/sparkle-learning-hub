@@ -1,0 +1,238 @@
+{
+  "stage": 1,
+  "title": "그림 말놀이",
+  "description": "짧은 이야기를 듣고 그림을 골라요.",
+  "emoji": "🧸",
+  "level": "듣고 그림 고르기",
+  "strand": "듣기·생활 낱말",
+  "prerequisite": "그림 세 개를 살펴보고 하나를 가리킬 수 있어요.",
+  "offline": "보호자가 집 안 물건 하나를 말하면 아이가 찾아 가리켜요.",
+  "questions": [
+    {
+      "id": "korean-growth-1-01",
+      "title": "멍멍 친구",
+      "story": "멍멍! 강아지가 왔어요.",
+      "prompt": "강아지를 찾아볼까요?",
+      "choices": [
+        "🐶",
+        "🐱",
+        "🐰"
+      ],
+      "answer": 0,
+      "explanation": [
+        "멍멍 소리를 내는 친구는 강아지예요.",
+        "강아지 그림을 손으로 가리켜 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "👂"
+      },
+      "skill": "생활 낱말 알아듣기",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "강아지",
+        "고양이",
+        "토끼"
+      ],
+      "readText": "멍멍! 강아지가 왔어요. 강아지를 찾아볼까요? 1번, 강아지. 2번, 고양이. 3번, 토끼."
+    },
+    {
+      "id": "korean-growth-1-02",
+      "title": "비 오는 날",
+      "story": "비가 와요. 우산을 펴요.",
+      "prompt": "우산을 찾아볼까요?",
+      "choices": [
+        "👒",
+        "☂️",
+        "👟"
+      ],
+      "answer": 1,
+      "explanation": [
+        "비 오는 날에는 우산을 펴요.",
+        "우산이 빗물을 막아 주어요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🌧️"
+      },
+      "skill": "생활 물건 알아듣기",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "모자",
+        "우산",
+        "운동화"
+      ],
+      "readText": "비가 와요. 우산을 펴요. 우산을 찾아볼까요? 1번, 모자. 2번, 우산. 3번, 운동화."
+    },
+    {
+      "id": "korean-growth-1-03",
+      "title": "맛있는 바나나",
+      "story": "길쭉한 바나나를 먹어요.",
+      "prompt": "바나나를 찾아볼까요?",
+      "choices": [
+        "🍓",
+        "🍎",
+        "🍌"
+      ],
+      "answer": 2,
+      "explanation": [
+        "바나나는 길쭉한 모양이에요.",
+        "바나나의 이름을 함께 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍽️"
+      },
+      "skill": "대상과 특징 연결",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "딸기",
+        "사과",
+        "바나나"
+      ],
+      "readText": "길쭉한 바나나를 먹어요. 바나나를 찾아볼까요? 1번, 딸기. 2번, 사과. 3번, 바나나."
+    },
+    {
+      "id": "korean-growth-1-04",
+      "title": "발에 쏙",
+      "story": "밖에 나가요. 발에 신발을 신어요.",
+      "prompt": "발에 신는 것은 무엇일까요?",
+      "choices": [
+        "👟",
+        "🧤",
+        "🧢"
+      ],
+      "answer": 0,
+      "explanation": [
+        "신발은 발에 신어요.",
+        "장갑은 손에 끼고 모자는 머리에 써요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🚪"
+      },
+      "skill": "물건과 쓰임 연결",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "신발",
+        "장갑",
+        "모자"
+      ],
+      "readText": "밖에 나가요. 발에 신발을 신어요. 발에 신는 것은 무엇일까요? 1번, 신발. 2번, 장갑. 3번, 모자."
+    },
+    {
+      "id": "korean-growth-1-05",
+      "title": "둥실 풍선",
+      "story": "풍선에 바람을 넣었어요.",
+      "prompt": "풍선을 찾아볼까요?",
+      "choices": [
+        "🧸",
+        "🎈",
+        "📚"
+      ],
+      "answer": 1,
+      "explanation": [
+        "바람을 넣은 것은 풍선이에요.",
+        "풍선이 어떤 색인지도 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🎉"
+      },
+      "skill": "생활 낱말 알아듣기",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "곰 인형",
+        "풍선",
+        "책"
+      ],
+      "readText": "풍선에 바람을 넣었어요. 풍선을 찾아볼까요? 1번, 곰 인형. 2번, 풍선. 3번, 책."
+    },
+    {
+      "id": "korean-growth-1-06",
+      "title": "하늘 친구",
+      "story": "새가 날개를 펴고 하늘을 날아요.",
+      "prompt": "이야기 속 친구는 누구일까요?",
+      "choices": [
+        "🐢",
+        "🐈",
+        "🐦"
+      ],
+      "answer": 2,
+      "explanation": [
+        "이야기에서 하늘을 나는 친구는 새예요.",
+        "두 팔을 날개처럼 펴 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "☁️"
+      },
+      "skill": "짧은 이야기 대상 찾기",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "거북이",
+        "고양이",
+        "새"
+      ],
+      "readText": "새가 날개를 펴고 하늘을 날아요. 이야기 속 친구는 누구일까요? 1번, 거북이. 2번, 고양이. 3번, 새."
+    },
+    {
+      "id": "korean-growth-1-07",
+      "title": "물 한 모금",
+      "story": "목이 말라요. 컵에 물을 담아요.",
+      "prompt": "물을 담은 것은 무엇일까요?",
+      "choices": [
+        "🥛",
+        "👒",
+        "🧦"
+      ],
+      "answer": 0,
+      "explanation": [
+        "이야기에서는 컵에 물을 담았어요.",
+        "컵을 잡고 물 마시는 흉내를 내 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "💧"
+      },
+      "skill": "듣고 물건 찾기",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "컵",
+        "모자",
+        "양말"
+      ],
+      "readText": "목이 말라요. 컵에 물을 담아요. 물을 담은 것은 무엇일까요? 1번, 컵. 2번, 모자. 3번, 양말."
+    },
+    {
+      "id": "korean-growth-1-08",
+      "title": "함께 읽어요",
+      "story": "책을 펼쳐요. 재미있는 이야기를 읽어요.",
+      "prompt": "펼친 것은 무엇일까요?",
+      "choices": [
+        "🪥",
+        "📖",
+        "🧸"
+      ],
+      "answer": 1,
+      "explanation": [
+        "이야기를 읽으려고 책을 펼쳤어요.",
+        "책 속 그림을 보며 함께 이야기할 수 있어요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🛋️"
+      },
+      "skill": "짧은 이야기 행동 이해",
+      "choiceMode": "picture",
+      "choiceLabels": [
+        "칫솔",
+        "책",
+        "곰 인형"
+      ],
+      "readText": "책을 펼쳐요. 재미있는 이야기를 읽어요. 펼친 것은 무엇일까요? 1번, 칫솔. 2번, 책. 3번, 곰 인형."
+    }
+  ],
+  "id": "growth-korean-1",
+  "subject": "korean"
+}

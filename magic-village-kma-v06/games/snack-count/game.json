@@ -1,0 +1,393 @@
+{
+  "id": "snack-count",
+  "subject": "math",
+  "title": "간식 바구니",
+  "description": "세고, 나누고, 필요한 만큼 직접 담아요.",
+  "emoji": "🍓",
+  "minStage": 1,
+  "maxStage": 2,
+  "adventure": true,
+  "prerequisite": "그림을 손가락으로 하나씩 짚어 볼 수 있어요.",
+  "offline": "접시와 큰 블록으로 간식 가게를 만들어요. 한 번에 한 개씩 옮기며 수를 말하고, 비어 있는 접시도 살펴보세요.",
+  "questions": [
+    {
+      "id": "snack-count-01",
+      "level": 1,
+      "skill": "1~5 수량 만들기",
+      "title": "딸기 세 개",
+      "story": "{{place}}의 상상 간식방에 왔어요. {{name}}의 접시에 딸기 3개를 담아요.",
+      "prompt": "딸기를 필요한 만큼 담아 보세요.",
+      "explanation": [
+        "딸기를 하나, 둘, 셋 하고 한 개씩 담아요.",
+        "접시에 딸기 3개가 있으면 다 담았어요."
+      ],
+      "mathCheck": {
+        "expression": "3",
+        "value": 3
+      },
+      "interaction": {
+        "type": "build",
+        "target": 3,
+        "max": 5,
+        "emoji": "🍓",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-02",
+      "level": 1,
+      "skill": "1~5 하나씩 세기",
+      "title": "귤 바구니",
+      "story": "{{place}}의 상상 소풍에 가져갈 귤을 모았어요.",
+      "prompt": "바구니에 귤이 몇 개 있나요?",
+      "explanation": [
+        "귤 하나를 셀 때마다 하나, 둘, 셋, 넷 하고 말해요.",
+        "마지막에 말한 수가 전체 개수예요. 귤은 4개예요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "바구니",
+            "emoji": "🍊",
+            "count": 4
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "4",
+        "value": 4
+      },
+      "choices": [
+        "3개",
+        "4개",
+        "5개"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "snack-count-03",
+      "level": 1,
+      "skill": "일대일 대응",
+      "title": "곰돌이의 간식",
+      "story": "{{place}}에서 곰 인형 4개에게 쿠키를 한 개씩 나눠 주는 놀이를 해요.",
+      "prompt": "모든 곰에게 한 개씩 줄 쿠키를 담아요.",
+      "explanation": [
+        "곰 한 개에 쿠키 한 개를 짝지어요.",
+        "곰이 4개이므로 쿠키도 4개 필요해요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "곰 인형",
+            "emoji": "🧸",
+            "count": 4
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "4*1",
+        "value": 4
+      },
+      "interaction": {
+        "type": "build",
+        "target": 4,
+        "max": 5,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-04",
+      "level": 1,
+      "skill": "수량 비교",
+      "title": "어느 접시가 많을까",
+      "story": "{{name}}가 상상 간식방의 사과 접시 두 개를 살펴봐요.",
+      "prompt": "사과가 더 많은 접시는 어느 쪽일까요?",
+      "explanation": [
+        "두 접시의 사과를 하나씩 짝지으면 분홍 접시에 2개가 더 남아요.",
+        "분홍 접시는 5개, 노랑 접시는 3개이므로 분홍 접시가 더 많아요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "분홍 접시",
+            "emoji": "🍎",
+            "count": 5
+          },
+          {
+            "label": "노랑 접시",
+            "emoji": "🍎",
+            "count": 3
+          }
+        ]
+      },
+      "choices": [
+        "노랑 접시",
+        "두 접시가 같아요",
+        "분홍 접시"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "snack-count-05",
+      "level": 1,
+      "skill": "하나 덜기",
+      "title": "한 개를 나눠요",
+      "story": "{{place}}의 상상 간식방에 쿠키 3개가 있어요. 친구에게 1개를 주었어요.",
+      "prompt": "남은 쿠키만 접시에 담아 보세요.",
+      "explanation": [
+        "쿠키 3개 중 1개를 친구에게 주어요.",
+        "하나를 덜어 내면 2개가 남아요."
+      ],
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍪",
+        "left": 3,
+        "operator": "-",
+        "right": 1
+      },
+      "mathCheck": {
+        "expression": "3-1",
+        "value": 2
+      },
+      "interaction": {
+        "type": "build",
+        "target": 2,
+        "max": 5,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-06",
+      "level": 1,
+      "skill": "0의 의미",
+      "title": "빈 바구니",
+      "story": "{{name}}가 바구니의 사과 2개를 모두 꺼냈어요. 바구니가 비었어요.",
+      "prompt": "바구니에 남은 사과는 몇 개일까요?",
+      "explanation": [
+        "2개를 모두 꺼냈으니 남은 사과가 하나도 없어요.",
+        "하나도 없는 수량은 0개라고 해요."
+      ],
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍎",
+        "left": 2,
+        "operator": "-",
+        "right": 2
+      },
+      "mathCheck": {
+        "expression": "2-2",
+        "value": 0
+      },
+      "choices": [
+        "0개",
+        "1개",
+        "2개"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "snack-count-07",
+      "level": 2,
+      "skill": "10 이내 덧셈",
+      "title": "소풍 간식을 모아요",
+      "story": "{{place}}의 상상 소풍을 준비해요. 딸기 4개와 딸기 3개를 한 접시에 모아요.",
+      "prompt": "모두 모은 딸기 수만큼 담아요.",
+      "explanation": [
+        "4개에서 다섯, 여섯, 일곱 하고 3개를 더 세어요.",
+        "4 + 3 = 7이므로 7개를 담아요."
+      ],
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍓",
+        "left": 4,
+        "operator": "+",
+        "right": 3
+      },
+      "mathCheck": {
+        "expression": "4+3",
+        "value": 7
+      },
+      "interaction": {
+        "type": "build",
+        "target": 7,
+        "max": 10,
+        "emoji": "🍓",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-08",
+      "level": 2,
+      "skill": "10 이내 뺄셈",
+      "title": "친구에게 나누기",
+      "story": "{{place}}의 상상 간식방에서 귤 8개 중 3개를 친구에게 주었어요.",
+      "prompt": "내 접시에는 몇 개가 남을까요?",
+      "explanation": [
+        "처음 8개에서 준 3개를 덜어 내요.",
+        "8 - 3 = 5이므로 남은 귤은 5개예요."
+      ],
+      "visual": {
+        "kind": "counters",
+        "emoji": "🍊",
+        "left": 8,
+        "operator": "-",
+        "right": 3
+      },
+      "mathCheck": {
+        "expression": "8-3",
+        "value": 5
+      },
+      "choices": [
+        "11개",
+        "5개",
+        "3개"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "snack-count-09",
+      "level": 2,
+      "skill": "10을 만드는 보수",
+      "title": "열 칸 도시락",
+      "story": "{{name}}의 상상 도시락은 쿠키 10개가 들어가요. 지금 6개가 들어 있어요.",
+      "prompt": "빈자리를 채울 쿠키만 담아요.",
+      "explanation": [
+        "6개에서 10개가 되려면 4개를 더 담아야 해요.",
+        "6 + 4 = 10이므로 새로 담을 쿠키는 4개예요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "이미 담은 쿠키",
+            "emoji": "🍪",
+            "count": 6
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "10-6",
+        "value": 4
+      },
+      "interaction": {
+        "type": "build",
+        "target": 4,
+        "max": 10,
+        "emoji": "🍪",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-10",
+      "level": 2,
+      "skill": "같은 수로 둘 나누기",
+      "title": "둘이 똑같이",
+      "story": "{{place}}의 상상 소풍에서 딸기 8개를 두 접시에 같은 수로 나눠요.",
+      "prompt": "한 접시에 몇 개씩 놓을까요?",
+      "explanation": [
+        "두 접시에 하나씩 번갈아 놓으면 각 접시에 4개가 놓여요.",
+        "4 + 4 = 8이므로 4개씩 나누면 같아요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "나누기 전",
+            "emoji": "🍓",
+            "count": 8
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "8/2",
+        "value": 4
+      },
+      "choices": [
+        "2개",
+        "8개",
+        "4개"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "snack-count-11",
+      "level": 2,
+      "skill": "두 수의 차이",
+      "title": "같은 수를 만들어요",
+      "story": "{{place}}의 상상 간식방에서 내 사과는 5개, 친구 사과는 7개예요.",
+      "prompt": "내 접시에 몇 개를 더 담으면 친구와 같아질까요?",
+      "explanation": [
+        "친구는 7개이고 나는 5개이므로 2개가 모자라요.",
+        "5 + 2 = 7이 되도록 사과 2개를 더 담아요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "내 접시",
+            "emoji": "🍎",
+            "count": 5
+          },
+          {
+            "label": "친구 접시",
+            "emoji": "🍎",
+            "count": 7
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "7-5",
+        "value": 2
+      },
+      "interaction": {
+        "type": "build",
+        "target": 2,
+        "max": 10,
+        "emoji": "🍎",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "snack-count-12",
+      "level": 2,
+      "skill": "수량 보존과 0",
+      "title": "옮겨도 그대로",
+      "story": "{{name}}가 쿠키 6개를 둥근 접시에서 긴 접시로 모두 옮겼어요. 먹거나 더 넣지는 않았어요.",
+      "prompt": "두 접시에 있는 쿠키를 모두 세면 몇 개일까요?",
+      "explanation": [
+        "접시를 바꾸어도 쿠키를 더하거나 빼지 않았어요.",
+        "둥근 접시에는 0개, 긴 접시에는 6개이므로 모두 6개예요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "둥근 접시",
+            "emoji": "🍪",
+            "count": 0
+          },
+          {
+            "label": "긴 접시",
+            "emoji": "🍪",
+            "count": 6
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "0+6",
+        "value": 6
+      },
+      "choices": [
+        "0개",
+        "6개",
+        "12개"
+      ],
+      "answer": 1
+    }
+  ]
+}

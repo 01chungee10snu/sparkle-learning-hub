@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#7655af"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ctext x=%273%27 y=%2753%27 font-size=%2750%27%3E🌸%3C/text%3E%3C/svg%3E"/>
+<title>태희·세희의 마법마을 · 벡수 경시대회 v0.6</title>
+<style>
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:system-ui,sans-serif;background:#e8f0e8;color:#263551}
+#page{display:flex;flex-direction:column;height:100dvh;min-height:400px;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+header{height:57px;flex:none;display:flex;gap:16px;align-items:center;justify-content:space-between;background:#fff; padding:0 14px;box-shadow:0 2px 10px #5c729024;z-index:2}
+header strong{font-size:17px}header a{display:inline-block;border:2px solid #8069b2;border-radius:12px;padding:8px 13px;color:#463373;text-decoration:none;font-weight:700}
+#game{position:relative;flex:1;min-height:0}#canvas{display:none;width:100%;height:100%;touch-action:none;background:#bcd8d7;outline:0}
+#loading{position:absolute;inset:0;display:grid;place-items:center;padding:22px}
+#loading[hidden], [hidden]{display:none!important}
+.panel{background:#fffcf7;max-width:460px;width:100%;border-radius:24px;border:2px solid #ddd2e9;padding:26px;box-shadow:0 14px 40px #546a7540;text-align:center}
+h1{margin:0 0 14px;font-size:26px}p{line-height:1.65}small{color:#6f7587}
+button{font:inherit;background:#7753ab;color:white;border:0;padding:14px 20px;border-radius:14px;font-weight:700;cursor:pointer;min-height:50px}
+button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outline:4px solid #dcb9fc;outline-offset:3px}
+#meter{width:100%;height:12px;background:#ebebf0;border-radius:20px;overflow:hidden;margin:15px 0}
+#bar{height:100%;width:0;background:#8663c2;transition:width .25s}
+@media (max-width:420px){header strong{font-size:15px}header a{font-size:13px;padding:8px}}
+</style>
+<link rel="stylesheet" href="./village-ui.css?v=20261010kma">
+<link rel="stylesheet" href="./major-patch.css?v=20261010kma">
+</head>
+<body>
+<div id="page">
+  <header>
+    <strong>🧚 태희·세희의 마법마을</strong>
+    <a href="../">← 마법마을 경시대회 안내</a>
+  </header>
+  <main id="game">
+    <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
+    <div id="village-ui" hidden></div>
+    <section id="loading" aria-live="polite">
+      <div class="panel">
+        <h1>🌸 마법마을 탐험</h1>
+        <p>요정을 움직여 동물 친구를 만나고, 벡수 수학 경시대회 25문제에 도전해요.</p>
+        <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
+        <div id="meter" hidden><div id="bar"></div></div>
+        <button id="start">마법마을 열기</button>
+        <p><small>마법마을은 현재 개발 중이며, 기존 문제와 별 기록을 그대로 사용합니다.</small></p>
+      </div>
+    </section>
+  </main>
+</div>
+<script type="module">
+import { createVillageHost } from './village-bridge.js?v=20261010kma';
+import { createVillageUI } from './village-ui.js?v=20261010kma';
+
+const status = document.querySelector('#status');
+const overlay = document.querySelector('#loading');
+const canvas = document.querySelector('#canvas');
+const start = document.querySelector('#start');
+const meter = document.querySelector('#meter');
+const bar = document.querySelector('#bar');
+let instance = null;
+const queued = [];
+let queuedCosmetics = null;
+const uiRoot = document.querySelector('#village-ui');
+const ui = createVillageUI({
+  root:uiRoot,
+  sendToUnity: command => instance?.SendMessage('VillageRuntime','OnUiCommand',command),
+  sendRequest: request => host.handle(JSON.stringify(request))
+});
+const deliver = message => {
+  ui.update(message);
+  if(message?.ok && message.cosmetics){
+    const wear=JSON.stringify(message.cosmetics);
+    if(instance)instance.SendMessage('VillageRuntime','OnCosmeticsMessage',wear);
+    else queuedCosmetics=wear;
+  }
+  const payload = JSON.stringify(message);
+  if (!instance) queued.push(payload);
+  else instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+};
+const host = createVillageHost(deliver);
+window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
+
+async function discoverBuild() {
+  for (const name of ['WebGL', 'sparkle-fairy-village']) {
+    const loaderUrl = './Build/' + name + '.loader.js?v=20261010kma';
+    try {
+      const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
+      if (result.ok) return {name, loaderUrl};
+    } catch { /* other filename or not built yet */ }
+  }
+  return null;
+}
+function script(url) {
+  return new Promise((resolve, reject) => {
+    const el = document.createElement('script');
+    el.src = url;
+    el.onload = resolve;
+    el.onerror = () => reject(new Error('Unity 로더를 불러오지 못했어요.'));
+    document.head.appendChild(el);
+  });
+}
+start.addEventListener('click', async () => {
+  start.disabled = true;
+  try {
+    status.textContent = '기존 학습 기록을 확인하는 중이에요.';
+    await host.prepare();
+    const build = await discoverBuild();
+    if (!build) {
+      status.textContent = 'Unity 3D 웹 빌드가 아직 배포되지 않았어요. 기존 학습게임은 그대로 이용할 수 있어요.';
+      start.disabled = false;
+      return;
+    }
+    status.textContent = '3D 마을을 불러오는 중이에요.';
+    meter.hidden = false;
+    await script(build.loaderUrl);
+    if (typeof createUnityInstance !== 'function')
+      throw new Error('Unity 실행 모듈을 찾지 못했어요.');
+    const base = './Build/' + build.name;
+    const compressed = await fetch(base + '.data.unityweb',{method:'HEAD'}).then(r=>r.ok).catch(()=>false);
+    const suffix=compressed ? '.unityweb' : '';
+    canvas.style.display = 'block';
+    instance = await createUnityInstance(canvas, {
+      dataUrl: base + '.data' + suffix + '?v=20261010kma',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=20261010kma',
+      codeUrl: base + '.wasm' + suffix + '?v=20261010kma',
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Family Learning',
+      productName: 'Sparkle Fairy Village',
+      productVersion: '0.6.0-kma'
+    }, progress => {
+      bar.style.width = Math.round(progress * 100) + '%';
+      status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
+    });
+    for (const payload of queued.splice(0))
+      instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+    if(queuedCosmetics){
+      instance.SendMessage('VillageRuntime','OnCosmeticsMessage',queuedCosmetics);
+      queuedCosmetics=null;
+    }
+    overlay.hidden = true;
+    uiRoot.hidden = false;
+  } catch (error) {
+    canvas.style.display = 'none';
+    start.disabled = false;
+    status.textContent = '3D 마을을 시작하지 못했어요. ' + (error?.message || '');
+    console.error('[Village]', error);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+{
+  "id": "school-shop",
+  "subject": "math",
+  "title": "우리 배움터 가게",
+  "description": "물건값과 동전을 세며 작은 가게를 열어요.",
+  "emoji": "🪙",
+  "minStage": 3,
+  "maxStage": 4,
+  "adventure": true,
+  "prerequisite": "100원 동전과 숫자를 읽고, 같은 수를 모을 수 있어요.",
+  "offline": "종이 동전에 100원과 500원을 적어 가게 놀이를 해 보세요. 계산 뒤에는 낸 돈과 거스름돈을 다시 모아 확인하세요.",
+  "questions": [
+    {
+      "id": "school-shop-01",
+      "level": 3,
+      "skill": "두 물건값 더하기",
+      "title": "연필과 지우개",
+      "story": "{{place}}의 상상 가게에서 연필은 200원, 지우개는 300원이에요. 하나씩 골랐어요.",
+      "prompt": "모두 얼마를 내야 할까요?",
+      "explanation": [
+        "물건 두 개의 값을 더해요.",
+        "200 + 300 = 500이므로 500원을 내요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "연필 200원 + 지우개 300원"
+      },
+      "mathCheck": {
+        "expression": "200+300",
+        "value": 500
+      },
+      "choices": [
+        "100원",
+        "500원",
+        "600원"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "school-shop-02",
+      "level": 3,
+      "skill": "동일 화폐로 금액 만들기",
+      "title": "색종이를 사요",
+      "story": "{{place}}의 상상 가게에서 색종이는 400원이에요. 100원짜리 동전만 사용해요.",
+      "prompt": "400원이 되도록 100원 동전을 놓아요.",
+      "explanation": [
+        "100원씩 네 번 모으면 100 + 100 + 100 + 100 = 400원이에요.",
+        "100원 동전 4개를 내면 돼요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "400/100",
+        "value": 4
+      },
+      "interaction": {
+        "type": "build",
+        "target": 4,
+        "max": 10,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "school-shop-03",
+      "level": 3,
+      "skill": "부족한 금액 찾기",
+      "title": "얼마가 모자랄까",
+      "story": "{{name}}는 상상 가게에서 700원 공책을 사려고 해요. 가진 돈은 500원이에요.",
+      "prompt": "돈이 얼마 더 필요할까요?",
+      "explanation": [
+        "공책값에서 가진 돈을 빼요.",
+        "700 - 500 = 200이므로 200원이 더 필요해요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "공책 700원 · 가진 돈 500원"
+      },
+      "mathCheck": {
+        "expression": "700-500",
+        "value": 200
+      },
+      "choices": [
+        "200원",
+        "1200원",
+        "500원"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "school-shop-04",
+      "level": 3,
+      "skill": "거스름돈 동전 수",
+      "title": "스티커와 거스름돈",
+      "story": "{{place}}의 상상 가게에서 200원 스티커를 사고 500원을 냈어요. 거스름돈은 100원 동전으로 받아요.",
+      "prompt": "받을 100원 동전을 놓아요.",
+      "explanation": [
+        "낸 돈 500원에서 스티커값 200원을 빼면 300원이 남아요.",
+        "300원은 100원 동전 3개예요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "(500-200)/100",
+        "value": 3
+      },
+      "interaction": {
+        "type": "build",
+        "target": 3,
+        "max": 10,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "school-shop-05",
+      "level": 3,
+      "skill": "같은 가격 묶음",
+      "title": "엽서 두 장",
+      "story": "{{place}}의 상상 가게에서 엽서는 한 장에 100원이에요. {{name}}가 두 장을 골랐어요.",
+      "prompt": "엽서 두 장의 값은 얼마일까요?",
+      "explanation": [
+        "한 장에 100원이므로 두 장은 100원을 두 번 모아요.",
+        "100 + 100 = 200원이에요."
+      ],
+      "visual": {
+        "kind": "groups",
+        "groups": [
+          {
+            "label": "엽서 한 장 100원",
+            "emoji": "✉️",
+            "count": 2
+          }
+        ]
+      },
+      "mathCheck": {
+        "expression": "100*2",
+        "value": 200
+      },
+      "choices": [
+        "100원",
+        "300원",
+        "200원"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "school-shop-06",
+      "level": 3,
+      "skill": "목표 금액 채우기",
+      "title": "책갈피 살 돈",
+      "story": "{{place}}의 상상 가게에서 책갈피는 500원이에요. 저금통에 300원이 있어요.",
+      "prompt": "500원을 만들려면 100원 동전을 몇 개 더 넣을까요?",
+      "explanation": [
+        "500원에서 이미 있는 300원을 빼면 200원이 필요해요.",
+        "100원 동전 2개를 더 넣으면 500원이 돼요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "(500-300)/100",
+        "value": 2
+      },
+      "interaction": {
+        "type": "build",
+        "target": 2,
+        "max": 10,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "school-shop-07",
+      "level": 4,
+      "skill": "서로 다른 동전 합산",
+      "title": "주머니 속 동전",
+      "story": "{{name}}의 상상 가게 주머니에는 500원 동전 1개와 100원 동전 4개가 있어요.",
+      "prompt": "가진 돈은 모두 얼마일까요?",
+      "explanation": [
+        "100원 동전 4개는 400원이에요.",
+        "500 + 400 = 900원이므로 모두 900원이 있어요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "500원 × 1개 + 100원 × 4개"
+      },
+      "mathCheck": {
+        "expression": "500+100*4",
+        "value": 900
+      },
+      "choices": [
+        "900원",
+        "500원",
+        "1400원"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "school-shop-08",
+      "level": 4,
+      "skill": "십을 넘는 동전 수",
+      "title": "물감 값을 만들어요",
+      "story": "{{place}}의 상상 가게에서 물감은 1200원이에요. 100원 동전만 내려고 해요.",
+      "prompt": "1200원이 되도록 100원 동전을 놓아요.",
+      "explanation": [
+        "100원 동전 10개가 1000원이에요.",
+        "동전 2개를 더하면 1200원이므로 모두 12개가 필요해요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "1200/100",
+        "value": 12
+      },
+      "interaction": {
+        "type": "build",
+        "target": 12,
+        "max": 20,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "school-shop-09",
+      "level": 4,
+      "skill": "합계 후 거스름돈",
+      "title": "두 가지 준비물",
+      "story": "{{place}}의 상상 가게에서 800원 풀과 700원 공책을 사고 2000원을 냈어요.",
+      "prompt": "거스름돈은 얼마일까요?",
+      "explanation": [
+        "먼저 두 물건값을 더하면 800 + 700 = 1500원이에요.",
+        "낸 2000원에서 1500원을 빼면 거스름돈은 500원이에요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "풀 800원 · 공책 700원 · 낸 돈 2000원"
+      },
+      "mathCheck": {
+        "expression": "2000-(800+700)",
+        "value": 500
+      },
+      "choices": [
+        "1500원",
+        "500원",
+        "1300원"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "school-shop-10",
+      "level": 4,
+      "skill": "혼합 화폐로 금액 만들기",
+      "title": "오백 원 다음에는",
+      "story": "{{place}}의 상상 가게에서 1100원 퍼즐을 사려고 500원 동전 1개를 놓았어요.",
+      "prompt": "남은 값을 100원 동전 몇 개로 채울까요?",
+      "explanation": [
+        "퍼즐값 1100원에서 이미 놓은 500원을 빼면 600원이에요.",
+        "100원 동전 6개를 더 내면 1100원이 돼요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "이미 낸 돈 500원 · 추가 동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "(1100-500)/100",
+        "value": 6
+      },
+      "interaction": {
+        "type": "build",
+        "target": 6,
+        "max": 20,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "school-shop-11",
+      "level": 4,
+      "skill": "예산 안에서 최대 수",
+      "title": "천 원으로 엽서 사기",
+      "story": "{{name}}가 가진 돈은 1000원이에요. 상상 가게의 엽서는 한 장에 300원이에요.",
+      "prompt": "돈이 모자라지 않게 최대 몇 장을 살 수 있나요?",
+      "explanation": [
+        "3장은 900원이어서 1000원 안에서 살 수 있어요.",
+        "4장은 1200원이어서 돈이 모자라요. 최대 3장을 사고 100원이 남아요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "가진 돈 1000원 · 한 장 300원"
+      },
+      "mathCheck": {
+        "expression": "(1000-100)/300",
+        "value": 3
+      },
+      "choices": [
+        "4장",
+        "2장",
+        "3장"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "school-shop-12",
+      "level": 4,
+      "skill": "여러 동전으로 거스름돈",
+      "title": "거스름돈을 확인해요",
+      "story": "{{place}}의 상상 가게에서 200원 지우개를 사고 1000원을 냈어요. 100원 동전으로만 거슬러 받아요.",
+      "prompt": "받을 100원 동전을 놓아요.",
+      "explanation": [
+        "1000 - 200 = 800원이므로 800원을 돌려받아요.",
+        "100원 동전 8개와 지우개값 200원을 더하면 낸 돈 1000원이 돼요."
+      ],
+      "visual": {
+        "kind": "word",
+        "text": "동전 1개 = 100원"
+      },
+      "mathCheck": {
+        "expression": "(1000-200)/100",
+        "value": 8
+      },
+      "interaction": {
+        "type": "build",
+        "target": 8,
+        "max": 20,
+        "emoji": "🪙",
+        "unit": "개"
+      }
+    }
+  ]
+}

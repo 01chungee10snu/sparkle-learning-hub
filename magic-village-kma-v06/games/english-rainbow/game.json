@@ -1,0 +1,297 @@
+{
+  "id": "english-rainbow",
+  "subject": "english",
+  "title": "단어 소풍",
+  "description": "과일과 동물, 색깔을 영어로!",
+  "emoji": "🍎",
+  "questions": [
+    {
+      "id": "english-01",
+      "title": "사과의 영어 이름",
+      "story": "아삭아삭, 바구니에 사과를 담아요.",
+      "prompt": "사과는 영어로 무엇일까요?",
+      "choices": [
+        "apple",
+        "banana",
+        "grapes"
+      ],
+      "answer": 0,
+      "explanation": [
+        "사과는 영어로 apple이에요.",
+        "소리를 듣고 apple을 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍎"
+      },
+      "speak": {
+        "text": "apple",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-02",
+      "title": "바나나의 영어 이름",
+      "story": "껍질을 벗겨 바나나를 먹어요.",
+      "prompt": "바나나는 영어로 무엇일까요?",
+      "choices": [
+        "orange",
+        "banana",
+        "apple"
+      ],
+      "answer": 1,
+      "explanation": [
+        "바나나는 영어로 banana예요.",
+        "소리를 듣고 banana를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍌"
+      },
+      "speak": {
+        "text": "banana",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-03",
+      "title": "포도의 영어 이름",
+      "story": "포도송이에 포도알이 주렁주렁 달렸어요.",
+      "prompt": "여러 포도알을 영어로 무엇이라고 할까요?",
+      "choices": [
+        "banana",
+        "orange",
+        "grapes"
+      ],
+      "answer": 2,
+      "explanation": [
+        "포도알 하나는 grape, 여러 포도알은 grapes라고 해요.",
+        "소리를 듣고 grapes를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍇"
+      },
+      "speak": {
+        "text": "grapes",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-04",
+      "title": "오렌지의 영어 이름",
+      "story": "동그란 오렌지로 주스를 만들어요.",
+      "prompt": "오렌지는 영어로 무엇일까요?",
+      "choices": [
+        "orange",
+        "grapes",
+        "apple"
+      ],
+      "answer": 0,
+      "explanation": [
+        "과일 오렌지는 영어로 orange예요.",
+        "소리를 듣고 orange를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🍊"
+      },
+      "speak": {
+        "text": "orange",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-05",
+      "title": "고양이의 영어 이름",
+      "story": "야옹, 고양이가 인사해요.",
+      "prompt": "고양이는 영어로 무엇일까요?",
+      "choices": [
+        "dog",
+        "cat",
+        "fish"
+      ],
+      "answer": 1,
+      "explanation": [
+        "고양이는 영어로 cat이에요.",
+        "소리를 듣고 cat을 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🐱"
+      },
+      "speak": {
+        "text": "cat",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-06",
+      "title": "개의 영어 이름",
+      "story": "멍멍, 개가 꼬리를 흔들어요.",
+      "prompt": "개는 영어로 무엇일까요?",
+      "choices": [
+        "rabbit",
+        "cat",
+        "dog"
+      ],
+      "answer": 2,
+      "explanation": [
+        "개는 영어로 dog예요.",
+        "소리를 듣고 dog를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🐶"
+      },
+      "speak": {
+        "text": "dog",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-07",
+      "title": "토끼의 영어 이름",
+      "story": "긴 귀를 가진 토끼가 깡충 뛰어요.",
+      "prompt": "토끼는 영어로 무엇일까요?",
+      "choices": [
+        "rabbit",
+        "dog",
+        "fish"
+      ],
+      "answer": 0,
+      "explanation": [
+        "토끼는 영어로 rabbit이에요.",
+        "소리를 듣고 rabbit을 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🐰"
+      },
+      "speak": {
+        "text": "rabbit",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-08",
+      "title": "물고기의 영어 이름",
+      "story": "물고기가 물속에서 헤엄쳐요.",
+      "prompt": "물고기는 영어로 무엇일까요?",
+      "choices": [
+        "cat",
+        "fish",
+        "rabbit"
+      ],
+      "answer": 1,
+      "explanation": [
+        "물고기는 영어로 fish예요.",
+        "소리를 듣고 fish를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🐟"
+      },
+      "speak": {
+        "text": "fish",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-09",
+      "title": "빨간색의 영어 이름",
+      "story": "빨간색 동그라미를 그렸어요.",
+      "prompt": "빨간색은 영어로 무엇일까요?",
+      "choices": [
+        "blue",
+        "yellow",
+        "red"
+      ],
+      "answer": 2,
+      "explanation": [
+        "빨간색은 영어로 red예요.",
+        "소리를 듣고 red를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🔴"
+      },
+      "speak": {
+        "text": "red",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-10",
+      "title": "파란색의 영어 이름",
+      "story": "파란색 동그라미를 그렸어요.",
+      "prompt": "파란색은 영어로 무엇일까요?",
+      "choices": [
+        "blue",
+        "green",
+        "red"
+      ],
+      "answer": 0,
+      "explanation": [
+        "파란색은 영어로 blue예요.",
+        "소리를 듣고 blue를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🔵"
+      },
+      "speak": {
+        "text": "blue",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-11",
+      "title": "노란색의 영어 이름",
+      "story": "노란색 동그라미를 그렸어요.",
+      "prompt": "노란색은 영어로 무엇일까요?",
+      "choices": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "answer": 1,
+      "explanation": [
+        "노란색은 영어로 yellow예요.",
+        "소리를 듣고 yellow를 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🟡"
+      },
+      "speak": {
+        "text": "yellow",
+        "lang": "en-US"
+      }
+    },
+    {
+      "id": "english-12",
+      "title": "초록색의 영어 이름",
+      "story": "초록색 동그라미를 그렸어요.",
+      "prompt": "초록색은 영어로 무엇일까요?",
+      "choices": [
+        "yellow",
+        "red",
+        "green"
+      ],
+      "answer": 2,
+      "explanation": [
+        "초록색은 영어로 green이에요.",
+        "소리를 듣고 green을 따라 말해 보세요."
+      ],
+      "visual": {
+        "kind": "emoji",
+        "emoji": "🟢"
+      },
+      "speak": {
+        "text": "green",
+        "lang": "en-US"
+      }
+    }
+  ]
+}
