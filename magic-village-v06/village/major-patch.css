@@ -129,6 +129,72 @@
    max-width:none;padding:9px 12px;font-size:12px;z-index:10;box-shadow:0 8px 22px #36427144;}
 }
 
+
+/* Samsung Galaxy / Android WebGL: reliable tap-operated integer entry. */
+.vh-number-entry{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  width:100%;max-width:360px;margin:11px auto 0;
+}
+.vh-number-instruction{
+  margin:0;text-align:center;font-size:clamp(14px,3.6vw,16px);
+  font-weight:800;color:#5b4275;line-height:1.45;
+}
+.vh-number-entry .vh-numeric-input{
+  width:100%;max-width:340px;min-height:58px;
+  padding:10px 14px;font-size:clamp(24px,7vw,31px);font-weight:900;
+  border:3px solid #9472c0;border-radius:17px;
+  color:#403061;background:#fffdf4;box-shadow:inset 0 2px 7px #7d6a9c22;
+}
+.vh-numeric-input[readonly]{cursor:default;caret-color:transparent;}
+.vh-number-keypad{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  width:min(100%,340px);gap:8px;margin:10px auto 4px;
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;
+}
+.vh-dialog .vh-number-key{
+  min-width:0;min-height:56px!important;padding:7px!important;
+  border:2px solid #b89ad3!important;border-radius:15px!important;
+  background:linear-gradient(140deg,#fffaf0,#eee4ff)!important;
+  color:#432d66!important;font-size:clamp(23px,6vw,29px)!important;
+  font-weight:900!important;line-height:1.1!important;
+  box-shadow:0 3px 0 #af91c6!important;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.vh-dialog .vh-number-key[data-key="back"],
+.vh-dialog .vh-number-key[data-key="clear"]{
+  font-size:clamp(15px,4vw,19px)!important;
+  background:linear-gradient(140deg,#e5f3ff,#f0e6fa)!important;
+}
+.vh-dialog .vh-number-key:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 #af91c6!important;}
+.vh-dialog .vh-number-sign{grid-column:span 3;font-size:22px!important;min-height:48px!important;}
+.vh-number-submit{width:min(100%,340px)!important;display:block;margin:11px auto 2px!important;}
+.vh-dialog-footer.vh-has-keypad{row-gap:7px;}
+.vh-dialog-footer.vh-has-keypad .vh-number-submit{
+  order:-1;flex:0 0 100%;width:100%!important;max-width:none;
+  min-height:52px!important;margin:0 0 4px!important;
+}
+@media(max-width:760px){.vh-dialog-footer.vh-has-keypad .vh-small{display:none;}}
+.vh-dialog .vh-numeric-native{
+  background:transparent!important;border:0!important;color:#72549c!important;
+  text-decoration:underline;font-size:13px!important;min-height:42px!important;
+  padding:5px 10px!important;box-shadow:none!important;
+}
+.vh-numeric-sr{
+  position:absolute!important;width:1px!important;height:1px!important;
+  clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;overflow:hidden;
+}
+@media(max-width:760px){
+ .vh-number-keypad{gap:7px;}
+ .vh-dialog .vh-number-key{min-height:54px!important;}
+ .vh-book-right .vh-number-entry{margin-top:8px;}
+}
+@media(max-height:580px) and (orientation:landscape){
+ .vh-dialog .vh-number-key{min-height:44px!important;}
+ .vh-number-keypad{gap:6px;margin:5px auto;}
+ .vh-number-entry .vh-numeric-input{min-height:48px;}
+}
+@media(prefers-reduced-motion:reduce){.vh-dialog .vh-number-key:active{transform:none!important;}}
+
 /* v0.6 experiential learning: physical mini-games interleaved with reading */
 .vh-spatial-stage{position:relative;overflow:hidden;border-radius:24px;border:3px solid #9cbad6;
   background:radial-gradient(ellipse at 50% 0%,#e8fff6 0%,#d4edfa 35%,#c5e1b0 85%);

@@ -104,6 +104,8 @@ export function createVillageHost(emit) {
       unit: item.interaction?.unit ?? '',
       target: mode === 'build' ? item.interaction.target : 0,
       max: mode === 'build' ? item.interaction.max : 0,
+      numericMin: mode === 'numeric' ? (item.interaction.min ?? 0) : 0,
+      numericMax: mode === 'numeric' ? item.interaction.max : 0,
       hintAvailable: Boolean(hintFor(item, game)),
       visual: item.visual ?? null,
       hinted: round.hinted === true,

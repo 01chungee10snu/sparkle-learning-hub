@@ -195,6 +195,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.title.focus({preventScroll:true});
   }
   function resetBody() {
+    // Numeric submit stays pinned above the footer on small Galaxy screens.
+    ui.dialog.querySelectorAll('.vh-number-submit').forEach(el=>el.remove());
+    ui.dialog.querySelector('.vh-dialog-footer')?.classList.remove('vh-has-keypad');
     ui.body.replaceChildren();
     contentTarget=ui.body;
     ui.dialog.setAttribute('aria-busy','false');
@@ -222,14 +225,112 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       contentTarget.append(row,button('이만큼 담았어요 ✨',()=>submit(amount),'vh-wide'));
       return;
     }
-    const input = label('input','', 'vh-input');
-    input.type = 'text'; input.inputMode = 'numeric'; input.autocomplete = 'off';
+    // Android WebGL and the Samsung IME can lose keyboard focus on top of
+    // a canvas. Always provide a true DOM touch keypad, independent of the OS.
+    const min=Number.isSafeInteger(q.numericMin)?q.numericMin:0;
+    const max=Number.isSafeInteger(q.numericMax)?q.numericMax:1000000;
+    const allowMinus=min<0;
+    const coarse=typeof window.matchMedia==='function'&&
+      window.matchMedia('(pointer: coarse)').matches;
+    const input=label('input','','vh-input vh-numeric-input');
+    input.type='text';
+    input.autocomplete='off';
+    input.spellcheck=false;
+    input.inputMode=coarse?'none':'numeric';
+    input.readOnly=coarse;
+    input.maxLength=8;
     input.setAttribute('aria-label','숫자 답');
-    input.placeholder='정답 숫자';
-    input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();submit(input.value.trim());}});
-    const holder = label('div','', 'vh-row');
-    holder.append(input);
-    contentTarget.append(holder,button('정답 확인 ✨',()=>submit(input.value.trim()),'vh-wide'));
+    input.setAttribute('enterkeyhint','done');
+    input.placeholder='아래 숫자판으로 답 입력';
+    const live=label('output','','vh-numeric-sr');
+    live.setAttribute('aria-live','polite');
+    const holder=label('div','','vh-number-entry');
+    holder.append(label('p','아래 숫자 버튼을 눌러 답을 입력해요.','vh-number-instruction'),input,live);
+    const pad=label('div','','vh-number-keypad');
+    pad.setAttribute('role','group');
+    pad.setAttribute('aria-label','게임 숫자 키패드');
+    const check=button('정답 확인 ✨',()=>submitNumeric(),'vh-wide vh-number-submit');
+    check.disabled=true;
+    function clean(value){
+      const source=String(value??'').trim()
+        .replace(/[０-９]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xfee0))
+        .replace(/[−－]/g,'-');
+      const sign=allowMinus&&source.startsWith('-')?'-':'';
+      let digits=source.replace(/[^0-9]/g,'').slice(0,7);
+      if(digits.length>1)digits=digits.replace(/^0+(?=[0-9])/,'');
+      return sign+digits;
+    }
+    function ready(){
+      if(!/^-?[0-9]{1,7}$/.test(input.value))return false;
+      const value=Number(input.value);
+      return Number.isSafeInteger(value)&&value>=min&&value<=max;
+    }
+    function refresh(){
+      const cleaned=clean(input.value);
+      if(input.value!==cleaned)input.value=cleaned;
+      check.disabled=!ready();
+      live.textContent=input.value&&input.value!=='-'?
+        '입력한 답 '+input.value:'아직 답을 입력하지 않았어요';
+    }
+    function setValue(value){
+      input.value=value;
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+    }
+    function press(value){
+      // Button taps must work even if Android refuses to launch its keyboard.
+      if(document.activeElement===input&&!input.readOnly)input.blur();
+      if(value==='back')setValue(input.value.slice(0,-1));
+      else if(value==='clear')setValue('');
+      else if(value==='minus'&&allowMinus)
+        setValue(input.value.startsWith('-')?input.value.slice(1):'-'+input.value);
+      else if(/^[0-9]$/.test(value))setValue(input.value+value);
+    }
+    function submitNumeric(){
+      refresh();
+      if(!ready()){
+        announce('숫자를 입력하고 답을 확인해 주세요.');
+        return;
+      }
+      submit(input.value.trim());
+    }
+    const rows=[
+      ['1','2','3'],['4','5','6'],['7','8','9'],
+      ['back','0','clear']
+    ];
+    for(const row of rows)for(const value of row){
+      const shown=value==='back'?'⌫':value==='clear'?'지우기':value;
+      const name=value==='back'?'마지막 숫자 지우기':
+        value==='clear'?'전체 지우기':'숫자 '+value;
+      const key=button(shown,()=>press(value),'vh-number-key');
+      key.setAttribute('aria-label',name);
+      key.dataset.key=value;
+      pad.append(key);
+    }
+    if(allowMinus){
+      const sign=button('＋ / −',()=>press('minus'),'vh-number-key vh-number-sign');
+      sign.setAttribute('aria-label','양수 음수 전환');
+      pad.append(sign);
+    }
+    input.addEventListener('input',refresh);
+    input.addEventListener('keydown',event=>{
+      if(event.key==='Enter'){
+        event.preventDefault();
+        submitNumeric();
+      }
+    });
+    if(coarse){
+      const native=button('⌨️ 휴대전화 키보드 사용',()=>{
+        input.readOnly=false;
+        input.inputMode='numeric';
+        input.focus();
+      },'vh-numeric-native');
+      holder.append(native);
+    }
+    contentTarget.append(holder,pad);
+    const footer=ui.dialog.querySelector('.vh-dialog-footer');
+    footer.classList.add('vh-has-keypad');
+    footer.prepend(check);
+    refresh();
   }
   function matchQuestion(q) {
     const left = q.left?.length ? q.left : q.items;

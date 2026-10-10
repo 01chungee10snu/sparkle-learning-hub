@@ -97,7 +97,7 @@ patch('village/index.html',[
  ['productVersion: \'0.6.0-dev\'','productVersion: \'0.6.0-kma\'']
 ]);
 // Standardized cache key prevents old public practice chunks from being reused.
-patch('village/index.html', [['20261010h','20261010kma']]);
+patch('village/index.html', [['20261010galaxy1','20261010kma-numpad1']]);
 patch('village/village-ui.js',[
  ["    paragraph('학년과 도전 수준을 고르고, 진짜 경시대회 1번부터 25번까지 풀어 보세요.','vh-story');",
  "    paragraph('KMA 한국수학학력평가 공개 기출의 실제 1번부터 25번까지 풀어 보세요. 답과 풀이 출처를 확인해 보세요.','vh-story');"]
