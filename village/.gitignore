@@ -1,0 +1,3 @@
+# WebGL runtime is provided by a tested release bundle, not in the source PR.
+Build/
+StreamingAssets/

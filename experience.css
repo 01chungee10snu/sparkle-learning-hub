@@ -91,3 +91,14 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 @media(max-width:699px) and (max-height:740px){.collection-screen>.section-top .text-button{min-height:32px;font-size:14px}.collection-screen .gift-summary{min-height:30px}}
 
 @media(max-width:699px) and (min-height:601px) and (max-height:740px){.collection-screen{gap:4px}}
+
+/* Unity magic village link - visually distinct, accessible and responsive. */
+.village-launch{display:flex;align-items:center;gap:14px;margin:14px 0 20px;padding:15px 17px;border:2px solid #bca8e7;border-radius:20px;text-decoration:none;background:linear-gradient(115deg,#f7edff,#edf9ee);color:#352e58;box-shadow:0 4px 14px #5b4e781a}
+.village-launch:hover,.village-launch:focus-visible{border-color:#845ac0;box-shadow:0 6px 20px #7662ac35}
+.village-launch:focus-visible{outline:3px solid #875dc1;outline-offset:3px}
+.village-launch-icon{flex:0 0 auto;font-size:34px}
+.village-launch-copy{display:flex;flex:1;flex-direction:column;gap:3px;min-width:0}
+.village-launch-copy strong{font-size:20px;color:#493578}
+.village-launch-copy small{font-size:13px;line-height:1.45;color:#555576}
+.village-launch-arrow{font-size:25px;font-weight:700;color:#6747a1}
+@media(max-width:420px){.village-launch{gap:10px;padding:11px}.village-launch-icon{font-size:29px}.village-launch-copy strong{font-size:17px}.village-launch-copy small{font-size:12px}}
