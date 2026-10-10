@@ -20,6 +20,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-home" class="vh-action" type="button" aria-current="page"><span>🏡</span>내 마을</button>',
     ' <button id="vh-plaza" class="vh-action" type="button"><span>🌷</span>가족 광장</button>',
     ' <button id="vh-quest" class="vh-action" type="button"><span>🐰</span>오늘의 부탁</button>',
+    ' <button id="vh-bebsu" class="vh-action vh-challenge-action" type="button"><span>🏆</span>벡수 25문제</button>',
     '</nav>',
     '<p id="village-toast" role="alert" hidden></p>',
     '<div id="village-dialog-wrap" hidden aria-busy="false">',
@@ -39,7 +40,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   const ui = {
     name:$('vh-name'), area:$('vh-area'), stars:$('vh-stars'),
     progress:$('vh-progress'), help:$('vh-help'),
-    home:$('vh-home'), plaza:$('vh-plaza'), quest:$('vh-quest'),
+    home:$('vh-home'), plaza:$('vh-plaza'), quest:$('vh-quest'), bebsu:$('vh-bebsu'),
     dialog:$('village-dialog-wrap'), title:$('vh-title'),
     counter:$('vh-counter'), body:$('vh-body'), exit:$('vh-exit'),
     listen:$('vh-listen'), hint:$('vh-hint'), note:$('vh-note'), controls:$('village-controls'),
@@ -85,7 +86,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
   function setZone(next) {
     if (phase !== 'explore' || busy || root.dataset.ready!=='true' || zone===next) return;
-    busy=true; ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=true;
+    busy=true; ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=true;
     zone = next;
     ui.home.setAttribute('aria-current',next === 'home'?'page':'false');
     ui.plaza.setAttribute('aria-current',next === 'plaza'?'page':'false');
@@ -99,9 +100,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   ui.plaza.addEventListener('click',()=>setZone('plaza'));
   ui.quest.addEventListener('click',()=>{
     if (phase === 'explore' && !busy && root.dataset.ready==='true') {
-      busy=true;ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=true;
+      busy=true;ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=true;
       sendToUnity('START_RECOMMENDED');
     }
+  });
+  ui.bebsu.addEventListener('click',()=>{
+    if (phase==='explore'&&!busy&&root.dataset.ready==='true') request('SHOW_BEBSU');
   });
   root.addEventListener('pointerdown', e => { if (e.target.closest('button,input,select,a,.vh-dialog')) sendToUnity('UI_POINTER'); },true);
   root.addEventListener('pointerup', e => { if (e.target.closest('button,input,select,a,.vh-dialog')) sendToUnity('UI_POINTER'); },true);
@@ -249,6 +253,60 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     else if(visual.kind==='emoji')panel.append(label('span',visual.emoji||'','vh-counted'));
     if(panel.childNodes.length)ui.body.append(panel);
   }
+  function showOriginalImage(src,title) {
+    if (!src) return;
+    const figure=label('figure','','vh-original-figure');
+    const image=document.createElement('img');
+    image.src=src; image.alt=title; image.loading='lazy';
+    image.decoding='async'; image.className='vh-original-image';
+    figure.append(image,label('figcaption','벡수 경시대회 원본 그림을 보고 풀어 보세요.','vh-small'));
+    ui.body.append(figure);
+  }
+  function showChallengePicker(result) {
+    if (!Array.isArray(result.challenges)||!result.challenges.length) {
+      announce('경시대회 시험지를 찾지 못했어요.');return;
+    }
+    phase='choose'; open();resetBody();
+    ui.title.textContent='🏆 벡수 수학 경시대회';
+    ui.counter.textContent='25문항 도전';
+    ui.note.textContent='25문제에 차례대로 도전해요. 중간에 쉬었다 이어 풀 수 있어요.';
+    ui.listen.hidden=true;ui.hint.hidden=true;
+    paragraph('학년과 도전 수준을 고르고, 진짜 경시대회 1번부터 25번까지 풀어 보세요.','vh-story');
+    const gradeLabel=label('label','학년 선택','vh-select-label');
+    const gradeSelect=document.createElement('select');gradeSelect.className='vh-challenge-select';
+    for(const grade of result.challenges){const opt=label('option',grade.title);opt.value=grade.grade;gradeSelect.append(opt);}
+    gradeSelect.value=who==='tae'?'g1':'g1';
+    gradeLabel.append(gradeSelect);ui.body.append(gradeLabel);
+    const levelLabel=label('label','도전 수준','vh-select-label');
+    const levelSelect=document.createElement('select');levelSelect.className='vh-challenge-select';
+    levelLabel.append(levelSelect);ui.body.append(levelLabel);
+    const paperInfo=paragraph('','vh-challenge-paper');
+    const preview=paragraph('','vh-small');
+    const currentPaper=()=>result.challenges.find(g=>g.grade===gradeSelect.value)?.papers
+      .find(p=>p.paperId===levelSelect.value);
+    const updateInfo=()=>{
+      const paper=currentPaper();if(!paper)return;
+      paperInfo.textContent='📜 '+paper.title+' · 1~25번 순서대로';
+      preview.textContent='완주 특별 보너스: '+(who==='tae'?'160':'60')+'별 (시험지별 최초 1회)';
+    };
+    gradeSelect.addEventListener('change',()=>{
+      const grade=result.challenges.find(g=>g.grade===gradeSelect.value);
+      levelSelect.replaceChildren();
+      for(const p of grade.papers){const opt=label('option',p.label+' · 25문항');opt.value=p.paperId;levelSelect.append(opt);}
+      levelSelect.value=grade.papers[1]?.paperId||grade.papers[0].paperId;
+      updateInfo();
+    });
+    levelSelect.addEventListener('change',updateInfo);
+    gradeSelect.dispatchEvent(new Event('change'));
+    ui.body.append(button('✨ 1번 문제부터 시작하기',()=>{
+      const grade=result.challenges.find(g=>g.grade===gradeSelect.value);
+      const paper=currentPaper();if(!grade||!paper)return;
+      gameId=grade.gameId;
+      request('START',{paperId:paper.paperId});
+    },'vh-wide'));
+    paragraph(result.difficultyNote||'도전 수준은 임시 상대 난도이며 실증 검증 전입니다.','vh-small');
+    ui.title.focus({preventScroll:true});
+  }
   function showQuestion(q) {
     if (!q) return;
     phase='question'; question=q; gameId=q.gameId;
@@ -258,6 +316,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showRoundCue(Math.max(0,(q.index||1)-1),q.total||3);
     voiceText=[q.story,q.prompt,...(q.choices||[])].filter(Boolean).join('. ');
     if (q.story) paragraph(q.story,'vh-story');
+    showOriginalImage(q.problemImage,'경시대회 '+(q.index||1)+'번 문제 그림');
     paragraph(q.prompt || '무엇을 선택할까요?','vh-prompt');
     showVisual(q.visual);
     const mode=q.interactionType || 'choice';
@@ -295,6 +354,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.counter.textContent='이번 문제';
     showRoundCue(question?.index||1,question?.total||3);
     showRewardArt(result.correct && (result.earned??0)>0 ? (gameId==='kind-dialogue'?'star_purple':'star_yellow') : 'sprout');
+    showOriginalImage(question?.solutionImage,'경시대회 '+(question?.index||1)+'번 풀이 그림');
     paragraph(result.correct ? '좋아요! 생각한 답이 맞았어요.' : '다른 방법을 하나 배웠어요.','vh-feedback');
     paragraph((result.earned??0)>0 ? '새롭게 모은 별 '+result.earned+'개' : '이미 만난 문제를 다시 생각하는 힘이 자랐어요.','vh-prompt');
     paragraph(result.explanation || '차근차근 생각해 봐요.','vh-explanation');
@@ -306,12 +366,16 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
   function complete(result) {
     phase='complete';open();resetBody();
-    ui.title.textContent='🌷 오늘의 마법 성공!';
+    const isChallenge=question?.total===25&&gameId.startsWith('bebsu-');
+    ui.title.textContent=isChallenge?'🏆 경시대회 25문제 완주!':'🌷 오늘의 마법 성공!';
     ui.counter.textContent='완료';
     showRoundCue(question?.total||3,question?.total||3);
-    showRewardArt('bloom');
+    showRewardArt(isChallenge?'star_rainbow':'bloom');
     if(result.gardenAdded!==false)sessionRounds++;
     paragraph(result.gardenAdded===false?'이 이야기의 꽃은 이미 정원에 피어 있어요.':'마을에 새로운 꽃이 피었어요!','vh-feedback');
+    if(isChallenge)paragraph((result.challengeBonus||0)>0?
+      '🎉 25문제 완주 특별 보너스 +'+result.challengeBonus+'별!':
+      '🏅 이미 완주한 시험지는 보너스가 중복 지급되지 않아요.','vh-challenge-bonus');
     paragraph('내 마을의 꽃 '+(result.flowers ?? 0)+'송이 · 가족 광장 '+(result.familyFlowers ?? 0)+'송이','vh-prompt');
     paragraph('어떤 단서를 보고 답을 골랐나요? 가족에게 내 생각을 한 문장으로 들려주세요.','vh-explanation');
     if(sessionRounds>=3)paragraph('세 번의 이야기를 마쳤어요. 눈과 몸도 잠깐 쉬어볼까요?','vh-small');
@@ -332,13 +396,14 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     busy = false;
     ui.dialog.setAttribute('aria-busy','false');
     if (!data.ok) {
-      ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=false;
+      ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=false;
       announce(data.error || '문제가 발생했어요. 다시 시도해 주세요.');
       return;
     }
     announce('');
     if (data.action === 'INIT') root.dataset.ready = 'true';
-    if(data.action==='INIT'||data.action==='START'||!data.ok)ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=false;
+    if(data.action==='INIT'||data.action==='START'||data.action==='SHOW_BEBSU'||!data.ok)
+      ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=false;
     if (data.who === 'tae' || data.who === 'se') {
       who=data.who;
       root.dataset.who=who;
@@ -348,7 +413,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     if (Number.isFinite(data.flowers) && Number.isFinite(data.familyFlowers)) {
       ui.progress.textContent='내 꽃 '+data.flowers+'송이 · 가족 꽃 '+data.familyFlowers+'송이';
     }
-    if (data.action==='START' || data.action==='NEXT') {
+    if (data.action==='SHOW_BEBSU') showChallengePicker(data);
+    else if (data.action==='START' || data.action==='NEXT') {
       if (data.finished) {
         phase='waiting';
         ui.dialog.setAttribute('aria-busy','true');
