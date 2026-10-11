@@ -286,7 +286,7 @@ check('native UI images are referenced by actual controls in both surfaces',()=>
  assert.match(villageCSS,/\.vh-currency-art,\.vh-round-image\s*\{[^}]*object-fit:contain/);
  assert.ok(app.includes("nativeRewardArt('magic_dust')"),'Brand uses dust decoration');
  assert.ok(app.includes('nativeRewardArt(nativeGiftArt(look.light))'),'Equipped light follows authoritative wallet look');
- assert.ok(app.includes('nativeRewardArt(nativeBadgeArt(b))'),'Badge cards use locked guard');
+ assert.ok(app.includes('bebsuSuccessBadge(b)')&&app.includes("if(badge?.unlocked!==true)return nativeRewardArt('seed');"),'Badge cards enforce strictly unlocked Bebsu art');
  assert.ok(app.includes('nativeRoundCue(r)'),'Quiz includes confirmed-answer cue');
  assert.ok(village.includes("gameId==='kind-dialogue'?'star_purple':'star_yellow'"),'Village uses the concrete available-game subject mapping');
 });

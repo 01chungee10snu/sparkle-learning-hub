@@ -2,7 +2,7 @@
   "version": 1,
   "publicPractice": true,
   "license": "original_mathematics_only_no_KMA_materials",
-  "accuracyNote": "마법마을 자체 제작 연습문제입니다. 실제 KMA/벡수 경시대회 원본이 아니며 난이도는 편집 기준입니다.",
+  "accuracyNote": "마법마을 자체 제작 연습문제입니다. 실제 KMA/뱁수 경시대회 원본이 아니며 난이도는 편집 기준입니다.",
   "completionBonus": {
     "tae": 80,
     "se": 35

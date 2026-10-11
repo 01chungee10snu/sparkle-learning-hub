@@ -98,7 +98,7 @@ function mergeStates(current,incoming){
 function assertFunding(state){
  if(!configuredCatalog)throw new Error('놀이 목록을 먼저 불러 주세요.');
  for(const who of LEARNERS){
-  const p=state.profiles[who],spent=Object.values(p.purchases).reduce((sum,r)=>sum+r.cost,0),earned=Progress.summary(configuredCatalog,who).stars+effortTotal(p);
+  const p=state.profiles[who],spent=Object.values(p.purchases).reduce((sum,r)=>sum+r.cost,0),earned=Progress.summary(configuredCatalog,who).stars+effortTotal(p)+bebsuChallengeStars(configuredCatalog,who);
   if(spent>earned)throw new Error('이 보상에 연결된 학습 기록을 먼저 가져와 주세요.');
  }
 }
@@ -124,6 +124,36 @@ function save(state,{spending=false}={}){
 }
 function configure(catalog){if(!Array.isArray(catalog))throw new Error('놀이 목록을 확인해 주세요.');configuredCatalog=catalog;return catalog;}
 const quizEntry=(catalog,id)=>catalog.find(game=>game.id===id&&game.status==='published'&&game.kind==='quiz');
+const BEBSU_CHALLENGE_BONUS={tae:160,se:60};
+const isBebsuOriginal=id=>/^bebsu-(?:g[1-6]|m[1-3])-original$/.test(id);
+function validBebsuCompletion(round,entry){
+ return /^kma-[0-9]{1,5}$/.test(round.paperId??'')&&
+ Array.isArray(round.questionIds)&&round.questionIds.length===25&&
+ new Set(round.questionIds).size===25&&round.questionIds.every(id=>entry.questionIds?.includes(id));
+}
+export function bebsuChallengeStars(catalog,who=Progress.learner()){
+ whoId(who);
+ let completedPapers=0;
+ for(const entry of catalog.filter(e=>e.kind==='quiz'&&e.status==='published'&&isBebsuOriginal(e.id))){
+  const seen=new Set();
+  for(const round of Progress.gameProgress(entry.id,who).completedRounds||[]){
+   if(!validBebsuCompletion(round,entry)||seen.has(round.paperId))continue;
+   seen.add(round.paperId);completedPapers++;
+  }
+ }
+ return completedPapers*BEBSU_CHALLENGE_BONUS[who];
+}
+// A paper is rewarded once per child even after multiple 25-question replays.
+export function challengeRoundBonus(catalog,who,gameId,roundId){
+ whoId(who);const entry=quizEntry(catalog,gameId);
+ if(!entry||!isBebsuOriginal(gameId))return 0;
+ const rounds=Progress.gameProgress(gameId,who).completedRounds||[];
+ const round=rounds.find(r=>r.id===roundId);
+ if(!round||!validBebsuCompletion(round,entry))return 0;
+ const first=rounds.filter(r=>r.paperId===round.paperId&&validBebsuCompletion(r,entry))
+  .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))[0];
+ return first?.id===roundId?BEBSU_CHALLENGE_BONUS[who]:0;
+}
 function effortTotal(p){
  const questionCounts=new Map(),rounds=new Set(),dates=new Set();let total=0;
  for(const event of Object.values(p.events).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))){
@@ -180,7 +210,7 @@ export function syncRewards(catalog,who=Progress.learner()){
 }
 export function wallet(catalog,who=Progress.learner()){
  configure(catalog);whoId(who);const p=load().profiles[who],ev=evidence(catalog,who,p),effortStars=effortTotal(p);
- const learningStars=ev.results.stars,lifetime=learningStars+effortStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
+ const learningStars=ev.results.stars,challengeStars=bebsuChallengeStars(catalog,who),lifetime=learningStars+effortStars+challengeStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
  const badges=[
   {id:'first-round',title:'첫 모험 완주',emoji:'🌱',description:'놀이 한 판을 끝까지 해냈어요.',unlocked:ev.completed>=1,progress:Math.min(1,ev.completed),target:1},
   {id:'three-subjects',title:'세 가지 탐험가',emoji:'🧭',description:'수학·국어·영어를 골고루 만났어요.',unlocked:ev.subjects>=3,progress:ev.subjects,target:3},
@@ -195,7 +225,7 @@ export function wallet(catalog,who=Progress.learner()){
   return {...item,owned,equipped:(item.category==='light'?p.equipped?.id:p.outfit[item.category]?.id)===item.id,pending:pending?copy(pending):null,canPurchase:!owned&&!pending&&available>=item.cost};
  });
  const look=Object.fromEntries(['light',...OUTFIT_SLOTS].map(slot=>[slot,BY_ID.get(slot==='light'?p.equipped?.id:p.outfit[slot]?.id)||null]));
- return {look,who,learningStars,effortStars,lifetime,spent,available,items,equipped:p.equipped?.id||null,badges,milestones,nextMilestone:milestones.find(mark=>!mark.unlocked)||null,purchases:copy(purchases),requests:copy(purchases.filter(receipt=>BY_ID.get(receipt.rewardId).kind==='family')),storageAvailable:storageOK};
+ return {look,who,learningStars,effortStars,challengeStars,lifetime,spent,available,items,equipped:p.equipped?.id||null,badges,milestones,nextMilestone:milestones.find(mark=>!mark.unlocked)||null,purchases:copy(purchases),requests:copy(purchases.filter(receipt=>BY_ID.get(receipt.rewardId).kind==='family')),storageAvailable:storageOK};
 }
 export function recordEffort({who=Progress.learner(),eventId,kind,gameId,questionId,roundId,at=Date.now()}={}){
  whoId(who);if(!configuredCatalog)throw new Error('놀이 목록을 먼저 불러 주세요.');

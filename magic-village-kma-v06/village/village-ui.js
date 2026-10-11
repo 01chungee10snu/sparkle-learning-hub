@@ -22,7 +22,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-home" class="vh-action" type="button" aria-current="page"><span>🏡</span>내 마을</button>',
     ' <button id="vh-plaza" class="vh-action" type="button"><span>🌷</span>가족 광장</button>',
     ' <button id="vh-quest" class="vh-action" type="button"><span>🐰</span>오늘의 부탁</button>',
-    ' <button id="vh-bebsu" class="vh-action vh-challenge-action" type="button"><span>🏆</span>벡수 25문제</button>',
+    ' <button id="vh-bebsu" class="vh-action vh-challenge-action" type="button"><span>🏆</span>뱁수 25문제</button>',
     '</nav>',
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 탐험 지도</button>',
@@ -497,7 +497,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const image=document.createElement('img');
     image.src=src; image.alt=title; image.loading='lazy';
     image.decoding='async'; image.className='vh-original-image';
-    figure.append(image,label('figcaption','벡수 경시대회 원본 그림을 보고 풀어 보세요.','vh-small'));
+    figure.append(image,label('figcaption','뱁수 경시대회 원본 그림을 보고 풀어 보세요.','vh-small'));
     contentTarget.append(figure);
   }
   function showChallengePicker(result) {
@@ -505,7 +505,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       announce('경시대회 시험지를 찾지 못했어요.');return;
     }
     phase='choose'; open();resetBody();
-    ui.title.textContent='🏆 벡수 수학 경시대회';
+    ui.title.textContent='🏆 뱁수 수학 경시대회';
     ui.counter.textContent='25문항 도전';
     ui.note.textContent='25문제에 차례대로 도전해요. 중간에 쉬었다 이어 풀 수 있어요.';
     ui.listen.hidden=true;ui.hint.hidden=true;

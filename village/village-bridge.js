@@ -4,7 +4,11 @@ import * as Settings from '../platform/settings.js';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 
-const ALLOWED = new Set(['snack-count', 'measure-lab', 'kind-dialogue']);
+const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
+  .map(grade=>'bebsu-'+grade+'-original');
+const ALLOWED = new Set(['snack-count', 'measure-lab', 'kind-dialogue', ...BEBSU_GAMES]);
+const safeBebsuImage = value => typeof value === 'string' &&
+  /^\.\/assets\/bebsu\/math\/[a-f0-9]{16}\.png$/.test(value) ? '../' + value.slice(2) : '';
 const CHILDREN = {tae: '태희', se: '세희'};
 const respond = (action, requestId, values = {}) =>
   ({action, requestId, ok: true, ...values});
@@ -12,6 +16,7 @@ const respond = (action, requestId, values = {}) =>
 export function createVillageHost(emit) {
   if (typeof emit !== 'function') throw new TypeError('emit is required');
   let catalog;
+  let challenges;
   let currentGame;
   let currentGameId = '';
   let currentWho = '';
@@ -39,6 +44,11 @@ export function createVillageHost(emit) {
     } catch (error) {
       console.warn('마법마을 기본 출제 방식 사용:', error);
     }
+    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json', import.meta.url));
+    if (!challengeResponse.ok) throw new Error('경시대회 25문항 시험지 목록을 불러오지 못했어요.');
+    challenges = await challengeResponse.json();
+    if (challenges?.version !== 1 || !Array.isArray(challenges.grades) || challenges.grades.length !== 9)
+      throw new Error('경시대회 문제은행 구성을 확인해 주세요.');
     Rewards.syncRewards(entries, Progress.learner());
     catalog = entries;
     return catalog;
@@ -97,7 +107,10 @@ export function createVillageHost(emit) {
       visual: item.visual ?? null,
       hinted: round.hinted === true,
       index: round.index + 1,
-      total: round.ids.length
+      total: round.ids.length,
+      paperId: round.paperId || '',
+      problemImage: safeBebsuImage(item.problemImage),
+      solutionImage: safeBebsuImage(item.solutionImage)
     };
   }
 
@@ -119,13 +132,19 @@ export function createVillageHost(emit) {
   async function execute(request) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
-    const {action, requestId, gameId = '', response = '', roundId = ''} = request;
+    const {action, requestId, gameId = '', response = '', roundId = '', paperId = ''} = request;
     if (typeof action !== 'string' || typeof requestId !== 'string' ||
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
     const who = Progress.learner();
 
     if (action === 'INIT') return snapshot(action, requestId);
+    if (action === 'SHOW_BEBSU') return snapshot(action, requestId, {
+      challenges: challenges.grades.map(({grade,title,gameId,papers})=>({
+        grade,title,gameId,papers:papers.map(({paperId,difficulty,label,title})=>({paperId,difficulty,label,title}))
+      })),
+      difficultyNote: challenges.accuracyNote
+    });
     if (action === 'CANCEL') {
       currentGame = null; currentGameId = ''; currentWho = '';
       return snapshot(action, requestId);
@@ -134,7 +153,13 @@ export function createVillageHost(emit) {
       const game = await loadGame(gameId);
       if (Progress.learner() !== who)
         throw new Error('아이가 바뀌었어요. 새로 미션을 열어 주세요.');
-      const round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize});
+      let round;
+      if (BEBSU_GAMES.includes(gameId)) {
+        const grade=challenges.grades.find(row=>row.gameId===gameId);
+        if (!grade || !grade.papers.some(row=>row.paperId===paperId))
+          throw new Error('학년과 도전 수준을 선택한 뒤 시작해 주세요.');
+        round = Progress.beginRound(game, {paperId});
+      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize});
       currentGame = game;
       currentGameId = gameId;
       currentWho = who;
@@ -193,7 +218,8 @@ export function createVillageHost(emit) {
       const updated = addVillageCompletion(loadVillage(), {who, gameId, roundId});
       if (updated.added && !saveVillage(updated.state))
         throw new Error('마을 기록을 저장할 수 없어요. 브라우저 저장 공간을 확인해 주세요.');
-      return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added});
+      return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added,
+        challengeBonus: Rewards.challengeRoundBonus(catalog,who,gameId,roundId) });
     }
     throw new Error('지원하지 않는 Unity 요청이에요.');
   }

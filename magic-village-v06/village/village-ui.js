@@ -497,7 +497,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const image=document.createElement('img');
     image.src=src; image.alt=title; image.loading='lazy';
     image.decoding='async'; image.className='vh-original-image';
-    figure.append(image,label('figcaption','벡수 경시대회 원본 그림을 보고 풀어 보세요.','vh-small'));
+    figure.append(image,label('figcaption','뱁수 경시대회 원본 그림을 보고 풀어 보세요.','vh-small'));
     contentTarget.append(figure);
   }
   function showChallengePicker(result) {

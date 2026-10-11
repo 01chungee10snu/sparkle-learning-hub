@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "mode": "real-unity-headless-webgl",
+  "realDevice": false,
+  "startedAt": "2026-10-11T23:04:33.850Z",
+  "cases": [
+    {
+      "who": "tae",
+      "viewport": "1280x800",
+      "gradeOptions": 9,
+      "paperOptions": 3,
+      "selectedPaper": "kma-1",
+      "roundLength": 25,
+      "originalQuestionImage": true,
+      "starsBeforeFirstAnswer": 0,
+      "screenshot": "/Users/01chungee10/Github/sparkle-learning-bebsu-release-20261012/docs/qa-bebsu-art-20261012/webgl-smoke/webgl-tae-bebsu-first-question.png",
+      "webglStarted": true
+    },
+    {
+      "who": "se",
+      "viewport": "390x844",
+      "gradeOptions": 9,
+      "paperOptions": 3,
+      "selectedPaper": "kma-1",
+      "roundLength": 25,
+      "originalQuestionImage": true,
+      "starsBeforeFirstAnswer": 0,
+      "screenshot": "/Users/01chungee10/Github/sparkle-learning-bebsu-release-20261012/docs/qa-bebsu-art-20261012/webgl-smoke/webgl-se-bebsu-first-question.png",
+      "webglStarted": true
+    }
+  ],
+  "pageErrors": []
+}

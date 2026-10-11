@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "01chungee10snu/Bebsu",
+  "originalsPreserved": true,
+  "assetCount": 15,
+  "assets": [
+    {
+      "path": "states/brown-ready-explorer.webp",
+      "source": "public/assets/bebsu/states/bebsu-brown-ready-explorer-256.webp",
+      "bytes": 16882,
+      "sha256": "f06baa879d4c6aef394b4af87cf6b1c7a8a9e3afc89b212c1e0cb8cefed572ed"
+    },
+    {
+      "path": "states/brown-active-explorer.webp",
+      "source": "public/assets/bebsu/states/bebsu-brown-active-explorer-256.webp",
+      "bytes": 19924,
+      "sha256": "c29d3b8a018ea8a5d8f8122e52468001c3d327f59b02b0749a83fb989e1a56ca"
+    },
+    {
+      "path": "states/brown-ready-helper.webp",
+      "source": "public/assets/bebsu/states/bebsu-brown-ready-helper-256.webp",
+      "bytes": 16456,
+      "sha256": "6a8b834456391cb36fb5b826d79f0af52e80b55bae2ed6d5fb4243194243f94f"
+    },
+    {
+      "path": "states/pink-ready-helper.webp",
+      "source": "public/assets/bebsu/states/bebsu-pink-ready-helper-256.webp",
+      "bytes": 13562,
+      "sha256": "29d5681fd69f6d7df7e2d21ae1d16e170df12b23671edbb98e5023c1cb7336ae"
+    },
+    {
+      "path": "states/pink-active-helper.webp",
+      "source": "public/assets/bebsu/states/bebsu-pink-active-helper-256.webp",
+      "bytes": 15266,
+      "sha256": "9814df918d52f13fe4e6e21afeb637d14f3fbac657eb6774d025d53d532ce21c"
+    },
+    {
+      "path": "states/pink-ready-baby.webp",
+      "source": "public/assets/bebsu/states/bebsu-pink-ready-baby-256.webp",
+      "bytes": 14280,
+      "sha256": "ed7f774dad0ccb9daabe28bc309548855631f8ae80c69a7ae9eb18eb8171cdcd"
+    },
+    {
+      "path": "icons/scholar.webp",
+      "source": "Bensu/Asset/icons/webp/bensu-main-scholar-256.webp",
+      "bytes": 20582,
+      "sha256": "b03773e416c0afeba1be1d1308513bc99a3640c8a2463711762c0c70aa6cbb15"
+    },
+    {
+      "path": "icons/cheer.webp",
+      "source": "Bensu/Asset/icons/webp/bensu-correct-happy-256.webp",
+      "bytes": 18144,
+      "sha256": "c06eab2c6f5d5cc6145d4cd4557c230d7e62f4636c3980281b96e42304a48652"
+    },
+    {
+      "path": "icons/think.webp",
+      "source": "Bensu/Asset/icons/webp/bensu-feature-think-256.webp",
+      "bytes": 18212,
+      "sha256": "d81fda02225d2218e1a27f4969344fc22ca18e82d2b3cdb00a034a13a7f7d152"
+    },
+    {
+      "path": "icons/abacus.webp",
+      "source": "Bensu/Asset/icons/webp/tool-abacus-256.webp",
+      "bytes": 11612,
+      "sha256": "5eb75be41fa73881ea416af389d57a9dc9f6f8b60e6f2c5f1f56b6e5e5b516e6"
+    },
+    {
+      "path": "icons/lightbulb.webp",
+      "source": "Bensu/Asset/icons/webp/bensu-idea-lightbulb-256.webp",
+      "bytes": 18132,
+      "sha256": "a7a5cf6ef6065b9c5c28c9caf9f988ba56df21e005af6be21e5f25851499bf4e"
+    },
+    {
+      "path": "badges/first-answer.png",
+      "source": "public/assets/bebsu/collection/first_answer_card-256.png",
+      "bytes": 64518,
+      "sha256": "6c7f40a8ffeb3fc98ffd325a8dbdcb1cee28ba5995ab7816c1551b46dd0df231"
+    },
+    {
+      "path": "badges/steady.png",
+      "source": "public/assets/bebsu/collection/steady_badge-256.png",
+      "bytes": 90640,
+      "sha256": "9488a4c8895ac2a68d35c3b077d3c627ee0dfb7fb13f74a859f0e860e239e86d"
+    },
+    {
+      "path": "badges/review.png",
+      "source": "public/assets/bebsu/collection/review_badge-256.png",
+      "bytes": 99951,
+      "sha256": "23d8fbb3b090521e064cc4b1a885def59aaa957d8d7360e9fa4eeb941e0e381a"
+    },
+    {
+      "path": "theme/practice.webp",
+      "source": "public/assets/bebsu/theme/bebsu-practice-stage-1400x620.webp",
+      "bytes": 75662,
+      "sha256": "b4c2edea972fe0ac842122286eb6ed4de14d29541984ff063bada8bfb61cdf0e"
+    }
+  ]
+}
