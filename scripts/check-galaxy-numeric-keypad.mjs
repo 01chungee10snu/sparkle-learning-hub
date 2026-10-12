@@ -5,15 +5,18 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-const m=await import('/Users/01chungee10/Library/Caches/ms-playwright-go/1.57.0/package/index.js');
+const m=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 const {chromium}=m.chromium?m:m.default;
 const SERVER=process.env.MAGIC_GALAXY_ORIGIN||'http://127.0.0.1:4198';
 const ROOT=process.env.MAGIC_GALAXY_PREFIX||'';
-const output='/Users/01chungee10/AI-Interop/evidence/magic-galaxy-keypad-20261010';
+const output=process.env.QA_OUTPUT||'/tmp/magic-keypad-qa';
 await fs.mkdir(output,{recursive:true});
-const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
 const failures=[],proof=[];
 const cases=[
+ {name:'default-galaxy-portrait',portal:'',touch:true,width:360,height:780},
+ {name:'default-galaxy-landscape',portal:'',touch:true,width:780,height:360},
+ {name:'practice-galaxy-landscape',portal:'magic-village-v06',touch:true,width:780,height:360},
  {name:'kma-galaxy-portrait',portal:'magic-village-kma-v06',touch:true,width:360,height:780},
  {name:'kma-galaxy-landscape',portal:'magic-village-kma-v06',touch:true,width:780,height:360},
  {name:'practice-galaxy-portrait',portal:'magic-village-v06',touch:true,width:390,height:844},
@@ -34,7 +37,7 @@ for(const c of cases){
  const page=await context.newPage();
  page.on('pageerror',e=>failures.push(c.name+': '+e.message));
  try{
-  await page.goto(SERVER+ROOT+'/'+c.portal+'/village/',{waitUntil:'networkidle'});
+  await page.goto(SERVER+ROOT+(c.portal?'/'+c.portal:'')+'/village/',{waitUntil:'networkidle'});
   await page.evaluate(async({base,q})=>{
     const {createVillageUI}=await import(base+'/village/village-ui.js');
     const root=document.querySelector('#village-ui');
@@ -50,7 +53,7 @@ for(const c of cases){
       available:0,flowers:0,familyFlowers:0});
     window.qaVillage.update({action:'START',ok:true,who:'tae',requestId:'test-question',
       available:0,flowers:0,familyFlowers:0,question:q});
-  },{base:ROOT+'/'+c.portal,q:sample('galaxy-numeric')});
+  },{base:ROOT+(c.portal?'/'+c.portal:''),q:sample('galaxy-numeric')});
   const pad=page.locator('.vh-number-keypad'),field=page.getByRole('textbox',{name:'숫자 답'});
   await pad.waitFor({state:'visible'});
   assert.equal(await page.locator('.vh-number-key').count(),12);
@@ -75,14 +78,21 @@ for(const c of cases){
   await page.getByRole('button',{name:'전체 지우기'}).click();
   await digit(4);await digit(2);
   assert.equal(await page.locator('.vh-number-submit').isEnabled(),true);
+  if(c.touch){
+   await page.setViewportSize({width:c.height,height:c.width});
+   assert.equal(await field.inputValue(),'42','rotation must preserve answer');
+   const bounds=await page.locator('.vh-number-submit').boundingBox();
+   assert(bounds&&bounds.y>=0&&bounds.y+bounds.height<=c.width,'submit must remain on screen after rotation');
+   await page.setViewportSize({width:c.width,height:c.height});
+  }
   await page.screenshot({path:path.join(output,c.name+'.png')});
-  await page.locator('.vh-number-submit').click();
+  await page.locator('.vh-number-submit').dblclick();
   await page.waitForFunction(()=>window.qaMessages.some(m=>m.action==='SUBMIT'));
   const message=await page.evaluate(()=>window.qaMessages.find(m=>m.action==='SUBMIT'));
   assert.equal(JSON.parse(message.response),'42');
   assert.equal(await page.evaluate(()=>window.qaMessages.filter(m=>m.action==='SUBMIT').length),1);
   proof.push({case:c.name,submitted:'42',numericPad:true,android:c.touch});
-  if(c.touch&&c.name==='kma-galaxy-portrait'){
+  if(c.touch&&c.name.endsWith('galaxy-portrait')){
    await page.evaluate(q=>window.qaVillage.update({action:'START',ok:true,who:'tae',requestId:'negative-fixture',
       available:0,flowers:0,familyFlowers:0,question:q}),sample('test-negative',{min:-200,max:100}));
    await page.getByRole('button',{name:'양수 음수 전환'}).click();
@@ -114,5 +124,5 @@ for(const c of cases){
 await Promise.race([browser.close(),new Promise(resolve=>setTimeout(resolve,10000))]);
 await fs.writeFile(path.join(output,'report.json'),JSON.stringify({proof,failures,generatedAt:new Date().toISOString()},null,2));
 assert.equal(failures.length,0,JSON.stringify(failures));
-assert.equal(proof.length,4);
+assert.equal(proof.length,cases.length);
 console.log('PASS_GALAXY_KEYPAD',JSON.stringify({cases:proof.length,plusMinus:true,fullwidthConversion:true,invalidRange:true,noKeyboardRequired:true,oldUIUnchanged:true}));
