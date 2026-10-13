@@ -43,6 +43,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
+    ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
     ' </div>',
     '</aside>',

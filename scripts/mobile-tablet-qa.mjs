@@ -31,6 +31,9 @@ function overlaps(a,b){
 try{
  await page.goto(origin+'/village/',{waitUntil:'networkidle',timeout:90000});
  assert(await page.locator('.vh-welcome-art').evaluate(el=>el.complete&&el.naturalWidth>0),'Welcome illustration failed');
+ assert.equal(await page.locator('#page > header').count(),0,'Standalone top bar must be removed');
+ assert((await page.locator('.vh-entry-record-link').getAttribute('href')).includes('learning.html?view=workbooks'),
+   'Learning records should remain accessible before entering');
  for(const size of [{width:320,height:568},{width:667,height:375}]){
    await page.setViewportSize(size);
    for(const selector of ['#start','#lite']){
@@ -64,6 +67,8 @@ try{
    }).map(el=>({id:el.id||el.dataset.district,rect:el.getBoundingClientRect().toJSON()}));
    return {vw:window.innerWidth,vh:window.innerHeight,docW:document.documentElement.scrollWidth,
     docH:document.documentElement.scrollHeight,found,tapTargets,
+    hasTopBar:!!document.querySelector('#page > header'),
+    gameBounds:rect('#game'),
     icons:[...document.querySelectorAll('#vh-learning-districts img')].map(img=>({loaded:img.complete&&img.naturalWidth>0,src:img.src}))};
   });
   const o=m.found;
@@ -74,12 +79,15 @@ try{
   const collisions=pairs.filter(([a,b])=>overlaps(o[a],o[b]));
   const short=m.tapTargets.filter(t=>t.rect.height<42 || t.rect.width<42);
   const horizontalOverflow=m.docW>size.width+2;
-  const pass=!collisions.length&&!short.length&&!horizontalOverflow;
+  const fillsScreen=!m.hasTopBar&&m.gameBounds&&m.gameBounds.height>=m.vh-2 && m.gameBounds.y<=2;
+  const compactHud=size.width>760||o['#village-info']?.width<size.width-20;
+  const pass=!collisions.length&&!short.length&&!horizontalOverflow&&fillsScreen&&compactHud;
   results.push({name:size.name,viewport:size,pass,collisions,
    short:short.map(({id,rect})=>({id,size:[rect.width,rect.height]})),
-   document:[m.docW,m.docH],visibleTargets:m.tapTargets.length});
+   document:[m.docW,m.docH],visibleTargets:m.tapTargets.length,fillsScreen,compactHud,
+   gameHeight:m.gameBounds?.height});
   await page.screenshot({path:path.join(output,size.name+'.png'),animations:'disabled'});
-  console.log(pass?'PASS':'FAIL',size.name,JSON.stringify({collisions,short:short.map(t=>t.id),horizontalOverflow}));
+  console.log(pass?'PASS':'FAIL',size.name,JSON.stringify({collisions,short:short.map(t=>t.id),horizontalOverflow,fillsScreen,compactHud}));
  }
  await page.setViewportSize({width:390,height:844});
  await page.locator('[data-district="english"]').click();
@@ -93,6 +101,10 @@ try{
  await page.locator('[data-district="practice"]').click();
  await page.screenshot({path:path.join(output,'galaxy-practice-area.png')});
  await page.locator('#vh-exit').click();
+ await page.locator('#vh-more').click();
+ await page.locator('#vh-records').waitFor({state:'visible',timeout:5000});
+ await page.locator('#vh-records').click();
+ await page.waitForURL(/learning\.html\?view=workbooks/, {timeout:15000});
  assert(!errors.length,'JS exceptions: '+errors.join('; '));
  const summary={origin,pass:results.every(v=>v.pass),simulatedMobile:true,
   physicalGalaxyTested:false,artLoaded:banner,errors,results};

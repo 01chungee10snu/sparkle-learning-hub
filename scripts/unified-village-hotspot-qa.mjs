@@ -1,6 +1,7 @@
 /** Real Unity 3D hotspot check. A canvas raycast against an illustrated
  * building must open the host-owned subject district, not a fake DOM click.
- * Coordinates are from the 1280×800 v0.8 scene screenshot (English school).
+ * Coordinates are from the 1280×800 headerless v0.8 scene screenshot (English school).
+ * Recheck the click point when modifying the 3D camera framing or HUD.
  */
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
@@ -26,8 +27,9 @@ try{
  await page.waitForFunction(()=>document.querySelector('#loading').hidden&&
   document.querySelector('#village-ui').dataset.ready==='true',null,{timeout:180000});
  await page.waitForTimeout(1100); // Camera tween before raycast
+ await page.screenshot({path:path.join(dir,'headerless-world-before-tap.png')});
  // Collide with a visible English-school sprite, not the area navigation rail.
- const point={x:170,y:285};
+ const point={x:148,y:234};
  const box=await page.locator('#canvas').boundingBox();
  assert(point.x>=box.x&&point.x<box.x+box.width&&point.y>=box.y&&point.y<box.y+box.height);
  await page.mouse.click(point.x,point.y);

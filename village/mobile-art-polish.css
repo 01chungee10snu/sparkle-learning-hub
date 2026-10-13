@@ -1,8 +1,8 @@
 /* Child-first responsive and original-art refinement, 2026-10-13.
+   Headerless mode: Unity/2D fills the screen without an external top navigation bar.
    Loaded last: preserves the existing learning/IRT/reward logic.
    Decorative illustrations are locally composed from the Unity original sprites. */
 #page{min-height:0!important;overflow:hidden}
-.vh-header-short{display:none}
 #loading{overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 #loading .panel{max-width:520px;border-color:#ecd8e9;padding:17px 18px 18px;
  background:linear-gradient(160deg,#fffdfa 25%,#fff7fd 70%,#f5fff9);
@@ -14,6 +14,10 @@
 #loading .panel p{margin:10px 0;line-height:1.5}
 #loading .vh-storage-note{margin:9px 0 0}
 #loading .vh-storage-note small{font-size:12px;line-height:1.5;display:block}
+#loading .vh-entry-record-link{display:inline-block;margin-top:8px;padding:9px 12px;
+ color:#60487d;text-decoration:underline;text-underline-offset:3px;
+ border-radius:10px;font-weight:750;font-size:13px;min-height:44px;
+ touch-action:manipulation}
 #learner-choices{margin:12px 0}
 #learner-choices button{touch-action:manipulation;min-height:48px}
 #start{min-height:54px;padding:10px 21px;
@@ -36,6 +40,8 @@
 #vh-world-shortcuts .vh-shortcut{min-height:46px!important;
  background:#fffaf4!important;border-color:#d7bfe1!important;
  box-shadow:0 5px 14px #4334662c!important}
+#vh-extra-tools .vh-record-link{text-decoration:none!important;color:#50366e!important;
+ min-height:46px!important;white-space:nowrap;touch-action:manipulation}
 #village-controls{bottom:calc(8px + env(safe-area-inset-bottom))}
 #village-controls .vh-action{min-height:74px;
  border-color:#c9b3db!important;touch-action:manipulation}
@@ -72,11 +78,9 @@
  #village-controls .vh-action{box-shadow:0 4px 12px #34204448}
 }
 @media(max-width:760px){
- header{height:52px;padding:0 10px;gap:7px}
- header strong{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
- header a{min-height:44px;min-width:100px;text-align:center;align-content:center;padding:8px!important;flex:none}
- .vh-header-full{display:none}.vh-header-short{display:inline}
- #village-info{top:6px;left:7px;right:7px;max-width:none;min-height:67px;
+ /* The HUD is a small in-world status pill, not another full-width bar. */
+ #village-info{top:6px;left:7px;right:auto;width:max-content;
+ max-width:calc(100% - 14px);min-height:60px;
  border-radius:18px;padding:7px 11px;gap:8px}
  #village-info .vh-avatar{width:43px;height:43px;border-radius:14px}
  #village-info .vh-meta h2{font-size:clamp(15px,4vw,18px)}
@@ -121,8 +125,6 @@
  #vh-extra-tools{right:0;bottom:calc(100% + 8px);width:min(300px,calc(100vw - 15px))}
 }
 @media(max-width:380px){
- header strong{font-size:12px}
- header a{font-size:11px;padding:6px!important;min-width:95px}
  #loading{padding:9px}
  #loading .panel{padding:12px}
  #loading .panel p{font-size:13px}
@@ -146,8 +148,6 @@
  #village-controls .vh-action{min-height:62px!important}
 }
 @media(max-height:590px) and (orientation:landscape){
- header{height:43px;padding:0 10px}
- header strong{font-size:14px}
  #loading{place-items:start center;padding:6px}
  #loading .panel{max-width:630px;padding:9px 13px}
  #loading .panel h1{font-size:20px;margin:3px}
