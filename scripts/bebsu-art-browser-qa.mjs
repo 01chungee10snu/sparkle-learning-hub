@@ -16,10 +16,10 @@ async function check(name,who,viewport){
  const page=await ctx.newPage();
  page.on('pageerror',error=>errors.push(name+': '+error.message));
  try{
-  await page.goto(base+'/?view=workbooks',{waitUntil:'networkidle',timeout:90000});
+  await page.goto(base+'/learning.html?view=workbooks',{waitUntil:'networkidle',timeout:90000});
   if(who==='se'){
    await page.evaluate(async()=>{const p=await import('/platform/progress.js');p.selectLearner('se');});
-   await page.goto(base+'/?view=workbooks',{waitUntil:'networkidle',timeout:90000});
+   await page.goto(base+'/learning.html?view=workbooks',{waitUntil:'networkidle',timeout:90000});
   }
   await page.locator('.bebsu-study-banner .bebsu-companion-art').waitFor({state:'visible',timeout:20000});
   await page.getByRole('heading',{name:/뱁수 수학 문제집/}).waitFor({timeout:20000});

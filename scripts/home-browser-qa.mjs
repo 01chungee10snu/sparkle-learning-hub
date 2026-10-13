@@ -33,7 +33,7 @@ try {
    if(response.status()>=400)failedRequests.push({status:response.status(),url:response.url()});
   });
   try{
-   await page.goto(origin+'/',{waitUntil:'networkidle',timeout:100000});
+   await page.goto(origin+'/learning.html',{waitUntil:'networkidle',timeout:100000});
    await page.locator('.home-screen').waitFor({timeout:20000});
    if(sample.who==='se'){
     await page.locator('.profile-button').click();
@@ -78,10 +78,8 @@ try {
      'daily cards overlap pagination');
    assert(geometry.reward.bottom<=geometry.village.top+2,
      'village area overlaps rewards');
-   assert.equal(geometry.villageLinks.length,3);
-   assert(geometry.villageLinks[0].href.includes('/magic-village-kma-v06/village/'));
-   assert(geometry.villageLinks[1].href.includes('/magic-village-v06/village/'));
-   assert(geometry.villageLinks[2].href.includes('/village/'));
+   assert.equal(geometry.villageLinks.length,1);
+   assert.equal(geometry.villageLinks[0].href,'./village/');
    assert(geometry.villageLinks.every(({rect})=>rect.height>=44));
    assert.equal(geometry.invalidImages.length,0,'visible broken image');
    await page.screenshot({path:path.join(out,sample.name+'-top.png')});

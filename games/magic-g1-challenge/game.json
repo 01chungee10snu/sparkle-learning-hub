@@ -1,0 +1,2060 @@
+{
+  "id": "magic-g1-challenge",
+  "subject": "math",
+  "title": "초등 1학년 마법 수학 도전",
+  "description": "공개용으로 새로 제작한 25문제 연습 시험지",
+  "emoji": "🏆",
+  "growth": false,
+  "gradeBand": "G1",
+  "prerequisite": "학년은 보호자가 직접 선택해요.",
+  "offline": "종이·블록으로 생각을 설명하고 함께 검토해 보세요.",
+  "questions": [
+    {
+      "id": "magic-g1-basic-01",
+      "title": "초등 1학년 · 기본 1번",
+      "story": "마법 정원의 노란 꽃이 2송이, 분홍 꽃이 5송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "2 + 5 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 2,
+        "operator": "+",
+        "right": 5
+      },
+      "choices": [
+        "6",
+        "8",
+        "7"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-02",
+      "title": "초등 1학년 · 기본 2번",
+      "story": "별빛 상자에 7개의 별이 있었고, 요정이 2개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "7 − 2 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-03",
+      "title": "초등 1학년 · 기본 3번",
+      "story": "발판에 8, 11, 14이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-04",
+      "title": "초등 1학년 · 기본 4번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 17개가 되었어요. 새로 넣은 구슬은 6개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "17 − 6 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "10",
+        "12",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-05",
+      "title": "초등 1학년 · 기본 5번",
+      "story": "토끼가 2cm 걸어가고, 3cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "2 + 3 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-06",
+      "title": "초등 1학년 · 기본 6번",
+      "story": "작은 바구니에 5개, 큰 바구니에 15개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "15 − 5 = 10이므로 정답은 10입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "10",
+        "11"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-basic-07",
+      "title": "초등 1학년 · 기본 7번",
+      "story": "마법 정원의 노란 꽃이 8송이, 분홍 꽃이 7송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "8 + 7 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 8,
+        "operator": "+",
+        "right": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-08",
+      "title": "초등 1학년 · 기본 8번",
+      "story": "별빛 상자에 15개의 별이 있었고, 요정이 4개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "15 − 4 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-09",
+      "title": "초등 1학년 · 기본 9번",
+      "story": "발판에 2, 5, 8이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "build",
+        "target": 11,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-basic-10",
+      "title": "초등 1학년 · 기본 10번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 13개가 되었어요. 새로 넣은 구슬은 8개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "13 − 8 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-11",
+      "title": "초등 1학년 · 기본 11번",
+      "story": "토끼가 8cm 걸어가고, 5cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "8 + 5 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-12",
+      "title": "초등 1학년 · 기본 12번",
+      "story": "작은 바구니에 11개, 큰 바구니에 13개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "13 − 11 = 2이므로 정답은 2입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-basic-13",
+      "title": "초등 1학년 · 기본 13번",
+      "story": "마법 정원의 노란 꽃이 2송이, 분홍 꽃이 9송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "2 + 9 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 2,
+        "operator": "+",
+        "right": 9
+      },
+      "choices": [
+        "10",
+        "12",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-14",
+      "title": "초등 1학년 · 기본 14번",
+      "story": "별빛 상자에 11개의 별이 있었고, 요정이 6개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "11 − 6 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-15",
+      "title": "초등 1학년 · 기본 15번",
+      "story": "발판에 8, 11, 14이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-16",
+      "title": "초등 1학년 · 기본 16번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 21개가 되었어요. 새로 넣은 구슬은 10개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "21 − 10 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "10",
+        "12",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-17",
+      "title": "초등 1학년 · 기본 17번",
+      "story": "토끼가 2cm 걸어가고, 7cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "2 + 7 = 9이므로 정답은 9입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "8",
+        "10"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-18",
+      "title": "초등 1학년 · 기본 18번",
+      "story": "작은 바구니에 5개, 큰 바구니에 9개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "9 − 5 = 4이므로 정답은 4입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "build",
+        "target": 4,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-basic-19",
+      "title": "초등 1학년 · 기본 19번",
+      "story": "마법 정원의 노란 꽃이 8송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "8 + 1 = 9이므로 정답은 9입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 8,
+        "operator": "+",
+        "right": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-20",
+      "title": "초등 1학년 · 기본 20번",
+      "story": "별빛 상자에 19개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "19 − 8 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "11",
+        "10",
+        "12"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-basic-21",
+      "title": "초등 1학년 · 기본 21번",
+      "story": "발판에 2, 5, 8이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "10",
+        "11",
+        "12"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-basic-22",
+      "title": "초등 1학년 · 기본 22번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 7개가 되었어요. 새로 넣은 구슬은 2개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "7 − 2 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-basic-23",
+      "title": "초등 1학년 · 기본 23번",
+      "story": "토끼가 8cm 걸어가고, 9cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "8 + 9 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-basic-24",
+      "title": "초등 1학년 · 기본 24번",
+      "story": "작은 바구니에 11개, 큰 바구니에 17개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "17 − 11 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-basic-25",
+      "title": "초등 1학년 · 기본 25번",
+      "story": "마법 정원의 노란 꽃이 2송이, 분홍 꽃이 3송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "2 + 3 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-basic:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 2,
+        "operator": "+",
+        "right": 3
+      },
+      "choices": [
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-01",
+      "title": "초등 1학년 · 도전 1번",
+      "story": "작은 바구니에 11개, 큰 바구니에 23개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "23 − 11 = 12이므로 정답은 12입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "12",
+        "10",
+        "14"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-02",
+      "title": "초등 1학년 · 도전 2번",
+      "story": "마법 정원의 노란 꽃이 14송이, 분홍 꽃이 7송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "14 + 7 = 21이므로 정답은 21입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 14,
+        "operator": "+",
+        "right": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 21,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-challenge-03",
+      "title": "초등 1학년 · 도전 3번",
+      "story": "별빛 상자에 5개의 별이 있었고, 요정이 2개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "5 − 2 = 3이므로 정답은 3입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "1",
+        "5",
+        "3"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-04",
+      "title": "초등 1학년 · 도전 4번",
+      "story": "발판에 6, 9, 12이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "15",
+        "13",
+        "17"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-05",
+      "title": "초등 1학년 · 도전 5번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 13개가 되었어요. 새로 넣은 구슬은 4개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "13 − 4 = 9이므로 정답은 9입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "7",
+        "9",
+        "11"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-06",
+      "title": "초등 1학년 · 도전 6번",
+      "story": "토끼가 12cm 걸어가고, 11cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "12 + 11 = 23이므로 정답은 23입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 23,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-challenge-07",
+      "title": "초등 1학년 · 도전 7번",
+      "story": "작은 바구니에 15개, 큰 바구니에 21개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "21 − 15 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "4",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-08",
+      "title": "초등 1학년 · 도전 8번",
+      "story": "마법 정원의 노란 꽃이 4송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "4 + 1 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 4,
+        "operator": "+",
+        "right": 1
+      },
+      "choices": [
+        "3",
+        "5",
+        "7"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-09",
+      "title": "초등 1학년 · 도전 9번",
+      "story": "별빛 상자에 15개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "15 − 8 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "build",
+        "target": 7,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-challenge-10",
+      "title": "초등 1학년 · 도전 10번",
+      "story": "발판에 10, 13, 16이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 19이므로 정답은 19입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 19,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-challenge-11",
+      "title": "초등 1학년 · 도전 11번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 23개가 되었어요. 새로 넣은 구슬은 10개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "23 − 10 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "11",
+        "13",
+        "15"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-12",
+      "title": "초등 1학년 · 도전 12번",
+      "story": "토끼가 2cm 걸어가고, 5cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "2 + 5 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "9",
+        "7"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-13",
+      "title": "초등 1학년 · 도전 13번",
+      "story": "작은 바구니에 5개, 큰 바구니에 17개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "17 − 5 = 12이므로 정답은 12입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "12",
+        "10",
+        "14"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-14",
+      "title": "초등 1학년 · 도전 14번",
+      "story": "마법 정원의 노란 꽃이 8송이, 분홍 꽃이 7송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "8 + 7 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 8,
+        "operator": "+",
+        "right": 7
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 15,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-challenge-15",
+      "title": "초등 1학년 · 도전 15번",
+      "story": "별빛 상자에 13개의 별이 있었고, 요정이 2개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "13 − 2 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "13",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-16",
+      "title": "초등 1학년 · 도전 16번",
+      "story": "발판에 14, 17, 20이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 23이므로 정답은 23입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "23",
+        "21",
+        "25"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-17",
+      "title": "초등 1학년 · 도전 17번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 7개가 되었어요. 새로 넣은 구슬은 4개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "7 − 4 = 3이므로 정답은 3입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "1",
+        "3",
+        "5"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-18",
+      "title": "초등 1학년 · 도전 18번",
+      "story": "토끼가 6cm 걸어가고, 11cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "6 + 11 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "build",
+        "target": 17,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-challenge-19",
+      "title": "초등 1학년 · 도전 19번",
+      "story": "작은 바구니에 9개, 큰 바구니에 15개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "15 − 9 = 6이므로 정답은 6입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "4",
+        "8"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-challenge-20",
+      "title": "초등 1학년 · 도전 20번",
+      "story": "마법 정원의 노란 꽃이 12송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "12 + 1 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 12,
+        "operator": "+",
+        "right": 1
+      },
+      "choices": [
+        "11",
+        "13",
+        "15"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-21",
+      "title": "초등 1학년 · 도전 21번",
+      "story": "별빛 상자에 23개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "23 − 8 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "13",
+        "17",
+        "15"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-22",
+      "title": "초등 1학년 · 도전 22번",
+      "story": "발판에 4, 7, 10이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-challenge-23",
+      "title": "초등 1학년 · 도전 23번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 17개가 되었어요. 새로 넣은 구슬은 10개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "17 − 10 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "7",
+        "9"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-challenge-24",
+      "title": "초등 1학년 · 도전 24번",
+      "story": "토끼가 10cm 걸어가고, 5cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "10 + 5 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "13",
+        "17",
+        "15"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-challenge-25",
+      "title": "초등 1학년 · 도전 25번",
+      "story": "작은 바구니에 13개, 큰 바구니에 25개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "25 − 13 = 12이므로 정답은 12입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-challenge:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "12",
+        "10",
+        "14"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-01",
+      "title": "초등 1학년 · 심화 1번",
+      "story": "토끼가 4cm 걸어가고, 1cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "4 + 1 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:1",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 1,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 5,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-advanced-02",
+      "title": "초등 1학년 · 심화 2번",
+      "story": "작은 바구니에 7개, 큰 바구니에 15개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "15 − 7 = 8이므로 정답은 8입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:2",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 2,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-03",
+      "title": "초등 1학년 · 심화 3번",
+      "story": "마법 정원의 노란 꽃이 10송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "10 + 1 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:3",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 3,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 10,
+        "operator": "+",
+        "right": 1
+      },
+      "choices": [
+        "11",
+        "9",
+        "13"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-04",
+      "title": "초등 1학년 · 심화 4번",
+      "story": "별빛 상자에 21개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "21 − 8 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:4",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 4,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "11",
+        "13",
+        "15"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-05",
+      "title": "초등 1학년 · 심화 5번",
+      "story": "발판에 16, 19, 22이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 25이므로 정답은 25입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:5",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 5,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 25,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-advanced-06",
+      "title": "초등 1학년 · 심화 6번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 11개가 되었어요. 새로 넣은 구슬은 8개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "11 − 8 = 3이므로 정답은 3입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:6",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 6,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "3",
+        "1",
+        "5"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-07",
+      "title": "초등 1학년 · 심화 7번",
+      "story": "토끼가 6cm 걸어가고, 1cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "6 + 1 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:7",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 7,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "7",
+        "9"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-08",
+      "title": "초등 1학년 · 심화 8번",
+      "story": "작은 바구니에 9개, 큰 바구니에 17개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "17 − 9 = 8이므로 정답은 8입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:8",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 8,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-09",
+      "title": "초등 1학년 · 심화 9번",
+      "story": "마법 정원의 노란 꽃이 12송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "12 + 1 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:9",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 9,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 12,
+        "operator": "+",
+        "right": 1
+      },
+      "interaction": {
+        "type": "build",
+        "target": 13,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-advanced-10",
+      "title": "초등 1학년 · 심화 10번",
+      "story": "별빛 상자에 23개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "23 − 8 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:10",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 10,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "13",
+        "15",
+        "17"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-11",
+      "title": "초등 1학년 · 심화 11번",
+      "story": "발판에 2, 5, 8이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:11",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 11,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "13",
+        "11"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-12",
+      "title": "초등 1학년 · 심화 12번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 13개가 되었어요. 새로 넣은 구슬은 8개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "13 − 8 = 5이므로 정답은 5입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:12",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 12,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "5",
+        "3",
+        "7"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-13",
+      "title": "초등 1학년 · 심화 13번",
+      "story": "토끼가 8cm 걸어가고, 1cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "8 + 1 = 9이므로 정답은 9입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:13",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 13,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 9,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-advanced-14",
+      "title": "초등 1학년 · 심화 14번",
+      "story": "작은 바구니에 11개, 큰 바구니에 19개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "19 − 11 = 8이므로 정답은 8입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:14",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 14,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-15",
+      "title": "초등 1학년 · 심화 15번",
+      "story": "마법 정원의 노란 꽃이 14송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "14 + 1 = 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:15",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 15,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 14,
+        "operator": "+",
+        "right": 1
+      },
+      "choices": [
+        "15",
+        "13",
+        "17"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-16",
+      "title": "초등 1학년 · 심화 16번",
+      "story": "별빛 상자에 25개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "25 − 8 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:16",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 16,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "15",
+        "17",
+        "19"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-17",
+      "title": "초등 1학년 · 심화 17번",
+      "story": "발판에 4, 7, 10이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:17",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 17,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-advanced-18",
+      "title": "초등 1학년 · 심화 18번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 15개가 되었어요. 새로 넣은 구슬은 8개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "15 − 8 = 7이므로 정답은 7입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:18",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 18,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "build",
+        "target": 7,
+        "max": 20,
+        "emoji": "🌸",
+        "unit": "개"
+      }
+    },
+    {
+      "id": "magic-g1-advanced-19",
+      "title": "초등 1학년 · 심화 19번",
+      "story": "토끼가 10cm 걸어가고, 1cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "10 + 1 = 11이므로 정답은 11입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:19",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 19,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "11",
+        "13"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-20",
+      "title": "초등 1학년 · 심화 20번",
+      "story": "작은 바구니에 13개, 큰 바구니에 21개의 도토리가 있어요.",
+      "prompt": "큰 바구니에는 몇 개가 더 있을까요?",
+      "skill": "차이 구하기",
+      "explanation": [
+        "21 − 13 = 8이므로 정답은 8입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:20",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 20,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-21",
+      "title": "초등 1학년 · 심화 21번",
+      "story": "마법 정원의 노란 꽃이 16송이, 분홍 꽃이 1송이 피었어요.",
+      "prompt": "꽃은 모두 몇 송이일까요?",
+      "skill": "수의 합",
+      "explanation": [
+        "16 + 1 = 17이므로 정답은 17입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:21",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 21,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "visual": {
+        "kind": "counters",
+        "emoji": "🌸",
+        "left": 16,
+        "operator": "+",
+        "right": 1
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 17,
+        "max": 1000000,
+        "min": 0
+      }
+    },
+    {
+      "id": "magic-g1-advanced-22",
+      "title": "초등 1학년 · 심화 22번",
+      "story": "별빛 상자에 11개의 별이 있었고, 요정이 8개를 선물했어요.",
+      "prompt": "상자에 남은 별은 몇 개일까요?",
+      "skill": "뺄셈",
+      "explanation": [
+        "11 − 8 = 3이므로 정답은 3입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:22",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 22,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "1",
+        "3",
+        "5"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "magic-g1-advanced-23",
+      "title": "초등 1학년 · 심화 23번",
+      "story": "발판에 6, 9, 12이 차례대로 쓰여 있어요.",
+      "prompt": "같은 규칙으로 이어지는 다음 수는 무엇일까요?",
+      "skill": "규칙성",
+      "explanation": [
+        "숫자가 3씩 커지므로 다음은 15이므로 정답은 15입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:23",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 23,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "13",
+        "17",
+        "15"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "magic-g1-advanced-24",
+      "title": "초등 1학년 · 심화 24번",
+      "story": "마법 가방에 구슬을 조금 넣었더니 17개가 되었어요. 새로 넣은 구슬은 8개예요.",
+      "prompt": "처음에는 구슬이 몇 개였을까요?",
+      "skill": "덧셈의 역연산",
+      "explanation": [
+        "17 − 8 = 9이므로 정답은 9입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:24",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 24,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "choices": [
+        "9",
+        "7",
+        "11"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "magic-g1-advanced-25",
+      "title": "초등 1학년 · 심화 25번",
+      "story": "토끼가 12cm 걸어가고, 1cm 더 걸어갔어요.",
+      "prompt": "모두 몇 cm 걸어갔을까요?",
+      "skill": "길이의 덧셈",
+      "explanation": [
+        "12 + 1 = 13이므로 정답은 13입니다.",
+        "수를 나누어 생각하거나 그림으로 설명해 보세요."
+      ],
+      "source": {
+        "id": "magic:magic-g1-advanced:25",
+        "kind": "app_authored_math_practice"
+      },
+      "provenance": {
+        "examQuestionNo": 25,
+        "source": "sparkle_original_practice",
+        "sourceLicenseStatus": "created_for_public_game"
+      },
+      "interaction": {
+        "type": "numeric",
+        "target": 13,
+        "max": 1000000,
+        "min": 0
+      }
+    }
+  ]
+}

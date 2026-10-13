@@ -143,16 +143,38 @@ export function bebsuChallengeStars(catalog,who=Progress.learner()){
  }
  return completedPapers*BEBSU_CHALLENGE_BONUS[who];
 }
-// A paper is rewarded once per child even after multiple 25-question replays.
+const MAGIC_PRACTICE_BONUS={tae:80,se:35};
+const isMagicPractice=id=>/^magic-(?:g[1-6]|m[1-3])-challenge$/.test(id);
+function validPracticeCompletion(round,entry){
+ const paper=entry.papers?.find(p=>p.paperId===round.paperId);
+ return Boolean(paper&&Array.isArray(round.questionIds)&&round.questionIds.length===25&&
+  paper.questionIds.length===25&&paper.questionIds.every((id,i)=>round.questionIds[i]===id));
+}
+export function magicPracticeStars(catalog,who=Progress.learner()){
+ whoId(who);
+ let count=0;
+ for(const entry of catalog.filter(e=>e.kind==='quiz'&&e.status==='published'&&isMagicPractice(e.id))){
+  const seen=new Set();
+  for(const round of Progress.gameProgress(entry.id,who).completedRounds||[]){
+   if(!validPracticeCompletion(round,entry)||seen.has(round.paperId))continue;
+   seen.add(round.paperId);count++;
+  }
+ }
+ return count*MAGIC_PRACTICE_BONUS[who];
+}
+// First verified paper completion is awarded only once per child.
+// KMA source and self-authored practice have independent bonuses, but one
+// authoritative wallet for NEW rounds played in the unified village.
 export function challengeRoundBonus(catalog,who,gameId,roundId){
  whoId(who);const entry=quizEntry(catalog,gameId);
- if(!entry||!isBebsuOriginal(gameId))return 0;
+ if(!entry||(!isBebsuOriginal(gameId)&&!isMagicPractice(gameId)))return 0;
  const rounds=Progress.gameProgress(gameId,who).completedRounds||[];
  const round=rounds.find(r=>r.id===roundId);
- if(!round||!validBebsuCompletion(round,entry))return 0;
- const first=rounds.filter(r=>r.paperId===round.paperId&&validBebsuCompletion(r,entry))
+ const verified=isMagicPractice(gameId)?validPracticeCompletion:validBebsuCompletion;
+ if(!round||!verified(round,entry))return 0;
+ const first=rounds.filter(r=>r.paperId===round.paperId&&verified(r,entry))
   .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))[0];
- return first?.id===roundId?BEBSU_CHALLENGE_BONUS[who]:0;
+ return first?.id===roundId?(isMagicPractice(gameId)?MAGIC_PRACTICE_BONUS[who]:BEBSU_CHALLENGE_BONUS[who]):0;
 }
 function effortTotal(p){
  const questionCounts=new Map(),rounds=new Set(),dates=new Set();let total=0;
@@ -210,7 +232,7 @@ export function syncRewards(catalog,who=Progress.learner()){
 }
 export function wallet(catalog,who=Progress.learner()){
  configure(catalog);whoId(who);const p=load().profiles[who],ev=evidence(catalog,who,p),effortStars=effortTotal(p);
- const learningStars=ev.results.stars,challengeStars=bebsuChallengeStars(catalog,who),lifetime=learningStars+effortStars+challengeStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
+ const learningStars=ev.results.stars,challengeStars=bebsuChallengeStars(catalog,who)+magicPracticeStars(catalog,who),lifetime=learningStars+effortStars+challengeStars,purchases=Object.values(p.purchases).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),spent=purchases.reduce((total,receipt)=>total+receipt.cost,0),available=Math.max(0,lifetime-spent);
  const badges=[
   {id:'first-round',title:'첫 모험 완주',emoji:'🌱',description:'놀이 한 판을 끝까지 해냈어요.',unlocked:ev.completed>=1,progress:Math.min(1,ev.completed),target:1},
   {id:'three-subjects',title:'세 가지 탐험가',emoji:'🧭',description:'수학·국어·영어를 골고루 만났어요.',unlocked:ev.subjects>=3,progress:ev.subjects,target:3},

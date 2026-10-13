@@ -8,8 +8,8 @@ globalThis.localStorage={getItem:k=>store.get(k)??null,setItem:(k,v)=>store.set(
 const read=path=>JSON.parse(fs.readFileSync(new URL(path,import.meta.url),'utf8'));
 const catalog=read('../games/catalog.json'),bank=read('../games/irt-bank.json');
 P.configureCatalog(catalog);
-assert.equal(P.configureIrtBank(bank),4153);
-assert.equal(IRT.bankSize(),4153);
+assert.equal(P.configureIrtBank(bank),4828);
+assert.equal(IRT.bankSize(),4828);
 assert.equal(bank.calibration,'editorial_provisional');
 for(const [a,b] of Object.entries(IRT.STAGE_DIFFICULTY).slice(1)){
  assert.ok(b>IRT.STAGE_DIFFICULTY[Number(a)-1],'Growth anchors rise by stage');
@@ -63,4 +63,4 @@ P.importRecords(snapshot);
 assert.equal(P.ability('math').n,7,'Import is idempotent');
 const diagnostics=IRT.skillEvidence(P.exportRecords().platform.profiles.se.games,'math',1);
 assert.ok(diagnostics.length>0&&diagnostics.every(g=>g.n>=1&&Number.isFinite(g.accuracy)&&Number.isFinite(g.gap)),'Concept-specific response profiles remain calculable');
-console.log('PASS: 4153 descriptors, Bayesian updates, concept evidence, uncertainty, per-child isolation, new items, hinted exclusion, repeated-item protection and backup merge');
+console.log('PASS: 4828 descriptors, Bayesian updates, concept evidence, uncertainty, per-child isolation, new items, hinted exclusion, repeated-item protection and backup merge');

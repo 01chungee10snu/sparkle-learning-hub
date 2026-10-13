@@ -1,0 +1,52 @@
+/* Unified World v0.8: one 3D village, several subject-specific destinations.
+   All controls remain accessible even when canvas raycasting is unavailable. */
+#vh-learning-districts{
+ position:absolute;z-index:7;left:10px;right:10px;
+ bottom:calc(91px + env(safe-area-inset-bottom));
+ display:flex;align-items:center;gap:8px;min-width:0;
+ overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;
+ overscroll-behavior-x:contain;touch-action:pan-x;
+ scrollbar-width:thin;padding:5px 5px 7px;
+ background:linear-gradient(90deg,#fffaf1e9,#f3eaffed);
+ border:1px solid #e3cbec;border-radius:17px;
+ box-shadow:0 4px 15px #281c4b32;
+}
+#vh-learning-districts .vh-district{
+ flex:0 0 auto;scroll-snap-align:start;white-space:nowrap;
+ min-height:45px;padding:8px 13px;
+ border:1px solid #b9a2d5;border-radius:13px;
+ background:#fff;color:#50366e;
+ font-size:14px;font-weight:800;line-height:1.2;
+ touch-action:manipulation;
+}
+#vh-learning-districts .vh-district:focus-visible,
+#vh-learning-districts .vh-district:hover{
+ background:#eee4fb;outline:2px solid #6c51a0;outline-offset:2px;
+}
+#vh-world-shortcuts{bottom:calc(162px + env(safe-area-inset-bottom));}
+#vh-extra-tools{z-index:9}
+.vh-district-missions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:12px;}
+.vh-mission-card{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.vh-mission-card .vh-wide{margin-top:auto}
+#village-ui .vh-dialog[data-theme="scroll"] .vh-district-missions .vh-route{
+ border:1px solid #d5b8d9;background:#fffefa;border-radius:15px;padding:12px;
+}
+#village-ui .vh-district-missions .vh-route-title{font-size:17px}
+#village-ui .vh-district-missions .vh-small{margin:0;font-size:13px;line-height:1.5}
+@media(max-width:760px){
+ #vh-learning-districts{gap:6px;left:6px;right:6px;padding:5px;}
+ #vh-learning-districts .vh-district{min-height:44px;font-size:13px;padding:8px 10px;}
+ .vh-district-missions{grid-template-columns:1fr;gap:9px;}
+ #vh-world-shortcuts{bottom:calc(162px + env(safe-area-inset-bottom));}
+}
+@media(max-height:590px) and (orientation:landscape){
+ #vh-learning-districts{left:6px;right:6px;bottom:68px;max-width:calc(100% - 12px);}
+ #vh-world-shortcuts{bottom:130px;}
+}
+@media(max-width:390px) and (max-height:650px){
+ #vh-learning-districts{bottom:86px}
+ #vh-world-shortcuts{bottom:155px}
+}
+@media(prefers-reduced-motion:reduce){#vh-learning-districts{scroll-behavior:auto}}
+/* Modal must mask floating district shortcuts so its exit and answer buttons work. */
+#village-dialog-wrap{z-index:30!important;}

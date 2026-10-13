@@ -19,7 +19,7 @@ for(const entry of catalog){
    assert.ok(Number.isInteger(left)&&Number.isInteger(right)&&left>=0&&right>=0,q.id);
    assert.ok(['+','-'].includes(operator),q.id);
    const value=operator==='+'?left+right:left-right;
-   assert.ok(value>=0&&value<=20,q.id);
+   assert.ok(Number.isFinite(value)&&(entry.sourceGroup==='village-practice'||(value>=0&&value<=20)),q.id);
    assert.equal(parseInt(answerText(q),10),value,q.id);
   }
   if(q.speak){assert.equal(q.speak.lang,'en-US',q.id);assert.equal(q.speak.text.toLowerCase(),answerText(q).toLowerCase(),q.id);}

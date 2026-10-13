@@ -2,7 +2,7 @@
 
 ## 범위
 
-- 플랫폼 내부 문항: **4,153개**, 45개 문제 게임
+- 플랫폼 내부 문항: **4,828개**, 54개 문제 게임
 - 외부 단위 정원 48문항은 별도 앱에서 운영(본 문항 색인과 개별 능력 추정에는 미포함).
 - 기존 Bebsu 수학 문항에서 부적합하다고 판정되어 통합 대상에서 제외한 15문항은 출제하지 않음.
 - 원본 문제·정답·해설·이미지 수정 없음. 문항 색인은 식별자·주제·초기 난이도·검증 상태만 보관.
@@ -11,25 +11,25 @@
 ## 문항 형식
 | 형식 | 문항 |
 |---|---:|
-| numeric | 3,572 |
-| choice | 466 |
+| numeric | 3,739 |
+| choice | 968 |
 | sequence | 52 |
 | match | 36 |
-| build | 17 |
+| build | 23 |
 | memory | 10 |
 
 ## 문항 검증 정보
 | 기존 기록상 상태 | 문항 |
 |---|---:|
 | machine_checked | 3,780 |
-| not_independently_verified | 348 |
+| not_independently_verified | 1,023 |
 | independently_arithmetic_checked | 25 |
 
 ## 출제 품질 분류
 | 분류 | 문항 |
 |---|---:|
 | needs_expert_review | 3,680 |
-| app_authored_not_calibrated | 348 |
+| app_authored_not_calibrated | 1,023 |
 | generated_not_calibrated | 100 |
 | arithmetic_checked | 25 |
 

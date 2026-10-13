@@ -21,11 +21,19 @@ export function configureIrtBank(bank){
 }
 const ATTEMPT_LIMIT=5,ROUND_LIMIT=100;
 const isBebsuOriginal = id => /^bebsu-(?:g[1-6]|m[1-3])-original$/.test(id);
+const isMagicPractice = id => /^magic-(?:g[1-6]|m[1-3])-challenge$/.test(id);
 const validPaperId = id => typeof id === 'string' && /^kma-[0-9]{1,5}$/.test(id);
 const validRoundLength = (length, gameId, paperId) =>
- [3,5].includes(length) || (length === 25 && isBebsuOriginal(gameId) && validPaperId(paperId));
-let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map();
-export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));}
+ [3,5].includes(length) || (length === 25 &&
+   ((isBebsuOriginal(gameId) && validPaperId(paperId)) ||
+    (isMagicPractice(gameId) && /^magic-(?:g[1-6]|m[1-3])-(?:basic|challenge|advanced)$/.test(paperId||''))));
+let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map(),practicePapers=new Map();
+const validPracticeItems=(gameId,paperId,ids)=>{
+ if(!isMagicPractice(gameId)||ids.length!==25)return true;
+ const expected=practicePapers.get(gameId)?.get(paperId);
+ return Boolean(expected&&expected.length===25&&expected.every((id,i)=>id===ids[i]));
+};
+export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));practicePapers=new Map(catalog.filter(g=>isMagicPractice(g.id)).map(g=>[g.id,new Map((g.papers||[]).map(p=>[p.paperId,p.questionIds]))]));}
 const blankGame=()=>({records:{},round:null,finishedRounds:0,lastPlayed:0,completedRounds:[]});
 const blank=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});
 let memory=blank(),selected='tae',sequence=0,progressDirty=false;
@@ -51,13 +59,13 @@ function cleanAttempts(values){
 }
 function cleanCompleted(values,allowed,gameId){
  const byId=new Map();
- for(const r of Array.isArray(values)?values:[])if(r&&knownId(r.id)&&validTime(r.at)&&Array.isArray(r.questionIds)&&validRoundLength(r.questionIds.length,gameId,r.paperId)&&new Set(r.questionIds).size===r.questionIds.length&&r.questionIds.every(id=>allowed.has(id))){
+ for(const r of Array.isArray(values)?values:[])if(r&&knownId(r.id)&&validTime(r.at)&&Array.isArray(r.questionIds)&&validRoundLength(r.questionIds.length,gameId,r.paperId)&&new Set(r.questionIds).size===r.questionIds.length&&r.questionIds.every(id=>allowed.has(id))&&validPracticeItems(gameId,r.paperId,r.questionIds)){
   const item={id:r.id,at:r.at,questionIds:[...r.questionIds],...(r.questionIds.length===25?{paperId:r.paperId}:{})},old=byId.get(r.id);if(!old||item.at>old.at)byId.set(r.id,item);
  }
  return [...byId.values()].sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)).slice(-ROUND_LIMIT);
 }
 function cleanRound(s,allowed,gameId){
- if(!s||!Array.isArray(s.ids)||!validRoundLength(s.ids.length,gameId,s.paperId)||!s.ids.every(id=>knownId(id)&&allowed.has(id))||new Set(s.ids).size!==s.ids.length||!Number.isInteger(s.index)||s.index<0||s.index>s.ids.length||!Array.isArray(s.answers)||s.answers.length<s.index||s.answers.length>Math.min(s.ids.length,s.index+1))return null;
+ if(!s||!Array.isArray(s.ids)||!validRoundLength(s.ids.length,gameId,s.paperId)||!s.ids.every(id=>knownId(id)&&allowed.has(id))||new Set(s.ids).size!==s.ids.length||!validPracticeItems(gameId,s.paperId,s.ids)||!Number.isInteger(s.index)||s.index<0||s.index>s.ids.length||!Array.isArray(s.answers)||s.answers.length<s.index||s.answers.length>Math.min(s.ids.length,s.index+1))return null;
  const validResponse=value=>{if(typeof value==='string'){if(!numericGames.has(gameId))return false;try{return normalizeNumericResponse(value,NUMERIC_LIMIT,numericMins.get(gameId)??0)===value;}catch{return false;}}return Number.isInteger(value)?value>=0&&value<=20:Array.isArray(value)&&value.length>=3&&value.length<=5&&value.every(n=>Number.isInteger(n)&&n>=0&&n<value.length)&&new Set(value).size===value.length;};
  const response=a=>Object.hasOwn(a,'response')?a.response:a.choice;
  if(!s.answers.every((a,i)=>a&&a.id===s.ids[i]&&validResponse(response(a))&&(a.choice===undefined||(Number.isInteger(a.choice)&&a.choice>=0&&a.choice<(choiceLimits.get(gameId)??3)&&response(a)===a.choice))&&[0,2,8,10].includes(a.earned)&&typeof a.correct==='boolean'))return null;
@@ -142,14 +150,22 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
  const stage=options.level??stageSelection(game.subject);
  let ids;
  if(paperId){
-  if(!isBebsuOriginal(game.id)||!validPaperId(paperId))throw new Error('경시대회 시험지를 다시 선택해 주세요.');
-  const exam=paperId.slice(4);
-  const selected=game.questions.filter(q=>q.source?.id?.startsWith('kma:'+exam+':') &&
-    Number.isInteger(q.provenance?.examQuestionNo) && q.provenance.examQuestionNo>=1 && q.provenance.examQuestionNo<=25)
-   .sort((a,b)=>a.provenance.examQuestionNo-b.provenance.examQuestionNo);
-  if(selected.length!==25||selected.some((q,i)=>q.provenance.examQuestionNo!==i+1))
-   throw new Error('1번부터 25번까지 확인된 시험지가 아니에요.');
-  ids=selected.map(q=>q.id);
+  if(isMagicPractice(game.id)){
+   const expected=practicePapers.get(game.id)?.get(paperId);
+   if(!expected||expected.length!==25||new Set(expected).size!==25||
+      expected.some(id=>!game.questions.some(q=>q.id===id)))
+    throw new Error('마법 연습장 시험지를 다시 선택해 주세요.');
+   ids=[...expected]; // Source-authored 1–25 ordering, never randomised.
+  }else{
+   if(!isBebsuOriginal(game.id)||!validPaperId(paperId))throw new Error('경시대회 시험지를 다시 선택해 주세요.');
+   const exam=paperId.slice(4);
+   const selected=game.questions.filter(q=>q.source?.id?.startsWith('kma:'+exam+':') &&
+     Number.isInteger(q.provenance?.examQuestionNo) && q.provenance.examQuestionNo>=1 && q.provenance.examQuestionNo<=25)
+    .sort((a,b)=>a.provenance.examQuestionNo-b.provenance.examQuestionNo);
+   if(selected.length!==25||selected.some((q,i)=>q.provenance.examQuestionNo!==i+1))
+    throw new Error('1번부터 25번까지 확인된 시험지가 아니에요.');
+   ids=selected.map(q=>q.id);
+  }
  }else{
   const adaptive=IRT.bankSize()?IRT.selectQuestions({game,candidates:questions,profile:p,size,stage}):[];
   ids=adaptive.length===size?adaptive:questions.map(q=>({id:q.id,rank:(g.records[q.id]?.best||0)*100+(g.records[q.id]?.seen||0)+Math.random()})).sort((a,b)=>a.rank-b.rank).slice(0,size).map(q=>q.id);
