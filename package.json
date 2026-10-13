@@ -13,6 +13,7 @@
     "qa:unified": "node scripts/unified-village-browser-qa.mjs",
     "qa:hotspot": "node scripts/unified-village-hotspot-qa.mjs",
     "qa:mobile": "node scripts/mobile-tablet-qa.mjs",
+    "qa:tablet": "node scripts/tablet-legibility-qa.mjs && node scripts/tablet-readability-qa.mjs",
     "qa:lite": "node scripts/lite-village-qa.mjs"
   },
   "dependencies": {

@@ -1,0 +1,283 @@
+/* Tablet-first readability: preserve the same learning, reward and IRT engine.
+   This sheet loads AFTER village-ui/major-patch/unified-world/mobile-art-polish.
+   Child-sized text remains actual selectable DOM text, never rasterized artwork.
+   Width >= 600px and height >= 600px: Galaxy Tab, iPad, large tablets. */
+@media (min-width:600px) and (min-height:600px) and (max-width:1500px) {
+  /* Fullscreen learning instead of a narrow, vertically centered browser card. */
+  #village-dialog-wrap {padding:3px!important;}
+  #village-ui .vh-dialog{
+    box-sizing:border-box;
+    width:calc(100% - 4px)!important;
+    height:calc(100% - 6px)!important;
+    max-width:none!important;max-height:none!important;
+    min-width:0;min-height:0;
+    border-radius:17px;border-width:2px;
+    box-shadow:0 0 0 2px #62477a4a,0 9px 28px #160c35a0;
+  }
+  #village-ui .vh-dialog-title {
+    min-height:56px;padding:8px 14px!important;gap:9px;border-bottom-width:2px;
+  }
+  #village-ui .vh-dialog-title h2{
+    font-size:clamp(24px,2.5vw,30px)!important;
+    line-height:1.22!important;overflow-wrap:anywhere;
+  }
+  #village-ui .vh-progress{font-size:18px!important;padding:5px 9px;}
+  #village-ui .vh-dialog-body{
+    box-sizing:border-box;flex:1 1 auto;
+    min-height:0;padding:10px 13px 12px!important;
+    overflow-x:hidden;overflow-y:auto;scrollbar-gutter:stable;
+  }
+  #village-ui .vh-dialog[data-theme="tome"] .vh-dialog-body {
+    padding:8px 10px 10px!important;
+  }
+  #village-ui .vh-dialog[data-theme="scroll"] .vh-dialog-body {
+    margin:4px!important;padding:10px 12px!important;border-width:3px;
+  }
+  #village-ui .vh-dialog-footer {
+    padding:7px 13px!important;gap:7px;flex-shrink:0;
+  }
+  #village-ui .vh-dialog-footer .vh-small {
+    display:none; /* Explanatory/assessment notes remain in the scrollable body. */
+  }
+  #village-ui .vh-dialog-footer .vh-secondary{
+    min-height:53px!important;
+    font-size:19px!important;
+    padding:8px 14px!important;
+  }
+
+  /* Narrative hierarchy: 14-17px on tablets was the primary failure. */
+  #village-ui .vh-story,
+  #village-ui .vh-book-page .vh-story{
+    font-size:21px!important;
+    line-height:1.5!important;
+    margin:0 0 9px!important;
+    overflow-wrap:anywhere;
+  }
+  #village-ui .vh-prompt,
+  #village-ui .vh-book-page .vh-prompt{
+    font-size:26px!important;
+    line-height:1.35!important;
+    margin:4px 0 10px!important;
+    overflow-wrap:anywhere;
+    word-break:keep-all;
+  }
+  #village-ui .vh-options,
+  #village-ui .vh-book-page .vh-options{
+    gap:9px;margin:9px 0 0;
+  }
+  #village-ui .vh-option,
+  #village-ui .vh-book-page .vh-option{
+    font-size:23px!important;
+    line-height:1.32!important;
+    min-height:62px!important;
+    padding:9px 13px!important;
+    overflow-wrap:anywhere;
+    word-break:keep-all;
+  }
+  #village-ui .vh-wide,
+  #village-ui .vh-dialog .vh-wide,
+  #village-ui .vh-dialog .vh-shop-buy{
+    font-size:22px!important;line-height:1.32!important;
+    min-height:59px!important;
+    padding:9px 13px!important;margin-top:9px;
+    overflow-wrap:anywhere;
+  }
+  #village-ui .vh-small,
+  #village-ui .vh-district-missions .vh-small,
+  #village-ui .vh-mission-card .vh-small{
+    font-size:18px!important;line-height:1.45!important;
+  }
+  #village-ui .vh-dialog .vh-feedback{font-size:25px!important;margin:0 0 8px;}
+  #village-ui .vh-dialog .vh-explanation{
+    font-size:21px!important;line-height:1.58!important;
+    padding:10px 12px!important;margin:6px 0;
+  }
+  #village-ui .vh-route-title,
+  #village-ui .vh-district-missions .vh-route-title,
+  #village-ui .vh-mission-card .vh-route-title{
+    font-size:22px!important;line-height:1.4!important;
+  }
+  #village-ui .vh-route,
+  #village-ui .vh-district-missions .vh-route{
+    padding:10px!important;
+  }
+  #village-ui .vh-district-missions{gap:10px;margin-top:9px;}
+  #village-ui .vh-area-banner{padding:5px 9px 5px 5px;margin:3px 0 8px;min-height:90px;}
+  #village-ui .vh-area-banner img{height:100px;}
+  #village-ui .vh-area-caption{
+    font-size:20px!important;line-height:1.4!important;
+  }
+
+  /* Question sheets: bigger reading area with fewer nested gutters. */
+  #village-ui .vh-book-spread{
+    min-height:0;gap:0;
+    border-radius:12px;
+    background:linear-gradient(112deg,#f9e8c8,#fff8e6 55%,#f8e1c5);
+  }
+  #village-ui .vh-book-spread:before{display:none;}
+  #village-ui .vh-book-page{min-width:0;padding:11px 12px 13px!important;}
+  #village-ui .vh-book-left{border-right:1px dashed #bc9d71;}
+  #village-ui .vh-original-figure{margin:6px 0!important;padding:6px!important;}
+  #village-ui .vh-original-image{
+    max-width:100%;max-height:min(43vh,440px);height:auto;
+    object-fit:contain;
+  }
+  #village-ui .vh-visual{
+    margin:7px 0;padding:8px;gap:8px;
+  }
+  #village-ui .vh-visual-group{padding:6px;}
+  #village-ui .vh-visual-label{font-size:19px!important;margin-bottom:4px;}
+  #village-ui .vh-counted{font-size:33px!important;line-height:1.44;}
+  #village-ui .vh-operator,
+  #village-ui .vh-visual-word{font-size:28px!important;}
+  #village-ui .vh-pair-label{font-size:20px!important;}
+  #village-ui .vh-pair select{
+    font-size:21px!important;min-height:54px;padding:7px 10px;
+  }
+
+  /* Large-number answers, handwriting-style choice, and remaining modes. */
+  #village-ui .vh-number-instruction{font-size:19px!important;}
+  #village-ui .vh-number-entry{margin-top:7px;gap:6px;max-width:460px;}
+  #village-ui .vh-number-entry .vh-numeric-input{
+    font-size:35px!important;min-height:57px;max-width:440px;
+    padding:7px 11px;
+  }
+  #village-ui .vh-number-keypad{
+    width:min(100%,440px);gap:7px;margin:6px auto 4px;
+  }
+  #village-ui .vh-dialog .vh-number-key{
+    min-height:56px!important;font-size:30px!important;padding:5px!important;
+  }
+  #village-ui .vh-dialog .vh-number-key[data-key="back"],
+  #village-ui .vh-dialog .vh-number-key[data-key="clear"],
+  #village-ui .vh-dialog .vh-number-sign{
+    font-size:23px!important;
+  }
+  #village-ui .vh-dialog .vh-numeric-native{font-size:18px!important;min-height:43px!important;}
+  #village-ui .vh-number{font-size:40px;min-width:95px;padding:8px;}
+  #village-ui .vh-stepper{min-width:62px;min-height:62px;}
+  #village-ui .vh-select-label{font-size:21px!important;margin:9px 0 4px;}
+  #village-ui .vh-challenge-select{
+    font-size:21px!important;margin-top:5px;padding:9px 11px;
+    min-height:53px;
+  }
+  #village-ui .vh-challenge-paper{font-size:21px!important;padding:9px;margin:9px 0 5px;}
+  #village-ui .vh-child-guidance{font-size:19px!important;padding:8px 10px;margin:7px 0;}
+  #village-ui .vh-shop-tab{font-size:19px!important;min-height:53px!important;}
+  #village-ui .vh-shop-name{font-size:20px!important;}
+  #village-ui .vh-shop-description{font-size:18px!important;min-height:0;}
+  #village-ui .vh-garden-slot{font-size:20px!important;min-height:57px;}
+  #village-ui .vh-growing-scene figcaption{font-size:20px;}
+  #village-ui .vh-spatial-instruction{font-size:22px!important;padding:8px;}
+  #village-ui .vh-spatial-gate{font-size:21px!important;}
+  #village-ui .vh-spatial-add,#village-ui .vh-spatial-remove{font-size:21px!important;}
+  #village-ui .vh-strategy{font-size:20px!important;}
+  #village-ui .vh-route-controls select{min-width:0;}
+
+  /* Exploration controls must remain readable outside learning dialogs. */
+  #village-info{top:6px;left:6px;right:auto;max-width:390px;padding:7px 10px;gap:9px;}
+  #village-info .vh-avatar{width:49px;height:49px;border-radius:16px;}
+  #village-info .vh-meta h2{font-size:23px!important;}
+  #village-info .vh-meta p{font-size:16px!important;line-height:1.3;}
+  #village-info #vh-outfit{display:none;}
+  #village-info .vh-stars{font-size:19px!important;}
+  #vh-learning-districts{left:4px;right:4px;bottom:calc(91px + env(safe-area-inset-bottom));gap:6px;padding:4px 6px;}
+  #vh-learning-districts .vh-district{
+    font-size:18px!important;min-height:57px;padding:6px 13px;
+  }
+  #vh-learning-districts .vh-district img{width:35px;height:38px;}
+  #village-controls{left:4px;right:4px;bottom:calc(4px + env(safe-area-inset-bottom));gap:6px;}
+  #village-controls .vh-action{
+    font-size:18px!important;min-height:78px!important;
+    padding:6px 8px!important;
+  }
+  #village-controls .vh-action>span:first-child{font-size:27px;}
+  #vh-world-shortcuts{
+    bottom:calc(166px + env(safe-area-inset-bottom));
+    right:7px;max-width:min(565px,calc(100% - 14px));gap:7px;
+  }
+  #vh-world-shortcuts>.vh-shortcut{
+    font-size:18px!important;min-height:51px!important;
+    padding:7px 12px!important;min-width:0;
+  }
+  #vh-extra-tools{width:370px;max-width:calc(100vw - 15px);padding:8px;gap:7px;}
+  #vh-extra-tools .vh-shortcut{font-size:18px!important;min-height:52px!important;}
+  #village-toast{font-size:18px;line-height:1.4;}
+  .vh-help{font-size:17px;top:88px;padding:5px 9px;}
+  /* Start screen: fewer card margins, readable choice labels. */
+  #loading{padding:6px!important;}
+  #loading .panel{max-width:min(850px,100%);padding:12px 16px;}
+  #loading .panel h1{font-size:30px;}
+  #loading .panel p{font-size:20px;line-height:1.45;margin:7px 0;}
+  #loading .vh-storage-note small{font-size:16px;line-height:1.4;}
+  #loading .vh-entry-record-link{font-size:19px;min-height:48px;}
+  #learner-choices{margin:9px 0;}
+  #learner-choices button{font-size:23px!important;min-width:140px;min-height:55px;}
+  #start,#lite{font-size:22px!important;min-height:57px;padding:8px 14px;}
+  #lite-village-scene p{font-size:22px!important;}
+}
+/* A portrait tablet is much clearer when a two-page book stacks vertically.
+   Long question scans can expand within the scrollable content instead of
+   being squeezed beside a tiny answer column. */
+@media (min-width:600px) and (max-width:939px) and (min-height:600px){
+  #village-ui .vh-book-spread{grid-template-columns:minmax(0,1fr)!important;}
+  #village-ui .vh-book-left{border-right:0;border-bottom:1px dashed #bc9d71;}
+  #village-ui .vh-book-page .vh-options{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #village-ui .vh-original-image{max-height:min(46vh,540px);}
+  #village-ui .vh-dialog .vh-district-missions{grid-template-columns:minmax(0,1fr);}
+  #village-ui .vh-route-grid{grid-template-columns:1fr;}
+}
+/* In landscape, a short story uses less space and answer choices use more.
+   Original exam scans keep a balanced two-page layout. */
+@media (min-width:940px) and (max-width:1500px) and (min-height:600px){
+  #village-ui .vh-book-spread{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)!important;}
+  #village-ui .vh-book-spread:has(.vh-original-figure){
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  #village-ui .vh-book-page .vh-options{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+/* Native practice questions without an original scanned problem image:
+   avoid the unused left half of a textbook spread. The actual scanned KMA
+   figures retain their source/image-first two-page treatment. */
+@media (min-width:600px) and (max-width:1500px) and (min-height:600px) {
+  #village-ui[data-mode="question"] .vh-dialog[data-theme="tome"] .vh-dialog-body {
+    display:flex;flex-direction:column;
+  }
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)) {
+    grid-template-columns:1fr!important;
+    display:flex;flex-direction:column;justify-content:center;
+    justify-content:safe center;min-height:100%;flex:1 0 auto;
+    background:linear-gradient(150deg,#fff7e5,#f7e6c8 60%,#fef6e6);
+  }
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)) .vh-book-left {
+    border-right:0;border-bottom:1px dashed #bc9d71;
+    padding:9px 12px 3px!important;
+  }
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)) .vh-book-right{
+    padding:8px 12px 12px!important;
+  }
+}
+/* For text-only 25-question papers, do not reserve half the screen for an
+   empty left-hand page. Keep a two-column spread only for original scans. */
+@media (min-width:600px) and (min-height:600px) and (max-width:1500px){
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)){
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)) .vh-book-left{
+    border-right:0;border-bottom:1px dashed #bca078;
+    padding-bottom:5px!important;
+  }
+  #village-ui .vh-book-spread:not(:has(.vh-original-figure)) .vh-book-right{
+    padding-top:8px!important;
+  }
+}
+/* Short tablets (e.g. 1024x768): preserve prompt and answer visibility while
+   relying on vertical scrolling for unusually long original questions. */
+@media (min-width:600px) and (max-width:1500px) and (min-height:600px) and (max-height:850px){
+  #village-ui .vh-dialog-title{min-height:52px;padding:6px 11px!important;}
+  #village-ui .vh-dialog-footer{padding:5px 10px!important;}
+  #village-ui .vh-dialog-footer .vh-secondary{min-height:48px!important;}
+  #village-ui .vh-dialog-body{padding:7px 10px 8px!important;}
+  #village-ui .vh-book-page{padding:7px 10px 9px!important;}
+  #village-ui .vh-original-image{max-height:min(38vh,360px);}
+}
