@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-10-13T09:11:37.148Z",
+  "mode": "incognito-lite-with-real-host",
+  "origin": "http://127.0.0.1:4189",
+  "results": [
+    {
+      "device": "galaxy-360x740",
+      "pass": true,
+      "stats": {
+        "width": 360,
+        "height": 740,
+        "scrollWidth": 360,
+        "scrollHeight": 740,
+        "positions": {
+          "#village-info": {
+            "x": 7,
+            "y": 8,
+            "width": 151.484375,
+            "height": 58.65625
+          },
+          "#vh-world-shortcuts": {
+            "x": 182,
+            "y": 9,
+            "width": 172,
+            "height": 44
+          },
+          "#vh-learning-districts": null,
+          "#village-controls": {
+            "x": 5,
+            "y": 667,
+            "width": 350,
+            "height": 68
+          },
+          "#vh-map": {
+            "x": 184.0625,
+            "y": 9,
+            "width": 53.3125,
+            "height": 44
+          },
+          "#vh-quest": {
+            "x": 182,
+            "y": 672,
+            "width": 82,
+            "height": 58
+          }
+        },
+        "working": "true",
+        "appearance": "true"
+      },
+      "mapStories": 8,
+      "chosen": "lantern-road",
+      "walletUntouched": true,
+      "focusSafe": true
+    },
+    {
+      "device": "iphone-390x844",
+      "pass": true,
+      "stats": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "positions": {
+          "#village-info": {
+            "x": 7,
+            "y": 8,
+            "width": 160,
+            "height": 60.125
+          },
+          "#vh-world-shortcuts": {
+            "x": 212,
+            "y": 9,
+            "width": 172,
+            "height": 44
+          },
+          "#vh-learning-districts": null,
+          "#village-controls": {
+            "x": 5,
+            "y": 771,
+            "width": 380,
+            "height": 68
+          },
+          "#vh-map": {
+            "x": 214.0625,
+            "y": 9,
+            "width": 53.3125,
+            "height": 44
+          },
+          "#vh-quest": {
+            "x": 197,
+            "y": 776,
+            "width": 89.5,
+            "height": 58
+          }
+        },
+        "working": "true",
+        "appearance": "true"
+      },
+      "mapStories": 8,
+      "chosen": "lantern-road",
+      "walletUntouched": true,
+      "focusSafe": true
+    },
+    {
+      "device": "tablet-768x1024",
+      "pass": true,
+      "stats": {
+        "width": 768,
+        "height": 1024,
+        "scrollWidth": 768,
+        "scrollHeight": 1024,
+        "positions": {
+          "#village-info": {
+            "x": 10,
+            "y": 9,
+            "width": 178.40625,
+            "height": 64.46875
+          },
+          "#vh-world-shortcuts": {
+            "x": 586,
+            "y": 10,
+            "width": 172,
+            "height": 142
+          },
+          "#vh-learning-districts": null,
+          "#village-controls": {
+            "x": 144,
+            "y": 938.5,
+            "width": 480,
+            "height": 76.5
+          },
+          "#vh-map": {
+            "x": 672.171875,
+            "y": 10,
+            "width": 85.828125,
+            "height": 44
+          },
+          "#vh-quest": {
+            "x": 387.5,
+            "y": 945.5,
+            "width": 111.25,
+            "height": 62.5
+          }
+        },
+        "working": "true",
+        "appearance": "true"
+      },
+      "mapStories": 8,
+      "chosen": "lantern-road",
+      "walletUntouched": true,
+      "focusSafe": true
+    },
+    {
+      "device": "tablet-landscape-1024x768",
+      "pass": true,
+      "stats": {
+        "width": 1024,
+        "height": 768,
+        "scrollWidth": 1024,
+        "scrollHeight": 768,
+        "positions": {
+          "#village-info": {
+            "x": 10,
+            "y": 9,
+            "width": 178.40625,
+            "height": 64.46875
+          },
+          "#vh-world-shortcuts": {
+            "x": 842,
+            "y": 10,
+            "width": 172,
+            "height": 142
+          },
+          "#vh-learning-districts": null,
+          "#village-controls": {
+            "x": 272,
+            "y": 682.5,
+            "width": 480,
+            "height": 76.5
+          },
+          "#vh-map": {
+            "x": 928.171875,
+            "y": 10,
+            "width": 85.828125,
+            "height": 44
+          },
+          "#vh-quest": {
+            "x": 515.5,
+            "y": 689.5,
+            "width": 111.25,
+            "height": 62.5
+          }
+        },
+        "working": "true",
+        "appearance": "true"
+      },
+      "mapStories": 8,
+      "chosen": "lantern-road",
+      "walletUntouched": true,
+      "focusSafe": true
+    }
+  ],
+  "jsErrors": [],
+  "unexpected": []
+}

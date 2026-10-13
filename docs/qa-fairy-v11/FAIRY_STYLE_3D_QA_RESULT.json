@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "checkedAt": "2026-10-13T11:17:22.869Z",
+  "mode": "incognito-3d-webgl-swiftshader",
+  "origin": "http://127.0.0.1:4189",
+  "durationMs": 5785,
+  "canvasOk": true,
+  "variations": 4,
+  "sourceArtPreserved": true,
+  "learningWalletUntouched": true,
+  "realMobileHardwareTested": false,
+  "steps": [
+    "real-webgl-loaded",
+    "classic-canvas-captured",
+    "style-garden-3d-screenshot",
+    "style-starlight-3d-screenshot",
+    "style-explorer-3d-screenshot",
+    "style-festival-3d-screenshot"
+  ],
+  "jsErrors": [],
+  "httpErrors": [],
+  "consoleErrors": []
+}

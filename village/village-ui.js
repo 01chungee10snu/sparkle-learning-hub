@@ -1,4 +1,6 @@
 import {SPECIES,CARE} from './garden-state.js';
+import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
+import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
 // It never scores an answer: the established learning platform remains authoritative.
 function nativeProgressArt(answered,total){
@@ -21,7 +23,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<nav id="village-controls" aria-label="마법마을 바로가기">',
     ' <button id="vh-home" class="vh-action" type="button" aria-current="page"><span>🏡</span>내 마을</button>',
     ' <button id="vh-plaza" class="vh-action" type="button"><span>🌷</span>가족 광장</button>',
-    ' <button id="vh-quest" class="vh-action" type="button"><span>🐰</span>오늘의 부탁</button>',
+    ' <button id="vh-quest" class="vh-action" type="button"><span>✨</span>이야기 모험</button>',
     ' <button id="vh-bebsu" class="vh-action vh-challenge-action" type="button"><span>🏆</span>뱁수 25문제</button>',
     '</nav>',
     '<nav id="vh-learning-districts" aria-label="마법마을 학습 지역">',
@@ -34,13 +36,15 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button class="vh-district" data-district="growth" type="button">🌟 성장의 탑</button>',
     '</nav>',
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
-    ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 탐험 지도</button>',
+    ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 모험 지도</button>',
     ' <button id="vh-garden" type="button" class="vh-shortcut">🌱 나무·꽃 키우기</button>',
     ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
     ' <div id="vh-extra-tools" hidden>',
     ' <button id="vh-run" type="button" class="vh-shortcut" aria-pressed="false">🏃 달리기</button>',
     ' <button id="vh-hop" type="button" class="vh-shortcut">🪽 살짝 날기</button>',
+    ' <button id="vh-motion" type="button" class="vh-shortcut" aria-pressed="false">🍃 움직임 줄이기</button>',
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
+    ' <button id="vh-wardrobe" type="button" class="vh-shortcut">🎀 요정 스타일</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
@@ -92,8 +96,13 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   let requestNumber = 0, pendingRequest = '', sessionRounds = 0;
   let mostRecentRoundId = '', reinforcementStars = 0;
   let experimentalArt=false;
+  // Decorative stories never change the authoritative host's questions, stars or IRT.
+  let activeStory=null;
   let shopCategory='light', shopData=null, adaptiveSubject='math', adaptiveGrade='';
   let contentTarget=ui.body;
+  let reducedMotion=Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+  root.dataset.reducedMotion=String(reducedMotion);
+  $('vh-motion').setAttribute('aria-pressed',String(reducedMotion));
   const theme = value => {
     ui.dialog.dataset.theme=value;
     ui.dialog.querySelector('.vh-dialog').dataset.theme=value;
@@ -167,17 +176,122 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     $('vh-extra-tools').hidden=!expanded;$('vh-more').setAttribute('aria-expanded',String(expanded));
   });
   const safeExplore=()=>phase==='explore'&&!busy&&root.dataset.ready==='true';
-  $('vh-map').addEventListener('click',()=>{
+  const syncAvatarStyle=()=>{
+    const selected=loadFairyStyle(who);
+    root.dataset.avatarStyle=selected;
+    sendToUnity('AVATAR_STYLE:'+selected);
+    return selected;
+  };
+  function showFairyWardrobe(){
     if(!safeExplore())return;
-    open();resetBody();phase='map';theme('scroll');root.dataset.mode='map';
-    ui.title.textContent='🗺️ 마법마을 탐험 지도';ui.counter.textContent='새로운 길을 찾아요';
-    voiceText='열매 숲, 꽃 초원, 별빛 언덕, 소풍길과 나의 정원을 탐험해요.';
-    paragraph('어디로 가고 싶나요? 장소를 고르면 요정이 길을 따라 이동해요.','vh-story');
-    const grid=label('div','','vh-garden-grid');
+    open();resetBody();phase='wardrobe';theme('scroll');root.dataset.mode='wardrobe';
+    const selected=loadFairyStyle(who);
+    ui.title.textContent='🎀 '+(who==='se'?'세희':'태희')+'의 요정 스타일';
+    ui.counter.textContent='5가지 · 모두 무료';
+    ui.note.textContent='별·문제·성장 기록과 관계없이 자유롭게 바꿀 수 있어요.';
+    voiceText='원래 요정의 얼굴과 의상은 그대로 두고 주위에 꽃과 별빛을 더해요.';
+    const hint=paragraph('원화의 얼굴과 머리, 별·달 장식은 그대로 유지해요. 꽃·별·책 등 분위기 장식을 골라 보세요.','vh-story vh-story-intro');
+    hint.id='vh-wardrobe-intro';
+    const options=label('div','','vh-style-grid');
+    const entries=[];
+    for(const style of FAIRY_STYLES){
+      const card=label('button','','vh-style-card');
+      card.type='button';card.dataset.style=style.id;
+      card.setAttribute('aria-label',style.name+' 선택');
+      const portrait=label('span','','vh-style-portrait');
+      const source=document.createElement('img');
+      source.src=fairyPortrait(who);source.alt='';source.width=124;source.height=124;
+      source.loading='lazy';source.decoding='async';
+      portrait.append(source,label('span',style.icon,'vh-style-motif'));
+      const words=label('span','','vh-style-words');
+      words.append(label('strong',style.name,'vh-style-name'),
+        label('span',style.detail,'vh-style-description'));
+      const selectedState=label('span','','vh-style-selected');
+      card.append(portrait,words,selectedState);
+      card.addEventListener('click',()=>{
+        const saved=saveFairyStyle(who,style.id);
+        root.dataset.avatarStyle=style.id;
+        sendToUnity('AVATAR_STYLE:'+style.id);
+        for(const entry of entries) {
+          const active=entry.style.id===style.id;
+          entry.card.setAttribute('aria-pressed',String(active));
+          entry.state.textContent=active?'✓ 선택됨':'고르기';
+        }
+        if(!saved)announce('이 기기에서는 꾸미기 선택을 저장하지 못했어요. 화면에서는 사용할 수 있어요.');
+      });
+      options.append(card);entries.push({style,card,state:selectedState});
+    }
+    for(const entry of entries){
+      const current=entry.style.id===selected;
+      entry.card.setAttribute('aria-pressed',String(current));
+      entry.state.textContent=current?'✓ 선택됨':'고르기';
+    }
+    ui.body.append(options,button('🏡 마을로 돌아가기',close,'vh-wide'));
+    ui.listen.hidden=false;ui.title.focus({preventScroll:true});
+  }
+  $('vh-wardrobe').addEventListener('click',showFairyWardrobe);
+  // A short illustrated story precedes the EXISTING AREA_OPEN screen. Never
+  // grant a reward or open a new learning round from this narrative layer.
+  function storyChoice(story) {
+    if(!story||!safeExplore()&&phase!=='map'&&phase!=='story')return;
+    phase='story';open();resetBody();theme('scroll');root.dataset.mode='story';
+    ui.title.textContent=story.emoji+' '+story.title;
+    ui.counter.textContent='내가 만드는 마법 이야기';
+    ui.note.textContent='선택하지 않아도 괜찮아요. 별·기록은 기존 배움터 그대로예요.';
+    voiceText=describeStoryForSpeech(story);
+    const art=scenicBanner(story.district,story.guide+'가 기다리고 있어요');
+    if(art)ui.body.append(art);
+    paragraph(story.intro,'vh-story vh-story-intro');
+    paragraph('어떤 길을 선택할까요?','vh-prompt');
+    const choices=label('div','','vh-story-choices');
+    for(const choice of story.choices){
+      if(choice==='나중에 해 보기'){
+        choices.append(button('🍃 다음에 하기',close,'vh-story-option vh-story-skip'));
+        continue;
+      }
+      choices.append(button('✨ '+choice,()=>{
+        if(busy)return;
+        activeStory={...story,choice,learner:who};
+        voiceText=describeStoryForSpeech(story,choice);
+        request('AREA_OPEN',{district:story.district});
+      },'vh-story-option'));
+    }
+    ui.body.append(choices);
+    ui.body.append(button('🌿 그냥 마을에서 놀기',close,'vh-secondary vh-story-skip'));
+    ui.listen.hidden=false;
+    ui.title.focus({preventScroll:true});
+  }
+  function storyMap() {
+    if(!safeExplore()&&phase!=='map'&&phase!=='story')return;
+    phase='map';open();resetBody();theme('scroll');root.dataset.mode='map';
+    ui.title.textContent='🗺️ 마법마을 모험 지도';
+    ui.counter.textContent='어디든 갈 수 있어요';
+    ui.note.textContent='원하는 곳부터 시작해요. 오늘 쉬었다가 내일 놀아도 괜찮아요.';
+    voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
+    paragraph('어떤 친구를 만나러 갈까요?','vh-story vh-story-intro');
+    const featured=new Set(recommendedStories(who).map(item=>item.id));
+    const cards=label('div','','vh-story-map');
+    for(const story of STORY_QUESTS){
+      const card=label('article','','vh-story-card');
+      const art=scenicBanner(story.district);if(art)card.append(art);
+      const badge=label('div',(featured.has(story.id)?'💖 추천 모험 · ':'')+STORY_DISTRICTS[story.district],'vh-story-zone');
+      const title=label('h3',story.emoji+' '+story.title,'vh-story-name');
+      const detail=label('p',story.learning,'vh-story-detail');
+      const start=button('만나러 가기 →',()=>storyChoice(story),'vh-story-go');
+      card.append(badge,title,detail,start);
+      cards.append(card);
+    }
+    ui.body.append(cards);
+    const free=label('details','','vh-story-freeroam');
+    const heading=label('summary','🌳 문제 없이 자유롭게 탐험하기');
+    free.append(heading);
+    const paths=label('div','','vh-story-paths');
     for(const [name,command] of [['🌳 열매 숲','GO_ORCHARD'],['🦋 꽃 초원','GO_MEADOW'],['✨ 별빛 언덕','GO_HILL'],['🧺 소풍길','GO_PICNIC'],['🌱 나의 정원','GO_GARDEN']])
-      grid.append(button(name,()=>{close();sendToUnity(command);},'vh-garden-slot'));
-    ui.body.append(grid);ui.note.textContent='탐험과 가꾸기는 자유롭게 즐길 수 있어요.';
-  });
+      paths.append(button(name,()=>{close();sendToUnity(command);},'vh-garden-slot'));
+    free.append(paths);ui.body.append(free);
+    ui.title.focus({preventScroll:true});
+  }
+  $('vh-map').addEventListener('click',()=>{if(safeExplore())storyMap();});
   $('vh-garden').addEventListener('click',()=>{if(safeExplore())request('GARDEN_OPEN',{slot:-1});});
   $('vh-run').addEventListener('click',()=>{
     if(!safeExplore())return;runActive=!runActive;
@@ -185,6 +299,14 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     sendToUnity('RUN_TOGGLE');
   });
   $('vh-hop').addEventListener('click',()=>{if(safeExplore())sendToUnity('HOP');});
+  $('vh-motion').addEventListener('click',()=>{
+    if(!safeExplore())return;
+    reducedMotion=!reducedMotion;
+    root.dataset.reducedMotion=String(reducedMotion);
+    $('vh-motion').setAttribute('aria-pressed',String(reducedMotion));
+    $('vh-motion').textContent=reducedMotion?'🍃 움직임 켜기':'🍃 움직임 줄이기';
+    sendToUnity(reducedMotion?'MOTION_LOW':'MOTION_FULL');
+  });
   $('vh-wave').addEventListener('click',()=>{if(safeExplore())sendToUnity('WAVE');});
   function showGarden(data) {
     if(!data.garden)return;
@@ -247,10 +369,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   ui.home.addEventListener('click',()=>setZone('home'));
   ui.plaza.addEventListener('click',()=>setZone('plaza'));
   ui.quest.addEventListener('click',()=>{
-    if (phase === 'explore' && !busy && root.dataset.ready==='true') {
-      busy=true;ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=true;
-      sendToUnity('START_RECOMMENDED');
-    }
+    if(safeExplore())storyChoice(recommendedStories(who)[0]);
   });
   ui.bebsu.addEventListener('click',()=>{
     if (phase==='explore'&&!busy&&root.dataset.ready==='true') request('AREA_OPEN',{district:'kma'});
@@ -318,6 +437,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     phase = 'explore';
     busy = false;
     question = null;
+    activeStory=null;
     sendToUnity('CLOSE_QUEST');
     (lastFocus?.isConnected ? lastFocus : ui.quest).focus({preventScroll:true});
   }
@@ -607,6 +727,13 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.note.textContent='학습 기록은 태희·세희별로 보존되며, 문제와 별은 기존 배움터 기록을 이어 사용해요.';
     ui.listen.hidden=false;ui.hint.hidden=true;
     voiceText=missions.intro;
+    if(activeStory && activeStory.district===missions.id && activeStory.learner===who){
+      const lore=label('section','','vh-story-bridge');
+      lore.append(label('strong',activeStory.emoji+' '+activeStory.guide+'의 부탁','vh-route-title'));
+      lore.append(label('p','내가 고른 길: '+activeStory.choice,'vh-story-detail'));
+      lore.append(label('p',activeStory.learning,'vh-story-detail'));
+      ui.body.append(lore);
+    }
     ui.body.append(scenicBanner(missions.id,missions.intro));
     const list=label('div','','vh-district-missions');
     let visible=Math.min(8,missions.games.length);
@@ -905,6 +1032,15 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showRewardArt(isChallenge?'star_rainbow':'bloom');
     if(result.gardenAdded!==false)sessionRounds++;
     paragraph(result.gardenAdded===false?'이 이야기의 꽃은 이미 정원에 피어 있어요.':'마을에 새로운 꽃이 피었어요!','vh-feedback');
+    // Completion art is shown ONLY after host COMPLETE_WORLD acknowledgement.
+    const storyResult=activeStory?.learner===who?
+      storyCompletionText(activeStory,result.gardenAdded):'';
+    if(storyResult) {
+      const scene=label('section','','vh-story-success');
+      scene.append(label('span',activeStory.emoji,'vh-story-success-icon'));
+      scene.append(label('strong',storyResult,'vh-story-success-text'));
+      ui.body.append(scene);
+    }
     if(isChallenge)paragraph((result.challengeBonus||0)>0?
       '🎉 25문제 완주 특별 보너스 +'+result.challengeBonus+'별!':
       '🏅 이미 완주한 시험지는 보너스가 중복 지급되지 않아요.','vh-challenge-bonus');
@@ -976,10 +1112,11 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       data.action==='SHOW_PRACTICE'||data.action==='AREA_OPEN'||!data.ok)
       ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=false;
     if (data.who === 'tae' || data.who === 'se') {
-      if(who!==data.who){zone='home';ui.area.textContent='나의 마을';ui.home.setAttribute('aria-current','page');ui.plaza.setAttribute('aria-current','false');}
+      if(who!==data.who){zone='home';activeStory=null;ui.area.textContent='나의 마을';ui.home.setAttribute('aria-current','page');ui.plaza.setAttribute('aria-current','false');}
       who=data.who;
       root.dataset.who=who;
       ui.name.textContent=(children[who]||'요정')+'의 마법마을';
+      if(data.action==='INIT')syncAvatarStyle();
     }
     ui.stars.textContent=String(data.available??0);
     if(data.cosmetics&&typeof data.cosmetics==='object'){
@@ -1031,5 +1168,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       showReflectionResult(data);
     }
   }
-  return {update,announce,close};
+  return {update,announce,close,
+    syncMotion:()=>sendToUnity(reducedMotion?'MOTION_LOW':'MOTION_FULL'),
+    syncAvatarStyle};
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#7655af"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ctext x=%273%27 y=%2753%27 font-size=%2750%27%3E🌸%3C/text%3E%3C/svg%3E"/>
-<title>태희·세희의 통합 마법마을 · 수학·국어·영어·경시</title>
+<title>태희·세희의 마법마을 2.0 · 이야기하며 성장하는 탐험</title>
 <style>
 *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:system-ui,sans-serif;background:#e8f0e8;color:#263551}
 #page{display:flex;flex-direction:column;height:100dvh;min-height:400px;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
@@ -28,6 +28,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./major-patch.css?v=unified-20261013">
 <link rel="stylesheet" href="./unified-world.css?v=unified-20261013">
 <link rel="stylesheet" href="./mobile-art-polish.css?v=headerless-20261013">
+<link rel="stylesheet" href="./experience-v10.css?v=gameplay-20261013">
+<link rel="stylesheet" href="./fairy-variations-v11.css?v=character-20261013">
 </head>
 <body>
 <div id="page">
@@ -59,7 +61,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <script type="module">
 import { createVillageHost } from './village-bridge.js?v=unified-20261013';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=headerless-20261013';
+import { createVillageUI } from './village-ui.js?v=character-20261013';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -117,7 +119,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=unified-20261013';
+    const loaderUrl = './Build/' + name + '.loader.js?v=gameplay-v09-20261013';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -146,8 +148,7 @@ lite.addEventListener('click',async()=>{
     uiRoot.dataset.lite='true';
     uiRoot.querySelector('#vh-help').textContent='학습 지역을 눌러 수학·국어·영어로 이동해요.';
     const questControl=uiRoot.querySelector('#vh-quest');
-    questControl.lastChild.textContent='추천 수학';
-    questControl.setAttribute('aria-label','추천 수학 모험 열기');
+    questControl.setAttribute('aria-label','추천하는 이야기 모험 열기');
     uiRoot.hidden=false;
     overlay.hidden=true;
     await host.handle(JSON.stringify({action:'INIT',requestId:'lite-initial'}));
@@ -180,17 +181,19 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=unified-20261013',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=unified-20261013',
-      codeUrl: base + '.wasm' + suffix + '?v=unified-20261013',
+      dataUrl: base + '.data' + suffix + '?v=gameplay-v09-20261013',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=gameplay-v09-20261013',
+      codeUrl: base + '.wasm' + suffix + '?v=gameplay-v09-20261013',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.8.0-unified'
+      productVersion: '0.9.1-character-v11'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
     });
+    // Honour the learner's reduced-motion setting after WebGL finishes loading.
+    ui.syncMotion();
     for (const payload of queued.splice(0))
       instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
     if(queuedCosmetics){
@@ -198,6 +201,8 @@ start.addEventListener('click', async () => {
       queuedCosmetics=null;
     }
     if(queuedGarden){instance.SendMessage('VillageRuntime','OnGardenMessage',queuedGarden);queuedGarden=null;}
+    // Restore the current learner's free cosmetic variation after INIT.
+    ui.syncAvatarStyle();
     overlay.hidden = true;
     uiRoot.hidden = false;
   } catch (error) {
