@@ -1,0 +1,74 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';import path from 'node:path';
+const module=await import('/Users/01chungee10/Library/Caches/ms-playwright-go/1.57.0/package/index.js');
+const {chromium}=module.chromium?module:module.default;
+const origin=process.env.UNIFIED_ORIGIN||'http://127.0.0.1:4184';
+const output=process.env.MOBILE_QA_OUTPUT||'/Users/01chungee10/AI-Interop/evidence/unified-village-mobile-20261013';
+await fs.mkdir(output,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+const ctx=await browser.newContext({viewport:{width:360,height:740},hasTouch:true,isMobile:true,locale:'ko-KR'});
+const page=await ctx.newPage();const errors=[],buildRequests=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('request',r=>{if(/\/Build\//.test(r.url()))buildRequests.push(r.url())});
+try{
+ await page.goto(origin+'/village/',{waitUntil:'networkidle'});
+ assert(await page.locator('.vh-welcome-art').evaluate(img=>img.complete&&img.naturalWidth>0));
+ await page.locator('[data-learner="se"]').click();
+ await page.locator('#lite').click();
+ await page.waitForFunction(()=>document.querySelector('#village-ui')?.dataset.ready==='true');
+ assert(await page.locator('#loading').isHidden());
+ assert(await page.locator('#canvas').isHidden());
+ assert(await page.locator('#lite-village-scene').isVisible());
+ assert.equal(await page.locator('#village-ui').getAttribute('data-lite'),'true');
+ await page.screenshot({path:path.join(output,'galaxy-2d-welcome.png')});
+ await page.locator('[data-district="math"]').click();
+ assert((await page.locator('.vh-mission-card').count())>=2);
+ await page.locator('.vh-area-banner img').scrollIntoViewIfNeeded();
+ await page.waitForFunction(()=>{const img=document.querySelector('.vh-area-banner img');return img?.complete&&img.naturalWidth>0});
+ await page.screenshot({path:path.join(output,'galaxy-2d-math.png')});
+ await page.locator('.vh-mission-card button').first().click();
+ await page.waitForFunction(()=>document.querySelector('#vh-counter')?.textContent.includes('/'),undefined,{timeout:15000});
+ await page.locator('#vh-exit').click();
+ await page.locator('#vh-garden').click();
+ await page.waitForFunction(()=>/정원/.test(document.querySelector('#vh-title')?.textContent||''),undefined,{timeout:15000});
+ await page.locator('#vh-exit').click();
+ await page.locator('#vh-quest').click();
+ await page.waitForFunction(()=>/수학/.test(document.querySelector('#vh-title')?.textContent||''),undefined,{timeout:15000});
+ await page.locator('#vh-exit').click();
+ // Real practice paper, not synthetic keypad fixtures. q03 is numeric=17;
+ // touchscreen mode must answer even when Samsung's native IME never opens.
+ await page.locator('[data-district="practice"]').click();
+ await page.locator('.vh-challenge-select').nth(1).selectOption('magic-g1-basic');
+ await page.getByRole('button',{name:/1번 문제부터 시작/}).click();
+ for(const answerIndex of [2,0]){
+   await page.locator('.vh-option').nth(answerIndex).click();
+   await page.getByRole('button',{name:/다음 이야기/}).waitFor({state:'visible',timeout:15000});
+   await page.getByRole('button',{name:/다음 이야기/}).click();
+ }
+ const answerBox=page.locator('.vh-numeric-input');
+ await answerBox.waitFor({state:'visible',timeout:15000});
+ assert(await answerBox.isVisible(),'third paper question must be numeric');
+ assert(await answerBox.getAttribute('readonly')!==null,'Touchscreens should use the in-app keypad');
+ const confirm=page.getByRole('button',{name:/정답 확인/});
+ assert(await confirm.isDisabled(),'Blank numeric answer cannot submit');
+ await page.locator('.vh-number-key[data-key="1"]').click();
+ await page.locator('.vh-number-key[data-key="7"]').click();
+ assert.equal(await answerBox.inputValue(),'17');
+ await page.locator('.vh-number-key[data-key="back"]').click();
+ assert.equal(await answerBox.inputValue(),'1');
+ await page.locator('.vh-number-key[data-key="clear"]').click();
+ assert.equal(await answerBox.inputValue(),'');
+ assert(await confirm.isDisabled());
+ await page.locator('.vh-number-key[data-key="1"]').click();
+ await page.locator('.vh-number-key[data-key="7"]').click();
+ await page.screenshot({path:path.join(output,'galaxy-2d-numeric-keypad.png')});
+ await confirm.click();
+ await page.waitForFunction(()=>/멋진 발견/.test(document.querySelector('#vh-title')?.textContent||''),undefined,{timeout:15000});
+ await page.locator('#vh-exit').click();
+ assert(!buildRequests.length,'Lite mode fetched the large WebGL build');
+ assert(!errors.length,'Lite mode JS errors: '+errors.join('; '));
+ const payload={pass:true,origin,viewport:'360x740',artLoaded:true,
+  WebGLBuildRequests:buildRequests.length,child:'se',tested:['math district','question','garden','quest fallback','real 25-question paper numeric 17 via touch keypad'],errors};
+ await fs.writeFile(path.join(output,'lite-mode-qa.json'),JSON.stringify(payload,null,2)+'\n');
+ console.log('PASS_LITE_ANDROID_NUMERIC: no WebGL download; garden, quest, and actual 25-question paper #3 numeric=17 via touch keypad');
+}finally{await ctx.close();await browser.close()}

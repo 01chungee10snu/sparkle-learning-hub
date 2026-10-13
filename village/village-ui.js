@@ -43,7 +43,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
-    ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false">🎭 8방향 시안</button>',
+    ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
     ' </div>',
     '</aside>',
     '<p id="village-toast" role="alert" hidden></p>',
@@ -60,6 +60,21 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '</div>'
   ].join('');
   root.dataset.who = 'tae';
+  // Production navigation uses the same approved illustrated props as the Unity
+  // village. The unfinished eight-direction art toggle is not child-facing.
+  const districtLabels = {
+    math:'수학 정원',korean:'이야기 도서관',english:'영어 숲',
+    kma:'경시대회 성',practice:'마법 연습장',academy:'마법학교',growth:'성장의 탑'
+  };
+  for(const [key, title] of Object.entries(districtLabels)){
+    const destination=root.querySelector('[data-district="'+key+'"]');
+    if(!destination)continue;
+    const icon=document.createElement('img');
+    icon.src='./assets/illustrations/'+key+'-icon.webp';
+    icon.alt='';icon.width=30;icon.height=30;icon.loading='lazy';
+    const name=document.createElement('span');name.textContent=title;
+    destination.replaceChildren(icon,name);
+  }
   const $ = id => root.querySelector('#' + id);
   const ui = {
     name:$('vh-name'), area:$('vh-area'), stars:$('vh-stars'),
@@ -97,6 +112,18 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     element.addEventListener('click',onClick);
     return element;
   };
+  function scenicBanner(area, description='') {
+    const allowed=new Set(['math','korean','english','kma','practice','academy','growth','garden','shop']);
+    if(!allowed.has(area))return null;
+    const scene=label('figure','','vh-area-banner');
+    const image=document.createElement('img');
+    image.src='./assets/illustrations/'+area+'.webp';
+    image.alt='';image.loading='lazy';image.decoding='async';
+    image.width=720;image.height=290;
+    scene.append(image);
+    if(description)scene.append(label('figcaption',description,'vh-area-caption'));
+    return scene;
+  }
   function announce(message) {
     ui.toast.textContent = message;
     ui.toast.hidden = !message;
@@ -124,7 +151,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.home.setAttribute('aria-current',next === 'home'?'page':'false');
     ui.plaza.setAttribute('aria-current',next === 'plaza'?'page':'false');
     ui.area.textContent = next === 'plaza' ? '가족 공용 광장' : '나의 마을';
-    ui.help.textContent = next === 'plaza' ?
+    ui.help.textContent = root.dataset.lite==='true' ?
+      '학습 지역을 골라 모험을 시작해요.' : next === 'plaza' ?
       '함께 피운 꽃을 구경하고 우체국 친구를 만나보세요.' :
       '바닥을 터치해 이동하고 친구를 만나보세요.';
     sendToUnity(next === 'plaza' ? 'GO_PLAZA' : 'GO_HOME');
@@ -530,6 +558,11 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     paragraph(practice?
       '마법마을에서 직접 만든 수학 문제를 기본·도전·심화로 연습해요. 통계적으로 보정된 난도는 아니에요.':
       'KMA 한국수학학력평가 공개 기출의 실제 1번부터 25번까지 풀어 보세요. 답과 풀이 출처를 확인해 보세요.','vh-story');
+    ui.body.append(scenicBanner(practice?'practice':'kma'));
+    if(who==='se'){
+      paragraph('🌱 세희에게는 유아·기초 수학 모험을 먼저 권장해요. 이 시험지는 보호자와 함께 선택해요.','vh-child-guidance');
+      ui.body.append(button('🌷 내 수준의 수학 먼저 탐험하기',()=>request('AREA_OPEN',{district:'math'}),'vh-secondary vh-child-route'));
+    }
     const gradeLabel=label('label','학년 선택','vh-select-label');
     const gradeSelect=document.createElement('select');gradeSelect.className='vh-challenge-select';
     for(const grade of result.challenges){const opt=label('option',grade.title);opt.value=grade.grade;gradeSelect.append(opt);}
@@ -573,7 +606,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.note.textContent='학습 기록은 태희·세희별로 보존되며, 문제와 별은 기존 배움터 기록을 이어 사용해요.';
     ui.listen.hidden=false;ui.hint.hidden=true;
     voiceText=missions.intro;
-    paragraph(missions.intro,'vh-story');
+    ui.body.append(scenicBanner(missions.id,missions.intro));
     const list=label('div','','vh-district-missions');
     let visible=Math.min(8,missions.games.length);
     const render=()=>{
@@ -605,6 +638,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.listen.hidden=false;ui.hint.hidden=true;
     voiceText='잘하는 것과 더 연습하고 싶은 것을 살펴보고 내 단계에서 다음 모험을 골라요.';
     paragraph('수학·국어·영어의 배움 기록을 보고, 내게 적합한 모험을 선택해요. 숫자는 잠정적인 학습 참고자료입니다.','vh-story');
+    ui.body.append(scenicBanner('growth'));
     const labels={math:'🔢 수학',korean:'📖 국어',english:'🌍 영어'};
     const levels=['','🌱 씨앗','🌿 새싹','🌸 꽃잎','✨ 열매'];
     const grid=label('div','','vh-district-missions');
@@ -637,6 +671,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.hint.hidden=true;ui.listen.hidden=true;
     ui.note.textContent='착용한 꾸미기는 마을의 요정과 별빛에 바로 반영돼요.';
     paragraph('모은 별을 써서 나만의 요정을 꾸며요. 선물을 선택하면 바로 입어 볼 수 있어요.','vh-story');
+    ui.body.append(scenicBanner('shop'));
     const categories=[
       ['light','✨ 별빛'],['background','🌈 마을 하늘'],['friend','🐰 친구'],
       ['mark','🎀 응원 마크'],['title','🏷️ 이름표']

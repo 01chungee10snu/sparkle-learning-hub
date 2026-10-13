@@ -30,25 +30,33 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./village-ui.css?v=unified-20261013">
 <link rel="stylesheet" href="./major-patch.css?v=unified-20261013">
 <link rel="stylesheet" href="./unified-world.css?v=unified-20261013">
+<link rel="stylesheet" href="./mobile-art-polish.css?v=mobile-art-20261013">
 </head>
 <body>
 <div id="page">
   <header>
     <strong>🧚 태희·세희의 마법마을</strong>
-    <a href="../learning.html?view=workbooks">📚 상세 문제집·학습기록</a>
+    <a href="../learning.html?view=workbooks" aria-label="기존 상세 문제집과 학습기록"><span class="vh-header-full">📚 상세 문제집·학습기록</span><span class="vh-header-short">📚 학습기록</span></a>
   </header>
   <main id="game">
+    <div id="lite-village-scene" hidden aria-label="가벼운 2D 마법마을 배경">
+      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="./assets/illustrations/lite-portrait.webp">
+      <img src="./assets/illustrations/welcome.webp" width="1200" height="520" alt="" decoding="async"></picture>
+      <p>🧚 학습 지역을 눌러 모험을 시작해요.</p>
+    </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
     <div id="village-ui" hidden></div>
     <section id="loading" aria-live="polite">
       <div class="panel">
         <h1>✨ 태희·세희의 마법마을</h1>
+        <img class="vh-welcome-art" src="./assets/illustrations/welcome.webp" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 사이에서 환영해요." width="1200" height="520" decoding="async">
         <p>이야기 도서관·수학 정원·영어 숲·경시대회 성을 누비며 하나의 세계에서 배워요. 정원과 별 상점도 함께해요.</p>
         <div id="learner-choices" role="group" aria-label="마법마을에 들어갈 어린이"><button type="button" data-learner="tae" aria-pressed="true">🌸 태희</button><button type="button" data-learner="se" aria-pressed="false">🌙 세희</button></div>
         <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
         <div id="meter" hidden><div id="bar"></div></div>
-        <button id="start">마법마을 입장하기</button>
-        <p><small>이미 모은 별·학습 기록은 지켜집니다. 이전 개별 공개판의 지갑은 삭제하거나 임의로 합치지 않습니다.</small></p>
+        <button id="start">✨ 3D 마법마을 입장하기</button>
+        <button id="lite" type="button">🌷 가벼운 2D 마을로 시작하기</button>
+        <p class="vh-storage-note"><small>기록은 이 기기에 저장돼요. 기기를 바꿀 때는 학습기록 메뉴에서 내보내기·가져오기를 이용해 주세요. 이전 공개판 별은 임의로 합치지 않아요.</small></p>
       </div>
     </section>
   </main>
@@ -57,12 +65,15 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <script type="module">
 import { createVillageHost } from './village-bridge.js?v=unified-20261013';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=unified-20261013';
+import { createVillageUI } from './village-ui.js?v=mobile-art-20261013';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
 const canvas = document.querySelector('#canvas');
 const start = document.querySelector('#start');
+const lite = document.querySelector('#lite');
+const liteScene = document.querySelector('#lite-village-scene');
+let liteMode = false;
 for(const control of document.querySelectorAll('[data-learner]')){
  control.addEventListener('click',()=>{
    if(start.disabled)return;
@@ -81,7 +92,13 @@ let queuedGarden = null;
 const uiRoot = document.querySelector('#village-ui');
 const ui = createVillageUI({
   root:uiRoot,
-  sendToUnity: command => instance?.SendMessage('VillageRuntime','OnUiCommand',command),
+  sendToUnity: command => {
+    if(instance)return instance.SendMessage('VillageRuntime','OnUiCommand',command);
+    // Lightweight mode runs the same host-owned questions, wallet and garden;
+    // its 2D scene does not pretend to support free-roam locomotion.
+    if(liteMode && command==='START_RECOMMENDED')
+      return host.handle(JSON.stringify({action:'AREA_OPEN',district:'math',requestId:'lite-'+Date.now()}));
+  },
   sendRequest: request => host.handle(JSON.stringify(request))
 });
 const deliver = message => {
@@ -92,8 +109,8 @@ const deliver = message => {
     else queuedCosmetics=wear;
   }
   const payload = JSON.stringify(message);
-  if (!instance) queued.push(payload);
-  else instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+  if (instance) instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+  else if(!liteMode) queued.push(payload);
   if(message?.ok && message.garden) {
     const garden=JSON.stringify(message.garden);
     if(instance)instance.SendMessage('VillageRuntime','OnGardenMessage',garden);
@@ -123,8 +140,32 @@ function script(url) {
     document.head.appendChild(el);
   });
 }
+lite.addEventListener('click',async()=>{
+  lite.disabled=true;
+  start.disabled=true;
+  try{
+    status.textContent='가벼운 학습 마을을 준비하는 중이에요.';
+    await host.prepare();
+    liteMode=true;
+    liteScene.hidden=false;
+    canvas.style.display='none';
+    uiRoot.dataset.lite='true';
+    uiRoot.querySelector('#vh-help').textContent='학습 지역을 눌러 수학·국어·영어로 이동해요.';
+    const questControl=uiRoot.querySelector('#vh-quest');
+    questControl.lastChild.textContent='추천 수학';
+    questControl.setAttribute('aria-label','추천 수학 모험 열기');
+    uiRoot.hidden=false;
+    overlay.hidden=true;
+    await host.handle(JSON.stringify({action:'INIT',requestId:'lite-initial'}));
+  }catch(error){
+    status.textContent='가벼운 마을을 불러오지 못했어요. '+(error?.message||'');
+    liteMode=false;liteScene.hidden=true;uiRoot.hidden=true;overlay.hidden=false;
+    lite.disabled=false;start.disabled=false;
+  }
+});
 start.addEventListener('click', async () => {
   start.disabled = true;
+  lite.disabled = true;
   try {
     status.textContent = '기존 학습 기록을 확인하는 중이에요.';
     await host.prepare();
@@ -132,6 +173,7 @@ start.addEventListener('click', async () => {
     if (!build) {
       status.textContent = '3D 웹 빌드를 불러오지 못했어요. 위 학습기록 링크를 통해 문제집을 사용할 수 있어요.';
       start.disabled = false;
+      lite.disabled = false;
       return;
     }
       status.textContent = '마법마을과 여러 학습 지역을 불러오는 중이에요.';
@@ -167,6 +209,7 @@ start.addEventListener('click', async () => {
   } catch (error) {
     canvas.style.display = 'none';
     start.disabled = false;
+    lite.disabled = false;
     status.textContent = '3D 마을을 시작하지 못했어요. ' + (error?.message || '');
     console.error('[Village]', error);
   }
