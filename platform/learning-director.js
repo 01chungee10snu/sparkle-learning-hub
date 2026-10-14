@@ -1,7 +1,8 @@
 import * as Progress from './progress.js';
 import * as Growth from './growth.js';
 import * as IRT from './irt.js';
-import * as Retrieval from './retrieval.js';
+import * as Retrieval from './retrieval.js?v=parent-v14-20261015';
+import * as MemoryModel from './memory-model.js?v=parent-v14-20261015';
 
 const SUBJECTS=['math','korean','english'];
 export const REVIEW_AFTER_MS=2*Retrieval.DAY_MS; // minimum interval; later successes expand to 4/7/14/30 days.
@@ -14,9 +15,9 @@ function compatible(entry,subject,stage){
  if(entry.adventure===true)return (entry.minStage??1)<=stage&&(entry.maxStage??4)>=stage;
  return false;
 }
-function dueStats(entry,who,now){
+function dueStats(entry,who,now,factor=1){
  const records=Progress.gameProgress(entry.id,who).records;
- const due=(entry.questionIds||[]).filter(id=>reviewDue(records[id],now));
+ const due=(entry.questionIds||[]).filter(id=>Retrieval.isReviewDue(records[id],now,{factor}));
  return {count:due.length,ids:due};
 }
 function skillMatch(entry,skill){
@@ -26,13 +27,13 @@ function skillMatch(entry,skill){
  return n;
 }
 function subjectState(catalog,who,subject,now,profile){
- const stage=Progress.stageSelection(subject,who),rec=Growth.recommendation(subject,catalog,who);
+ const stage=Progress.stageSelection(subject,who),rec=Growth.recommendation(subject,catalog,who),memory=MemoryModel.estimate(profile.games,subject);
  const skills=IRT.skillEvidence(profile.games,subject,stage);
  const focus=skills.find(s=>s.n>=2&&s.gap>0.04)||skills.find(s=>s.n>=2)||null;
  const games=catalog.filter(e=>compatible(e,subject,stage));
- const due=games.map(entry=>({entry,...dueStats(entry,who,now)})).filter(x=>x.count>0)
+ const due=games.map(entry=>({entry,...dueStats(entry,who,now,memory.factor)})).filter(x=>x.count>0)
    .sort((a,b)=>b.count-a.count||Progress.gameProgress(a.entry.id,who).lastPlayed-Progress.gameProgress(b.entry.id,who).lastPlayed||a.entry.id.localeCompare(b.entry.id));
- return {subject,stage,rec,focus,games,due};
+ return {subject,stage,rec,focus,games,due,memory};
 }
 const mission=(order,kind,entry,strategy,reason,skill='')=>({
  order,kind,gameId:entry.id,subject:entry.subject,title:entry.title,emoji:entry.emoji||'✨',

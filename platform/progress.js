@@ -1,7 +1,8 @@
 import {mergeLegacy} from './legacy.js';
 import {gradeResponse,normalizeNumericResponse,NUMERIC_LIMIT} from './activities.js';
 import * as IRT from './irt.js';
-import * as Retrieval from './retrieval.js';
+import * as Retrieval from './retrieval.js?v=parent-v14-20261015';
+import * as MemoryModel from './memory-model.js?v=parent-v14-20261015';
 /** Device-local adapter. Keep this API when adding authenticated cloud persistence. */
 // Older tabs only understand their catalog and can discard newer game records.
 // Keep the new writer isolated; the old key is read once and never modified here.
@@ -21,6 +22,8 @@ export function configureIrtBank(bank){
  return IRT.configureBank(bank);
 }
 const ATTEMPT_LIMIT=5,ROUND_LIMIT=100;
+const LEARNING_PURPOSES=new Set(['foundation','review','challenge','transfer']);
+const LEARNING_STRATEGIES=new Set(['adaptive','review']);
 const isBebsuOriginal = id => /^bebsu-(?:g[1-6]|m[1-3])-original$/.test(id);
 const isMagicPractice = id => /^magic-(?:g[1-6]|m[1-3])-challenge$/.test(id);
 const validPaperId = id => typeof id === 'string' && /^kma-[0-9]{1,5}$/.test(id);
@@ -53,7 +56,9 @@ function cleanAttempts(values){
  for(const a of Array.isArray(values)?values:[])if(a&&knownId(a.id)&&knownId(a.roundId)&&typeof a.correct==='boolean'&&validTime(a.at)){
   if(a.assisted!==undefined&&typeof a.assisted!=='boolean')continue;
   if(a.durationMs!==undefined&&(!Number.isInteger(a.durationMs)||a.durationMs<0||a.durationMs>600000))continue;
-  const item={id:a.id,correct:a.correct,at:a.at,roundId:a.roundId,...(a.assisted===true?{assisted:true}:{}),...(a.durationMs!==undefined?{durationMs:a.durationMs}:{})},old=byId.get(a.id);
+  if(a.purpose!==undefined&&!LEARNING_PURPOSES.has(a.purpose))continue;
+  if(a.strategy!==undefined&&!LEARNING_STRATEGIES.has(a.strategy))continue;
+  const item={id:a.id,correct:a.correct,at:a.at,roundId:a.roundId,...(a.assisted===true?{assisted:true}:{}),...(a.durationMs!==undefined?{durationMs:a.durationMs}:{}),...(a.purpose?{purpose:a.purpose}:{}),...(a.strategy?{strategy:a.strategy}:{})},old=byId.get(a.id);
   if(!old||item.at>old.at)byId.set(a.id,item);
  }
  return [...byId.values()].sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)).slice(-ATTEMPT_LIMIT);
@@ -61,7 +66,9 @@ function cleanAttempts(values){
 function cleanCompleted(values,allowed,gameId){
  const byId=new Map();
  for(const r of Array.isArray(values)?values:[])if(r&&knownId(r.id)&&validTime(r.at)&&Array.isArray(r.questionIds)&&validRoundLength(r.questionIds.length,gameId,r.paperId)&&new Set(r.questionIds).size===r.questionIds.length&&r.questionIds.every(id=>allowed.has(id))&&validPracticeItems(gameId,r.paperId,r.questionIds)){
-  const item={id:r.id,at:r.at,questionIds:[...r.questionIds],...(r.questionIds.length===25?{paperId:r.paperId}:{})},old=byId.get(r.id);if(!old||item.at>old.at)byId.set(r.id,item);
+  if(r.purpose!==undefined&&!LEARNING_PURPOSES.has(r.purpose))continue;
+  if(r.strategy!==undefined&&!LEARNING_STRATEGIES.has(r.strategy))continue;
+  const item={id:r.id,at:r.at,questionIds:[...r.questionIds],...(r.questionIds.length===25?{paperId:r.paperId}:{}),...(r.purpose?{purpose:r.purpose}:{}),...(r.strategy?{strategy:r.strategy}:{})},old=byId.get(r.id);if(!old||item.at>old.at)byId.set(r.id,item);
  }
  return [...byId.values()].sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)).slice(-ROUND_LIMIT);
 }
@@ -73,7 +80,9 @@ function cleanRound(s,allowed,gameId){
  const updatedAt=validTime(s.updatedAt)?s.updatedAt:0;
  // A stable migrated id keeps a resumed pre-growth round valid across page loads.
  const id=knownId(s.id)?s.id:`round-old-${gameId.slice(0,40)}-${Math.floor(updatedAt).toString(36)}`;
- return {id,ids:[...s.ids],...(s.ids.length===25?{paperId:s.paperId}:{}),index:s.index,answers:s.answers.map(a=>({id:a.id,...(a.choice!==undefined?{choice:a.choice}:{}),response:Array.isArray(response(a))?[...response(a)]:response(a),correct:a.correct,earned:a.earned})),finished:s.index===s.ids.length,updatedAt,shownAt:validTime(s.shownAt)?s.shownAt:0,hinted:s.hinted===true};
+ if(s.purpose!==undefined&&!LEARNING_PURPOSES.has(s.purpose))return null;
+ if(s.strategy!==undefined&&!LEARNING_STRATEGIES.has(s.strategy))return null;
+ return {id,ids:[...s.ids],...(s.ids.length===25?{paperId:s.paperId}:{}),...(s.purpose?{purpose:s.purpose}:{}),...(s.strategy?{strategy:s.strategy}:{}),index:s.index,answers:s.answers.map(a=>({id:a.id,...(a.choice!==undefined?{choice:a.choice}:{}),response:Array.isArray(response(a))?[...response(a)]:response(a),correct:a.correct,earned:a.earned})),finished:s.index===s.ids.length,updatedAt,shownAt:validTime(s.shownAt)?s.shownAt:0,hinted:s.hinted===true};
 }
 export function clean(raw){
  if(!raw||raw.version!==1||!raw.profiles?.tae||!raw.profiles?.se)throw new Error('반짝 배움터의 기록 파일을 골라 주세요.');
@@ -136,8 +145,9 @@ export function saveStageSelection(subject,stage,who=learner()){
 }
 function updateGame(id,callback){if(!knownId(id)||!allowedQuestions.has(id))throw new Error('게임 이름을 확인해 주세요.');const state=load(),p=state.profiles[learner()];p.games[id]||=blankGame();const value=callback(p.games[id],p);save(state);return value;}
 export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
- const strategy=options.strategy??'adaptive';
- if(!['adaptive','review'].includes(strategy))throw new Error('학습 방식이 올바르지 않아요.');
+ const strategy=options.strategy??'adaptive',purpose=options.purpose??'';
+ if(!LEARNING_STRATEGIES.has(strategy))throw new Error('학습 방식이 올바르지 않아요.');
+ if(purpose&&!LEARNING_PURPOSES.has(purpose))throw new Error('학습 목적이 올바르지 않아요.');
  const old=g.round;
  const paperId=options.paperId;
  if(old&&!old.finished&&old.ids.every(id=>game.questions.some(q=>q.id===id))&&
@@ -170,11 +180,11 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
    ids=selected.map(q=>q.id);
   }
  }else if(strategy==='review'){
-  const now=Date.now();
+  const now=Date.now(),memoryModel=MemoryModel.estimate(p.games,game.subject);
   const ranked=questions.map(q=>{
    const record=g.records[q.id];
    if(!record)return null;
-   const status=Retrieval.reviewStatus(record,now);
+   const status=Retrieval.reviewStatus(record,now,{factor:memoryModel.factor});
    if(!status.due)return null;
    return {id:q.id,priority:status.priority,at:status.last?.at||0,seen:record.seen||0,intervalDays:status.intervalDays};
   }).filter(Boolean).sort((a,b)=>b.priority-a.priority||a.at-b.at||b.seen-a.seen||a.id.localeCompare(b.id));
@@ -190,7 +200,7 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
   ids=adaptive.length===size?adaptive:questions.map(q=>({id:q.id,rank:(g.records[q.id]?.best||0)*100+(g.records[q.id]?.seen||0)+Math.random()})).sort((a,b)=>a.rank-b.rank).slice(0,size).map(q=>q.id);
  }
  if(ids.length<size||new Set(ids).size!==size)throw new Error('놀이에 필요한 문제가 부족해요.');
- g.round={id:uniqueId('round'),ids,...(paperId?{paperId}:{}),index:0,answers:[],finished:false,updatedAt:Date.now(),shownAt:Date.now(),hinted:false};g.lastPlayed=Date.now();return g.round;
+ g.round={id:uniqueId('round'),ids,...(paperId?{paperId}:{}),...(purpose?{purpose}:{}),...(strategy?{strategy}:{}),index:0,answers:[],finished:false,updatedAt:Date.now(),shownAt:Date.now(),hinted:false};g.lastPlayed=Date.now();return g.round;
  });}
 export function markHint(id){return updateGame(id,g=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return false;
@@ -200,7 +210,7 @@ export function answerQuestion(game,response){return updateGame(game.id,g=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return null;
  const q=game.questions.find(q=>q.id===s.ids[s.index]);if(!q)throw new Error('현재 문제를 다시 열어 주세요.');
  const graded=gradeResponse(q,response),correct=graded.correct,prev=g.records[q.id]?.best||0,best=Math.max(prev,correct?10:2),earned=best-prev,at=Math.max(Date.now(),g.lastPlayed+1,s.updatedAt+1);
- const attempt={id:uniqueId('attempt'),correct,at,roundId:s.id,...(s.hinted?{assisted:true}:{}),...(s.shownAt?{durationMs:Math.min(600000,Math.max(0,at-s.shownAt))}:{})};
+ const attempt={id:uniqueId('attempt'),correct,at,roundId:s.id,...(s.hinted?{assisted:true}:{}),...(s.shownAt?{durationMs:Math.min(600000,Math.max(0,at-s.shownAt))}:{}),...(s.purpose?{purpose:s.purpose}:{}),...(s.strategy?{strategy:s.strategy}:{})};
  const prior=g.records[q.id];
  const attempts=cleanAttempts([...(prior?.attempts||[]),attempt]);
  g.records[q.id]={best,seen:Math.min(100000,(prior?.seen||0)+1),attempts,...(prior?.firstAttempt?{firstAttempt:prior.firstAttempt}:!prior?{firstAttempt:attempt}:{})};const a={id:q.id,...((q.interaction?.type??'choice')==='choice'?{choice:graded.response}:{}),response:graded.response,correct,earned};s.answers.push(a);s.updatedAt=at;g.lastPlayed=at;return a;
@@ -208,7 +218,7 @@ export function answerQuestion(game,response){return updateGame(game.id,g=>{
 export function nextQuestion(id){return updateGame(id,g=>{
  const s=g.round;if(!s||s.finished||!s.answers[s.index])return s;
  s.index++;s.updatedAt=Math.max(Date.now(),s.updatedAt);s.shownAt=s.updatedAt;s.hinted=false;
- if(s.index===s.ids.length){s.finished=true;g.finishedRounds++;g.completedRounds=cleanCompleted([...g.completedRounds,{id:s.id,at:s.updatedAt,questionIds:[...s.ids],...(s.paperId?{paperId:s.paperId}:{})}],allowedQuestions.get(id),id);}
+ if(s.index===s.ids.length){s.finished=true;g.finishedRounds++;g.completedRounds=cleanCompleted([...g.completedRounds,{id:s.id,at:s.updatedAt,questionIds:[...s.ids],...(s.paperId?{paperId:s.paperId}:{}),...(s.purpose?{purpose:s.purpose}:{}),...(s.strategy?{strategy:s.strategy}:{})}],allowedQuestions.get(id),id);}
  return s;
  });}
 const validLegacyId=id=>/^(length|weight|distance|mix)-(0[1-9]|1[0-2])$/.test(id);

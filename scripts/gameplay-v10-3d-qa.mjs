@@ -65,6 +65,8 @@ try {
  await page.locator('#vh-exit').click();
 
  await page.locator('#vh-more').click();
+ await page.locator('#vh-parent-dashboard').waitFor({state:'visible',timeout:5000});
+ assert((await page.locator('#vh-parent-dashboard').getAttribute('href')).includes('learning.html?view=parents'),'parent dashboard shortcut missing');
  await page.locator('#vh-motion').click();
  assert.equal(await page.locator('#village-ui').getAttribute('data-reduced-motion'),'false');
  await page.locator('#vh-motion').click();

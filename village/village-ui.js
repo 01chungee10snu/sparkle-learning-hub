@@ -48,6 +48,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-wardrobe" type="button" class="vh-shortcut">🎀 요정 스타일</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
+    ' <a id="vh-parent-dashboard" class="vh-shortcut vh-record-link" href="../learning.html?view=parents" aria-label="보호자 학습 대시보드 열기">👪 보호자 대시보드</a>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
     ' </div>',
     '</aside>',
@@ -854,7 +855,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         card.append(label('strong',(mission.order||'')+' · '+(labels[mission.kind]||'✨ 오늘의 배움'),'vh-route-title'));
         card.append(label('p',mission.title+' · '+mission.reason,'vh-small'));
         card.append(button(mission.kind==='review'?'기억 꺼내기':'이 단계 시작',()=>{
-          gameId=mission.gameId;request('START',{gameId:mission.gameId,strategy:mission.strategy||'adaptive'});
+          gameId=mission.gameId;request('START',{gameId:mission.gameId,strategy:mission.strategy||'adaptive',purpose:mission.kind||''});
         },'vh-wide'));
         loop.append(card);
       }

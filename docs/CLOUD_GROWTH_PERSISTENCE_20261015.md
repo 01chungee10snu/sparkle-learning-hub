@@ -71,3 +71,12 @@ Direct connection 주소를 프로젝트 ref로 추정해서 만들지 않는다
 4. local outbox + server ingest RPC/Edge Function
 5. 현재 `Progress.importRecords`, `Rewards.importRewards`, `VillageState.mergeVillage`, `Progression.importGoals`를 이용한 최초 cloud merge
 6. 멀티 디바이스 충돌·재시도·오프라인 복귀 QA
+
+## 2026-10-15 학습 개인화 확장
+
+추가 migration: `db/migrations/202610150002_learning_personalization_dashboard.sql`
+
+- `magic_learning_attempts`: `purpose`, `strategy` 추가
+- `magic_round_receipts`: `purpose`, `strategy` 추가
+- 기억 반감기·대시보드 KPI는 저장하지 않고 attempt 원자료에서 재계산
+- 목적: 모델 변경 시 과거 기록을 다시 해석할 수 있도록 파생값 고착 방지

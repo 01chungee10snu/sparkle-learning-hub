@@ -327,3 +327,45 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
   .home-screen .game-card .game-launch{font-size:19px}
   .nav button{font-size:13px;padding:7px 2px}
 }
+
+/* Parent learning dashboard: child-specific, non-comparative, evidence-first. */
+.overlay[data-type="parents"] .dialog{max-width:980px;width:min(980px,100%);padding:22px}
+.parent-dashboard{display:flex;flex-direction:column;gap:14px}
+.parent-profile-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.parent-profile-tabs button{min-height:44px;flex:1}
+.parent-profile-tabs button[aria-pressed=true]{background:var(--purple);color:white;border-color:var(--purple)}
+.parent-dashboard-intro{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid #dfd2e8;border-radius:20px;background:linear-gradient(120deg,#fff9f4,#f6efff)}
+.parent-dashboard-intro h3{font-size:24px;margin:2px 0 0;color:#473653}
+.parent-dashboard-intro small{font-size:13px;color:#6c6270}
+.parent-due-badge{flex:0 0 auto;padding:8px 12px;border-radius:999px;background:#fff0d5;border:1px solid #dfc078;color:#76551d;font-weight:850;font-size:14px}
+.parent-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.parent-kpis>div{padding:13px 10px;border:1px solid #e2d9e7;border-radius:17px;background:#fff;text-align:center}
+.parent-kpis strong{display:block;font-size:27px;color:var(--deep);font-variant-numeric:tabular-nums}
+.parent-kpis span{display:block;font-size:14px;margin-top:3px}
+.parent-kpis small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.parent-actions-panel{padding:14px 16px;border-radius:18px;background:#f3f8ed;border:1px solid #d1e1c4}
+.parent-actions-panel h3,.parent-schedule h3{margin:0 0 8px;font-size:18px}
+.parent-actions-panel p{margin:5px 0;font-size:15px;line-height:1.5}
+.parent-subjects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.parent-subject-card{min-width:0;padding:14px;border:1px solid #dfd5e6;border-radius:19px;background:#fff;display:flex;flex-direction:column;gap:9px}
+.parent-subject-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.parent-subject-head h3{font-size:19px;margin:0}
+.memory-chip{display:inline-block;padding:4px 7px;border-radius:999px;background:#f2eef5;color:#62596b;font-size:11px;line-height:1.2;text-align:right}
+.memory-chip.active{background:#e9f6e6;color:#42603c;border:1px solid #bed8b5}
+.parent-subject-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.parent-subject-metrics>span{padding:8px 4px;border-radius:12px;background:#f8f5fa;text-align:center}
+.parent-subject-metrics strong{display:block;font-size:20px;color:var(--deep)}
+.parent-subject-metrics small{display:block;font-size:10px;line-height:1.25;color:var(--muted);margin-top:3px}
+.parent-model-note{margin:0;font-size:12px;line-height:1.45;color:#6d6474}
+.delay-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.delay-strip span{padding:7px 2px;border-radius:10px;background:#faf6ee;text-align:center;min-width:0}
+.delay-strip strong,.delay-strip em,.delay-strip small{display:block}
+.delay-strip strong{font-size:11px}.delay-strip em{font-style:normal;font-size:16px;color:#6f4b8c;font-weight:850}.delay-strip small{font-size:9px;color:var(--muted)}
+.parent-gap{font-size:12px}.parent-gap>strong{color:#55415f}.parent-gap ul{padding-left:18px;margin:5px 0 0;color:#67606b;line-height:1.45}
+.parent-schedule{padding:13px 15px;border:1px solid #e2d9e7;border-radius:18px;background:#fff}
+.parent-schedule ul{list-style:none;padding:0;margin:0}
+.parent-schedule li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #eee8f1;font-size:14px}
+.parent-schedule li:last-child{border-bottom:0}.parent-schedule li span{min-width:0;overflow-wrap:anywhere}.parent-schedule li strong{flex:0 0 auto;color:#76509a}
+.parent-guide-link,.parent-dashboard-back{width:100%;min-height:44px}
+@media(max-width:820px){.parent-subjects{grid-template-columns:1fr}.parent-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.overlay[data-type="parents"] .dialog{max-width:calc(100vw - 16px);padding:15px}}
+@media(max-width:520px){.parent-dashboard{gap:9px}.parent-dashboard-intro{padding:11px 12px}.parent-dashboard-intro h3{font-size:19px}.parent-dashboard-intro small{font-size:11px}.parent-due-badge{font-size:12px;padding:6px 8px}.parent-kpis{gap:6px}.parent-kpis>div{padding:9px 5px}.parent-kpis strong{font-size:22px}.parent-kpis span{font-size:12px}.parent-kpis small{font-size:10px}.parent-actions-panel{padding:10px 11px}.parent-actions-panel p{font-size:13px}.parent-subject-card{padding:11px}.parent-schedule li{font-size:12px}.memory-chip{max-width:145px}}

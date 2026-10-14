@@ -4,7 +4,7 @@ import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
-import * as LearningDirector from '../platform/learning-director.js?v=learning-v13-20261015';
+import * as LearningDirector from '../platform/learning-director.js?v=parent-v14-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 
@@ -172,7 +172,7 @@ export function createVillageHost(emit) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
     const {action, requestId, gameId = '', response = '', roundId = '', paperId = '',
-      itemId = '', category = '', subject = 'math', grade = '', strategy = '', district = ''} = request;
+      itemId = '', category = '', subject = 'math', grade = '', strategy = '', purpose = '', district = ''} = request;
     if (typeof action !== 'string' || typeof requestId !== 'string' ||
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
@@ -296,7 +296,7 @@ export function createVillageHost(emit) {
         if (!row?.papers.some(paper=>paper.paperId===paperId))
           throw new Error('학년과 시험지를 선택한 뒤 시작해 주세요.');
         round = Progress.beginRound(game, {paperId});
-      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize,strategy:strategy||'adaptive'});
+      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize,strategy:strategy||'adaptive',purpose});
       currentGame = game;
       currentGameId = gameId;
       currentWho = who;
