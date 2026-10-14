@@ -1,6 +1,7 @@
 import {mergeLegacy} from './legacy.js';
 import {gradeResponse,normalizeNumericResponse,NUMERIC_LIMIT} from './activities.js';
 import * as IRT from './irt.js';
+import * as Retrieval from './retrieval.js';
 /** Device-local adapter. Keep this API when adding authenticated cloud persistence. */
 // Older tabs only understand their catalog and can discard newer game records.
 // Keep the new writer isolated; the old key is read once and never modified here.
@@ -135,6 +136,8 @@ export function saveStageSelection(subject,stage,who=learner()){
 }
 function updateGame(id,callback){if(!knownId(id)||!allowedQuestions.has(id))throw new Error('게임 이름을 확인해 주세요.');const state=load(),p=state.profiles[learner()];p.games[id]||=blankGame();const value=callback(p.games[id],p);save(state);return value;}
 export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
+ const strategy=options.strategy??'adaptive';
+ if(!['adaptive','review'].includes(strategy))throw new Error('학습 방식이 올바르지 않아요.');
  const old=g.round;
  const paperId=options.paperId;
  if(old&&!old.finished&&old.ids.every(id=>game.questions.some(q=>q.id===id))&&
@@ -165,6 +168,22 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
    if(selected.length!==25||selected.some((q,i)=>q.provenance.examQuestionNo!==i+1))
     throw new Error('1번부터 25번까지 확인된 시험지가 아니에요.');
    ids=selected.map(q=>q.id);
+  }
+ }else if(strategy==='review'){
+  const now=Date.now();
+  const ranked=questions.map(q=>{
+   const record=g.records[q.id];
+   if(!record)return null;
+   const status=Retrieval.reviewStatus(record,now);
+   if(!status.due)return null;
+   return {id:q.id,priority:status.priority,at:status.last?.at||0,seen:record.seen||0,intervalDays:status.intervalDays};
+  }).filter(Boolean).sort((a,b)=>b.priority-a.priority||a.at-b.at||b.seen-a.seen||a.id.localeCompare(b.id));
+  ids=ranked.slice(0,size).map(x=>x.id);
+  if(ids.length<size){
+   const used=new Set(ids),remaining=questions.filter(q=>!used.has(q.id));
+   const adaptive=IRT.bankSize()?IRT.selectQuestions({game,candidates:remaining,profile:p,size:size-ids.length,stage}):[];
+   const filler=adaptive.length===size-ids.length?adaptive:remaining.map(q=>q.id).slice(0,size-ids.length);
+   ids.push(...filler);
   }
  }else{
   const adaptive=IRT.bankSize()?IRT.selectQuestions({game,candidates:questions,profile:p,size,stage}):[];

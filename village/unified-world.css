@@ -48,5 +48,16 @@
  #vh-world-shortcuts{bottom:155px}
 }
 @media(prefers-reduced-motion:reduce){#vh-learning-districts{scroll-behavior:auto}}
+
+#vh-world-shortcuts>.vh-learning-shortcut{background:#f1e8ff!important;border-color:#9c78c8!important;color:#49316b!important;font-weight:900;box-shadow:0 5px 16px #6f50a03a!important}
+@media(max-width:480px){#vh-world-shortcuts>.vh-shortcut{font-size:11px!important;padding:6px 4px!important}}
+
+/* Learning-first recommendation loop inside the village crystal. */
+.vh-learning-loop{display:grid;gap:8px;margin:10px 0 14px;padding:12px;border:2px solid #d8c8ea;border-radius:18px;background:linear-gradient(145deg,#fffdf8,#f5efff)}
+.vh-learning-loop-title{margin:0;color:#483566;font-size:18px}
+.vh-learning-step{display:grid;gap:5px;padding:10px;border:1px solid #e4dbea;border-radius:14px;background:#fff}
+.vh-learning-step .vh-wide{margin-top:3px;min-height:44px!important}
+@media(max-width:520px){.vh-learning-loop{padding:9px;gap:7px}.vh-learning-step{padding:8px}.vh-learning-loop-title{font-size:16px}}
+
 /* Modal must mask floating district shortcuts so its exit and answer buttons work. */
 #village-dialog-wrap{z-index:30!important;}

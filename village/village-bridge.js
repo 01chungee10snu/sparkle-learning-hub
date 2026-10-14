@@ -4,6 +4,7 @@ import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
+import * as LearningDirector from '../platform/learning-director.js?v=learning-v13-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 
@@ -213,9 +214,11 @@ export function createVillageHost(emit) {
       return snapshot(action, requestId, {shop:shopState(),itemChanged:category});
     }
     if (action === 'ADAPTIVE_OFFER') {
-      return snapshot(action, requestId, {adaptive:recommendVillageRoutes(catalog, {
+      const adaptive=recommendVillageRoutes(catalog, {
         who,subject,grade:grade||(who==='se'?'K':'G1')
-      })});
+      });
+      adaptive.learningPlan=LearningDirector.plan(catalog,{who,preferredSubject:subject});
+      return snapshot(action, requestId, {adaptive});
     }
     const growthMap=()=>['math','korean','english'].map(subject=>{
       const rec=Growth.recommendation(subject,catalog);
@@ -293,7 +296,7 @@ export function createVillageHost(emit) {
         if (!row?.papers.some(paper=>paper.paperId===paperId))
           throw new Error('학년과 시험지를 선택한 뒤 시작해 주세요.');
         round = Progress.beginRound(game, {paperId});
-      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize});
+      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize,strategy:strategy||'adaptive'});
       currentGame = game;
       currentGameId = gameId;
       currentWho = who;

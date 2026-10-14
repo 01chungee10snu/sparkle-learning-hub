@@ -207,6 +207,27 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 }
 @media(prefers-reduced-motion:reduce){.growth-meter span{transition:none}}
 
+
+/* Learning-first daily loop: retrieval -> calibrated challenge -> transfer. */
+.learning-loop-note{display:flex;align-items:center;gap:10px;padding:10px 13px;border:1px solid #d9d1e4;border-radius:15px;background:linear-gradient(110deg,#fffdf7,#f7f1ff);font-size:14px;line-height:1.45;color:#51485d;flex-shrink:0}
+.learning-loop-note strong{color:var(--deep);white-space:nowrap}
+.learning-loop-note span{min-width:0}
+.game-card.learning-mission{position:relative;border-color:#d9cbe5;background:linear-gradient(160deg,#fff,#fffdf9 65%,#f7f2ff)}
+.mission-tag{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;padding:5px 9px;border-radius:999px;background:#f1e8fb;color:#573a71;font-size:13px;line-height:1.2}
+.mission-tag.review{background:#eaf5ff;color:#315c7d}.mission-tag.foundation{background:#edf8e8;color:#46643e}.mission-tag.challenge{background:#fff2dd;color:#7b5620}.mission-tag.transfer{background:#eef1ff;color:#3f4f84}
+.mission-reason{margin:0;padding:8px 10px;border-radius:13px;background:#faf8fc;color:#5e5668;font-size:14px;line-height:1.45;border:1px solid #ece6ef}
+.learning-mission .game-launch{box-shadow:0 3px 0 #d9cee3}
+@media(max-width:699px){
+ .learning-loop-note{font-size:12px;gap:6px;padding:7px 9px;align-items:flex-start}.learning-loop-note strong{font-size:12px}
+ .game-card.learning-mission{grid-template-columns:52px 1fr;grid-template-rows:auto auto auto auto minmax(44px,1fr) auto}
+ .learning-mission .mission-tag,.learning-mission .mission-reason{grid-column:1/3}
+ .learning-mission .mission-tag{font-size:12px;padding:4px 7px}
+ .learning-mission .mission-reason{font-size:13px;padding:6px 8px}
+ .learning-mission .game-top{grid-column:1;grid-row:3/6}
+ .learning-mission h3,.learning-mission .game-desc,.learning-mission .mode-badges{grid-column:2}
+ .learning-mission .game-launch,.learning-mission .game-progress{grid-column:1/3}
+}
+
 /* Collection cards keep their content height so gift actions cannot cover the pager. */
 .collection-screen .reward-grid{flex:0 0 auto;grid-auto-rows:auto;min-height:0;align-items:stretch}
 .collection-screen .reward-card{min-height:0;height:auto}

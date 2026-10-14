@@ -38,7 +38,7 @@ try {
    if(sample.who==='se'){
     await page.locator('.profile-button').click();
     await page.locator('.profile-choice[data-profile="se"]').click();
-    await page.getByRole('heading',{name:'세희의 오늘의 모험'}).waitFor();
+    await page.getByRole('heading',{name:/세희의 오늘의 (?:모험|3걸음)/}).waitFor();
    }
    const geometry=await page.evaluate(()=>{
     const box=el=>{const b=el.getBoundingClientRect();return {top:b.top,bottom:b.bottom,left:b.left,right:b.right,width:b.width,height:b.height};};
@@ -125,7 +125,7 @@ try {
     assert.notEqual(updated,old,'pagination did not change activity');
    }
    await page.locator('.section-top [data-action="all-games"]').click();
-   await page.getByRole('heading',{name:/오늘의 모험/}).waitFor();
+   await page.getByRole('heading',{name:/오늘의 (?:모험|3걸음)/}).waitFor();
    assert.equal(errors.length,0,'script error: '+errors.join('; '));
    assert.equal(failedRequests.length,0,'missing resource: '+JSON.stringify(failedRequests));
    results.push({name:sample.name,pass:true,who:sample.who,...geometry,

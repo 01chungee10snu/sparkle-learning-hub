@@ -84,11 +84,13 @@ try {
       const a=el.getBoundingClientRect();return{x:a.x,y:a.y,width:a.width,height:a.height};};
     return {vw:innerWidth,vh:innerHeight,docW:document.documentElement.scrollWidth,
       docH:document.documentElement.scrollHeight,game:r('#game'),
-      controls:r('#village-controls'),status:r('#village-info'),map:r('#vh-map')};
+      controls:r('#village-controls'),status:r('#village-info'),map:r('#vh-map'),learning:r('#vh-adaptive')};
   });
   assert(m.docW<=size.width+2,size.name+' horizontal overflow');
   assert(m.game?.height>=size.height-4,size.name+' world not fullscreen');
   assert(m.map?.height>=42&&m.map?.width>=42,size.name+' map tap not accessible');
+  assert(m.learning?.height>=42&&m.learning?.width>=42,size.name+' learning loop shortcut not accessible');
+  assert(m.learning.x>=0&&m.learning.x+m.learning.width<=size.width+2,size.name+' learning shortcut overflow');
   assert(m.controls?.height>=44,size.name+' bottom dock missing');
   metrics.push({name:size.name,...m});
   await page.screenshot({path:path.join(output,size.name+'-3d-landscape.png'),animations:'disabled'});

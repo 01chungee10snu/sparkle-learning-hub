@@ -38,6 +38,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 모험 지도</button>',
     ' <button id="vh-garden" type="button" class="vh-shortcut">🌱 나무·꽃 키우기</button>',
+    ' <button id="vh-adaptive" type="button" class="vh-shortcut vh-learning-shortcut">🧠 오늘의 3걸음</button>',
     ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
     ' <div id="vh-extra-tools" hidden>',
     ' <button id="vh-run" type="button" class="vh-shortcut" aria-pressed="false">🏃 달리기</button>',
@@ -45,7 +46,6 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-motion" type="button" class="vh-shortcut" aria-pressed="false">🍃 움직임 줄이기</button>',
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
     ' <button id="vh-wardrobe" type="button" class="vh-shortcut">🎀 요정 스타일</button>',
-    ' <button id="vh-adaptive" type="button" class="vh-shortcut">🔮 적응 모험</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
@@ -844,6 +844,22 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.listen.hidden=true;ui.hint.hidden=true;
     ui.note.textContent='추천은 잠정 IRT 정보로 계산하며 학년을 자동 변경하지 않아요.';
     paragraph('마법 수정구슬이 최근 풀이를 살펴보고 새로운 문제 정원을 추천해요.','vh-story');
+    if(Array.isArray(model.learningPlan?.missions)&&model.learningPlan.missions.length){
+      const loop=label('section','','vh-learning-loop');
+      loop.append(label('h3','🧠 오늘의 3걸음','vh-learning-loop-title'));
+      loop.append(label('p',model.learningPlan.principle||'다시 떠올리기 → 알맞은 도전 → 다른 맥락에 적용','vh-small'));
+      const labels={review:'🔁 다시 떠올리기',foundation:'🌱 내 힘으로 시작',challenge:'🎯 알맞은 도전',transfer:'🧭 다른 곳에 써보기'};
+      for(const mission of model.learningPlan.missions){
+        const card=label('article','','vh-learning-step');
+        card.append(label('strong',(mission.order||'')+' · '+(labels[mission.kind]||'✨ 오늘의 배움'),'vh-route-title'));
+        card.append(label('p',mission.title+' · '+mission.reason,'vh-small'));
+        card.append(button(mission.kind==='review'?'기억 꺼내기':'이 단계 시작',()=>{
+          gameId=mission.gameId;request('START',{gameId:mission.gameId,strategy:mission.strategy||'adaptive'});
+        },'vh-wide'));
+        loop.append(card);
+      }
+      contentTarget.append(loop);
+    }
     const controls=label('div','','vh-route-controls');
     const subject=document.createElement('select'),grade=document.createElement('select');
     subject.className=grade.className='vh-challenge-select';
