@@ -1,0 +1,68 @@
+.life16{font:inherit;color:#253a36;font-size:16px;line-height:1.45;min-width:0;max-width:100%;container-type:inline-size}
+.life16 *{box-sizing:border-box}
+.life16 button,.life16 input{font:inherit}
+.life16 button{min-height:44px;border:2px solid #a9cbbb;border-radius:17px;background:#fffdf3;color:#263b37;font-weight:750;padding:9px 13px;cursor:pointer;touch-action:manipulation}
+.life16 button:focus-visible,.life16 input:focus-visible{outline:3px solid #176d8b;outline-offset:3px}
+.life16 button[aria-pressed=true],.life16 button[aria-selected=true]{border-color:#2c8171;background:#dff4dc}
+.life16 button:disabled{opacity:.52;cursor:default}
+.life16 .life-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0 0 12px}
+.life16 .life-tabs button{font-size:1em;padding:8px 3px}
+.life16 .life-scene{position:relative;min-height:240px;overflow:hidden;border-radius:24px;background:linear-gradient(#c5e9f2 0%,#e9f7ed 62%,#b5dca2 63%);border:2px solid #a4ccbc;padding:14px}
+.life16 .life-scene:before{content:'☀️';position:absolute;right:18px;top:8px;font-size:32px}
+.life16 .life-scene .life-ground{position:absolute;inset:auto 0 0;height:48%;background:linear-gradient(#acd793,#80b986);border-radius:40% 40% 0 0}
+.life16 .life-plots{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:44px}
+.life16 .life-plots button{height:88px;padding:3px;border-radius:20px;background:linear-gradient(150deg,#8c6745,#6f4a35);color:#fff;border:3px solid #c6a780;box-shadow:0 5px 0 #563c2c;font-weight:700}
+.life16 .life-plots button[aria-pressed=true]{border-color:#fff2a9;box-shadow:0 0 0 3px #338e78}
+.life16 .life-plots img{max-width:65%;max-height:55px;object-fit:contain;display:block;margin:auto}
+.life16 .life-plots .life-sprig{display:block;font-size:34px;line-height:1.1}
+.life16 .life-plots small{display:block;font-size:16px;line-height:1.15;color:#fff}
+.life16 .life-ripe{display:block;font-size:40px;line-height:1.3}
+.life16 .life-pond-scene{background:linear-gradient(#bce3f3,#d6efe1 45%,#78c5cd 47%,#459dac);min-height:245px}
+.life16 .life-pond-scene:after{content:'';position:absolute;inset:40% -15% -45%;background:repeating-radial-gradient(ellipse at 50% 40%,transparent 0 23px,#ffffff30 24px 27px,transparent 28px 50px);border-radius:50%;pointer-events:none;animation:life-ripple 9s ease-in-out infinite}
+.life16 .life-pond-art{position:absolute;width:100%;height:95%;inset:0;object-fit:contain;opacity:.58}
+.life16 .life-fish-stage,.life16 .life-pet-stage{position:relative;z-index:2;display:flex;justify-content:space-around;align-items:center;gap:8px;min-height:190px;flex-wrap:wrap}
+.life16 .life-animal{display:grid;justify-items:center;gap:2px;min-width:74px;max-width:33%;background:#fff9e3d9;border-radius:24px;padding:9px 4px;min-height:90px}
+.life16 .life-animal .life-emoji{font-size:45px;display:block;line-height:1.2;animation:life-swim 4.2s ease-in-out infinite}
+.life16 .life-animal-visual{transform:scale(calc(.78 + var(--life-growth)*.11));transition:transform .25s ease}
+.life16 .life-scene-decor{position:absolute;z-index:1;bottom:8px;width:100%;left:0;display:flex;justify-content:space-around;font-size:36px;letter-spacing:1.5em;pointer-events:none}
+.life16 .life-hearts{font-size:18px;color:#ad2863;line-height:1.2;white-space:nowrap}
+.life16 .life-pet-scene[data-decor=flowers]{background:linear-gradient(#e8ecfa,#fce4eb 63%,#b8df9b 64%)}
+.life16 .life-pet-scene[data-decor=cozy]{background:linear-gradient(#eadacb,#fff5da 63%,#c9aa80 64%)}
+.life16 .life-pond-scene[data-decor=stones]{background:linear-gradient(#dce9ed,#d7e3e7 45%,#83b5c0 47%,#6196a3)}
+.life16 .life-pond-scene[data-decor=reeds]{background:linear-gradient(#c7e4d8,#d9f0df 45%,#6bbfc1 47%,#418e98)}
+.life16 .life-pet-scene[data-effect=feed] .life-animal-visual:after{content:'🍎';font-size:30px;position:absolute;right:-12px;top:-14px}
+.life16 .life-pet-scene[data-effect=play] .life-animal-visual:after{content:'🎾';font-size:30px;position:absolute;right:-12px;top:-14px}
+.life16 .life-pet-scene[data-effect=rest] .life-animal-visual:after{content:'💤';font-size:30px;position:absolute;right:-12px;top:-14px}
+.life16 .life-pond-scene[data-effect=feed] .life-animal-visual:after{content:'🍎';font-size:26px;position:absolute;right:-10px;top:-12px}
+.life16 .life-pond-scene[data-effect=clean] .life-animal-visual:after{content:'🫧';font-size:30px;position:absolute;right:-10px;top:-12px}
+.life16 .life-pond-scene[data-effect=observe] .life-animal-visual:after{content:'✨';font-size:30px;position:absolute;right:-10px;top:-12px}
+.life16 .life-animal:nth-child(even) .life-emoji{animation-delay:-1.5s}
+.life16 .life-pet-scene{background:linear-gradient(#d9edf6,#e7f4db 60%,#b9d996 61%)}
+.life16 .life-pet-scene .life-emoji{animation-name:life-hop}
+.life16 .life-animal img{max-height:85px;max-width:110px;object-fit:contain;animation:life-hop 3.5s ease-in-out infinite}
+.life16 .life-animal strong{font-size:16px;overflow-wrap:anywhere;text-align:center}
+.life16 .life-details{padding:14px 2px}
+.life16 .life-details h3{font-size:1.15em;line-height:1.25;margin:2px 0 7px}
+.life16 .life-details p{margin:6px 0 10px}
+.life16 .life-choices,.life16 .life-actions,.life16 .life-animals-list{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.life16 .life-actions button{flex:1 1 110px}
+.life16 .life-world-controls{margin:16px 0;padding:12px;border:2px solid #a9cbbb;border-radius:18px;background:#eef7f0}
+.life16 .life-world-controls .life-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.life16 .life-world-controls button{min-height:44px;font-size:16px;line-height:1.3}
+.life16[data-life-busy=true] .life-world-controls button{opacity:.52;pointer-events:none}
+@media (min-width:760px) and (min-height:600px){.life16 .life-world-controls button{font-size:18px}}
+.life16 .life-primary{background:#227f65!important;color:white!important;border-color:#14634c!important}
+.life16 .life-basket{border-radius:18px;background:#fff3d5;padding:10px;margin-top:10px}
+.life16 .life-message{padding:10px 12px;border-radius:16px;background:#f2f7e8;min-height:46px;margin-top:10px;font-weight:650}
+.life16 .life-subtext{font-size:16px;color:#48665e}
+.life16 .life-name-form{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.life16 .life-name-form input{border:2px solid #9dc4b1;border-radius:13px;padding:9px;min-height:44px;flex:1 1 130px;min-width:0;background:white;color:#233e39}
+.life16 .life-empty{position:relative;z-index:2;text-align:center;padding:60px 10px 30px;font-size:1.1em;font-weight:700}
+@container (min-width:540px){.life16 .life-scene{min-height:310px}.life16 .life-plots{max-width:560px;margin:68px auto 0}.life16 .life-plots button{height:104px}.life16 .life-fish-stage,.life16 .life-pet-stage{min-height:240px}}
+@media (min-width:760px) and (min-height:600px){.life16{font-size:18px}.life16 .life-plots small,.life16 .life-animal strong,.life16 .life-subtext{font-size:18px}}
+@keyframes life-swim{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(9px,-7px) rotate(5deg)}}
+@keyframes life-hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes life-ripple{0%,100%{transform:scale(.93);opacity:.45}50%{transform:scale(1.05);opacity:.9}}
+@media (prefers-reduced-motion:reduce){.life16 *, .life16 *:before,.life16 *:after{animation:none!important;transition:none!important}}
+#village-ui[data-reduced-motion=true] .life16 *,#village-ui[data-reduced-motion=true] .life16 *:after{animation:none!important;transition:none!important}
+.life16[data-page-hidden=true] *, .life16[data-page-hidden=true] *:after{animation-play-state:paused!important}

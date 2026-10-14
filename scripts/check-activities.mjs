@@ -1,3 +1,4 @@
+import {configureSyntheticBank} from './synthetic-irt-fixture.mjs';
 import assert from 'node:assert/strict';
 import {validateInteraction,normalizeResponse,gradeResponse,answerText,responseText} from '../platform/activities.js';
 import {validateCatalog,validateGame} from '../platform/catalog.js';
@@ -53,7 +54,7 @@ assert.throws(()=>validateCatalog([{...catalog[0],minStage:0}]));
 assert.throws(()=>validateCatalog([{...catalog[0],maxStage:1}]));
 assert.throws(()=>validateGame({...games[0],questions:games[0].questions.map((q,n)=>({...q,level:n<5?2:4}))},catalog[0]));
 assert.throws(()=>validateGame({...games[0],questions:games[0].questions.map(q=>({...q,level:5}))},catalog[0]));
-P.configureCatalog(catalog);
+P.configureCatalog(catalog);configureSyntheticBank(catalog);
 const empty=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});
 const reset=who=>{storage.set(P.KEY,JSON.stringify(empty()));P.selectLearner(who);};
 const play=(game,response,level=2,size)=>{
@@ -92,7 +93,8 @@ for(let index=0;index<games.length;index++){
  reset('se');play(game,wrong[index]);play(game,wrong[index]);
  assert.equal(P.summary(catalog).stars,12,'Six incorrect answers earn two stars each');
  play(game,correct[index]);play(game,correct[index]);
- assert.equal(P.summary(catalog).stars,60,'Later correct answers earn only the eight-star difference');
+ for(let extra=0;extra<4&&P.summary(catalog).stars<60;extra++)play(game,correct[index]);
+ assert.equal(P.summary(catalog).stars,60,'All six distinct items eventually earn only their missing eight-star difference');
  play(game,wrong[index]);assert.equal(P.summary(catalog).stars,60,'A later mistake never removes stars');
  assert.equal(G.recommendation('math',catalog).recentCount,0,'Adventure results do not alter the established growth gates');
 

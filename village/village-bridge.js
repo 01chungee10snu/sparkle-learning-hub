@@ -1,4 +1,5 @@
 import * as Progress from '../platform/progress.js';
+import * as IRT from '../platform/irt.js';
 import * as Growth from '../platform/growth.js';
 import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
@@ -17,7 +18,7 @@ const DISTRICTS=Object.freeze({
  english:{title:'🌿 영어 숲',intro:'생활 속 영어 표현을 듣고 말하며 탐험해요.',subject:'english'},
  academy:{title:'🪄 마법학교',intro:'수학·국어·영어에서 오늘의 짧은 모험을 고르세요.',subject:'all'},
  growth:{title:'🌟 성장의 탑',intro:'세 과목의 배움 길과 다음 도전의 근거를 살펴봐요.'},
- kma:{title:'🏆 뱁수 경시대회 성',intro:'KMA 한국수학학력평가 공개 기출의 1~25번을 차례로 풀어요.'},
+ kma:{title:'🏆 뱁수 경시대회 성',intro:'원문 문항번호를 보존하며, 새 회차는 IRT 맞춤 순서로 25문항을 만나요.'},
  practice:{title:'🧩 마법 수학 훈련장',intro:'자체 제작 연습 25문항을 기본·도전·심화 난도로 풀어요.'},
  shop:{title:'🎁 별빛 상점',intro:'학습으로 실제 모은 별을 선물과 교환해요.'},
  garden:{title:'🌱 성장 정원',intro:'물·햇빛·노래로 나무와 꽃을 키워요.'}
@@ -49,25 +50,26 @@ export function createVillageHost(emit) {
   }
 
   async function initialize() {
-    const url = new URL('../games/catalog.json?v=unified-20261013', import.meta.url);
+    const url = new URL('../games/catalog.json?v=artcraft-irt-v12-20261014', import.meta.url);
     const result = await fetch(url);
     if (!result.ok) throw new Error('학습 게임 목록을 불러오지 못했어요.');
     const entries = validateCatalog(await result.json());
     Progress.configureCatalog(entries);
     for(const item of entries)if(item.kind==='quiz'&&item.status==='published')ALLOWED.add(item.id);
     try {
-      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=unified-20261013', import.meta.url));
+      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=artcraft-irt-v12-20261014', import.meta.url));
       if (!bankResponse.ok) throw new Error('문항 색인을 불러오지 못했어요.');
       Progress.configureIrtBank(await bankResponse.json());
     } catch (error) {
-      console.warn('마법마을 기본 출제 방식 사용:', error);
+      // Never silently replace adaptive questions with a fixed/random route.
+      throw new Error('IRT 문항 색인을 확인하지 못해 새 출제를 멈췄어요. 기록은 보존돼요. 다시 불러오기를 눌러 주세요.');
     }
-    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=unified-20261013', import.meta.url));
+    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=artcraft-irt-v12-20261014', import.meta.url));
     if (!challengeResponse.ok) throw new Error('경시대회 25문항 시험지 목록을 불러오지 못했어요.');
     challenges = await challengeResponse.json();
     if (challenges?.version !== 1 || !Array.isArray(challenges.grades) || challenges.grades.length !== 9)
       throw new Error('경시대회 문제은행 구성을 확인해 주세요.');
-    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=unified-20261013',import.meta.url));
+    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=artcraft-irt-v12-20261014',import.meta.url));
     if(!practiceResponse.ok)throw new Error('마법 연습장 시험지 목록을 불러오지 못했어요.');
     practiceChallenges=await practiceResponse.json();
     if(practiceChallenges.publicPractice!==true||practiceChallenges.grades?.length!==9)
@@ -84,7 +86,7 @@ export function createVillageHost(emit) {
     if (!entry || entry.kind !== 'quiz') throw new Error('학습 게임 정보를 확인해 주세요.');
     if (cache.has(gameId)) return cache.get(gameId);
     const path = entry.source.replace(/^\.\//, '');
-    const response = await fetch(new URL('../' + path + '?v=unified-20261013', import.meta.url));
+    const response = await fetch(new URL('../' + path + '?v=artcraft-irt-v12-20261014', import.meta.url));
     if (!response.ok) throw new Error('학습 문제를 불러오지 못했어요.');
     const game = validateGame(await response.json(), entry);
     cache.set(gameId, game);
@@ -111,6 +113,8 @@ export function createVillageHost(emit) {
     const item = game.questions.find(q => q.id === round.ids[round.index]);
     if (!item) throw new Error('현재 문제를 찾지 못했어요.');
     const mode = item.interaction?.type ?? 'choice';
+    const descriptor = IRT.itemAt(game.id, item.id);
+    const ability = Progress.ability(game.subject, who);
     return {
       gameId: game.id,
       questionId: item.id,
@@ -133,6 +137,15 @@ export function createVillageHost(emit) {
       hinted: round.hinted === true,
       index: round.index + 1,
       total: round.ids.length,
+      originalIndex: Number.isInteger(item.provenance?.examQuestionNo) ? item.provenance.examQuestionNo : null,
+      irt: {
+        provisional: true,
+        selection: round.irtVersion === 2 ? 'adaptive' : 'legacy-preserved',
+        skill: descriptor?.skill ?? '',
+        predictedSuccess: descriptor ? IRT.predicted(ability.theta, descriptor) : null,
+        evidenceCount: ability.n,
+        uncertainty: ability.uncertainty
+      },
       paperId: round.paperId || '',
       problemImage: safeBebsuImage(item.problemImage),
       solutionImage: safeBebsuImage(item.solutionImage)
@@ -346,10 +359,10 @@ export function createVillageHost(emit) {
         reflectionReason:reflection.reason,reflectionAdded:reflection.added});
     }
     if (action === 'NEXT') {
-      const round = Progress.nextQuestion(currentGameId);
+      const round = Progress.nextQuestion(currentGameId, currentGame);
       if (round?.finished) {
         Rewards.syncRewards(catalog, who);
-        return snapshot(action, requestId, {finished: true, roundId: round.id});
+        return snapshot(action, requestId, {finished: true, roundId: round.id, gameId: currentGameId});
       }
       return snapshot(action, requestId, {question: publicQuestion(currentGame, round, who)});
     }

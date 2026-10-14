@@ -1,0 +1,70 @@
+/* Fairy theme selector v11 — original PNG portrait preserved verbatim.
+ * Decorations are layered in Unity on top of unchanged pink/star and lilac/moon art. */
+#vh-wardrobe{background:linear-gradient(120deg,#fff3fa,#f3ebff)!important}
+#village-ui[data-avatar-style="garden"] #village-info{
+  border-color:#8fcbb1!important;box-shadow:0 4px 18px #7ac69a5c!important}
+#village-ui[data-avatar-style="starlight"] #village-info{
+  border-color:#d2bbeb!important;box-shadow:0 4px 18px #b0a6e778!important}
+#village-ui[data-avatar-style="explorer"] #village-info{
+  border-color:#aac8d7!important;box-shadow:0 4px 18px #8cafc966!important}
+#village-ui[data-avatar-style="festival"] #village-info{
+  border-color:#efb5c0!important;box-shadow:0 4px 18px #eba1bc63!important}
+.vh-style-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;margin:14px 0 18px
+}
+.vh-style-card{
+  width:100%;min-width:0;min-height:220px!important;
+  padding:13px 10px!important;
+  background:linear-gradient(155deg,#fffdfb,#eff5f4)!important;
+  color:#345653!important;border:2px solid #d6e2dd!important;
+  border-radius:20px!important;box-shadow:none!important;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  text-align:center!important;white-space:normal;
+  transition:border-color .15s ease,transform .15s ease
+}
+.vh-style-card[data-style="garden"]{background:linear-gradient(150deg,#fafdf0,#e7f6ec)!important}
+.vh-style-card[data-style="starlight"]{background:linear-gradient(150deg,#f7f1ff,#e9f0ff)!important}
+.vh-style-card[data-style="explorer"]{background:linear-gradient(150deg,#effafa,#fef5df)!important}
+.vh-style-card[data-style="festival"]{background:linear-gradient(150deg,#ffeef3,#fff6d9)!important}
+.vh-style-card[aria-pressed="true"]{
+  border-color:#74519d!important;box-shadow:0 0 0 3px #d1bce3 inset!important
+}
+.vh-style-card:focus-visible{outline:3px solid #664d97;outline-offset:3px}
+.vh-style-card:active{transform:scale(.99)}
+.vh-style-portrait{
+  display:grid;place-items:center;position:relative;
+  width:116px;height:116px;border-radius:50%;
+  background:radial-gradient(circle at 50% 25%,#fff 18%,#fff9f9 55%,#e9efdf 95%);
+  border:2px solid #f9fcf3;overflow:visible
+}
+.vh-style-portrait img{
+  object-fit:contain;object-position:center bottom;
+  width:110px;height:110px;filter:drop-shadow(0 4px 5px #6f708266)
+}
+.vh-style-motif{
+  position:absolute;right:-8px;top:4px;display:grid;place-items:center;
+  width:40px;height:40px;border-radius:50%;font-size:25px;
+  background:#fffdf4;border:2px solid #d9d0ed;
+  box-shadow:0 2px 6px #55566633
+}
+.vh-style-words{display:flex;flex-direction:column;align-items:center;gap:3px;width:100%}
+.vh-style-name{font-size:17px;line-height:1.4;color:#354959;word-break:keep-all}
+.vh-style-description{font-size:12px;line-height:1.45;font-weight:600;color:#597068;word-break:keep-all}
+.vh-style-selected{
+  margin-top:auto;font-size:13px;font-weight:850;color:#66518c;
+  min-height:22px;display:grid;place-items:center
+}
+@media(max-width:520px){
+ .vh-style-grid{gap:8px;margin:10px 0 15px}
+ .vh-style-card{padding:9px 5px!important;min-height:208px!important}
+ .vh-style-portrait{width:104px;height:104px}
+ .vh-style-portrait img{width:97px;height:97px}
+ .vh-style-motif{width:36px;height:36px;font-size:23px;right:-5px}
+ .vh-style-name{font-size:15px}
+ .vh-style-description{font-size:11px}
+}
+@media(max-width:330px){.vh-style-grid{grid-template-columns:1fr}.vh-style-card{min-height:180px!important}}
+@media(prefers-reduced-motion:reduce){
+ .vh-style-card{transition:none!important}
+}

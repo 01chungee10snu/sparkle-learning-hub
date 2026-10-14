@@ -1,0 +1,96 @@
+{
+  "pass": true,
+  "observedAt": "2026-10-13T11:11:07.370Z",
+  "mode": "isolated-incognito-real-local-host-lite",
+  "originalArtworkPreserved": true,
+  "physicalDeviceTested": false,
+  "origin": "http://127.0.0.1:4189",
+  "checks": [
+    {
+      "device": "galaxy-360x740",
+      "styles": 5,
+      "taeSaved": "garden",
+      "seSaved": "starlight",
+      "walletUntouched": true,
+      "originalArtLoaded": true,
+      "pageGeometry": {
+        "viewport": {
+          "width": 360,
+          "height": 740
+        },
+        "content": {
+          "width": 360,
+          "height": 740
+        },
+        "dialog": {
+          "x": 5,
+          "y": 8,
+          "width": 350,
+          "height": 724,
+          "top": 8,
+          "right": 355,
+          "bottom": 732,
+          "left": 5
+        }
+      }
+    },
+    {
+      "device": "iphone-390x844",
+      "styles": 5,
+      "taeSaved": "garden",
+      "seSaved": "starlight",
+      "walletUntouched": true,
+      "originalArtLoaded": true,
+      "pageGeometry": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "content": {
+          "width": 390,
+          "height": 844
+        },
+        "dialog": {
+          "x": 5,
+          "y": 8,
+          "width": 380,
+          "height": 828,
+          "top": 8,
+          "right": 385,
+          "bottom": 836,
+          "left": 5
+        }
+      }
+    },
+    {
+      "device": "tablet-768x1024",
+      "styles": 5,
+      "taeSaved": "garden",
+      "seSaved": "starlight",
+      "walletUntouched": true,
+      "originalArtLoaded": true,
+      "pageGeometry": {
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "content": {
+          "width": 768,
+          "height": 1024
+        },
+        "dialog": {
+          "x": 59,
+          "y": 122,
+          "width": 650,
+          "height": 780,
+          "top": 122,
+          "right": 709,
+          "bottom": 902,
+          "left": 59
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "missing": []
+}

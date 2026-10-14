@@ -1,0 +1,44 @@
+/* Full-screen child-first UX; the navigation remains inside the world. */
+#village-dialog-wrap { z-index:20; touch-action:pan-y; }
+#village-dialog-wrap:not([hidden]) { pointer-events:auto; }
+#village-dialog-wrap .vh-dialog { max-height:calc(100% - 8px); }
+#village-dialog-wrap .vh-dialog-body { overscroll-behavior:contain; }
+@media (max-width:800px) {
+  #village-dialog-wrap {padding:5px;}
+  #village-dialog-wrap .vh-dialog {width:100%;max-width:100%;max-height:calc(100% - 5px);border-radius:19px;}
+  #village-dialog-wrap .vh-dialog-body {padding:12px 13px;}
+  #village-dialog-wrap .vh-small {font-size:max(14px,1rem);}
+  #village-dialog-wrap .vh-secondary {font-size:clamp(15px,2.4vw,18px)!important;min-height:46px!important;}
+  #village-dialog-wrap .vh-dialog-title h2 {font-size:clamp(20px,3.5vw,25px);}
+}
+/* The illustrated map buttons stay readable on tablet, without changing the world header. */
+#village-ui #vh-world-shortcuts > .vh-shortcut,
+#village-ui #vh-extra-tools .vh-shortcut,
+#village-ui #village-controls .vh-action {font-size:16px!important;min-height:44px!important;line-height:1.2!important;overflow-wrap:normal;word-break:keep-all;}
+#village-ui #vh-world-shortcuts > .vh-shortcut{max-width:none!important;min-width:44px!important;}
+#village-ui #vh-world-shortcuts{max-width:min(228px,43vw)!important;gap:5px!important;}
+#village-ui #vh-extra-tools{max-width:calc(100vw - 16px);box-sizing:border-box;}
+/* Selected mode buttons: both ink and surface are explicit to defeat v12 white-on-white cascade. */
+#village-ui #vh-world-shortcuts #vh-extra-tools .vh-shortcut[aria-pressed="true"] {
+ color:#173d34!important;
+ background:#d9f4dd!important;
+ border:2px solid #226746!important;
+ background-image:none!important;
+ text-shadow:none!important;
+}
+@media(max-width:760px){
+ #village-ui #village-controls .vh-action,
+ #village-ui #vh-world-shortcuts>.vh-shortcut,
+ #village-ui #vh-extra-tools .vh-shortcut{font-size:14px!important;min-height:44px!important;}
+ #village-ui #vh-world-shortcuts{top:calc(78px + env(safe-area-inset-top))!important;right:6px!important;left:auto!important;width:min(230px,calc(100vw - 12px))!important;max-width:calc(100vw - 12px)!important;flex-wrap:nowrap;justify-content:flex-end;}
+ #village-ui #vh-world-shortcuts>.vh-shortcut{flex:0 1 auto!important;padding:7px 6px!important;min-width:44px!important;white-space:normal;}
+ #village-ui #village-controls{width:calc(100% - 12px)!important;max-width:480px;}
+ #village-ui #village-controls .vh-action{min-width:0;overflow-wrap:anywhere;}
+ #village-ui #vh-extra-tools{top:calc(100% + 5px)!important;right:0!important;}
+ #village-ui #vh-help{top:calc(148px + env(safe-area-inset-top))!important;left:7px!important;right:7px!important;max-width:calc(100% - 14px)!important;}
+}
+@media(max-width:360px){
+ #village-ui #vh-world-shortcuts{top:calc(75px + env(safe-area-inset-top))!important;width:calc(100vw - 12px)!important;}
+ #village-ui #vh-world-shortcuts>.vh-shortcut{padding:6px 4px!important;}
+ #village-ui #village-controls .vh-action{padding:5px 1px!important;letter-spacing:-.025em;}
+}

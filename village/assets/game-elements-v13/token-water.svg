@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="254.654" y1="371.129" x2="254.654" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c3edf1"/>
+      <stop offset="1" stop-color="#6da8c9"/>
+    </linearGradient>
+  </defs>
+  <title>token-water</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="token-water-004" d="M256 100 C276 149 354 230 344 297 C331 397 169 395 165 296 C157 237 235 142 256 100 Z" fill="url(#linear-gradient-1)" stroke="#588ba8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-water-009" d="M215 280 C207.667 259.333 217 227.333 243 184" fill="none" stroke="#effffd" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-water-013" d="M287 316 C287 312.686 290.358 310 294.5 310 C298.642 310 302 312.686 302 316 C302 319.314 298.642 322 294.5 322 C290.358 322 287 319.314 287 316 Z" fill="#bfe8e9"/>
+  </g>
+</svg>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="256.5" y1="436.765" x2="256.5" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcb886"/>
+      <stop offset="1" stop-color="#b78e6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="255.501" y1="376.765" x2="255.501" y2="123" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bce3a9"/>
+      <stop offset="1" stop-color="#79b694"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="256.5" y1="347" x2="256.5" y2="199" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e4dfc5"/>
+      <stop offset="1" stop-color="#c1b79e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="257" y1="329" x2="257" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe9e4"/>
+      <stop offset="1" stop-color="#80b8c3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="149.5" y1="272" x2="149.5" y2="259" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eee5c9"/>
+      <stop offset="1" stop-color="#beb89c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="203.5" y1="228" x2="203.5" y2="215" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eee5c9"/>
+      <stop offset="1" stop-color="#beb89c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="331.5" y1="226" x2="331.5" y2="213" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eee5c9"/>
+      <stop offset="1" stop-color="#beb89c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="367.5" y1="272" x2="367.5" y2="259" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eee5c9"/>
+      <stop offset="1" stop-color="#beb89c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="256.5" y1="336" x2="256.5" y2="323" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eee5c9"/>
+      <stop offset="1" stop-color="#beb89c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="165.56" y1="276.2" x2="165.56" y2="192.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cea477"/>
+      <stop offset="1" stop-color="#9c7b61"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-11" x1="156.04" y1="231.96" x2="156.04" y2="169.24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#80b48d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="134.2" y1="215.16" x2="134.2" y2="139.56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#92c796"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-13" x1="209.24" y1="213.48" x2="209.24" y2="135.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#75ac8b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-14" x1="166.4" y1="192.2" x2="166.4" y2="107.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#acd695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-15" x1="185.16" y1="220.2" x2="185.16" y2="157.48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#91c291"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-16" x1="127.48" y1="198.36" x2="127.48" y2="186.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-17" x1="194.12" y1="184.36" x2="194.12" y2="172.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-18" x1="163.88" y1="171.48" x2="163.88" y2="159.72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-19" x1="317.635" y1="277.21" x2="317.635" y2="263.797" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a4cf8b"/>
+      <stop offset="1" stop-color="#6fa574"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-20" x1="340.827" y1="288.04" x2="340.827" y2="271.842" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0d797"/>
+      <stop offset="1" stop-color="#79ad7b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-21" x1="329" y1="277.78" x2="329" y2="244.72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-22" x1="341.341" y1="267.773" x2="341.341" y2="240.477" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-23" x1="341.341" y1="253.523" x2="341.341" y2="226.227" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-24" x1="329" y1="249.28" x2="329" y2="216.22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-25" x1="316.659" y1="253.523" x2="316.659" y2="226.227" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-26" x1="316.659" y1="267.773" x2="316.659" y2="240.477" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-27" x1="329" y1="257.83" x2="329" y2="236.17" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe9a0"/>
+      <stop offset="1" stop-color="#dcac4c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-28" x1="380.5" y1="226" x2="380.5" y2="165" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ceb4d4"/>
+      <stop offset="1" stop-color="#a695bf"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-29" x1="368" y1="269" x2="368" y2="194" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff0ca"/>
+      <stop offset="1" stop-color="#dfc7a2"/>
+    </linearGradient>
+  </defs>
+  <title>garden-island</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="garden-island-003" d="M42 413.5 C42 392.237 138.259 375 257 375 C375.741 375 472 392.237 472 413.5 C472 434.763 375.741 452 257 452 C138.259 452 42 434.763 42 413.5 Z" fill="#335953" opacity="0.13"/>
+    <path id="garden-island-008" d="M36 257 L254 377 L477 256 L477 307 C477 315.667 472.667 322.333 464 327 L271 432 C260.333 438 250.667 438.333 242 433 L49 327 C40.333 322.333 36 315.667 36 307 Z" fill="url(#linear-gradient-1)" stroke="#997857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-012" d="M256 376 L477 256 L477 308 C477 316 472.667 322.333 464 327 L269 433 C263.667 435.667 259.333 437 256 437 Z" fill="#b88d6b"/>
+    <path id="garden-island-017" d="M44 239 L239 127 C249.667 121.667 260.333 121.667 271 127 L469 239 C479 244.333 479.333 250.667 470 258 L272 372 C261.333 378 251 378.333 241 373 L43 261 C31 253 31.333 245.667 44 239 Z" fill="url(#linear-gradient-2)" stroke="#709979" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-022" d="M48 248 L249 362 C253.667 364 258.667 363.667 264 361 L466 248" fill="none" stroke="#e0efc4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-027" d="M91 252 C91.667 243.333 90.333 237.667 87 235 M98 253 C99.333 244.333 102 239 106 237" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-031" d="M112 245 C112 243.895 113.119 243 114.5 243 C115.881 243 117 243.895 117 245 C117 246.105 115.881 247 114.5 247 C113.119 247 112 246.105 112 245 Z" fill="#e6f3be"/>
+    <path id="garden-island-036" d="M185 171 C185.667 162.333 184.333 156.667 181 154 M192 172 C193.333 163.333 196 158 200 156" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-040" d="M206 164 C206 162.895 207.119 162 208.5 162 C209.881 162 211 162.895 211 164 C211 165.105 209.881 166 208.5 166 C207.119 166 206 165.105 206 164 Z" fill="#e6f3be"/>
+    <path id="garden-island-045" d="M371 231 C371.667 222.333 370.333 216.667 367 214 M378 232 C379.333 223.333 382 218 386 216" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-049" d="M392 224 C392 222.895 393.119 222 394.5 222 C395.881 222 397 222.895 397 224 C397 225.105 395.881 226 394.5 226 C393.119 226 392 225.105 392 224 Z" fill="#e6f3be"/>
+    <path id="garden-island-054" d="M170 305 C170.667 296.333 169.333 290.667 166 288 M177 306 C178.333 297.333 181 292 185 290" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-058" d="M191 298 C191 296.895 192.119 296 193.5 296 C194.881 296 196 296.895 196 298 C196 299.105 194.881 300 193.5 300 C192.119 300 191 299.105 191 298 Z" fill="#e6f3be"/>
+    <path id="garden-island-063" d="M335 320 C335.667 311.333 334.333 305.667 331 303 M342 321 C343.333 312.333 346 307 350 305" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-067" d="M356 313 C356 311.895 357.119 311 358.5 311 C359.881 311 361 311.895 361 313 C361 314.105 359.881 315 358.5 315 C357.119 315 356 314.105 356 313 Z" fill="#e6f3be"/>
+    <path id="garden-island-072" d="M297 188 C297.667 179.333 296.333 173.667 293 171 M304 189 C305.333 180.333 308 175 312 173" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-076" d="M318 181 C318 179.895 319.119 179 320.5 179 C321.881 179 323 179.895 323 181 C323 182.105 321.881 183 320.5 183 C319.119 183 318 182.105 318 181 Z" fill="#e6f3be"/>
+    <path id="garden-island-081" d="M228 342 C228.667 333.333 227.333 327.667 224 325 M235 343 C236.333 334.333 239 329 243 327" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-085" d="M249 335 C249 333.895 250.119 333 251.5 333 C252.881 333 254 333.895 254 335 C254 336.105 252.881 337 251.5 337 C250.119 337 249 336.105 249 335 Z" fill="#e6f3be"/>
+    <path id="garden-island-089" d="M113 335 C113 333.895 114.791 333 117 333 C119.209 333 121 333.895 121 335 C121 336.105 119.209 337 117 337 C114.791 337 113 336.105 113 335 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="garden-island-093" d="M210 391 C210 389.895 211.791 389 214 389 C216.209 389 218 389.895 218 391 C218 392.105 216.209 393 214 393 C211.791 393 210 392.105 210 391 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="garden-island-097" d="M364 366 C364 364.895 365.791 364 368 364 C370.209 364 372 364.895 372 366 C372 367.105 370.209 368 368 368 C365.791 368 364 367.105 364 366 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="garden-island-101" d="M430 331 C430 329.895 431.791 329 434 329 C436.209 329 438 329.895 438 331 C438 332.105 436.209 333 434 333 C431.791 333 430 332.105 430 331 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="garden-island-106" d="M128 273 C128 232.131 185.531 199 256.5 199 C327.469 199 385 232.131 385 273 C385 313.869 327.469 347 256.5 347 C185.531 347 128 313.869 128 273 Z" fill="url(#linear-gradient-3)" stroke="#999a81" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-111" d="M145 268.5 C145 235.087 195.144 208 257 208 C318.856 208 369 235.087 369 268.5 C369 301.913 318.856 329 257 329 C195.144 329 145 301.913 145 268.5 Z" fill="url(#linear-gradient-4)" stroke="#76a8a7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-116" d="M168 264 C190 248 214 244.667 240 254 M242 296 C267.333 281.333 294.333 277 323 283" fill="none" stroke="#e5f4e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-120" d="M295 248 C295 241.373 305.521 236 318.5 236 C331.479 236 342 241.373 342 248 C342 254.627 331.479 260 318.5 260 C305.521 260 295 254.627 295 248 Z" fill="#82ae87"/>
+    <path id="garden-island-124" d="M317 249 L330 231 L334 249 Z" fill="#90c3c3"/>
+    <path id="garden-island-128" d="M138 265.5 C138 261.91 143.149 259 149.5 259 C155.851 259 161 261.91 161 265.5 C161 269.09 155.851 272 149.5 272 C143.149 272 138 269.09 138 265.5 Z" fill="url(#linear-gradient-5)"/>
+    <path id="garden-island-132" d="M192 221.5 C192 217.91 197.149 215 203.5 215 C209.851 215 215 217.91 215 221.5 C215 225.09 209.851 228 203.5 228 C197.149 228 192 225.09 192 221.5 Z" fill="url(#linear-gradient-6)"/>
+    <path id="garden-island-136" d="M320 219.5 C320 215.91 325.149 213 331.5 213 C337.851 213 343 215.91 343 219.5 C343 223.09 337.851 226 331.5 226 C325.149 226 320 223.09 320 219.5 Z" fill="url(#linear-gradient-7)"/>
+    <path id="garden-island-140" d="M356 265.5 C356 261.91 361.149 259 367.5 259 C373.851 259 379 261.91 379 265.5 C379 269.09 373.851 272 367.5 272 C361.149 272 356 269.09 356 265.5 Z" fill="url(#linear-gradient-8)"/>
+    <path id="garden-island-144" d="M245 329.5 C245 325.91 250.149 323 256.5 323 C262.851 323 268 325.91 268 329.5 C268 333.09 262.851 336 256.5 336 C250.149 336 245 333.09 245 329.5 Z" fill="url(#linear-gradient-9)"/>
+    <path id="garden-island-148" d="M121.88 272 C121.88 266.588 141.185 262.2 165 262.2 C188.815 262.2 208.12 266.588 208.12 272 C208.12 277.412 188.815 281.8 165 281.8 C141.185 281.8 121.88 277.412 121.88 272 Z" fill="#527f60" opacity="0.2"/>
+    <path id="garden-island-153" d="M149.32 276.2 C156.787 239.24 156.787 211.24 149.32 192.2 L180.12 192.2 C173.4 222.067 173.96 250.067 181.8 276.2 Z" fill="url(#linear-gradient-10)" stroke="#8e7159" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-158" d="M163.32 249.32 C167.427 228.04 168.36 212.547 166.12 202.84" fill="none" stroke="#e4bf90" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-162" d="M121.32 200.6 C121.32 183.28 136.865 169.24 156.04 169.24 C175.215 169.24 190.76 183.28 190.76 200.6 C190.76 217.92 175.215 231.96 156.04 231.96 C136.865 231.96 121.32 217.92 121.32 200.6 Z" fill="url(#linear-gradient-11)"/>
+    <path id="garden-island-166" d="M90.52 177.36 C90.52 156.484 110.076 139.56 134.2 139.56 C158.324 139.56 177.88 156.484 177.88 177.36 C177.88 198.236 158.324 215.16 134.2 215.16 C110.076 215.16 90.52 198.236 90.52 177.36 Z" fill="url(#linear-gradient-12)"/>
+    <path id="garden-island-170" d="M170.04 174.28 C170.04 152.63 187.59 135.08 209.24 135.08 C230.89 135.08 248.44 152.63 248.44 174.28 C248.44 195.93 230.89 213.48 209.24 213.48 C187.59 213.48 170.04 195.93 170.04 174.28 Z" fill="url(#linear-gradient-13)"/>
+    <path id="garden-island-174" d="M123.56 149.64 C123.56 126.135 142.74 107.08 166.4 107.08 C190.06 107.08 209.24 126.135 209.24 149.64 C209.24 173.145 190.06 192.2 166.4 192.2 C142.74 192.2 123.56 173.145 123.56 149.64 Z" fill="url(#linear-gradient-14)"/>
+    <path id="garden-island-178" d="M145.4 188.84 C145.4 171.52 163.201 157.48 185.16 157.48 C207.119 157.48 224.92 171.52 224.92 188.84 C224.92 206.16 207.119 220.2 185.16 220.2 C163.201 220.2 145.4 206.16 145.4 188.84 Z" fill="url(#linear-gradient-15)"/>
+    <path id="garden-island-182" d="M127.48 164.48 C127.48 163.398 128.859 162.52 130.56 162.52 C132.261 162.52 133.64 163.398 133.64 164.48 C133.64 165.562 132.261 166.44 130.56 166.44 C128.859 166.44 127.48 165.562 127.48 164.48 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="garden-island-186" d="M182.92 150.48 C182.92 149.398 184.299 148.52 186 148.52 C187.701 148.52 189.08 149.398 189.08 150.48 C189.08 151.562 187.701 152.44 186 152.44 C184.299 152.44 182.92 151.562 182.92 150.48 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="garden-island-190" d="M152.68 128.08 C152.68 126.998 154.059 126.12 155.76 126.12 C157.461 126.12 158.84 126.998 158.84 128.08 C158.84 129.162 157.461 130.04 155.76 130.04 C154.059 130.04 152.68 129.162 152.68 128.08 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="garden-island-194" d="M200.84 183.52 C200.84 182.438 202.219 181.56 203.92 181.56 C205.621 181.56 207 182.438 207 183.52 C207 184.602 205.621 185.48 203.92 185.48 C202.219 185.48 200.84 184.602 200.84 183.52 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="garden-island-198" d="M149.32 193.6 C149.32 192.518 150.699 191.64 152.4 191.64 C154.101 191.64 155.48 192.518 155.48 193.6 C155.48 194.682 154.101 195.56 152.4 195.56 C150.699 195.56 149.32 194.682 149.32 193.6 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="garden-island-202" d="M121.88 192.48 C121.88 189.233 124.387 186.6 127.48 186.6 C130.573 186.6 133.08 189.233 133.08 192.48 C133.08 195.727 130.573 198.36 127.48 198.36 C124.387 198.36 121.88 195.727 121.88 192.48 Z" fill="url(#linear-gradient-16)"/>
+    <path id="garden-island-206" d="M188.52 178.48 C188.52 175.233 191.027 172.6 194.12 172.6 C197.213 172.6 199.72 175.233 199.72 178.48 C199.72 181.727 197.213 184.36 194.12 184.36 C191.027 184.36 188.52 181.727 188.52 178.48 Z" fill="url(#linear-gradient-17)"/>
+    <path id="garden-island-210" d="M158.28 165.6 C158.28 162.353 160.787 159.72 163.88 159.72 C166.973 159.72 169.48 162.353 169.48 165.6 C169.48 168.847 166.973 171.48 163.88 171.48 C160.787 171.48 158.28 168.847 158.28 165.6 Z" fill="url(#linear-gradient-18)"/>
+    <path id="garden-island-214" d="M228.84 133.96 L230.646 138.874 L235.56 140.68 L230.646 142.486 L228.84 147.4 L227.034 142.486 L222.12 140.68 L227.034 138.874 Z" fill="#f8d891"/>
+    <path id="garden-island-219" d="M329 297.16 C326.34 277.02 326.34 260.3 329 247" fill="none" stroke="#608d63" stroke-width="4.56" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-223" d="M328.43 277.21 C299.36 276.07 300.5 257.83 326.72 265.81 Z" fill="url(#linear-gradient-19)"/>
+    <path id="garden-island-227" d="M329.57 288.04 C360.35 283.48 358.07 265.24 331.85 274.36 Z" fill="url(#linear-gradient-20)"/>
+    <path id="garden-island-231" d="M316.46 261.25 C316.46 252.121 322.074 244.72 329 244.72 C335.926 244.72 341.54 252.121 341.54 261.25 C341.54 270.379 335.926 277.78 329 277.78 C322.074 277.78 316.46 270.379 316.46 261.25 Z" fill="url(#linear-gradient-21)"/>
+    <path id="garden-island-235" d="M335.071 264.985 C327.165 260.42 323.563 251.858 327.025 245.86 C330.488 239.862 339.705 238.7 347.611 243.265 C355.517 247.83 359.119 256.392 355.656 262.39 C352.193 268.388 342.977 269.55 335.071 264.985 Z" fill="url(#linear-gradient-22)"/>
+    <path id="garden-island-239" d="M347.611 250.735 C339.705 255.3 330.488 254.138 327.025 248.14 C323.563 242.142 327.165 233.58 335.071 229.015 C342.977 224.45 352.193 225.612 355.656 231.61 C359.119 237.608 355.517 246.17 347.611 250.735 Z" fill="url(#linear-gradient-23)"/>
+    <path id="garden-island-243" d="M341.54 232.75 C341.54 241.879 335.926 249.28 329 249.28 C322.074 249.28 316.46 241.879 316.46 232.75 C316.46 223.621 322.074 216.22 329 216.22 C335.926 216.22 341.54 223.621 341.54 232.75 Z" fill="url(#linear-gradient-24)"/>
+    <path id="garden-island-247" d="M322.929 229.015 C330.835 233.58 334.437 242.142 330.975 248.14 C327.512 254.138 318.295 255.3 310.389 250.735 C302.483 246.17 298.881 237.608 302.344 231.61 C305.807 225.612 315.023 224.45 322.929 229.015 Z" fill="url(#linear-gradient-25)"/>
+    <path id="garden-island-251" d="M310.389 243.265 C318.295 238.7 327.512 239.862 330.975 245.86 C334.437 251.858 330.835 260.42 322.929 264.985 C315.023 269.55 305.807 268.388 302.344 262.39 C298.881 256.392 302.483 247.83 310.389 243.265 Z" fill="url(#linear-gradient-26)"/>
+    <path id="garden-island-255" d="M318.17 247 C318.17 241.019 323.019 236.17 329 236.17 C334.981 236.17 339.83 241.019 339.83 247 C339.83 252.981 334.981 257.83 329 257.83 C323.019 257.83 318.17 252.981 318.17 247 Z" fill="url(#linear-gradient-27)"/>
+    <path id="garden-island-259" d="M323.87 242.725 C323.87 241.623 325.018 240.73 326.435 240.73 C327.852 240.73 329 241.623 329 242.725 C329 243.827 327.852 244.72 326.435 244.72 C325.018 244.72 323.87 243.827 323.87 242.725 Z" fill="#fff6d7"/>
+    <path id="garden-island-264" d="M329 188 L406 165 L432 203 L355 226 Z" fill="url(#linear-gradient-28)" stroke="#8f86a3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-269" d="M337 214 L399 194 L399 249 L337 269 Z" fill="url(#linear-gradient-29)" stroke="#b9a786" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="garden-island-273" d="M399 194 L424 206 L424 258 L399 249 Z" fill="#d4ba99"/>
+    <path id="garden-island-277" d="M354 262 L354 231 C362.667 219.667 371 217.667 379 225 L379 254 Z" fill="#8aa8aa"/>
+    <path id="garden-island-281" d="M306 126 L309.762 136.238 L320 140 L309.762 143.762 L306 154 L302.238 143.762 L292 140 L302.238 136.238 Z" fill="#f8d891"/>
+  </g>
+</svg>

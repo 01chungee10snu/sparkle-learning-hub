@@ -1,3 +1,4 @@
+import {configureSyntheticBank} from './synthetic-irt-fixture.mjs';
 import assert from 'node:assert/strict';
 import {validateInteraction,normalizeResponse,normalizeNumericResponse,gradeResponse,answerText,responseText} from '../platform/activities.js';
 import * as UI from '../platform/activity-ui.js';
@@ -76,7 +77,7 @@ const mixedGame=makeGame('numeric-mixed',numeric);mixedGame.questions=mixedGame.
 const negativeGame=makeGame('numeric-negative',negative);
 const games=[highGame,zeroGame,oldGame,mixedGame,negativeGame];
 const catalog=games.map(g=>({id:g.id,subject:'math',title:'함께 생각해요',description:'숫자를 직접 눌러 답해요.',kind:'quiz',status:'published',source:`./games/${g.id}/game.json`,modes:g.id===mixedGame.id?['numeric','choice']:[g.id===oldGame.id?'choice':'numeric'],...(g.id===mixedGame.id?{maxChoices:5}:{}),...(g.id===negativeGame.id?{numericMin:-99}:{}),questionCount:5,questionIds:g.questions.map(q=>q.id)}));
-validateCatalog(catalog);games.forEach((g,n)=>validateGame(g,catalog[n]));P.configureCatalog(catalog);
+validateCatalog(catalog);games.forEach((g,n)=>validateGame(g,catalog[n]));P.configureCatalog(catalog);configureSyntheticBank(catalog);
 const empty=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});
 const reset=()=>{storage.clear();storage.set(P.KEY,JSON.stringify(empty()));P.selectLearner('tae');};
 const finish=(progress,game,response)=>{const r=progress.beginRound(game);for(const id of r.ids){assert.equal(progress.gameProgress(game.id).round.ids[progress.gameProgress(game.id).round.index],id);assert.ok(progress.answerQuestion(game,response));assert.equal(progress.answerQuestion(game,response),null);progress.nextQuestion(game.id);}return r;};

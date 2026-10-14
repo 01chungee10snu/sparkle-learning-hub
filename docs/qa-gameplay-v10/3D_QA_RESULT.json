@@ -1,0 +1,156 @@
+{
+  "pass": true,
+  "origin": "http://127.0.0.1:4189",
+  "buildVersion": "0.9.1-character-v11",
+  "physicalDeviceTested": false,
+  "softwareWebGL": true,
+  "loadTimeMs": 8178,
+  "canvas": {
+    "width": 780,
+    "height": 1688,
+    "display": "block",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844
+    },
+    "webGLContext": true,
+    "pixel": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "product": "태희·세희의 마법마을 2.0 · 이야기하며 성장하는 탐험",
+    "hudReady": "true"
+  },
+  "metrics": [
+    {
+      "name": "galaxy-390x844",
+      "vw": 390,
+      "vh": 844,
+      "docW": 390,
+      "docH": 844,
+      "game": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "controls": {
+        "x": 5,
+        "y": 771,
+        "width": 380,
+        "height": 68
+      },
+      "status": {
+        "x": 7,
+        "y": 8,
+        "width": 169.5,
+        "height": 60.125
+      },
+      "map": {
+        "x": 214.0625,
+        "y": 9,
+        "width": 53.3125,
+        "height": 44
+      }
+    },
+    {
+      "name": "compact-320x568",
+      "vw": 320,
+      "vh": 568,
+      "docW": 320,
+      "docH": 568,
+      "game": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      },
+      "controls": {
+        "x": 5,
+        "y": 495,
+        "width": 310,
+        "height": 68
+      },
+      "status": {
+        "x": 7,
+        "y": 8,
+        "width": 152,
+        "height": 72.40625
+      },
+      "map": {
+        "x": 162.4375,
+        "y": 9,
+        "width": 47.1875,
+        "height": 44
+      }
+    },
+    {
+      "name": "tablet-768x1024",
+      "vw": 768,
+      "vh": 1024,
+      "docW": 768,
+      "docH": 1024,
+      "game": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024
+      },
+      "controls": {
+        "x": 144,
+        "y": 938.5,
+        "width": 480,
+        "height": 76.5
+      },
+      "status": {
+        "x": 10,
+        "y": 9,
+        "width": 178.40625,
+        "height": 64.46875
+      },
+      "map": {
+        "x": 672.171875,
+        "y": 10,
+        "width": 85.828125,
+        "height": 44
+      }
+    },
+    {
+      "name": "landscape-844x390",
+      "vw": 844,
+      "vh": 390,
+      "docW": 844,
+      "docH": 390,
+      "game": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390
+      },
+      "controls": {
+        "x": 464,
+        "y": 324.25,
+        "width": 375,
+        "height": 61.75
+      },
+      "status": {
+        "x": 10,
+        "y": 5,
+        "width": 168.40625,
+        "height": 58.46875
+      },
+      "map": {
+        "x": 752.171875,
+        "y": 5,
+        "width": 85.828125,
+        "height": 44
+      }
+    }
+  ],
+  "errors": [],
+  "httpErrors": []
+}

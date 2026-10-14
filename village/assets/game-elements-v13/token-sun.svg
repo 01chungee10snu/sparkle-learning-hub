@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="256" y1="317" x2="256" y2="143" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff2b2"/>
+      <stop offset="1" stop-color="#edbd6e"/>
+    </linearGradient>
+  </defs>
+  <title>token-sun</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="token-sun-004" d="M367 230 L391 230" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-009" d="M345.801 295.244 L365.217 309.351" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-014" d="M290.301 335.567 L297.717 358.393" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-019" d="M221.699 335.567 L214.283 358.393" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-024" d="M166.199 295.244 L146.783 309.351" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-029" d="M145 230 L121 230" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-034" d="M166.199 164.756 L146.783 150.649" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-039" d="M221.699 124.433 L214.283 101.607" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-044" d="M290.301 124.433 L297.717 101.607" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-049" d="M345.801 164.756 L365.217 150.649" fill="none" stroke="#eeb664" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-054" d="M169 230 C169 181.951 207.951 143 256 143 C304.049 143 343 181.951 343 230 C343 278.049 304.049 317 256 317 C207.951 317 169 278.049 169 230 Z" fill="url(#linear-gradient-1)" stroke="#ddac63" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-sun-059" d="M207 218 C213 192.667 227.667 178.667 251 176" fill="none" stroke="#fffadc" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

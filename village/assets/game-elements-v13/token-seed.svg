@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="257.323" y1="331" x2="257.323" y2="132" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5e8c5"/>
+      <stop offset="1" stop-color="#89b6d1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="280.538" y1="131.025" x2="280.538" y2="93" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d1e5a0"/>
+      <stop offset="1" stop-color="#72ae85"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="236.147" y1="132" x2="236.147" y2="100.757" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afcf9a"/>
+      <stop offset="1" stop-color="#70a080"/>
+    </linearGradient>
+  </defs>
+  <title>token-seed</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="token-seed-003" d="M184 335.5 C184 328.596 216.235 323 256 323 C295.765 323 328 328.596 328 335.5 C328 342.404 295.765 348 256 348 C216.235 348 184 342.404 184 335.5 Z" fill="#44634e" opacity="0.13"/>
+    <path id="token-seed-008" d="M256 132 C361 190 354 327 256 331 C159 327 157 205 256 132 Z" fill="url(#linear-gradient-1)" stroke="#668e86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-seed-013" d="M226 281 C214.667 247 220.667 215.667 244 187" fill="none" stroke="#fff5dd" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-seed-017" d="M256 131 C262 111.667 278.333 99 305 93 C306.333 119 290 131.667 256 131 Z" fill="url(#linear-gradient-2)"/>
+    <path id="token-seed-021" d="M256 132 C226 130.667 213 120.333 217 101 C238.333 99 251.333 109.333 256 132 Z" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>

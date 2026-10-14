@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="256.5" y1="436.765" x2="256.5" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcb886"/>
+      <stop offset="1" stop-color="#b78e6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="255.501" y1="376.765" x2="255.501" y2="123" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bce3a9"/>
+      <stop offset="1" stop-color="#79b694"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="255.82" y1="315.4" x2="255.82" y2="192.4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cea477"/>
+      <stop offset="1" stop-color="#9c7b61"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="241.88" y1="250.62" x2="241.88" y2="158.78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#80b48d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="209.9" y1="226.02" x2="209.9" y2="115.32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#92c796"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="319.78" y1="223.56" x2="319.78" y2="108.76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#75ac8b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="257.05" y1="192.4" x2="257.05" y2="67.76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#acd695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="284.52" y1="233.4" x2="284.52" y2="141.56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#91c291"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="200.06" y1="201.42" x2="200.06" y2="184.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="297.64" y1="180.92" x2="297.64" y2="163.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-11" x1="253.36" y1="162.06" x2="253.36" y2="144.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+  </defs>
+  <title>tile-tree</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="tile-tree-003" d="M42 413.5 C42 392.237 138.259 375 257 375 C375.741 375 472 392.237 472 413.5 C472 434.763 375.741 452 257 452 C138.259 452 42 434.763 42 413.5 Z" fill="#335953" opacity="0.13"/>
+    <path id="tile-tree-008" d="M36 257 L254 377 L477 256 L477 307 C477 315.667 472.667 322.333 464 327 L271 432 C260.333 438 250.667 438.333 242 433 L49 327 C40.333 322.333 36 315.667 36 307 Z" fill="url(#linear-gradient-1)" stroke="#997857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-012" d="M256 376 L477 256 L477 308 C477 316 472.667 322.333 464 327 L269 433 C263.667 435.667 259.333 437 256 437 Z" fill="#b88d6b"/>
+    <path id="tile-tree-017" d="M44 239 L239 127 C249.667 121.667 260.333 121.667 271 127 L469 239 C479 244.333 479.333 250.667 470 258 L272 372 C261.333 378 251 378.333 241 373 L43 261 C31 253 31.333 245.667 44 239 Z" fill="url(#linear-gradient-2)" stroke="#709979" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-022" d="M48 248 L249 362 C253.667 364 258.667 363.667 264 361 L466 248" fill="none" stroke="#e0efc4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-027" d="M91 252 C91.667 243.333 90.333 237.667 87 235 M98 253 C99.333 244.333 102 239 106 237" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-031" d="M112 245 C112 243.895 113.119 243 114.5 243 C115.881 243 117 243.895 117 245 C117 246.105 115.881 247 114.5 247 C113.119 247 112 246.105 112 245 Z" fill="#e6f3be"/>
+    <path id="tile-tree-036" d="M185 171 C185.667 162.333 184.333 156.667 181 154 M192 172 C193.333 163.333 196 158 200 156" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-040" d="M206 164 C206 162.895 207.119 162 208.5 162 C209.881 162 211 162.895 211 164 C211 165.105 209.881 166 208.5 166 C207.119 166 206 165.105 206 164 Z" fill="#e6f3be"/>
+    <path id="tile-tree-045" d="M371 231 C371.667 222.333 370.333 216.667 367 214 M378 232 C379.333 223.333 382 218 386 216" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-049" d="M392 224 C392 222.895 393.119 222 394.5 222 C395.881 222 397 222.895 397 224 C397 225.105 395.881 226 394.5 226 C393.119 226 392 225.105 392 224 Z" fill="#e6f3be"/>
+    <path id="tile-tree-054" d="M170 305 C170.667 296.333 169.333 290.667 166 288 M177 306 C178.333 297.333 181 292 185 290" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-058" d="M191 298 C191 296.895 192.119 296 193.5 296 C194.881 296 196 296.895 196 298 C196 299.105 194.881 300 193.5 300 C192.119 300 191 299.105 191 298 Z" fill="#e6f3be"/>
+    <path id="tile-tree-063" d="M335 320 C335.667 311.333 334.333 305.667 331 303 M342 321 C343.333 312.333 346 307 350 305" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-067" d="M356 313 C356 311.895 357.119 311 358.5 311 C359.881 311 361 311.895 361 313 C361 314.105 359.881 315 358.5 315 C357.119 315 356 314.105 356 313 Z" fill="#e6f3be"/>
+    <path id="tile-tree-072" d="M297 188 C297.667 179.333 296.333 173.667 293 171 M304 189 C305.333 180.333 308 175 312 173" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-076" d="M318 181 C318 179.895 319.119 179 320.5 179 C321.881 179 323 179.895 323 181 C323 182.105 321.881 183 320.5 183 C319.119 183 318 182.105 318 181 Z" fill="#e6f3be"/>
+    <path id="tile-tree-081" d="M228 342 C228.667 333.333 227.333 327.667 224 325 M235 343 C236.333 334.333 239 329 243 327" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-085" d="M249 335 C249 333.895 250.119 333 251.5 333 C252.881 333 254 333.895 254 335 C254 336.105 252.881 337 251.5 337 C250.119 337 249 336.105 249 335 Z" fill="#e6f3be"/>
+    <path id="tile-tree-089" d="M113 335 C113 333.895 114.791 333 117 333 C119.209 333 121 333.895 121 335 C121 336.105 119.209 337 117 337 C114.791 337 113 336.105 113 335 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-tree-093" d="M210 391 C210 389.895 211.791 389 214 389 C216.209 389 218 389.895 218 391 C218 392.105 216.209 393 214 393 C211.791 393 210 392.105 210 391 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-tree-097" d="M364 366 C364 364.895 365.791 364 368 364 C370.209 364 372 364.895 372 366 C372 367.105 370.209 368 368 368 C365.791 368 364 367.105 364 366 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-tree-101" d="M430 331 C430 329.895 431.791 329 434 329 C436.209 329 438 329.895 438 331 C438 332.105 436.209 333 434 333 C431.791 333 430 332.105 430 331 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-tree-105" d="M191.86 309.25 C191.86 301.325 220.129 294.9 255 294.9 C289.871 294.9 318.14 301.325 318.14 309.25 C318.14 317.175 289.871 323.6 255 323.6 C220.129 323.6 191.86 317.175 191.86 309.25 Z" fill="#527f60" opacity="0.2"/>
+    <path id="tile-tree-110" d="M232.04 315.4 C242.973 261.28 242.973 220.28 232.04 192.4 L277.14 192.4 C267.3 236.133 268.12 277.133 279.6 315.4 Z" fill="url(#linear-gradient-3)" stroke="#8e7159" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-115" d="M252.54 276.04 C258.553 244.88 259.92 222.193 256.64 207.98" fill="none" stroke="#e4bf90" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-tree-119" d="M191.04 204.7 C191.04 179.339 213.802 158.78 241.88 158.78 C269.958 158.78 292.72 179.339 292.72 204.7 C292.72 230.061 269.958 250.62 241.88 250.62 C213.802 250.62 191.04 230.061 191.04 204.7 Z" fill="url(#linear-gradient-4)"/>
+    <path id="tile-tree-123" d="M145.94 170.67 C145.94 140.101 174.576 115.32 209.9 115.32 C245.224 115.32 273.86 140.101 273.86 170.67 C273.86 201.239 245.224 226.02 209.9 226.02 C174.576 226.02 145.94 201.239 145.94 170.67 Z" fill="url(#linear-gradient-5)"/>
+    <path id="tile-tree-127" d="M262.38 166.16 C262.38 134.459 288.079 108.76 319.78 108.76 C351.481 108.76 377.18 134.459 377.18 166.16 C377.18 197.861 351.481 223.56 319.78 223.56 C288.079 223.56 262.38 197.861 262.38 166.16 Z" fill="url(#linear-gradient-6)"/>
+    <path id="tile-tree-131" d="M194.32 130.08 C194.32 95.662 222.405 67.76 257.05 67.76 C291.695 67.76 319.78 95.662 319.78 130.08 C319.78 164.498 291.695 192.4 257.05 192.4 C222.405 192.4 194.32 164.498 194.32 130.08 Z" fill="url(#linear-gradient-7)"/>
+    <path id="tile-tree-135" d="M226.3 187.48 C226.3 162.119 252.366 141.56 284.52 141.56 C316.674 141.56 342.74 162.119 342.74 187.48 C342.74 212.841 316.674 233.4 284.52 233.4 C252.366 233.4 226.3 212.841 226.3 187.48 Z" fill="url(#linear-gradient-8)"/>
+    <path id="tile-tree-139" d="M200.06 151.81 C200.06 150.225 202.079 148.94 204.57 148.94 C207.061 148.94 209.08 150.225 209.08 151.81 C209.08 153.395 207.061 154.68 204.57 154.68 C202.079 154.68 200.06 153.395 200.06 151.81 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="tile-tree-143" d="M281.24 131.31 C281.24 129.725 283.259 128.44 285.75 128.44 C288.241 128.44 290.26 129.725 290.26 131.31 C290.26 132.895 288.241 134.18 285.75 134.18 C283.259 134.18 281.24 132.895 281.24 131.31 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="tile-tree-147" d="M236.96 98.51 C236.96 96.925 238.979 95.64 241.47 95.64 C243.961 95.64 245.98 96.925 245.98 98.51 C245.98 100.095 243.961 101.38 241.47 101.38 C238.979 101.38 236.96 100.095 236.96 98.51 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="tile-tree-151" d="M307.48 179.69 C307.48 178.105 309.499 176.82 311.99 176.82 C314.481 176.82 316.5 178.105 316.5 179.69 C316.5 181.275 314.481 182.56 311.99 182.56 C309.499 182.56 307.48 181.275 307.48 179.69 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="tile-tree-155" d="M232.04 194.45 C232.04 192.865 234.059 191.58 236.55 191.58 C239.041 191.58 241.06 192.865 241.06 194.45 C241.06 196.035 239.041 197.32 236.55 197.32 C234.059 197.32 232.04 196.035 232.04 194.45 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="tile-tree-159" d="M191.86 192.81 C191.86 188.055 195.531 184.2 200.06 184.2 C204.589 184.2 208.26 188.055 208.26 192.81 C208.26 197.565 204.589 201.42 200.06 201.42 C195.531 201.42 191.86 197.565 191.86 192.81 Z" fill="url(#linear-gradient-9)"/>
+    <path id="tile-tree-163" d="M289.44 172.31 C289.44 167.555 293.111 163.7 297.64 163.7 C302.169 163.7 305.84 167.555 305.84 172.31 C305.84 177.065 302.169 180.92 297.64 180.92 C293.111 180.92 289.44 177.065 289.44 172.31 Z" fill="url(#linear-gradient-10)"/>
+    <path id="tile-tree-167" d="M245.16 153.45 C245.16 148.695 248.831 144.84 253.36 144.84 C257.889 144.84 261.56 148.695 261.56 153.45 C261.56 158.205 257.889 162.06 253.36 162.06 C248.831 162.06 245.16 158.205 245.16 153.45 Z" fill="url(#linear-gradient-11)"/>
+    <path id="tile-tree-171" d="M348.48 107.12 L351.124 114.316 L358.32 116.96 L351.124 119.604 L348.48 126.8 L345.836 119.604 L338.64 116.96 L345.836 114.316 Z" fill="#f8d891"/>
+  </g>
+</svg>

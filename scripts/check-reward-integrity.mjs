@@ -1,3 +1,4 @@
+import {configureSyntheticBank} from './synthetic-irt-fixture.mjs';
 import assert from 'node:assert/strict';
 
 // Failure injection exercises public transitions against the persisted ledger.
@@ -16,7 +17,7 @@ const catalog=['math','korean'].map(subject=>({
  questionIds:Array.from({length:12},(_,i)=>'q-'+subject+'-'+(i+1))
 }));
 const game=subject=>({...catalog.find(g=>g.subject===subject),questions:catalog.find(g=>g.subject===subject).questionIds.map(id=>({id,choices:['yes','no','other'],answer:0}))});
-P.configureCatalog(catalog);
+P.configureCatalog(catalog);configureSyntheticBank(catalog);
 function reset(){store.clear();failRead=false;failWrite=false;onRead=null;P.selectLearner('tae');}
 function finish(subject){const g=game(subject),r=P.beginRound(g);for(const id of r.ids){P.answerQuestion(g,0);P.nextQuestion(g.id);}return P.gameProgress(g.id,'tae').round;}
 try{

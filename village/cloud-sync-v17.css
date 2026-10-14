@@ -1,0 +1,12 @@
+.cloud17{display:grid;gap:12px;max-width:100%;padding:12px;color:inherit;font-size:clamp(16px,2.1vw,19px)}
+.cloud17 h3,.cloud17 p{margin:0;line-height:1.45}
+.cloud17 label{display:grid;gap:8px;font-weight:700;min-width:0}
+.cloud17 input{width:100%;box-sizing:border-box;min-width:0;padding:12px;border:2px solid #56657c;border-radius:10px;font-size:16px;background:#fff;color:#17243a}
+.cloud17-actions{display:flex;flex-wrap:wrap;gap:8px}
+.cloud17 button{padding:12px 16px;min-height:48px;border:2px solid #1a4a79;border-radius:12px;background:#f0f6ff;color:#112e55;font:inherit;font-weight:700;cursor:pointer}
+.cloud17 button:focus-visible,.cloud17 input:focus-visible{outline:3px solid #dd6e36;outline-offset:2px}
+.cloud17 button:disabled{opacity:.6;cursor:wait}
+.cloud17-status{min-height:1.5em;overflow-wrap:anywhere}
+.cloud17-conflict{display:grid;gap:10px;border:2px solid #b46c24;padding:12px;border-radius:12px}
+.cloud17-conflict[hidden]{display:none}
+@media(max-width:420px){.cloud17{padding:6px}.cloud17 button{flex:1 1 130px}}

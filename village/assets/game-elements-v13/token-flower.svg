@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="229.084" y1="286.55" x2="229.084" y2="254.781" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a4cf8b"/>
+      <stop offset="1" stop-color="#6fa574"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="284.013" y1="312.2" x2="284.013" y2="273.835" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0d797"/>
+      <stop offset="1" stop-color="#79ad7b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="256" y1="287.9" x2="256" y2="209.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="285.228" y1="264.199" x2="285.228" y2="199.551" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="285.228" y1="230.449" x2="285.228" y2="165.801" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="256" y1="220.4" x2="256" y2="142.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="226.772" y1="230.449" x2="226.772" y2="165.801" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="226.772" y1="264.199" x2="226.772" y2="199.551" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#eca4b8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="256" y1="240.65" x2="256" y2="189.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe9a0"/>
+      <stop offset="1" stop-color="#dcac4c"/>
+    </linearGradient>
+  </defs>
+  <title>token-flower</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="token-flower-004" d="M256 333.8 C249.7 286.1 249.7 246.5 256 215" fill="none" stroke="#608d63" stroke-width="10.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-flower-008" d="M254.65 286.55 C185.8 283.85 188.5 240.65 250.6 259.55 Z" fill="url(#linear-gradient-1)"/>
+    <path id="token-flower-012" d="M257.35 312.2 C330.25 301.4 324.85 258.2 262.75 279.8 Z" fill="url(#linear-gradient-2)"/>
+    <path id="token-flower-016" d="M226.3 248.75 C226.3 227.128 239.597 209.6 256 209.6 C272.403 209.6 285.7 227.128 285.7 248.75 C285.7 270.372 272.403 287.9 256 287.9 C239.597 287.9 226.3 270.372 226.3 248.75 Z" fill="url(#linear-gradient-3)"/>
+    <path id="token-flower-020" d="M270.378 257.596 C251.653 246.785 243.122 226.505 251.323 212.3 C259.525 198.095 281.353 195.343 300.078 206.154 C318.804 216.965 327.335 237.245 319.133 251.45 C310.932 265.655 289.104 268.407 270.378 257.596 Z" fill="url(#linear-gradient-4)"/>
+    <path id="token-flower-024" d="M300.078 223.846 C281.353 234.657 259.525 231.905 251.323 217.7 C243.122 203.495 251.653 183.215 270.378 172.404 C289.104 161.593 310.932 164.345 319.133 178.55 C327.335 192.755 318.804 213.035 300.078 223.846 Z" fill="url(#linear-gradient-5)"/>
+    <path id="token-flower-028" d="M285.7 181.25 C285.7 202.872 272.403 220.4 256 220.4 C239.597 220.4 226.3 202.872 226.3 181.25 C226.3 159.628 239.597 142.1 256 142.1 C272.403 142.1 285.7 159.628 285.7 181.25 Z" fill="url(#linear-gradient-6)"/>
+    <path id="token-flower-032" d="M241.622 172.404 C260.347 183.215 268.878 203.495 260.677 217.7 C252.475 231.905 230.647 234.657 211.922 223.846 C193.196 213.035 184.665 192.755 192.867 178.55 C201.068 164.345 222.896 161.593 241.622 172.404 Z" fill="url(#linear-gradient-7)"/>
+    <path id="token-flower-036" d="M211.922 206.154 C230.647 195.343 252.475 198.095 260.677 212.3 C268.878 226.505 260.347 246.785 241.622 257.596 C222.896 268.407 201.068 265.655 192.867 251.45 C184.665 237.245 193.196 216.965 211.922 206.154 Z" fill="url(#linear-gradient-8)"/>
+    <path id="token-flower-040" d="M230.35 215 C230.35 200.834 241.834 189.35 256 189.35 C270.166 189.35 281.65 200.834 281.65 215 C281.65 229.166 270.166 240.65 256 240.65 C241.834 240.65 230.35 229.166 230.35 215 Z" fill="url(#linear-gradient-9)"/>
+    <path id="token-flower-044" d="M243.85 204.875 C243.85 202.265 246.57 200.15 249.925 200.15 C253.28 200.15 256 202.265 256 204.875 C256 207.485 253.28 209.6 249.925 209.6 C246.57 209.6 243.85 207.485 243.85 204.875 Z" fill="#fff6d7"/>
+  </g>
+</svg>

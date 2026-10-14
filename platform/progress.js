@@ -28,10 +28,12 @@ const validRoundLength = (length, gameId, paperId) =>
    ((isBebsuOriginal(gameId) && validPaperId(paperId)) ||
     (isMagicPractice(gameId) && /^magic-(?:g[1-6]|m[1-3])-(?:basic|challenge|advanced)$/.test(paperId||''))));
 let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map(),practicePapers=new Map();
-const validPracticeItems=(gameId,paperId,ids)=>{
+const validPracticeItems=(gameId,paperId,ids,adaptive=false)=>{
  if(!isMagicPractice(gameId)||ids.length!==25)return true;
  const expected=practicePapers.get(gameId)?.get(paperId);
- return Boolean(expected&&expected.length===25&&expected.every((id,i)=>id===ids[i]));
+ return Boolean(expected&&expected.length===25&&(adaptive
+  ?expected.every(id=>ids.includes(id))
+  :expected.every((id,i)=>id===ids[i])));
 };
 export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));practicePapers=new Map(catalog.filter(g=>isMagicPractice(g.id)).map(g=>[g.id,new Map((g.papers||[]).map(p=>[p.paperId,p.questionIds]))]));}
 const blankGame=()=>({records:{},round:null,finishedRounds:0,lastPlayed:0,completedRounds:[]});
@@ -59,20 +61,20 @@ function cleanAttempts(values){
 }
 function cleanCompleted(values,allowed,gameId){
  const byId=new Map();
- for(const r of Array.isArray(values)?values:[])if(r&&knownId(r.id)&&validTime(r.at)&&Array.isArray(r.questionIds)&&validRoundLength(r.questionIds.length,gameId,r.paperId)&&new Set(r.questionIds).size===r.questionIds.length&&r.questionIds.every(id=>allowed.has(id))&&validPracticeItems(gameId,r.paperId,r.questionIds)){
-  const item={id:r.id,at:r.at,questionIds:[...r.questionIds],...(r.questionIds.length===25?{paperId:r.paperId}:{})},old=byId.get(r.id);if(!old||item.at>old.at)byId.set(r.id,item);
+ for(const r of Array.isArray(values)?values:[])if(r&&knownId(r.id)&&validTime(r.at)&&Array.isArray(r.questionIds)&&validRoundLength(r.questionIds.length,gameId,r.paperId)&&new Set(r.questionIds).size===r.questionIds.length&&r.questionIds.every(id=>allowed.has(id))&&validPracticeItems(gameId,r.paperId,r.questionIds,r.irtVersion===2)){
+  const item={id:r.id,at:r.at,questionIds:[...r.questionIds],...(r.questionIds.length===25?{paperId:r.paperId}:{}),...(r.irtVersion===2?{irtVersion:2}:{})},old=byId.get(r.id);if(!old||item.at>old.at)byId.set(r.id,item);
  }
  return [...byId.values()].sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)).slice(-ROUND_LIMIT);
 }
 function cleanRound(s,allowed,gameId){
- if(!s||!Array.isArray(s.ids)||!validRoundLength(s.ids.length,gameId,s.paperId)||!s.ids.every(id=>knownId(id)&&allowed.has(id))||new Set(s.ids).size!==s.ids.length||!validPracticeItems(gameId,s.paperId,s.ids)||!Number.isInteger(s.index)||s.index<0||s.index>s.ids.length||!Array.isArray(s.answers)||s.answers.length<s.index||s.answers.length>Math.min(s.ids.length,s.index+1))return null;
+ if(!s||!Array.isArray(s.ids)||!validRoundLength(s.ids.length,gameId,s.paperId)||!s.ids.every(id=>knownId(id)&&allowed.has(id))||new Set(s.ids).size!==s.ids.length||!validPracticeItems(gameId,s.paperId,s.ids,s.irtVersion===2)||!Number.isInteger(s.index)||s.index<0||s.index>s.ids.length||!Array.isArray(s.answers)||s.answers.length<s.index||s.answers.length>Math.min(s.ids.length,s.index+1))return null;
  const validResponse=value=>{if(typeof value==='string'){if(!numericGames.has(gameId))return false;try{return normalizeNumericResponse(value,NUMERIC_LIMIT,numericMins.get(gameId)??0)===value;}catch{return false;}}return Number.isInteger(value)?value>=0&&value<=20:Array.isArray(value)&&value.length>=3&&value.length<=5&&value.every(n=>Number.isInteger(n)&&n>=0&&n<value.length)&&new Set(value).size===value.length;};
  const response=a=>Object.hasOwn(a,'response')?a.response:a.choice;
  if(!s.answers.every((a,i)=>a&&a.id===s.ids[i]&&validResponse(response(a))&&(a.choice===undefined||(Number.isInteger(a.choice)&&a.choice>=0&&a.choice<(choiceLimits.get(gameId)??3)&&response(a)===a.choice))&&[0,2,8,10].includes(a.earned)&&typeof a.correct==='boolean'))return null;
  const updatedAt=validTime(s.updatedAt)?s.updatedAt:0;
  // A stable migrated id keeps a resumed pre-growth round valid across page loads.
  const id=knownId(s.id)?s.id:`round-old-${gameId.slice(0,40)}-${Math.floor(updatedAt).toString(36)}`;
- return {id,ids:[...s.ids],...(s.ids.length===25?{paperId:s.paperId}:{}),index:s.index,answers:s.answers.map(a=>({id:a.id,...(a.choice!==undefined?{choice:a.choice}:{}),response:Array.isArray(response(a))?[...response(a)]:response(a),correct:a.correct,earned:a.earned})),finished:s.index===s.ids.length,updatedAt,shownAt:validTime(s.shownAt)?s.shownAt:0,hinted:s.hinted===true};
+ return {id,ids:[...s.ids],...(s.ids.length===25?{paperId:s.paperId}:{}),...(s.irtVersion===2?{irtVersion:2}:{}),index:s.index,answers:s.answers.map(a=>({id:a.id,...(a.choice!==undefined?{choice:a.choice}:{}),response:Array.isArray(response(a))?[...response(a)]:response(a),correct:a.correct,earned:a.earned})),finished:s.index===s.ids.length,updatedAt,shownAt:validTime(s.shownAt)?s.shownAt:0,hinted:s.hinted===true};
 }
 export function clean(raw){
  if(!raw||raw.version!==1||!raw.profiles?.tae||!raw.profiles?.se)throw new Error('반짝 배움터의 기록 파일을 골라 주세요.');
@@ -155,7 +157,7 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
    if(!expected||expected.length!==25||new Set(expected).size!==25||
       expected.some(id=>!game.questions.some(q=>q.id===id)))
     throw new Error('마법 연습장 시험지를 다시 선택해 주세요.');
-   ids=[...expected]; // Source-authored 1–25 ordering, never randomised.
+   ids=[...expected]; // Preserve source IDs; presentation sequence can be adapted.
   }else{
    if(!isBebsuOriginal(game.id)||!validPaperId(paperId))throw new Error('경시대회 시험지를 다시 선택해 주세요.');
    const exam=paperId.slice(4);
@@ -166,12 +168,19 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
     throw new Error('1번부터 25번까지 확인된 시험지가 아니에요.');
    ids=selected.map(q=>q.id);
   }
+  if(IRT.bankSize()){
+   const candidates=ids.map(id=>game.questions.find(q=>q.id===id));
+   const adaptive=IRT.selectQuestions({game,candidates,profile:p,size,stage});
+   if(adaptive.length!==size)throw new Error('시험지 IRT 문항 색인이 완전하지 않아요.');
+   ids=adaptive;
+  }else throw new Error('IRT 문항 색인을 먼저 불러와 주세요.');
  }else{
   const adaptive=IRT.bankSize()?IRT.selectQuestions({game,candidates:questions,profile:p,size,stage}):[];
-  ids=adaptive.length===size?adaptive:questions.map(q=>({id:q.id,rank:(g.records[q.id]?.best||0)*100+(g.records[q.id]?.seen||0)+Math.random()})).sort((a,b)=>a.rank-b.rank).slice(0,size).map(q=>q.id);
+  if(adaptive.length!==size)throw new Error('문항 IRT 색인이 완전하지 않아요.');
+  ids=adaptive;
  }
  if(ids.length<size||new Set(ids).size!==size)throw new Error('놀이에 필요한 문제가 부족해요.');
- g.round={id:uniqueId('round'),ids,...(paperId?{paperId}:{}),index:0,answers:[],finished:false,updatedAt:Date.now(),shownAt:Date.now(),hinted:false};g.lastPlayed=Date.now();return g.round;
+ g.round={id:uniqueId('round'),ids,irtVersion:2,...(paperId?{paperId}:{}),index:0,answers:[],finished:false,updatedAt:Date.now(),shownAt:Date.now(),hinted:false};g.lastPlayed=Date.now();return g.round;
  });}
 export function markHint(id){return updateGame(id,g=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return false;
@@ -180,16 +189,34 @@ export function markHint(id){return updateGame(id,g=>{
 export function answerQuestion(game,response){return updateGame(game.id,g=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return null;
  const q=game.questions.find(q=>q.id===s.ids[s.index]);if(!q)throw new Error('현재 문제를 다시 열어 주세요.');
- const graded=gradeResponse(q,response),correct=graded.correct,prev=g.records[q.id]?.best||0,best=Math.max(prev,correct?10:2),earned=best-prev,at=Math.max(Date.now(),g.lastPlayed+1,s.updatedAt+1);
+ const graded=gradeResponse(q,response),correct=graded.correct,prev=g.records[q.id]?.best||0,best=Math.max(prev,correct?10:2);
+ // The old garden ledger stays read-only. Award only the increment above
+ // whichever ledger already owns the greatest earned score for this source ID.
+ const legacyBest=game.id==='unit-garden'&&validLegacyId(q.id)?legacyProgress().records[q.id]?.best||0:0;
+ const earned=Math.max(0,best-Math.max(prev,legacyBest)),at=Math.max(Date.now(),g.lastPlayed+1,s.updatedAt+1);
  const attempt={id:uniqueId('attempt'),correct,at,roundId:s.id,...(s.hinted?{assisted:true}:{}),...(s.shownAt?{durationMs:Math.min(600000,Math.max(0,at-s.shownAt))}:{})};
  const prior=g.records[q.id];
  const attempts=cleanAttempts([...(prior?.attempts||[]),attempt]);
  g.records[q.id]={best,seen:Math.min(100000,(prior?.seen||0)+1),attempts,...(prior?.firstAttempt?{firstAttempt:prior.firstAttempt}:!prior?{firstAttempt:attempt}:{})};const a={id:q.id,...((q.interaction?.type??'choice')==='choice'?{choice:graded.response}:{}),response:graded.response,correct,earned};s.answers.push(a);s.updatedAt=at;g.lastPlayed=at;return a;
  });}
-export function nextQuestion(id){return updateGame(id,g=>{
+export function nextQuestion(id,game){return updateGame(id,(g,p)=>{
  const s=g.round;if(!s||s.finished||!s.answers[s.index])return s;
- s.index++;s.updatedAt=Math.max(Date.now(),s.updatedAt);s.shownAt=s.updatedAt;s.hinted=false;
- if(s.index===s.ids.length){s.finished=true;g.finishedRounds++;g.completedRounds=cleanCompleted([...g.completedRounds,{id:s.id,at:s.updatedAt,questionIds:[...s.ids],...(s.paperId?{paperId:s.paperId}:{})}],allowedQuestions.get(id),id);}
+ const nextIndex=s.index+1;
+ let chosen=null;
+ if(nextIndex<s.ids.length&&s.irtVersion===2&&game!==undefined){
+  if(game?.id!==id||!Array.isArray(game.questions))throw new Error('IRT 다음 문항의 게임 정보를 확인해 주세요.');
+  const remaining=s.ids.slice(nextIndex).map(qid=>game.questions.find(q=>q.id===qid));
+  if(!remaining.every(Boolean))throw new Error('IRT 다음 문항의 원문을 확인하지 못했어요. 현재 풀이 기록은 보존돼요.');
+  chosen=IRT.selectQuestions({game,candidates:remaining,profile:p,size:remaining.length,
+    stage:stageSelection(game.subject),exclude:s.ids.slice(0,nextIndex),
+    positionOffset:nextIndex,roundSize:s.ids.length});
+  if(chosen.length!==remaining.length)throw new Error('IRT 다음 문항 색인이 불완전해 출제를 멈췄어요. 현재 풀이 기록은 보존돼요.');
+ }
+ // Commit only after validation; a missing bank entry may not skip the current
+ // answer, mutate a round index, or quietly revert to the preselected order.
+ s.index=nextIndex;s.updatedAt=Math.max(Date.now(),s.updatedAt);s.shownAt=s.updatedAt;s.hinted=false;
+ if(chosen)s.ids.splice(nextIndex,chosen.length,...chosen);
+ if(s.index===s.ids.length){s.finished=true;g.finishedRounds++;g.completedRounds=cleanCompleted([...g.completedRounds,{id:s.id,at:s.updatedAt,questionIds:[...s.ids],...(s.paperId?{paperId:s.paperId}:{}),...(s.irtVersion===2?{irtVersion:2}:{})}],allowedQuestions.get(id),id);}
  return s;
  });}
 const validLegacyId=id=>/^(length|weight|distance|mix)-(0[1-9]|1[0-2])$/.test(id);
@@ -198,7 +225,14 @@ export function legacyProgress(who=learner()){
  return {records,round:p?.active&&!p.active.finished?p.active:null,finishedRounds:p?.sessions||0};
 }
 export function summary(catalog,who=learner()){
- const games=catalog.filter(g=>g.status==='published').map(g=>{const p=g.progressAdapter==='unit-garden-v1'?legacyProgress(who):gameProgress(g.id,who),items=Object.values(p.records);return {id:g.id,subject:g.subject,stars:items.reduce((n,r)=>n+r.best,0),mastered:items.filter(r=>r.best===10).length,started:items.length,resume:Boolean(p.round&&!p.round.finished),rounds:p.finishedRounds};});
+ const games=catalog.filter(g=>g.status==='published').map(g=>{
+  const modern=gameProgress(g.id,who),legacy=g.progressAdapter==='unit-garden-v1'?legacyProgress(who):null;
+  const records=legacy?Object.fromEntries([...new Set([...Object.keys(modern.records),...Object.keys(legacy.records)])]
+   .map(id=>[id,{best:Math.max(modern.records[id]?.best||0,legacy.records[id]?.best||0)}])):modern.records;
+  const items=Object.values(records),round=modern.round&&!modern.round.finished?modern.round:legacy?.round;
+  const rounds=modern.finishedRounds+(legacy?.finishedRounds||0);
+  return {id:g.id,subject:g.subject,stars:items.reduce((n,r)=>n+r.best,0),mastered:items.filter(r=>r.best===10).length,started:items.length,resume:Boolean(round&&!round.finished),rounds};
+ });
  return {games,stars:games.reduce((n,g)=>n+g.stars,0),mastered:games.reduce((n,g)=>n+g.mastered,0)};
 }
 export function exportRecords(){return {format:'sparkle-learning-backup',version:1,createdAt:new Date().toISOString(),platform:load(),unitGarden:read(LEGACY_KEY),learner:learner()};}
@@ -219,5 +253,10 @@ export function importRecords(raw){
   }
  }
  save(clean(current));
- const legacy=mergeLegacy(read(LEGACY_KEY),raw.unitGarden);if(legacy)write(LEGACY_KEY,legacy);
+ const storedLegacy=read(LEGACY_KEY);
+ // Preserve the original legacy blob byte-for-byte for an unchanged import.
+ // Reconciliation is still supported when the backup actually differs.
+ if(JSON.stringify(storedLegacy)!==JSON.stringify(raw.unitGarden)){
+  const legacy=mergeLegacy(storedLegacy,raw.unitGarden);if(legacy)write(LEGACY_KEY,legacy);
+ }
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="256.5" y1="436.765" x2="256.5" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcb886"/>
+      <stop offset="1" stop-color="#b78e6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="255.501" y1="376.765" x2="255.501" y2="123" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bce3a9"/>
+      <stop offset="1" stop-color="#79b694"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="263.78" y1="304.6" x2="263.78" y2="187.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cea477"/>
+      <stop offset="1" stop-color="#9c7b61"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="250.52" y1="242.98" x2="250.52" y2="155.62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#80b48d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="220.1" y1="219.58" x2="220.1" y2="114.28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#92c796"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="324.62" y1="217.24" x2="324.62" y2="108.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#75ac8b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="264.95" y1="187.6" x2="264.95" y2="69.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#acd695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="291.08" y1="226.6" x2="291.08" y2="139.24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c9e7a3"/>
+      <stop offset="1" stop-color="#91c291"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="210.74" y1="196.18" x2="210.74" y2="179.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="303.56" y1="176.68" x2="303.56" y2="160.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-11" x1="261.44" y1="158.74" x2="261.44" y2="142.36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#e59c80"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="130.542" y1="297.184" x2="130.542" y2="205" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c3edf1"/>
+      <stop offset="1" stop-color="#6da8c9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-13" x1="391" y1="190.23" x2="391" y2="139.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff2b2"/>
+      <stop offset="1" stop-color="#edbd6e"/>
+    </linearGradient>
+  </defs>
+  <title>cooperation-tree</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="cooperation-tree-003" d="M42 413.5 C42 392.237 138.259 375 257 375 C375.741 375 472 392.237 472 413.5 C472 434.763 375.741 452 257 452 C138.259 452 42 434.763 42 413.5 Z" fill="#335953" opacity="0.13"/>
+    <path id="cooperation-tree-008" d="M36 257 L254 377 L477 256 L477 307 C477 315.667 472.667 322.333 464 327 L271 432 C260.333 438 250.667 438.333 242 433 L49 327 C40.333 322.333 36 315.667 36 307 Z" fill="url(#linear-gradient-1)" stroke="#997857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-012" d="M256 376 L477 256 L477 308 C477 316 472.667 322.333 464 327 L269 433 C263.667 435.667 259.333 437 256 437 Z" fill="#b88d6b"/>
+    <path id="cooperation-tree-017" d="M44 239 L239 127 C249.667 121.667 260.333 121.667 271 127 L469 239 C479 244.333 479.333 250.667 470 258 L272 372 C261.333 378 251 378.333 241 373 L43 261 C31 253 31.333 245.667 44 239 Z" fill="url(#linear-gradient-2)" stroke="#709979" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-022" d="M48 248 L249 362 C253.667 364 258.667 363.667 264 361 L466 248" fill="none" stroke="#e0efc4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-027" d="M91 252 C91.667 243.333 90.333 237.667 87 235 M98 253 C99.333 244.333 102 239 106 237" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-031" d="M112 245 C112 243.895 113.119 243 114.5 243 C115.881 243 117 243.895 117 245 C117 246.105 115.881 247 114.5 247 C113.119 247 112 246.105 112 245 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-036" d="M185 171 C185.667 162.333 184.333 156.667 181 154 M192 172 C193.333 163.333 196 158 200 156" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-040" d="M206 164 C206 162.895 207.119 162 208.5 162 C209.881 162 211 162.895 211 164 C211 165.105 209.881 166 208.5 166 C207.119 166 206 165.105 206 164 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-045" d="M371 231 C371.667 222.333 370.333 216.667 367 214 M378 232 C379.333 223.333 382 218 386 216" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-049" d="M392 224 C392 222.895 393.119 222 394.5 222 C395.881 222 397 222.895 397 224 C397 225.105 395.881 226 394.5 226 C393.119 226 392 225.105 392 224 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-054" d="M170 305 C170.667 296.333 169.333 290.667 166 288 M177 306 C178.333 297.333 181 292 185 290" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-058" d="M191 298 C191 296.895 192.119 296 193.5 296 C194.881 296 196 296.895 196 298 C196 299.105 194.881 300 193.5 300 C192.119 300 191 299.105 191 298 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-063" d="M335 320 C335.667 311.333 334.333 305.667 331 303 M342 321 C343.333 312.333 346 307 350 305" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-067" d="M356 313 C356 311.895 357.119 311 358.5 311 C359.881 311 361 311.895 361 313 C361 314.105 359.881 315 358.5 315 C357.119 315 356 314.105 356 313 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-072" d="M297 188 C297.667 179.333 296.333 173.667 293 171 M304 189 C305.333 180.333 308 175 312 173" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-076" d="M318 181 C318 179.895 319.119 179 320.5 179 C321.881 179 323 179.895 323 181 C323 182.105 321.881 183 320.5 183 C319.119 183 318 182.105 318 181 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-081" d="M228 342 C228.667 333.333 227.333 327.667 224 325 M235 343 C236.333 334.333 239 329 243 327" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-085" d="M249 335 C249 333.895 250.119 333 251.5 333 C252.881 333 254 333.895 254 335 C254 336.105 252.881 337 251.5 337 C250.119 337 249 336.105 249 335 Z" fill="#e6f3be"/>
+    <path id="cooperation-tree-089" d="M113 335 C113 333.895 114.791 333 117 333 C119.209 333 121 333.895 121 335 C121 336.105 119.209 337 117 337 C114.791 337 113 336.105 113 335 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="cooperation-tree-093" d="M210 391 C210 389.895 211.791 389 214 389 C216.209 389 218 389.895 218 391 C218 392.105 216.209 393 214 393 C211.791 393 210 392.105 210 391 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="cooperation-tree-097" d="M364 366 C364 364.895 365.791 364 368 364 C370.209 364 372 364.895 372 366 C372 367.105 370.209 368 368 368 C365.791 368 364 367.105 364 366 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="cooperation-tree-101" d="M430 331 C430 329.895 431.791 329 434 329 C436.209 329 438 329.895 438 331 C438 332.105 436.209 333 434 333 C431.791 333 430 332.105 430 331 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="cooperation-tree-105" d="M202.94 298.75 C202.94 291.211 229.83 285.1 263 285.1 C296.17 285.1 323.06 291.211 323.06 298.75 C323.06 306.289 296.17 312.4 263 312.4 C229.83 312.4 202.94 306.289 202.94 298.75 Z" fill="#527f60" opacity="0.2"/>
+    <path id="cooperation-tree-110" d="M241.16 304.6 C251.56 253.12 251.56 214.12 241.16 187.6 L284.06 187.6 C274.7 229.2 275.48 268.2 286.4 304.6 Z" fill="url(#linear-gradient-3)" stroke="#8e7159" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-115" d="M260.66 267.16 C266.38 237.52 267.68 215.94 264.56 202.42" fill="none" stroke="#e4bf90" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-119" d="M202.16 199.3 C202.16 175.176 223.812 155.62 250.52 155.62 C277.228 155.62 298.88 175.176 298.88 199.3 C298.88 223.424 277.228 242.98 250.52 242.98 C223.812 242.98 202.16 223.424 202.16 199.3 Z" fill="url(#linear-gradient-4)"/>
+    <path id="cooperation-tree-123" d="M159.26 166.93 C159.26 137.852 186.499 114.28 220.1 114.28 C253.701 114.28 280.94 137.852 280.94 166.93 C280.94 196.008 253.701 219.58 220.1 219.58 C186.499 219.58 159.26 196.008 159.26 166.93 Z" fill="url(#linear-gradient-5)"/>
+    <path id="cooperation-tree-127" d="M270.02 162.64 C270.02 132.485 294.465 108.04 324.62 108.04 C354.775 108.04 379.22 132.485 379.22 162.64 C379.22 192.795 354.775 217.24 324.62 217.24 C294.465 217.24 270.02 192.795 270.02 162.64 Z" fill="url(#linear-gradient-6)"/>
+    <path id="cooperation-tree-131" d="M205.28 128.32 C205.28 95.581 231.995 69.04 264.95 69.04 C297.905 69.04 324.62 95.581 324.62 128.32 C324.62 161.059 297.905 187.6 264.95 187.6 C231.995 187.6 205.28 161.059 205.28 128.32 Z" fill="url(#linear-gradient-7)"/>
+    <path id="cooperation-tree-135" d="M235.7 182.92 C235.7 158.796 260.494 139.24 291.08 139.24 C321.666 139.24 346.46 158.796 346.46 182.92 C346.46 207.044 321.666 226.6 291.08 226.6 C260.494 226.6 235.7 207.044 235.7 182.92 Z" fill="url(#linear-gradient-8)"/>
+    <path id="cooperation-tree-139" d="M210.74 148.99 C210.74 147.482 212.661 146.26 215.03 146.26 C217.399 146.26 219.32 147.482 219.32 148.99 C219.32 150.498 217.399 151.72 215.03 151.72 C212.661 151.72 210.74 150.498 210.74 148.99 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="cooperation-tree-143" d="M287.96 129.49 C287.96 127.982 289.881 126.76 292.25 126.76 C294.619 126.76 296.54 127.982 296.54 129.49 C296.54 130.998 294.619 132.22 292.25 132.22 C289.881 132.22 287.96 130.998 287.96 129.49 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="cooperation-tree-147" d="M245.84 98.29 C245.84 96.782 247.761 95.56 250.13 95.56 C252.499 95.56 254.42 96.782 254.42 98.29 C254.42 99.798 252.499 101.02 250.13 101.02 C247.761 101.02 245.84 99.798 245.84 98.29 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="cooperation-tree-151" d="M312.92 175.51 C312.92 174.002 314.841 172.78 317.21 172.78 C319.579 172.78 321.5 174.002 321.5 175.51 C321.5 177.018 319.579 178.24 317.21 178.24 C314.841 178.24 312.92 177.018 312.92 175.51 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="cooperation-tree-155" d="M241.16 189.55 C241.16 188.042 243.081 186.82 245.45 186.82 C247.819 186.82 249.74 188.042 249.74 189.55 C249.74 191.058 247.819 192.28 245.45 192.28 C243.081 192.28 241.16 191.058 241.16 189.55 Z" fill="#eef3c1" opacity="0.8"/>
+    <path id="cooperation-tree-159" d="M202.94 187.99 C202.94 183.467 206.432 179.8 210.74 179.8 C215.048 179.8 218.54 183.467 218.54 187.99 C218.54 192.513 215.048 196.18 210.74 196.18 C206.432 196.18 202.94 192.513 202.94 187.99 Z" fill="url(#linear-gradient-9)"/>
+    <path id="cooperation-tree-163" d="M295.76 168.49 C295.76 163.967 299.252 160.3 303.56 160.3 C307.868 160.3 311.36 163.967 311.36 168.49 C311.36 173.013 307.868 176.68 303.56 176.68 C299.252 176.68 295.76 173.013 295.76 168.49 Z" fill="url(#linear-gradient-10)"/>
+    <path id="cooperation-tree-167" d="M253.64 150.55 C253.64 146.027 257.132 142.36 261.44 142.36 C265.748 142.36 269.24 146.027 269.24 150.55 C269.24 155.073 265.748 158.74 261.44 158.74 C257.132 158.74 253.64 155.073 253.64 150.55 Z" fill="url(#linear-gradient-11)"/>
+    <path id="cooperation-tree-171" d="M351.92 106.48 L354.435 113.325 L361.28 115.84 L354.435 118.355 L351.92 125.2 L349.405 118.355 L342.56 115.84 L349.405 113.325 Z" fill="#f8d891"/>
+    <path id="cooperation-tree-176" d="M131 205 C137.8 221.66 164.32 249.2 160.92 271.98 C156.5 305.98 101.42 305.3 100.06 271.64 C97.34 251.58 123.86 219.28 131 205 Z" fill="url(#linear-gradient-12)" stroke="#588ba8" stroke-width="1.02" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-181" d="M117.06 266.2 C114.567 259.173 117.74 248.293 126.58 233.56" fill="none" stroke="#effffd" stroke-width="4.42" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-185" d="M141.54 278.44 C141.54 277.313 142.682 276.4 144.09 276.4 C145.498 276.4 146.64 277.313 146.64 278.44 C146.64 279.567 145.498 280.48 144.09 280.48 C142.682 280.48 141.54 279.567 141.54 278.44 Z" fill="#bfe8e9"/>
+    <path id="cooperation-tree-190" d="M423.19 165 L430.15 165" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-195" d="M417.042 183.921 L422.673 188.012" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-200" d="M400.947 195.615 L403.098 202.234" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-205" d="M381.053 195.615 L378.902 202.234" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-210" d="M364.958 183.921 L359.327 188.012" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-215" d="M358.81 165 L351.85 165" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-220" d="M364.958 146.079 L359.327 141.988" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-225" d="M381.053 134.385 L378.902 127.766" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-230" d="M400.947 134.385 L403.098 127.766" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-235" d="M417.042 146.079 L422.673 141.988" fill="none" stroke="#eeb664" stroke-width="3.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-240" d="M365.77 165 C365.77 151.066 377.066 139.77 391 139.77 C404.934 139.77 416.23 151.066 416.23 165 C416.23 178.934 404.934 190.23 391 190.23 C377.066 190.23 365.77 178.934 365.77 165 Z" fill="url(#linear-gradient-13)" stroke="#ddac63" stroke-width="0.87" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="cooperation-tree-245" d="M376.79 161.52 C378.53 154.173 382.783 150.113 389.55 149.34" fill="none" stroke="#fffadc" stroke-width="3.19" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

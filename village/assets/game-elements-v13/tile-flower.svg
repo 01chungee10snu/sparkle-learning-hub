@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="256.5" y1="436.765" x2="256.5" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcb886"/>
+      <stop offset="1" stop-color="#b78e6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="255.501" y1="376.765" x2="255.501" y2="123" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bce3a9"/>
+      <stop offset="1" stop-color="#79b694"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="194.835" y1="237.68" x2="194.835" y2="224.502" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a4cf8b"/>
+      <stop offset="1" stop-color="#6fa574"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="217.62" y1="248.32" x2="217.62" y2="232.406" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0d797"/>
+      <stop offset="1" stop-color="#79ad7b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="206" y1="238.24" x2="206" y2="205.76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="218.124" y1="228.409" x2="218.124" y2="201.591" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="218.124" y1="214.409" x2="218.124" y2="187.591" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="206" y1="210.24" x2="206" y2="177.76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="193.876" y1="214.409" x2="193.876" y2="187.591" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="193.876" y1="228.409" x2="193.876" y2="201.591" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#e8a1b7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-11" x1="206" y1="218.64" x2="206" y2="197.36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe9a0"/>
+      <stop offset="1" stop-color="#dcac4c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="292.43" y1="250.44" x2="292.43" y2="239.145" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a4cf8b"/>
+      <stop offset="1" stop-color="#6fa574"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-13" x1="311.96" y1="259.56" x2="311.96" y2="245.919" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0d797"/>
+      <stop offset="1" stop-color="#79ad7b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-14" x1="302" y1="250.92" x2="302" y2="223.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-15" x1="312.392" y1="242.493" x2="312.392" y2="219.507" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-16" x1="312.392" y1="230.493" x2="312.392" y2="207.507" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-17" x1="302" y1="226.92" x2="302" y2="199.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-18" x1="291.608" y1="230.493" x2="291.608" y2="207.507" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-19" x1="291.608" y1="242.493" x2="291.608" y2="219.507" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffebec"/>
+      <stop offset="1" stop-color="#b1a1d7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-20" x1="302" y1="234.12" x2="302" y2="215.88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe9a0"/>
+      <stop offset="1" stop-color="#dcac4c"/>
+    </linearGradient>
+  </defs>
+  <title>tile-flower</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="tile-flower-003" d="M42 413.5 C42 392.237 138.259 375 257 375 C375.741 375 472 392.237 472 413.5 C472 434.763 375.741 452 257 452 C138.259 452 42 434.763 42 413.5 Z" fill="#335953" opacity="0.13"/>
+    <path id="tile-flower-008" d="M36 257 L254 377 L477 256 L477 307 C477 315.667 472.667 322.333 464 327 L271 432 C260.333 438 250.667 438.333 242 433 L49 327 C40.333 322.333 36 315.667 36 307 Z" fill="url(#linear-gradient-1)" stroke="#997857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-012" d="M256 376 L477 256 L477 308 C477 316 472.667 322.333 464 327 L269 433 C263.667 435.667 259.333 437 256 437 Z" fill="#b88d6b"/>
+    <path id="tile-flower-017" d="M44 239 L239 127 C249.667 121.667 260.333 121.667 271 127 L469 239 C479 244.333 479.333 250.667 470 258 L272 372 C261.333 378 251 378.333 241 373 L43 261 C31 253 31.333 245.667 44 239 Z" fill="url(#linear-gradient-2)" stroke="#709979" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-022" d="M48 248 L249 362 C253.667 364 258.667 363.667 264 361 L466 248" fill="none" stroke="#e0efc4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-027" d="M91 252 C91.667 243.333 90.333 237.667 87 235 M98 253 C99.333 244.333 102 239 106 237" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-031" d="M112 245 C112 243.895 113.119 243 114.5 243 C115.881 243 117 243.895 117 245 C117 246.105 115.881 247 114.5 247 C113.119 247 112 246.105 112 245 Z" fill="#e6f3be"/>
+    <path id="tile-flower-036" d="M185 171 C185.667 162.333 184.333 156.667 181 154 M192 172 C193.333 163.333 196 158 200 156" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-040" d="M206 164 C206 162.895 207.119 162 208.5 162 C209.881 162 211 162.895 211 164 C211 165.105 209.881 166 208.5 166 C207.119 166 206 165.105 206 164 Z" fill="#e6f3be"/>
+    <path id="tile-flower-045" d="M371 231 C371.667 222.333 370.333 216.667 367 214 M378 232 C379.333 223.333 382 218 386 216" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-049" d="M392 224 C392 222.895 393.119 222 394.5 222 C395.881 222 397 222.895 397 224 C397 225.105 395.881 226 394.5 226 C393.119 226 392 225.105 392 224 Z" fill="#e6f3be"/>
+    <path id="tile-flower-054" d="M170 305 C170.667 296.333 169.333 290.667 166 288 M177 306 C178.333 297.333 181 292 185 290" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-058" d="M191 298 C191 296.895 192.119 296 193.5 296 C194.881 296 196 296.895 196 298 C196 299.105 194.881 300 193.5 300 C192.119 300 191 299.105 191 298 Z" fill="#e6f3be"/>
+    <path id="tile-flower-063" d="M335 320 C335.667 311.333 334.333 305.667 331 303 M342 321 C343.333 312.333 346 307 350 305" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-067" d="M356 313 C356 311.895 357.119 311 358.5 311 C359.881 311 361 311.895 361 313 C361 314.105 359.881 315 358.5 315 C357.119 315 356 314.105 356 313 Z" fill="#e6f3be"/>
+    <path id="tile-flower-072" d="M297 188 C297.667 179.333 296.333 173.667 293 171 M304 189 C305.333 180.333 308 175 312 173" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-076" d="M318 181 C318 179.895 319.119 179 320.5 179 C321.881 179 323 179.895 323 181 C323 182.105 321.881 183 320.5 183 C319.119 183 318 182.105 318 181 Z" fill="#e6f3be"/>
+    <path id="tile-flower-081" d="M228 342 C228.667 333.333 227.333 327.667 224 325 M235 343 C236.333 334.333 239 329 243 327" fill="none" stroke="#669e7c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-085" d="M249 335 C249 333.895 250.119 333 251.5 333 C252.881 333 254 333.895 254 335 C254 336.105 252.881 337 251.5 337 C250.119 337 249 336.105 249 335 Z" fill="#e6f3be"/>
+    <path id="tile-flower-089" d="M113 335 C113 333.895 114.791 333 117 333 C119.209 333 121 333.895 121 335 C121 336.105 119.209 337 117 337 C114.791 337 113 336.105 113 335 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-flower-093" d="M210 391 C210 389.895 211.791 389 214 389 C216.209 389 218 389.895 218 391 C218 392.105 216.209 393 214 393 C211.791 393 210 392.105 210 391 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-flower-097" d="M364 366 C364 364.895 365.791 364 368 364 C370.209 364 372 364.895 372 366 C372 367.105 370.209 368 368 368 C365.791 368 364 367.105 364 366 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-flower-101" d="M430 331 C430 329.895 431.791 329 434 329 C436.209 329 438 329.895 438 331 C438 332.105 436.209 333 434 333 C431.791 333 430 332.105 430 331 Z" fill="#e4c39c" opacity="0.6"/>
+    <path id="tile-flower-106" d="M206 257.28 C203.387 237.493 203.387 221.067 206 208" fill="none" stroke="#608d63" stroke-width="4.48" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-110" d="M205.44 237.68 C176.88 236.56 178 218.64 203.76 226.48 Z" fill="url(#linear-gradient-3)"/>
+    <path id="tile-flower-114" d="M206.56 248.32 C236.8 243.84 234.56 225.92 208.8 234.88 Z" fill="url(#linear-gradient-4)"/>
+    <path id="tile-flower-118" d="M193.68 222 C193.68 213.031 199.196 205.76 206 205.76 C212.804 205.76 218.32 213.031 218.32 222 C218.32 230.969 212.804 238.24 206 238.24 C199.196 238.24 193.68 230.969 193.68 222 Z" fill="url(#linear-gradient-5)"/>
+    <path id="tile-flower-122" d="M211.964 225.669 C204.197 221.185 200.658 212.773 204.06 206.88 C207.462 200.987 216.517 199.846 224.284 204.331 C232.052 208.815 235.591 217.227 232.189 223.12 C228.787 229.013 219.732 230.154 211.964 225.669 Z" fill="url(#linear-gradient-6)"/>
+    <path id="tile-flower-126" d="M224.284 211.669 C216.517 216.154 207.462 215.013 204.06 209.12 C200.658 203.227 204.197 194.815 211.964 190.331 C219.732 185.846 228.787 186.987 232.189 192.88 C235.591 198.773 232.052 207.185 224.284 211.669 Z" fill="url(#linear-gradient-7)"/>
+    <path id="tile-flower-130" d="M218.32 194 C218.32 202.969 212.804 210.24 206 210.24 C199.196 210.24 193.68 202.969 193.68 194 C193.68 185.031 199.196 177.76 206 177.76 C212.804 177.76 218.32 185.031 218.32 194 Z" fill="url(#linear-gradient-8)"/>
+    <path id="tile-flower-134" d="M200.036 190.331 C207.803 194.815 211.342 203.227 207.94 209.12 C204.538 215.013 195.483 216.154 187.716 211.669 C179.948 207.185 176.409 198.773 179.811 192.88 C183.213 186.987 192.268 185.846 200.036 190.331 Z" fill="url(#linear-gradient-9)"/>
+    <path id="tile-flower-138" d="M187.716 204.331 C195.483 199.846 204.538 200.987 207.94 206.88 C211.342 212.773 207.803 221.185 200.036 225.669 C192.268 230.154 183.213 229.013 179.811 223.12 C176.409 217.227 179.948 208.815 187.716 204.331 Z" fill="url(#linear-gradient-10)"/>
+    <path id="tile-flower-142" d="M195.36 208 C195.36 202.124 200.124 197.36 206 197.36 C211.876 197.36 216.64 202.124 216.64 208 C216.64 213.876 211.876 218.64 206 218.64 C200.124 218.64 195.36 213.876 195.36 208 Z" fill="url(#linear-gradient-11)"/>
+    <path id="tile-flower-146" d="M200.96 203.8 C200.96 202.718 202.088 201.84 203.48 201.84 C204.872 201.84 206 202.718 206 203.8 C206 204.882 204.872 205.76 203.48 205.76 C202.088 205.76 200.96 204.882 200.96 203.8 Z" fill="#fff6d7"/>
+    <path id="tile-flower-151" d="M302 267.24 C299.76 250.28 299.76 236.2 302 225" fill="none" stroke="#608d63" stroke-width="3.84" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="tile-flower-155" d="M301.52 250.44 C277.04 249.48 278 234.12 300.08 240.84 Z" fill="url(#linear-gradient-12)"/>
+    <path id="tile-flower-159" d="M302.48 259.56 C328.4 255.72 326.48 240.36 304.4 248.04 Z" fill="url(#linear-gradient-13)"/>
+    <path id="tile-flower-163" d="M291.44 237 C291.44 229.312 296.168 223.08 302 223.08 C307.832 223.08 312.56 229.312 312.56 237 C312.56 244.688 307.832 250.92 302 250.92 C296.168 250.92 291.44 244.688 291.44 237 Z" fill="url(#linear-gradient-14)"/>
+    <path id="tile-flower-167" d="M307.112 240.145 C300.454 236.301 297.421 229.091 300.337 224.04 C303.253 218.989 311.014 218.011 317.672 221.855 C324.33 225.699 327.363 232.909 324.447 237.96 C321.531 243.011 313.77 243.989 307.112 240.145 Z" fill="url(#linear-gradient-15)"/>
+    <path id="tile-flower-171" d="M317.672 228.145 C311.014 231.989 303.253 231.011 300.337 225.96 C297.421 220.909 300.454 213.699 307.112 209.855 C313.77 206.011 321.531 206.989 324.447 212.04 C327.363 217.091 324.33 224.301 317.672 228.145 Z" fill="url(#linear-gradient-16)"/>
+    <path id="tile-flower-175" d="M312.56 213 C312.56 220.688 307.832 226.92 302 226.92 C296.168 226.92 291.44 220.688 291.44 213 C291.44 205.312 296.168 199.08 302 199.08 C307.832 199.08 312.56 205.312 312.56 213 Z" fill="url(#linear-gradient-17)"/>
+    <path id="tile-flower-179" d="M296.888 209.855 C303.546 213.699 306.579 220.909 303.663 225.96 C300.747 231.011 292.986 231.989 286.328 228.145 C279.67 224.301 276.637 217.091 279.553 212.04 C282.469 206.989 290.23 206.011 296.888 209.855 Z" fill="url(#linear-gradient-18)"/>
+    <path id="tile-flower-183" d="M286.328 221.855 C292.986 218.011 300.747 218.989 303.663 224.04 C306.579 229.091 303.546 236.301 296.888 240.145 C290.23 243.989 282.469 243.011 279.553 237.96 C276.637 232.909 279.67 225.699 286.328 221.855 Z" fill="url(#linear-gradient-19)"/>
+    <path id="tile-flower-187" d="M292.88 225 C292.88 219.963 296.963 215.88 302 215.88 C307.037 215.88 311.12 219.963 311.12 225 C311.12 230.037 307.037 234.12 302 234.12 C296.963 234.12 292.88 230.037 292.88 225 Z" fill="url(#linear-gradient-20)"/>
+    <path id="tile-flower-191" d="M297.68 221.4 C297.68 220.472 298.647 219.72 299.84 219.72 C301.033 219.72 302 220.472 302 221.4 C302 222.328 301.033 223.08 299.84 223.08 C298.647 223.08 297.68 222.328 297.68 221.4 Z" fill="#fff6d7"/>
+  </g>
+</svg>

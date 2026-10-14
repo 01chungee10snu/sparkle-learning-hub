@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="266.096" y1="372.046" x2="266.096" y2="96.766" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d5e7ac"/>
+      <stop offset="1" stop-color="#72ae83"/>
+    </linearGradient>
+  </defs>
+  <title>token-leaf</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="token-leaf-004" d="M151 365 C54 208 223 78 409 99 C418 322 295 397 151 365 Z" fill="url(#linear-gradient-1)" stroke="#64967a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-leaf-009" d="M119 409 C194.333 300.333 279.667 208.333 375 133" fill="none" stroke="#638d6b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-leaf-014" d="M186 318 C167.667 304.667 149.333 279.667 131 243" fill="none" stroke="#86b58a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-leaf-019" d="M232 265 C226.667 251.667 221.333 216 216 158" fill="none" stroke="#86b58a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-leaf-024" d="M284 216 C302.333 202.667 320.667 205.667 339 225" fill="none" stroke="#86b58a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="token-leaf-028" d="M356 311 L360.031 321.969 L371 326 L360.031 330.031 L356 341 L351.969 330.031 L341 326 L351.969 321.969 Z" fill="#f8d891"/>
+  </g>
+</svg>

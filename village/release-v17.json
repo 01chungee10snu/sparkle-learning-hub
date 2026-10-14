@@ -1,0 +1,57 @@
+{
+  "version": "0.17.0",
+  "featureVersion": "connected-v17-20261014",
+  "preparedAt": "2026-10-14T02:58:06.230524+00:00",
+  "nativeBuild": {
+    "version": "0.17.0",
+    "status": "PASS_COMPILED_AND_STAGED",
+    "shaderResourceIncluded": true,
+    "atomicAnimalCreation": true,
+    "files": [
+      {
+        "name": "WebGL.data.unityweb",
+        "bytes": 20445861,
+        "sha256": "2911124a2cb04ffe59e9c12c6f9f7a890297dca531ba4e20d908015d06be00ab"
+      },
+      {
+        "name": "WebGL.framework.js.unityweb",
+        "bytes": 70744,
+        "sha256": "e94750bb9a8ba794f6ba91da720228bf08cf6cbe90557cbc759dde021ee57e7e"
+      },
+      {
+        "name": "WebGL.loader.js",
+        "bytes": 117894,
+        "sha256": "c0aa892d31ad9a0b736033c53a05d30db17ba5a607f372ae6666fc8f286d0f7b"
+      },
+      {
+        "name": "WebGL.wasm.unityweb",
+        "bytes": 6056068,
+        "sha256": "15dd6c8264f6ea3c7e3d57c74c1827508e8e564cc41e7820495029bfd2b4d15e"
+      }
+    ],
+    "totalBytes": 26690567,
+    "lifeAudit": true,
+    "nativeBuildReused": false
+  },
+  "features": [
+    "unity-roaming-pets",
+    "pond-fish",
+    "family-encrypted-sync",
+    "offline-retry",
+    "conflict-safe-restore"
+  ],
+  "sourceHashes": {
+    "village/entry-v17.js": "fba9eecec960c3d14937ccb7a73b9200663bb0587e63353cc477d503023bd0ab",
+    "village/village-ui.js": "fee59ded266831f8d07e6c8c1027eefdbcd754e721f4224641d5b60d1c1c8707",
+    "village/life-ui-v16.js": "a0d1d208fafeba510b59d15db59974366419d6bbed893209520d9d49fb97006a",
+    "village/life-state-v16.js": "335a2fb6d31d200107d8d877f24ff69e44ea681c9c9c399f56920902c7f4ab80",
+    "village/life-v16.css": "df3ece518f47299b0676c6b4fe3d57b3b825fe5a100c03e8b275681f6d82728b",
+    "village/cloud-sync-v17.js": "5f84bfcb1714d22e2b46f1489b170ef12badd4f0d096767d4f5b0818ded38b1b",
+    "village/cloud-sync-ui-v17.js": "b1aa5db23bf0e55e68f2b3a604171ad08d6b6f99b7ff2f3e0e11a1b64129a90f",
+    "village/cloud-sync-v17.css": "1754283280c31413d274f6d025470be4fbb6b4a6e3b9e66ff89b6556ba092847",
+    "village/cloud-snapshot-v17.js": "986a6e6bbe4930f7e83e3511ff1db1d43b330144e35f22bc8264ff79d1fd3419",
+    "village/cloud-validator-worker-v17.js": "e2f504eed4fbf1535a31e82bc0cc8506b88b0f3cc7215b0012e3c99a30cc5129",
+    "village/index.html": "e30e931e445a0eee398660a1e3a840e085d6e5bb1bf22f27b35f7d8accf95055"
+  },
+  "endpoint": "https://czynhzckftudetvcynjq.supabase.co/functions/v1/magic-village-sync-v17"
+}

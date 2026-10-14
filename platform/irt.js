@@ -100,21 +100,26 @@ export function skillEvidence(games,subject,stage=2){
   provisional:true
  })).sort((a,b)=>b.gap-a.gap||b.n-a.n||a.skill.localeCompare(b.skill));
 }
-export function selectQuestions({game,candidates,profile,size,stage}){
+export function selectQuestions({game,candidates,profile,size,stage,exclude=[],positionOffset=0,roundSize=size}){
  if(!Array.isArray(candidates)||!candidates.length||!Number.isInteger(size)||size<1)return [];
+ if(!Number.isInteger(positionOffset)||positionOffset<0||!Number.isInteger(roundSize)||
+    roundSize<size+positionOffset)return [];
  if(candidates.some(q=>!itemAt(game.id,q.id)))return [];
  const records=profile?.games?.[game.id]?.records||{};
  const model=estimateSubject(profile?.games||{},game.subject,stage);
  const skillNeeds=new Map(skillEvidence(profile?.games||{},game.subject,stage).filter(g=>g.n>=3).map(g=>[g.skill,g.gap]));
- const chosen=[],usedSkills=new Map();
- const goals=size===3?[0.84,0.72,0.62]:[0.84,0.74,0.68,0.61,0.76];
+ const chosen=[],usedSkills=new Map(),blocked=new Set(exclude);
+ for(const id of blocked){const skill=itemAt(game.id,id)?.skill;if(skill)usedSkills.set(skill,(usedSkills.get(skill)||0)+1);}
+ // A 25-item contest remains one round. Re-selecting its unanswered suffix
+ // must not restart the target cycle or become a three-item round near the end.
+ const goals=roundSize===3?[0.84,0.72,0.62]:[0.84,0.74,0.68,0.61,0.76];
  for(let i=0;i<size;i++){
-  const remaining=candidates.filter(q=>!chosen.includes(q.id));
+  const remaining=candidates.filter(q=>!chosen.includes(q.id)&&!blocked.has(q.id));
   if(!remaining.length)break;
   const fresh=remaining.filter(q=>!(records[q.id]?.seen));
   // New items prevent memorized responses from dominating learning paths.
   const pool=fresh.length?fresh:remaining;
-  const target=goals[i%goals.length];
+  const target=goals[(positionOffset+i+(model.n===0?1:0))%goals.length];
   const ranked=pool.map(q=>{
    const item=itemAt(game.id,q.id),p=predicted(model.theta,item);
    const seen=records[q.id]?.seen||0,last=records[q.id]?.attempts?.at(-1);

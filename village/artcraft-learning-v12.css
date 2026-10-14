@@ -1,0 +1,70 @@
+/* V12: real PhotoCraft assets, compact reading surfaces and unscored rule exploration. */
+#village-ui .vh-avatar{background-image:url('./assets/artcraft-v12/taehee_original.png')!important}
+#village-ui[data-who="se"] .vh-avatar{background-image:url('./assets/artcraft-v12/sehee_original.png')!important}
+#vh-workshop{background:#eef8e7!important;color:#315c49!important}
+.vh-irt-provenance{display:inline-flex;align-items:center;margin:0 0 10px;padding:7px 11px;
+  border-radius:12px;background:#eaf5ed;color:#285140;font-size:15px;font-weight:750;
+  text-shadow:none!important;line-height:1.4;max-width:100%}
+.vh-irt-evidence{margin:12px 0 0;padding:10px 12px;border:1px solid #d4dcca;
+  border-radius:12px;background:#fafbf5;font-size:14px;color:#43543f}
+.vh-irt-evidence summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:750}
+.vh-mechanic-card{margin:0 0 15px;padding:16px;border:1px solid #cbdcc8;border-radius:20px;
+  background:linear-gradient(140deg,#fffefa,#f2f9ed);box-shadow:0 3px 12px #4257460d}
+.vh-mechanic-card h3{font-size:20px;line-height:1.4;margin:0 0 13px;color:#2c5444;letter-spacing:0}
+.vh-merge-scene{display:flex;align-items:center;justify-content:center;gap:15px;padding:14px;
+  background:#d9eecd;border:1px solid #c3d4b1;border-radius:17px;min-height:96px}
+.vh-number-tile{display:grid;place-items:center;width:78px;height:78px;border-radius:20px;
+  font-size:38px;font-weight:900;color:#3e5437;background:#fff4c9;border:2px solid #d5b969}
+.vh-math-sign{font-size:27px;color:#466944;font-weight:800}
+.vh-mechanic-controls{display:flex;flex-wrap:wrap;gap:9px;margin:13px 0}
+.vh-mechanic-number,.vh-mechanic-ingredient,.vh-mechanic-role{min-width:52px;min-height:52px;
+  background:#fffaf0!important;border:2px solid #bbd1b4!important;color:#365343!important;
+  border-radius:13px!important;padding:10px!important;font-size:18px!important;line-height:1.3!important}
+.vh-mechanic-number[aria-pressed="true"],.vh-mechanic-role[aria-pressed="true"]{
+  background:#dcebd4!important;border-color:#47714f!important;box-shadow:0 0 0 2px #e0efc7 inset}
+.vh-mechanic-explanation{display:block;font-size:18px;font-weight:750;color:#37563b;line-height:1.65}
+.vh-recipe-tray{border:2px dashed #b8ccad;padding:16px;min-height:68px;border-radius:14px;
+  background:#fcfaf0;font-size:19px;line-height:1.6;color:#5a5c3b}
+.vh-mechanic-rule{font-size:17px;line-height:1.6;color:#535d46}
+#village-ui .vh-dialog h2,#village-ui .vh-dialog h3,#village-ui .vh-dialog p,
+#village-ui .vh-dialog strong,#village-ui .vh-dialog output{text-shadow:none!important}
+#village-ui .vh-dialog-title h2{font-size:clamp(20px,3.1vw,26px)!important}
+#village-ui .vh-dialog .vh-dialog-title{background:#fff7e7!important;border-color:#decda9!important}
+#village-ui .vh-dialog .vh-dialog-title h2{color:#2c4e3c!important}
+.vh-source-enlarge{display:block;width:100%;min-height:44px;margin:8px 0 0;padding:8px 10px;
+  border:1px solid #b4c6b1;border-radius:10px;background:#edf5e7;color:#365040;font-size:16px}
+.vh-source-zoom{position:fixed;inset:0;width:min(1100px,98vw);max-width:98vw;max-height:96dvh;
+  padding:12px;border:2px solid #d4dfc8;border-radius:17px;background:#fffdfa;color:#2e4433;overflow:auto}
+.vh-source-zoom::backdrop{background:#152b24c9}
+.vh-source-zoom-header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px;font:700 18px/1.4 system-ui}
+.vh-source-zoom-close{min-width:66px;min-height:44px;background:#e3eedc;color:#33452b;border:1px solid #aec69a;border-radius:12px;font:700 16px system-ui}
+.vh-source-zoom>img{display:block;max-width:100%;max-height:calc(96dvh - 95px);width:auto;height:auto;margin:auto;object-fit:contain;background:white}
+#village-ui .vh-dialog .vh-prompt{font-size:clamp(20px,3.3vw,28px)!important;line-height:1.6!important}
+#village-ui .vh-dialog .vh-story{font-size:clamp(17px,2.9vw,22px)!important;line-height:1.65!important}
+#village-ui .vh-dialog .vh-option{font-size:clamp(18px,2.8vw,23px)!important;min-height:56px!important}
+#village-ui .vh-dialog-body{padding:12px 14px!important}
+#village-ui .vh-book-page{padding:10px 12px!important}
+#village-ui .vh-story-name{font-size:18px!important;line-height:1.4}
+#village-ui .vh-story-detail{font-size:15px!important;line-height:1.5}
+#village-ui .vh-style-name{font-size:18px!important}
+#village-ui .vh-style-description{font-size:14px!important}
+#village-ui .vh-style-card{min-height:218px!important}
+#village-ui[data-mode="question"] .vh-dialog-body{scroll-padding-bottom:70px}
+@media(min-width:700px){
+  #village-ui .vh-dialog{max-width:960px;width:calc(100% - 16px)!important}
+  #village-ui .vh-dialog .vh-wide{font-size:21px!important;min-height:60px!important}
+  #village-ui .vh-dialog-footer .vh-secondary{font-size:19px!important;min-height:54px!important}
+  #village-ui .vh-dialog .vh-explanation{font-size:21px!important;line-height:1.7!important}
+  .vh-mechanic-explanation{font-size:21px}
+}
+@media(max-width:480px){
+  .vh-mechanic-card{padding:12px;margin-bottom:12px}
+  .vh-mechanic-card h3{font-size:19px}
+  .vh-mechanic-controls{gap:7px}
+  .vh-irt-provenance{font-size:14px;padding:6px 9px}
+  #village-ui .vh-dialog-body{padding:9px 10px!important}
+  #village-ui .vh-book-page{padding:8px 9px!important}
+  #village-ui .vh-dialog-title{padding:9px 11px!important}
+  #village-ui .vh-dialog-title h2{font-size:20px!important}
+}
+@media(prefers-reduced-motion:reduce){.vh-number-tile{transition:none!important}}

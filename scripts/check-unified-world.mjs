@@ -130,5 +130,5 @@ try{
  const copied=Progress.exportRecords(), firstTa=copied.platform.profiles.tae.games['magic-g1-challenge'];
  assert.equal(firstTa.completedRounds.length,2);
  assert.equal(firstTa.records&&Object.keys(firstTa.records).length,25);
- console.log('PASS_UNIFIED_WORLD 55 games, 4828 items, 7 learning districts, 27+27 papers, practice and KMA shared future wallet, repeat credit blocked, sibling isolation, historical keys untouched');
+ console.log('PASS_UNIFIED_WORLD '+catalog.filter(g=>g.kind==='quiz'&&g.status==='published').length+' quizzes, '+catalog.filter(g=>g.kind==='quiz'&&g.status==='published').reduce((n,g)=>n+g.questionIds.length,0)+' items, 7 learning districts, 27+27 papers, practice and KMA shared future wallet, repeat credit blocked, sibling isolation, historical keys untouched');
 }finally{globalThis.fetch=nativeFetch;}
