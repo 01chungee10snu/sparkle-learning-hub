@@ -101,3 +101,18 @@ Direct connection 주소를 프로젝트 ref로 추정해서 만들지 않는다
 - habitat 분류(`number-garden`, `word-flower` 등)는 DB에 저장하지 않고 raw skill에서 재계산
 - 30일 기억 수호수 unlock도 파생값으로만 유지
 - 개인 ecology는 learner별 분리, 가족 광장의 ecology만 두 learner의 검증 사건을 union하여 파생
+
+## 2026-10-15 v20 실제 Supabase 개통
+
+실제 원격 프로젝트 `magic-village-family-v17`(Seoul)에 migration 001~005를 적용했다.
+
+- 13개 `magic_*` public table 모두 RLS enabled
+- `magic_private` schema로 SECURITY DEFINER helper 이동
+- `public.bootstrap_magic_family()`는 SECURITY INVOKER wrapper만 노출
+- 익명 publishable-key snapshot 조회 결과 0 rows
+- 익명 bootstrap RPC는 HTTP 401
+- Supabase Security Advisor 최종 결과: `No issues found`
+- 로컬/원격 migration history 001~005 일치
+
+웹앱은 publishable key만 포함하며 service-role/secret/DB password는 포함하지 않는다.
+보호자 Auth 로그인 후 device별 최신 snapshot을 모두 읽어 기존 검증된 merge 로직으로 합치고, SHA-256이 새로울 때만 snapshot을 업로드한다.

@@ -95,6 +95,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 import { createVillageHost } from './village-bridge.js?v=ecology-v19-20261015';
 import * as Progress from '../platform/progress.js';
 import { createVillageUI } from './village-ui.js?v=ecology-v19-20261015';
+import * as CloudSync from '../platform/cloud-sync.js?v=cloud-v20-20261015';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -139,6 +140,7 @@ const ui = createVillageUI({
 });
 const deliver = message => {
   ui.update(message);
+  if(message?.ok)CloudSync.scheduleSync();
   if(message?.ok && message.cosmetics){
     const wear=JSON.stringify(message.cosmetics);
     if(instance)instance.SendMessage('VillageRuntime','OnCosmeticsMessage',wear);
@@ -156,6 +158,13 @@ const deliver = message => {
 };
 const host = createVillageHost(deliver);
 window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
+async function prepareData(){
+  await host.prepare();
+  if(CloudSync.storedSession()){
+    const synced=await CloudSync.autoSync();
+    if(synced?.error)console.warn('[Village cloud sync]',synced.error);
+  }
+}
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
@@ -181,7 +190,7 @@ lite.addEventListener('click',async()=>{
   start.disabled=true;
   try{
     status.textContent='가벼운 학습 마을을 준비하는 중이에요.';
-    await host.prepare();
+    await prepareData();
     liteMode=true;
     liteScene.hidden=false;
     canvas.style.display='none';
@@ -203,7 +212,7 @@ start.addEventListener('click', async () => {
   lite.disabled = true;
   try {
     status.textContent = '기존 학습 기록을 확인하는 중이에요.';
-    await host.prepare();
+    await prepareData();
     const build = await discoverBuild();
     if (!build) {
       status.textContent = '3D 웹 빌드를 불러오지 못했어요. 위 학습기록 링크를 통해 문제집을 사용할 수 있어요.';

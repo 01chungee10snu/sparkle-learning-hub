@@ -43,6 +43,8 @@ try{
   await page.locator('.parent-dashboard').waitFor({timeout:20000});
   assert.equal(await page.locator('.parent-kpis>div').count(),4);
   assert.equal(await page.locator('.parent-subject-card').count(),3);
+  assert.equal(await page.locator('.parent-cloud').count(),1,'cloud sync panel missing');
+  assert((await page.locator('.parent-cloud').innerText()).includes('보호자 클라우드'));
   assert.equal(await page.locator('.parent-friends').count(),1,'relationship evidence section missing');
   assert.equal(await page.locator('.parent-ecology').count(),1,'skill ecology evidence section missing');
   assert((await page.locator('.parent-friends').innerText()).includes('마을 친구 관계'));

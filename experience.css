@@ -389,3 +389,29 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 .parent-ecology li{display:flex;justify-content:space-between;gap:8px;padding:8px 9px;border-radius:12px;background:#fff;border:1px solid #e6ecdf}
 .parent-ecology li span{font-size:13px;font-weight:750}.parent-ecology li small{font-size:10px;color:var(--muted);text-align:right}
 @media(max-width:620px){.parent-ecology>div{display:block}.parent-ecology>div p{text-align:left;margin-top:3px}.parent-ecology ul{grid-template-columns:1fr}.parent-ecology li{align-items:center}}
+
+/* v20 parent cloud sync: auth is parent-owned; password is never persisted by app code. */
+.parent-cloud{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:14px;align-items:center;
+ padding:14px 16px;border:1px solid #d7dce8;border-radius:19px;background:linear-gradient(125deg,#f8fbff,#fffdf8)}
+.parent-cloud.connected{border-color:#bed8c1;background:linear-gradient(125deg,#f2fbf1,#f9fbff)}
+.parent-cloud small{display:block;font-size:11px;color:#6c7480;font-weight:800}
+.parent-cloud h3{margin:2px 0 3px;font-size:19px;color:#3e4c61}
+.parent-cloud p{margin:0;font-size:12px;line-height:1.45;color:#68717d}
+.parent-cloud-login{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.parent-cloud-login label{display:flex;flex-direction:column;gap:3px;font-size:10px;color:#677080;font-weight:750}
+.parent-cloud-login input{min-width:0;min-height:40px;padding:7px 9px;border:1px solid #d7dce4;border-radius:11px;background:white;color:#394352;font:inherit}
+.parent-cloud-login>div{grid-column:1/3;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.parent-cloud-login button,.parent-cloud-actions button{min-height:42px}
+.parent-cloud-actions{display:flex;justify-content:flex-end;align-items:center;gap:7px;flex-wrap:wrap}
+.parent-cloud-status{grid-column:1/3;padding:8px 10px;border-radius:11px;background:#fff6db;color:#6f5825!important;font-weight:700}
+.parent-cloud>.note{grid-column:1/3;margin:0}
+@media(max-width:720px){
+ .parent-cloud{grid-template-columns:1fr;padding:11px 12px;gap:9px}
+ .parent-cloud-login{grid-template-columns:1fr}
+ .parent-cloud-login>div,.parent-cloud-status,.parent-cloud>.note{grid-column:1}
+ .parent-cloud-actions{justify-content:stretch}.parent-cloud-actions button{flex:1}
+}
+@media(max-width:420px){
+ .parent-cloud-login input{font-size:16px}
+ .parent-cloud h3{font-size:17px}
+}
