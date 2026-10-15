@@ -12,6 +12,7 @@
     "qa:growth": "node scripts/growth-browser-qa.mjs",
     "qa:learning": "node scripts/learning-loop-browser-qa.mjs",
     "qa:parent": "node scripts/parent-dashboard-browser-qa.mjs",
+    "qa:title": "node scripts/title-page-browser-qa.mjs",
     "check:unified": "node scripts/check-unified-world.mjs",
     "qa:unified": "node scripts/unified-village-browser-qa.mjs",
     "qa:hotspot": "node scripts/unified-village-hotspot-qa.mjs",

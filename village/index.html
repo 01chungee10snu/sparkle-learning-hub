@@ -30,6 +30,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./mobile-art-polish.css?v=headerless-20261013">
 <link rel="stylesheet" href="./experience-v10.css?v=gameplay-20261013">
 <link rel="stylesheet" href="./fairy-variations-v11.css?v=character-20261013">
+<link rel="stylesheet" href="./title-v15.css?v=title-v15-20261015">
 </head>
 <body>
 <div id="page">
@@ -41,18 +42,50 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
     </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
     <div id="village-ui" hidden></div>
-    <section id="loading" aria-live="polite">
-      <div class="panel">
-        <h1>✨ 태희·세희의 마법마을</h1>
-        <img class="vh-welcome-art" src="./assets/illustrations/welcome.webp" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 사이에서 환영해요." width="1200" height="520" decoding="async">
-        <p>이야기 도서관·수학 정원·영어 숲·경시대회 성을 누비며 하나의 세계에서 배워요. 정원과 별 상점도 함께해요.</p>
-        <div id="learner-choices" role="group" aria-label="마법마을에 들어갈 어린이"><button type="button" data-learner="tae" aria-pressed="true">🌸 태희</button><button type="button" data-learner="se" aria-pressed="false">🌙 세희</button></div>
-        <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
-        <div id="meter" hidden><div id="bar"></div></div>
-        <button id="start">✨ 3D 마법마을 입장하기</button>
-        <button id="lite" type="button">🌷 가벼운 2D 마을로 시작하기</button>
-        <p class="vh-storage-note"><small>기록은 이 기기에 저장돼요. 기기를 바꿀 때는 학습기록 메뉴에서 내보내기·가져오기를 이용해 주세요. 이전 공개판 별은 임의로 합치지 않아요.</small></p>
-        <a class="vh-entry-record-link" href="../learning.html?view=workbooks">📚 기존 학습기록·문제집 열기</a>
+    <section id="loading" aria-live="polite" data-active-learner="tae">
+      <div class="panel title-shell">
+        <section class="title-visual" aria-labelledby="magic-village-title">
+          <header class="title-brand">
+            <span class="title-kicker">Magic Learning Village</span>
+            <h1 id="magic-village-title">태희·세희의 <strong>마법마을</strong></h1>
+            <p class="title-tagline">배우면, 우리 마을이 자라요.</p>
+          </header>
+          <figure class="title-art-wrap">
+            <img class="title-art" src="./assets/illustrations/welcome.webp" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 앞에서 함께 서 있는 마법마을" width="1200" height="520" decoding="async">
+            <figcaption>수학 정원 · 이야기 도서관 · 영어 숲이 하나의 마을로 이어져요</figcaption>
+          </figure>
+          <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
+        </section>
+        <section class="title-entry" aria-labelledby="title-entry-heading">
+          <p class="title-entry-eyebrow">오늘 누구의 마을로 갈까요?</p>
+          <h2 id="title-entry-heading">나의 요정을 선택해요</h2>
+          <div id="learner-choices" class="title-learner-choices" role="group" aria-label="마법마을에 들어갈 어린이">
+            <button type="button" data-learner="tae" aria-pressed="true">
+              <img class="title-learner-art" src="./assets/taehee_original.png" alt="" width="1254" height="1254">
+              <span class="title-learner-copy"><strong>태희</strong><small>분홍 별 요정 · 나의 마을</small></span>
+            </button>
+            <button type="button" data-learner="se" aria-pressed="false">
+              <img class="title-learner-art" src="./assets/sehee_original.png" alt="" width="1254" height="1254">
+              <span class="title-learner-copy"><strong>세희</strong><small>연보라 달 요정 · 나의 마을</small></span>
+            </button>
+          </div>
+          <div class="title-destinations" aria-label="마법마을 학습 지역">
+            <span><img src="./assets/illustrations/math-icon.webp" alt="" width="30" height="30">수학 정원</span>
+            <span><img src="./assets/illustrations/korean-icon.webp" alt="" width="30" height="30">이야기 도서관</span>
+            <span><img src="./assets/illustrations/english-icon.webp" alt="" width="30" height="30">영어 숲</span>
+          </div>
+          <div class="title-actions">
+            <button id="start"><span>✨ 3D 마법마을 입장</span><small>걷고 · 만나고 · 배우기</small></button>
+            <button id="lite" type="button"><span>🌷 가벼운 2D 마을</span><small>빠르게 학습 시작하기</small></button>
+          </div>
+          <p id="status" class="title-status">태희의 마법마을을 준비하고 있어요.</p>
+          <div id="meter" hidden><div id="bar"></div></div>
+          <div class="title-entry-links">
+            <a class="vh-entry-record-link" href="../learning.html?view=workbooks">📚 학습기록·문제집</a>
+            <a class="vh-entry-parent-link" href="../learning.html?view=parents">👪 보호자 대시보드</a>
+          </div>
+          <p class="vh-storage-note"><small>현재 기록은 이 기기에 저장됩니다. 기기 간 동기화는 클라우드 연결 후 활성화합니다.</small></p>
+        </section>
       </div>
     </section>
   </main>
@@ -70,15 +103,22 @@ const start = document.querySelector('#start');
 const lite = document.querySelector('#lite');
 const liteScene = document.querySelector('#lite-village-scene');
 let liteMode = false;
+const syncEntryLearner=()=>{
+  const who=Progress.learner(),name=Progress.LEARNERS[who]?.name||'요정';
+  overlay.dataset.activeLearner=who;
+  status.textContent=name+'의 마법마을을 준비하고 있어요.';
+};
 for(const control of document.querySelectorAll('[data-learner]')){
  control.addEventListener('click',()=>{
    if(start.disabled)return;
    Progress.selectLearner(control.dataset.learner);
    document.querySelectorAll('[data-learner]').forEach(button=>
      button.setAttribute('aria-pressed',String(button===control)));
+   syncEntryLearner();
  });
  control.setAttribute('aria-pressed',String(control.dataset.learner===Progress.learner()));
 }
+syncEntryLearner();
 const meter = document.querySelector('#meter');
 const bar = document.querySelector('#bar');
 let instance = null;

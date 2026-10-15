@@ -30,7 +30,9 @@ function overlaps(a,b){
 }
 try{
  await page.goto(origin+'/village/',{waitUntil:'networkidle',timeout:90000});
- assert(await page.locator('.vh-welcome-art').evaluate(el=>el.complete&&el.naturalWidth>0),'Welcome illustration failed');
+ assert(await page.locator('.title-art').evaluate(el=>el.complete&&el.naturalWidth>0),'Title illustration failed');
+ assert.equal(await page.locator('#learner-choices .title-learner-art').count(),2,'Learner artwork missing');
+ assert((await page.locator('.vh-entry-parent-link').getAttribute('href')).includes('learning.html?view=parents'),'Parent dashboard entry missing');
  assert.equal(await page.locator('#page > header').count(),0,'Standalone top bar must be removed');
  assert((await page.locator('.vh-entry-record-link').getAttribute('href')).includes('learning.html?view=workbooks'),
    'Learning records should remain accessible before entering');
@@ -90,16 +92,22 @@ try{
   console.log(pass?'PASS':'FAIL',size.name,JSON.stringify({collisions,short:short.map(t=>t.id),horizontalOverflow,fillsScreen,compactHud}));
  }
  await page.setViewportSize({width:390,height:844});
- await page.locator('[data-district="english"]').click();
+ // Current child-facing UX hides the legacy subject rail. Enter English through
+ // the visible adventure map, then verify the matching source illustration.
+ await page.locator('#vh-map').click();
+ await page.locator('.vh-story-card').filter({hasText:'나비의 인사'}).locator('.vh-story-go').click();
+ await page.locator('.vh-story-option').first().click();
+ await page.waitForFunction(()=>document.querySelector('#vh-title')?.textContent.includes('영어'),undefined,{timeout:15000});
  await page.locator('.vh-area-banner img').waitFor({timeout:15000});
- await page.locator('.vh-area-banner img').scrollIntoViewIfNeeded();
  await page.waitForFunction(()=>{const img=document.querySelector('.vh-area-banner img');return img?.complete&&img.naturalWidth>0},undefined,{timeout:15000});
  const banner=await page.locator('.vh-area-banner img').evaluate(img=>img.complete&&img.naturalWidth>0);
  assert(banner,'World-matching English illustration failed to load');
  await page.screenshot({path:path.join(output,'galaxy-english-area.png')});
  await page.locator('#vh-exit').click();
- await page.locator('[data-district="practice"]').click();
- await page.screenshot({path:path.join(output,'galaxy-practice-area.png')});
+ // The learning-first shortcut replaced the old visible practice rail.
+ await page.locator('#vh-adaptive').click();
+ await page.locator('.vh-learning-loop').waitFor({timeout:15000});
+ await page.screenshot({path:path.join(output,'galaxy-learning-loop.png')});
  await page.locator('#vh-exit').click();
  await page.locator('#vh-more').click();
  await page.locator('#vh-records').waitFor({state:'visible',timeout:5000});
