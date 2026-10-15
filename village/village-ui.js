@@ -48,6 +48,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-wardrobe" type="button" class="vh-shortcut">🎀 요정 스타일</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <button id="vh-friends" type="button" class="vh-shortcut">💞 마을 친구들</button>',
+    ' <button id="vh-ecology" type="button" class="vh-shortcut">🌿 배움 생태계</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
     ' <a id="vh-parent-dashboard" class="vh-shortcut vh-record-link" href="../learning.html?view=parents" aria-label="보호자 학습 대시보드 열기">👪 보호자 대시보드</a>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
@@ -87,7 +88,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     name:$('vh-name'), area:$('vh-area'), stars:$('vh-stars'),
     progress:$('vh-progress'), outfit:$('vh-outfit'), help:$('vh-help'),
     home:$('vh-home'), plaza:$('vh-plaza'), quest:$('vh-quest'), bebsu:$('vh-bebsu'),
-    adaptive:$('vh-adaptive'), shop:$('vh-shop'), friends:$('vh-friends'), pose:$('vh-pose'), shortcuts:$('vh-world-shortcuts'),
+    adaptive:$('vh-adaptive'), shop:$('vh-shop'), friends:$('vh-friends'), ecology:$('vh-ecology'), pose:$('vh-pose'), shortcuts:$('vh-world-shortcuts'),
     dialog:$('village-dialog-wrap'), title:$('vh-title'),
     counter:$('vh-counter'), body:$('vh-body'), exit:$('vh-exit'),
     listen:$('vh-listen'), hint:$('vh-hint'), note:$('vh-note'), controls:$('village-controls'),
@@ -311,6 +312,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   });
   $('vh-wave').addEventListener('click',()=>{if(safeExplore())sendToUnity('WAVE');});
   ui.friends.addEventListener('click',()=>{if(safeExplore())request('RELATIONSHIP_OPEN');});
+  ui.ecology.addEventListener('click',()=>{if(safeExplore())request('ECOLOGY_OPEN');});
   function showGarden(data) {
     if(!data.garden)return;
     careGarden=data.garden;open();resetBody();phase='garden';theme('garden');root.dataset.mode='garden';
@@ -849,7 +851,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       bunny:['🐰','토끼 친구'],cat:['🐱','별 가게 고양이'],squirrel:['🐿️','다람쥐 탐험가'],
       owl:['🦉','부엉이 친구'],tutor:['📚','뱁수 선생님']
     };
-    const levels={new:'처음 만나는 사이',familiar:'익숙한 사이',friend:'친구',special:'특별한 친구'};
+    const levels={new:'처음 만나는 사이',familiar:'익숙한 사이',friend:'친구',special:'특별한 친구',guardian:'기억을 지키는 친구'};
     const grid=label('div','','vh-friend-grid');
     for(const relation of data.relationships){
       const [emoji,name]=meta[relation.id]||['✨',relation.id];
@@ -859,7 +861,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       copy.append(label('strong',name,'vh-friend-name'));
       copy.append(label('span',levels[relation.level]||levels.new,'vh-friend-level'));
       copy.append(label('p',relation.line1||'반가워!','vh-friend-line'));
-      if(relation.memory14>0)copy.append(label('small','🌠 오래 기억한 배움을 함께 본 친구','vh-friend-memory'));
+      if(relation.memory30>0)copy.append(label('small','🌳 한 달의 기억이 수호수로 자라는 걸 함께 본 친구','vh-friend-memory'));
+      else if(relation.memory14>0)copy.append(label('small','🌠 오래 기억한 배움을 함께 본 친구','vh-friend-memory'));
       else if(relation.memory7>0)copy.append(label('small','🦋 기억나비를 함께 본 친구','vh-friend-memory'));
       card.append(copy);grid.append(card);
     }
@@ -868,8 +871,30 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     residents.append(label('h3','마을에 머무는 특별한 친구','vh-learning-loop-title'));
     if(data.residents?.memoryButterfly)residents.append(label('p','🦋 기억나비 · 7일 이상 지난 배움을 스스로 다시 기억해 마을에 머물기 시작했어요.','vh-story-detail'));
     if(data.residents?.starlightOwl)residents.append(label('p','🦉✨ 별빛 기억 부엉이 · 14일 이상 지난 배움을 다시 기억해 별빛 언덕에 정착했어요.','vh-story-detail'));
-    if(!data.residents?.memoryButterfly&&!data.residents?.starlightOwl)residents.append(label('p','아직 희귀 친구가 정착하지 않았어요. 오래 지난 배움을 다시 떠올리면 자연스럽게 찾아와요.','vh-story-detail'));
+    if(data.residents?.memoryGuardian)residents.append(label('p','🌳 기억 수호수 · 한 달 이상 지난 배움을 다시 기억해 마을에 깊게 뿌리내렸어요.','vh-story-detail'));
+    if(!data.residents?.memoryButterfly&&!data.residents?.starlightOwl&&!data.residents?.memoryGuardian)residents.append(label('p','아직 희귀 친구가 정착하지 않았어요. 오래 지난 배움을 다시 떠올리면 자연스럽게 찾아와요.','vh-story-detail'));
     ui.body.append(residents);ui.title.focus({preventScroll:true});
+  }
+  function showEcology(data){
+    if(!Array.isArray(data.ecology)){announce('배움 생태계를 다시 불러와 주세요.');return;}
+    phase='ecology';open();resetBody();theme('garden');root.dataset.mode='ecology';
+    ui.title.textContent='🌿 오래 기억한 배움 생태계';ui.counter.textContent='기억이 자라는 곳';
+    ui.hint.hidden=true;ui.listen.hidden=true;ui.note.textContent='문제를 많이 푼 양이 아니라, 며칠 뒤에도 다시 기억한 배움만 자라요.';
+    paragraph('오래 기억한 배움의 종류가 꽃·숲·길로 남아요. 아직 싹트지 않은 곳도 천천히 기다려요.','vh-story');
+    const grid=label('div','','vh-ecology-grid');
+    for(const habitat of data.ecology){
+      const active=(habitat.events||0)>0,tier=habitat.tier||'';
+      const card=label('article','',`vh-ecology-card ${active?'active':''} ${tier}`);
+      card.append(label('span',habitat.emoji||'🌱','vh-ecology-icon'));
+      const copy=label('div','','vh-ecology-copy');copy.append(label('strong',habitat.name||'배움터','vh-ecology-name'));
+      copy.append(label('span',!active?'아직 씨앗을 기다리는 중':tier==='memory-30'?'30일 기억 · 깊게 뿌리내림':tier==='memory-14'?'14일 기억 · 환하게 자람':'7일 기억 · 새싹이 남음','vh-ecology-level'));
+      if(active&&Array.isArray(habitat.skills)&&habitat.skills.length)copy.append(label('p',habitat.skills.slice(0,2).join(' · '),'vh-ecology-skills'));
+      card.append(copy);grid.append(card);
+    }
+    ui.body.append(grid);
+    const guardian=label('section','','vh-resident-panel');guardian.append(label('h3','🌳 기억 수호수','vh-learning-loop-title'));
+    guardian.append(label('p',data.ecologyGuardian?'한 달 이상 지난 배움을 스스로 다시 기억해 수호수가 마을에 뿌리내렸어요.':'30일 이상 지난 배움을 다시 기억하면 수호수가 자라기 시작해요.','vh-story-detail'));
+    ui.body.append(guardian);ui.title.focus({preventScroll:true});
   }
   function showAdaptive(model) {
     if (!model || !Array.isArray(model.routes)) {announce('적응형 문항 추천을 확인할 수 없어요.');return;}
@@ -1084,10 +1109,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showRewardArt(isChallenge?'star_rainbow':'bloom');
     if(result.gardenAdded!==false)sessionRounds++;
     paragraph(result.gardenAdded===false?'이 이야기의 꽃은 이미 정원에 피어 있어요.':'마을에 새로운 꽃이 피었어요!','vh-feedback');
-    if(result.memoryMoment==='memory-14'||result.memoryMoment==='memory-7'){
-      const memory=label('section','',`vh-memory-moment ${result.memoryMoment==='memory-14'?'rare':''}`);
-      memory.append(label('span',result.memoryMoment==='memory-14'?'🌠':'🦋','vh-memory-icon'));
-      memory.append(label('strong',result.memoryMoment==='memory-14'?'별빛 기억축제!':'기억나비가 찾아왔어요!','vh-memory-title'));
+    if(['memory-30','memory-14','memory-7'].includes(result.memoryMoment)){
+      const memory=label('section','',`vh-memory-moment ${result.memoryMoment==='memory-30'?'guardian':result.memoryMoment==='memory-14'?'rare':''}`);
+      memory.append(label('span',result.memoryMoment==='memory-30'?'🌳':result.memoryMoment==='memory-14'?'🌠':'🦋','vh-memory-icon'));
+      memory.append(label('strong',result.memoryMoment==='memory-30'?'기억 수호수가 자랐어요!':result.memoryMoment==='memory-14'?'별빛 기억축제!':'기억나비가 찾아왔어요!','vh-memory-title'));
       memory.append(label('p',`${result.memoryDays||7}일 이상 지난 내용을 힌트 없이 다시 기억했어요. ${result.memoryItems||1}개의 기억이 오래 남아 있어요.`,'vh-memory-copy'));
       ui.body.append(memory);
     }
@@ -1107,7 +1132,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     paragraph('어떤 단서를 보고 답을 골랐나요? 가족에게 내 생각을 한 문장으로 들려주세요.','vh-explanation');
     if(sessionRounds>=3)paragraph('세 번의 이야기를 마쳤어요. 눈과 몸도 잠깐 쉬어볼까요?','vh-small');
     mostRecentRoundId=result.roundId||'';
-    voiceText=result.memoryMoment==='memory-14'?'오래 지난 기억을 스스로 다시 꺼냈어요. 별빛 기억축제가 열렸어요.':result.memoryMoment==='memory-7'?'며칠 전 배운 것을 스스로 다시 기억했어요. 기억나비가 찾아왔어요.':'오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
+    voiceText=result.memoryMoment==='memory-30'?'한 달 전 배운 것을 스스로 다시 기억했어요. 기억 수호수가 마을에 뿌리내렸어요.':result.memoryMoment==='memory-14'?'오래 지난 기억을 스스로 다시 꺼냈어요. 별빛 기억축제가 열렸어요.':result.memoryMoment==='memory-7'?'며칠 전 배운 것을 스스로 다시 기억했어요. 기억나비가 찾아왔어요.':'오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
     if(mostRecentRoundId)ui.body.append(button('💬 배운 방법을 말로 설명하고 기록하기',()=>showReflection(mostRecentRoundId),'vh-reflect-cta'));
     ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
     ui.exit.hidden=true;
@@ -1206,6 +1231,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     else if(['SHOP_OPEN','SHOP_BUY','SHOP_EQUIP','SHOP_UNEQUIP'].includes(data.action))showShop(data.shop);
     else if(data.action==='ADAPTIVE_OFFER')showAdaptive(data.adaptive);
     else if(data.action==='RELATIONSHIP_OPEN')showFriends(data);
+    else if(data.action==='ECOLOGY_OPEN')showEcology(data);
     else if (data.action==='START' || data.action==='NEXT') {
       if (data.finished) {
         phase='waiting';

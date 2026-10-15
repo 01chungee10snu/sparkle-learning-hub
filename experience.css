@@ -380,3 +380,12 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 .parent-friends li span{font-size:13px;font-weight:750}.parent-friends li small{font-size:10px;color:var(--muted);text-align:right}
 .parent-resident-summary{margin:9px 0 0;font-size:12px;color:#66566e}
 @media(max-width:620px){.parent-friends>div{display:block}.parent-friends>div p{text-align:left;margin-top:3px}.parent-friends ul{grid-template-columns:1fr}.parent-friends li{align-items:center}}
+
+/* v19 skill ecology evidence for parents. */
+.parent-ecology{padding:13px 15px;border:1px solid #d6e2d0;border-radius:18px;background:linear-gradient(125deg,#fbfff7,#fffaf0)}
+.parent-ecology>div{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:8px}
+.parent-ecology h3{margin:0;font-size:18px}.parent-ecology>div p{margin:0;font-size:11px;color:var(--muted);text-align:right}
+.parent-ecology ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:0}
+.parent-ecology li{display:flex;justify-content:space-between;gap:8px;padding:8px 9px;border-radius:12px;background:#fff;border:1px solid #e6ecdf}
+.parent-ecology li span{font-size:13px;font-weight:750}.parent-ecology li small{font-size:10px;color:var(--muted);text-align:right}
+@media(max-width:620px){.parent-ecology>div{display:block}.parent-ecology>div p{text-align:left;margin-top:3px}.parent-ecology ul{grid-template-columns:1fr}.parent-ecology li{align-items:center}}

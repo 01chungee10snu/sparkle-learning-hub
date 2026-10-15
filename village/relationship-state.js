@@ -19,7 +19,7 @@ function cleanEvent(id,value){
    if(!/^[0-9]{8}$/.test(value.day||''))return null;
    return {type:'visit',npcId:value.npcId,at:value.at,day:value.day};
  }
- if(!['memory-7','memory-14'].includes(value.tier)||typeof value.roundId!=='string'||value.roundId.length>128)
+ if(!['memory-7','memory-14','memory-30'].includes(value.tier)||typeof value.roundId!=='string'||value.roundId.length>128)
    return null;
  if(value.subject!==undefined&&!['math','korean','english'].includes(value.subject))return null;
  return {type:'memory',npcId:value.npcId,at:value.at,tier:value.tier,roundId:value.roundId,
@@ -54,7 +54,7 @@ export function recordVisit(state,{who,npcId,at=Date.now()}){
  return {state:out,added,eventId:id};
 }
 export function recordMemory(state,{who,subject='',tier,roundId,at=Date.now()}){
- if(!KIDS.has(who)||!['memory-7','memory-14'].includes(tier)||
+ if(!KIDS.has(who)||!['memory-7','memory-14','memory-30'].includes(tier)||
     typeof roundId!=='string'||!roundId||roundId.length>128||!Number.isSafeInteger(at)||at<0)
    throw new Error('기억 친구 기록을 확인해 주세요.');
  if(subject&&!['math','korean','english'].includes(subject))throw new Error('기억 과목을 확인해 주세요.');
@@ -76,12 +76,17 @@ function npcSummary(events,npcId){
  const visits=rows.filter(e=>e.type==='visit').length;
  const memory7=rows.filter(e=>e.type==='memory'&&e.tier==='memory-7').length;
  const memory14=rows.filter(e=>e.type==='memory'&&e.tier==='memory-14').length;
+ const memory30=rows.filter(e=>e.type==='memory'&&e.tier==='memory-30').length;
  const lastSeenAt=rows.reduce((m,e)=>Math.max(m,e.at||0),0);
- const level=memory14>0?'special':memory7>0||visits>=4?'friend':visits>0?'familiar':'new';
- return {id:npcId,visits,memory7,memory14,lastSeenAt,level};
+ const level=memory30>0?'guardian':memory14>0?'special':memory7>0||visits>=4?'friend':visits>0?'familiar':'new';
+ return {id:npcId,visits,memory7,memory14,memory30,lastSeenAt,level};
 }
 function linesFor(summary){
  const [first,second]=defaults[summary.id]||['반가워!','마을에서 다시 만나자.'];
+ if(summary.memory30>0){
+   if(summary.id==='owl')return ['한 달 전 배운 방법을 다시 꺼냈구나!','기억 수호수가 네 배움을 오래 지켜보고 있어.'];
+   return ['한 달이 지나도 그 배움을 기억하고 있구나!','기억 수호수가 마을에 뿌리내렸어.'];
+ }
  if(summary.memory14>0){
    if(summary.id==='owl')return ['오래전 배운 방법을 다시 꺼냈구나!','별빛 언덕에서도 네 기억을 봤어.'];
    return ['오래 지난 기억을 스스로 다시 찾았구나!','우리 마을에 별빛 친구가 머물기 시작했어.'];
@@ -95,16 +100,18 @@ export function familyResidentSnapshot(state){
  const clean=cleanRelationships(state),events=['tae','se'].flatMap(who=>Object.values(clean.profiles[who].events));
  const memory7=events.filter(e=>e.type==='memory'&&e.tier==='memory-7').length;
  const memory14=events.filter(e=>e.type==='memory'&&e.tier==='memory-14').length;
- return {memoryButterfly:memory7+memory14>0,starlightOwl:memory14>0};
+ const memory30=events.filter(e=>e.type==='memory'&&e.tier==='memory-30').length;
+ return {memoryButterfly:memory7+memory14+memory30>0,starlightOwl:memory14+memory30>0,memoryGuardian:memory30>0};
 }
 export function relationshipSnapshot(state,who){
  if(!KIDS.has(who))throw new Error('학습자를 확인해 주세요.');
  const clean=cleanRelationships(state),events=clean.profiles[who].events;
  const npcs=NPCS.map(id=>{const row=npcSummary(events,id),[line1,line2]=linesFor(row);return {...row,line1,line2};});
  const all=Object.values(events),memory7=all.filter(e=>e.type==='memory'&&e.tier==='memory-7').length,
-   memory14=all.filter(e=>e.type==='memory'&&e.tier==='memory-14').length;
- return {who,npcs,residents:{memoryButterfly:memory7+memory14>0,starlightOwl:memory14>0},
-   totals:{visits:all.filter(e=>e.type==='visit').length,memory7,memory14}};
+   memory14=all.filter(e=>e.type==='memory'&&e.tier==='memory-14').length,
+   memory30=all.filter(e=>e.type==='memory'&&e.tier==='memory-30').length;
+ return {who,npcs,residents:{memoryButterfly:memory7+memory14+memory30>0,starlightOwl:memory14+memory30>0,memoryGuardian:memory30>0},
+   totals:{visits:all.filter(e=>e.type==='visit').length,memory7,memory14,memory30}};
 }
 let inMemory=emptyRelationships(),dirty=false;
 export function loadRelationships(storage=globalThis.localStorage){

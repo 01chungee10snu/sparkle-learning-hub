@@ -24,7 +24,7 @@ const progress={completedRounds:[
   {id:'qt-b',roundId:'r-transfer',correct:true,at:now}
  ]}
 }};
-assert.deepEqual(retainedMemoryMoment(progress,'missing'),{kind:'',days:0,items:0,maxDelayDays:0});
+assert.deepEqual(retainedMemoryMoment(progress,'missing'),{kind:'',days:0,items:0,maxDelayDays:0,questionIds:[]});
 const rare=retainedMemoryMoment(progress,'r-review');
 assert.equal(rare.kind,'memory-14');
 assert.equal(rare.days,14);
@@ -36,4 +36,11 @@ const sevenOnly={completedRounds:[{id:'r7',purpose:'review',questionIds:['q']}],
  q:{attempts:[{id:'a',roundId:'old',correct:true,at:now-8*DAY},{id:'b',roundId:'r7',correct:true,at:now}]}
 }};
 assert.equal(retainedMemoryMoment(sevenOnly,'r7').kind,'memory-7');
-console.log('LEARNING_MOMENTS_PASS',rare);
+const thirty={completedRounds:[{id:'r30',purpose:'review',questionIds:['q']}],records:{
+ q:{attempts:[{id:'a30',roundId:'old30',correct:true,at:now-35*DAY},{id:'b30',roundId:'r30',correct:true,at:now}]}
+}};
+const long=retainedMemoryMoment(thirty,'r30');
+assert.equal(long.kind,'memory-30');
+assert.equal(long.days,30);
+assert.deepEqual(long.questionIds,['q']);
+console.log('LEARNING_MOMENTS_PASS',rare,long);

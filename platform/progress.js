@@ -21,6 +21,10 @@ export function configureIrtBank(bank){
  if(!bank||bank.count!==expected||!Array.isArray(bank.items)||bank.items.length!==expected||bank.items.some(item=>!allowedQuestions.get(item.gameId)?.has(item.id)))throw new Error('난이도 색인과 문항 목록이 일치하지 않아요.');
  return IRT.configureBank(bank);
 }
+export function itemEvidence(gameId,questionId){
+ const item=IRT.itemAt(gameId,questionId);
+ return item?{subject:item.subject,skill:item.skill,stage:item.stage,b:item.b,c:item.c}:null;
+}
 const ATTEMPT_LIMIT=5,ROUND_LIMIT=100;
 const LEARNING_PURPOSES=new Set(['foundation','review','challenge','transfer']);
 const LEARNING_STRATEGIES=new Set(['adaptive','review']);

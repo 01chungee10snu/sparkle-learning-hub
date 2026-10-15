@@ -8,7 +8,8 @@ import * as LearningDirector from '../platform/learning-director.js?v=parent-v14
 import {retainedMemoryMoment} from '../platform/learning-moments.js?v=relationship-v18-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
-import * as Relationships from './relationship-state.js?v=relationship-v18-20261015';
+import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
+import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
   .map(grade=>'bebsu-'+grade+'-original');
@@ -142,8 +143,9 @@ export function createVillageHost(emit) {
     };
   }
 
-  function reconcileMemoryRelationships(who){
+  function reconcileMemoryWorld(who){
     let state=Relationships.loadRelationships(),changed=false;
+    let ecologyState=Ecology.loadEcology(),ecologyChanged=false;
     for(const entry of catalog||[]){
       if(entry.kind!=='quiz'||entry.status!=='published')continue;
       const progress=Progress.gameProgress(entry.id,who);
@@ -155,10 +157,15 @@ export function createVillageHost(emit) {
           who,subject:entry.subject||'',tier:moment.kind,roundId:round.id,at:round.at||Date.now()
         });
         state=recorded.state;changed=changed||recorded.added;
+        const skills=[...new Set((moment.questionIds||[]).map(id=>Progress.itemEvidence(entry.id,id)?.skill).filter(Boolean))];
+        const eco=Ecology.recordEcologyMemory(ecologyState,{who,subject:entry.subject||'',tier:moment.kind,
+          roundId:round.id,skills,at:round.at||Date.now()});
+        ecologyState=eco.state;ecologyChanged=ecologyChanged||eco.added;
       }
     }
     if(changed)Relationships.saveRelationships(state);
-    return state;
+    if(ecologyChanged)Ecology.saveEcology(ecologyState);
+    return {relationships:state,ecology:ecologyState};
   }
 
   function snapshot(action, requestId, extras = {}) {
@@ -169,6 +176,8 @@ export function createVillageHost(emit) {
     const relationshipState=Relationships.loadRelationships();
     const relationship=Relationships.relationshipSnapshot(relationshipState,who);
     const residents=currentArea==='plaza'?Relationships.familyResidentSnapshot(relationshipState):relationship.residents;
+    const ecologyState=Ecology.loadEcology();
+    const ecology=currentArea==='plaza'?Ecology.familyEcologySnapshot(ecologyState):Ecology.ecologySnapshot(ecologyState,who);
     return respond(action, requestId, {
       cosmetics: {
         light: wallet.equipped || '',
@@ -191,6 +200,9 @@ export function createVillageHost(emit) {
       relationships:relationship.npcs,
       residents,
       relationshipTotals:relationship.totals,
+      ecology:ecology.habitats,
+      ecologyGuardian:ecology.guardianTree,
+      ecologyTotals:ecology.totals,
       ...extras
     });
   }
@@ -211,8 +223,9 @@ export function createVillageHost(emit) {
         species:request.species,care:request.care,expectedStage:request.expectedStage}));
     }
 
-    if (action === 'INIT') {reconcileMemoryRelationships(who);return snapshot(action, requestId);}
-    if (action === 'RELATIONSHIP_OPEN') {reconcileMemoryRelationships(who);return snapshot(action,requestId);}
+    if (action === 'INIT') {reconcileMemoryWorld(who);return snapshot(action, requestId);}
+    if (action === 'RELATIONSHIP_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
+    if (action === 'ECOLOGY_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
     if (action === 'NPC_VISIT') {
       const visit=Relationships.recordVisit(Relationships.loadRelationships(),{who,npcId:itemId,at:Date.now()});
       if(visit.added&&!Relationships.saveRelationships(visit.state))
@@ -408,6 +421,12 @@ export function createVillageHost(emit) {
         });
         if(relation.added&&!Relationships.saveRelationships(relation.state))
           throw new Error('기억 친구 기록을 저장하지 못했어요.');
+        const skills=[...new Set((memoryMoment.questionIds||[]).map(id=>Progress.itemEvidence(gameId,id)?.skill).filter(Boolean))];
+        const ecology=Ecology.recordEcologyMemory(Ecology.loadEcology(),{
+          who,subject,tier:memoryMoment.kind,roundId,skills,at:Date.now()
+        });
+        if(ecology.added&&!Ecology.saveEcology(ecology.state))
+          throw new Error('배움 생태계 기록을 저장하지 못했어요.');
       }
       return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added,
         memoryMoment:updated.added?memoryMoment.kind:'',memoryDays:updated.added?memoryMoment.days:0,memoryItems:updated.added?memoryMoment.items:0,

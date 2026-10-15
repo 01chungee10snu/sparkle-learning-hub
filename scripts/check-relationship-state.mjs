@@ -24,6 +24,11 @@ snap=R.relationshipSnapshot(state,'tae');
 assert.equal(snap.residents.starlightOwl,true);
 assert.equal(snap.npcs.find(n=>n.id==='owl').level,'special');
 assert(snap.npcs.find(n=>n.id==='owl').line1.includes('오래전'));
+state=R.recordMemory(state,{who:'tae',subject:'math',tier:'memory-30',roundId:'r30',at:day+32*86400000}).state;
+snap=R.relationshipSnapshot(state,'tae');
+assert.equal(snap.residents.memoryGuardian,true);
+assert.equal(snap.npcs.find(n=>n.id==='owl').level,'guardian');
+assert(snap.npcs.find(n=>n.id==='owl').line1.includes('한 달'));
 
 assert.equal(R.relationshipSnapshot(state,'se').totals.visits,0,'siblings must remain isolated');
 assert.equal(R.familyResidentSnapshot(state).starlightOwl,true,'family plaza should share verified rare residents');
@@ -32,4 +37,5 @@ const exported=R.exportRelationships();
 globalThis.localStorage=new Storage();
 R.importRelationships(exported);
 assert.equal(R.relationshipSnapshot(R.loadRelationships(),'tae').totals.memory14,1);
+assert.equal(R.relationshipSnapshot(R.loadRelationships(),'tae').totals.memory30,1);
 console.log('RELATIONSHIP_STATE_PASS',snap.totals);

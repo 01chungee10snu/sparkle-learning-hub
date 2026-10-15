@@ -107,3 +107,14 @@
  .vh-friend-icon{width:44px;height:44px;font-size:26px}
  .vh-friend-name{font-size:15px}.vh-friend-line{font-size:11px}
 }
+
+/* v19 skill ecology — qualitative delayed-retrieval habitats. */
+.vh-ecology-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.vh-ecology-card{display:grid;grid-template-columns:46px minmax(0,1fr);gap:9px;align-items:center;padding:10px;border:1px dashed #ded9df;border-radius:16px;background:#faf9fa;opacity:.72}
+.vh-ecology-card.active{opacity:1;border-style:solid;border-color:#cdddc4;background:linear-gradient(145deg,#fff,#f6fbf2)}
+.vh-ecology-card.memory-14{border-color:#d8c7e8;background:linear-gradient(145deg,#fffdf2,#f6f0ff)}
+.vh-ecology-card.memory-30{border-color:#d5b967;background:linear-gradient(145deg,#fff8df,#f3faee);box-shadow:0 3px 12px rgba(103,83,39,.10)}
+.vh-ecology-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;font-size:27px;box-shadow:inset 0 0 0 1px #ebe6ed}
+.vh-ecology-copy{min-width:0;display:flex;flex-direction:column;gap:2px}.vh-ecology-name{font-size:15px;color:#4d4d42}.vh-ecology-level{font-size:10px;font-weight:850;color:#6d6a70}.vh-ecology-skills{margin:2px 0 0;font-size:10px;line-height:1.35;color:#766e76}
+.vh-memory-moment.guardian{border-color:#d2af52;background:linear-gradient(125deg,#fff5c9,#eef8dc 55%,#f6efff)}
+@media(max-width:520px){.vh-ecology-grid{grid-template-columns:1fr}.vh-ecology-card{padding:8px;grid-template-columns:42px minmax(0,1fr)}.vh-ecology-icon{width:42px;height:42px;font-size:24px}}

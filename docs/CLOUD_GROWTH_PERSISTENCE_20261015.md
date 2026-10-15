@@ -91,3 +91,13 @@ Direct connection 주소를 프로젝트 ref로 추정해서 만들지 않는다
 - familiar/friend/special 관계 단계와 희귀 주민 unlock은 저장하지 않고 이벤트에서 재계산
 - 개인 관계는 learner별 격리
 - 가족 광장의 희귀 주민만 두 learner의 검증 사건을 union하여 파생
+
+## 2026-10-15 Skill Ecology / 30일 기억 확장
+
+추가 migration: `db/migrations/202610150004_skill_ecology_memory30.sql`
+
+- relationship memory tier에 `memory-30` 추가
+- `magic_ecology_events`: verified delayed recall의 raw skill labels 저장
+- habitat 분류(`number-garden`, `word-flower` 등)는 DB에 저장하지 않고 raw skill에서 재계산
+- 30일 기억 수호수 unlock도 파생값으로만 유지
+- 개인 ecology는 learner별 분리, 가족 광장의 ecology만 두 learner의 검증 사건을 union하여 파생
