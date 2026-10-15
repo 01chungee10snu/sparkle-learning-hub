@@ -369,3 +369,14 @@ body{background-image:var(--gift-background,none);background-size:cover;backgrou
 .parent-guide-link,.parent-dashboard-back{width:100%;min-height:44px}
 @media(max-width:820px){.parent-subjects{grid-template-columns:1fr}.parent-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.overlay[data-type="parents"] .dialog{max-width:calc(100vw - 16px);padding:15px}}
 @media(max-width:520px){.parent-dashboard{gap:9px}.parent-dashboard-intro{padding:11px 12px}.parent-dashboard-intro h3{font-size:19px}.parent-dashboard-intro small{font-size:11px}.parent-due-badge{font-size:12px;padding:6px 8px}.parent-kpis{gap:6px}.parent-kpis>div{padding:9px 5px}.parent-kpis strong{font-size:22px}.parent-kpis span{font-size:12px}.parent-kpis small{font-size:10px}.parent-actions-panel{padding:10px 11px}.parent-actions-panel p{font-size:13px}.parent-subject-card{padding:11px}.parent-schedule li{font-size:12px}.memory-chip{max-width:145px}}
+
+/* v18 parent explanation for persistent NPC relationships. */
+.parent-friends{padding:13px 15px;border:1px solid #ddd6e5;border-radius:18px;
+ background:linear-gradient(125deg,#fffdf7,#f8f3ff)}
+.parent-friends>div{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:8px}
+.parent-friends h3{margin:0;font-size:18px}.parent-friends>div p{margin:0;font-size:11px;color:var(--muted);text-align:right}
+.parent-friends ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:0}
+.parent-friends li{display:flex;justify-content:space-between;gap:8px;padding:8px 9px;border-radius:12px;background:#fff;border:1px solid #ece6ef}
+.parent-friends li span{font-size:13px;font-weight:750}.parent-friends li small{font-size:10px;color:var(--muted);text-align:right}
+.parent-resident-summary{margin:9px 0 0;font-size:12px;color:#66566e}
+@media(max-width:620px){.parent-friends>div{display:block}.parent-friends>div p{text-align:left;margin-top:3px}.parent-friends ul{grid-template-columns:1fr}.parent-friends li{align-items:center}}

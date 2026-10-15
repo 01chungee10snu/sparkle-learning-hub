@@ -80,3 +80,30 @@
  .vh-memory-moment{padding:10px 11px;gap:3px 8px}
  .vh-memory-icon{font-size:25px}.vh-memory-title{font-size:15px}.vh-memory-copy{font-size:12px}
 }
+
+/* v18 relationship view: qualitative familiarity, never a competitive score. */
+.vh-friend-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
+.vh-friend-card{display:grid;grid-template-columns:50px minmax(0,1fr);gap:10px;align-items:center;
+ padding:11px;border:1px solid #e2d9e8;border-radius:17px;background:#fff}
+.vh-friend-card.friend{border-color:#bed8b5;background:linear-gradient(145deg,#fff,#f4fbf1)}
+.vh-friend-card.special{border-color:#c9b4e1;background:linear-gradient(145deg,#fff9e6,#f5efff)}
+.vh-friend-icon{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;
+ background:#f8f3fb;font-size:30px;box-shadow:inset 0 0 0 1px #e9dfed}
+.vh-friend-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
+.vh-friend-name{font-size:16px;color:#4d3a59}
+.vh-friend-level{width:max-content;max-width:100%;padding:2px 7px;border-radius:999px;background:#f2edf5;
+ color:#6c5d73;font-size:10px;font-weight:850}
+.vh-friend-card.friend .vh-friend-level{background:#e8f5e3;color:#45653f}
+.vh-friend-card.special .vh-friend-level{background:#eee4fb;color:#654481}
+.vh-friend-line{margin:3px 0 0;font-size:12px;line-height:1.4;color:#625969}
+.vh-friend-memory{margin-top:2px;font-size:10px;color:#806445}
+.vh-resident-panel{margin:12px 0 0;padding:12px 13px;border:1px solid #dfd3e8;border-radius:17px;
+ background:linear-gradient(125deg,#fffdf5,#f8f2ff)}
+.vh-resident-panel h3{margin:0 0 7px}
+.vh-resident-panel p{margin:5px 0}
+@media(max-width:520px){
+ .vh-friend-grid{grid-template-columns:1fr;gap:7px}
+ .vh-friend-card{grid-template-columns:44px minmax(0,1fr);padding:9px}
+ .vh-friend-icon{width:44px;height:44px;font-size:26px}
+ .vh-friend-name{font-size:15px}.vh-friend-line{font-size:11px}
+}

@@ -47,6 +47,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-wave" type="button" class="vh-shortcut">👋 인사</button>',
     ' <button id="vh-wardrobe" type="button" class="vh-shortcut">🎀 요정 스타일</button>',
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
+    ' <button id="vh-friends" type="button" class="vh-shortcut">💞 마을 친구들</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
     ' <a id="vh-parent-dashboard" class="vh-shortcut vh-record-link" href="../learning.html?view=parents" aria-label="보호자 학습 대시보드 열기">👪 보호자 대시보드</a>',
     ' <button id="vh-pose" type="button" class="vh-shortcut" aria-pressed="false" hidden>🎭 8방향 시안</button>',
@@ -86,7 +87,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     name:$('vh-name'), area:$('vh-area'), stars:$('vh-stars'),
     progress:$('vh-progress'), outfit:$('vh-outfit'), help:$('vh-help'),
     home:$('vh-home'), plaza:$('vh-plaza'), quest:$('vh-quest'), bebsu:$('vh-bebsu'),
-    adaptive:$('vh-adaptive'), shop:$('vh-shop'), pose:$('vh-pose'), shortcuts:$('vh-world-shortcuts'),
+    adaptive:$('vh-adaptive'), shop:$('vh-shop'), friends:$('vh-friends'), pose:$('vh-pose'), shortcuts:$('vh-world-shortcuts'),
     dialog:$('village-dialog-wrap'), title:$('vh-title'),
     counter:$('vh-counter'), body:$('vh-body'), exit:$('vh-exit'),
     listen:$('vh-listen'), hint:$('vh-hint'), note:$('vh-note'), controls:$('village-controls'),
@@ -309,6 +310,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     sendToUnity(reducedMotion?'MOTION_LOW':'MOTION_FULL');
   });
   $('vh-wave').addEventListener('click',()=>{if(safeExplore())sendToUnity('WAVE');});
+  ui.friends.addEventListener('click',()=>{if(safeExplore())request('RELATIONSHIP_OPEN');});
   function showGarden(data) {
     if(!data.garden)return;
     careGarden=data.garden;open();resetBody();phase='garden';theme('garden');root.dataset.mode='garden';
@@ -836,6 +838,39 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     },'vh-shop-clear'));
     ui.title.focus({preventScroll:true});
   }
+  function showFriends(data){
+    if(!Array.isArray(data.relationships)){announce('친구 관계를 다시 불러와 주세요.');return;}
+    phase='friends';open();resetBody();theme('garden');root.dataset.mode='friends';
+    ui.title.textContent='💞 나를 기억하는 마을 친구들';
+    ui.counter.textContent='함께한 기억';ui.hint.hidden=true;ui.listen.hidden=true;
+    ui.note.textContent='친구 관계는 방문과 오래 기억한 배움으로만 자라요. 점수나 순위는 없어요.';
+    paragraph('친구들은 내가 전에 왔는지, 며칠 뒤에도 배운 것을 기억했는지를 알아봐요.','vh-story');
+    const meta={
+      bunny:['🐰','토끼 친구'],cat:['🐱','별 가게 고양이'],squirrel:['🐿️','다람쥐 탐험가'],
+      owl:['🦉','부엉이 친구'],tutor:['📚','뱁수 선생님']
+    };
+    const levels={new:'처음 만나는 사이',familiar:'익숙한 사이',friend:'친구',special:'특별한 친구'};
+    const grid=label('div','','vh-friend-grid');
+    for(const relation of data.relationships){
+      const [emoji,name]=meta[relation.id]||['✨',relation.id];
+      const card=label('article','',`vh-friend-card ${relation.level||'new'}`);
+      card.append(label('span',emoji,'vh-friend-icon'));
+      const copy=label('div','','vh-friend-copy');
+      copy.append(label('strong',name,'vh-friend-name'));
+      copy.append(label('span',levels[relation.level]||levels.new,'vh-friend-level'));
+      copy.append(label('p',relation.line1||'반가워!','vh-friend-line'));
+      if(relation.memory14>0)copy.append(label('small','🌠 오래 기억한 배움을 함께 본 친구','vh-friend-memory'));
+      else if(relation.memory7>0)copy.append(label('small','🦋 기억나비를 함께 본 친구','vh-friend-memory'));
+      card.append(copy);grid.append(card);
+    }
+    ui.body.append(grid);
+    const residents=label('section','','vh-resident-panel');
+    residents.append(label('h3','마을에 머무는 특별한 친구','vh-learning-loop-title'));
+    if(data.residents?.memoryButterfly)residents.append(label('p','🦋 기억나비 · 7일 이상 지난 배움을 스스로 다시 기억해 마을에 머물기 시작했어요.','vh-story-detail'));
+    if(data.residents?.starlightOwl)residents.append(label('p','🦉✨ 별빛 기억 부엉이 · 14일 이상 지난 배움을 다시 기억해 별빛 언덕에 정착했어요.','vh-story-detail'));
+    if(!data.residents?.memoryButterfly&&!data.residents?.starlightOwl)residents.append(label('p','아직 희귀 친구가 정착하지 않았어요. 오래 지난 배움을 다시 떠올리면 자연스럽게 찾아와요.','vh-story-detail'));
+    ui.body.append(residents);ui.title.focus({preventScroll:true});
+  }
   function showAdaptive(model) {
     if (!model || !Array.isArray(model.routes)) {announce('적응형 문항 추천을 확인할 수 없어요.');return;}
     phase='adaptive';open();resetBody();
@@ -1170,6 +1205,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     else if(data.action==='AREA_SET_STAGE')showGrowthTower(data.growth);
     else if(['SHOP_OPEN','SHOP_BUY','SHOP_EQUIP','SHOP_UNEQUIP'].includes(data.action))showShop(data.shop);
     else if(data.action==='ADAPTIVE_OFFER')showAdaptive(data.adaptive);
+    else if(data.action==='RELATIONSHIP_OPEN')showFriends(data);
     else if (data.action==='START' || data.action==='NEXT') {
       if (data.finished) {
         phase='waiting';

@@ -68,6 +68,14 @@ try{
   })),{roundId:completed.id});
 
   await page.locator('.vh-memory-moment.rare').waitFor({timeout:15000});
+  const relation=await page.evaluate(async()=>{
+    const R=await import('./relationship-state.js');
+    return R.relationshipSnapshot(R.loadRelationships(),'tae');
+  });
+  assert.equal(relation.residents.memoryButterfly,true);
+  assert.equal(relation.residents.starlightOwl,true);
+  assert.equal(relation.npcs.find(n=>n.id==='owl').level,'special');
+  assert.equal(relation.npcs.find(n=>n.id==='owl').memory14,1);
   const text=await page.locator('.vh-memory-moment.rare').innerText();
   assert(text.includes('별빛 기억축제'));
   assert(text.includes('14일 이상'));
@@ -75,7 +83,7 @@ try{
   await page.screenshot({path:path.join(out,'memory-14-completion.png'),animations:'disabled'});
   assert.equal(errors.length,0,'JS errors: '+errors.join('; '));
   await fs.writeFile(path.join(out,'memory-moment-qa.json'),JSON.stringify({
-    pass:true,roundId:completed.id,memory:'memory-14',items:5,physicalDevice:false
+    pass:true,roundId:completed.id,memory:'memory-14',items:5,relationship:'owl-special',residents:relation.residents,physicalDevice:false
   },null,2)+'\n');
   console.log('MEMORY_MOMENT_BROWSER_QA_PASS',completed.id);
 }finally{

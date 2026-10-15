@@ -80,3 +80,14 @@ Direct connection 주소를 프로젝트 ref로 추정해서 만들지 않는다
 - `magic_round_receipts`: `purpose`, `strategy` 추가
 - 기억 반감기·대시보드 KPI는 저장하지 않고 attempt 원자료에서 재계산
 - 목적: 모델 변경 시 과거 기록을 다시 해석할 수 있도록 파생값 고착 방지
+
+## 2026-10-15 NPC 관계 기억 확장
+
+추가 migration: `db/migrations/202610150003_relationship_events.sql`
+
+- `magic_relationship_events`: NPC 만남 및 검증된 장기기억 사건
+- visit은 NPC/일자 기준 idempotent event
+- memory는 round 기준 idempotent event
+- familiar/friend/special 관계 단계와 희귀 주민 unlock은 저장하지 않고 이벤트에서 재계산
+- 개인 관계는 learner별 격리
+- 가족 광장의 희귀 주민만 두 learner의 검증 사건을 union하여 파생

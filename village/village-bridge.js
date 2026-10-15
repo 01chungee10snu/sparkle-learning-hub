@@ -5,9 +5,10 @@ import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
 import * as LearningDirector from '../platform/learning-director.js?v=parent-v14-20261015';
-import {retainedMemoryMoment} from '../platform/learning-moments.js?v=world-v17-20261015';
+import {retainedMemoryMoment} from '../platform/learning-moments.js?v=relationship-v18-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
+import * as Relationships from './relationship-state.js?v=relationship-v18-20261015';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
   .map(grade=>'bebsu-'+grade+'-original');
@@ -141,11 +142,33 @@ export function createVillageHost(emit) {
     };
   }
 
+  function reconcileMemoryRelationships(who){
+    let state=Relationships.loadRelationships(),changed=false;
+    for(const entry of catalog||[]){
+      if(entry.kind!=='quiz'||entry.status!=='published')continue;
+      const progress=Progress.gameProgress(entry.id,who);
+      for(const round of progress.completedRounds||[]){
+        if(round.purpose!=='review')continue;
+        const moment=retainedMemoryMoment(progress,round.id);
+        if(!moment.kind)continue;
+        const recorded=Relationships.recordMemory(state,{
+          who,subject:entry.subject||'',tier:moment.kind,roundId:round.id,at:round.at||Date.now()
+        });
+        state=recorded.state;changed=changed||recorded.added;
+      }
+    }
+    if(changed)Relationships.saveRelationships(state);
+    return state;
+  }
+
   function snapshot(action, requestId, extras = {}) {
     const who = Progress.learner();
     const wallet = Rewards.wallet(catalog, who);
     const flowers = villageSummary(loadVillage(), who);
     const equipment = wallet.look || {};
+    const relationshipState=Relationships.loadRelationships();
+    const relationship=Relationships.relationshipSnapshot(relationshipState,who);
+    const residents=currentArea==='plaza'?Relationships.familyResidentSnapshot(relationshipState):relationship.residents;
     return respond(action, requestId, {
       cosmetics: {
         light: wallet.equipped || '',
@@ -165,6 +188,9 @@ export function createVillageHost(emit) {
       recoveryStars: 0,
       flowers: flowers.flowers,
       familyFlowers: flowers.familyFlowers,
+      relationships:relationship.npcs,
+      residents,
+      relationshipTotals:relationship.totals,
       ...extras
     });
   }
@@ -185,7 +211,14 @@ export function createVillageHost(emit) {
         species:request.species,care:request.care,expectedStage:request.expectedStage}));
     }
 
-    if (action === 'INIT') return snapshot(action, requestId);
+    if (action === 'INIT') {reconcileMemoryRelationships(who);return snapshot(action, requestId);}
+    if (action === 'RELATIONSHIP_OPEN') {reconcileMemoryRelationships(who);return snapshot(action,requestId);}
+    if (action === 'NPC_VISIT') {
+      const visit=Relationships.recordVisit(Relationships.loadRelationships(),{who,npcId:itemId,at:Date.now()});
+      if(visit.added&&!Relationships.saveRelationships(visit.state))
+        throw new Error('친구 관계 기록을 저장하지 못했어요.');
+      return snapshot(action,requestId,{relationshipAdded:visit.added,npcId:itemId});
+    }
     const shopState = () => {
       const wallet = Rewards.wallet(catalog,who);
       return {available:wallet.available,look:wallet.look,
@@ -368,6 +401,14 @@ export function createVillageHost(emit) {
       const updated = addVillageCompletion(loadVillage(), {who, gameId, roundId});
       if (updated.added && !saveVillage(updated.state))
         throw new Error('마을 기록을 저장할 수 없어요. 브라우저 저장 공간을 확인해 주세요.');
+      if(updated.added&&memoryMoment.kind){
+        const subject=catalog.find(entry=>entry.id===gameId)?.subject||'';
+        const relation=Relationships.recordMemory(Relationships.loadRelationships(),{
+          who,subject,tier:memoryMoment.kind,roundId,at:Date.now()
+        });
+        if(relation.added&&!Relationships.saveRelationships(relation.state))
+          throw new Error('기억 친구 기록을 저장하지 못했어요.');
+      }
       return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added,
         memoryMoment:updated.added?memoryMoment.kind:'',memoryDays:updated.added?memoryMoment.days:0,memoryItems:updated.added?memoryMoment.items:0,
         challengeBonus: Rewards.challengeRoundBonus(catalog,who,gameId,roundId) });
