@@ -95,7 +95,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 import { createVillageHost } from './village-bridge.js?v=ecology-v19-20261015';
 import * as Progress from '../platform/progress.js';
 import { createVillageUI } from './village-ui.js?v=ecology-v19-20261015';
-import * as CloudSync from '../platform/cloud-sync.js?v=cloud-v20-20261015';
+import * as CloudSync from '../platform/cloud-sync.js?v=cloud-v21-20261016';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -160,7 +160,7 @@ const host = createVillageHost(deliver);
 window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 async function prepareData(){
   await host.prepare();
-  if(CloudSync.storedSession()){
+  if(CloudSync.isPaired()){
     const synced=await CloudSync.autoSync();
     if(synced?.error)console.warn('[Village cloud sync]',synced.error);
   }

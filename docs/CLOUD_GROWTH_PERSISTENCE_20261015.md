@@ -116,3 +116,18 @@ Direct connection 주소를 프로젝트 ref로 추정해서 만들지 않는다
 
 웹앱은 publishable key만 포함하며 service-role/secret/DB password는 포함하지 않는다.
 보호자 Auth 로그인 후 device별 최신 snapshot을 모두 읽어 기존 검증된 merge 로직으로 합치고, SHA-256이 새로울 때만 snapshot을 업로드한다.
+
+## 2026-10-16 v21 가족 전용 pairing
+
+부모 이메일/Auth UX를 폐기하고 가족 동기화 코드 1회 입력 방식으로 전환했다.
+
+- migration 20261016000600_family_pairing_mode.sql 원격 적용
+- 실제 family 1 / learner 2 / pairing hash 1
+- code 원문은 DB/Git에 저장하지 않음
+- 서버는 SHA-256 hash만 보관
+- public pair/pull/push는 SECURITY INVOKER
+- 실제 privileged 함수는 magic_private SECURITY DEFINER
+- 잘못된 family code는 실제 원격에서 HTTP 400
+- Supabase Security Advisor: No issues found
+- 이메일/비밀번호/access token/refresh token은 마법마을 런타임에서 사용하지 않음
+- 새 기기는 가족 코드 1회 입력 후 자동 동기화
