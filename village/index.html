@@ -159,7 +159,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=growth-v12-20261015';
+    const loaderUrl = './Build/' + name + '.loader.js?v=motion-v16-20261015';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -221,17 +221,23 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=growth-v12-20261015',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=growth-v12-20261015',
-      codeUrl: base + '.wasm' + suffix + '?v=growth-v12-20261015',
+      dataUrl: base + '.data' + suffix + '?v=motion-v16-20261015',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=motion-v16-20261015',
+      codeUrl: base + '.wasm' + suffix + '?v=motion-v16-20261015',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.10.0-growth-v12'
+      productVersion: '0.12.0-motion-v16'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
     });
+    if(new URLSearchParams(location.search).get('motionPreview')==='1'){
+      window.SparkleMotionPreview=state=>{
+        if(instance&&typeof state==='string')
+          instance.SendMessage('VillageRuntime','OnMotionPreview',state);
+      };
+    }
     // Honour the learner's reduced-motion setting after WebGL finishes loading.
     ui.syncMotion();
     for (const payload of queued.splice(0))

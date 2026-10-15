@@ -19,7 +19,8 @@
     "qa:mobile": "node scripts/mobile-tablet-qa.mjs",
     "qa:lite": "node scripts/lite-village-qa.mjs",
     "qa:fairy": "node scripts/fairy-styles-v11-browser-qa.mjs",
-    "qa:fairy:3d": "node scripts/fairy-styles-v11-3d-qa.mjs"
+    "qa:fairy:3d": "node scripts/fairy-styles-v11-3d-qa.mjs",
+    "qa:motion": "node scripts/motion-v16-browser-qa.mjs"
   },
   "dependencies": {
     "three": "0.180.0"
