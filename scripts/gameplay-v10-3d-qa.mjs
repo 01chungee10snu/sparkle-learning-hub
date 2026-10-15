@@ -99,7 +99,7 @@ try {
  }
  assert.equal(errors.length,0,'JS exceptions '+errors.join('; '));
  assert.equal(httpErrors.length,0,'404 requests '+httpErrors.join('; '));
- const evidence={pass:true,origin,buildVersion:'0.12.0-motion-v16',
+ const evidence={pass:true,origin,buildVersion:'0.13.0-world-v17',
   physicalDeviceTested:false,softwareWebGL:true,loadTimeMs,canvas,
   metrics,errors,httpErrors};
  await fs.writeFile(path.join(output,'3D_QA_RESULT.json'),JSON.stringify(evidence,null,2)+'\n');

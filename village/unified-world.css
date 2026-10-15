@@ -61,3 +61,22 @@
 
 /* Modal must mask floating district shortcuts so its exit and answer buttons work. */
 #village-dialog-wrap{z-index:30!important;}
+
+/* v17: rare delayed-retrieval celebration. It is visual feedback, never a score tier. */
+.vh-memory-moment{
+ display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;
+ margin:10px 0;padding:12px 14px;border:2px solid #c9ddc4;border-radius:18px;
+ background:linear-gradient(125deg,#f4fff1,#fffbe8);
+ box-shadow:0 4px 13px rgba(67,98,62,.10)
+}
+.vh-memory-moment.rare{
+ border-color:#cbb7e5;
+ background:linear-gradient(125deg,#fff8dc,#f5edff 58%,#eef8ff)
+}
+.vh-memory-icon{grid-row:1/3;font-size:30px;line-height:1}
+.vh-memory-title{font-size:17px;color:#4d4b3d}
+.vh-memory-copy{margin:0;font-size:13px;line-height:1.45;color:#625b66}
+@media(max-width:520px){
+ .vh-memory-moment{padding:10px 11px;gap:3px 8px}
+ .vh-memory-icon{font-size:25px}.vh-memory-title{font-size:15px}.vh-memory-copy{font-size:12px}
+}

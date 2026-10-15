@@ -1049,6 +1049,13 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showRewardArt(isChallenge?'star_rainbow':'bloom');
     if(result.gardenAdded!==false)sessionRounds++;
     paragraph(result.gardenAdded===false?'이 이야기의 꽃은 이미 정원에 피어 있어요.':'마을에 새로운 꽃이 피었어요!','vh-feedback');
+    if(result.memoryMoment==='memory-14'||result.memoryMoment==='memory-7'){
+      const memory=label('section','',`vh-memory-moment ${result.memoryMoment==='memory-14'?'rare':''}`);
+      memory.append(label('span',result.memoryMoment==='memory-14'?'🌠':'🦋','vh-memory-icon'));
+      memory.append(label('strong',result.memoryMoment==='memory-14'?'별빛 기억축제!':'기억나비가 찾아왔어요!','vh-memory-title'));
+      memory.append(label('p',`${result.memoryDays||7}일 이상 지난 내용을 힌트 없이 다시 기억했어요. ${result.memoryItems||1}개의 기억이 오래 남아 있어요.`,'vh-memory-copy'));
+      ui.body.append(memory);
+    }
     // Completion art is shown ONLY after host COMPLETE_WORLD acknowledgement.
     const storyResult=activeStory?.learner===who?
       storyCompletionText(activeStory,result.gardenAdded):'';
@@ -1065,7 +1072,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     paragraph('어떤 단서를 보고 답을 골랐나요? 가족에게 내 생각을 한 문장으로 들려주세요.','vh-explanation');
     if(sessionRounds>=3)paragraph('세 번의 이야기를 마쳤어요. 눈과 몸도 잠깐 쉬어볼까요?','vh-small');
     mostRecentRoundId=result.roundId||'';
-    voiceText='오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
+    voiceText=result.memoryMoment==='memory-14'?'오래 지난 기억을 스스로 다시 꺼냈어요. 별빛 기억축제가 열렸어요.':result.memoryMoment==='memory-7'?'며칠 전 배운 것을 스스로 다시 기억했어요. 기억나비가 찾아왔어요.':'오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
     if(mostRecentRoundId)ui.body.append(button('💬 배운 방법을 말로 설명하고 기록하기',()=>showReflection(mostRecentRoundId),'vh-reflect-cta'));
     ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
     ui.exit.hidden=true;

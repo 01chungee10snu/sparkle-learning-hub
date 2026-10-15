@@ -5,6 +5,7 @@ import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
 import * as LearningDirector from '../platform/learning-director.js?v=parent-v14-20261015';
+import {retainedMemoryMoment} from '../platform/learning-moments.js?v=world-v17-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 
@@ -362,10 +363,13 @@ export function createVillageHost(emit) {
       const saved = Progress.gameProgress(gameId, who).completedRounds
         .some(round => round.id === roundId);
       if (!saved) throw new Error('학습 회차가 완료되지 않았어요.');
+      const progress=Progress.gameProgress(gameId,who);
+      const memoryMoment=retainedMemoryMoment(progress,roundId);
       const updated = addVillageCompletion(loadVillage(), {who, gameId, roundId});
       if (updated.added && !saveVillage(updated.state))
         throw new Error('마을 기록을 저장할 수 없어요. 브라우저 저장 공간을 확인해 주세요.');
       return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added,
+        memoryMoment:updated.added?memoryMoment.kind:'',memoryDays:updated.added?memoryMoment.days:0,memoryItems:updated.added?memoryMoment.items:0,
         challengeBonus: Rewards.challengeRoundBonus(catalog,who,gameId,roundId) });
     }
     throw new Error('지원하지 않는 Unity 요청이에요.');

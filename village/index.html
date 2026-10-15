@@ -26,7 +26,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 </style>
 <link rel="stylesheet" href="./village-ui.css?v=unified-20261013">
 <link rel="stylesheet" href="./major-patch.css?v=unified-20261013">
-<link rel="stylesheet" href="./unified-world.css?v=parent-v14-20261015">
+<link rel="stylesheet" href="./unified-world.css?v=world-v17-20261015">
 <link rel="stylesheet" href="./mobile-art-polish.css?v=headerless-20261013">
 <link rel="stylesheet" href="./experience-v10.css?v=gameplay-20261013">
 <link rel="stylesheet" href="./fairy-variations-v11.css?v=character-20261013">
@@ -92,9 +92,9 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 </div>
 <script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=parent-v14-20261015","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=unified-20261013","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013"}}</script>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=parent-v14-20261015';
+import { createVillageHost } from './village-bridge.js?v=world-v17-20261015';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=parent-v14-20261015';
+import { createVillageUI } from './village-ui.js?v=world-v17-20261015';
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -159,7 +159,7 @@ window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=motion-v16-20261015';
+    const loaderUrl = './Build/' + name + '.loader.js?v=world-v17-20261015';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -221,13 +221,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=motion-v16-20261015',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=motion-v16-20261015',
-      codeUrl: base + '.wasm' + suffix + '?v=motion-v16-20261015',
+      dataUrl: base + '.data' + suffix + '?v=world-v17-20261015',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=world-v17-20261015',
+      codeUrl: base + '.wasm' + suffix + '?v=world-v17-20261015',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.12.0-motion-v16'
+      productVersion: '0.13.0-world-v17'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
@@ -236,6 +236,13 @@ start.addEventListener('click', async () => {
       window.SparkleMotionPreview=state=>{
         if(instance&&typeof state==='string')
           instance.SendMessage('VillageRuntime','OnMotionPreview',state);
+      };
+      window.SparkleMemoryPreview=kind=>{
+        if(instance&&typeof kind==='string')
+          instance.SendMessage('VillageRuntime','OnMemoryPreview',kind);
+      };
+      window.SparkleMotionMode=reduced=>{
+        if(instance)instance.SendMessage('VillageRuntime','OnUiCommand',reduced?'MOTION_LOW':'MOTION_FULL');
       };
     }
     // Honour the learner's reduced-motion setting after WebGL finishes loading.
