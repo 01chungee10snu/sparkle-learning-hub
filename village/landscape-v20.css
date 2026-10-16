@@ -1,0 +1,76 @@
+/* Landscape v20: no new textures, no timers, no record or score writes. */
+#lite-village-scene.landscape20{overflow:hidden;background:linear-gradient(180deg,#cde8ee 0%,#eff8ed 48%,#d2e7bb 76%,#c0d79e 100%);isolation:isolate}
+.landscape20 .lv20-heading{position:absolute;top:8%;left:15%;right:15%;z-index:2;text-align:center;color:#355955;pointer-events:none}
+.landscape20 .lv20-heading>span{font-size:10px;letter-spacing:.24em;color:#648476;font-weight:750}
+.landscape20 .lv20-heading h2{font-size:clamp(24px,3vw,37px);letter-spacing:-.05em;margin:7px 0 4px;line-height:1.2}
+#lite-village-scene.landscape20 .lv20-heading p{display:block!important;position:static!important;transform:none!important;margin:0!important;padding:0!important;background:none!important;box-shadow:none!important;border:0!important;white-space:normal!important;font-size:13px;color:#54756b}
+.landscape20 .lv20-sun{position:absolute;right:13%;top:7%;width:70px;height:70px;background:#fff4c3;border:10px solid #fff7d877;border-radius:50%;box-shadow:0 0 75px 30px #fff7d977}
+.landscape20 .lv20-cloud{position:absolute;top:17%;left:6%;width:150px;height:32px;background:#ffffffa8;border-radius:60%;filter:blur(1px);animation:lv20-drift 18s ease-in-out infinite alternate;pointer-events:none}
+.landscape20 .lv20-cloud:before,.landscape20 .lv20-cloud:after{content:'';position:absolute;background:inherit;border-radius:50%;width:60px;height:50px;bottom:2px;left:20px}
+.landscape20 .lv20-cloud:after{left:60px;width:76px;height:60px}
+.landscape20 .cloud-b{left:auto;right:2%;top:24%;transform:scale(.7);animation-delay:-8s}
+.landscape20 .lv20-hills{position:absolute;inset:34% -10% -10%;background:radial-gradient(ellipse at 5% 75%,#b5d4ae 0 32%,transparent 32.3%),radial-gradient(ellipse at 100% 70%,#b6d4c2 0 40%,transparent 40.3%);opacity:.65;pointer-events:none}
+.landscape20 .lv20-stage{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:min(1060px,98%);height:min(680px,75%);min-height:260px;z-index:1}
+.landscape20 .lv20-island{position:absolute;inset:20% 2% 1%;border-radius:48% 49% 44% 46%;background:radial-gradient(ellipse at 45% 40%,#ebefc4,#cbe0a6 65%,#abc78f);box-shadow:0 15px 0 #99b58655,0 25px 45px #789c6a28;transform:rotate(-3deg);pointer-events:none}
+.landscape20 .lv20-paths{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+#lite-village-scene.landscape20 img{width:100%;height:100%;max-height:none;object-fit:contain;user-select:none;pointer-events:none}
+.landscape20 .lv20-decor{position:absolute;filter:drop-shadow(0 8px 3px #55794522)}
+.landscape20 .tree-left{width:19%!important;height:37%!important;left:0;top:24%}
+.landscape20 .tree-right{width:20%!important;height:38%!important;right:0;top:30%}
+.landscape20 .lv20-castle{position:absolute;top:3%;left:38%;width:24%;height:36%;text-align:center;filter:drop-shadow(0 8px 3px #55794522)}
+.landscape20 .lv20-castle span{display:block;position:absolute;bottom:-3px;left:10%;right:10%;font-size:12px;font-weight:700;color:#657164}
+#lite-village-scene.landscape20 .lv20-place{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:25%;height:37%;padding:0!important;border:0!important;border-radius:24px;background:transparent!important;box-shadow:none!important;min-height:44px;cursor:pointer;color:#355247;transition:transform .2s;touch-action:manipulation}
+.landscape20 .lv20-place img{height:calc(100% - 43px)!important;filter:drop-shadow(0 8px 3px #55794530);transition:filter .2s}
+.landscape20 .lv20-place>span{display:grid;gap:2px;position:relative;min-width:115px;padding:7px 15px;border-radius:15px;background:#fffdf0ef;border:1px solid #d6dbbf;box-shadow:0 4px 0 #9eb08c35;text-align:center}
+.landscape20 .lv20-place b{font-size:15px;line-height:1.2}
+.landscape20 .lv20-place small{font-size:10px;color:#6c7f72}
+.landscape20 .lv20-place:hover{transform:translateY(-5px)}
+.landscape20 .lv20-place:focus-visible{outline:3px solid #3c7f73;outline-offset:4px}
+.landscape20 .place-korean{left:13%;top:22%}
+.landscape20 .place-math{right:12%;top:23%}
+.landscape20 .place-english{left:13%;top:58%;height:30%!important}
+.landscape20 .place-garden{right:12%;top:58%;height:30%!important}
+.landscape20 .lv20-fairy{position:absolute;left:43%;top:58%;width:14%;height:27%;filter:drop-shadow(0 7px 3px #55794533);animation:lv20-float 5s ease-in-out infinite;pointer-events:none}
+.landscape20 .fairy-se{display:none}
+.landscape20[data-learner=se] .fairy-se{display:block}
+.landscape20[data-learner=se] .fairy-tae{display:none}
+.landscape20 .lv20-flowers{position:absolute;bottom:1%;left:32%;right:28%;font-size:26px;letter-spacing:8px;color:#e8a7b7;pointer-events:none}
+.landscape20 .lv20-flowers i{color:#fff4d0;font-size:19px;font-style:normal}
+.landscape20[data-area=plaza] .lv20-island{background:radial-gradient(ellipse at 45% 40%,#fff0d7,#dfd5ba 65%,#bdd3a7)}
+@keyframes lv20-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes lv20-drift{to{translate:20px 0}}
+@media(max-width:600px) and (orientation:portrait){
+ .landscape20 .lv20-heading{top:11%;left:5%;right:5%}
+ .landscape20 .lv20-heading h2{font-size:25px}
+ .landscape20 .lv20-stage{top:55%;height:63%;width:100%}
+ .landscape20 .lv20-island{inset:17% -12% 0}
+ .landscape20 .lv20-castle{left:32%;width:36%;height:29%;top:0}
+ .landscape20 .lv20-castle span{font-size:10px;bottom:-4px}
+ #lite-village-scene.landscape20 .lv20-place{width:39%;height:34%}
+ .landscape20 .place-korean{left:3%;top:23%}
+ .landscape20 .place-math{right:3%;top:25%}
+ .landscape20 .place-english{left:4%;top:61%;height:29%!important}
+ .landscape20 .place-garden{right:3%;top:62%;height:29%!important}
+ .landscape20 .lv20-place>span{min-width:110px;padding:7px 9px}
+ .landscape20 .lv20-place b{font-size:13px}
+ .landscape20 .lv20-place small{font-size:10px}
+ .landscape20 .lv20-fairy{left:39%;width:22%;top:53%;height:23%}
+ .landscape20 .tree-left{left:-8%;top:10%;width:28%!important;height:29%!important}
+ .landscape20 .tree-right{right:-8%;top:10%;width:28%!important;height:29%!important}
+ .landscape20 .lv20-flowers{font-size:18px;bottom:-2%;left:29%;right:20%;letter-spacing:4px}
+ .landscape20 .lv20-sun{top:7%;right:6%;width:40px;height:40px;border-width:5px}
+ .landscape20 .lv20-cloud{top:24%;scale:.5;left:-7%}
+ .landscape20 .cloud-b{left:auto;right:-7%;top:19%}
+}
+@media(max-height:540px) and (orientation:landscape){
+ .landscape20 .lv20-heading{top:3%;left:25%;right:25%}
+ .landscape20 .lv20-heading>span,.landscape20 .lv20-heading p{display:none!important}
+ .landscape20 .lv20-heading h2{font-size:21px}
+ .landscape20 .lv20-stage{top:46%;height:72%;width:min(660px,95%)}
+ .landscape20 .lv20-place>span{padding:4px 10px;min-width:100px}
+ .landscape20 .lv20-place b{font-size:12px}
+ .landscape20 .lv20-place small,.landscape20 .lv20-castle span{display:none}
+ .landscape20 .lv20-place img{height:calc(100% - 26px)!important}
+}
+.landscape20[data-reduced-motion=true] *,.landscape20[data-paused=true] *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.landscape20 *{animation:none!important;transition:none!important}}
