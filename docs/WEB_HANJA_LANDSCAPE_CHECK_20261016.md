@@ -1,0 +1,12 @@
+# Public web verification — 2026-10-16
+- URL: https://01chungee10snu.github.io/sparkle-learning-hub/village/
+- Landscape deployment: 7766f31eaaa3368177342e7d45923d7813d22b34; GitHub Pages run 38888289627 succeeded.
+- Hanja is not available in the public learning menu. The public branch does not contain games/hanja-h8/game.json.
+- 2D entry works. A math question was displayed; no test answers were submitted.
+- Existing Artcraft artwork now forms a spatial village with a castle, library, flower house, trees, pond and fairy. No new raster images were generated.
+- Direct map buttons for math, Korean, English and garden opened the correct panels and returned to the map.
+- Artwork loaded successfully; JavaScript syntax check passed; no landscape module console errors were observed.
+- The scene becomes inert while a menu or modal is open and supports reduced motion.
+- 3D could not run in this review browser: it reported that WebGL is unsupported. This is not a successful 3D verification.
+- Physical mobile/tablet touch, heat and performance remain unverified. Visual review used desktop-sized Chrome.
+- This patch changes village/index.html and adds village/landscape-v20.js and village/landscape-v20.css. It does not change question, scoring, reward, storage or sync code.
