@@ -10,10 +10,10 @@ export const FIRST_KEY='sparkle-learning-progress-v1';
 export const LEARNER_KEY='sparkle-learner-v1';
 export const LEGACY_KEY='fairy-math-garden-v1';
 export const LEARNERS={
- tae:{name:'태희',emoji:'🌸',defaultStage:{math:3,korean:3,english:2},roundSize:5},
- se:{name:'세희',emoji:'🌙',defaultStage:{math:1,korean:1,english:1},roundSize:3}
+ tae:{name:'태희',emoji:'🌸',defaultStage:{math:3,korean:3,english:2,hanja:1},roundSize:5},
+ se:{name:'세희',emoji:'🌙',defaultStage:{math:1,korean:1,english:1,hanja:1},roundSize:3}
 };
-const SUBJECT_IDS=['math','korean','english'];
+const SUBJECT_IDS=['math','korean','english','hanja'];
 export function configureIrtBank(bank){
  const expected=[...allowedQuestions.values()].reduce((sum,ids)=>sum+ids.size,0);
  if(!bank||bank.count!==expected||!Array.isArray(bank.items)||bank.items.length!==expected||bank.items.some(item=>!allowedQuestions.get(item.gameId)?.has(item.id)))throw new Error('난이도 색인과 문항 목록이 일치하지 않아요.');

@@ -1,0 +1,11 @@
+/* Hanja native village route: same accessible modal and authoritative host. */
+#hanja-entry{display:block;width:100%;margin:10px auto;background:linear-gradient(110deg,#76509d,#9c6dab);color:#fff;min-height:50px}
+#village-ui[data-hanja=true] .vh-visual-word{font-family:"Noto Serif CJK KR","Noto Serif KR","Apple SD Gothic Neo",serif;font-size:clamp(84px,13vw,132px);line-height:1.2}
+#village-ui[data-hanja=true] .vh-visual{padding:13px;background:linear-gradient(130deg,#fff7dd,#f3eafa);border-color:#d9c4ac}
+#village-ui[data-hanja=true] .vh-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#village-ui[data-hanja=true] .vh-option{font-size:clamp(19px,2.2vw,25px);min-height:56px}
+#village-ui[data-mode=district] .vh-small a{color:#67428c;text-underline-offset:3px;display:inline-block;min-height:32px;padding:6px 0}
+#lite-village-scene.landscape20 .lv20-hanja{padding:0;min-height:44px;background:transparent;border:0;cursor:pointer;color:#4d465a}
+.landscape20 .lv20-hanja span{background:#fff4d7;border:1px solid #d8bd89;border-radius:13px;padding:5px 4px;bottom:-7px}
+.landscape20 .lv20-hanja:focus-visible{outline:3px solid #3c7f73;outline-offset:4px}
+@media(max-width:600px){#village-ui[data-hanja=true] .vh-option{font-size:19px;padding:10px 7px}.landscape20 .lv20-hanja span{font-size:10px;left:0;right:0}}

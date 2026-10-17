@@ -9,7 +9,7 @@ assert.match(html,/src="\.\/entry-v17\.js/);
 assert.match(html,/navigation-v15\.css/);
 for(const pattern of [/createExperienceController\(/,/experience\.open\(\)/,/experience\.close\(\)/,/focusFallback:/])
   assert.match(ui,pattern);
-assert.match(entry,/BUILD_VERSION = 'connected-v17-20261014'/);
+assert.match(entry,/BUILD_VERSION = 'hanja-public-20261017'/);
 assert.match(entry,/await orphan\.Quit\(\)/);
 assert.match(entry,/retryBlocked = true/);
 assert.match(entry,/productVersion:'0\.17\.0-connected-v17'/);

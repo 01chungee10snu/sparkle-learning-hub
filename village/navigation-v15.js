@@ -1,7 +1,7 @@
 // Four destinations, one drawer, and the existing game actions as the source of truth.
 export const NAVIGATION_V15 = Object.freeze({
   learn: {label:'배움', icon:'📚', items:[
-    ['vh-quest','이야기 모험'],['district:math','수학'],['district:korean','국어'],['district:english','영어'],
+    ['vh-quest','이야기 모험'],['district:math','수학'],['district:korean','국어'],['district:english','영어'],['district:hanja','한자'],
     ['district:growth','성장'],['district:kma','경시'],['district:practice','연습'],
     ['district:academy','학교'],['vh-adaptive','추천'],['vh-workshop','생각 공방']]},
   explore: {label:'탐험',icon:'🗺️',items:[

@@ -11,7 +11,7 @@ if(scene&&ui){
     '<div class="lv20-island" aria-hidden="true"></div>'+
     '<svg class="lv20-paths" viewBox="0 0 1000 650" preserveAspectRatio="none" aria-hidden="true"><path d="M500 610 Q490 465 260 340 Q180 260 280 195 M500 490 Q730 455 755 300 M495 465 Q470 300 520 210" fill="none" stroke="#c9b58c" stroke-width="52" stroke-linecap="round"/><path d="M500 610 Q490 465 260 340 Q180 260 280 195 M500 490 Q730 455 755 300 M495 465 Q470 300 520 210" fill="none" stroke="#f8e8c5" stroke-width="42" stroke-linecap="round"/></svg>'+
     image('tree_blush','lv20-decor tree-left')+image('tree_lilac','lv20-decor tree-right')+
-    '<div class="lv20-castle" aria-hidden="true">'+image('learning_castle','')+'<span>별빛 마법학교</span></div>'+
+    '<button type="button" class="lv20-castle lv20-hanja" data-scene-district="hanja" aria-label="한자 수련관 열기">'+image('learning_castle','')+'<span>한자 수련관 · 8급~3급</span></button>'+
     '<button type="button" class="lv20-place place-korean" data-scene-district="korean" aria-label="이야기 도서관 열기">'+image('house_library','')+'<span><b>이야기 도서관</b><small>읽고 · 생각하고</small></span></button>'+
     '<button type="button" class="lv20-place place-math" data-scene-district="math" aria-label="수학 정원 열기">'+image('house_flower','')+'<span><b>수학 정원</b><small>발견하고 · 풀어 보고</small></span></button>'+
     '<button type="button" class="lv20-place place-english" data-scene-district="english" aria-label="영어 숲 열기">'+image('tree_lilac','')+'<span><b>영어 숲</b><small>듣고 · 말하고</small></span></button>'+

@@ -15,6 +15,7 @@ const ALLOWED=new Set();
 const DISTRICTS=Object.freeze({
  math:{title:'🔢 수학 정원',intro:'수 세기부터 도량형·분수·마법 수학까지 차근차근 배우는 정원이에요.',subject:'math'},
  korean:{title:'📚 이야기 도서관',intro:'책과 이야기로 낱말·문장·읽기·말하기를 연습해요.',subject:'korean'},
+ hanja:{title:'📜 한자 수련관',intro:'8급부터 3급까지 뜻과 소리를 연습해요. 난이도는 잠정 IRT 값이며 공식 급수 판정은 아니에요.',subject:'hanja'},
  english:{title:'🌿 영어 숲',intro:'생활 속 영어 표현을 듣고 말하며 탐험해요.',subject:'english'},
  academy:{title:'🪄 마법학교',intro:'수학·국어·영어에서 오늘의 짧은 모험을 고르세요.',subject:'all'},
  growth:{title:'🌟 성장의 탑',intro:'세 과목의 배움 길과 다음 도전의 근거를 살펴봐요.'},
@@ -50,26 +51,26 @@ export function createVillageHost(emit) {
   }
 
   async function initialize() {
-    const url = new URL('../games/catalog.json?v=artcraft-irt-v12-20261014', import.meta.url);
+    const url = new URL('../games/catalog.json?v=hanja-public-20261017', import.meta.url);
     const result = await fetch(url);
     if (!result.ok) throw new Error('학습 게임 목록을 불러오지 못했어요.');
     const entries = validateCatalog(await result.json());
     Progress.configureCatalog(entries);
     for(const item of entries)if(item.kind==='quiz'&&item.status==='published')ALLOWED.add(item.id);
     try {
-      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=artcraft-irt-v12-20261014', import.meta.url));
+      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=hanja-public-20261017', import.meta.url));
       if (!bankResponse.ok) throw new Error('문항 색인을 불러오지 못했어요.');
       Progress.configureIrtBank(await bankResponse.json());
     } catch (error) {
       // Never silently replace adaptive questions with a fixed/random route.
       throw new Error('IRT 문항 색인을 확인하지 못해 새 출제를 멈췄어요. 기록은 보존돼요. 다시 불러오기를 눌러 주세요.');
     }
-    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=artcraft-irt-v12-20261014', import.meta.url));
+    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=hanja-public-20261017', import.meta.url));
     if (!challengeResponse.ok) throw new Error('경시대회 25문항 시험지 목록을 불러오지 못했어요.');
     challenges = await challengeResponse.json();
     if (challenges?.version !== 1 || !Array.isArray(challenges.grades) || challenges.grades.length !== 9)
       throw new Error('경시대회 문제은행 구성을 확인해 주세요.');
-    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=artcraft-irt-v12-20261014',import.meta.url));
+    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=hanja-public-20261017',import.meta.url));
     if(!practiceResponse.ok)throw new Error('마법 연습장 시험지 목록을 불러오지 못했어요.');
     practiceChallenges=await practiceResponse.json();
     if(practiceChallenges.publicPractice!==true||practiceChallenges.grades?.length!==9)
@@ -86,7 +87,7 @@ export function createVillageHost(emit) {
     if (!entry || entry.kind !== 'quiz') throw new Error('학습 게임 정보를 확인해 주세요.');
     if (cache.has(gameId)) return cache.get(gameId);
     const path = entry.source.replace(/^\.\//, '');
-    const response = await fetch(new URL('../' + path + '?v=artcraft-irt-v12-20261014', import.meta.url));
+    const response = await fetch(new URL('../' + path + '?v=hanja-public-20261017', import.meta.url));
     if (!response.ok) throw new Error('학습 문제를 불러오지 못했어요.');
     const game = validateGame(await response.json(), entry);
     cache.set(gameId, game);
@@ -257,6 +258,7 @@ export function createVillageHost(emit) {
       // games to parents through the full area list.
       const stage=Progress.stageSelection(group.subject==='all'?'math':group.subject,who);
       const sorted=[...list].sort((a,b)=>{
+        if(group.subject==='hanja'){const order=['H8','H7II','H7','H6II','H6','H5II','H5','H4II','H4','H3II','H3'];return order.indexOf(a.gradeBand)-order.indexOf(b.gradeBand);}
         const stageRank=g=>g.stage?Math.abs(g.stage-stage):g.gradeBand?
           (g.gradeBand===(who==='se'?'K':'G1')?0:2):1;
         return stageRank(a)-stageRank(b)||a.title.localeCompare(b.title,'ko')||a.id.localeCompare(b.id);

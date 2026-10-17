@@ -1,12 +1,12 @@
-import {createVillageHost} from './village-bridge.js?v=connected-v17-20261014';
+import {createVillageHost} from './village-bridge.js?v=hanja-public-20261017';
 import * as Progress from '../platform/progress.js';
-import {createVillageUI} from './village-ui.js?v=connected-v17-20261014';
+import {createVillageUI} from './village-ui.js?v=hanja-public-20261017';
 import {createLifeStore} from './life-state-v16.js';
 import {createCloudSync} from './cloud-sync-v17.js';
 import {createCloudSnapshotAdapter} from './cloud-snapshot-v17.js';
 import {CLOUD_SYNC_ENDPOINT} from './cloud-config-v17.js';
 
-const BUILD_VERSION = 'connected-v17-20261014';
+const BUILD_VERSION = 'hanja-public-20261017';
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
 const canvas = document.querySelector('#canvas');
@@ -263,7 +263,7 @@ start.addEventListener('click', async () => {
 });
 
 const diagnostics = Object.freeze({snapshot:() => Object.freeze({
-  featureVersion:'connected-v17-20261014',life:ui.lifeSnapshot?.()??null,
+  featureVersion:'hanja-public-20261017',life:ui.lifeSnapshot?.()??null,
   entryVersion:BUILD_VERSION, mode:liteMode?'2d':instance?'3d':'entry',
   loading:!overlay.hidden, starting, modalOpen:!uiRoot.querySelector('#village-dialog-wrap').hidden,
   learner:Progress.learner(), navigation:ui.navigationSnapshot?.() ?? null,

@@ -32,10 +32,11 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./fairy-variations-v11.css?v=character-20261013">
 <link rel="stylesheet" href="./artcraft-learning-v12.css?v=artcraft-irt-v12-20261014">
 <link rel="stylesheet" href="./production-v14.css?v=20261014-toggle-contrast">
-<link rel="stylesheet" href="./navigation-v15.css?v=nav-v15-20261014">
-<link rel="stylesheet" href="./life-v16.css?v=connected-v17-20261014">
-<link rel="stylesheet" href="./cloud-sync-v17.css?v=connected-v17-20261014">
+<link rel="stylesheet" href="./navigation-v15.css?v=hanja-public-20261017">
+<link rel="stylesheet" href="./life-v16.css?v=hanja-public-20261017">
+<link rel="stylesheet" href="./cloud-sync-v17.css?v=hanja-public-20261017">
 <link rel="stylesheet" href="./landscape-v20.css?v=20261016">
+<link rel="stylesheet" href="./hanja-public.css?v=hanja-public-20261017">
 </head>
 <body>
 <div id="page">
@@ -56,6 +57,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
         <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
         <div id="meter" hidden role="progressbar" aria-label="마법마을 준비" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar"></div></div>
         <button id="start">✨ 3D 마법마을 입장하기</button>
+        <button id="hanja-entry" type="button">📜 한자 수련관 바로 시작 · 8급~3급</button>
         <button id="lite" type="button">🌷 가벼운 2D 마을로 시작하기</button>
         <p class="vh-storage-note"><small>기록은 이 기기에 저장돼요. 배움 기록은 학습기록 메뉴에서 옮길 수 있어요. 텃밭·연못·동물 집 기록은 아직 다른 기기로 옮겨지지 않아요.</small></p>
         <a class="vh-entry-record-link" href="../learning.html?view=workbooks">📚 기존 학습기록·문제집 열기</a>
@@ -63,8 +65,9 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
     </section>
   </main>
 </div>
-<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=connected-v17-20261014","../platform/rewards.js":"../platform/rewards.js?v=connected-v17-20261014","../platform/growth.js":"../platform/growth.js?v=connected-v17-20261014","../platform/settings.js":"../platform/settings.js?v=connected-v17-20261014","../platform/activities.js":"../platform/activities.js?v=connected-v17-20261014","../platform/activity-ui.js":"../platform/activity-ui.js?v=connected-v17-20261014","../platform/catalog.js":"../platform/catalog.js?v=connected-v17-20261014","../platform/irt.js":"../platform/irt.js?v=connected-v17-20261014","../platform/legacy.js":"../platform/legacy.js?v=connected-v17-20261014","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=connected-v17-20261014","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=connected-v17-20261014","../platform/motion.js":"../platform/motion.js?v=connected-v17-20261014","./garden-state.js":"./garden-state.js?v=connected-v17-20261014","./village-state.js":"./village-state.js?v=connected-v17-20261014","./navigation-v15.js":"./navigation-v15.js?v=connected-v17-20261014","./experience-controller-v14.js":"./experience-controller-v14.js?v=connected-v17-20261014","./life-ui-v16.js":"./life-ui-v16.js?v=connected-v17-20261014","./life-state-v16.js":"./life-state-v16.js?v=connected-v17-20261014","./cloud-sync-v17.js":"./cloud-sync-v17.js?v=connected-v17-20261014","./cloud-sync-ui-v17.js":"./cloud-sync-ui-v17.js?v=connected-v17-20261014","./cloud-snapshot-v17.js":"./cloud-snapshot-v17.js?v=connected-v17-20261014","./cloud-config-v17.js":"./cloud-config-v17.js?v=connected-v17-20261014"}}</script>
-<script type="module" src="./entry-v17.js?v=connected-v17-20261014"></script>
-<script type="module" src="./landscape-v20.js?v=20261016"></script>
+<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=hanja-public-20261017","../platform/rewards.js":"../platform/rewards.js?v=hanja-public-20261017","../platform/growth.js":"../platform/growth.js?v=hanja-public-20261017","../platform/settings.js":"../platform/settings.js?v=hanja-public-20261017","../platform/activities.js":"../platform/activities.js?v=hanja-public-20261017","../platform/activity-ui.js":"../platform/activity-ui.js?v=hanja-public-20261017","../platform/catalog.js":"../platform/catalog.js?v=hanja-public-20261017","../platform/irt.js":"../platform/irt.js?v=hanja-public-20261017","../platform/legacy.js":"../platform/legacy.js?v=hanja-public-20261017","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=hanja-public-20261017","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=hanja-public-20261017","../platform/motion.js":"../platform/motion.js?v=hanja-public-20261017","./garden-state.js":"./garden-state.js?v=hanja-public-20261017","./village-state.js":"./village-state.js?v=hanja-public-20261017","./navigation-v15.js":"./navigation-v15.js?v=hanja-public-20261017","./experience-controller-v14.js":"./experience-controller-v14.js?v=hanja-public-20261017","./life-ui-v16.js":"./life-ui-v16.js?v=hanja-public-20261017","./life-state-v16.js":"./life-state-v16.js?v=hanja-public-20261017","./cloud-sync-v17.js":"./cloud-sync-v17.js?v=hanja-public-20261017","./cloud-sync-ui-v17.js":"./cloud-sync-ui-v17.js?v=hanja-public-20261017","./cloud-snapshot-v17.js":"./cloud-snapshot-v17.js?v=hanja-public-20261017","./cloud-config-v17.js":"./cloud-config-v17.js?v=hanja-public-20261017"}}</script>
+<script type="module" src="./entry-v17.js?v=hanja-public-20261017"></script>
+<script type="module" src="./landscape-v20.js?v=hanja-public-20261017"></script>
+<script type="module" src="./hanja-entry.js?v=hanja-public-20261017"></script>
 </body>
 </html>

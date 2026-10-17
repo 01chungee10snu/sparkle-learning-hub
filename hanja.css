@@ -1,0 +1,70 @@
+/* Hanja Academy · child-size touch targets, portrait phones and tablets */
+.hanja-screen{gap:13px;padding-bottom:12px}
+.hanja-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;background:linear-gradient(118deg,#fff5e0 0%,#fff 58%,#f1e6ff 100%);border:1px solid #e8cfab;border-radius:23px;padding:14px 19px;flex-shrink:0}
+.hanja-heading h1{font-size:clamp(25px,3.4vw,37px);color:#553c6d;margin:0;line-height:1.24}
+.hanja-heading p:not(.hanja-eyebrow){font-size:18px;color:#675270;margin:6px 0 0;line-height:1.4}
+.hanja-eyebrow{letter-spacing:.11em;font-size:13px;font-weight:900;color:#9c684b;margin:0 0 6px}
+.hanja-tower{font-size:68px;flex-shrink:0;line-height:1}
+.hanja-grades{display:flex;gap:9px;flex-shrink:0;overflow-x:auto;padding:2px 2px 9px;scroll-snap-type:x proximity;touch-action:pan-x}
+.hanja-grade-tab{scroll-snap-align:start;flex:0 0 auto;min-width:94px;min-height:64px;padding:9px 15px;display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;border:2px solid #d7c8d7;border-radius:15px;color:#5d4978;background:#fff;font-size:21px;font-weight:900;box-shadow:0 2px 1px #ead6ed}
+.hanja-grade-tab small{font-size:13px;font-weight:650;color:#82718a}
+.hanja-grade-tab.current{background:#69418b;border-color:#69418b;color:#fff;box-shadow:0 4px 0 #d3b8df}
+.hanja-grade-tab.current small{color:#f8e9ff}
+.hanja-lesson{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:12px;align-items:stretch}
+.hanja-lesson-intro,.hanja-flash-lesson{background:#fff;border:1px solid #e5d8ed;border-radius:23px;padding:17px 20px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.hanja-lesson-intro{background:linear-gradient(156deg,#fffcf1,#fff 75%);border-color:#e9d7b4}
+.hanja-rank{display:inline-flex;align-self:flex-start;border-radius:40px;padding:5px 14px;background:#fce7ad;color:#6a4d29;font-size:17px;font-weight:800;margin:0}
+.hanja-lesson h2{font-size:26px;color:#66447e;margin:0}
+.hanja-lesson-intro>p:not(.hanja-rank):not(.hanja-irt-meta):not(.hanja-recommendation){font-size:18px;line-height:1.45;color:#5c5060;margin:0}
+.hanja-lesson-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hanja-lesson-stats span{background:#f5effe;border-radius:13px;padding:9px;color:#604c7b;font-size:14px;line-height:1.5}
+.hanja-lesson-stats strong{display:block;font-size:22px;color:#4f3c6c}
+.hanja-recommendation{font-size:16px;line-height:1.5;color:#655675;margin:0}
+.hanja-start{width:100%;min-height:62px;background:linear-gradient(110deg,#7c49b6,#aa69bc);color:#fff;font-size:23px;font-weight:900;border:0;border-bottom:4px solid #573b79;border-radius:15px;margin-top:auto;cursor:pointer}
+.hanja-irt-meta{font-size:14px;color:#766e81;margin:0;line-height:1.4}
+.hanja-flash-lesson h3{font-size:22px;color:#583e74;margin:0}
+.hanja-flash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.hanja-flashcard{border:2px solid #e6d8b9;background:linear-gradient(#fffef6,#fff9e8);border-radius:15px;min-height:122px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#5b426b;padding:10px 3px;cursor:pointer}
+.hanja-flash-glyph{font-family:'Noto Serif CJK KR','Noto Serif KR','Apple SD Gothic Neo',serif;font-size:clamp(49px,5.6vw,73px);font-weight:650;line-height:1.1}
+.hanja-flashcard strong{font-size:15px;color:#7d6680;min-height:23px;line-height:1.4;word-break:keep-all}
+.hanja-flashcard.flipped{background:linear-gradient(#ede3ff,#f8f3ff);border-color:#9975b9}
+.hanja-flashcard.flipped strong{font-size:17px;color:#543475}
+.hanja-flash-lesson>p{color:#706277;font-size:15px;line-height:1.5;margin:auto 0 0}
+.hanja-bottom-nav{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.hanja-bottom-nav button{font-size:17px;min-height:47px}
+.hanja-return-link{margin-left:auto;color:#70439a;font-size:17px;font-weight:800}
+.hanja-disclaimer{font-size:14px;color:#796c7f;margin:0;line-height:1.45}
+.hanja-play-glyph{display:flex;align-items:center;justify-content:center;min-height:107px;max-height:26vh;flex-shrink:0;background:linear-gradient(110deg,#fff8e8,#f9f1ff);border:2px solid #ecdcc5;border-radius:20px;color:#43314c;font-family:'Noto Serif CJK KR','Noto Serif KR',serif;font-size:clamp(80px,13vw,124px);font-weight:650;line-height:1}
+.game-area:has(.hanja-play-glyph) .answer{font-size:clamp(20px,2.5vw,26px)}
+.game-area:has(.hanja-play-glyph) .answers{grid-template-columns:repeat(2,minmax(0,1fr))}
+.game-area .question-picture .visual-word{font-size:clamp(64px,10vw,116px);font-family:'Noto Serif CJK KR','Noto Serif KR',serif}
+@media(max-width:699px){
+ .nav{gap:3px;justify-content:space-between}
+ .nav button{font-size:16px;padding:8px 3px;min-width:0;flex:1}
+ .hanja-heading{padding:11px 13px}
+ .hanja-heading h1{font-size:25px}
+ .hanja-heading p:not(.hanja-eyebrow){font-size:16px}
+ .hanja-tower{font-size:50px}
+ .hanja-grade-tab{min-width:82px;min-height:59px;font-size:20px;padding:7px 10px}
+ .hanja-lesson{grid-template-columns:1fr;gap:9px}
+ .hanja-lesson-intro,.hanja-flash-lesson{padding:12px 13px;gap:9px}
+ .hanja-lesson h2{font-size:24px}
+ .hanja-flash-grid{gap:6px}
+ .hanja-flashcard{min-height:100px;padding:6px 3px}
+ .hanja-flash-glyph{font-size:49px}
+ .hanja-flashcard strong{font-size:12px}
+ .hanja-flashcard.flipped strong{font-size:14px}
+ .hanja-start{min-height:55px;font-size:22px}
+ .hanja-play-glyph{min-height:96px;max-height:20vh;font-size:90px}
+ .game-area:has(.hanja-play-glyph) .answers{gap:7px}
+ .game-area:has(.hanja-play-glyph) .answer{min-height:59px;padding:9px;font-size:19px}
+ .hanja-return-link{margin-left:0}
+}
+@media(max-height:700px) and (max-width:699px){
+ .hanja-tower{display:none}
+ .hanja-heading{padding:8px 12px}
+ .hanja-flashcard:nth-child(n+5){display:none}
+ .hanja-flashcard{min-height:83px}
+ .hanja-flash-glyph{font-size:43px}
+}
+@media(prefers-reduced-motion:reduce){.hanja-grade-tab,.hanja-flashcard{scroll-behavior:auto}}

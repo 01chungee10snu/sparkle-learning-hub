@@ -36,6 +36,7 @@ export function createVillageUI({root, sendToUnity, sendRequest, getCloudSync=()
     ' <button class="vh-district" data-district="math" type="button">🔢 수학 정원</button>',
     ' <button class="vh-district" data-district="korean" type="button">📖 이야기 도서관</button>',
     ' <button class="vh-district" data-district="english" type="button">🌍 영어 숲</button>',
+    ' <button class="vh-district" data-district="hanja" type="button">📜 한자 수련관</button>',
     ' <button class="vh-district" data-district="kma" type="button">🏆 경시대회 성</button>',
     ' <button class="vh-district" data-district="practice" type="button">🧩 마법 연습장</button>',
     ' <button class="vh-district" data-district="academy" type="button">🪄 마법학교</button>',
@@ -840,9 +841,15 @@ export function createVillageUI({root, sendToUnity, sendRequest, getCloudSync=()
       lore.append(label('p',activeStory.learning,'vh-story-detail'));
       ui.body.append(lore);
     }
-    ui.body.append(scenicBanner(missions.id,missions.intro));
+    ui.body.append(scenicBanner(missions.id==='hanja'?'academy':missions.id,missions.intro));
+    if(missions.id==='hanja'){
+      const links=label('p','','vh-small');
+      const cards=document.createElement('a');cards.href='../learning.html?view=hanja';cards.textContent='📖 글자 학습카드 · 급수별 진도 보기';
+      const source=document.createElement('a');source.href='https://github.com/rycont/hanja-grade-dataset';source.textContent='자료 출처';source.target='_blank';source.rel='noopener noreferrer';
+      links.append(cards,document.createTextNode(' · '),source);ui.body.append(links);
+    }
     const list=label('div','','vh-district-missions');
-    let visible=Math.min(8,missions.games.length);
+    let visible=missions.id==='hanja'?missions.games.length:Math.min(8,missions.games.length);
     const render=()=>{
       list.replaceChildren();
       for(const game of missions.games.slice(0,visible)){
@@ -1054,6 +1061,7 @@ export function createVillageUI({root, sendToUnity, sendRequest, getCloudSync=()
   function showQuestion(q) {
     if (!q) return;
     phase='question'; question=q; gameId=q.gameId;
+    root.dataset.hanja=String(q.gameId.startsWith('hanja-'));
     open(); resetBody();
     const skin=q.total===25?'tome':q.gameId==='kind-dialogue'?'scroll':'crystal';
     theme(skin);root.dataset.mode='question';

@@ -10,7 +10,8 @@ const css=readFileSync(resolve(dir,'../village/navigation-v15.css'),'utf8');
 const keys=Object.values(NAVIGATION_V15).flatMap(group=>group.items.map(item=>item[0]));
 assert.deepEqual(Object.keys(NAVIGATION_V15),['learn','explore','decorate','settings']);
 assert.equal(keys.length,new Set(keys).size,'Navigation destinations must be unique');
-assert.equal(keys.length,22);
+assert.equal(keys.length,23);
+assert(keys.includes('district:hanja'),'Hanja is reachable in native village navigation');
 for(const key of keys){
  if(key==='vh-nav-listen')continue;
  if(key.startsWith('district:'))assert.ok(ui.includes('data-district="'+key.slice(9)+'"'),key);
@@ -27,4 +28,4 @@ for(const probe of ["event.key==='Escape'","setAttribute('inert'","removeAttribu
 assert.ok(css.includes('#vh-navigation-dock') && css.includes('#vh-navigation-panel'));
 const mapping=Object.fromEntries(Object.entries(NAVIGATION_V15).map(([key,definition])=>[key,{label:definition.label,items:definition.items.map(([originalId,label])=>({originalId,label}))}]));
 if(process.argv.includes('--write-mapping'))writeFileSync(resolve(dir,'../../docs/NAVIGATION_MAPPING_V15.json'),JSON.stringify(mapping,null,2)+'\n');
-console.log(JSON.stringify({status:'PASS',categories:4,mappedDestinations:keys.length,alias:{'vh-bebsu':'district:kma'},modeAvailable:{'2d':19,'3d':22}}));
+console.log(JSON.stringify({status:'PASS',categories:4,mappedDestinations:keys.length,alias:{'vh-bebsu':'district:kma'},modeAvailable:{'2d':20,'3d':23}}));

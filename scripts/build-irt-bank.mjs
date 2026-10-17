@@ -57,7 +57,7 @@ for(const entry of catalog){
    ?provenance.source==='kma_public_original'?'needs_expert_review'
     :verification==='independently_arithmetic_checked'?'arithmetic_checked':'generated_not_calibrated'
    :'app_authored_not_calibrated';
-  const item={gameId:entry.id,id:q.id,subject:entry.subject,skill,b:round(anchor+offset),c:round(guess),stage,gradeBand:band,mode,verification,quality};
+  const item={gameId:entry.id,id:q.id,subject:entry.subject,skill,b:round(anchor+offset),c:round(guess),stage,gradeBand:band,mode,verification,quality,...(q.hanjaFamily?{family:q.hanjaFamily}:{})};
   items.push(item);
   inc('bySubject',item.subject);inc('byGrade',band||'base');
   inc('byMode',mode);inc('byVerification',verification);inc('byQuality',quality);
