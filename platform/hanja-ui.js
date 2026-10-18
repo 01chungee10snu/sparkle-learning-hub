@@ -61,6 +61,6 @@ export function renderHanjaHome({catalog,who,selected,flipped}){
     '<div class="hanja-bottom-nav">'+(previous?'<button type="button" class="secondary" data-action="hanja-grade" data-band="'+escapeHTML(previous.gradeBand)+'">← 이전 급수</button>':'')+
     (next?'<button type="button" class="secondary" data-action="hanja-grade" data-band="'+escapeHTML(next.gradeBand)+'">다음 급수 살펴보기 →</button>':'')+
     '<a href="./village/" class="hanja-return-link">🏡 마법마을로 돌아가기</a></div>'+
-    '<p class="hanja-disclaimer"><a href="https://github.com/rycont/hanja-grade-dataset" target="_blank" rel="noopener noreferrer">한자 자료 출처</a> · 원자료 저작권: 한국어문회. 공식 자격증·학업능력 판정이 아닙니다. 문항 난이도는 잠정 추정치이고, 한자 뜻·음과 급수 배정은 보호자 검수가 필요합니다.</p>'+
+    '<p class="hanja-disclaimer">공식 자격증·학업능력 판정이 아닙니다. 문항 난이도는 잠정 추정치이고, 한자 뜻·음과 급수 배정은 보호자 검수가 필요합니다.</p>'+
     '</section>';
 }

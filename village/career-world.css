@@ -1,0 +1,41 @@
+/* 30 curated professional pathways in the magic village library. */
+#village-ui[data-mode="career"] .vh-dialog{max-width:min(850px,94vw)}
+#village-ui .career-promise{font-size:clamp(18px,2.5vw,25px);font-weight:900;color:#4c3971;margin:6px 0 8px;line-height:1.35}
+#village-ui .career-integrity{color:#6b5e75;background:#f9f4fd;border:1px solid #ded1e9;padding:11px 14px;border-radius:14px;font-size:clamp(13px,2vw,16px);line-height:1.5;margin:0 0 12px}
+#village-ui .career-explorer{display:grid;gap:10px}
+#village-ui .career-filters{display:flex;flex-wrap:wrap;gap:7px}
+#village-ui .career-filter{min-height:44px;background:#f3edf9;color:#5b4476;border:2px solid #d8cce2;border-radius:13px;padding:7px 10px;font-size:clamp(13px,1.9vw,16px);font-weight:800}
+#village-ui .career-filter[aria-pressed="true"]{background:#7d58b7;border-color:#60418f;color:white}
+#village-ui .career-search{width:100%;min-height:53px;border-radius:13px;border:2px solid #ccbdd9;background:#fff;color:#3e3653;padding:12px 16px;font-size:clamp(18px,2.2vw,22px)}
+#village-ui .career-count{font-size:15px;font-weight:900;color:#6b5683;margin:3px 0}
+#village-ui .career-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;max-height:min(40vh,440px);overflow-y:auto;overscroll-behavior:contain;padding:2px 4px 4px 0}
+#village-ui .career-card{min-height:158px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px;border:2px solid #e0d0df;border-radius:19px;background:linear-gradient(160deg,#fffef8,#f7f1ff);color:#413650;text-align:center}
+#village-ui .career-card[aria-pressed="true"],#village-ui .career-card:focus-visible{border-color:#bd8d62;background:#fff8df;box-shadow:0 3px 12px #68457f30}
+#village-ui .career-card-icon{font-size:clamp(38px,4.8vw,59px);line-height:1.1}
+#village-ui .career-card-label{font-size:clamp(16px,2.2vw,21px);font-weight:900;color:#493665}
+#village-ui .career-card-caption{font-size:13px;font-weight:650;color:#6f6573;line-height:1.37}
+#village-ui .career-saved-mark{font-size:13px;font-weight:900;color:#bd4f87}
+#village-ui .career-details{display:none;background:linear-gradient(140deg,#fff7dc,#f7f0ff);border:2px solid #d4bae9;border-radius:20px;padding:16px;scroll-margin-top:10px}
+#village-ui .career-details.selected{display:grid;gap:10px}
+#village-ui .career-detail-icon{font-size:clamp(50px,6vw,72px);line-height:1}
+#village-ui .career-detail-name{font-size:clamp(23px,3vw,32px);color:#543d77;margin:0}
+#village-ui .career-detail-category{color:#86704a;font-weight:900;margin:0;font-size:16px}
+#village-ui .career-detail-section{display:grid;gap:3px;background:#ffffffb8;border-radius:12px;padding:10px 12px}
+#village-ui .career-detail-section h4,#village-ui .career-related h4{font-size:clamp(17px,2.1vw,21px);color:#4c3970;margin:0}
+#village-ui .career-detail-copy{font-size:clamp(16px,2.1vw,20px);line-height:1.5;color:#5d5167;margin:3px 0}
+#village-ui .career-bookmark{min-height:55px;font-size:19px;border-radius:15px;background:#975eb5}
+#village-ui .career-related{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#village-ui .career-related h4{width:100%}
+#village-ui .career-subject-button{min-height:49px;border-radius:13px;padding:9px 13px;background:#f7fff1;border:2px solid #bcd8c2;color:#3c684e;font-size:17px}
+#village-ui .career-refs{margin:10px 0 2px;border-top:1px solid #d8cee2;padding-top:8px}
+#village-ui .career-source-link{display:inline-flex;margin:5px 9px 5px 0;border-radius:11px;background:#f4f2ff;border:1px solid #d6cce7;padding:8px 11px;color:#55427b;font-size:14px;font-weight:800;text-decoration:underline}
+@media(max-width:650px){
+ #village-ui .career-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-height:40vh;gap:7px}
+ #village-ui .career-card{min-height:147px;padding:10px 6px}
+ #village-ui .career-card-caption{font-size:12px}
+ #village-ui .career-card-label{font-size:17px}
+ #village-ui .career-card-icon{font-size:43px}
+ #village-ui .career-integrity{padding:9px 11px}
+ #village-ui .career-details{padding:12px}
+}
+@media(max-width:360px){#village-ui .career-grid{grid-template-columns:1fr 1fr}#village-ui .career-card{min-height:140px}#village-ui .career-filter{font-size:12px;padding:7px 8px}}

@@ -2,15 +2,37 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#7655af">
-<title>태희·세희의 통합 마법마을</title>
-<meta name="description" content="하나의 마법마을에서 수학·국어·영어·뱁수 경시대회와 마법 연습장, 별 상점과 정원을 탐험하세요.">
-<meta http-equiv="refresh" content="0;url=./village/">
-<script>location.replace('./village/'+location.search+location.hash);</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4971ab">
+<title>태희·세희의 마법마을 — 꿈을 키우는 배움의 섬</title>
+<meta name="description" content="마법마을에 입장해 수학·국어·영어·한자와 30가지 미래 직업을 탐험하세요.">
+<link rel="stylesheet" href="./entry-world.css?v=world-v26-20261019">
 </head>
-<body><main><h1>✨ 태희·세희의 통합 마법마을</h1>
-<p>마법마을로 이동하고 있어요.</p>
-<p><a href="./village/">마법마을 입장하기</a></p>
-<p><a href="./learning.html">기존 상세 문제집·학습기록 보기</a></p>
-</main></body></html>
+<body>
+<main id="entry-world" class="entry-world">
+  <div class="entry-sun" aria-hidden="true"></div>
+  <div class="entry-stars" aria-hidden="true"></div>
+  <div class="entry-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="entry-island-shadow" aria-hidden="true"></div>
+  <img class="entry-island-art" src="./village/assets/illustrations/welcome.webp"
+       width="1200" height="520" alt="태희와 세희 요정이 함께 탐험하는 화려한 마법의 성과 꽃나무" decoding="async">
+  <section class="entry-game-menu" aria-labelledby="entry-title">
+    <p class="entry-chapter"><span aria-hidden="true">✦</span> MAGIC LEARNING WORLD <span aria-hidden="true">✦</span></p>
+    <h1 id="entry-title"><span>태희와 세희의</span><strong>마법마을</strong></h1>
+    <p class="entry-tagline">배움이 자라면 새로운 세상이 열려요.</p>
+    <p id="world-kst-badge" class="entry-kst" aria-live="off">🌿 대한민국 시간에 따라 변하는 마법의 섬</p>
+    <div class="entry-game-actions">
+      <a class="entry-portal entry-portal-primary" href="./village/"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마법마을 입장하기</strong><small>3D 요정 마을을 탐험하고 친구를 만나요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+      <a class="entry-portal entry-portal-study" href="./learning.html"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 가기</strong><small>수학·국어·영어·한자 문제를 바로 풀어요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+    </div>
+    <p class="entry-world-notice">🧭 3D 마을 · 📜 한자 수련관 · 🏛️ 미래 직업 탐색관 · 🐠 생명 연못</p>
+  </section>
+  <p class="entry-caption">한국 시간·계절에 따라 변하는 하늘과 마법의 섬 <span aria-hidden="true">✦</span> 오늘의 꿈을 발견해요</p>
+</main>
+<script type="module">
+import {koreaScene,applyKoreaScene} from './village/korea-season-clock.js?v=world-v26-20261019';
+function update(){applyKoreaScene(koreaScene());}
+update();setInterval(update,60000);
+</script>
+</body>
+</html>

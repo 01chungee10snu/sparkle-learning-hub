@@ -329,72 +329,14 @@
     "title": "단위 정원",
     "description": "길이·무게·퍼센트가 쏙쏙!",
     "emoji": "🎀",
-    "kind": "quiz",
+    "kind": "external",
+    "url": "../fairy-math-garden/",
     "progressAdapter": "unit-garden-v1",
     "levelLabel": "단위·비율 도전",
     "questionCount": 48,
     "status": "published",
     "modes": [
       "choice"
-    ],
-    "source": "./games/unit-garden/game.json",
-    "questionIds": [
-      "length-01",
-      "length-02",
-      "length-03",
-      "length-04",
-      "length-05",
-      "length-06",
-      "weight-01",
-      "weight-02",
-      "weight-03",
-      "weight-04",
-      "weight-05",
-      "weight-06",
-      "distance-01",
-      "distance-02",
-      "distance-03",
-      "distance-04",
-      "distance-05",
-      "distance-06",
-      "mix-01",
-      "mix-02",
-      "mix-03",
-      "mix-04",
-      "mix-05",
-      "mix-06",
-      "length-07",
-      "length-08",
-      "length-09",
-      "length-10",
-      "length-11",
-      "length-12",
-      "weight-07",
-      "weight-08",
-      "weight-09",
-      "weight-10",
-      "weight-11",
-      "weight-12",
-      "distance-07",
-      "distance-08",
-      "distance-09",
-      "distance-10",
-      "distance-11",
-      "distance-12",
-      "mix-07",
-      "mix-08",
-      "mix-09",
-      "mix-10",
-      "mix-11",
-      "mix-12"
-    ],
-    "sourceGroup": "unit-garden-owned",
-    "growth": false,
-    "courses": [
-      "length",
-      "weight",
-      "distance",
-      "mix"
     ]
   },
   {
@@ -7080,8 +7022,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h7ii",
@@ -7236,8 +7177,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h7",
@@ -7392,8 +7332,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h6ii",
@@ -7598,8 +7537,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h6",
@@ -7804,8 +7742,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h5ii",
@@ -8060,8 +7997,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h5",
@@ -8316,8 +8252,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h4ii",
@@ -8872,8 +8807,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h4",
@@ -9428,8 +9362,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h3ii",
@@ -10484,8 +10417,7 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   },
   {
     "id": "hanja-h3",
@@ -11174,7 +11106,6 @@
     "modes": [
       "choice"
     ],
-    "sourceGroup": "hanja",
-    "maxChoices": 4
+    "sourceGroup": "hanja"
   }
 ]

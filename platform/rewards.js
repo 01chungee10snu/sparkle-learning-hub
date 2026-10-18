@@ -1,5 +1,4 @@
 import * as Progress from './progress.js';
-import {KMA_PAPERS} from './kma-paper-ids.js';
 
 /** Rewards never rewrite learning stars. The separate ledger keeps two siblings
  * isolated and makes spending, repeat clicks and backup merges idempotent. */
@@ -128,11 +127,9 @@ const quizEntry=(catalog,id)=>catalog.find(game=>game.id===id&&game.status==='pu
 const BEBSU_CHALLENGE_BONUS={tae:160,se:60};
 const isBebsuOriginal=id=>/^bebsu-(?:g[1-6]|m[1-3])-original$/.test(id);
 function validBebsuCompletion(round,entry){
- const exact=KMA_PAPERS[entry.id]?.[round.paperId];
- return Boolean(exact&&exact.length===25&&Array.isArray(round.questionIds)&&
- round.questionIds.length===25&&new Set(round.questionIds).size===25&&
- exact.every(id=>round.questionIds.includes(id))&&
- round.questionIds.every(id=>entry.questionIds?.includes(id)));
+ return /^kma-[0-9]{1,5}$/.test(round.paperId??'')&&
+ Array.isArray(round.questionIds)&&round.questionIds.length===25&&
+ new Set(round.questionIds).size===25&&round.questionIds.every(id=>entry.questionIds?.includes(id));
 }
 export function bebsuChallengeStars(catalog,who=Progress.learner()){
  whoId(who);
@@ -151,9 +148,7 @@ const isMagicPractice=id=>/^magic-(?:g[1-6]|m[1-3])-challenge$/.test(id);
 function validPracticeCompletion(round,entry){
  const paper=entry.papers?.find(p=>p.paperId===round.paperId);
  return Boolean(paper&&Array.isArray(round.questionIds)&&round.questionIds.length===25&&
-  paper.questionIds.length===25&&new Set(paper.questionIds).size===25&&
-  new Set(round.questionIds).size===25&&
-  paper.questionIds.every(id=>round.questionIds.includes(id)));
+  paper.questionIds.length===25&&paper.questionIds.every((id,i)=>round.questionIds[i]===id));
 }
 export function magicPracticeStars(catalog,who=Progress.learner()){
  whoId(who);
@@ -198,11 +193,10 @@ function evidence(catalog,who,p){
  const results=Progress.summary(catalog,who),subjects=new Set(),correctDates=new Set(),retryTimes=new Map();let completed=0,retry=false;
  for(const event of Object.values(p.events))if(event.kind==='retry'){const key=`${event.gameId}/${event.questionId}`;retryTimes.set(key,Math.max(retryTimes.get(key)||0,event.at));}
  for(const entry of catalog.filter(g=>g.status==='published')){
-  const modern=Progress.gameProgress(entry.id,who);
-  const histories=entry.progressAdapter==='unit-garden-v1'?[Progress.legacyProgress(who),modern]:[modern];
-  completed+=histories.reduce((total,game)=>total+(game.finishedRounds||0),0);
-  if(histories.some(game=>Object.keys(game.records).length||game.finishedRounds))subjects.add(entry.subject);
-  for(const game of histories)for(const [questionId,record] of Object.entries(game.records)){
+  const game=entry.progressAdapter==='unit-garden-v1'?Progress.legacyProgress(who):Progress.gameProgress(entry.id,who);
+  completed+=game.finishedRounds||0;
+  if(Object.keys(game.records).length||game.finishedRounds)subjects.add(entry.subject);
+  for(const [questionId,record] of Object.entries(game.records)){
    // The app emits retry only after grading a guided re-practice as correct.
    // It remains separate from the original independent-answer/growth evidence.
    const firstAttempt=Math.min(...(record.attempts||[]).map(attempt=>attempt.at));

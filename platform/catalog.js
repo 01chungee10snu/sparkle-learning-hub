@@ -32,5 +32,5 @@ export function validateGame(game,entry){
  if(entry.questionIds&&JSON.stringify(game.questions.map(q=>q.id))!==JSON.stringify(entry.questionIds))throw new Error('게임과 문항 목록이 일치하지 않아요.');
  return game;
 }
-export async function loadCatalog(){const r=await fetch('./games/catalog.json?v=hanja-public-20261017');if(!r.ok)throw new Error('놀이 목록에 연결하지 못했어요.');return validateCatalog(await r.json());}
-export async function loadGame(entry){const r=await fetch(entry.source+'?v=hanja-public-20261017');if(!r.ok)throw new Error('이 놀이를 불러오지 못했어요.');return validateGame(await r.json(),entry);}
+export async function loadCatalog(){const r=await fetch('./games/catalog.json?v=unified-20261013');if(!r.ok)throw new Error('놀이 목록에 연결하지 못했어요.');return validateCatalog(await r.json());}
+export async function loadGame(entry){const r=await fetch(entry.source+'?v=unified-20261013');if(!r.ok)throw new Error('이 놀이를 불러오지 못했어요.');return validateGame(await r.json(),entry);}

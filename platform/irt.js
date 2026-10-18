@@ -5,7 +5,7 @@
  */
 export const MODEL_VERSION=1;
 export const STAGE_DIFFICULTY=Object.freeze({1:-2.2,2:-1.25,3:-0.25,4:0.75});
-export const GRADE_DIFFICULTY=Object.freeze({K:-2.3,G1:0.2,G2:1.6,G3:2.7,G4:3.7,G5:4.7,G6:5.7,M:6.3,M1:7,M2:8,M3:9,H8:-2.5,H7II:-2,H7:-1.5,H6II:-1,H6:-0.5,H5II:0,H5:0.5,H4II:1,H4:1.5,H3II:2,H3:2.5});
+export const GRADE_DIFFICULTY=Object.freeze({K:-2.3,G1:0.2,G2:1.6,G3:2.7,G4:3.7,G5:4.7,G6:5.7,M:6.3,M1:7,M2:8,M3:9,H8:-2.5,H7II:-2.0,H7:-1.5,H6II:-1,H6:-0.5,H5II:0,H5:0.5,H4II:1,H4:1.5,H3II:2,H3:2.5});
 const SUBJECTS=new Set(['math','korean','english','hanja']);
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
 const validId=value=>typeof value==='string'&&/^[a-z][a-z0-9-]{0,79}$/.test(value);
@@ -48,11 +48,9 @@ export function evidenceFor(games,subject,maxItems=120){
    evidence.push({item,correct:answer.correct,at:answer.at,id:gameId+':'+qid,assisted:answer.assisted===true});
   }
  }
- const seen=new Set();
- const distinct=evidence.sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)).filter(e=>{
-  const key=subject==='hanja'?(e.item.family||e.id):e.id;
-  if(seen.has(key))return false;seen.add(key);return true;
- });
+ // 훈음과 독음이 한 글자를 공유하면 최초 독립 응답만 능력 근거로 사용한다.
+ const ordered=evidence.sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id)),seen=new Set();
+ const distinct=ordered.filter(e=>{const key=e.item.subject==='hanja'?(e.item.family||e.id):e.id;if(seen.has(key))return false;seen.add(key);return true;});
  return distinct.filter(e=>!e.assisted).sort((a,b)=>b.at-a.at||a.id.localeCompare(b.id)).slice(0,maxItems);
 }
 /** Maximum-a-posteriori ability with N(grade starting point, 1.35^2) prior. */
@@ -105,27 +103,22 @@ export function skillEvidence(games,subject,stage=2){
   provisional:true
  })).sort((a,b)=>b.gap-a.gap||b.n-a.n||a.skill.localeCompare(b.skill));
 }
-export function selectQuestions({game,candidates,profile,size,stage,exclude=[],positionOffset=0,roundSize=size}){
+export function selectQuestions({game,candidates,profile,size,stage}){
  if(!Array.isArray(candidates)||!candidates.length||!Number.isInteger(size)||size<1)return [];
- if(!Number.isInteger(positionOffset)||positionOffset<0||!Number.isInteger(roundSize)||
-    roundSize<size+positionOffset)return [];
  if(candidates.some(q=>!itemAt(game.id,q.id)))return [];
  const records=profile?.games?.[game.id]?.records||{};
+ const observedFamilies=new Set(Object.entries(records).filter(([,r])=>r?.seen).map(([id])=>itemAt(game.id,id)?.family).filter(Boolean));
  const model=estimateSubject(profile?.games||{},game.subject,stage);
  const skillNeeds=new Map(skillEvidence(profile?.games||{},game.subject,stage).filter(g=>g.n>=3).map(g=>[g.skill,g.gap]));
- const chosen=[],usedSkills=new Map(),blocked=new Set(exclude),usedFamilies=new Set(exclude.map(id=>itemAt(game.id,id)?.family).filter(Boolean));
- const observedFamilies=new Set(Object.entries(records).filter(([,r])=>r?.seen).map(([id])=>itemAt(game.id,id)?.family).filter(Boolean));
- for(const id of blocked){const skill=itemAt(game.id,id)?.skill;if(skill)usedSkills.set(skill,(usedSkills.get(skill)||0)+1);}
- // A 25-item contest remains one round. Re-selecting its unanswered suffix
- // must not restart the target cycle or become a three-item round near the end.
- const goals=roundSize===3?[0.84,0.72,0.62]:[0.84,0.74,0.68,0.61,0.76];
+ const chosen=[],usedSkills=new Map(),usedFamilies=new Set();
+ const goals=size===3?[0.84,0.72,0.62]:[0.84,0.74,0.68,0.61,0.76];
  for(let i=0;i<size;i++){
-  const remaining=candidates.filter(q=>!chosen.includes(q.id)&&!blocked.has(q.id)&&(!itemAt(game.id,q.id)?.family||!usedFamilies.has(itemAt(game.id,q.id).family)));
+  const remaining=candidates.filter(q=>!chosen.includes(q.id)&&(!itemAt(game.id,q.id)?.family||!usedFamilies.has(itemAt(game.id,q.id).family)));
   if(!remaining.length)break;
   const fresh=remaining.filter(q=>!(records[q.id]?.seen)&&(!itemAt(game.id,q.id)?.family||!observedFamilies.has(itemAt(game.id,q.id).family)));
   // New items prevent memorized responses from dominating learning paths.
   const pool=fresh.length?fresh:remaining;
-  const target=goals[(positionOffset+i+(model.n===0?1:0))%goals.length];
+  const target=goals[i%goals.length];
   const ranked=pool.map(q=>{
    const item=itemAt(game.id,q.id),p=predicted(model.theta,item);
    const seen=records[q.id]?.seen||0,last=records[q.id]?.attempts?.at(-1);

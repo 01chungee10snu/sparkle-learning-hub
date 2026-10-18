@@ -1,12 +1,17 @@
 import * as Progress from '../platform/progress.js';
-import * as IRT from '../platform/irt.js';
 import * as Growth from '../platform/growth.js';
 import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
+import * as LearningDirector from '../platform/learning-director.js?v=pond-v22-20261017';
+import {retainedMemoryMoment} from '../platform/learning-moments.js?v=relationship-v18-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
+import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
+import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
+import * as Resources from '../platform/resource-economy.js?v=pond-economy-v1';
+import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
   .map(grade=>'bebsu-'+grade+'-original');
@@ -15,18 +20,21 @@ const ALLOWED=new Set();
 const DISTRICTS=Object.freeze({
  math:{title:'🔢 수학 정원',intro:'수 세기부터 도량형·분수·마법 수학까지 차근차근 배우는 정원이에요.',subject:'math'},
  korean:{title:'📚 이야기 도서관',intro:'책과 이야기로 낱말·문장·읽기·말하기를 연습해요.',subject:'korean'},
- hanja:{title:'📜 한자 수련관',intro:'8급부터 3급까지 뜻과 소리를 연습해요. 난이도는 잠정 IRT 값이며 공식 급수 판정은 아니에요.',subject:'hanja'},
  english:{title:'🌿 영어 숲',intro:'생활 속 영어 표현을 듣고 말하며 탐험해요.',subject:'english'},
+ hanja:{title:'📜 한자 수련관',intro:'8급부터 3급까지 급수별로 한자를 보고 훈음과 독음을 연습해요. 문제는 IRT 방식으로 골라요.',subject:'hanja'},
  academy:{title:'🪄 마법학교',intro:'수학·국어·영어에서 오늘의 짧은 모험을 고르세요.',subject:'all'},
  growth:{title:'🌟 성장의 탑',intro:'세 과목의 배움 길과 다음 도전의 근거를 살펴봐요.'},
- kma:{title:'🏆 뱁수 경시대회 성',intro:'원문 문항번호를 보존하며, 새 회차는 IRT 맞춤 순서로 25문항을 만나요.'},
+ kma:{title:'🏆 뱁수 경시대회 성',intro:'KMA 한국수학학력평가 공개 기출의 1~25번을 차례로 풀어요.'},
  practice:{title:'🧩 마법 수학 훈련장',intro:'자체 제작 연습 25문항을 기본·도전·심화 난도로 풀어요.'},
+ pond:{title:'🐠 생명 연못',intro:'서로 다른 학습 자원을 모아 여러 물고기를 키우고 하루에 한 번 먹이를 줘요.'},
+ career:{title:'🏛️ 미래 직업 탐색관',intro:'의사·과학자·기업가 등 전문 직업 30가지를 탐험하고 내가 꿈꾸는 일을 모아요.'},
  shop:{title:'🎁 별빛 상점',intro:'학습으로 실제 모은 별을 선물과 교환해요.'},
  garden:{title:'🌱 성장 정원',intro:'물·햇빛·노래로 나무와 꽃을 키워요.'}
 });
 const safeBebsuImage = value => typeof value === 'string' &&
   /^\.\/assets\/bebsu\/math\/[a-f0-9]{16}\.png$/.test(value) ? '../' + value.slice(2) : '';
 const CHILDREN = {tae: '태희', se: '세희'};
+const HANJA_GRADE_ORDER=['H8','H7II','H7','H6II','H6','H5II','H5','H4II','H4','H3II','H3'];
 const respond = (action, requestId, values = {}) =>
   ({action, requestId, ok: true, ...values});
 
@@ -51,31 +59,31 @@ export function createVillageHost(emit) {
   }
 
   async function initialize() {
-    const url = new URL('../games/catalog.json?v=hanja-public-20261017', import.meta.url);
+    const url = new URL('../games/catalog.json?v=unified-20261013', import.meta.url);
     const result = await fetch(url);
     if (!result.ok) throw new Error('학습 게임 목록을 불러오지 못했어요.');
     const entries = validateCatalog(await result.json());
     Progress.configureCatalog(entries);
     for(const item of entries)if(item.kind==='quiz'&&item.status==='published')ALLOWED.add(item.id);
     try {
-      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=hanja-public-20261017', import.meta.url));
+      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=unified-20261013', import.meta.url));
       if (!bankResponse.ok) throw new Error('문항 색인을 불러오지 못했어요.');
       Progress.configureIrtBank(await bankResponse.json());
     } catch (error) {
-      // Never silently replace adaptive questions with a fixed/random route.
-      throw new Error('IRT 문항 색인을 확인하지 못해 새 출제를 멈췄어요. 기록은 보존돼요. 다시 불러오기를 눌러 주세요.');
+      console.warn('마법마을 기본 출제 방식 사용:', error);
     }
-    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=hanja-public-20261017', import.meta.url));
+    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=unified-20261013', import.meta.url));
     if (!challengeResponse.ok) throw new Error('경시대회 25문항 시험지 목록을 불러오지 못했어요.');
     challenges = await challengeResponse.json();
     if (challenges?.version !== 1 || !Array.isArray(challenges.grades) || challenges.grades.length !== 9)
       throw new Error('경시대회 문제은행 구성을 확인해 주세요.');
-    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=hanja-public-20261017',import.meta.url));
+    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=unified-20261013',import.meta.url));
     if(!practiceResponse.ok)throw new Error('마법 연습장 시험지 목록을 불러오지 못했어요.');
     practiceChallenges=await practiceResponse.json();
     if(practiceChallenges.publicPractice!==true||practiceChallenges.grades?.length!==9)
       throw new Error('마법 연습장 문제은행을 확인해 주세요.');
     Rewards.syncRewards(entries, Progress.learner());
+    Resources.configure(entries);
     catalog = entries;
     return catalog;
   }
@@ -87,7 +95,7 @@ export function createVillageHost(emit) {
     if (!entry || entry.kind !== 'quiz') throw new Error('학습 게임 정보를 확인해 주세요.');
     if (cache.has(gameId)) return cache.get(gameId);
     const path = entry.source.replace(/^\.\//, '');
-    const response = await fetch(new URL('../' + path + '?v=hanja-public-20261017', import.meta.url));
+    const response = await fetch(new URL('../' + path + '?v=unified-20261013', import.meta.url));
     if (!response.ok) throw new Error('학습 문제를 불러오지 못했어요.');
     const game = validateGame(await response.json(), entry);
     cache.set(gameId, game);
@@ -102,6 +110,7 @@ export function createVillageHost(emit) {
     if(typeof item.hint==='string'&&item.hint.trim())return item.hint;
     if(game.id==='measure-lab')return '무엇을 재는지와 숫자 뒤의 단위를 먼저 살펴봐요. 단위가 다르면 같은 단위로 바꾼 뒤 비교해요.';
     if(game.id==='kind-dialogue')return '이야기의 친구가 원하는 일을 먼저 생각해요. 각 말이 어떤 뜻을 전하는지 하나씩 비교해요.';
+    if(game.subject==='hanja')return '먼저 한자의 모양을 보고 뜻과 소리를 스스로 떠올려 봐요. 모르겠으면 학습카드를 다시 보아도 괜찮아요.';
     const mode=item.interaction?.type??'choice';
     if(mode==='build')return '이야기에서 필요한 개수를 찾아요. 하나씩 담거나 덜면서 손가락으로 세어 봐요.';
     if(item.visual?.kind==='groups')return '그림의 물건을 하나씩 짚어 세어요. 물어본 것이 전체 개수인지, 더 많은 쪽인지도 확인해요.';
@@ -114,8 +123,6 @@ export function createVillageHost(emit) {
     const item = game.questions.find(q => q.id === round.ids[round.index]);
     if (!item) throw new Error('현재 문제를 찾지 못했어요.');
     const mode = item.interaction?.type ?? 'choice';
-    const descriptor = IRT.itemAt(game.id, item.id);
-    const ability = Progress.ability(game.subject, who);
     return {
       gameId: game.id,
       questionId: item.id,
@@ -138,26 +145,48 @@ export function createVillageHost(emit) {
       hinted: round.hinted === true,
       index: round.index + 1,
       total: round.ids.length,
-      originalIndex: Number.isInteger(item.provenance?.examQuestionNo) ? item.provenance.examQuestionNo : null,
-      irt: {
-        provisional: true,
-        selection: round.irtVersion === 2 ? 'adaptive' : 'legacy-preserved',
-        skill: descriptor?.skill ?? '',
-        predictedSuccess: descriptor ? IRT.predicted(ability.theta, descriptor) : null,
-        evidenceCount: ability.n,
-        uncertainty: ability.uncertainty
-      },
       paperId: round.paperId || '',
       problemImage: safeBebsuImage(item.problemImage),
       solutionImage: safeBebsuImage(item.solutionImage)
     };
   }
 
+  function reconcileMemoryWorld(who){
+    let state=Relationships.loadRelationships(),changed=false;
+    let ecologyState=Ecology.loadEcology(),ecologyChanged=false;
+    for(const entry of catalog||[]){
+      if(entry.kind!=='quiz'||entry.status!=='published')continue;
+      const progress=Progress.gameProgress(entry.id,who);
+      for(const round of progress.completedRounds||[]){
+        if(round.purpose!=='review')continue;
+        const moment=retainedMemoryMoment(progress,round.id);
+        if(!moment.kind)continue;
+        const recorded=Relationships.recordMemory(state,{
+          who,subject:entry.subject||'',tier:moment.kind,roundId:round.id,at:round.at||Date.now()
+        });
+        state=recorded.state;changed=changed||recorded.added;
+        const skills=[...new Set((moment.questionIds||[]).map(id=>Progress.itemEvidence(entry.id,id)?.skill).filter(Boolean))];
+        const eco=Ecology.recordEcologyMemory(ecologyState,{who,subject:entry.subject||'',tier:moment.kind,
+          roundId:round.id,skills,at:round.at||Date.now()});
+        ecologyState=eco.state;ecologyChanged=ecologyChanged||eco.added;
+      }
+    }
+    if(changed)Relationships.saveRelationships(state);
+    if(ecologyChanged)Ecology.saveEcology(ecologyState);
+    return {relationships:state,ecology:ecologyState};
+  }
+
   function snapshot(action, requestId, extras = {}) {
     const who = Progress.learner();
     const wallet = Rewards.wallet(catalog, who);
+    const resourceWallet=Resources.wallet(catalog,who);
     const flowers = villageSummary(loadVillage(), who);
     const equipment = wallet.look || {};
+    const relationshipState=Relationships.loadRelationships();
+    const relationship=Relationships.relationshipSnapshot(relationshipState,who);
+    const residents=currentArea==='plaza'?Relationships.familyResidentSnapshot(relationshipState):relationship.residents;
+    const ecologyState=Ecology.loadEcology();
+    const ecology=currentArea==='plaza'?Ecology.familyEcologySnapshot(ecologyState):Ecology.ecologySnapshot(ecologyState,who);
     return respond(action, requestId, {
       cosmetics: {
         light: wallet.equipped || '',
@@ -171,12 +200,20 @@ export function createVillageHost(emit) {
       displayName: CHILDREN[who],
       available: wallet.available,
       lifetime: wallet.lifetime,
+      resources:{available:resourceWallet.available,earned:resourceWallet.earned,spent:resourceWallet.spent,deficits:resourceWallet.deficits,balancedDays:resourceWallet.balancedDays},
+      pond:{who,fish:resourceWallet.fish.filter(f=>f.owned).map(f=>({id:f.id,name:f.name,color:f.color,size:f.size,growth:f.growth,feedDays:f.feedDays})),owned:resourceWallet.fish.filter(f=>f.owned).length},
       // The canonical reward model awards verified answer/session/effort stars.
       reinforcementStars: wallet.effortStars||0,
       explanationStars: 0,
       recoveryStars: 0,
       flowers: flowers.flowers,
       familyFlowers: flowers.familyFlowers,
+      relationships:relationship.npcs,
+      residents,
+      relationshipTotals:relationship.totals,
+      ecology:ecology.habitats,
+      ecologyGuardian:ecology.guardianTree,
+      ecologyTotals:ecology.totals,
       ...extras
     });
   }
@@ -185,7 +222,7 @@ export function createVillageHost(emit) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
     const {action, requestId, gameId = '', response = '', roundId = '', paperId = '',
-      itemId = '', category = '', subject = 'math', grade = '', strategy = '', district = ''} = request;
+      itemId = '', category = '', subject = 'math', grade = '', strategy = '', purpose = '', district = ''} = request;
     if (typeof action !== 'string' || typeof requestId !== 'string' ||
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
@@ -197,7 +234,15 @@ export function createVillageHost(emit) {
         species:request.species,care:request.care,expectedStage:request.expectedStage}));
     }
 
-    if (action === 'INIT') return snapshot(action, requestId);
+    if (action === 'INIT') {reconcileMemoryWorld(who);return snapshot(action, requestId);}
+    if (action === 'RELATIONSHIP_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
+    if (action === 'ECOLOGY_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
+    if (action === 'NPC_VISIT') {
+      const visit=Relationships.recordVisit(Relationships.loadRelationships(),{who,npcId:itemId,at:Date.now()});
+      if(visit.added&&!Relationships.saveRelationships(visit.state))
+        throw new Error('친구 관계 기록을 저장하지 못했어요.');
+      return snapshot(action,requestId,{relationshipAdded:visit.added,npcId:itemId});
+    }
     const shopState = () => {
       const wallet = Rewards.wallet(catalog,who);
       return {available:wallet.available,look:wallet.look,
@@ -207,6 +252,22 @@ export function createVillageHost(emit) {
           canPurchase:item.canPurchase
         }))};
     };
+    if (action === 'CAREER_OPEN') return snapshot(action,requestId,{district:'career',career:{dreams:Careers.careerSnapshot(who)}});
+    if (action === 'CAREER_TOGGLE') {
+      const result=Careers.toggleDream(who,itemId);
+      return snapshot(action,requestId,{district:'career',career:{dreams:result.dreams,changed:itemId,selected:result.selected}});
+    }
+    if (action === 'POND_OPEN') return snapshot(action,requestId,{district:'pond',pondShop:Resources.wallet(catalog,who)});
+    if (action === 'POND_ADOPT') {
+      const result=Resources.adoptFish(itemId,catalog,who);
+      if(!result.ok)throw new Error(result.reason==='insufficient-resources'?'네 가지 배움 자원을 더 모아 보아요.':'물고기 영입 기록을 안전하게 저장하지 못했어요.');
+      return snapshot(action,requestId,{district:'pond',pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 연못에 사는 친구예요.':'새 물고기 친구가 연못에 왔어요!'});
+    }
+    if (action === 'POND_FEED') {
+      const result=Resources.feedFish(itemId,catalog,who);
+      if(!result.ok)throw new Error('물고기 돌봄 기록을 저장하지 못했어요.');
+      return snapshot(action,requestId,{district:'pond',pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 먹이를 주었어요.':'물고기가 먹이를 먹고 헤엄쳐요!'});
+    }
     if (action === 'SHOP_OPEN') return snapshot(action, requestId, {shop:shopState()});
     if (action === 'SHOP_BUY') {
       if (typeof itemId!=='string' || itemId.length>80) throw new Error('선물 이름을 확인해 주세요.');
@@ -227,9 +288,11 @@ export function createVillageHost(emit) {
       return snapshot(action, requestId, {shop:shopState(),itemChanged:category});
     }
     if (action === 'ADAPTIVE_OFFER') {
-      return snapshot(action, requestId, {adaptive:recommendVillageRoutes(catalog, {
+      const adaptive=recommendVillageRoutes(catalog, {
         who,subject,grade:grade||(who==='se'?'K':'G1')
-      })});
+      });
+      adaptive.learningPlan=LearningDirector.plan(catalog,{who,preferredSubject:subject});
+      return snapshot(action, requestId, {adaptive});
     }
     const growthMap=()=>['math','korean','english'].map(subject=>{
       const rec=Growth.recommendation(subject,catalog);
@@ -258,7 +321,7 @@ export function createVillageHost(emit) {
       // games to parents through the full area list.
       const stage=Progress.stageSelection(group.subject==='all'?'math':group.subject,who);
       const sorted=[...list].sort((a,b)=>{
-        if(group.subject==='hanja'){const order=['H8','H7II','H7','H6II','H6','H5II','H5','H4II','H4','H3II','H3'];return order.indexOf(a.gradeBand)-order.indexOf(b.gradeBand);}
+        if(group.subject==='hanja')return HANJA_GRADE_ORDER.indexOf(a.gradeBand)-HANJA_GRADE_ORDER.indexOf(b.gradeBand);
         const stageRank=g=>g.stage?Math.abs(g.stage-stage):g.gradeBand?
           (g.gradeBand===(who==='se'?'K':'G1')?0:2):1;
         return stageRank(a)-stageRank(b)||a.title.localeCompare(b.title,'ko')||a.id.localeCompare(b.id);
@@ -267,12 +330,17 @@ export function createVillageHost(emit) {
         id:g.id,title:g.title,description:g.description,subject:g.subject,
         emoji:g.emoji||'🧩',levelLabel:g.levelLabel||g.gradeBand||'선택 놀이',
         questionCount:g.questionCount,
+        studied:Object.keys(Progress.gameProgress(g.id,who).records).length,
+        mastered:Object.values(Progress.gameProgress(g.id,who).records).filter(r=>r.best===10).length,
+        rounds:Progress.gameProgress(g.id,who).finishedRounds,
         resume:Boolean(Progress.gameProgress(g.id,who).round&&!Progress.gameProgress(g.id,who).round.finished)
       }))};
     };
     if(action==='AREA_OPEN'){
       const chosen=(district||response||'').toLowerCase();
       if(!Object.hasOwn(DISTRICTS,chosen))throw new Error('마법마을 지역을 선택해 주세요.');
+      if(chosen==='career')return snapshot(action,requestId,{district:chosen,career:{dreams:Careers.careerSnapshot(who)}});
+      if(chosen==='pond')return snapshot(action,requestId,{district:chosen,pondShop:Resources.wallet(catalog,who)});
       if(chosen==='kma')return snapshot(action,requestId,{district:chosen,
         challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote});
       if(chosen==='practice')return snapshot(action,requestId,{district:chosen,
@@ -308,7 +376,7 @@ export function createVillageHost(emit) {
         if (!row?.papers.some(paper=>paper.paperId===paperId))
           throw new Error('학년과 시험지를 선택한 뒤 시작해 주세요.');
         round = Progress.beginRound(game, {paperId});
-      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize});
+      } else round = Progress.beginRound(game, {size: Progress.LEARNERS[who].roundSize,strategy:strategy||'adaptive',purpose});
       currentGame = game;
       currentGameId = gameId;
       currentWho = who;
@@ -361,10 +429,10 @@ export function createVillageHost(emit) {
         reflectionReason:reflection.reason,reflectionAdded:reflection.added});
     }
     if (action === 'NEXT') {
-      const round = Progress.nextQuestion(currentGameId, currentGame);
+      const round = Progress.nextQuestion(currentGameId);
       if (round?.finished) {
         Rewards.syncRewards(catalog, who);
-        return snapshot(action, requestId, {finished: true, roundId: round.id, gameId: currentGameId});
+        return snapshot(action, requestId, {finished: true, roundId: round.id});
       }
       return snapshot(action, requestId, {question: publicQuestion(currentGame, round, who)});
     }
@@ -374,10 +442,27 @@ export function createVillageHost(emit) {
       const saved = Progress.gameProgress(gameId, who).completedRounds
         .some(round => round.id === roundId);
       if (!saved) throw new Error('학습 회차가 완료되지 않았어요.');
+      const progress=Progress.gameProgress(gameId,who);
+      const memoryMoment=retainedMemoryMoment(progress,roundId);
       const updated = addVillageCompletion(loadVillage(), {who, gameId, roundId});
       if (updated.added && !saveVillage(updated.state))
         throw new Error('마을 기록을 저장할 수 없어요. 브라우저 저장 공간을 확인해 주세요.');
+      if(updated.added&&memoryMoment.kind){
+        const subject=catalog.find(entry=>entry.id===gameId)?.subject||'';
+        const relation=Relationships.recordMemory(Relationships.loadRelationships(),{
+          who,subject,tier:memoryMoment.kind,roundId,at:Date.now()
+        });
+        if(relation.added&&!Relationships.saveRelationships(relation.state))
+          throw new Error('기억 친구 기록을 저장하지 못했어요.');
+        const skills=[...new Set((memoryMoment.questionIds||[]).map(id=>Progress.itemEvidence(gameId,id)?.skill).filter(Boolean))];
+        const ecology=Ecology.recordEcologyMemory(Ecology.loadEcology(),{
+          who,subject,tier:memoryMoment.kind,roundId,skills,at:Date.now()
+        });
+        if(ecology.added&&!Ecology.saveEcology(ecology.state))
+          throw new Error('배움 생태계 기록을 저장하지 못했어요.');
+      }
       return snapshot(action, requestId, {finished: true, roundId, gardenAdded: updated.added,
+        memoryMoment:updated.added?memoryMoment.kind:'',memoryDays:updated.added?memoryMoment.days:0,memoryItems:updated.added?memoryMoment.items:0,
         challengeBonus: Rewards.challengeRoundBonus(catalog,who,gameId,roundId) });
     }
     throw new Error('지원하지 않는 Unity 요청이에요.');

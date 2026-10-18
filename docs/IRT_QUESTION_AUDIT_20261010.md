@@ -1,9 +1,9 @@
-# 전체 문항 IRT 사전 점검 · 2026-10-14
+# 전체 문항 IRT 사전 점검 · 2026-10-10
 
 ## 범위
 
-- 플랫폼 내부 문항: **8,510개**, 66개 문제 게임
-- 단위 정원 48문항을 내부 IRT 문항 색인에 포함. 원문 ID·문제·정답·보기·해설은 손실 없이 이관하고 기존 기록 어댑터를 유지.
+- 플랫폼 내부 문항: **8,462개**, 65개 문제 게임
+- 외부 단위 정원 48문항은 별도 앱에서 운영(본 문항 색인과 개별 능력 추정에는 미포함).
 - 기존 Bebsu 수학 문항에서 부적합하다고 판정되어 통합 대상에서 제외한 15문항은 출제하지 않음.
 - 원본 문제·정답·해설·이미지 수정 없음. 문항 색인은 식별자·주제·초기 난이도·검증 상태만 보관.
 - KMA 원본 문제 그림과 풀이 그림 7,360개 파일의 로컬 존재 여부 확인(그림 내용의 수학적 정답 검증을 뜻하지 않음).
@@ -11,7 +11,7 @@
 ## 문항 형식
 | 형식 | 문항 |
 |---|---:|
-| choice | 4,650 |
+| choice | 4,602 |
 | numeric | 3,739 |
 | sequence | 52 |
 | match | 36 |
@@ -24,12 +24,12 @@
 | machine_checked | 3,780 |
 | generated_requires_editor_review | 3,634 |
 | not_independently_verified | 1,023 |
-| independently_arithmetic_checked | 73 |
+| independently_arithmetic_checked | 25 |
 
 ## 출제 품질 분류
 | 분류 | 문항 |
 |---|---:|
-| app_authored_not_calibrated | 4,705 |
+| app_authored_not_calibrated | 4,657 |
 | needs_expert_review | 3,680 |
 | generated_not_calibrated | 100 |
 | arithmetic_checked | 25 |

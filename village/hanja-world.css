@@ -1,0 +1,42 @@
+/* Integrated Hanja gate and native World modal, all text controls stay real DOM. */
+#vh-learning-districts .vh-hanja-district{
+ background:linear-gradient(135deg,#fff0c2,#fff9e9);border:2px solid #d8b678;color:#684a69;
+ font-size:clamp(15px,1.6vw,19px);min-height:49px;font-weight:900;
+}
+#village-ui .vh-hanja-banner{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:160px;
+ border:2px solid #e7cda1;border-radius:18px;
+ background:radial-gradient(ellipse at 80% 10%,#fff9ef 12%,transparent 60%),linear-gradient(130deg,#ffedc2,#f4ecff);
+ padding:15px;margin:8px 0 12px;text-align:center;
+}
+#village-ui .vh-hanja-banner-glyph{
+ font-family:'Noto Serif CJK KR','Apple SD Gothic Neo',serif;font-size:clamp(44px,7vw,72px);letter-spacing:.08em;
+ color:#5c4075;text-shadow:0 2px 1px #ffffff;
+}
+#village-ui .vh-hanja-banner figcaption{font-size:clamp(16px,2.2vw,21px);line-height:1.45;color:#665577;font-weight:750}
+#village-ui .vh-hanja-card-link{
+ display:flex;align-items:center;justify-content:center;min-height:55px;
+ border:2px solid #d3b18c;border-radius:14px;background:#fff5e4;color:#684472;
+ font-size:clamp(17px,2.1vw,22px);font-weight:900;text-decoration:none;margin:7px 0 13px;
+}
+#village-ui .vh-hanja-character{
+ font-family:'Noto Serif CJK KR','Noto Serif KR','Apple SD Gothic Neo',serif;
+ font-size:clamp(91px,18vw,142px)!important;font-weight:700;line-height:1.2;color:#483552;
+}
+#village-ui .vh-dialog:has(.vh-hanja-character) .vh-visual{min-height:135px;background:#fff8e6}
+#village-ui .vh-dialog:has(.vh-hanja-character) .vh-options{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;
+}
+#village-ui .vh-dialog:has(.vh-hanja-character) .vh-options button{
+ min-height:65px;font-size:clamp(18px,2.4vw,23px);line-height:1.4;
+ word-break:keep-all;padding:11px;
+}
+@media(max-width:580px){
+ #village-ui .vh-hanja-banner{min-height:113px;padding:10px}
+ #village-ui .vh-hanja-banner-glyph{font-size:50px}
+ #village-ui .vh-hanja-banner figcaption{font-size:16px}
+ #village-ui .vh-hanja-character{font-size:96px!important}
+ #village-ui .vh-dialog:has(.vh-hanja-character) .vh-visual{min-height:107px;margin:6px 0}
+ #village-ui .vh-dialog:has(.vh-hanja-character) .vh-options{gap:7px}
+ #village-ui .vh-dialog:has(.vh-hanja-character) .vh-options button{min-height:58px;font-size:18px;padding:8px}
+}

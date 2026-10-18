@@ -57,7 +57,7 @@ for(const entry of catalog){
    ?provenance.source==='kma_public_original'?'needs_expert_review'
     :verification==='independently_arithmetic_checked'?'arithmetic_checked':'generated_not_calibrated'
    :'app_authored_not_calibrated';
-  const item={gameId:entry.id,id:q.id,subject:entry.subject,skill,b:round(anchor+offset),c:round(guess),stage,gradeBand:band,mode,verification,quality,...(q.hanjaFamily?{family:q.hanjaFamily}:{})};
+  const item={gameId:entry.id,id:q.id,subject:entry.subject,skill,b:round(anchor+offset),c:round(guess),stage,gradeBand:band,mode,verification,quality,...(q.hanjaFamily?{family:q.hanjaFamily}:{} )};
   items.push(item);
   inc('bySubject',item.subject);inc('byGrade',band||'base');
   inc('byMode',mode);inc('byVerification',verification);inc('byQuality',quality);
@@ -76,19 +76,13 @@ const cell=value=>'"'+String(value??'').replaceAll('"','""')+'"';
 const csv='\uFEFF'+csvCols.join(',')+'\n'+items.map(item=>csvCols.map(k=>cell(item[k])).join(',')).join('\n')+'\n';
 const csvPath=file('docs/IRT_ITEM_INVENTORY.csv');
 const rows=group=>Object.entries(stats[group]).sort((a,b)=>b[1]-a[1]).map(([key,n])=>'| '+key+' | '+n.toLocaleString('en-US')+' |').join('\n');
-const unitEntry=catalog.find(entry=>entry.id==='unit-garden');
-const unitIndexed=items.filter(item=>item.gameId==='unit-garden').length;
-const unitScope=unitIndexed
- ?'- 단위 정원 '+unitIndexed+'문항을 내부 IRT 문항 색인에 포함. 원문 ID·문제·정답·보기·해설은 손실 없이 이관하고 기존 기록 어댑터를 유지.'
- :unitEntry?'- 외부 단위 정원 '+unitEntry.questionCount+'문항은 별도 앱에서 운영(본 문항 색인과 개별 능력 추정에는 미포함).'
- :'- 단위 정원 항목은 현재 카탈로그에 없음.';
 const report=[
- '# 전체 문항 IRT 사전 점검 · 2026-10-14',
+ '# 전체 문항 IRT 사전 점검 · 2026-10-10',
  '',
  '## 범위',
  '',
  '- 플랫폼 내부 문항: **'+items.length.toLocaleString('en-US')+'개**, '+catalog.filter(e=>e.kind==='quiz'&&e.status==='published').length+'개 문제 게임',
- unitScope,
+ '- 외부 단위 정원 48문항은 별도 앱에서 운영(본 문항 색인과 개별 능력 추정에는 미포함).',
  '- 기존 Bebsu 수학 문항에서 부적합하다고 판정되어 통합 대상에서 제외한 15문항은 출제하지 않음.',
  '- 원본 문제·정답·해설·이미지 수정 없음. 문항 색인은 식별자·주제·초기 난이도·검증 상태만 보관.',
  '- KMA 원본 문제 그림과 풀이 그림 '+imageFilesVerified.toLocaleString('en-US')+'개 파일의 로컬 존재 여부 확인(그림 내용의 수학적 정답 검증을 뜻하지 않음).',

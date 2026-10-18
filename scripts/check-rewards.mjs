@@ -1,4 +1,3 @@
-import {configureSyntheticBank} from './synthetic-irt-fixture.mjs';
 import assert from 'node:assert/strict';
 
 // Use real progress transitions and persisted backups to exercise the reward
@@ -13,7 +12,7 @@ let imports=0;const fresh=()=>import(`../platform/rewards.js?check=${++imports}`
 const originalNow=Date.now;let now=1780000000000;Date.now=()=>++now;
 const catalog=['math','korean','english'].map(subject=>({id:`reward-${subject}`,kind:'quiz',status:'published',subject,questionIds:Array.from({length:12},(_,index)=>`q-${subject}-${index+1}`)}));
 catalog.push({id:'unit-garden',kind:'external',status:'published',subject:'math',progressAdapter:'unit-garden-v1'});
-P.configureCatalog(catalog);configureSyntheticBank(catalog);
+P.configureCatalog(catalog);
 const quiz=(subject='math',size=5)=>({...catalog.find(entry=>entry.subject===subject&&entry.kind==='quiz'),questions:catalog.find(entry=>entry.subject===subject&&entry.kind==='quiz').questionIds.slice(0,size).map(id=>({id,choices:['yes','no','other'],answer:0}))});
 const play=(game,correct=true)=>{
  const round=P.beginRound(game);

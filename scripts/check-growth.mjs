@@ -1,4 +1,3 @@
-import {configureSyntheticBank} from './synthetic-irt-fixture.mjs';
 import assert from 'node:assert/strict';
 
 // Exercise persistence and actual answer transitions without browser dependencies.
@@ -11,7 +10,7 @@ const originalNow=Date.now;
 Date.now=()=>++now;
 const catalog=[];
 for(const subject of ['math','korean','english'])for(let stage=1;stage<=4;stage++)catalog.push({id:`g-${subject}-${stage}`,subject,stage,growth:true,kind:'quiz',status:'published',questionIds:Array.from({length:12},(_,i)=>`q-${subject}-${stage}-${i+1}`)});
-P.configureCatalog(catalog);configureSyntheticBank(catalog);
+P.configureCatalog(catalog);
 const entry=(subject='math',stage=1)=>catalog.find(e=>e.subject===subject&&e.stage===stage);
 const game=(subject='math',stage=1)=>({...entry(subject,stage),questions:entry(subject,stage).questionIds.map(id=>({id,choices:['맞아요','다시 생각해요','다른 답'],answer:0}))});
 const empty=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});

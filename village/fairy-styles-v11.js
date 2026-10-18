@@ -1,5 +1,4 @@
-import {refinedPortrait} from './artcraft-assets-v12.js';
-/** Original PNGs remain immutable. V12 previews use actual reversible PhotoCraft exports. */
+/** The original 1254px character PNGs are immutable; variant art is layered in Unity. */
 export const FAIRY_STYLES=Object.freeze([
   Object.freeze({id:'classic',icon:'🧚',name:'처음 만난 요정',detail:'원래의 분홍 별 · 연보라 달빛 모습을 그대로',
     theme:'original'}),
@@ -29,5 +28,5 @@ export function findFairyStyle(style){
   return FAIRY_STYLES.find(s=>s.id===style)||FAIRY_STYLES[0];
 }
 export function fairyPortrait(who){
-  return refinedPortrait(who);
+  return who==='se'?'./assets/sehee_original.png':'./assets/taehee_original.png';
 }

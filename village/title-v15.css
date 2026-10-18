@@ -1,0 +1,209 @@
+/* Magic Village title experience v15 — composed only from existing project artwork. */
+#loading{
+  overflow:auto;overscroll-behavior:contain;
+  background:
+    radial-gradient(circle at 10% 12%,rgba(255,239,196,.78),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(230,214,255,.72),transparent 30%),
+    linear-gradient(145deg,#f9f2ff 0%,#fffaf2 42%,#eef9ef 100%);
+  padding:clamp(10px,2.4vw,28px);
+}
+#loading .panel.title-shell{
+  width:min(1080px,100%);max-width:1080px;
+  padding:0;overflow:hidden;text-align:left;
+  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(350px,.82fr);
+  border:1px solid rgba(125,91,153,.20);border-radius:34px;
+  background:rgba(255,253,249,.97);
+  box-shadow:0 24px 70px rgba(75,55,93,.18),0 2px 0 rgba(255,255,255,.9) inset;
+}
+.title-visual{
+  min-width:0;position:relative;padding:clamp(22px,3vw,36px) clamp(20px,3.4vw,42px) 24px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:
+    radial-gradient(circle at 22% 25%,rgba(255,236,188,.48),transparent 30%),
+    linear-gradient(155deg,#fff7ee 0%,#fffdf7 52%,#eef8ed 100%);
+  border-right:1px solid rgba(112,87,132,.12);
+}
+.title-brand{position:relative;z-index:2}
+.title-kicker{
+  display:inline-flex;align-items:center;gap:7px;margin-bottom:8px;
+  font-size:11px;font-weight:900;letter-spacing:.16em;color:#8a5b87;text-transform:uppercase;
+}
+.title-kicker::before{content:"✦";font-size:14px;color:#d8a545}
+#loading .title-brand h1{
+  margin:0;color:#3c3151;font-size:clamp(31px,4.5vw,54px);line-height:1.08;
+  letter-spacing:-.045em;font-weight:950;word-break:keep-all;
+}
+#loading .title-brand h1 strong{
+  display:block;margin-top:2px;color:#724d91;font:inherit;
+}
+.title-tagline{
+  margin:10px 0 0!important;font-size:clamp(16px,2vw,22px)!important;line-height:1.45!important;
+  color:#65586d;font-weight:800;letter-spacing:-.02em;
+}
+.title-art-wrap{position:relative;margin:18px 0 0;min-width:0}
+.title-art-wrap::before{
+  content:"";position:absolute;inset:12% 5% 4%;border-radius:48%;
+  background:radial-gradient(ellipse,rgba(255,255,255,.96),rgba(255,245,214,.48) 52%,transparent 72%);
+  filter:blur(2px);
+}
+.title-art{
+  position:relative;display:block;width:100%;height:auto;max-height:360px;object-fit:contain;
+  filter:drop-shadow(0 12px 16px rgba(86,67,98,.12));
+}
+.title-art-wrap figcaption{
+  position:absolute;left:50%;bottom:2px;transform:translateX(-50%);
+  width:max-content;max-width:92%;padding:5px 10px;border-radius:999px;
+  background:rgba(255,255,255,.88);border:1px solid rgba(137,103,151,.14);
+  color:#776a78;font-size:11px;font-weight:750;text-align:center;
+  backdrop-filter:blur(5px);
+}
+.title-learning-ribbon{
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+  margin:11px auto 0;padding:7px 11px;border-radius:999px;width:max-content;max-width:100%;
+  background:#f3ecfa;border:1px solid #ded0e9;color:#624875;font-size:12px;font-weight:850;
+}
+.title-learning-ribbon b{color:#89623b;font-weight:900}
+.title-entry{
+  min-width:0;padding:clamp(22px,3vw,36px);
+  display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(180deg,#fffdfa,#fff 74%);
+}
+.title-entry-eyebrow{
+  margin:0 0 5px!important;color:#7c6a80!important;font-size:13px!important;font-weight:800;
+}
+.title-entry h2{
+  margin:0;color:#44344f;font-size:clamp(22px,2.5vw,30px);line-height:1.25;letter-spacing:-.03em;
+}
+#learner-choices.title-learner-choices{
+  display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0 12px;
+}
+#learner-choices.title-learner-choices button{
+  min-width:0;min-height:94px;padding:8px 9px;
+  display:flex;align-items:center;justify-content:flex-start;gap:8px;
+  border:2px solid #e5d8e8;border-radius:19px;background:#fff;color:#51415c;
+  box-shadow:0 4px 12px rgba(82,60,91,.06);text-align:left;
+}
+#learner-choices.title-learner-choices button[data-learner="tae"]{background:linear-gradient(145deg,#fff,#fff3f7)}
+#learner-choices.title-learner-choices button[data-learner="se"]{background:linear-gradient(145deg,#fff,#f7f2ff)}
+#learner-choices.title-learner-choices button[aria-pressed=true]{
+  border-color:#9e75b8;box-shadow:0 0 0 3px #efe3f6 inset,0 7px 16px rgba(94,67,111,.10);
+}
+.title-learner-art{
+  width:66px;height:76px;object-fit:contain;flex:0 0 auto;
+  filter:drop-shadow(0 4px 5px rgba(72,56,83,.10));
+}
+.title-learner-copy{display:flex;flex-direction:column;min-width:0}
+.title-learner-copy strong{font-size:19px;color:#4b375c}
+.title-learner-copy small{font-size:11px;color:#807384;margin-top:2px}
+.title-destinations{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 14px;
+}
+.title-destinations span{
+  min-width:0;display:flex;align-items:center;justify-content:center;gap:5px;
+  padding:6px 4px;border-radius:12px;background:#faf7fb;color:#6e6271;
+  border:1px solid #eee6f0;font-size:11px;font-weight:750;white-space:nowrap;
+}
+.title-destinations img{width:22px;height:23px;object-fit:contain;flex:0 0 auto}
+.title-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#loading #start,#loading #lite{
+  width:100%;min-height:66px;margin:0;padding:9px 10px;border-radius:17px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:16px;line-height:1.15;
+}
+#loading #start{
+  background:linear-gradient(135deg,#7049a0,#9365b5);border:1px solid #68458f;
+  box-shadow:0 5px 0 #563878,0 8px 15px rgba(81,52,108,.16);
+}
+#loading #lite{
+  background:linear-gradient(135deg,#f0f8ed,#fffaf0);color:#46654b;
+  border:2px solid #b9d2b5;box-shadow:0 4px 0 #d9e5d5;
+}
+.title-actions small{font-size:10px;opacity:.82;font-weight:650}
+#status.title-status{
+  min-height:20px;margin:12px 0 0!important;text-align:center;color:#6f6573;
+  font-size:12px!important;font-weight:700;line-height:1.4!important;
+}
+#loading #meter{margin:8px 0 0;height:9px;background:#eee7f1}
+#loading #bar{background:linear-gradient(90deg,#d6a649,#9365b5)}
+.title-entry-links{display:flex;gap:7px;margin-top:11px}
+#loading .vh-entry-record-link,#loading .vh-entry-parent-link{
+  flex:1;display:flex;align-items:center;justify-content:center;min-height:42px;margin:0;
+  padding:7px 8px;border-radius:12px;border:1px solid #e4dce8;
+  background:#faf7fb;color:#66556f;text-decoration:none;font-size:11px;font-weight:800;text-align:center;
+}
+#loading .vh-storage-note{
+  margin:10px 0 0!important;padding-top:9px;border-top:1px solid #eee8ef;text-align:center;
+}
+#loading .vh-storage-note small{font-size:10px;line-height:1.45;color:#8b828c}
+@media(max-width:760px){
+  #loading{place-items:start center;padding:8px}
+  #loading .panel.title-shell{
+    grid-template-columns:1fr;max-width:560px;border-radius:26px;margin:auto 0;
+  }
+  .title-visual{padding:16px 16px 10px;border-right:0;border-bottom:1px solid rgba(112,87,132,.10)}
+  .title-brand{text-align:center}
+  .title-kicker{margin-bottom:4px}
+  #loading .title-brand h1{font-size:clamp(27px,8vw,38px)}
+  #loading .title-brand h1 strong{display:inline;margin-left:5px}
+  .title-tagline{margin-top:5px!important;font-size:15px!important}
+  .title-art-wrap{margin:8px auto 0;width:min(100%,500px)}
+  .title-art{max-height:180px}
+  .title-art-wrap figcaption{font-size:9px;padding:3px 7px}
+  .title-learning-ribbon{margin-top:5px;padding:5px 8px;font-size:10px}
+  .title-entry{padding:13px 14px 15px}
+  .title-entry-eyebrow{text-align:center;font-size:11px!important}
+  .title-entry h2{text-align:center;font-size:19px}
+  #learner-choices.title-learner-choices{margin:9px 0;gap:7px}
+  #learner-choices.title-learner-choices button{min-height:72px;padding:4px 7px;border-radius:15px}
+  .title-learner-art{width:50px;height:60px}
+  .title-learner-copy strong{font-size:16px}.title-learner-copy small{font-size:9px}
+  .title-destinations{margin-bottom:9px}
+  .title-destinations span{font-size:9px;padding:4px 2px}.title-destinations img{width:18px;height:19px}
+  #loading #start,#loading #lite{min-height:56px;font-size:14px;padding:7px}
+  .title-entry-links{margin-top:8px}
+  #status.title-status{margin-top:8px!important}
+  #loading .vh-storage-note{margin-top:7px!important;padding-top:6px}
+}
+@media(max-width:360px){
+  #loading{padding:5px}
+  .title-visual{padding:12px 10px 8px}
+  .title-kicker{font-size:9px}
+  #loading .title-brand h1{font-size:27px}
+  .title-tagline{font-size:13px!important}
+  .title-art{max-height:128px}
+  .title-learning-ribbon{font-size:9px}
+  .title-entry{padding:10px}
+  #learner-choices.title-learner-choices button{min-height:66px}
+  .title-learner-art{width:43px;height:53px}
+  .title-learner-copy strong{font-size:15px}
+  .title-destinations{gap:4px}.title-destinations span{font-size:8px}
+  .title-actions{gap:6px}
+  #loading #start,#loading #lite{min-height:51px;font-size:13px}
+  #loading .vh-entry-record-link,#loading .vh-entry-parent-link{font-size:10px;min-height:40px}
+}
+@media(max-height:620px) and (orientation:landscape){
+  #loading{place-items:start center;padding:5px}
+  #loading .panel.title-shell{grid-template-columns:1.06fr .94fr;max-width:980px;margin:auto 0;border-radius:22px}
+  .title-visual{padding:10px 14px;border-right:1px solid rgba(112,87,132,.10);border-bottom:0}
+  .title-kicker{font-size:9px;margin-bottom:3px}
+  #loading .title-brand h1{font-size:25px}
+  #loading .title-brand h1 strong{display:inline;margin-left:4px}
+  .title-tagline{font-size:12px!important;margin-top:3px!important}
+  .title-art-wrap{margin-top:4px}
+  .title-art{max-height:135px}
+  .title-art-wrap figcaption{display:none}
+  .title-learning-ribbon{margin-top:3px;font-size:9px;padding:4px 7px}
+  .title-entry{padding:9px 12px}
+  .title-entry-eyebrow{font-size:9px!important;margin:0!important}
+  .title-entry h2{font-size:16px}
+  #learner-choices.title-learner-choices{margin:5px 0}
+  #learner-choices.title-learner-choices button{min-height:56px;padding:3px 5px}
+  .title-learner-art{width:38px;height:46px}.title-learner-copy strong{font-size:13px}.title-learner-copy small{font-size:8px}
+  .title-destinations{display:none}
+  #loading #start,#loading #lite{min-height:44px;padding:4px;font-size:12px;box-shadow:none}
+  #status.title-status{margin-top:5px!important;min-height:15px;font-size:9px!important}
+  .title-entry-links{margin-top:5px}
+  #loading .vh-entry-record-link,#loading .vh-entry-parent-link{min-height:35px;font-size:9px;padding:4px}
+  #loading .vh-storage-note{display:none}
+}
+@media(prefers-reduced-motion:reduce){#loading #bar{transition:none}}

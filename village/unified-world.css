@@ -18,7 +18,9 @@
  background:#fff;color:#50366e;
  font-size:14px;font-weight:800;line-height:1.2;
  touch-action:manipulation;
+ text-decoration:none;display:inline-flex;gap:6px;align-items:center;justify-content:center;
 }
+#vh-learning-districts .vh-hanja-district{background:#fff7dc;border-color:#dcb879;color:#674778}
 #vh-learning-districts .vh-district:focus-visible,
 #vh-learning-districts .vh-district:hover{
  background:#eee4fb;outline:2px solid #6c51a0;outline-offset:2px;
@@ -48,5 +50,73 @@
  #vh-world-shortcuts{bottom:155px}
 }
 @media(prefers-reduced-motion:reduce){#vh-learning-districts{scroll-behavior:auto}}
+
+#vh-world-shortcuts>.vh-learning-shortcut{background:#f1e8ff!important;border-color:#9c78c8!important;color:#49316b!important;font-weight:900;box-shadow:0 5px 16px #6f50a03a!important}
+@media(max-width:480px){#vh-world-shortcuts>.vh-shortcut{font-size:11px!important;padding:6px 4px!important}}
+
+/* Learning-first recommendation loop inside the village crystal. */
+.vh-learning-loop{display:grid;gap:8px;margin:10px 0 14px;padding:12px;border:2px solid #d8c8ea;border-radius:18px;background:linear-gradient(145deg,#fffdf8,#f5efff)}
+.vh-learning-loop-title{margin:0;color:#483566;font-size:18px}
+.vh-learning-step{display:grid;gap:5px;padding:10px;border:1px solid #e4dbea;border-radius:14px;background:#fff}
+.vh-learning-step .vh-wide{margin-top:3px;min-height:44px!important}
+@media(max-width:520px){.vh-learning-loop{padding:9px;gap:7px}.vh-learning-step{padding:8px}.vh-learning-loop-title{font-size:16px}}
+
 /* Modal must mask floating district shortcuts so its exit and answer buttons work. */
 #village-dialog-wrap{z-index:30!important;}
+
+/* v17: rare delayed-retrieval celebration. It is visual feedback, never a score tier. */
+.vh-memory-moment{
+ display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;
+ margin:10px 0;padding:12px 14px;border:2px solid #c9ddc4;border-radius:18px;
+ background:linear-gradient(125deg,#f4fff1,#fffbe8);
+ box-shadow:0 4px 13px rgba(67,98,62,.10)
+}
+.vh-memory-moment.rare{
+ border-color:#cbb7e5;
+ background:linear-gradient(125deg,#fff8dc,#f5edff 58%,#eef8ff)
+}
+.vh-memory-icon{grid-row:1/3;font-size:30px;line-height:1}
+.vh-memory-title{font-size:17px;color:#4d4b3d}
+.vh-memory-copy{margin:0;font-size:13px;line-height:1.45;color:#625b66}
+@media(max-width:520px){
+ .vh-memory-moment{padding:10px 11px;gap:3px 8px}
+ .vh-memory-icon{font-size:25px}.vh-memory-title{font-size:15px}.vh-memory-copy{font-size:12px}
+}
+
+/* v18 relationship view: qualitative familiarity, never a competitive score. */
+.vh-friend-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
+.vh-friend-card{display:grid;grid-template-columns:50px minmax(0,1fr);gap:10px;align-items:center;
+ padding:11px;border:1px solid #e2d9e8;border-radius:17px;background:#fff}
+.vh-friend-card.friend{border-color:#bed8b5;background:linear-gradient(145deg,#fff,#f4fbf1)}
+.vh-friend-card.special{border-color:#c9b4e1;background:linear-gradient(145deg,#fff9e6,#f5efff)}
+.vh-friend-icon{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;
+ background:#f8f3fb;font-size:30px;box-shadow:inset 0 0 0 1px #e9dfed}
+.vh-friend-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
+.vh-friend-name{font-size:16px;color:#4d3a59}
+.vh-friend-level{width:max-content;max-width:100%;padding:2px 7px;border-radius:999px;background:#f2edf5;
+ color:#6c5d73;font-size:10px;font-weight:850}
+.vh-friend-card.friend .vh-friend-level{background:#e8f5e3;color:#45653f}
+.vh-friend-card.special .vh-friend-level{background:#eee4fb;color:#654481}
+.vh-friend-line{margin:3px 0 0;font-size:12px;line-height:1.4;color:#625969}
+.vh-friend-memory{margin-top:2px;font-size:10px;color:#806445}
+.vh-resident-panel{margin:12px 0 0;padding:12px 13px;border:1px solid #dfd3e8;border-radius:17px;
+ background:linear-gradient(125deg,#fffdf5,#f8f2ff)}
+.vh-resident-panel h3{margin:0 0 7px}
+.vh-resident-panel p{margin:5px 0}
+@media(max-width:520px){
+ .vh-friend-grid{grid-template-columns:1fr;gap:7px}
+ .vh-friend-card{grid-template-columns:44px minmax(0,1fr);padding:9px}
+ .vh-friend-icon{width:44px;height:44px;font-size:26px}
+ .vh-friend-name{font-size:15px}.vh-friend-line{font-size:11px}
+}
+
+/* v19 skill ecology — qualitative delayed-retrieval habitats. */
+.vh-ecology-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.vh-ecology-card{display:grid;grid-template-columns:46px minmax(0,1fr);gap:9px;align-items:center;padding:10px;border:1px dashed #ded9df;border-radius:16px;background:#faf9fa;opacity:.72}
+.vh-ecology-card.active{opacity:1;border-style:solid;border-color:#cdddc4;background:linear-gradient(145deg,#fff,#f6fbf2)}
+.vh-ecology-card.memory-14{border-color:#d8c7e8;background:linear-gradient(145deg,#fffdf2,#f6f0ff)}
+.vh-ecology-card.memory-30{border-color:#d5b967;background:linear-gradient(145deg,#fff8df,#f3faee);box-shadow:0 3px 12px rgba(103,83,39,.10)}
+.vh-ecology-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;font-size:27px;box-shadow:inset 0 0 0 1px #ebe6ed}
+.vh-ecology-copy{min-width:0;display:flex;flex-direction:column;gap:2px}.vh-ecology-name{font-size:15px;color:#4d4d42}.vh-ecology-level{font-size:10px;font-weight:850;color:#6d6a70}.vh-ecology-skills{margin:2px 0 0;font-size:10px;line-height:1.35;color:#766e76}
+.vh-memory-moment.guardian{border-color:#d2af52;background:linear-gradient(125deg,#fff5c9,#eef8dc 55%,#f6efff)}
+@media(max-width:520px){.vh-ecology-grid{grid-template-columns:1fr}.vh-ecology-card{padding:8px;grid-template-columns:42px minmax(0,1fr)}.vh-ecology-icon{width:42px;height:42px;font-size:24px}}

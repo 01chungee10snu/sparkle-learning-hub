@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#7655af"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ctext x=%273%27 y=%2753%27 font-size=%2750%27%3E🌸%3C/text%3E%3C/svg%3E"/>
-<title>태희·세희의 마법마을 · 배움과 돌봄</title>
+<title>태희·세희의 마법마을 2.0 · 이야기하며 성장하는 탐험</title>
 <style>
 *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:system-ui,sans-serif;background:#e8f0e8;color:#263551}
 #page{display:flex;flex-direction:column;height:100dvh;min-height:400px;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
@@ -24,50 +24,305 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 #learner-choices button:focus-visible{outline:3px solid #af79d0}
 @media(max-width:420px){#learner-choices button{min-width:90px}}
 </style>
-<link rel="stylesheet" href="./village-ui.css?v=artcraft-irt-v12-20261014">
-<link rel="stylesheet" href="./major-patch.css?v=artcraft-irt-v12-20261014">
-<link rel="stylesheet" href="./unified-world.css?v=artcraft-irt-v12-20261014">
+<link rel="stylesheet" href="./village-ui.css?v=unified-20261013">
+<link rel="stylesheet" href="./major-patch.css?v=unified-20261013">
+<link rel="stylesheet" href="./unified-world.css?v=fish-v24-20261018">
 <link rel="stylesheet" href="./mobile-art-polish.css?v=headerless-20261013">
 <link rel="stylesheet" href="./experience-v10.css?v=gameplay-20261013">
 <link rel="stylesheet" href="./fairy-variations-v11.css?v=character-20261013">
-<link rel="stylesheet" href="./artcraft-learning-v12.css?v=artcraft-irt-v12-20261014">
-<link rel="stylesheet" href="./production-v14.css?v=20261014-toggle-contrast">
-<link rel="stylesheet" href="./navigation-v15.css?v=hanja-public-20261017">
-<link rel="stylesheet" href="./life-v16.css?v=hanja-public-20261017">
-<link rel="stylesheet" href="./cloud-sync-v17.css?v=hanja-public-20261017">
-<link rel="stylesheet" href="./landscape-v20.css?v=20261016">
-<link rel="stylesheet" href="./hanja-public.css?v=hanja-public-20261017">
+<link rel="stylesheet" href="./title-v15.css?v=title-v15-20261015">
+<link rel="stylesheet" href="./hanja-world.css?v=hanja-v1-20261016">
+<link rel="stylesheet" href="./pond-economy.css?v=fish-v24-20261018">
+<link rel="stylesheet" href="./career-world.css?v=career-v25-20261019">
+<link rel="stylesheet" href="./title-v26.css?v=world-v26-20261019">
+<link rel="stylesheet" href="./world-v26.css?v=world-v26-20261019">
 </head>
 <body>
 <div id="page">
   <main id="game">
     <div id="lite-village-scene" hidden aria-label="가벼운 2D 마법마을 배경">
-      <picture><source media="(orientation:portrait)" srcset="./assets/artcraft-v12/illustration-lite-portrait.png">
-      <img src="./assets/artcraft-v12/illustration-welcome.png" width="1200" height="520" alt="" decoding="async"></picture>
-      <p>🧚 아래 배움 메뉴에서 모험을 시작해요.</p>
+      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="./assets/illustrations/lite-portrait.webp">
+      <img src="./assets/illustrations/welcome.webp" width="1200" height="520" alt="" decoding="async"></picture>
+      <p>🧚 학습 지역을 눌러 모험을 시작해요.</p>
     </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
+    <div id="world-season-effects" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div id="village-ui" hidden></div>
-    <section id="loading" aria-live="polite">
-      <div class="panel">
-        <h1>✨ 태희·세희의 마법마을</h1>
-        <img class="vh-welcome-art" src="./assets/artcraft-v12/illustration-welcome.png" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 사이에서 환영해요." width="1200" height="520" decoding="async">
-        <p>오늘은 무엇을 키워 볼까요?<br>씨앗을 심고, 물고기와 동물 친구를 돌봐요.</p>
-        <div id="learner-choices" role="group" aria-label="마법마을에 들어갈 어린이"><button type="button" data-learner="tae" aria-pressed="true">🌸 태희</button><button type="button" data-learner="se" aria-pressed="false">🌙 세희</button></div>
-        <p id="status">태희·세희의 새 마법마을을 준비하고 있어요.</p>
-        <div id="meter" hidden role="progressbar" aria-label="마법마을 준비" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar"></div></div>
-        <button id="start">✨ 3D 마법마을 입장하기</button>
-        <button id="hanja-entry" type="button">📜 한자 수련관 바로 시작 · 8급~3급</button>
-        <button id="lite" type="button">🌷 가벼운 2D 마을로 시작하기</button>
-        <p class="vh-storage-note"><small>기록은 이 기기에 저장돼요. 배움 기록은 학습기록 메뉴에서 옮길 수 있어요. 텃밭·연못·동물 집 기록은 아직 다른 기기로 옮겨지지 않아요.</small></p>
-        <a class="vh-entry-record-link" href="../learning.html?view=workbooks">📚 기존 학습기록·문제집 열기</a>
+    <p id="world-scene-clock" class="world-scene-clock" hidden aria-label="한국 시간과 계절"></p>
+    <section id="loading" aria-live="polite" data-active-learner="tae">
+      <div class="panel title-shell">
+        <section class="title-visual" aria-labelledby="magic-village-title">
+          <header class="title-brand">
+            <span class="title-kicker">Magic Learning Village</span>
+            <h1 id="magic-village-title">태희·세희의 <strong>마법마을</strong></h1>
+            <p class="title-tagline">배우면, 우리 마을이 자라요.</p>
+            <span id="world-kst-badge" class="title-kst-badge">🌤️ 대한민국의 시간과 계절</span>
+          </header>
+          <figure class="title-art-wrap">
+            <img class="title-art" src="./assets/illustrations/welcome.webp" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 앞에서 함께 서 있는 마법마을" width="1200" height="520" decoding="async">
+            <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 한자 수련관</figcaption>
+          </figure>
+          <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
+        </section>
+        <section class="title-entry" aria-labelledby="title-entry-heading">
+          <p class="title-entry-eyebrow">오늘 누구의 마을로 갈까요?</p>
+          <h2 id="title-entry-heading">나의 요정을 선택해요</h2>
+          <div id="learner-choices" class="title-learner-choices" role="group" aria-label="마법마을에 들어갈 어린이">
+            <button type="button" data-learner="tae" aria-pressed="true">
+              <img class="title-learner-art" src="./assets/taehee_original.png" alt="" width="1254" height="1254">
+              <span class="title-learner-copy"><strong>태희</strong><small>분홍 별 요정 · 나의 마을</small></span>
+            </button>
+            <button type="button" data-learner="se" aria-pressed="false">
+              <img class="title-learner-art" src="./assets/sehee_original.png" alt="" width="1254" height="1254">
+              <span class="title-learner-copy"><strong>세희</strong><small>연보라 달 요정 · 나의 마을</small></span>
+            </button>
+          </div>
+          <div class="title-destinations" aria-label="마법마을 학습 지역">
+            <span><img src="./assets/illustrations/math-icon.webp" alt="" width="30" height="30">수학 정원</span>
+            <span><img src="./assets/illustrations/korean-icon.webp" alt="" width="30" height="30">이야기 도서관</span>
+            <span><img src="./assets/illustrations/english-icon.webp" alt="" width="30" height="30">영어 숲</span>
+            <span>📜 한자 수련관</span>
+            <span>🏛️ 직업 탐색관</span>
+          </div>
+          <div class="title-actions">
+            <button id="start"><span>🏰 마법마을 입장하기</span><small>3D 요정 마을로 떠나요</small></button>
+            <button id="lite" type="button"><span>🌷 가벼운 2D 모험</span><small>느린 기기에서 이어하기</small></button>
+          </div>
+          <p id="status" class="title-status">태희의 마법마을을 준비하고 있어요.</p>
+          <div id="meter" hidden><div id="bar"></div></div>
+          <div class="title-entry-links">
+            <a class="vh-entry-record-link" href="../learning.html">📚 학습페이지 가기</a>
+            <a class="vh-entry-record-link" href="../learning.html?view=hanja">📜 한자 수련관 · 8급~3급</a>
+            <a class="vh-entry-parent-link" href="../learning.html?view=parents">👪 보호자 대시보드</a>
+          </div>
+          <p class="vh-storage-note"><small>현재 기록은 이 기기에 저장됩니다. 기기 간 동기화는 클라우드 연결 후 활성화합니다.</small></p>
+        </section>
       </div>
     </section>
   </main>
 </div>
-<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=hanja-public-20261017","../platform/rewards.js":"../platform/rewards.js?v=hanja-public-20261017","../platform/growth.js":"../platform/growth.js?v=hanja-public-20261017","../platform/settings.js":"../platform/settings.js?v=hanja-public-20261017","../platform/activities.js":"../platform/activities.js?v=hanja-public-20261017","../platform/activity-ui.js":"../platform/activity-ui.js?v=hanja-public-20261017","../platform/catalog.js":"../platform/catalog.js?v=hanja-public-20261017","../platform/irt.js":"../platform/irt.js?v=hanja-public-20261017","../platform/legacy.js":"../platform/legacy.js?v=hanja-public-20261017","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=hanja-public-20261017","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=hanja-public-20261017","../platform/motion.js":"../platform/motion.js?v=hanja-public-20261017","./garden-state.js":"./garden-state.js?v=hanja-public-20261017","./village-state.js":"./village-state.js?v=hanja-public-20261017","./navigation-v15.js":"./navigation-v15.js?v=hanja-public-20261017","./experience-controller-v14.js":"./experience-controller-v14.js?v=hanja-public-20261017","./life-ui-v16.js":"./life-ui-v16.js?v=hanja-public-20261017","./life-state-v16.js":"./life-state-v16.js?v=hanja-public-20261017","./cloud-sync-v17.js":"./cloud-sync-v17.js?v=hanja-public-20261017","./cloud-sync-ui-v17.js":"./cloud-sync-ui-v17.js?v=hanja-public-20261017","./cloud-snapshot-v17.js":"./cloud-snapshot-v17.js?v=hanja-public-20261017","./cloud-config-v17.js":"./cloud-config-v17.js?v=hanja-public-20261017"}}</script>
-<script type="module" src="./entry-v17.js?v=hanja-public-20261017"></script>
-<script type="module" src="./landscape-v20.js?v=hanja-public-20261017"></script>
-<script type="module" src="./hanja-entry.js?v=hanja-public-20261017"></script>
+<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=ecology-v19-20261015","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=unified-20261013","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013"}}</script>
+<script type="module">
+import { createVillageHost } from './village-bridge.js?v=world-v26-20261019';
+import * as Progress from '../platform/progress.js';
+import { createVillageUI } from './village-ui.js?v=world-v26-20261019';
+import * as CloudSync from '../platform/cloud-sync.js?v=world-v26-20261019';
+import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
+
+const status = document.querySelector('#status');
+const overlay = document.querySelector('#loading');
+const canvas = document.querySelector('#canvas');
+const start = document.querySelector('#start');
+const lite = document.querySelector('#lite');
+const liteScene = document.querySelector('#lite-village-scene');
+let liteMode = false;
+const syncEntryLearner=()=>{
+  const who=Progress.learner(),name=Progress.LEARNERS[who]?.name||'요정';
+  overlay.dataset.activeLearner=who;
+  status.textContent=name+'의 마법마을을 준비하고 있어요.';
+};
+for(const control of document.querySelectorAll('[data-learner]')){
+ control.addEventListener('click',()=>{
+   if(start.disabled)return;
+   Progress.selectLearner(control.dataset.learner);
+   document.querySelectorAll('[data-learner]').forEach(button=>
+     button.setAttribute('aria-pressed',String(button===control)));
+   syncEntryLearner();
+ });
+ control.setAttribute('aria-pressed',String(control.dataset.learner===Progress.learner()));
+}
+syncEntryLearner();
+const meter = document.querySelector('#meter');
+const bar = document.querySelector('#bar');
+let instance = null;
+let currentEnvironment="";
+const gameClock=document.querySelector('#world-scene-clock');
+function refreshSeason(){
+  const scene=applyKoreaScene(koreaScene());
+  gameClock.textContent=`${SEASONS[scene.season].emoji} ${scene.seasonLabel} · ${DAYPARTS[scene.daypart].emoji} ${scene.timeLabel} ${scene.displayClock} KST`;
+  if(instance && scene.signature!==currentEnvironment){
+    currentEnvironment=scene.signature;
+    instance.SendMessage('VillageRuntime','OnEnvironmentMessage',JSON.stringify({season:scene.season,daypart:scene.daypart}));
+  }
+}
+refreshSeason();setInterval(refreshSeason,60000);
+const queued = [];
+let queuedCosmetics = null;
+let queuedGarden = null;
+let queuedPond = null;
+const uiRoot = document.querySelector('#village-ui');
+const ui = createVillageUI({
+  root:uiRoot,
+  sendToUnity: command => {
+    if(instance)return instance.SendMessage('VillageRuntime','OnUiCommand',command);
+    // Lightweight mode runs the same host-owned questions, wallet and garden;
+    // its 2D scene does not pretend to support free-roam locomotion.
+    if(liteMode && command==='START_RECOMMENDED')
+      return host.handle(JSON.stringify({action:'AREA_OPEN',district:'math',requestId:'lite-'+Date.now()}));
+  },
+  sendRequest: request => host.handle(JSON.stringify(request))
+});
+const deliver = message => {
+  ui.update(message);
+  if(message?.ok)CloudSync.scheduleSync();
+  if(message?.ok && message.cosmetics){
+    const wear=JSON.stringify(message.cosmetics);
+    if(instance)instance.SendMessage('VillageRuntime','OnCosmeticsMessage',wear);
+    else queuedCosmetics=wear;
+  }
+  const payload = JSON.stringify(message);
+  if (instance) instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+  else if(!liteMode) queued.push(payload);
+  if(message?.ok && message.garden) {
+    const garden=JSON.stringify(message.garden);
+    if(instance)instance.SendMessage('VillageRuntime','OnGardenMessage',garden);
+    else queuedGarden=garden;
+  }
+  if(message?.ok && message.pond){
+    const pond=JSON.stringify(message.pond);
+    if(instance)instance.SendMessage('VillageRuntime','OnPondMessage',pond);
+    else queuedPond=pond;
+  }
+
+};
+const host = createVillageHost(deliver);
+window.SparkleVillageBridge = {handle: raw => host.handle(raw)};
+async function prepareData(){
+  await host.prepare();
+  if(CloudSync.isPaired()){
+    const synced=await CloudSync.autoSync();
+    if(synced?.error)console.warn('[Village cloud sync]',synced.error);
+  }
+}
+
+async function discoverBuild() {
+  for (const name of ['WebGL', 'sparkle-fairy-village']) {
+    const loaderUrl = './Build/' + name + '.loader.js?v=world-v26-20261019';
+    try {
+      const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
+      if (result.ok) return {name, loaderUrl};
+    } catch { /* other filename or not built yet */ }
+  }
+  return null;
+}
+function script(url) {
+  return new Promise((resolve, reject) => {
+    const el = document.createElement('script');
+    el.src = url;
+    el.onload = resolve;
+    el.onerror = () => reject(new Error('Unity 로더를 불러오지 못했어요.'));
+    document.head.appendChild(el);
+  });
+}
+lite.addEventListener('click',async()=>{
+  lite.disabled=true;
+  start.disabled=true;
+  try{
+    status.textContent='가벼운 학습 마을을 준비하는 중이에요.';
+    await prepareData();
+    liteMode=true;
+    liteScene.hidden=false;
+    canvas.style.display='none';
+    uiRoot.dataset.lite='true';
+    uiRoot.querySelector('#vh-help').textContent='학습 지역을 눌러 수학·국어·영어로 이동해요.';
+    const questControl=uiRoot.querySelector('#vh-quest');
+    questControl.setAttribute('aria-label','추천하는 이야기 모험 열기');
+    uiRoot.hidden=false;
+    overlay.hidden=true;
+    gameClock.hidden=false;
+    refreshSeason();
+    await host.handle(JSON.stringify({action:'INIT',requestId:'lite-initial'}));
+  }catch(error){
+    status.textContent='가벼운 마을을 불러오지 못했어요. '+(error?.message||'');
+    liteMode=false;liteScene.hidden=true;uiRoot.hidden=true;overlay.hidden=false;
+    lite.disabled=false;start.disabled=false;
+  }
+});
+start.addEventListener('click', async () => {
+  start.disabled = true;
+  lite.disabled = true;
+  try {
+    status.textContent = '기존 학습 기록을 확인하는 중이에요.';
+    await prepareData();
+    const build = await discoverBuild();
+    if (!build) {
+      status.textContent = '3D 웹 빌드를 불러오지 못했어요. 위 학습기록 링크를 통해 문제집을 사용할 수 있어요.';
+      start.disabled = false;
+      lite.disabled = false;
+      return;
+    }
+      status.textContent = '마법마을과 여러 학습 지역을 불러오는 중이에요.';
+    meter.hidden = false;
+    await script(build.loaderUrl);
+    if (typeof createUnityInstance !== 'function')
+      throw new Error('Unity 실행 모듈을 찾지 못했어요.');
+    const base = './Build/' + build.name;
+    const compressed = await fetch(base + '.data.unityweb',{method:'HEAD'}).then(r=>r.ok).catch(()=>false);
+    const suffix=compressed ? '.unityweb' : '';
+    canvas.style.display = 'block';
+    instance = await createUnityInstance(canvas, {
+      dataUrl: base + '.data' + suffix + '?v=world-v26-20261019',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=world-v26-20261019',
+      codeUrl: base + '.wasm' + suffix + '?v=world-v26-20261019',
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Family Learning',
+      productName: 'Sparkle Fairy Village',
+      productVersion: '0.15.0-ecology-v19'
+    }, progress => {
+      bar.style.width = Math.round(progress * 100) + '%';
+      status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
+    });
+    if(new URLSearchParams(location.search).get('environmentPreview')==='1'){
+      window.SparkleEnvironmentPreview=(season,daypart)=>{
+        if(!['spring','summer','autumn','winter'].includes(season) ||
+           !['sunrise','noon','sunset','night'].includes(daypart) || !instance)return false;
+        document.documentElement.dataset.season=season;
+        document.documentElement.dataset.daypart=daypart;
+        instance.SendMessage('VillageRuntime','OnEnvironmentMessage',JSON.stringify({season,daypart}));
+        gameClock.textContent=SEASONS[season].emoji+' '+SEASONS[season].name+' · '+DAYPARTS[daypart].emoji+' '+DAYPARTS[daypart].name+' (미리보기)';
+        return true;
+      };
+    }
+    if(new URLSearchParams(location.search).get('motionPreview')==='1'){
+      window.SparkleMotionPreview=state=>{
+        if(instance&&typeof state==='string')
+          instance.SendMessage('VillageRuntime','OnMotionPreview',state);
+      };
+      window.SparkleMemoryPreview=kind=>{
+        if(instance&&typeof kind==='string')
+          instance.SendMessage('VillageRuntime','OnMemoryPreview',kind);
+      };
+      window.SparkleMotionMode=reduced=>{
+        if(instance)instance.SendMessage('VillageRuntime','OnUiCommand',reduced?'MOTION_LOW':'MOTION_FULL');
+      };
+      window.SparkleNpcPreview=npcId=>{
+        if(instance&&typeof npcId==='string')instance.SendMessage('VillageRuntime','OnNpcPreview',npcId);
+      };
+    }
+    // Honour the learner's reduced-motion setting after WebGL finishes loading.
+    ui.syncMotion();
+    for (const payload of queued.splice(0))
+      instance.SendMessage('VillageRuntime', 'OnBridgeMessage', payload);
+    if(queuedCosmetics){
+      instance.SendMessage('VillageRuntime','OnCosmeticsMessage',queuedCosmetics);
+      queuedCosmetics=null;
+    }
+    if(queuedGarden){instance.SendMessage('VillageRuntime','OnGardenMessage',queuedGarden);queuedGarden=null;}
+    if(queuedPond){instance.SendMessage('VillageRuntime','OnPondMessage',queuedPond);queuedPond=null;}
+    // Restore the current learner's free cosmetic variation after INIT.
+    ui.syncAvatarStyle();
+    overlay.hidden = true;
+    uiRoot.hidden = false;
+    gameClock.hidden=false;
+    refreshSeason();
+  } catch (error) {
+    canvas.style.display = 'none';
+    start.disabled = false;
+    lite.disabled = false;
+    status.textContent = '3D 마을을 시작하지 못했어요. ' + (error?.message || '');
+    console.error('[Village]', error);
+  }
+});
+</script>
 </body>
 </html>

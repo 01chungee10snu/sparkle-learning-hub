@@ -1,0 +1,56 @@
+/* The Unity scene owns the ground and ocean; CSS supplies seasonal mist,
+   sprite-like ambient petals and an unobtrusive Korean-time clock. */
+html[data-daypart="sunrise"]{--world-sky:#e8a4ac;--world-sea:#5988ba;--season-glow:#ffd5a4;--twinkle:.45}
+html[data-daypart="noon"]{--world-sky:#a0d7fc;--world-sea:#2686ba;--season-glow:#fff5cf;--twinkle:.10}
+html[data-daypart="sunset"]{--world-sky:#bd86c3;--world-sea:#59569d;--season-glow:#ffbe8d;--twinkle:.52}
+html[data-daypart="night"]{--world-sky:#2e467e;--world-sea:#183663;--season-glow:#d5e1fa;--twinkle:.85}
+html[data-season="spring"]{--season-detail:"🌸"}
+html[data-season="summer"]{--season-detail:"✨"}
+html[data-season="autumn"]{--season-detail:"🍂"}
+html[data-season="winter"]{--season-detail:"❄"}
+body{background:var(--world-sea,#6ac0d9)}
+#canvas{background:linear-gradient(180deg,var(--world-sky,#b3d7e8),var(--world-sea,#4a95bc))!important}
+#lite-village-scene{background:linear-gradient(160deg,var(--world-sky,#e9f6ed),#e2f6e3 48%,var(--world-sea,#c7e9d5))!important}
+#lite-village-scene img{opacity:.94;filter:saturate(1.07)}
+html[data-season="autumn"] #lite-village-scene img{filter:sepia(.17) saturate(1.15)}
+html[data-season="winter"] #lite-village-scene img{filter:brightness(1.07) hue-rotate(10deg)}
+html[data-daypart="sunset"] #lite-village-scene img{filter:sepia(.2) saturate(1.05)}
+html[data-daypart="night"] #lite-village-scene img{filter:brightness(.76) hue-rotate(14deg)}
+.world-scene-clock{position:absolute;z-index:10;top:calc(10px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);max-width:min(360px,44vw);min-height:27px;margin:0;border:1px solid #ecfbff8c;border-radius:999px;background:#223b699e;color:#fffaf2;text-align:center;padding:5px 12px;font-size:clamp(11px,1.25vw,15px);font-weight:850;line-height:1.3;white-space:nowrap;text-shadow:0 1px 3px #32465f}
+#world-season-effects{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+#world-season-effects span{position:absolute;display:block;top:-4%;font-size:clamp(18px,2.2vw,29px);text-shadow:0 1px 6px #fff9;opacity:0;animation:season-fall 15s linear infinite}
+#world-season-effects span::before{content:var(--season-detail,"✨")}
+#world-season-effects span:nth-child(1){left:7%;animation-delay:-1s}
+#world-season-effects span:nth-child(2){left:19%;animation-delay:-8s;animation-duration:18s}
+#world-season-effects span:nth-child(3){left:32%;animation-delay:-4s;animation-duration:13s}
+#world-season-effects span:nth-child(4){left:46%;animation-delay:-11s;animation-duration:22s}
+#world-season-effects span:nth-child(5){left:59%;animation-delay:-5s;animation-duration:16s}
+#world-season-effects span:nth-child(6){left:72%;animation-delay:-13s;animation-duration:20s}
+#world-season-effects span:nth-child(7){left:85%;animation-delay:-2s;animation-duration:12s}
+#world-season-effects span:nth-child(8){left:94%;animation-delay:-9s;animation-duration:19s}
+html[data-daypart="night"] #world-season-effects{background-image:radial-gradient(circle at 19% 16%,#fff 0 1px,transparent 2px),radial-gradient(circle at 55% 8%,#fff 0 1px,transparent 2px),radial-gradient(circle at 83% 22%,#fff 0 2px,transparent 3px);background-size:100% 100%}
+@keyframes season-fall{0%{transform:translate3d(0,-15px,0) rotate(0deg);opacity:0}5%{opacity:.58}85%{opacity:.40}100%{transform:translate3d(70px,110vh,0) rotate(290deg);opacity:0}}
+/* Left side navigation uses the spare horizontal game margin rather than a footer. */
+#village-controls{left:calc(12px + env(safe-area-inset-left))!important;right:auto!important;top:auto!important;bottom:calc(20px + env(safe-area-inset-bottom))!important;transform:none!important;width:134px!important;max-width:calc(100vw - 20px)!important;grid-template-columns:1fr!important;gap:5px!important;padding:7px!important;border-radius:20px!important;background:#fffdf4e9!important}
+#village-controls .vh-action{min-height:63px!important;padding:6px 4px!important;font-size:clamp(12px,1.25vw,14px)!important}
+#village-controls .vh-action>span:first-child{font-size:clamp(24px,2vw,30px)}
+#village-ui[data-mode="career"] #village-controls{pointer-events:none}
+@media(max-width:800px){
+ .world-scene-clock{top:calc(65px + env(safe-area-inset-top));left:auto;right:8px;transform:none;max-width:min(230px,52vw);font-size:11px;padding:4px 7px}
+ #village-controls{left:calc(6px + env(safe-area-inset-left))!important;bottom:calc(8px + env(safe-area-inset-bottom))!important;width:min(171px,45vw)!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:5px!important;gap:4px!important;border-radius:16px!important}
+ #village-controls .vh-action{font-size:clamp(10px,2.55vw,13px)!important;min-height:58px!important}
+ #village-controls .vh-action>span:first-child{font-size:clamp(21px,4.4vw,27px)}
+}
+@media(max-height:530px) and (orientation:landscape){
+ #village-controls{left:7px!important;bottom:7px!important;width:120px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #village-controls .vh-action{min-height:52px!important;font-size:10px!important}
+ .world-scene-clock{top:7px;left:48%;right:auto;transform:translateX(-48%)}
+}
+@media(prefers-reduced-motion:reduce){#world-season-effects span{animation:none;opacity:0}}
+
+/* Sprites use largely unlit 2.5D art. Apply the same atmosphere to the
+   rendered scene without dimming the large child-facing HTML controls. */
+html[data-daypart="sunrise"] #canvas{filter:sepia(.10) saturate(1.08)}
+html[data-daypart="sunset"] #canvas{filter:sepia(.18) saturate(.91) brightness(.91)}
+html[data-daypart="night"] #canvas{filter:brightness(.68) saturate(.78) hue-rotate(6deg)}
+html[data-daypart="noon"] #canvas{filter:none}

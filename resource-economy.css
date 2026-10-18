@@ -1,0 +1,14 @@
+/* Cross-curricular resources replace stars as the primary visible new reward. */
+.subject-resource-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;align-items:stretch;flex-shrink:0;}
+.subject-resource-strip>span{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 13px;background:linear-gradient(145deg,#fffdf5,#f8f2ff);border:1px solid #e5d9ed;border-radius:14px;min-width:0;}
+.subject-resource-strip b{font-size:clamp(14px,1.8vw,19px);color:#63547b;white-space:nowrap}
+.subject-resource-strip strong{font-size:clamp(20px,2.4vw,26px);color:#60428b;white-space:nowrap}
+.legacy-star-note{font-size:14px;color:#756980;line-height:1.4;margin:2px 0}
+.parent-resource-economy{display:flex;flex-direction:column;gap:9px;border:1px solid #cbded8;border-radius:18px;background:linear-gradient(135deg,#f3fff7,#fdf8ff);padding:12px}
+.parent-resource-economy h3{font-size:19px;color:#46677c;margin:0}
+.parent-resource-economy p{font-size:14px;color:#645d74;line-height:1.5;margin:0}
+.subject-resource-earned{display:block;color:#496e73;background:#e4f6ed;border:1px solid #cbe6d4;border-radius:12px;padding:6px 10px;font-size:clamp(17px,2.1vw,23px);font-weight:900;line-height:1.4}
+@media(max-width:699px){.subject-resource-strip{gap:4px}.subject-resource-strip>span{padding:9px 5px;flex-direction:column;gap:1px;border-radius:10px}
+.subject-resource-strip b{font-size:13px}.subject-resource-strip strong{font-size:21px}
+.subject-resource-earned{font-size:17px;padding:5px 8px}.legacy-star-note{font-size:13px}}
+@media(max-width:350px){.subject-resource-strip b{font-size:12px}.subject-resource-strip strong{font-size:19px}}

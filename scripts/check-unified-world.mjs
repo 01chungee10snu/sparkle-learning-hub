@@ -81,6 +81,33 @@ try{
   if(filter)assert(area.missions.games.every(g=>g.subject===filter));
   assert(area.missions.games.every(g=>!g.id.startsWith('magic-')&&!/bebsu-(?:g[1-6]|m[1-3])-original/.test(g.id)));
  }
+ const careerArea=await request('AREA_OPEN',{district:'career'});
+ assert.equal(careerArea.district,'career');
+ assert.deepEqual(careerArea.career.dreams,[]);
+ const careerSaved=await request('CAREER_TOGGLE',{itemId:'doctor'});
+ assert.deepEqual(careerSaved.career.dreams,['doctor']);
+ const careerRemoved=await request('CAREER_TOGGLE',{itemId:'doctor'});
+ assert.deepEqual(careerRemoved.career.dreams,[]);
+ const hanjaArea=await request('AREA_OPEN',{district:'hanja'});
+ assert.equal(hanjaArea.missions.games.length,11);
+ assert.equal(hanjaArea.missions.games[0].id,'hanja-h8');
+ assert.equal(hanjaArea.missions.games.at(-1).id,'hanja-h3');
+ const hanjaFirst=await request('START',{gameId:'hanja-h8'});
+ assert.equal(hanjaFirst.question.visual.kind,'word');
+ assert.equal(hanjaFirst.question.choices.length,4);
+ await request('CANCEL');
+ const pond=await request('AREA_OPEN',{district:'pond'});
+ assert.equal(pond.pondShop.fish.filter(f=>f.owned).length,1);
+ assert.equal(pond.pond.fish[0].id,'guppy');
+ assert.deepEqual(Object.keys(pond.resources.available).sort(),['english','hanja','korean','math']);
+ const feed=await request('POND_FEED',{itemId:'guppy'});
+ assert.equal(feed.pondShop.fish.find(f=>f.id==='guppy').feedDays,1);
+ const repeatFeed=await request('POND_FEED',{itemId:'guppy'});
+ assert.equal(repeatFeed.pondShop.fish.find(f=>f.id==='guppy').feedDays,1);
+ const failedAdoption='pond-no-resources';
+ await host.handle(JSON.stringify({action:'POND_ADOPT',requestId:failedAdoption,itemId:'goldfish'}));
+ const blocked=responses.findLast(r=>r.requestId===failedAdoption);
+ assert.equal(blocked?.ok,false,'One subject cannot purchase a balanced-currency fish');
  const kma=await request('AREA_OPEN',{district:'kma'});
  const practice=await request('AREA_OPEN',{district:'practice'});
  assert.equal(kma.challenges.length,9);
@@ -119,6 +146,8 @@ try{
  assert.equal(storage.get(OLD_KEY_A),historical[0]);
  assert.equal(storage.get(OLD_KEY_B),historical[1]);
  Progress.selectLearner('se');
+ const sePond=await request('POND_OPEN');
+ assert.equal(sePond.pondShop.fish.find(f=>f.id==='guppy').feedDays,0,'Siblings keep separate ponds');
  assert.equal(Rewards.wallet(catalog,'se').available,0);
  const child=await finish25('magic-g1-challenge','magic-g1-basic');
  assert.equal(child.last.challengeBonus,35);
@@ -130,5 +159,5 @@ try{
  const copied=Progress.exportRecords(), firstTa=copied.platform.profiles.tae.games['magic-g1-challenge'];
  assert.equal(firstTa.completedRounds.length,2);
  assert.equal(firstTa.records&&Object.keys(firstTa.records).length,25);
- console.log('PASS_UNIFIED_WORLD '+catalog.filter(g=>g.kind==='quiz'&&g.status==='published').length+' quizzes, '+catalog.filter(g=>g.kind==='quiz'&&g.status==='published').reduce((n,g)=>n+g.questionIds.length,0)+' items, 7 learning districts, 27+27 papers, practice and KMA shared future wallet, repeat credit blocked, sibling isolation, historical keys untouched');
+ console.log('PASS_UNIFIED_WORLD '+catalog.filter(g=>g.status==='published').length+' games, '+catalog.filter(g=>g.kind==='quiz'&&g.status==='published').reduce((n,g)=>n+g.questionCount,0)+' items, 8 native learning districts including Hanja academy, 27+27 papers, practice and KMA shared future wallet, repeat credit blocked, sibling isolation, historical keys untouched');
 }finally{globalThis.fetch=nativeFetch;}
