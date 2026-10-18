@@ -40,9 +40,9 @@ try{
    // Add two legitimate independent learning observations, keeping the same
    // source-of-truth answer receipt schema used by subject currency accrual.
    const seeded=await page.evaluate(async()=>{
-    const Progress=await import('/platform/progress.js?v=ecology-v19-20261015');
-    const Resources=await import('/platform/resource-economy.js?v=career-v27-20261019');
-    const catalog=await (await fetch('/games/catalog.json')).json();
+    const Progress=await import(new URL('../platform/progress.js?v=ecology-v19-20261015',location.href));
+    const Resources=await import(new URL('../platform/resource-economy.js?v=career-v27-20261019',location.href));
+    const catalog=await (await fetch(new URL('../games/catalog.json',location.href))).json();
     const save=Progress.exportRecords(),timestamp=Date.now()-10000;
     for(const subject of ['math','korean']){
      const item=catalog.find(g=>g.subject===subject&&g.kind==='quiz'&&g.status==='published'&&g.questionIds?.length>=2);
@@ -88,8 +88,8 @@ try{
    assert((await page.locator('.career-study-evidence').innerText()).includes('전국 종합석차'));
 
    const state=await page.evaluate(async()=>{
-    const Resources=await import('/platform/resource-economy.js?v=career-v27-20261019');
-    const catalog=await (await fetch('/games/catalog.json')).json();
+    const Resources=await import(new URL('../platform/resource-economy.js?v=career-v27-20261019',location.href));
+    const catalog=await (await fetch(new URL('../games/catalog.json',location.href))).json();
     return {mine:Resources.wallet(catalog,'tae'),sister:Resources.wallet(catalog,'se')};
    });
    assert(state.mine.careerUnlocked.includes('doctor'));
