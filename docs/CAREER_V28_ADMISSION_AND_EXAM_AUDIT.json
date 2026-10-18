@@ -1,0 +1,1013 @@
+{
+  "version": "academic-pathways-v28",
+  "retrievedOn": "2026-10-19",
+  "count": 100,
+  "schoolSource": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133",
+  "vocationalSource": "https://www.work.go.kr/consltJobCarpa/srch/jobDic/jobDicIntro.do",
+  "careersWithAdmissionExamples": 10,
+  "careersWithExamPassResults": 3,
+  "officialAdmissionExamples": [
+    "medicine",
+    "pharmacy",
+    "semiconductor",
+    "software",
+    "economics",
+    "mathematics",
+    "engineering",
+    "business"
+  ],
+  "examinationResults": [
+    "cpa",
+    "bar"
+  ],
+  "calculations": {
+    "school": "(100 - arithmetic mean of four subject percentile scores)*100",
+    "exam": "(passes / actual qualified examination takers)*10000"
+  },
+  "cannotInferOccupationSpecificRank": true,
+  "cannotInferIncomeCausedByBetterGrades": true,
+  "selection": "Upper-division university admission examples are illustrative educational pathways, never a job qualification requirement",
+  "careers": [
+    {
+      "id": "ceo",
+      "name": "기업고위임원",
+      "majorOrCredential": "정해진 단일 필수 대학·전공·국가시험 없음.",
+      "admission": {
+        "sampleProgram": "성균관대학교 경영학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          98,
+          87,
+          94,
+          91
+        ],
+        "averageOfFourSubjectPercentiles": 92.5,
+        "illustrativePer10000Scale": 750,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "pilot",
+      "name": "비행기조종사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "dentist",
+      "name": "치과의사",
+      "majorOrCredential": "치의학 전공 교육과 치과의사 국가시험·면허",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-37",
+      "name": "한의사",
+      "majorOrCredential": "한의학 전공 교육과 한의사 국가시험·면허",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "doctor",
+      "name": "일반의사",
+      "majorOrCredential": "인정된 의과대학·의학전문대학원 교육과 의사 국가시험·면허",
+      "admission": {
+        "sampleProgram": "성균관대학교 의예과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          98,
+          100,
+          98,
+          100
+        ],
+        "averageOfFourSubjectPercentiles": 99,
+        "illustrativePer10000Scale": 100,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-364",
+      "name": "이공학계열교수",
+      "majorOrCredential": "대학 교수 임용·연구 업적 등이 요구되며, 전공·기관별 요건이 다릅니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 공학계열",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          86,
+          97,
+          90,
+          100
+        ],
+        "averageOfFourSubjectPercentiles": 93.25,
+        "illustrativePer10000Scale": 675,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "lawyer",
+      "name": "변호사",
+      "majorOrCredential": "변호사시험 응시요건에 해당하는 법학전문대학원 석사학위 취득(예정) 후 합격·등록. 학부 전공은 특정 학과만으로 제한되지 않습니다.",
+      "admission": null,
+      "exam": {
+        "name": "변호사시험 2026년도 제15회",
+        "year": 2026,
+        "takers": 3364,
+        "passes": 1714,
+        "passPercent": 50.95,
+        "per10000QualifiedTakers": 5095,
+        "qualifiedCohortOnly": true,
+        "notSchoolRank": true,
+        "source": "https://www.corrections.go.kr/bbs/moj/182/493830/download.do"
+      },
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "judge",
+      "name": "판사",
+      "majorOrCredential": "법률 전문가 경력과 법관 임용 심사 등. 변호사시험은 법률자격 취득을 위한 일반적 경로의 참고 지표이며 판사 채용 합격률은 아닙니다.",
+      "admission": null,
+      "exam": {
+        "name": "변호사시험 2026년도 제15회",
+        "year": 2026,
+        "takers": 3364,
+        "passes": 1714,
+        "passPercent": 50.95,
+        "per10000QualifiedTakers": 5095,
+        "qualifiedCohortOnly": true,
+        "notSchoolRank": true,
+        "careerAppointmentRate": null,
+        "source": "https://www.corrections.go.kr/bbs/moj/182/493830/download.do"
+      },
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "accountant",
+      "name": "회계사",
+      "majorOrCredential": "공인회계사시험의 응시 요건과 해당 전문 자격시험 합격·등록. 특정 한 대학교나 학부 전공만 필수는 아닙니다.",
+      "admission": null,
+      "exam": {
+        "name": "공인회계사 2026년도 제61회 제2차시험",
+        "year": 2026,
+        "takers": 4368,
+        "passes": 1150,
+        "passPercent": 26.33,
+        "per10000QualifiedTakers": 2633,
+        "qualifiedCohortOnly": true,
+        "notSchoolRank": true,
+        "source": "https://www.fsc.go.kr/no010101/87628"
+      },
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "economist",
+      "name": "경제학연구원",
+      "majorOrCredential": "정해진 단일 필수 대학·전공 없음.",
+      "admission": {
+        "sampleProgram": "성균관대학교 글로벌경제학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          96,
+          93,
+          92,
+          91
+        ],
+        "averageOfFourSubjectPercentiles": 93,
+        "illustrativePer10000Scale": 700,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-199",
+      "name": "검사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10115",
+      "name": "디지털 헬스케어 기기 개발자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "robot-engineer",
+      "name": "지능형 로봇개발자",
+      "majorOrCredential": "필수 단일 대학·전공 없음. 로봇·AI·수학 등 복수의 진입 경로가 있습니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 지능형소프트웨어학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          97,
+          98,
+          87,
+          97
+        ],
+        "averageOfFourSubjectPercentiles": 94.75,
+        "illustrativePer10000Scale": 525,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-198",
+      "name": "감정평가사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-224",
+      "name": "세무사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-8",
+      "name": "물리학연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "diplomat",
+      "name": "외교관",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "ai-researcher",
+      "name": "인공지능 엔지니어",
+      "majorOrCredential": "필수 단일 대학·전공 없음. 수학·컴퓨터·AI 및 실무·연구 경로가 다양합니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 지능형소프트웨어학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          97,
+          98,
+          87,
+          97
+        ],
+        "averageOfFourSubjectPercentiles": 94.75,
+        "illustrativePer10000Scale": 525,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-374",
+      "name": "변리사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "pharmacist",
+      "name": "약사 및 한약사",
+      "majorOrCredential": "약사·한약사는 각각 다른 관련 전문교육과 면허 요건이 있습니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 약학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          99,
+          98,
+          100,
+          94
+        ],
+        "averageOfFourSubjectPercentiles": 97.75,
+        "illustrativePer10000Scale": 225,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10116",
+      "name": "신소재 개발 연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "veterinarian",
+      "name": "수의사",
+      "majorOrCredential": "수의학 전공 교육과 수의사 국가시험·면허",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-950",
+      "name": "투자분석가(애널리스트)",
+      "majorOrCredential": "특정 대학 전공이 모든 투자분석가의 필수 요건은 아닙니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 글로벌경제학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          96,
+          93,
+          92,
+          91
+        ],
+        "averageOfFourSubjectPercentiles": 93,
+        "illustrativePer10000Scale": 700,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-244",
+      "name": "금융자산운용가(펀드매니저)",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-217",
+      "name": "보험계리인",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-66",
+      "name": "로봇연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-104",
+      "name": "원자력연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "astronautical",
+      "name": "항공우주공학기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10105",
+      "name": "태양광발전연구 및 개발자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-148",
+      "name": "항공교통관제사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-202",
+      "name": "경영컨설턴트",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-137",
+      "name": "토목공학기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-56",
+      "name": "기계공학 기술자ㆍ연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10108",
+      "name": "배터리 기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "architect",
+      "name": "건축사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1436",
+      "name": "신약개발연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-13",
+      "name": "생물학연구원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-322",
+      "name": "영화감독",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "semiconductor",
+      "name": "반도체공학기술자",
+      "majorOrCredential": "필수 단일 대학·전공 없음. 전자·재료·반도체 교육 및 현장 전문성이 중요합니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 반도체시스템공학과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          95,
+          98,
+          96,
+          94
+        ],
+        "averageOfFourSubjectPercentiles": 95.75,
+        "illustrativePer10000Scale": 425,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-5",
+      "name": "일기예보관",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10110",
+      "name": "양자 컴퓨팅 기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-119",
+      "name": "전자공학기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "game-designer",
+      "name": "게임기획자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1089",
+      "name": "자연계중등학교교사",
+      "majorOrCredential": "중등 교원자격 및 임용 절차 등을 확인해야 합니다. 수학교육과 진학은 자연계 중등교사에 도전하는 여러 경로 중 한 가지입니다.",
+      "admission": {
+        "sampleProgram": "성균관대학교 수학교육과",
+        "enrollmentYear": 2025,
+        "cohort": "2025학년도 정시 최종등록자 70%컷 과목별 통계값",
+        "subjectPercentiles": [
+          94,
+          95,
+          94,
+          96
+        ],
+        "averageOfFourSubjectPercentiles": 94.75,
+        "illustrativePer10000Scale": 525,
+        "isRealNationwideRank": false,
+        "isMandatoryDegree": false,
+        "source": "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133"
+      },
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10032",
+      "name": "빅 데이터 전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-114",
+      "name": "전기공학기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-182",
+      "name": "농업기술자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-212",
+      "name": "도시 및 교통설계전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10005",
+      "name": "스마트 도시 전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-232",
+      "name": "광고 및 홍보전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1068",
+      "name": "마케팅전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-397",
+      "name": "응급구조사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-410",
+      "name": "초등학교교사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-262",
+      "name": "기자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10076",
+      "name": "모바일앱개발자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-84",
+      "name": "산업안전관리원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-385",
+      "name": "소방관",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-149",
+      "name": "항공기정비원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-398",
+      "name": "임상심리사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-173",
+      "name": "조리사 및 주방장",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-359",
+      "name": "경찰관",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10",
+      "name": "방사선사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-219",
+      "name": "부동산중개인",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-142",
+      "name": "트럭운전기사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-413",
+      "name": "특수교사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "cybersecurity",
+      "name": "정보보호전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-332",
+      "name": "제품디자이너",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-33",
+      "name": "치과기공사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-834",
+      "name": "시스템소프트웨어개발자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10001",
+      "name": "3D 프린팅 전문가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-252",
+      "name": "법률사무원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-208",
+      "name": "국제무역사무원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-354",
+      "name": "간호사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-10106",
+      "name": "스마트팜 운영자",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-344",
+      "name": "패션디자이너",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-392",
+      "name": "스포츠트레이너",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-267",
+      "name": "번역가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-258",
+      "name": "회계사무원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-264",
+      "name": "통역가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-937",
+      "name": "시각디자이너",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-102",
+      "name": "용접원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-172",
+      "name": "제과사 및 제빵사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-369",
+      "name": "물리치료사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-379",
+      "name": "사회복지사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-180",
+      "name": "바리스타",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-395",
+      "name": "유치원교사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-376",
+      "name": "보육교사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-426",
+      "name": "택시운전기사",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1115",
+      "name": "주유원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-253",
+      "name": "사무보조원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-266",
+      "name": "드라마작가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-358",
+      "name": "경비원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1116",
+      "name": "계산원 및 매표원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-243",
+      "name": "상점판매원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1128",
+      "name": "주방보조원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-1441",
+      "name": "작가",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-353",
+      "name": "간병인",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-356",
+      "name": "청소원",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-294",
+      "name": "모델",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    },
+    {
+      "id": "career-352",
+      "name": "가사도우미",
+      "majorOrCredential": "직업과 근무기관에 따라 여러 학업·훈련·자격 경로가 있습니다. 해당 직업의 최신 자격조건을 공식 직업사전에서 확인해 주세요.",
+      "admission": null,
+      "exam": null,
+      "noOfficialNationalOccupationalGradeRank": true
+    }
+  ]
+}

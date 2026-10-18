@@ -37,7 +37,7 @@ try{
    await page.locator('#vh-map').click();
    await page.locator('.vh-map-district-entry').filter({hasText:'미래 직업 탐색관'}).click();
    await page.waitForFunction(()=>document.querySelector('#vh-title')?.textContent.includes('미래 직업 탐색관'),null,{timeout:10000});
-   assert.equal(await page.locator('.career-card').count(),30);
+   assert.equal(await page.locator('.career-card').count(),100);
    await page.locator('.career-card[data-career=doctor]').click();
    assert(await page.locator('.career-detail-name').innerText().then(t=>t.includes('의사')));
    await page.locator('.career-bookmark').click();
@@ -50,7 +50,7 @@ try{
    const ctrl=await page.locator('#village-controls').boundingBox();
    assert(ctrl.x<device.width*.20,'World action bar should be anchored to LEFT, not centered');
    assert(!errors.length,'JS errors '+errors.join('; '));
-   results.push({device:device.name,pass:true,careerCards:30,leftControls:ctrl.x,bookmarked:true,
+   results.push({device:device.name,pass:true,careerCards:100,leftControls:ctrl.x,bookmarked:true,
      rootTwoActions:true,seasonClock:true,jsErrors:errors});
    console.log('V26_INTRO_AND_CAREER_PASS',JSON.stringify(results.at(-1)));
   }finally{await context.close();}

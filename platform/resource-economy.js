@@ -1,4 +1,5 @@
 import * as Progress from './progress.js';
+import {CAREER_BY_ID} from '../village/career-library.js';
 
 /**
  * Four distinct subject resources. Only independently correct, distinct items
@@ -31,7 +32,7 @@ const MAX_RECEIPTS=64,MAX_FEED_EVENTS=5000,DAY=86400000;
 const now=()=>Date.now();
 const validTimestamp=t=>Number.isSafeInteger(t)&&t>=0&&t<=now()+60000;
 const plain=v=>v&&typeof v==='object'&&!Array.isArray(v)&&(Object.getPrototypeOf(v)===Object.prototype||Object.getPrototypeOf(v)===null);
-const blankProfile=()=>({adoptions:{},feedEvents:{}});
+const blankProfile=()=>({adoptions:{},feedEvents:{},careerUnlocks:{}});
 const blank=()=>({version:1,profiles:{tae:blankProfile(),se:blankProfile()}});
 const copy=x=>JSON.parse(JSON.stringify(x));
 const validWho=who=>{if(!Object.hasOwn(Progress.LEARNERS,who))throw new Error('학습자 정보를 확인해 주세요.');return who;};
@@ -46,7 +47,9 @@ function clean(raw){
  for(const who of ['tae','se']){
   const src=raw.profiles[who];
   if(!plain(src)||!plain(src.adoptions)||!plain(src.feedEvents)||
-    Object.keys(src.adoptions).length>MAX_RECEIPTS||Object.keys(src.feedEvents).length>MAX_FEED_EVENTS)throw new Error('화폐 기록 크기를 확인해 주세요.');
+    (src.careerUnlocks!==undefined&&!plain(src.careerUnlocks))||
+    Object.keys(src.adoptions).length>MAX_RECEIPTS||Object.keys(src.feedEvents).length>MAX_FEED_EVENTS||
+    Object.keys(src.careerUnlocks||{}).length>100)throw new Error('화폐 기록 크기를 확인해 주세요.');
   for(const [id,adoption] of Object.entries(src.adoptions)){
    if(!knownFish(id)||id==='guppy'||!plain(adoption)||adoption.id!==id||!validTimestamp(adoption.at)||
       !plain(adoption.cost)||RESOURCE_SUBJECTS.some(s=>adoption.cost[s]!==BY_FISH.get(id).cost[s]))
@@ -58,6 +61,13 @@ function clean(raw){
       event.day!==dateKey(event.at)||key!==event.day+'-'+event.fishId)
     throw new Error('물고기 돌봄 기록을 확인해 주세요.');
    result.profiles[who].feedEvents[key]={fishId:event.fishId,day:event.day,at:event.at};
+  }
+  for(const [id,receipt] of Object.entries(src.careerUnlocks||{})){
+   if(!CAREER_BY_ID.has(id)||!plain(receipt)||receipt.id!==id||!validTimestamp(receipt.at)||!plain(receipt.cost)||
+      RESOURCE_SUBJECTS.some(s=>![0,1].includes(receipt.cost[s]))||
+      RESOURCE_SUBJECTS.reduce((sum,s)=>sum+receipt.cost[s],0)!==2)
+      throw new Error('직업사전 열람 영수증을 확인해 주세요.');
+   result.profiles[who].careerUnlocks[id]={id,at:receipt.at,cost:{...zero(),...receipt.cost}};
   }
  }
  return result;
@@ -72,6 +82,11 @@ function merge(a,b){
   for(const [id,e] of Object.entries(incoming.profiles[who].feedEvents)){
    const old=merged.profiles[who].feedEvents[id];
    if(!old||e.at<old.at)merged.profiles[who].feedEvents[id]=e;
+  }
+  for(const [id,e] of Object.entries(incoming.profiles[who].careerUnlocks)){
+   const old=merged.profiles[who].careerUnlocks[id];
+   if(!old||e.at<old.at || (e.at===old.at && JSON.stringify(e.cost)<JSON.stringify(old.cost)))
+     merged.profiles[who].careerUnlocks[id]=e;
   }
  }
  return merged;
@@ -147,8 +162,8 @@ export function earnedResources(catalog,who=Progress.learner()){
 export function wallet(catalog,who=Progress.learner()){
  validWho(who);configure(catalog);
  const state=loadResources(),p=state.profiles[who],source=earnedResources(catalog,who),spent=zero();
- for(const receipt of Object.values(p.adoptions))for(const subject of RESOURCE_SUBJECTS)
-  spent[subject]+=receipt.cost[subject];
+ for(const receipt of [...Object.values(p.adoptions),...Object.values(p.careerUnlocks)])
+  for(const subject of RESOURCE_SUBJECTS)spent[subject]+=receipt.cost[subject];
  const available=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,source.earned[subject]-spent[subject])]));
  const deficits=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,spent[subject]-source.earned[subject])]));
  const fish=FISH_SPECIES.map(species=>{
@@ -163,7 +178,8 @@ export function wallet(catalog,who=Progress.learner()){
   return aCost-bCost;
  })[0];
  return {who,earned:source.earned,available,spent,deficits,balancedDays:source.balancedDays,
-   uniqueCorrect:source.independentItems,fish,next,storageAvailable:storageOK};
+   uniqueCorrect:source.independentItems,fish,next,careerUnlocked:Object.keys(p.careerUnlocks),
+   storageAvailable:storageOK};
 }
 export function adoptFish(id,catalog,who=Progress.learner(),storage=globalThis.localStorage){
  validWho(who);configure(catalog);
@@ -191,3 +207,26 @@ export function feedFish(id,catalog,who=Progress.learner(),storage=globalThis.lo
  return {ok:true,duplicate:false,wallet:wallet(catalog,who)};
 }
 export function resourceStorageAvailable(){loadResources();return storageOK;}
+
+/** Permanent career fact unlock: exactly 1 credit each from 2 different
+ * subjects, regardless of source salary or occupation status. Salary facts
+ * have no real-money monetary value and may be viewed freely at source.
+ */
+export function unlockCareer(id,subjects,catalog,who=Progress.learner(),storage=globalThis.localStorage){
+ validWho(who);configure(catalog);
+ if(!CAREER_BY_ID.has(id))throw new Error('찾을 수 없는 직업이에요.');
+ if(!Array.isArray(subjects)||subjects.length!==2||new Set(subjects).size!==2||
+    !subjects.every(s=>RESOURCE_SUBJECTS.includes(s)))
+    throw new Error('서로 다른 두 과목의 자원을 골라 주세요.');
+ const state=loadResources(storage),profile=state.profiles[who];
+ if(profile.careerUnlocks[id])return {ok:true,duplicate:true,wallet:wallet(catalog,who)};
+ const funds=wallet(catalog,who);
+ if(!subjects.every(s=>funds.available[s]>=1) ||
+    RESOURCE_SUBJECTS.some(s=>funds.deficits[s]>0))
+    return {ok:false,reason:'insufficient-resources',wallet:funds};
+ const cost=zero();
+ for(const subject of subjects)cost[subject]=1;
+ profile.careerUnlocks[id]={id,at:now(),cost};
+ if(!persist(state,storage))return {ok:false,reason:'storage-unavailable',wallet:funds};
+ return {ok:true,duplicate:false,wallet:wallet(catalog,who)};
+}

@@ -1,5 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
-import {mountCareerExplorer} from './career-ui.js?v=career-v25-20261019';
+import {mountCareerExplorer} from './career-ui.js?v=career-v28-20261019';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
@@ -843,6 +843,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.body.append(grid);
     ui.title.focus({preventScroll:true});
   }
+  let selectedCareerId='';
   function showCareer(data){
     phase='career';open();resetBody();theme('scroll');root.dataset.mode='career';
     ui.title.textContent='🏛️ 미래 직업 탐색관';
@@ -851,7 +852,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.listen.hidden=true;ui.hint.hidden=true;
     mountCareerExplorer(ui.body,{
       dreams:data?.dreams||[],
+      unlocked:data?.unlocked||[],
+      available:data?.available||{},
+      selectedId:selectedCareerId,
+      onSelect:id=>{selectedCareerId=id;},
       onDream:id=>request('CAREER_TOGGLE',{itemId:id}),
+      onUnlock:(id,subjects)=>request('CAREER_UNLOCK',{itemId:id,subjects}),
       onTravel:subject=>travelToDistrict(subject)
     });
     ui.title.focus({preventScroll:true});
@@ -1359,7 +1365,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       else if(data.district==='growth')showGrowthTower(data.growth);
       else showAreaMissions(data.missions);
     }
-    else if(data.action==='CAREER_OPEN'||data.action==='CAREER_TOGGLE')showCareer(data.career);
+    else if(['CAREER_OPEN','CAREER_TOGGLE','CAREER_UNLOCK'].includes(data.action))showCareer(data.career);
     else if(['POND_OPEN','POND_ADOPT','POND_FEED'].includes(data.action))showPond(data.pondShop,data.pondNotice);
     else if(data.action==='SHOW_BEBSU'||data.action==='SHOW_PRACTICE')showChallengePicker(data);
     else if(data.action==='AREA_SET_STAGE')showGrowthTower(data.growth);

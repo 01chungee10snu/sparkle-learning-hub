@@ -1,6 +1,15 @@
 import {CAREER_BY_ID} from './career-library.js';
 
 export const CAREER_KEY='sparkle-career-dreams-v1';
+// Exact prior v26 choices that do not have a defensible one-to-one counterpart
+// in the official 100-job selection are archived, not silently deleted.
+export const ARCHIVED_CAREER_NAMES=Object.freeze({
+ biomedical:'의생명 연구원',surgeon:'외과 전문의',inventor:'발명가·기술창업가',
+ international:'국제기구 전문가',patent:'특허 전문가',founder:'기업가·창업가',
+ investment:'금융투자 전문가',professor:'대학교수·연구자',
+ 'film-director':'영화감독·콘텐츠 제작자',climate:'기후과학자',
+ energy:'미래 에너지 연구원',urban:'도시설계 전문가'
+});
 const CHILDREN=['tae','se'],MAX_ENTRIES=30;
 const emptyProfile=()=>({choices:{}});
 const empty=()=>({version:1,profiles:{tae:emptyProfile(),se:emptyProfile()}});
@@ -16,7 +25,7 @@ function normalise(raw){
   if(!isPlain(records)||Object.keys(records).length>MAX_ENTRIES)
    throw new Error('꿈 탐색 기록 크기를 확인해 주세요.');
   for(const [id,entry] of Object.entries(records)){
-   if(!CAREER_BY_ID.has(id))continue;
+   if(!CAREER_BY_ID.has(id)&&!Object.hasOwn(ARCHIVED_CAREER_NAMES,id))continue;
    const legacy=Number.isSafeInteger(entry),timestamp=legacy?entry:entry?.at;
    if(!Number.isSafeInteger(timestamp)||timestamp<0||timestamp>Date.now()+86400000)continue;
    const selected=legacy?true:entry.selected===true;

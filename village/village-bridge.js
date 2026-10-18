@@ -10,7 +10,7 @@ import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from '../platform/resource-economy.js?v=pond-economy-v1';
+import * as Resources from '../platform/resource-economy.js?v=career-v27-20261019';
 import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
@@ -252,10 +252,17 @@ export function createVillageHost(emit) {
           canPurchase:item.canPurchase
         }))};
     };
-    if (action === 'CAREER_OPEN') return snapshot(action,requestId,{district:'career',career:{dreams:Careers.careerSnapshot(who)}});
+    const careerView=()=>{const funds=Resources.wallet(catalog,who);return {dreams:Careers.careerSnapshot(who),unlocked:funds.careerUnlocked,available:funds.available};};
+    if (action === 'CAREER_OPEN') return snapshot(action,requestId,{district:'career',career:careerView()});
     if (action === 'CAREER_TOGGLE') {
       const result=Careers.toggleDream(who,itemId);
-      return snapshot(action,requestId,{district:'career',career:{dreams:result.dreams,changed:itemId,selected:result.selected}});
+      return snapshot(action,requestId,{district:'career',career:{...careerView(),changed:itemId,selected:result.selected}});
+    }
+    if (action === 'CAREER_UNLOCK') {
+      const result=Resources.unlockCareer(itemId,request.subjects,catalog,who);
+      if(!result.ok)throw new Error(result.reason==='insufficient-resources'?
+       '서로 다른 두 과목에서 배움 자원을 1개씩 모아요.':'직업사전 해금 기록을 안전하게 저장하지 못했어요.');
+      return snapshot(action,requestId,{district:'career',career:{...careerView(),changed:itemId,unlockedNow:true}});
     }
     if (action === 'POND_OPEN') return snapshot(action,requestId,{district:'pond',pondShop:Resources.wallet(catalog,who)});
     if (action === 'POND_ADOPT') {
@@ -339,7 +346,7 @@ export function createVillageHost(emit) {
     if(action==='AREA_OPEN'){
       const chosen=(district||response||'').toLowerCase();
       if(!Object.hasOwn(DISTRICTS,chosen))throw new Error('마법마을 지역을 선택해 주세요.');
-      if(chosen==='career')return snapshot(action,requestId,{district:chosen,career:{dreams:Careers.careerSnapshot(who)}});
+      if(chosen==='career')return snapshot(action,requestId,{district:chosen,career:careerView()});
       if(chosen==='pond')return snapshot(action,requestId,{district:chosen,pondShop:Resources.wallet(catalog,who)});
       if(chosen==='kma')return snapshot(action,requestId,{district:chosen,
         challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote});

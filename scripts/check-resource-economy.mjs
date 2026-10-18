@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import * as Progress from '../platform/progress.js';
 import * as Resource from '../platform/resource-economy.js';
+import {CAREERS} from '../village/career-library.js';
 
 const backing=new Map();
 const storage={getItem:k=>backing.get(k)??null,setItem:(k,v)=>backing.set(k,String(v)),removeItem:k=>backing.delete(k)};
@@ -42,11 +43,26 @@ const after=Resource.wallet(catalog,'tae');
 assert.equal(after.available.math,Resource.earnedResources(catalog,'tae').earned.math-3);
 assert(after.fish.find(f=>f.id==='goldfish').owned);
 assert(Resource.adoptFish('goldfish',catalog,'tae',storage).duplicate);
+const known=Resource.unlockCareer('doctor',['math','english'],catalog,'tae',storage);
+assert(known.ok&&!known.duplicate,'Two independently earned currencies unlock the same-priced career');
+assert(Resource.wallet(catalog,'tae').careerUnlocked.includes('doctor'));
+assert.equal(Resource.wallet(catalog,'tae').available.math,after.available.math-1);
+assert.equal(Resource.unlockCareer('doctor',['math','english'],catalog,'tae',storage).duplicate,true);
+assert.throws(()=>Resource.unlockCareer('dentist',['math','math'],catalog,'tae',storage),/서로 다른/);
+assert.equal(Resource.wallet(catalog,'se').careerUnlocked.length,0);
+const high=Resource.unlockCareer(CAREERS[0].id,['math','korean'],catalog,'tae',storage);
+const low=Resource.unlockCareer(CAREERS.at(-1).id,['math','korean'],catalog,'tae',storage);
+assert(high.ok&&low.ok,'High and low salary occupations must be equally priced');
+const receipts=Resource.exportResources().profiles.tae.careerUnlocks;
+assert.deepEqual(receipts[CAREERS[0].id].cost,receipts[CAREERS.at(-1).id].cost);
+assert.equal(Object.values(receipts[CAREERS[0].id].cost).reduce((a,b)=>a+b,0),2);
+
 const feed=Resource.feedFish('goldfish',catalog,'tae',storage);
 assert(feed.ok&&!feed.duplicate);
 assert(Resource.feedFish('goldfish',catalog,'tae',storage).duplicate);
 const before=Resource.exportResources();Resource.importResources(before,storage);
 assert.equal(Object.keys(Resource.exportResources().profiles.tae.adoptions).length,1);
+assert.equal(Object.keys(Resource.exportResources().profiles.tae.careerUnlocks).length,3);
 assert.equal(Resource.wallet(catalog,'se').fish.filter(f=>f.owned).length,1);
 assert(Resource.wallet(catalog,'tae').fish.some(f=>f.id==='guppy'&&f.owned));
 assert.equal(Resource.wallet(catalog,'tae').fish.find(f=>f.id==='goldfish').feedDays,1);

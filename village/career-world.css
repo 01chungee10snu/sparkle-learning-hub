@@ -39,3 +39,40 @@
  #village-ui .career-details{padding:12px}
 }
 @media(max-width:360px){#village-ui .career-grid{grid-template-columns:1fr 1fr}#village-ui .career-card{min-height:140px}#village-ui .career-filter{font-size:12px;padding:7px 8px}}
+
+/* Source-labelled, two-subject career encyclopedia tokenomics (v27). */
+#village-ui .career-oecd-evidence{background:#ebf7ff;color:#244d72;border:1px solid #b9d9ee;border-radius:14px;padding:11px 14px;font-size:clamp(14px,2vw,18px);line-height:1.52;margin:2px 0 12px;font-weight:750}
+#village-ui .career-toolbar{display:grid;grid-template-columns:1fr minmax(200px,.72fr);gap:8px}
+#village-ui .career-toolbar .career-sort{min-height:53px;border:2px solid #c8b8db;border-radius:13px;padding:9px 11px;background:#fff;color:#4b3b67;font-size:clamp(14px,1.7vw,18px);font-weight:800;max-width:100%}
+#village-ui .career-fact-panel{display:grid;gap:8px;padding:14px;border:2px solid #c5c7ea;border-radius:17px;background:#fffdf9}
+#village-ui .career-fact-panel.locked{border-color:#dfc9d8;background:linear-gradient(130deg,#fff9ef,#f7f1ff)}
+#village-ui .career-fact-panel.unlocked{border-color:#a6d4b4;background:linear-gradient(130deg,#effff1,#f6fcff)}
+#village-ui .career-fact-panel h4{font-size:clamp(18px,2.4vw,24px);color:#453f70;margin:0}
+#village-ui .career-wage-annual{font-size:clamp(19px,2.5vw,27px);color:#2d5873}
+#village-ui .career-wage-hourly{font-size:clamp(22px,2.9vw,33px);color:#89571b}
+#village-ui .career-data-vintage{font-size:14px;line-height:1.45;color:#675773;margin:0}
+#village-ui .career-education{font-size:clamp(18px,2.2vw,24px);color:#4d4769}
+#village-ui .career-education-distribution{display:flex;gap:6px;flex-wrap:wrap}
+#village-ui .career-education-level{font-size:clamp(13px,1.6vw,17px);font-weight:800;color:#59526e;padding:6px 9px;border-radius:10px;background:#edf0fd}
+#village-ui .career-rank-unavailable{color:#6d5b7b;font-size:clamp(16px,2vw,21px)}
+#village-ui .career-balance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+#village-ui .career-balance span{padding:10px 5px;border:1px solid #d6cce2;border-radius:10px;background:#fff;color:#54416b;text-align:center;font-size:clamp(12px,1.5vw,17px);font-weight:850}
+#village-ui .career-unlock-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#village-ui .career-unlock-button{min-height:51px;border-radius:12px;padding:8px;font-size:clamp(14px,1.7vw,18px);font-weight:800;background:#815bb1;color:#fff}
+#village-ui .career-unlock-button:disabled{background:#e6e0e9;color:#756c7d;opacity:.82;cursor:not-allowed}
+#village-ui .career-count{font-size:clamp(15px,1.8vw,19px)}
+#village-ui .career-refs{font-size:13px}
+@media(max-width:650px){#village-ui .career-toolbar{grid-template-columns:1fr}#village-ui .career-balance span{font-size:12px;padding:8px 2px}#village-ui .career-unlock-options{grid-template-columns:1fr}#village-ui .career-fact-panel{padding:11px}#village-ui .career-unlock-button{min-height:53px}}
+
+/* v28: admission cohort percentile analogies and qualified-exam passes. */
+#village-ui .career-study-evidence{display:grid;gap:10px;border:2px solid #bfd8e9;background:linear-gradient(135deg,#f4fbff,#f9f5ff);padding:13px 15px;border-radius:18px}
+#village-ui .career-study-evidence h4{font-size:clamp(19px,2.4vw,25px);color:#384b85;margin:0}
+#village-ui .career-study-evidence .career-university-benchmark,#village-ui .career-study-evidence .career-exam-benchmark{font-size:clamp(16px,2vw,21px);color:#3a4c78;line-height:1.4}
+#village-ui .career-study-evidence .career-rank-equivalent,#village-ui .career-study-evidence .career-exam-equivalent{font-size:clamp(20px,2.7vw,29px);line-height:1.35;color:#784b93;background:#fff3dc;padding:12px;border-radius:12px}
+#village-ui .career-study-evidence .career-detail-section{background:#fffdf6;border:1px solid #eee5d6}
+#village-ui .career-study-evidence .career-detail-copy{font-size:clamp(14px,1.7vw,17px);color:#556071;line-height:1.5}
+#village-ui .career-study-evidence .career-rank-unavailable{font-size:clamp(16px,1.85vw,20px);line-height:1.4;color:#594f72}
+#village-ui .career-study-evidence .career-no-statistical-cutoff{color:#5d5772;font-size:clamp(16px,2vw,20px)}
+@media(max-width:610px){#village-ui .career-study-evidence{padding:10px;gap:8px}#village-ui .career-study-evidence .career-rank-equivalent,#village-ui .career-study-evidence .career-exam-equivalent{font-size:20px;padding:9px}}
+
+#village-ui .career-return-button{min-height:49px;padding:9px 12px;border:2px solid #c2bbdf;border-radius:13px;background:#f5f1ff;color:#504179;font-size:clamp(15px,2vw,20px);font-weight:900}
