@@ -10,7 +10,7 @@ import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from '../platform/resource-economy.js?v=onboarding-v30-20261019';
+import * as Resources from '../platform/resource-economy.js?v=child-safe-v32-20261019';
 import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
@@ -18,18 +18,18 @@ const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
 const PRACTICE_GAMES=['g1','g2','g3','g4','g5','g6','m1','m2','m3'].map(grade=>'magic-'+grade+'-challenge');
 const ALLOWED=new Set();
 const DISTRICTS=Object.freeze({
- math:{title:'🔢 수학 정원',intro:'수 세기부터 도량형·분수·마법 수학까지 차근차근 배우는 정원이에요.',subject:'math'},
+ math:{title:'🔢 수학 정원',intro:'수를 세고, 길이와 무게를 비교하고, 새로운 수학 이야기를 만나요.',subject:'math'},
  korean:{title:'📚 이야기 도서관',intro:'책과 이야기로 낱말·문장·읽기·말하기를 연습해요.',subject:'korean'},
  english:{title:'🌿 영어 숲',intro:'생활 속 영어 표현을 듣고 말하며 탐험해요.',subject:'english'},
- hanja:{title:'📜 한자 수련관',intro:'8급부터 3급까지 급수별로 한자를 보고 훈음과 독음을 연습해요. 문제는 IRT 방식으로 골라요.',subject:'hanja'},
+ hanja:{title:'📜 한자 수련관',intro:'한자 모양을 살피고 뜻과 소리를 하나씩 알아봐요. 내가 풀어 본 기록에 맞춰 문제를 골라요.',subject:'hanja'},
  academy:{title:'🪄 마법학교',intro:'수학·국어·영어에서 오늘의 짧은 모험을 고르세요.',subject:'all'},
- growth:{title:'🌟 성장의 탑',intro:'세 과목의 배움 길과 다음 도전의 근거를 살펴봐요.'},
- kma:{title:'🏆 뱁수 경시대회 성',intro:'KMA 한국수학학력평가 공개 기출의 1~25번을 차례로 풀어요.'},
- practice:{title:'🧩 마법 수학 훈련장',intro:'자체 제작 연습 25문항을 기본·도전·심화 난도로 풀어요.'},
+ growth:{title:'🌟 성장의 탑',intro:'오늘 새로 알게 된 것과 다음에 배우고 싶은 것을 살펴봐요.'},
+ kma:{title:'🏆 뱁수 경시대회 성',intro:'뱁수와 수학 문제 25개를 차례로 만나 봐요. 어려우면 쉬었다가 다시 해도 돼요.'},
+ practice:{title:'🧩 마법 수학 훈련장',intro:'숫자 문제 25개를 쉬운 문제부터 조금 더 생각하는 문제까지 풀어 봐요.'},
  pond:{title:'🐠 생명 연못',intro:'연못의 여러 물고기에게 먹이를 주고 자라는 모습을 관찰해요.'},
- ocean:{title:'🌊 푸른 바다',intro:'학습으로 산호초에서 먼바다까지 넓히고 작은 물고기부터 상어와 고래까지 돌보아요.'},
- career:{title:'🏛️ 미래 직업 탐색관',intro:'공식 직업 근거를 연결한 100가지 직업을 탐험하고 내가 꿈꾸는 일을 모아요.'},
- shop:{title:'🎁 별빛 상점',intro:'학습으로 실제 모은 별을 선물과 교환해요.'},
+ ocean:{title:'🌊 푸른 바다',intro:'산호초와 먼바다의 생물을 알아봐요. 상어와 고래는 멀리서 안전하게 관찰해요.'},
+ career:{title:'🏛️ 미래 직업 탐색관',intro:'우리 주변의 다양한 직업을 알아보고 흥미로운 일을 찾아봐요. 모든 일은 저마다 소중해요.'},
+ shop:{title:'🎁 별빛 상점',intro:'모은 별로 요정과 마을을 꾸밀 선물을 골라요.'},
  garden:{title:'🌱 성장 정원',intro:'물·햇빛·노래로 나무와 꽃을 키워요.'}
 });
 const safeBebsuImage = value => typeof value === 'string' &&
@@ -60,25 +60,25 @@ export function createVillageHost(emit) {
   }
 
   async function initialize() {
-    const url = new URL('../games/catalog.json?v=unified-20261013', import.meta.url);
+    const url = new URL('../games/catalog.json?v=child-safe-v32-20261019', import.meta.url);
     const result = await fetch(url);
     if (!result.ok) throw new Error('학습 게임 목록을 불러오지 못했어요.');
     const entries = validateCatalog(await result.json());
     Progress.configureCatalog(entries);
     for(const item of entries)if(item.kind==='quiz'&&item.status==='published')ALLOWED.add(item.id);
     try {
-      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=unified-20261013', import.meta.url));
+      const bankResponse = await fetch(new URL('../games/irt-bank.json?v=child-safe-v32-20261019', import.meta.url));
       if (!bankResponse.ok) throw new Error('문항 색인을 불러오지 못했어요.');
       Progress.configureIrtBank(await bankResponse.json());
     } catch (error) {
       console.warn('마법마을 기본 출제 방식 사용:', error);
     }
-    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=unified-20261013', import.meta.url));
+    const challengeResponse = await fetch(new URL('../games/bebsu-challenges.json?v=child-safe-v32-20261019', import.meta.url));
     if (!challengeResponse.ok) throw new Error('경시대회 25문항 시험지 목록을 불러오지 못했어요.');
     challenges = await challengeResponse.json();
     if (challenges?.version !== 1 || !Array.isArray(challenges.grades) || challenges.grades.length !== 9)
       throw new Error('경시대회 문제은행 구성을 확인해 주세요.');
-    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=unified-20261013',import.meta.url));
+    const practiceResponse=await fetch(new URL('../games/magic-practice-challenges.json?v=child-safe-v32-20261019',import.meta.url));
     if(!practiceResponse.ok)throw new Error('마법 연습장 시험지 목록을 불러오지 못했어요.');
     practiceChallenges=await practiceResponse.json();
     if(practiceChallenges.publicPractice!==true||practiceChallenges.grades?.length!==9)
@@ -96,7 +96,7 @@ export function createVillageHost(emit) {
     if (!entry || entry.kind !== 'quiz') throw new Error('학습 게임 정보를 확인해 주세요.');
     if (cache.has(gameId)) return cache.get(gameId);
     const path = entry.source.replace(/^\.\//, '');
-    const response = await fetch(new URL('../' + path + '?v=unified-20261013', import.meta.url));
+    const response = await fetch(new URL('../' + path + '?v=child-safe-v32-20261019', import.meta.url));
     if (!response.ok) throw new Error('학습 문제를 불러오지 못했어요.');
     const game = validateGame(await response.json(), entry);
     cache.set(gameId, game);
@@ -269,7 +269,7 @@ export function createVillageHost(emit) {
     if (action === 'CAREER_UNLOCK') {
       const result=Resources.unlockCareer(itemId,request.subjects,catalog,who);
       if(!result.ok)throw new Error(result.reason==='insufficient-resources'?
-       '서로 다른 두 과목에서 배움 자원을 1개씩 모아요.':'직업사전 해금 기록을 안전하게 저장하지 못했어요.');
+       '서로 다른 두 과목에서 배움 재료를 하나씩 모아 보아요.':'직업 정보 열람 기록을 저장하지 못했어요.');
       return snapshot(action,requestId,{district:'career',career:{...careerView(),changed:itemId,unlockedNow:true}});
     }
     if (action === 'POND_OPEN'||action==='OCEAN_OPEN') {
@@ -281,7 +281,7 @@ export function createVillageHost(emit) {
       const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
       if(!creature||creature.world!==world)throw new Error('선택한 생물이 사는 장소를 다시 확인해 주세요.');
       const result=Resources.adoptFish(itemId,catalog,who);
-      if(!result.ok)throw new Error(result.reason==='learning-milestone'?'새로운 문제를 스스로 풀고 여러 과목을 고르게 배우면 만날 수 있어요.':result.reason==='insufficient-resources'?'네 가지 배움 자원을 더 모아 보아요.':'생물 기록을 안전하게 저장하지 못했어요.');
+      if(!result.ok)throw new Error(result.reason==='learning-milestone'?'새로운 것을 조금 더 배우면 만날 수 있어요. 지금은 다른 친구를 만나 봐요.':result.reason==='insufficient-resources'?'다른 배움터에서도 꽃잎·깃털·수정 같은 재료를 찾아볼까요?':'동물 친구와 만난 기록을 저장하지 못했어요.');
       return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 함께하는 친구예요.':'새로운 생물 친구를 만났어요!'});
     }
     if (action === 'POND_FEED'||action==='OCEAN_FEED') {
@@ -297,7 +297,7 @@ export function createVillageHost(emit) {
       if (typeof itemId!=='string' || itemId.length>80) throw new Error('선물 이름을 확인해 주세요.');
       const outcome=Rewards.purchaseReward(itemId,catalog,who);
       if (!outcome.ok) throw new Error(outcome.reason==='insufficient-stars'?
-        '별이 조금 더 필요해요. 학습을 하며 모아 볼까요?': '별 상점의 결제를 기록하지 못했어요.');
+        '이 선물은 나중에 골라도 괜찮아요. 이미 받은 선물을 다시 써 볼까요?': '선물 고른 기록을 저장하지 못했어요. 보호자와 확인해 주세요.');
       return snapshot(action, requestId, {shop:shopState(),itemChanged:itemId});
     }
     if (action === 'SHOP_EQUIP') {

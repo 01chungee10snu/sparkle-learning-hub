@@ -164,14 +164,15 @@
 }
 @media(max-width:650px){
  #village-ui[data-mode="career"] .career-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
- #village-ui[data-mode="career"] .career-card{min-height:208px;padding:8px 6px!important}
+ #village-ui[data-mode="career"] .career-card{min-height:242px;padding:9px 7px!important}
  #village-ui[data-mode="career"] .career-card-artwork{height:105px;border-radius:13px}
- #village-ui[data-mode="career"] .career-card-caption{font-size:13px}
+ #village-ui[data-mode="career"] .career-card-caption{font-size:16px;line-height:1.4}
+ #village-ui[data-mode="career"] .career-filter{font-size:14px;min-height:46px}
  #village-ui[data-mode="career"] .career-toolbar{grid-template-columns:1fr}
  #village-ui[data-mode="career"] .career-locked-preview{grid-template-columns:1fr}
  #village-ui[data-mode="career"] .career-locked-stat{padding:10px;gap:6px}
  #village-ui[data-mode="career"] .career-details.selected{padding:11px}
- #village-ui[data-mode="career"] .career-peek-label{font-size:12px}
+ #village-ui[data-mode="career"] .career-peek-label{font-size:14px}
 }
 @media(max-height:510px) and (orientation:landscape){
  #village-ui[data-mode="career"] .vh-dialog-title{min-height:36px!important;padding:3px 12px!important}

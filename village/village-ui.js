@@ -1,5 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
-import {mountCareerExplorer} from './career-ui.js?v=career-v29-20261019';
+import {mountCareerExplorer} from './career-ui.js?v=child-safe-v32-20261019';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
@@ -17,7 +17,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <div class="vh-avatar" aria-hidden="true"></div>',
     ' <div class="vh-meta"><h2 id="vh-name">마법마을</h2>',
     ' <p><span id="vh-area">내 마을</span><span class="vh-old-stars" hidden> · 옛 별 <span id="vh-stars">0</span>개</span></p>',
-    ' <div class="vh-resource-hud" aria-label="과목별 획득 자원">',
+    ' <div class="vh-resource-hud" aria-label="과목별 모은 배움 재료">',
     '  <span title="수학 수정">💎<b data-hud-resource="math">0</b></span>',
     '  <span title="국어 꽃잎">🌸<b data-hud-resource="korean">0</b></span>',
     '  <span title="영어 깃털">🪶<b data-hud-resource="english">0</b></span>',
@@ -46,6 +46,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 모험 지도</button>',
     ' <button id="vh-garden" type="button" class="vh-shortcut">🌱 나무·꽃 키우기</button>',
+    ' <button id="vh-pond" type="button" class="vh-shortcut">🐠 생명 연못</button>',
     ' <button id="vh-ocean" type="button" class="vh-shortcut vh-ocean-shortcut">🌊 푸른 바다</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut vh-learning-shortcut">🧠 오늘의 3걸음</button>',
     ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
@@ -58,7 +59,6 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-shop" type="button" class="vh-shortcut">🎁 별 상점</button>',
     ' <button id="vh-friends" type="button" class="vh-shortcut">💞 마을 친구들</button>',
     ' <button id="vh-ecology" type="button" class="vh-shortcut">🌿 배움 생태계</button>',
-    ' <button id="vh-pond" type="button" class="vh-shortcut">🐠 생명 연못</button>',
     ' <button id="vh-career" type="button" class="vh-shortcut">🏛️ 미래 직업 탐색관</button>',
     ' <a id="vh-records" class="vh-shortcut vh-record-link" href="../learning.html?view=workbooks" aria-label="상세 문제집과 학습기록 열기">📚 학습기록</a>',
     ' <a id="vh-parent-dashboard" class="vh-shortcut vh-record-link" href="../learning.html?view=parents" aria-label="보호자 학습 대시보드 열기">👪 보호자 대시보드</a>',
@@ -739,18 +739,18 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     phase='choose'; open();resetBody();
     const practice=result.publicPractice===true;
     ui.title.textContent=practice?'🧩 마법 수학 훈련장':'🏆 뱁수 수학 경시대회';
-    ui.counter.textContent='25문항 도전';
+    ui.counter.textContent='25개의 수학 이야기';
     ui.note.textContent=practice?
       '자체 제작 연습문제예요. 실제 KMA 기출과 구분하며, 중간에 쉬었다 이어 풀 수 있어요.':
-      'KMA 공개 기출문제예요. 중간에 쉬었다 이어 풀 수 있어요.';
+      'KMA에서 출제되었던 수학 자료예요. 중간에 쉬었다 이어 봐도 괜찮아요.';
     ui.listen.hidden=true;ui.hint.hidden=true;
     paragraph(practice?
-      '마법마을에서 직접 만든 수학 문제를 기본·도전·심화로 연습해요. 통계적으로 보정된 난도는 아니에요.':
-      'KMA 한국수학학력평가 공개 기출의 실제 1번부터 25번까지 풀어 보세요. 답과 풀이 출처를 확인해 보세요.','vh-story');
+      '마법마을에서 만든 수학 문제를 쉬운 것부터 하나씩 만나 봐요. 쉬었다가 이어 해도 좋아요.':
+      '예전에 출제된 수학 문제를 차례로 만나요. 어려운 그림이나 문제는 보호자와 함께 확인해요.','vh-story');
     ui.body.append(scenicBanner(practice?'practice':'kma'));
     if(who==='se'){
-      paragraph('🌱 세희에게는 유아·기초 수학 모험을 먼저 권장해요. 이 시험지는 보호자와 함께 선택해요.','vh-child-guidance');
-      ui.body.append(button('🌷 내 수준의 수학 먼저 탐험하기',()=>request('AREA_OPEN',{district:'math'}),'vh-secondary vh-child-route'));
+      paragraph('🌱 세희는 그림을 보며 세는 놀이부터 만나면 좋아요. 이 문제 모음은 보호자와 함께 골라요.','vh-child-guidance');
+      ui.body.append(button('🌷 그림 수학 놀이 먼저 보기',()=>request('AREA_OPEN',{district:'math'}),'vh-secondary vh-child-route'));
     }
     const gradeLabel=label('label','학년 선택','vh-select-label');
     const gradeSelect=document.createElement('select');gradeSelect.className='vh-challenge-select';
@@ -767,7 +767,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const updateInfo=()=>{
       const paper=currentPaper();if(!paper)return;
       paperInfo.textContent='📜 '+paper.title+' · 1~25번 순서대로';
-      preview.textContent='완주 특별 보너스: '+(practice?(result.completionBonus?.[who]??0):(who==='tae'?160:60))+'별 (시험지별 최초 1회)';
+      preview.textContent='25문제를 여러 번 나누어 만나도 괜찮아요. 쉬어 가면서 해 봐요.';
     };
     gradeSelect.addEventListener('change',()=>{
       const grade=result.challenges.find(g=>g.grade===gradeSelect.value);
@@ -821,7 +821,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         if(game.id===recommended)card.classList.add('vh-spotlight-mission');
         card.append(label('strong',(game.id===recommended?'✨ 추천 모험 · ':'')+(game.emoji||'🧩')+' '+game.title,'vh-route-title'));
         card.append(label('p',game.description||'오늘의 모험','vh-small'));
-        card.append(label('p',(game.levelLabel||'')+' · '+game.questionCount+'문항 보유','vh-small'));
+        card.append(label('p',(game.levelLabel||'')+' · '+game.questionCount+'문제 준비됨','vh-small'));
         card.append(label('p','📖 학습 '+(game.studied||0)+'개 · 🌿 숙달 '+(game.mastered||0)+'개 · 완료 '+(game.rounds||0)+'회','vh-building-progress'));
         card.append(button(game.resume?'이어서 배우기 →':'이곳에서 배우기 →',()=>{
           gameId=game.id;request('START',{gameId:game.id});
@@ -895,7 +895,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.counter.textContent=fishInWorld.filter(f=>f.owned).length+' / '+fishInWorld.length+'종 만났어요';
     ui.listen.hidden=false;ui.hint.hidden=true;
     voiceText=ocean?'바다에는 작은 물고기부터 상어와 고래까지 살아요. 다양한 과목을 배우면 더 넓은 바다를 만날 수 있어요.':'서로 다른 배움 자원을 모아 연못 물고기들에게 하루에 한 번 먹이를 줄 수 있어요.';
-    ui.note.textContent=ocean?'바다 생물은 가상 보호구역에서 자유롭게 살아요. 상어·고래·바다거북을 실제로 사육하거나 먹이를 주는 놀이가 아닙니다.':'연못은 실제 동물 돌봄을 대신하지 않는 디지털 놀이입니다. 이전 별은 그대로 보존됩니다.';
+    ui.note.textContent=ocean?'고래·상어·바다거북은 바다에서 자유롭게 살아요. 여기서는 거리를 지키며 모습을 관찰해요.':'연못 친구의 모습을 살펴보고 생명을 아끼는 마음을 배워요. 모은 별도 그대로 남아요.';
     if(notice)paragraph(notice,'vh-feedback');
     const panorama=label('section','','vh-water-panorama '+(ocean?'vh-sea-panorama':'vh-pond-panorama'));
     panorama.setAttribute('aria-label',ocean?'바다 보호구역 풍경':'연못 풍경');
@@ -903,7 +903,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const residents=label('div','','vh-water-residents');
     for(const resident of fishInWorld.filter(f=>f.owned).slice(0,8)){
       const avatar=label('div','','vh-water-resident');avatar.style.setProperty('--swim-index',fishInWorld.indexOf(resident));
-      const art=document.createElement('img');art.src=resident.art;art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
+      const art=document.createElement('img');art.src=resident.art+"?v=child-safe-v32-20261019";art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
       avatar.append(art);residents.append(avatar);
     }
     panorama.append(residents);ui.body.append(panorama);
@@ -916,7 +916,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       resources.append(card);
     }
     ui.body.append(resources);
-    paragraph('새로운 문제를 스스로 해결하면 과목별 자원을 얻어요. 학습 성취와 자원이 쌓이면 '+(ocean?'작은 생물부터 거북·상어·고래까지 서식지가 열려요.':'연못의 새로운 친구가 찾아와요.')+' 세 과목을 같은 날 배우면 균형 보너스도 받아요.','vh-story');
+    paragraph('여러 가지 놀이로 배우다 보면 배움 재료를 모을 수 있어요. '+(ocean?'바다 친구들은 멀리서 천천히 만나 봐요.':'연못 친구들도 차근차근 만나 봐요.')+' 오늘은 쉬거나 어른과 함께 배워도 괜찮아요.','vh-story');
     const browse=waterBrowse[world];
     const toolbar=label('nav','','vh-water-filters');
     toolbar.setAttribute('aria-label','물속 친구 탐색');
@@ -924,7 +924,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const paging=label('nav','','vh-water-paging');
     paging.setAttribute('aria-label','물속 친구 페이지');
     const counts=label('p','','vh-water-count');
-    const filters=[['all','전체'],['owned','보유'],['available','해금 가능']];
+    const filters=[['all','전체'],['owned','만난 친구'],['available','새로 만날 친구']];
     const renderPage=()=>{
       const visible=fishInWorld.filter(f=>browse.filter==='owned'?f.owned:browse.filter==='available'?!f.owned&&f.canAdopt:true);
       const pages=Math.max(1,Math.ceil(visible.length/10));
@@ -951,22 +951,26 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       const article=label('article','','vh-pond-fish');
       article.dataset.species=fish.id;
       const imageWrap=label('span','','vh-fish-emoji vh-fish-art');
-      const art=document.createElement('img');art.src=fish.art;art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
+      const art=document.createElement('img');art.src=fish.art+"?v=child-safe-v32-20261019";art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
       imageWrap.append(art);article.append(imageWrap);
       const copy=label('div','','vh-fish-copy');
       copy.append(label('strong',fish.name,'vh-fish-name'));
-      copy.append(label('p',fish.description||'함께 키우는 물고기','vh-small'));
+      copy.append(label('p',fish.description||(fish.careMode==='observe'?'안전한 거리에서 바라보는 야생 동물':'연못에서 만나 볼 물고기'),'vh-small'));
       if(fish.owned){
-        copy.append(label('p',(fish.careMode==='observe'?'관찰한 날 ':'돌본 날 ')+fish.feedDays+'번 · 발견 '+(fish.growth+1)+'단계','vh-fish-growth'));
+        copy.append(label('p',(fish.careMode==='observe'?'관찰한 날 ':'돌본 날 ')+fish.feedDays+'번'+(who==='se'?'':' · 발견 '+(fish.growth+1)+'단계'),'vh-fish-growth'));
         const feed=button(fish.fedToday?'오늘 돌봄 완료 ✓':fish.careMode==='observe'?'🔭 멀리서 관찰하기':'🫧 오늘 먹이 주기',()=>request(ocean?'OCEAN_FEED':'POND_FEED',{itemId:fish.id}),'vh-pond-action');
         feed.disabled=fish.fedToday;
         copy.append(feed);
       }else{
-        copy.append(label('p','새 문제 '+fish.minSolved+'개 · 세 과목 균형 학습 '+fish.minBalancedDays+'일 목표','vh-fish-milestone'));
-        if(fish.remainingSolved||fish.remainingBalanced)copy.append(label('p','앞으로 새 문제 '+fish.remainingSolved+'개'+(fish.remainingBalanced?' · 균형 학습 '+fish.remainingBalanced+'일':'') ,'vh-fish-growth'));
-        const tokens=currencies.map(([id,emoji])=>emoji+(fish.cost[id]||0)).join(' · ');
-        copy.append(label('p',tokens,'vh-fish-cost'));
-        const adopt=button(fish.canAdopt?(ocean?'🌊 바다 보호구역 열기':'🐟 연못에 초대하기'):fish.meetsLearning?'자원을 모으는 중':'학습을 통해 해금해요',()=>request(ocean?'OCEAN_ADOPT':'POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
+        if(who==='se'){
+          copy.append(label('p','다른 배움터도 천천히 둘러보다 보면 새로운 친구가 찾아와요.','vh-fish-milestone'));
+        }else{
+          copy.append(label('p','만날 준비: 새 문제 '+fish.minSolved+'개 · 여러 과목을 배워 본 날 '+fish.minBalancedDays+'일','vh-fish-milestone'));
+          if(fish.remainingSolved||fish.remainingBalanced)copy.append(label('p','앞으로 천천히 만나 볼 새 문제 '+fish.remainingSolved+'개'+(fish.remainingBalanced?' · 여러 과목을 배워 볼 날 '+fish.remainingBalanced+'일':'') ,'vh-fish-growth'));
+          const tokens=currencies.map(([id,emoji])=>emoji+(fish.cost[id]||0)).join(' · ');
+          copy.append(label('p',tokens,'vh-fish-cost'));
+        }
+        const adopt=button(fish.canAdopt?(ocean?'🌊 바다 보호구역 살펴보기':'🐟 연못에 초대하기'):fish.meetsLearning?'배움 재료를 모으고 있어요':'새로운 배움 뒤에 만나요',()=>request(ocean?'OCEAN_ADOPT':'POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
         adopt.disabled=!fish.canAdopt;copy.append(adopt);
       }
       article.append(copy);return article;
@@ -974,7 +978,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     renderPage();
     ui.body.append(list,paging);
     if(Object.values(data.deficits||{}).some(v=>v>0))
-      paragraph('다른 기기의 구매 기록이 합쳐져 자원이 부족할 수 있습니다. 추가 교환은 잠시 중지하고 보호자와 기록을 확인해 주세요.','vh-small');
+      paragraph('다른 기기의 기록이 합쳐져 배움 재료의 수가 달라졌어요. 보호자와 기록을 확인한 뒤 다시 이용해 주세요.','vh-small');
     ui.title.focus({preventScroll:true});
   }
   const showPond=(data,notice='')=>showWaterHabitat(data,notice,'pond');
@@ -1278,13 +1282,13 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     showOriginalImage(question?.solutionImage,'경시대회 '+(question?.index||1)+'번 풀이 그림');
     paragraph(result.correct ? '좋아요! 생각한 답이 맞았어요.' : '다른 방법을 하나 배웠어요.','vh-feedback');
     const coins=gainedFromAnswer.map(gain=>resourceMeta[gain.subject][0]+' '+resourceMeta[gain.subject][1]+' +'+gain.amount).join(' · ');
-    paragraph(coins ? '🎉 새로 모은 배움 자원 '+coins :
-      result.correct?'✨ 이미 만난 문제라도 다시 생각하는 힘이 자랐어요.':'오답을 살펴보며 새로운 배움을 준비했어요.','vh-prompt');
+    paragraph(coins ? '🎉 새로 모은 배움 재료 '+coins :
+      result.correct?'✨ 이미 만난 문제라도 다시 생각해 봤어요.':'다른 방법도 하나 알아봤어요.','vh-prompt');
     if((result.recoveryEarned??0)>0)paragraph('🌱 어려웠던 문제를 스스로 다시 풀어냈어요!','vh-learning-bonus');
     paragraph(result.explanation || '차근차근 생각해 봐요.','vh-explanation');
     voiceText=result.explanation||'';
     ui.body.append(button('다음 이야기 →',()=>request('NEXT'),'vh-wide'));
-    ui.note.textContent='틀린 문제도 배운 흔적이 남아요.';
+    ui.note.textContent='다시 생각하는 순간도 소중한 배움이에요.';
     ui.listen.hidden = !voiceText;
     ui.title.focus({preventScroll:true});
   }
@@ -1294,8 +1298,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const isChallenge=question?.total===25&&
       (gameId.startsWith('bebsu-')||gameId.startsWith('magic-'));
     ui.title.textContent=isChallenge?
-      (gameId.startsWith('magic-')?'🧩 마법 연습 25문제 완주!':'🏆 경시대회 25문제 완주!'):
-      '🌷 오늘의 마법 성공!';
+      (gameId.startsWith('magic-')?'🧩 수학 이야기를 끝까지 만났어요!':'🏆 25개의 수학 이야기를 만나 봤어요!'):
+      '🌷 오늘도 새로 발견했어!';
     ui.counter.textContent='완료';
     showRoundCue(question?.total||3,question?.total||3);
     showRewardArt(isChallenge?'star_rainbow':'bloom');
@@ -1318,8 +1322,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       ui.body.append(scene);
     }
     if(isChallenge)paragraph((result.challengeBonus||0)>0?
-      '🎉 25문제 완주 특별 보너스 +'+result.challengeBonus+'별!':
-      '🏅 이미 완주한 시험지는 보너스가 중복 지급되지 않아요.','vh-challenge-bonus');
+      '🎁 오늘의 탐험 선물이 도착했어요!':
+      '🌱 전에 만난 문제도 다시 살펴봐도 좋아요.','vh-challenge-bonus');
     paragraph('내 마을의 꽃 '+(result.flowers ?? 0)+'송이 · 가족 광장 '+(result.familyFlowers ?? 0)+'송이','vh-prompt');
     paragraph('어떤 단서를 보고 답을 골랐나요? 가족에게 내 생각을 한 문장으로 들려주세요.','vh-explanation');
     if(sessionRounds>=3)paragraph('세 번의 이야기를 마쳤어요. 눈과 몸도 잠깐 쉬어볼까요?','vh-small');
@@ -1333,14 +1337,14 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
   function showReflection(roundId){
     phase='reflecting';open();resetBody();theme('scroll');root.dataset.mode='reflection';
-    ui.title.textContent='📣 나의 생각 설명하기';ui.counter.textContent='하루 최대 2번 · 각 +2별';
+    ui.title.textContent='📣 내 생각 이야기하기';ui.counter.textContent='내 방법 돌아보기';
     ui.hint.hidden=true;ui.listen.hidden=false;
-    voiceText='가족이나 요정에게 내가 어떻게 생각해서 풀었는지 말로 설명해 주세요. 그리고 사용한 방법을 골라요.';
-    paragraph('방금 푼 문제에서 어떤 방법이 도움이 되었나요? 직접 말로 설명한 다음 방법을 골라 주세요.','vh-story');
+    voiceText='가족이나 요정에게 내가 어떻게 했는지 말해 볼까요? 마음에 드는 방법을 하나 골라요.';
+    paragraph('어떤 방법으로 생각했나요? 말하고 싶으면 가족에게 들려줘도 좋아요.','vh-story');
     const choices=[['count','🔢 하나씩 세어 보기'],['compare','⚖️ 서로 비교하기'],
       ['pattern','🧠 규칙 찾아보기'],['draw','✏️ 그림 그려보기'],['explain','💡 다른 말로 설명하기']];
     const grid=label('div','','vh-strategy-grid');let selected='';
-    const confirm=button('✨ 이야기 마쳤어요 · 생각 기록하기',()=>{
+    const confirm=button('✨ 생각한 방법 남기기',()=>{
       if(!selected)return;
       request('REFLECT',{roundId,strategy:selected});
     },'vh-wide');confirm.disabled=true;
@@ -1351,17 +1355,17 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       },'vh-strategy');choice.setAttribute('aria-pressed','false');grid.append(choice);
     }
     ui.body.append(grid,confirm);
-    paragraph('이 보상은 설명 행동을 기록하는 작은 응원 별이에요. 정답 실력 측정에는 포함되지 않아요.','vh-small');
+    paragraph('설명하는 모습은 점수로 평가하지 않아요. 지금 말하기 싫으면 쉬어도 괜찮아요.','vh-small');
     ui.note.textContent='실제 설명 내용을 검사하거나 음성을 저장하지 않아요.';
     ui.title.focus({preventScroll:true});
   }
   function showReflectionResult(result){
     phase='reflection-result';open();resetBody();theme('celebrate');
     ui.title.textContent=result.reflectionEarned>0?'🌟 생각을 설명했어요!':'🌱 오늘의 생각을 기억해요';
-    ui.counter.textContent='설명 보상';showRewardArt(result.reflectionEarned>0?'star_blue':'sprout');
-    paragraph(result.reflectionEarned>0?'설명하며 배운 힘! +'+result.reflectionEarned+'별':
-      result.reflectionReason==='daily-cap'?'오늘의 설명 별은 모두 받았어요. 다음에 또 도전해요!':
-      '이미 기록한 생각이에요. 같은 완료 회차에는 별을 중복 지급하지 않아요.','vh-learning-bonus');
+    ui.counter.textContent='나의 이야기';showRewardArt(result.reflectionEarned>0?'star_blue':'sprout');
+    paragraph(result.reflectionEarned>0?'내가 생각한 방법을 나눴어요!':
+      result.reflectionReason==='daily-cap'?'오늘은 충분히 이야기했어요. 내일 또 만나 봐요.':
+      '전에 나눈 이야기예요. 같은 생각도 다시 말해도 좋아요.','vh-learning-bonus');
     ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
     ui.listen.hidden=true;ui.exit.hidden=true;
     ui.title.focus({preventScroll:true});
