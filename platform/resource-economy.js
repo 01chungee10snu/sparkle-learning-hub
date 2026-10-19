@@ -1,5 +1,7 @@
 import * as Progress from './progress.js';
 import {CAREER_BY_ID} from '../village/career-library.js';
+import {EXTRA_SPECIES} from './marine-species-extra.js';
+import {FIRST_VISIT_REWARDS} from './first-visit-rewards.js';
 
 /**
  * Four distinct subject resources. Only independently correct, distinct items
@@ -42,14 +44,16 @@ export const FISH_SPECIES=Object.freeze([
  creature('octopus','산호 문어','ocean',[39,31,25,22],98,4,'#bd8ad5',.80,'여덟 팔로 주위를 탐색하는 문어'),
  creature('sea-turtle','푸른 바다거북','ocean',[54,42,34,28],125,5,'#67b9a3',.95,'긴 여정을 헤엄치는 보호 대상 바다거북','observe'),
  creature('reef-shark','산호초 상어','ocean',[75,60,50,40],165,6,'#608ca2',1.12,'바다 생태계의 균형을 지키는 포식자','observe'),
- creature('humpback-whale','혹등고래','ocean',[110,90,75,60],220,8,'#638bc0',1.65,'먼 바다를 이동하는 거대한 야생 고래','observe')
-]);
+ creature('humpback-whale','혹등고래','ocean',[110,90,75,60],220,8,'#638bc0',1.65,'먼 바다를 이동하는 거대한 야생 고래','observe'),
+ ...EXTRA_SPECIES.map(row=>creature(...row))
+].sort((a,b)=>(a.world==='pond'?0:1)-(b.world==='pond'?0:1)||
+ a.minSolved-b.minSolved||a.id.localeCompare(b.id)));
 const BY_FISH=new Map(FISH_SPECIES.map(f=>[f.id,f]));
-const MAX_RECEIPTS=64,MAX_FEED_EVENTS=5000,DAY=86400000;
+const MAX_RECEIPTS=256,MAX_FEED_EVENTS=5000,DAY=86400000;
 const now=()=>Date.now();
 const validTimestamp=t=>Number.isSafeInteger(t)&&t>=0&&t<=now()+60000;
 const plain=v=>v&&typeof v==='object'&&!Array.isArray(v)&&(Object.getPrototypeOf(v)===Object.prototype||Object.getPrototypeOf(v)===null);
-const blankProfile=()=>({adoptions:{},feedEvents:{},careerUnlocks:{}});
+const blankProfile=()=>({adoptions:{},feedEvents:{},careerUnlocks:{},visitBonuses:{}});
 const blank=()=>({version:1,profiles:{tae:blankProfile(),se:blankProfile()}});
 const copy=x=>JSON.parse(JSON.stringify(x));
 const validWho=who=>{if(!Object.hasOwn(Progress.LEARNERS,who))throw new Error('학습자 정보를 확인해 주세요.');return who;};
@@ -65,8 +69,16 @@ function clean(raw){
   const src=raw.profiles[who];
   if(!plain(src)||!plain(src.adoptions)||!plain(src.feedEvents)||
     (src.careerUnlocks!==undefined&&!plain(src.careerUnlocks))||
+    (src.visitBonuses!==undefined&&!plain(src.visitBonuses))||
     Object.keys(src.adoptions).length>MAX_RECEIPTS||Object.keys(src.feedEvents).length>MAX_FEED_EVENTS||
-    Object.keys(src.careerUnlocks||{}).length>100)throw new Error('화폐 기록 크기를 확인해 주세요.');
+    Object.keys(src.careerUnlocks||{}).length>100||Object.keys(src.visitBonuses||{}).length>Object.keys(FIRST_VISIT_REWARDS).length)throw new Error('화폐 기록 크기를 확인해 주세요.');
+  for(const [id,receipt] of Object.entries(src.visitBonuses||{})){
+   const reward=Object.hasOwn(FIRST_VISIT_REWARDS,id)?FIRST_VISIT_REWARDS[id]:null;
+   if(!reward||!plain(receipt)||receipt.id!==id||!validTimestamp(receipt.at)||!plain(receipt.cost)||
+      RESOURCE_SUBJECTS.some((subject,index)=>receipt.cost[subject]!==reward.amounts[index] || Object.keys(receipt.cost).length!==4))
+    throw new Error('첫 방문 보상 영수증을 확인해 주세요.');
+   result.profiles[who].visitBonuses[id]={id,at:receipt.at,cost:Object.fromEntries(RESOURCE_SUBJECTS.map((subject,index)=>[subject,reward.amounts[index]]))};
+  }
   for(const [id,adoption] of Object.entries(src.adoptions)){
    if(!knownFish(id)||id==='guppy'||!plain(adoption)||adoption.id!==id||!validTimestamp(adoption.at)||
       !plain(adoption.cost)||RESOURCE_SUBJECTS.some(s=>adoption.cost[s]!==BY_FISH.get(id).cost[s]))
@@ -104,6 +116,10 @@ function merge(a,b){
    const old=merged.profiles[who].careerUnlocks[id];
    if(!old||e.at<old.at || (e.at===old.at && JSON.stringify(e.cost)<JSON.stringify(old.cost)))
      merged.profiles[who].careerUnlocks[id]=e;
+  }
+  for(const [id,e] of Object.entries(incoming.profiles[who].visitBonuses)){
+   const old=merged.profiles[who].visitBonuses[id];
+   if(!old||e.at<old.at)merged.profiles[who].visitBonuses[id]=e;
   }
  }
  return merged;
@@ -176,13 +192,28 @@ export function earnedResources(catalog,who=Progress.learner()){
  }
  return {earned:out,balancedDays,independentItems:rows.length};
 }
+export function awardFirstVisit(locationId,who=Progress.learner(),storage=globalThis.localStorage){
+ validWho(who);
+ const reward=Object.hasOwn(FIRST_VISIT_REWARDS,locationId)?FIRST_VISIT_REWARDS[locationId]:null;
+ if(!reward)throw new Error('방문 장소를 확인해 주세요.');
+ const state=loadResources(storage),profile=state.profiles[who];
+ if(profile.visitBonuses[locationId])return null;
+ const amounts=Object.fromEntries(RESOURCE_SUBJECTS.map((subject,index)=>[subject,reward.amounts[index]]));
+ profile.visitBonuses[locationId]={id:locationId,cost:amounts,at:now()};
+ if(!persist(state,storage))throw new Error('첫 방문 기록을 저장하지 못했어요.');
+ return {locationId,label:reward.label,amounts};
+}
 export function wallet(catalog,who=Progress.learner()){
  validWho(who);configure(catalog);
  const state=loadResources(),p=state.profiles[who],source=earnedResources(catalog,who),spent=zero();
  for(const receipt of [...Object.values(p.adoptions),...Object.values(p.careerUnlocks)])
   for(const subject of RESOURCE_SUBJECTS)spent[subject]+=receipt.cost[subject];
- const available=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,source.earned[subject]-spent[subject])]));
- const deficits=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,spent[subject]-source.earned[subject])]));
+ const visitBonuses=Object.fromEntries(Object.entries(p.visitBonuses).map(([id,receipt])=>[id,{...receipt,cost:{...receipt.cost}}]));
+ const visitAward=zero();
+ for(const receipt of Object.values(p.visitBonuses))for(const subject of RESOURCE_SUBJECTS)visitAward[subject]+=receipt.cost[subject];
+ const totalEarned=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,source.earned[subject]+visitAward[subject]]));
+ const available=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,totalEarned[subject]-spent[subject])]));
+ const deficits=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,spent[subject]-totalEarned[subject])]));
  const fish=FISH_SPECIES.map(species=>{
   const owned=species.id==='guppy'||Boolean(p.adoptions[species.id]);
   const fed=Object.values(p.feedEvents).filter(e=>e.fishId===species.id).length;
@@ -197,7 +228,7 @@ export function wallet(catalog,who=Progress.learner()){
   const bCost=RESOURCE_SUBJECTS.reduce((sum,s)=>sum+Math.max(0,b.cost[s]-available[s]),0);
   return aCost-bCost;
  })[0];
- return {who,earned:source.earned,available,spent,deficits,balancedDays:source.balancedDays,
+ return {who,earned:totalEarned,learningEarned:source.earned,visitAward,visitBonuses,available,spent,deficits,balancedDays:source.balancedDays,
    uniqueCorrect:source.independentItems,fish,next,careerUnlocked:Object.keys(p.careerUnlocks),
    storageAvailable:storageOK};
 }

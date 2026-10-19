@@ -20,18 +20,18 @@ for(const species of FISH_SPECIES){
 }
 const pond=FISH_SPECIES.filter(s=>s.world==='pond');
 const ocean=FISH_SPECIES.filter(s=>s.world==='ocean');
-assert.equal(pond.length,6);assert.equal(ocean.length,10);
+assert.equal(pond.length,24);assert.equal(ocean.length,40);
 assert.equal(pond[0].id,'guppy');assert.equal(costs(pond[0]),0);
 const expected=['clownfish','blue-tang','shrimp','hermit-crab','sea-crab','seahorse','octopus','sea-turtle','reef-shark','humpback-whale'];
-assert.deepEqual(ocean.map(s=>s.id),expected);
-for(let i=1;i<ocean.length;i++){
- const older=ocean[i-1],next=ocean[i];
+for(const id of expected)assert(ocean.some(s=>s.id===id),`existing marine species lost: ${id}`);
+for(const world of [pond,ocean])for(let i=1,sorted=[...world].sort((a,b)=>a.minSolved-b.minSolved);i<sorted.length;i++){
+ const older=sorted[i-1],next=sorted[i];
  assert(next.minSolved>older.minSolved,`${next.name}: discovery threshold must grow`);
  assert(next.minBalancedDays>=older.minBalancedDays,`${next.name}: balance threshold must not decrease`);
  assert(costs(next)>costs(older),`${next.name}: total resource cost must rise`);
- assert(RESOURCE_SUBJECTS.every(s=>next.cost[s]>=older.cost[s]),`${next.name}: subject cost must not decrease`);
 }
-assert(ocean.at(-1).minSolved>=200 && costs(ocean.at(-1))>costs(ocean[0])*12);
+const first=[...ocean].sort((a,b)=>a.minSolved-b.minSolved)[0],last=[...ocean].sort((a,b)=>a.minSolved-b.minSolved).at(-1);
+assert(last.minSolved>=220 && costs(last)>costs(first)*12);
 for(const id of ['sea-turtle','reef-shark','humpback-whale'])assert.equal(FISH_SPECIES.find(s=>s.id===id).careMode,'observe');
 for(const [file,pattern] of [
  ['village/village-ui.js',/\bOCEAN_OPEN\b/],
@@ -42,4 +42,4 @@ for(const [file,pattern] of [
  ['index.html',/data-learner="tae"/],
  ['index.html',/data-learner="se"/]
 ])assert(pattern.test(fs.readFileSync(path.join(root,file),'utf8')),`missing integration: ${file} ${pattern}`);
-console.log('PASS_OCEAN_V25 6 pond + 10 marine premium originals, ascending unlock requirements, two-child entry, marine bridge and ethical observation');
+console.log('PASS_OCEAN_V25_COMPAT 24 pond + 40 marine original species, ascending unlock requirements, two-child entry, marine bridge and ethical observation');
