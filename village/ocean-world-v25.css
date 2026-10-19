@@ -39,3 +39,5 @@
 @media(max-width:430px){#village-ui .vh-first-visit{bottom:calc(110px + env(safe-area-inset-bottom));padding:12px 10px}#village-ui .vh-water-filter{flex:1 1 auto;padding:8px 9px}}
 @media(prefers-reduced-motion:reduce){#village-ui .vh-first-visit-enter{animation:none}}
 #village-ui[data-reduced-motion=true] .vh-first-visit-enter{animation:none}
+/* Large first-visit toast never blocks the aquarium or its accessible controls. */
+#village-ui .vh-first-visit{pointer-events:none}

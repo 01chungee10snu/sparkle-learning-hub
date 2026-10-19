@@ -82,7 +82,7 @@ try{
     }));
    }
    for(let p=0;p<3;p++)await page.locator('.vh-water-paging').getByRole('button',{name:/다음/}).click();
-   assert(await page.locator('.vh-pond-fish[data-species="reef-shark"]').innerText().then(t=>t.includes('학습을 통해 해금해요')));
+   assert(await page.locator('.vh-pond-fish[data-species="reef-shark"]').innerText().then(t=>/새로운 배움 뒤에 만나요|학습을 통해 해금해요/.test(t)));
    await page.screenshot({path:path.join(output,device.name+'-ocean-entry.png')});
    await page.locator('#vh-exit').click();
    await page.locator('#vh-map').click();

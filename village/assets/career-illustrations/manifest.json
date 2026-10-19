@@ -12,13 +12,13 @@
       "id": "pilot",
       "name": "비행기조종사",
       "src": "./assets/career-illustrations/pilot.svg",
-      "sha256": "7adf396d85c18764e04281bb445d92fc8373245f2e57a6b5d458ceee59c86d83"
+      "sha256": "9eecc8d2564497eaee362cac59cc5e951915dff50e7e550cf649ae817fd91532"
     },
     {
       "id": "dentist",
       "name": "치과의사",
       "src": "./assets/career-illustrations/dentist.svg",
-      "sha256": "9e2d7481b6113f0853c30cdf197ecc899699feecd2539fdda652887e91b70d06"
+      "sha256": "a6619ee6a6dda5382405f21582dfd4a369edf21c7c3274fca04fa4ffce4dc67e"
     },
     {
       "id": "career-37",
@@ -30,7 +30,7 @@
       "id": "doctor",
       "name": "일반의사",
       "src": "./assets/career-illustrations/doctor.svg",
-      "sha256": "dd254b5fc5227c1c7f64dd420d907336922d39f81df00bbf6ec6a6cccde73026"
+      "sha256": "09776860f56344382bfee3d72ea6ffe86b37766ad08e58313b17b0255d62bb27"
     },
     {
       "id": "career-364",
@@ -78,7 +78,7 @@
       "id": "robot-engineer",
       "name": "지능형 로봇개발자",
       "src": "./assets/career-illustrations/robot-engineer.svg",
-      "sha256": "27f5b41fcdf07450799fffd7de4086a63214cbfa570802a3ac7c02b4c642ce5b"
+      "sha256": "cfb6bad671b4ef409a200992ebbe72f8fd139498bdfe63a1029a31462d983b0d"
     },
     {
       "id": "career-198",
@@ -108,7 +108,7 @@
       "id": "ai-researcher",
       "name": "인공지능 엔지니어",
       "src": "./assets/career-illustrations/ai-researcher.svg",
-      "sha256": "bea302b86d33ada24589687907882576d551e99b861b0e6bb5be2f0d1e35535e"
+      "sha256": "e48439da55e7cc00b9ea7504b3ab405179cb89b90765052e8a1820dd5c5dd486"
     },
     {
       "id": "career-374",
@@ -132,7 +132,7 @@
       "id": "veterinarian",
       "name": "수의사",
       "src": "./assets/career-illustrations/veterinarian.svg",
-      "sha256": "9ff4c54ea0571c5ceb383f24b1708232bd54812acb18253311accd80710b422c"
+      "sha256": "9f4a2644bb3d258c3c4c68fb75d52dbc4bf306e47663a8501fda4435e630e27d"
     },
     {
       "id": "career-950",
@@ -162,7 +162,7 @@
       "id": "career-104",
       "name": "원자력연구원",
       "src": "./assets/career-illustrations/career-104.svg",
-      "sha256": "8f8aedc83e8202f86d63941b427aaeba9f6053d18ed635358ef2c86a83d60bf0"
+      "sha256": "ce22c5d3ec18630075d0bd9881a1fc9c91bb707896aec624bf734b5e9107f8fc"
     },
     {
       "id": "astronautical",
@@ -210,7 +210,7 @@
       "id": "architect",
       "name": "건축사",
       "src": "./assets/career-illustrations/architect.svg",
-      "sha256": "d4dc9909ca94b692586c922663d35b0822584f950dfdd685e6a779415c4d0e3a"
+      "sha256": "9df452aed3ac0189bbbd8952b33d2e8702affc9efb8a9864d0f40bf3f262a985"
     },
     {
       "id": "career-1436",
@@ -258,7 +258,7 @@
       "id": "game-designer",
       "name": "게임기획자",
       "src": "./assets/career-illustrations/game-designer.svg",
-      "sha256": "b714773afc0c2222e3841c5c6b1c2778c81994949a688146320916f6460be919"
+      "sha256": "e7afc7e7ab72c06d6b975a3676bea61ba5be47bac4b266a4e6462e2da0eb41b5"
     },
     {
       "id": "career-1089",
@@ -282,7 +282,7 @@
       "id": "career-182",
       "name": "농업기술자",
       "src": "./assets/career-illustrations/career-182.svg",
-      "sha256": "7efae9a566269524ffcdffba6d06b2bf136ec297db21cbf1c6005d17f3c2c78b"
+      "sha256": "93a8cf65f07031a24fdbd70cc03d40901366a1dacaba20f04a1bba518fae26bb"
     },
     {
       "id": "career-212",
@@ -396,7 +396,7 @@
       "id": "cybersecurity",
       "name": "정보보호전문가",
       "src": "./assets/career-illustrations/cybersecurity.svg",
-      "sha256": "0c64e2c8bc40d444d2803900550c4a812e62ca43e42d48b92f0438f077070979"
+      "sha256": "0cad6f4d30d694849daed654b667761ce78e288d046b3c253aa82aab79669fc1"
     },
     {
       "id": "career-332",
@@ -516,7 +516,7 @@
       "id": "career-395",
       "name": "유치원교사",
       "src": "./assets/career-illustrations/career-395.svg",
-      "sha256": "01778996ab090dce308ce04d8ec52cb2773e086edb845cebdeb5203932250e0d"
+      "sha256": "b15abe91766cf203126260fe954441d1064b20c7be6a699ccee87c6b6510a334"
     },
     {
       "id": "career-376",

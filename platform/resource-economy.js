@@ -43,7 +43,7 @@ export const FISH_SPECIES=Object.freeze([
  creature('seahorse','별빛 해마','ocean',[30,23,19,15],78,3,'#eab84d',.65,'해초를 꼬리로 붙잡는 작은 바다 친구'),
  creature('octopus','산호 문어','ocean',[39,31,25,22],98,4,'#bd8ad5',.80,'여덟 팔로 주위를 탐색하는 문어'),
  creature('sea-turtle','푸른 바다거북','ocean',[54,42,34,28],125,5,'#67b9a3',.95,'긴 여정을 헤엄치는 보호 대상 바다거북','observe'),
- creature('reef-shark','산호초 상어','ocean',[75,60,50,40],165,6,'#608ca2',1.12,'바다 생태계의 균형을 지키는 포식자','observe'),
+ creature('reef-shark','산호초 상어','ocean',[75,60,50,40],165,6,'#608ca2',1.12,'바다 생태계의 균형에 중요한 역할을 하는 상어','observe'),
  creature('humpback-whale','혹등고래','ocean',[110,90,75,60],220,8,'#638bc0',1.65,'먼 바다를 이동하는 거대한 야생 고래','observe'),
  ...EXTRA_SPECIES.map(row=>creature(...row))
 ].sort((a,b)=>(a.world==='pond'?0:1)-(b.world==='pond'?0:1)||
@@ -63,7 +63,7 @@ let memory=blank(),dirty=false,storageOK=true;
 let configuredCatalog=[];
 
 function clean(raw){
- if(!plain(raw)||raw.version!==1||!plain(raw.profiles))throw new Error('화폐 기록 형식을 확인해 주세요.');
+ if(!plain(raw)||raw.version!==1||!plain(raw.profiles))throw new Error('배움 재료 기록을 확인해 주세요.');
  const result=blank();
  for(const who of ['tae','se']){
   const src=raw.profiles[who];
@@ -71,7 +71,7 @@ function clean(raw){
     (src.careerUnlocks!==undefined&&!plain(src.careerUnlocks))||
     (src.visitBonuses!==undefined&&!plain(src.visitBonuses))||
     Object.keys(src.adoptions).length>MAX_RECEIPTS||Object.keys(src.feedEvents).length>MAX_FEED_EVENTS||
-    Object.keys(src.careerUnlocks||{}).length>100||Object.keys(src.visitBonuses||{}).length>Object.keys(FIRST_VISIT_REWARDS).length)throw new Error('화폐 기록 크기를 확인해 주세요.');
+    Object.keys(src.careerUnlocks||{}).length>100||Object.keys(src.visitBonuses||{}).length>Object.keys(FIRST_VISIT_REWARDS).length)throw new Error('배움 재료 기록의 크기를 확인해 주세요.');
   for(const [id,receipt] of Object.entries(src.visitBonuses||{})){
    const reward=Object.hasOwn(FIRST_VISIT_REWARDS,id)?FIRST_VISIT_REWARDS[id]:null;
    if(!reward||!plain(receipt)||receipt.id!==id||!validTimestamp(receipt.at)||!plain(receipt.cost)||
@@ -82,7 +82,7 @@ function clean(raw){
   for(const [id,adoption] of Object.entries(src.adoptions)){
    if(!knownFish(id)||id==='guppy'||!plain(adoption)||adoption.id!==id||!validTimestamp(adoption.at)||
       !plain(adoption.cost)||RESOURCE_SUBJECTS.some(s=>adoption.cost[s]!==BY_FISH.get(id).cost[s]))
-    throw new Error('물고기 영입 영수증을 확인해 주세요.');
+    throw new Error('물고기 친구를 만난 기록을 확인해 주세요.');
    result.profiles[who].adoptions[id]={id,at:adoption.at,cost:{...BY_FISH.get(id).cost}};
   }
   for(const [key,event] of Object.entries(src.feedEvents)){
@@ -144,7 +144,7 @@ function persist(state,storage=globalThis.localStorage){
 export function exportResources(){return clean(loadResources());}
 export function importResources(incoming,storage=globalThis.localStorage){
  const combined=merge(loadResources(storage),clean(incoming));
- if(!persist(combined,storage))throw new Error('물고기·화폐 기록을 기기에 저장할 수 없어요.');
+ if(!persist(combined,storage))throw new Error('물고기와 배움 재료 기록을 기기에 저장할 수 없어요.');
  return exportResources();
 }
 export function configure(catalog){
@@ -235,7 +235,7 @@ export function wallet(catalog,who=Progress.learner()){
 export function adoptFish(id,catalog,who=Progress.learner(),storage=globalThis.localStorage){
  validWho(who);configure(catalog);
  const species=knownFish(id);
- if(!species||id==='guppy')throw new Error('영입할 물고기 종류를 확인해 주세요.');
+ if(!species||id==='guppy')throw new Error('새로 만날 물고기 종류를 확인해 주세요.');
  const state=loadResources(storage),p=state.profiles[who];
  if(p.adoptions[id])return {ok:true,duplicate:true,wallet:wallet(catalog,who)};
  const funds=wallet(catalog,who);

@@ -120,7 +120,7 @@ try{
  await host.handle(JSON.stringify({action:'OCEAN_ADOPT',requestId:blockedOceanId,itemId:'clownfish'}));
  const blockedOcean=responses.findLast(r=>r.requestId===blockedOceanId);
  assert.equal(blockedOcean?.ok,false,'Ocean adoption must respect learning milestone before resource spend');
- assert(blockedOcean?.error?.includes('새로운 문제'));
+ assert(/새로운 것|새로운 문제/.test(blockedOcean?.error||''),'Learning gates should explain the next step without shaming the learner');
  const feed=await request('POND_FEED',{itemId:'guppy'});
  assert.equal(feed.pondShop.fish.find(f=>f.id==='guppy').feedDays,1);
  const repeatFeed=await request('POND_FEED',{itemId:'guppy'});
