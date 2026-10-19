@@ -1,0 +1,197 @@
+{
+  "version": "v25-20261019",
+  "creatures": [
+    {
+      "id": "guppy",
+      "name": "무지개 구피",
+      "source": "guppy.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "goldfish",
+      "name": "황금 금붕어",
+      "source": "goldfish.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "neon",
+      "name": "네온 테트라",
+      "source": "neon.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "betta",
+      "name": "비단 베타",
+      "source": "betta.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "koi",
+      "name": "연못 잉어",
+      "source": "koi.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "angel",
+      "name": "별빛 엔젤피시",
+      "source": "angel.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "clownfish",
+      "name": "산호 흰동가리",
+      "source": "clownfish.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "blue-tang",
+      "name": "푸른 블루탱",
+      "source": "blue-tang.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "shrimp",
+      "name": "산호 새우",
+      "source": "shrimp.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "hermit-crab",
+      "name": "소라게",
+      "source": "hermit-crab.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "sea-crab",
+      "name": "바다 게",
+      "source": "sea-crab.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "seahorse",
+      "name": "별빛 해마",
+      "source": "seahorse.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "octopus",
+      "name": "산호 문어",
+      "source": "octopus.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "sea-turtle",
+      "name": "푸른 바다거북",
+      "source": "sea-turtle.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "reef-shark",
+      "name": "산호초 상어",
+      "source": "reef-shark.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "humpback-whale",
+      "name": "혹등고래",
+      "source": "humpback-whale.svg",
+      "license": "project original; no third-party source",
+      "format": "SVG",
+      "transparent": true,
+      "px": [
+        1536,
+        1152
+      ]
+    }
+  ]
+}

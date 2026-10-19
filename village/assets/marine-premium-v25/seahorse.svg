@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1152" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+ <title id="title">별빛 해마</title><desc id="desc">원본 벡터 게임 에셋. 투명 배경의 별빛 해마 한 마리.</desc>
+ <defs>
+ <linearGradient id="body" x1=".25" y1="0" x2=".78" y2="1"><stop stop-color="#fff3ac"/><stop offset=".48" stop-color="#e5a759"/><stop offset="1" stop-color="#e5a759"/></linearGradient>
+ <linearGradient id="fin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9da84"/><stop offset="1" stop-color="#e5a759"/></linearGradient>
+ <radialGradient id="shell"><stop stop-color="#ffefd7"/><stop offset=".65" stop-color="#d7ac8d"/><stop offset="1" stop-color="#a77869"/></radialGradient>
+ <filter id="soft" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="13"/></filter>
+ </defs>
+ <g opacity=".18" filter="url(#soft)"><ellipse cx="503" cy="604" rx="295" ry="29" fill="#184969" /></g>
+ <g><path d="M618 211 Q725 213 747 306 Q752 362 695 405 L615 438 Q649 495 620 555 Q581 611 525 589 Q477 571 503 525 Q521 503 550 529 Q542 480 470 468 Q384 454 418 381 Q452 307 530 308 L520 252 Q572 210 618 211 Z" fill="url(#body)" stroke="#b38c5b" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" /><path d="M517 258 L423 283 L510 313 Z" fill="url(#fin)" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" /><path d="M430 390 Q335 380 327 437 Q389 432 425 455 Z" fill="url(#fin)" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" /><ellipse cx="570" cy="355" rx="12" ry="15" fill="#fff0b9" opacity=".62"/><ellipse cx="570" cy="398" rx="12" ry="15" fill="#fff0b9" opacity=".62"/><ellipse cx="570" cy="442" rx="12" ry="15" fill="#fff0b9" opacity=".62"/><ellipse cx="570" cy="483" rx="12" ry="15" fill="#fff0b9" opacity=".62"/><ellipse cx="660" cy="283" rx="22" ry="23" fill="#eef9ff" /><ellipse cx="663" cy="284" rx="14" ry="14" fill="#162f4e" /><ellipse cx="656" cy="276" rx="4" ry="4" fill="#ffffff" /><ellipse cx="667" cy="292" rx="3" ry="3" fill="#c2ebf6" /></g>
+ <g opacity=".4"><circle cx="183" cy="184" r="12" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="4"/><circle cx="866" cy="160" r="9" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="4"/><circle cx="893" cy="202" r="6" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="4"/><circle cx="120" cy="481" r="13" fill="none" stroke="#ffffff" stroke-opacity=".68" stroke-width="4"/></g>
+ </svg>
