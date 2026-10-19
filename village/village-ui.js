@@ -46,6 +46,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '<aside id="vh-world-shortcuts" aria-label="마법마을 특별 장소">',
     ' <button id="vh-map" type="button" class="vh-shortcut">🗺️ 모험 지도</button>',
     ' <button id="vh-garden" type="button" class="vh-shortcut">🌱 나무·꽃 키우기</button>',
+    ' <button id="vh-ocean" type="button" class="vh-shortcut vh-ocean-shortcut">🌊 푸른 바다</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut vh-learning-shortcut">🧠 오늘의 3걸음</button>',
     ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
     ' <div id="vh-extra-tools" hidden>',
@@ -81,7 +82,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   // Production navigation uses the same approved illustrated props as the Unity
   // village. The unfinished eight-direction art toggle is not child-facing.
   const districtLabels = {
-    math:'수학 정원',korean:'이야기 도서관',english:'영어 숲',hanja:'한자 수련관',pond:'생명 연못',career:'미래 직업 탐색관',
+    math:'수학 정원',korean:'이야기 도서관',english:'영어 숲',hanja:'한자 수련관',pond:'생명 연못',ocean:'푸른 바다',career:'미래 직업 탐색관',
     kma:'경시대회 성',practice:'마법 연습장',academy:'마법학교',growth:'성장의 탑'
   };
   for(const [key, title] of Object.entries(districtLabels)){
@@ -289,7 +290,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     // A map selection guides the 3D fairy to the real building. Learning
     // appears only after Unity reaches the building's approach hotspot.
     // Lite mode lacks locomotion, so its accessible subject list opens directly.
-    if(root.dataset.lite==='true'||id==='growth'){
+    if(root.dataset.lite==='true'||id==='growth'||id==='ocean'){
       request('AREA_OPEN',{district:id});return;
     }
     const chosenStory=activeStory;
@@ -305,7 +306,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
     paragraph('어떤 친구를 만나러 갈까요?','vh-story vh-story-intro');
     const entries=label('div','','vh-map-district-buttons');
-    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['pond','🐠 생명 연못'],['career','🏛️ 미래 직업 탐색관']])
+    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
       entries.append(button(name,()=>travelToDistrict(id),'vh-map-district-entry'));
     ui.body.append(entries);
     const featured=new Set(recommendedStories(who).map(item=>item.id));
@@ -350,6 +351,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   ui.friends.addEventListener('click',()=>{if(safeExplore())request('RELATIONSHIP_OPEN');});
   ui.ecology.addEventListener('click',()=>{if(safeExplore())request('ECOLOGY_OPEN');});
   $('vh-pond').addEventListener('click',()=>{if(safeExplore())travelToDistrict('pond');});
+  $('vh-ocean').addEventListener('click',()=>{if(safeExplore())request('OCEAN_OPEN');});
   $('vh-career').addEventListener('click',()=>{if(safeExplore())travelToDistrict('career');});
   function showGarden(data) {
     if(!data.garden)return;
@@ -862,15 +864,26 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     });
     ui.title.focus({preventScroll:true});
   }
-  function showPond(data,notice=''){
+  function showWaterHabitat(data,notice='',world='pond'){
     if(!data||!Array.isArray(data.fish))return;
-    phase='pond';open();resetBody();theme('garden');root.dataset.mode='pond';
-    ui.title.textContent='🐠 생명 연못 · 물고기 키우기';
-    ui.counter.textContent=data.fish.filter(f=>f.owned).length+'종 함께 살아요';
+    const ocean=world==='ocean',fishInWorld=data.fish.filter(f=>f.world===world);
+    phase=world;open();resetBody();theme(ocean?'ocean':'garden');root.dataset.mode=world;
+    ui.title.textContent=ocean?'🌊 푸른 바다 · 해양생물 탐험':'🐠 생명 연못 · 물고기 키우기';
+    ui.counter.textContent=fishInWorld.filter(f=>f.owned).length+' / '+fishInWorld.length+'종 만났어요';
     ui.listen.hidden=false;ui.hint.hidden=true;
-    voiceText='수학, 국어, 영어, 한자의 다른 빛깔 자원을 모아 연못 친구들을 만나요. 물고기에게 하루에 한 번 먹이를 줄 수 있어요.';
-    ui.note.textContent='연못은 실제 동물 돌봄을 대신하지 않는 디지털 놀이입니다. 이전에 모은 별은 그대로 보존됩니다.';
+    voiceText=ocean?'바다에는 작은 물고기부터 상어와 고래까지 살아요. 다양한 과목을 배우면 더 넓은 바다를 만날 수 있어요.':'서로 다른 배움 자원을 모아 연못 물고기들에게 하루에 한 번 먹이를 줄 수 있어요.';
+    ui.note.textContent=ocean?'바다 생물은 가상 보호구역에서 자유롭게 살아요. 상어·고래·바다거북을 실제로 사육하거나 먹이를 주는 놀이가 아닙니다.':'연못은 실제 동물 돌봄을 대신하지 않는 디지털 놀이입니다. 이전 별은 그대로 보존됩니다.';
     if(notice)paragraph(notice,'vh-feedback');
+    const panorama=label('section','','vh-water-panorama '+(ocean?'vh-sea-panorama':'vh-pond-panorama'));
+    panorama.setAttribute('aria-label',ocean?'바다 보호구역 풍경':'연못 풍경');
+    panorama.append(label('div',ocean?'산호초에서 먼바다까지, 함께 넓어지는 세상':'작은 연못에서 시작하는 생명의 이야기','vh-water-caption'));
+    const residents=label('div','','vh-water-residents');
+    for(const resident of fishInWorld.filter(f=>f.owned)){
+      const avatar=label('div','','vh-water-resident');avatar.style.setProperty('--swim-index',fishInWorld.indexOf(resident));
+      const art=document.createElement('img');art.src=resident.art;art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
+      avatar.append(art);residents.append(avatar);
+    }
+    panorama.append(residents);ui.body.append(panorama);
     const resources=label('section','','vh-resource-grid');
     const currencies=[['math','💎','수정'],['korean','🌸','꽃잎'],['english','🪶','깃털'],['hanja','🖋️','먹방울']];
     for(const [id,emoji,name] of currencies){
@@ -880,24 +893,28 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       resources.append(card);
     }
     ui.body.append(resources);
-    paragraph('서로 다른 과목의 자원을 함께 모으면 새 물고기를 초대할 수 있어요. 세 과목을 같은 날 스스로 풀면 균형 보너스도 받습니다.','vh-story');
+    paragraph('새로운 문제를 스스로 해결하면 과목별 자원을 얻어요. 학습 성취와 자원이 쌓이면 '+(ocean?'작은 생물부터 거북·상어·고래까지 서식지가 열려요.':'연못의 새로운 친구가 찾아와요.')+' 세 과목을 같은 날 배우면 균형 보너스도 받아요.','vh-story');
     const list=label('div','','vh-pond-species');
-    for(const fish of data.fish){
+    for(const fish of fishInWorld){
       const article=label('article','','vh-pond-fish');
       article.dataset.species=fish.id;
-      article.append(label('span',fish.emoji,'vh-fish-emoji'));
+      const imageWrap=label('span','','vh-fish-emoji vh-fish-art');
+      const art=document.createElement('img');art.src=fish.art;art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
+      imageWrap.append(art);article.append(imageWrap);
       const copy=label('div','','vh-fish-copy');
       copy.append(label('strong',fish.name,'vh-fish-name'));
       copy.append(label('p',fish.description||'함께 키우는 물고기','vh-small'));
       if(fish.owned){
-        copy.append(label('p','먹이 준 날 '+fish.feedDays+'번 · 성장 '+(fish.growth+1)+'단계','vh-fish-growth'));
-        const feed=button(fish.fedToday?'오늘 먹이 완료 ✓':'🫧 오늘 먹이 주기',()=>request('POND_FEED',{itemId:fish.id}),'vh-pond-action');
+        copy.append(label('p',(fish.careMode==='observe'?'관찰한 날 ':'돌본 날 ')+fish.feedDays+'번 · 발견 '+(fish.growth+1)+'단계','vh-fish-growth'));
+        const feed=button(fish.fedToday?'오늘 돌봄 완료 ✓':fish.careMode==='observe'?'🔭 멀리서 관찰하기':'🫧 오늘 먹이 주기',()=>request(ocean?'OCEAN_FEED':'POND_FEED',{itemId:fish.id}),'vh-pond-action');
         feed.disabled=fish.fedToday;
         copy.append(feed);
       }else{
+        copy.append(label('p','새 문제 '+fish.minSolved+'개 · 세 과목 균형 학습 '+fish.minBalancedDays+'일 목표','vh-fish-milestone'));
+        if(fish.remainingSolved||fish.remainingBalanced)copy.append(label('p','앞으로 새 문제 '+fish.remainingSolved+'개'+(fish.remainingBalanced?' · 균형 학습 '+fish.remainingBalanced+'일':'') ,'vh-fish-growth'));
         const tokens=currencies.map(([id,emoji])=>emoji+(fish.cost[id]||0)).join(' · ');
         copy.append(label('p',tokens,'vh-fish-cost'));
-        const adopt=button(fish.canAdopt?'🐟 연못에 초대하기':'자원이 더 필요해요',()=>request('POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
+        const adopt=button(fish.canAdopt?(ocean?'🌊 바다 보호구역 열기':'🐟 연못에 초대하기'):fish.meetsLearning?'자원을 모으는 중':'학습을 통해 해금해요',()=>request(ocean?'OCEAN_ADOPT':'POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
         adopt.disabled=!fish.canAdopt;copy.append(adopt);
       }
       article.append(copy);list.append(article);
@@ -907,6 +924,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       paragraph('다른 기기의 구매 기록이 합쳐져 자원이 부족할 수 있습니다. 추가 교환은 잠시 중지하고 보호자와 기록을 확인해 주세요.','vh-small');
     ui.title.focus({preventScroll:true});
   }
+  const showPond=(data,notice='')=>showWaterHabitat(data,notice,'pond');
+  const showOcean=(data,notice='')=>showWaterHabitat(data,notice,'ocean');
   function showShop(shop) {
     if (!shop || !Array.isArray(shop.items)) {announce('별 상점에 다시 들어와 주세요.');return;}
     shopData=shop;phase='shop';open();resetBody();
@@ -1359,6 +1378,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     else if(data.action==='AREA_OPEN'){
       if(data.district==='career')showCareer(data.career);
       else if(data.district==='pond')showPond(data.pondShop,data.pondNotice);
+      else if(data.district==='ocean')showOcean(data.pondShop,data.pondNotice);
       else if(data.district==='kma'||data.district==='practice')showChallengePicker(data);
       else if(data.district==='shop')showShop(data.shop);
       else if(data.district==='garden')showGarden(data);
@@ -1367,6 +1387,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     else if(['CAREER_OPEN','CAREER_TOGGLE','CAREER_UNLOCK'].includes(data.action))showCareer(data.career);
     else if(['POND_OPEN','POND_ADOPT','POND_FEED'].includes(data.action))showPond(data.pondShop,data.pondNotice);
+    else if(['OCEAN_OPEN','OCEAN_ADOPT','OCEAN_FEED'].includes(data.action))showOcean(data.pondShop,data.pondNotice);
     else if(data.action==='SHOW_BEBSU'||data.action==='SHOW_PRACTICE')showChallengePicker(data);
     else if(data.action==='AREA_SET_STAGE')showGrowthTower(data.growth);
     else if(['SHOP_OPEN','SHOP_BUY','SHOP_EQUIP','SHOP_UNEQUIP'].includes(data.action))showShop(data.shop);

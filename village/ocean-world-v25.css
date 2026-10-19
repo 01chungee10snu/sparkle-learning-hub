@@ -1,0 +1,21 @@
+/* Original-art water worlds: a horizontally extensible marine habitat, not an emoji list. */
+#village-ui .vh-ocean-shortcut{background:linear-gradient(135deg,#0d788d,#246bb8);color:white;border-color:#8dd5e9}
+#village-ui[data-mode="ocean"] .vh-dialog-body{background:linear-gradient(#dcf9ff,#e2f2fb 48%,#fffaf2)}
+#village-ui[data-mode="ocean"] .vh-dialog-title{background:linear-gradient(110deg,#b7f2fa,#dae4ff)}
+#village-ui .vh-water-panorama{position:relative;isolation:isolate;overflow:hidden;min-height:210px;border-radius:24px;border:2px solid #9edfe9;margin:2px 0 15px;background:linear-gradient(180deg,#b2edfa 0%,#70d4ec 30%,#2f9bca 70%,#1a648b 100%);box-shadow:inset 0 2px 15px #fff9,0 10px 20px #4f789b22}
+#village-ui .vh-water-panorama::before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 20% 6%,#fff9,transparent 34%),radial-gradient(ellipse at 78% 40%,#9defff77,transparent 33%),repeating-linear-gradient(114deg,transparent 0 53px,#fff2 54px 60px,transparent 65px 94px);pointer-events:none}
+#village-ui .vh-water-panorama::after{content:'';position:absolute;inset:auto -5% 0;z-index:-1;height:32px;background:radial-gradient(ellipse at 20% 95%,#caece0 0 35%,transparent 37%),radial-gradient(ellipse at 60% 100%,#e4ddaf 0 48%,transparent 49%),linear-gradient(#f3e1ab,#d3b58f);border-top:4px solid #daf3d777}
+#village-ui .vh-pond-panorama{background:linear-gradient(180deg,#b0efdf,#88d4bd 44%,#5cadac 79%,#408b86)}
+#village-ui .vh-water-caption{position:relative;z-index:2;margin:12px auto;padding:8px 15px;width:max-content;max-width:95%;border-radius:999px;background:#fffffff0;color:#235c78;font-weight:850;font-size:clamp(13px,2.1vw,19px);text-align:center;box-shadow:0 4px 12px #194e6722}
+#village-ui .vh-water-residents{position:relative;min-height:158px;display:flex;justify-content:space-around;align-items:center;gap:6px;padding:3px 12px 27px;flex-wrap:wrap}
+#village-ui .vh-water-resident{width:clamp(78px,13vw,160px);height:clamp(74px,10vw,126px);display:grid;place-items:center;animation:water-drift calc(4.2s + var(--swim-index,0)*.4s) ease-in-out infinite alternate;filter:drop-shadow(0 7px 4px #123c5b38)}
+#village-ui .vh-water-resident:nth-child(even){animation-direction:alternate-reverse}
+#village-ui .vh-water-resident img{width:100%;height:100%;object-fit:contain}
+#village-ui .vh-fish-art{flex:0 0 auto;display:grid;place-items:center;width:clamp(88px,12vw,132px);height:clamp(84px,11vw,116px);border-radius:21px;background:radial-gradient(circle at 40% 25%,#fff,#d7f6f7 77%,#cce8f9);border:1px solid #c4e1e8}
+#village-ui .vh-fish-art img{display:block;width:100%;height:100%;object-fit:contain}
+#village-ui .vh-fish-milestone{font-size:clamp(14px,1.8vw,17px);line-height:1.55;color:#315d77;font-weight:780;margin:0}
+#village-ui[data-mode="ocean"] .vh-pond-fish{background:linear-gradient(140deg,#f1fcff,#e6f8ff 65%,#f3f1ff);border-color:#a6dfe9}
+#village-ui[data-mode="ocean"] .vh-pond-fish[data-species="reef-shark"],#village-ui[data-mode="ocean"] .vh-pond-fish[data-species="humpback-whale"]{background:linear-gradient(145deg,#e8f4ff,#e8ebff);border-color:#a9bfd9}
+@keyframes water-drift{from{transform:translate3d(-8px,2px,0) rotate(-3deg)}to{transform:translate3d(12px,-9px,0) rotate(4deg)}}
+@media(max-width:610px){#village-ui .vh-water-panorama{min-height:195px}#village-ui .vh-water-resident{width:24%;height:82px}#village-ui .vh-pond-fish{gap:8px}#village-ui .vh-fish-art{width:98px;height:98px}}
+@media(prefers-reduced-motion:reduce){#village-ui .vh-water-resident{animation:none}}
