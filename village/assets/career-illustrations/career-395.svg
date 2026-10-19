@@ -28,7 +28,7 @@
  <path d="M85 210q-10-15-21-9t-10 18q9 9 29 13m158-22q10-15 21-9t10 18q-9 9-29 13" fill="#a36b53" stroke="#ffffffcc" stroke-width="2"/>
 </g>
 <g filter="url(#shadow)"><circle cx="257" cy="74" r="43" fill="#ffffffed" stroke="#ffffff" stroke-width="4"/>
-<text x="257" y="92" font-size="46" font-family="'Apple Color Emoji','Noto Color Emoji','Segoe UI Emoji',sans-serif" text-anchor="middle">🧒</text></g>
+<g transform="translate(226 43)"><path d="M31 49q-12-14-24-12V15q13-2 24 10 11-12 24-10v22q-12-2-24 12z" fill="#fff5d0" stroke="#597cad" stroke-width="3" stroke-linejoin="round"/><path d="M31 25v24M13 23q7 0 12 6m11 0q5-6 12-6" stroke="#597cad" stroke-width="2" fill="none"/><path d="M28 8l3-6 3 6 7 1-5 5 1 7-6-4-6 4 1-7-5-5z" fill="#f7b85d"/></g></g>
 <circle cx="68" cy="213" r="17" fill="#ffffffb8"/>
 <path d="M59 212l7 7 11-17" fill="none" stroke="#bd7599" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

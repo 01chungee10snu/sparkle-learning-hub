@@ -1,0 +1,39 @@
+{
+  "pass": true,
+  "generatedAt": "2026-10-19T11:58:00.433Z",
+  "cases": [
+    {
+      "device": "desktop",
+      "learner": "tae",
+      "pass": true,
+      "pondSpecies": 24,
+      "oceanSpecies": 40,
+      "careerCards": 100,
+      "shamingCopy": false,
+      "imagesDecode": true,
+      "jsErrors": 0
+    },
+    {
+      "device": "galaxy",
+      "learner": "se",
+      "pass": true,
+      "pondSpecies": 24,
+      "oceanSpecies": 40,
+      "careerCards": 100,
+      "shamingCopy": false,
+      "imagesDecode": true,
+      "jsErrors": 0
+    },
+    {
+      "device": "tablet",
+      "learner": "tae",
+      "pass": true,
+      "pondSpecies": 24,
+      "oceanSpecies": 40,
+      "careerCards": 100,
+      "shamingCopy": false,
+      "imagesDecode": true,
+      "jsErrors": 0
+    }
+  ]
+}

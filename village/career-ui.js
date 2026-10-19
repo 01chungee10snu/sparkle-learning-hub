@@ -26,7 +26,7 @@ const friendlyOrder=(a,b)=>(childFriendlyRank.get(a.id)??999)-(childFriendlyRank
  ||a.name.localeCompare(b.name,'ko');
 function careerArtwork(c,kind){
  const img=el('img',kind==='detail'?'career-detail-artwork':'career-card-artwork');
- img.src=c.illustration;
+ img.src=c.illustration+"?v=child-safe-v32-20261019";
  img.alt=c.name+'의 어린이 직업 일러스트';
  img.width=kind==='detail'?320:220;
  img.height=kind==='detail'?260:180;
@@ -66,9 +66,9 @@ export function mountCareerExplorer(container,{
  const state={group:'all',term:'',sort:'familiar',selected:selectedId,
               dreams:new Set(dreams),unlocked:new Set(unlocked)};
  const intro=el('p','career-promise','직업 100가지 · 어떤 꿈을 선택할까?');
- const ribbon=el('p','career-integrity','먼저 익숙한 직업부터 만나봐요! 정렬은 바꿀 수 있고, 소득순이 직업의 가치 순위는 아니에요.');
+ const ribbon=el('p','career-integrity','🌈 모든 직업은 저마다 소중한 일을 해요. 돈을 많이 버는 순서나 시험 성적으로 꿈의 가치를 정하지 않아요.');
  const socioeconomic=el('details','career-oecd-evidence');
- socioeconomic.append(el('summary','','📊 공부와 직업의 관계 · 근거 펼쳐보기'),
+ socioeconomic.append(el('summary','','👨‍👩‍👧 보호자용 · 공부와 직업 통계 보기'),
    small('OECD 2025: 한국 고등교육 이수 근로자의 소득은 고졸 근로자보다 집단 평균 31% 높았습니다. 공부는 선택지를 넓힐 수 있지만, 개개인의 시험점수나 소득을 보장하지 않습니다.'));
  const layout=el('div','career-explorer'),filters=el('div','career-filters'),
    search=el('input','career-search'),sortControl=el('select','career-sort'),
@@ -80,8 +80,8 @@ export function mountCareerExplorer(container,{
  for(const [key,name] of [
   ['familiar','어린이에게 친숙한 순 ✨'],
   ['favorites','내 꿈 후보 먼저 💖'],
-  ['wage','연봉 중앙값 높은 순 (100개 내)'],
-  ['wageAsc','연봉 중앙값 낮은 순 (100개 내)'],
+  ['wage','보호자 참고 · 연봉 통계가 높은 값부터'],
+  ['wageAsc','보호자 참고 · 연봉 통계가 낮은 값부터'],
   ['name','이름 가나다순'],
   ['group','직업 분야별']
  ]){
@@ -113,7 +113,7 @@ export function mountCareerExplorer(container,{
   else if(state.sort==='group')listed.sort((a,b)=>a.group.localeCompare(b.group)||friendlyOrder(a,b));
   else if(state.sort==='wageAsc')listed.sort((a,b)=>a.annualMedianWan-b.annualMedianWan);
   else if(state.sort==='wage')listed.sort((a,b)=>b.annualMedianWan-a.annualMedianWan);
-  count.textContent='직업 '+listed.length+'개 · 내 꿈 후보 '+state.dreams.size+'개 · 통계 상세 해금 '+state.unlocked.size+'개';
+  count.textContent='직업 '+listed.length+'개 · 관심 있는 꿈 '+state.dreams.size+'개 · 더 알아본 직업 '+state.unlocked.size+'개';
   for(const c of listed){
    const b=el('button','career-card');
    b.type='button';b.dataset.career=c.id;
@@ -124,7 +124,7 @@ export function mountCareerExplorer(container,{
      fav=el('span','career-saved-mark',
        [state.dreams.has(c.id)?'💖 내 꿈 후보':'',
         state.unlocked.has(c.id)?'📚 상세 열람 완료':''].filter(Boolean).join(' · '));
-   const peek=el('span','career-peek-label',state.unlocked.has(c.id)?'✨ 직업 통계 열림':'🔎 중요한 숫자는 배움으로 발견');
+   const peek=el('span','career-peek-label',state.unlocked.has(c.id)?'✨ 보호자와 숫자 자료 보기':'🔎 하는 일을 먼저 살펴봐요');
    b.append(art,title,note,peek,fav);
    b.addEventListener('click',()=>showDetail(c.id));
    grid.append(b);
@@ -157,7 +157,7 @@ export function mountCareerExplorer(container,{
   bookmark.type='button';bookmark.addEventListener('click',()=>onDream?.(id));
   details.append(bookmark);
   const facts=el('section','career-fact-panel');
-  facts.append(el('h4','','📖 직업사전 통계와 배움의 증거'));
+   facts.append(el('h4','','📖 직업사전 숫자 자료 · 보호자와 함께 보기'));
   if(state.unlocked.has(id)){
    facts.classList.add('unlocked');
    const medicalMean=HEALTHCARE_MEDIAN_CONTEXT[c.id]||null;
@@ -223,26 +223,26 @@ export function mountCareerExplorer(container,{
      study.append(el('strong','career-no-statistical-cutoff',
        '검증 가능한 해당 학업·시험 선택 난도의 정량 사례가 없어 단정하지 않습니다.'));
    study.append(el('strong','career-national-rank-warning',
-     '이 직업에 필요한 학생의 필수 전국 석차: 직업별 공식 통계 없음'));
+     '이 직업을 가지기 위해 꼭 필요한 전국 등수는 정해져 있지 않아요.'));
    study.append(small('대학 합격자의 국수탐 백분위와 전문자격시험 응시자 합격률은 서로 다른 지표입니다. 이를 합쳐 직업의 우열이나 미래 소득을 예언할 수 없습니다.'));
    facts.append(study);
   }else{
    facts.classList.add('locked');
-   facts.append(small('🌟 이 직업의 모습·하는 일·필요한 공부·체험 미션은 누구나 볼 수 있어요. 중요한 숫자 정보만 두 과목의 배움 화폐로 열어 봐요.'));
+   facts.append(small('🌟 직업 그림과 하는 일, 배우는 길은 모두 살펴볼 수 있어요. 서로 다른 두 과목의 배움 재료로 숫자 자료도 만나 봐요.'));
    const evidence=academicSignalsForCareer(c);
    addDetail(facts,'📚 먼저 알아보는 교육·자격 경로',evidence.mandatory);
    const peek=el('div','career-locked-preview');
    for(const [heading,description] of [
-    ['💰 연봉 중앙값','🔒 금액은 아직 비밀이에요'],
-    ['⏱️ 1시간당 환산','🔒 어느 정도일까요?'],
-    ['🎓 학력·입결·시험 비교','🔒 숫자 근거를 더 알아봐요']
+    ['💰 연봉 중앙값','🔒 보호자와 함께 살펴볼 숫자예요'],
+    ['⏱️ 1시간당 환산','🔒 자세한 수치는 나중에 볼 수 있어요'],
+    ['🎓 학력·입결·시험 비교','🔒 공부에 관한 자료도 있어요']
    ]){
     const tile=el('div','career-locked-stat');
     tile.append(el('strong','',heading),el('span','career-lock-value',description));
     peek.append(tile);
    }
    facts.append(peek);
-   facts.append(small('보이는 자격 요건은 실제 준비 경로에 대한 설명입니다. 잠긴 숫자를 열어도 그 직업을 가지기 위한 필수 학생 석차가 생기는 것은 아니에요.'));
+   facts.append(small('어떤 공부가 필요한지 먼저 살펴봐요. 숫자 자료는 더 알아보고 싶을 때 열 수 있어요.'));
    const holdings=el('div','career-balance');
    for(const subject of subjectIds){
     const [emoji,name]=subjects[subject],value=Number(available[subject]||0);
@@ -252,14 +252,14 @@ export function mountCareerExplorer(container,{
    const unlockOptions=el('div','career-unlock-options');
    for(const pair of pairList){
     const costs=pair.map(id=>subjects[id][0]+' '+subjects[id][1]+' 1개').join(' + ');
-    const b=el('button','career-unlock-button','📜 '+costs+'로 영구 해금');
+    const b=el('button','career-unlock-button','📜 '+costs+'로 자세히 보기');
     b.type='button';b.disabled=!pair.every(s=>(available[s]||0)>=1);
     b.addEventListener('click',()=>onUnlock?.(id,pair));
     unlockOptions.append(b);
    }
    facts.append(unlockOptions);
    if(!pairList.some(pair=>pair.every(s=>(available[s]||0)>=1)))
-    facts.append(small('지금은 자원이 부족해요. 서로 다른 두 과목의 새로운 문제를 스스로 풀면 돼요.'));
+    facts.append(small('숫자 자료는 나중에 봐도 괜찮아요. 궁금한 직업의 이야기를 먼저 즐겨 봐요.'));
   }
   facts.append(sourceLink('커리어넷 원자료 무료로 확인',c.sourceUrl));
   facts.append(sourceLink('한국직업사전 직무·자격 기준',CAREER_SOURCES[0].url));

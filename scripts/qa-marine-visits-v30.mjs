@@ -40,7 +40,7 @@ try{
    for(let i=0;i<3;i++)await paging.getByRole('button',{name:/다음/}).click();
    assert.equal(await page.locator('.vh-pond-fish').count(),10);
    assert((await paging.innerText()).includes('4 / 4'));
-   await page.locator('.vh-water-filter').filter({hasText:'보유'}).click();
+   await page.locator('.vh-water-filter[data-filter="owned"]').click();
    assert.equal(await page.locator('.vh-pond-fish').count(),0,'Ocean must not award a wild animal on visit alone');
    await page.locator('.vh-water-filter').filter({hasText:'전체'}).click();
    const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('sparkle-subject-resources-v1')));

@@ -1,0 +1,335 @@
+{
+  "format": "child-copy-fidelity-v32",
+  "reference": "a5c008cb8b96f82d27e7fb98831669f51e75b925",
+  "gameCount": 65,
+  "questionCount": 8462,
+  "catalogQuestionIdentitySha256": "47651460995f671cdf516bf287f2b055ff04c594297d8b47cc7c17461a093dc5",
+  "IRTCalibrationSha256": "dce0cc11f7f4bdda1a96d9b6c6b1bf5e51f628bb05dfdc62667f2b225cfda6b9",
+  "games": [
+    {
+      "source": "games/growth-math-1/game.json",
+      "count": 8,
+      "immutableSha256": "4584a2e0a9b08ad210e3618a65306a1305ca1dd10cd4ea75e9c30402be89c64e"
+    },
+    {
+      "source": "games/growth-math-2/game.json",
+      "count": 8,
+      "immutableSha256": "1f611e15e7cab0174338c0dd0fec78b5d9d2e5f07f6d9ce6063619a5c0b0f170"
+    },
+    {
+      "source": "games/growth-math-3/game.json",
+      "count": 8,
+      "immutableSha256": "15a56c3655faddb682087193dbffbdc0436f1451f4c782c724e85da870d7e10a"
+    },
+    {
+      "source": "games/growth-math-4/game.json",
+      "count": 8,
+      "immutableSha256": "10a1f3f4974fdf782127bf294f78784bbdfc14fe09827ce56e2d723b5dda1bb1"
+    },
+    {
+      "source": "games/growth-korean-1/game.json",
+      "count": 8,
+      "immutableSha256": "db3ab30421f5090dc416b2d8c01edbdd3b5fa116ee885a2714657a9761d45c7a"
+    },
+    {
+      "source": "games/growth-korean-2/game.json",
+      "count": 8,
+      "immutableSha256": "29d52eed84230ba9d57efe50074acb02aca6df4949160734afa4500c7ed29efd"
+    },
+    {
+      "source": "games/growth-korean-3/game.json",
+      "count": 8,
+      "immutableSha256": "411a1123ecf3c992a9441747ec71cbfd042fcd16c161dd916567ee320df40923"
+    },
+    {
+      "source": "games/growth-korean-4/game.json",
+      "count": 8,
+      "immutableSha256": "bd35e7f85785f1b097f9992db63f2ae94946290e3c6ec5a88f37f884fe8c6d5e"
+    },
+    {
+      "source": "games/growth-english-1/game.json",
+      "count": 8,
+      "immutableSha256": "8beb255dbe3c7574f9b48d3830d8abde2ba2a1a232ce9927450931db27ec1076"
+    },
+    {
+      "source": "games/growth-english-2/game.json",
+      "count": 8,
+      "immutableSha256": "96a51bbb43983b9a5334d1ace67603ddfe819c4f9d1a270f297d4aebe170d092"
+    },
+    {
+      "source": "games/growth-english-3/game.json",
+      "count": 8,
+      "immutableSha256": "d696bab23c7881150fb4668b8c65fd48a47647848c98d28906c3ddcdaaac0dcf"
+    },
+    {
+      "source": "games/growth-english-4/game.json",
+      "count": 8,
+      "immutableSha256": "ec6c19ff3ecda60112c6039fd3fa6f346ed7319ba49f4cd7b78633bc523053cc"
+    },
+    {
+      "source": "games/number-picnic/game.json",
+      "count": 12,
+      "immutableSha256": "59bac19c51b4124b10c53134d408802921bd0d32a02e0f692555e31c6d407581"
+    },
+    {
+      "source": "games/word-forest/game.json",
+      "count": 12,
+      "immutableSha256": "66b9f40f01c87c16375c2f330d64308b93613ec2c8202a7112c386ac6ffbc168"
+    },
+    {
+      "source": "games/english-rainbow/game.json",
+      "count": 12,
+      "immutableSha256": "d75c189fdf8059594677251bf02d11df49989d5c015f1ab3530838beb3fb6467"
+    },
+    {
+      "source": "games/block-patterns/game.json",
+      "count": 12,
+      "immutableSha256": "5465fa5bc3800ce340d45ac41cf89d7a9f7a1bf7200274b831731996861e92aa"
+    },
+    {
+      "source": "games/classroom-bag/game.json",
+      "count": 12,
+      "immutableSha256": "adaded76860fe547c23e277758e049944f817d317b63cedd21c9cc34c8d2dd9c"
+    },
+    {
+      "source": "games/clue-library/game.json",
+      "count": 12,
+      "immutableSha256": "992df5c3777cb30d13e5cd7065e6ccd0c574a195c90ac74c388c70c7b3186f27"
+    },
+    {
+      "source": "games/day-order/game.json",
+      "count": 12,
+      "immutableSha256": "8e3c416d9875e37418572376ae0dbb028becac2f3c1e9f1f47029006023987cc"
+    },
+    {
+      "source": "games/kind-dialogue/game.json",
+      "count": 12,
+      "immutableSha256": "aff907e4a3dbb664ab6b2330fb024c1b8406874dcddba77fa289a723904fc527"
+    },
+    {
+      "source": "games/listening-missions/game.json",
+      "count": 12,
+      "immutableSha256": "6e0ea09a872aaf92f482fc6f84e46af8982ea65a41e22c5813c8a8a63106a8ce"
+    },
+    {
+      "source": "games/measure-lab/game.json",
+      "count": 12,
+      "immutableSha256": "1503f9ca448d557248cf87d450c8e07fd3d67fcb3661b5d77648458aabd3a081"
+    },
+    {
+      "source": "games/phonics-train/game.json",
+      "count": 12,
+      "immutableSha256": "a98dbe91510c87c6b7b48ae5a21f9227d8bafa2288df20ddc71d4a8a7f8088df"
+    },
+    {
+      "source": "games/picture-pairs/game.json",
+      "count": 12,
+      "immutableSha256": "6da9286c4c9bed52d9a89391f69ee1c4e99081ba937360f3b697f012810d873b"
+    },
+    {
+      "source": "games/school-shop/game.json",
+      "count": 12,
+      "immutableSha256": "f0f7885756da6e59260e64c2667e3600ff6a67904675dcb18b6921965a1c6766"
+    },
+    {
+      "source": "games/sentence-picnic/game.json",
+      "count": 12,
+      "immutableSha256": "efefc62e0acbbfe085e18fff32a5a92438afd8152cbe2d26eace75c1c8622c6a"
+    },
+    {
+      "source": "games/sharing-kitchen/game.json",
+      "count": 12,
+      "immutableSha256": "ae29950709556b3884d973c5bd3b2febd576fe8cac0d4084c9df2bcb9d60c38f"
+    },
+    {
+      "source": "games/snack-count/game.json",
+      "count": 12,
+      "immutableSha256": "1cb90b6f8f92d7648834ab87a6b2b008f91cf8fc1b190ee265065b0580dc78c0"
+    },
+    {
+      "source": "games/sound-workshop/game.json",
+      "count": 12,
+      "immutableSha256": "b9da2394a4f6954a669d8e8c501b6a8ad29f3ce7a60e8037f493ddc775f2baad"
+    },
+    {
+      "source": "games/story-sequence/game.json",
+      "count": 12,
+      "immutableSha256": "1c80d297143e03c363be0adf0f3973a0e252718a93168a5ec936e871bb1d74b0"
+    },
+    {
+      "source": "games/time-day/game.json",
+      "count": 12,
+      "immutableSha256": "b1eb29970012fca9969da52b33934665c898655dc5259bc56e579ad5f7c2508a"
+    },
+    {
+      "source": "games/word-builder/game.json",
+      "count": 12,
+      "immutableSha256": "f8baecce78671f42c7435d6699ed7542403dbea07a1e76e8f6b5295b543b2f54"
+    },
+    {
+      "source": "games/world-greetings/game.json",
+      "count": 12,
+      "immutableSha256": "85492a5a4f4b9ea28f58c048b1e6c4865524eaa2ca9c888088a37d844d788a7f"
+    },
+    {
+      "source": "games/bebsu-foundation/game.json",
+      "count": 25,
+      "immutableSha256": "95cc26ceb28accd6b9041c362aac808806e500548672ad0f29e1af31de0aa08a"
+    },
+    {
+      "source": "games/bebsu-g1-generated/game.json",
+      "count": 100,
+      "immutableSha256": "2af0a6de610d0431d72a99ef0e29eb242d6dee9b5742a1b15c318f0bba16dec4"
+    },
+    {
+      "source": "games/bebsu-g1-original/game.json",
+      "count": 300,
+      "immutableSha256": "cc68c146cfb37bdb4a06b99ae3a884f76dbeb08f8836db63106be9f544059001"
+    },
+    {
+      "source": "games/bebsu-g2-original/game.json",
+      "count": 300,
+      "immutableSha256": "12f753c8c2acb329e5f363eaf70794d95af2383d0f8f9b5d1a2d860427b7959a"
+    },
+    {
+      "source": "games/bebsu-g3-original/game.json",
+      "count": 485,
+      "immutableSha256": "e3d8a10f77af037a96c8e75a125923d132943ffb43e1d8ec0c18f681ec7f47c8"
+    },
+    {
+      "source": "games/bebsu-g4-original/game.json",
+      "count": 457,
+      "immutableSha256": "982b1a44b62217d1b17ee4cb828acb40e649814b5ecf25d4d21120ae15fc8a91"
+    },
+    {
+      "source": "games/bebsu-g5-original/game.json",
+      "count": 479,
+      "immutableSha256": "677aa8c0d8c5781832efaae4a877ac489a39eeb36ce9053a49f9f9914025a1f5"
+    },
+    {
+      "source": "games/bebsu-g6-original/game.json",
+      "count": 457,
+      "immutableSha256": "8a317ced46cf67ff078d85317dc6f4adcccaf24ebe34dba704d93d8c710f152d"
+    },
+    {
+      "source": "games/bebsu-m-original/game.json",
+      "count": 122,
+      "immutableSha256": "0c361665e2420dc94ba989309dcf92a570ea3b27571bb481bf88bb69c4c7dd32"
+    },
+    {
+      "source": "games/bebsu-m1-original/game.json",
+      "count": 360,
+      "immutableSha256": "d37b8921aff138dc59dca49c614178d186027a15895f0bbc8ad88c443cacef0d"
+    },
+    {
+      "source": "games/bebsu-m2-original/game.json",
+      "count": 360,
+      "immutableSha256": "1cef46a20aae738358ca65eb47187483beaff1845029be592de0065acd991521"
+    },
+    {
+      "source": "games/bebsu-m3-original/game.json",
+      "count": 360,
+      "immutableSha256": "e932518b02b38f8a515e3e57020540a11ded49874896219dbc188035c06d7a79"
+    },
+    {
+      "source": "games/magic-g1-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "aff1836ccc33e1cb598a01f417fc9b01408603248f24db6e196f266cd82d49db"
+    },
+    {
+      "source": "games/magic-g2-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "ec38b30a9736aab8488dc886d882fd66e5a7e1bf08a65095926f67c1fd69d898"
+    },
+    {
+      "source": "games/magic-g3-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "d12d29dd359db8d8c0a91670e4575da88fed4daaba3c21caabd426209c4b7def"
+    },
+    {
+      "source": "games/magic-g4-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "363086c1b113151b08c2e9ea83effeb3705216096894bc05d68cd469ebb89470"
+    },
+    {
+      "source": "games/magic-g5-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "087f190598d61dde0c148ab1a8bf7c109511d967c81d5c432a0c859979d3bca7"
+    },
+    {
+      "source": "games/magic-g6-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "60cca1b3e25160e78ae869517381f50dbd005a2cb82dc0f08e39c5cc1f69f91c"
+    },
+    {
+      "source": "games/magic-m1-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "a1636d870bac4dfd6f1b8e18a4e24013052948d3fb75a7fabd4df4b27f3486e3"
+    },
+    {
+      "source": "games/magic-m2-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "46eebd90b15734960095a4920e1aad588300f3cfba476da6247271b5648b22b6"
+    },
+    {
+      "source": "games/magic-m3-challenge/game.json",
+      "count": 75,
+      "immutableSha256": "270eae388e7f2ad0610612597275556a90e1e829eda306344462b359b551c73e"
+    },
+    {
+      "source": "games/hanja-h8/game.json",
+      "count": 100,
+      "immutableSha256": "457256f93bd6c2737d38a66bbf56a7280f31998ba81a4c504f39dac535fbf2b7"
+    },
+    {
+      "source": "games/hanja-h7ii/game.json",
+      "count": 100,
+      "immutableSha256": "704c917470fdc288ff4f21a5b4764a01841e623f982ebd18c9ee5cc1ba602de9"
+    },
+    {
+      "source": "games/hanja-h7/game.json",
+      "count": 100,
+      "immutableSha256": "00cf5ed95a974489814751258aef1610135ec500612d9945b55c51f2882cbf2a"
+    },
+    {
+      "source": "games/hanja-h6ii/game.json",
+      "count": 150,
+      "immutableSha256": "1dc286760b11854659e7abdb96ddae4f82172216881ad7724d62edba2e3f003c"
+    },
+    {
+      "source": "games/hanja-h6/game.json",
+      "count": 150,
+      "immutableSha256": "c02313ac0ccd03112e87799ab1c58593d4a94d2251f0bde1896a339836f4b4c4"
+    },
+    {
+      "source": "games/hanja-h5ii/game.json",
+      "count": 200,
+      "immutableSha256": "c41fe75fe3f345b6095d49b2cf3e883c2d7fb0c80165a57e93db35be50198fae"
+    },
+    {
+      "source": "games/hanja-h5/game.json",
+      "count": 200,
+      "immutableSha256": "9554d9d79ed4555e2796b9673483a780588a54e5999c4afda74dc3473db572e2"
+    },
+    {
+      "source": "games/hanja-h4ii/game.json",
+      "count": 500,
+      "immutableSha256": "8f78d6af0edce59a809df671101373bc7bc7e964715baa2ed24c3e94028815e3"
+    },
+    {
+      "source": "games/hanja-h4/game.json",
+      "count": 500,
+      "immutableSha256": "ec2a161383ca9bde414562a0034a28675b752b6494ff1e5f1e5c16a5c64cb3ea"
+    },
+    {
+      "source": "games/hanja-h3ii/game.json",
+      "count": 1000,
+      "immutableSha256": "c92b3efc0e08ad83bed97925ec61b0e72f8aaf95ed08b3c14c6582b84c401b55"
+    },
+    {
+      "source": "games/hanja-h3/game.json",
+      "count": 634,
+      "immutableSha256": "8f4be09ee4db7384365a3c5493e7b4b7b1f11f932365d83dbdf2f7646d91abca"
+    }
+  ]
+}

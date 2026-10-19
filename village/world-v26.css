@@ -54,3 +54,7 @@ html[data-daypart="sunrise"] #canvas{filter:sepia(.10) saturate(1.08)}
 html[data-daypart="sunset"] #canvas{filter:sepia(.18) saturate(.91) brightness(.91)}
 html[data-daypart="night"] #canvas{filter:brightness(.68) saturate(.78) hue-rotate(6deg)}
 html[data-daypart="noon"] #canvas{filter:none}
+/* The seasonal time badge is decorative: never intercept a child's taps. */
+#world-scene-clock{pointer-events:none!important}
+/* Free screen space while the child is reading a story, problem, or habitat. */
+#game:has(#village-dialog-wrap:not([hidden])) #world-scene-clock{display:none!important}
