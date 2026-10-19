@@ -223,7 +223,7 @@ async function prepareData(){
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=world-v26-20261019';
+    const loaderUrl = './Build/' + name + '.loader.js?v=marine-coast-v25-20261019';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -288,13 +288,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=world-v26-20261019',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=world-v26-20261019',
-      codeUrl: base + '.wasm' + suffix + '?v=world-v26-20261019',
+      dataUrl: base + '.data' + suffix + '?v=marine-coast-v25-20261019',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=marine-coast-v25-20261019',
+      codeUrl: base + '.wasm' + suffix + '?v=marine-coast-v25-20261019',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.15.0-ecology-v19'
+      productVersion: '0.15.1-marine-coast-v25'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';

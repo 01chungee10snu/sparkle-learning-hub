@@ -25,6 +25,6 @@
 - `node scripts/check-ocean-v25.mjs`: 통과 (연못 6·바다 10, 정렬·해금·원화 실물, 라우팅)
 - `scripts/qa-intro-career-v26.mjs`: 데스크톱 1440×900, Galaxy 390×844, 태블릿 768×1024 **3/3 통과**, 자바스크립트 예외 0건. 테스트 스크린샷 `docs/qa-ocean-v25/` (운영 저장소에는 민감하지 않은 합성 테스트 결과만 보존 가능).
 
-**구현 범위:** 바다는 현재 WebGL 마을에서 들어갈 수 있는 2.5D 인터랙티브 해양 보호구역입니다. Unity 지형 안에서 걷거나 헤엄치는 완전한 3D 바다 맵은 별도의 Unity WebGL 재빌드를 요합니다. 해당 재빌드가 완료·검증되기 전에는 3D 지형 확장 완료라고 표시하지 않습니다.
+**구현 범위:** 바다는 2.5D 인터랙티브 해양생물 도감과, Unity 6000.3.26f1에서 별도로 빌드한 실제 3D 남쪽 해변·부두·관찰 데크·산호초·해양생물 3D 환경을 제공합니다. 기존 섬 전체 이동 범위를 무제한 넓힌 것은 아니며, 해변에서 관찰 장소까지 보행 가능한 구간을 추가한 것입니다. `VillageMarineCoastAudit.Verify`의 `MARINE_COAST_AUDIT_OK`와 `MAGIC_VILLAGE_WEB_BUILD_OK` 확인. Unity 소스 패치는 격리된 `/ai-interop/runtime/magic-village-unity-ocean-worker3-20261019/worker3-unity-ocean.patch`에 보존했습니다. 신규 WebGL 빌드에 대한 `scripts/qa-unity-ocean-v25.mjs` 실제 Chrome WebGL 기동검사 **데스크톱/Galaxy 화면 크기 2/2 PASS, 콘솔 오류 0건** 확인했습니다. 이 검사는 휴대전화 실기기 QA가 아니라 Chrome 브라우저의 모의 화면 크기 검사입니다.
 
 **원화 품질:** 제공 자산은 자체 제작한 편집 가능한 일러스트레이션입니다. 외부 유료 고급 이미지 서비스 접근이 거부되어 외부 스톡·Firefly 비용은 발생하지 않았습니다. 사용자가 요구한 최상급 렌더/원화의 미감 승인은 별도 크리에이티브 QA 및 사용 권한 확보 후 재평가해야 합니다.
