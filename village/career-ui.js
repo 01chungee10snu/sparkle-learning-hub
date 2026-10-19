@@ -1,5 +1,5 @@
 import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js';
-import {academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT} from './career-academic-evidence-v28.js';
+import {academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT,SKKU_2025_RESULT_REPORT_PDF} from './career-academic-evidence-v28.js?v=skku-pdf-v28a';
 import {ARCHIVED_CAREER_NAMES} from './career-state.js';
 
 const subjects={math:['💎','수학'],korean:['🌸','국어'],english:['🪶','영어'],hanja:['🖋️','한자']};
@@ -168,7 +168,8 @@ export function mountCareerExplorer(container,{
      study.append(small('계산: (100 − 네 영역 백분위 평균 '+u.percentileMean+') × 100 = '+u.per10000SubjectMeanEquivalent+'명.'));
      study.append(small('⚠ '+u.caution));
      study.append(small('⚠ '+evidence.pathNote));
-     study.append(sourceLink('대입정보포털 어디가 · 2025학년도 정시 원문',u.sourceUrl));
+     study.append(sourceLink('대입정보포털 어디가 · 입학정보 확인',u.sourceUrl));
+     study.append(sourceLink('성균관대 2025 정시 입시결과 원문 PDF (7쪽)',SKKU_2025_RESULT_REPORT_PDF));
    }
    if(evidence.exam){
      const e=evidence.exam;

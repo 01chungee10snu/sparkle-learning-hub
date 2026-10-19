@@ -80,6 +80,7 @@ try{
    assert(inferred.includes('상위 약 100명'),inferred);
    assert((await page.locator('.career-study-evidence').innerText()).includes('전국 종합석차가 아닙니다'));
    assert((await page.locator('.career-study-evidence a[href*="adiga.kr"]').count())===1);
+   assert((await page.locator('.career-study-evidence a[href*="school.busanedu.net"][href$=".pdf"]').count())===1,'Original 2025 SKKU PDF must open directly');
 
    assert((await page.locator('.career-official-health-mean').innerText()).includes('28,518'));
    assert((await page.locator('.career-health-hourly').innerText()).includes('137,106'));

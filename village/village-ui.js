@@ -1,5 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
-import {mountCareerExplorer} from './career-ui.js?v=career-v28-20261019';
+import {mountCareerExplorer} from './career-ui.js?v=career-v28a-20261019';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.

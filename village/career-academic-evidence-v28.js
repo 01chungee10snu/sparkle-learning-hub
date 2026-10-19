@@ -7,6 +7,11 @@
  * to a notional "out of 10,000" is an intentionally labelled ILLUSTRATION.
  * It is NEVER a legal qualification or cutoff to pursue a profession.
  */
+// Original university-format public report, 2025 regular admission 70% student
+// subject percentiles, page 7. Hosted by a Korean public-school portal.
+// Verified against the source PDF on 2026-10-19 (medical, pharmacy, engineering,
+// software, economics, mathematics, business and semiconductor programmes).
+export const SKKU_2025_RESULT_REPORT_PDF='https://school.busanedu.net/upload/bbs/files/2025/hgschl/gaesung-h/ntt/1018346/09/9f8ddfc0ec73bd16a66881809e2ab2d8.pdf';
 const ADMISSION_URL='https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2026&unvCd=0000133';
 export const ADMISSION_REFERENCES=Object.freeze({
  medicine:Object.freeze({program:'성균관대학교 의예과',studentYear:2025,studentAdmission:'정시 수능위주 일반전형 가군',percentiles:[98,100,98,100],cut:'최종등록자 70% 컷(과목별 백분위 요약)',sourceUrl:ADMISSION_URL}),

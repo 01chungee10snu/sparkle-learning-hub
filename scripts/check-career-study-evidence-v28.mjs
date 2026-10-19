@@ -1,9 +1,19 @@
 import assert from 'node:assert/strict';
 import {CAREERS} from '../village/career-library.js';
-import {ADMISSION_REFERENCES,VERIFIED_EXAM_FACTS,academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT} from '../village/career-academic-evidence-v28.js';
+import {ADMISSION_REFERENCES,VERIFIED_EXAM_FACTS,academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT,SKKU_2025_RESULT_REPORT_PDF} from '../village/career-academic-evidence-v28.js';
 assert.equal(CAREERS.length,100);
 assert.equal(Object.keys(ADMISSION_REFERENCES).length,8);
 assert.equal(ADMISSION_REFERENCES.medicine.percentiles.join(','),'98,100,98,100');
+assert(SKKU_2025_RESULT_REPORT_PDF.startsWith('https://school.busanedu.net/'));
+assert(SKKU_2025_RESULT_REPORT_PDF.endsWith('.pdf'));
+// Extracted from the source's regular admissions table, final-registration
+// student at the 70% position (Korean, mathematics and two electives).
+const verifiedRows={medicine:[98,100,98,100],pharmacy:[99,98,100,94],
+ semiconductor:[95,98,96,94],software:[97,98,87,97],
+ economics:[96,93,92,91],mathematics:[94,95,94,96],
+ engineering:[86,97,90,100],business:[98,87,94,91]};
+for(const [key,percentiles] of Object.entries(verifiedRows))
+ assert.deepEqual(ADMISSION_REFERENCES[key].percentiles,percentiles,'Published SKKU 2025 table mismatch: '+key);
 assert.equal(VERIFIED_EXAM_FACTS.cpa.passedPer10000ExamTakers,2633);
 assert.equal(VERIFIED_EXAM_FACTS.bar.passedPer10000ExamTakers,5095);
 
