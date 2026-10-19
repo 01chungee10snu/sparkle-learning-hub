@@ -13,7 +13,7 @@ import * as VillageState from './village/village-state.js?v=unified-20261013';
 import * as RelationshipState from './village/relationship-state.js?v=ecology-v19-20261015';
 import * as EcologyState from './village/ecology-state.js?v=ecology-v19-20261015';
 import * as CloudSync from './platform/cloud-sync.js?v=fish-v24-20261018';
-import * as Resources from './platform/resource-economy.js?v=ocean-v25-career-v29-20261019';
+import * as Resources from './platform/resource-economy.js?v=onboarding-v30-20261019';
 import * as Careers from './village/career-state.js?v=career-v25-20261019';
 import {initMotion} from './platform/motion.js?v=unified-20261013';
 import {gradeResponse} from './platform/activities.js';

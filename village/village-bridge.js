@@ -10,7 +10,7 @@ import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from '../platform/resource-economy.js?v=ocean-v25-career-v29-20261019';
+import * as Resources from '../platform/resource-economy.js?v=onboarding-v30-20261019';
 import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
@@ -201,7 +201,7 @@ export function createVillageHost(emit) {
       displayName: CHILDREN[who],
       available: wallet.available,
       lifetime: wallet.lifetime,
-      resources:{available:resourceWallet.available,earned:resourceWallet.earned,spent:resourceWallet.spent,deficits:resourceWallet.deficits,balancedDays:resourceWallet.balancedDays},
+      resources:{available:resourceWallet.available,earned:resourceWallet.earned,spent:resourceWallet.spent,deficits:resourceWallet.deficits,balancedDays:resourceWallet.balancedDays,visitAward:resourceWallet.visitAward,visitBonuses:resourceWallet.visitBonuses},
       pond:{who,fish:resourceWallet.fish.filter(f=>f.owned&&f.world==='pond').map(f=>({id:f.id,name:f.name,color:f.color,size:f.size,growth:f.growth,feedDays:f.feedDays})),owned:resourceWallet.fish.filter(f=>f.owned&&f.world==='pond').length},
       // The canonical reward model awards verified answer/session/effort stars.
       reinforcementStars: wallet.effortStars||0,
@@ -228,14 +228,21 @@ export function createVillageHost(emit) {
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
     const who = Progress.learner();
+    const visit=(locationId,extras={})=>{
+      const bonus=Resources.awardFirstVisit(locationId,who);
+      if(extras.pondShop)extras.pondShop=Resources.wallet(catalog,who);
+      if(extras.career)extras.career={...extras.career,available:Resources.wallet(catalog,who).available};
+      return snapshot(action,requestId,{...extras,...(bonus?{firstVisitBonus:bonus}:{})});
+    };
     if (request.area==='home'||request.area==='plaza')currentArea=request.area;
     if(action.startsWith('GARDEN_')) {
       const selectedSlot=request.slot ?? (typeof response==='string'&&/^\d$/.test(response)?Number(response):-1);
-      return snapshot(action,requestId,mutateGarden({who,area:currentArea,action,slot:selectedSlot,
-        species:request.species,care:request.care,expectedStage:request.expectedStage}));
+      const result=mutateGarden({who,area:currentArea,action,slot:selectedSlot,
+        species:request.species,care:request.care,expectedStage:request.expectedStage});
+      return action==='GARDEN_OPEN'?visit('garden',result):snapshot(action,requestId,result);
     }
 
-    if (action === 'INIT') {reconcileMemoryWorld(who);return snapshot(action, requestId);}
+    if (action === 'INIT') {reconcileMemoryWorld(who);return visit(currentArea==='plaza'?'plaza':'home');}
     if (action === 'RELATIONSHIP_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
     if (action === 'ECOLOGY_OPEN') {reconcileMemoryWorld(who);return snapshot(action,requestId);}
     if (action === 'NPC_VISIT') {
@@ -254,7 +261,7 @@ export function createVillageHost(emit) {
         }))};
     };
     const careerView=()=>{const funds=Resources.wallet(catalog,who);return {dreams:Careers.careerSnapshot(who),unlocked:funds.careerUnlocked,available:funds.available};};
-    if (action === 'CAREER_OPEN') return snapshot(action,requestId,{district:'career',career:careerView()});
+    if (action === 'CAREER_OPEN') return visit('career',{district:'career',career:careerView()});
     if (action === 'CAREER_TOGGLE') {
       const result=Careers.toggleDream(who,itemId);
       return snapshot(action,requestId,{district:'career',career:{...careerView(),changed:itemId,selected:result.selected}});
@@ -267,7 +274,7 @@ export function createVillageHost(emit) {
     }
     if (action === 'POND_OPEN'||action==='OCEAN_OPEN') {
       const world=action==='POND_OPEN'?'pond':'ocean';
-      return snapshot(action,requestId,{district:world,pondShop:Resources.wallet(catalog,who)});
+      return visit(world,{district:world,pondShop:Resources.wallet(catalog,who)});
     }
     if (action === 'POND_ADOPT'||action==='OCEAN_ADOPT') {
       const world=action==='POND_ADOPT'?'pond':'ocean';
@@ -285,7 +292,7 @@ export function createVillageHost(emit) {
       if(!result.ok)throw new Error('생물 관찰 기록을 저장하지 못했어요.');
       return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 만나 보았어요.':creature.careMode==='observe'?'야생 생물을 안전한 거리에서 관찰했어요!':'물고기 친구가 먹이를 먹고 헤엄쳐요!'});
     }
-    if (action === 'SHOP_OPEN') return snapshot(action, requestId, {shop:shopState()});
+    if (action === 'SHOP_OPEN') return visit('shop',{shop:shopState()});
     if (action === 'SHOP_BUY') {
       if (typeof itemId!=='string' || itemId.length>80) throw new Error('선물 이름을 확인해 주세요.');
       const outcome=Rewards.purchaseReward(itemId,catalog,who);
@@ -356,19 +363,19 @@ export function createVillageHost(emit) {
     if(action==='AREA_OPEN'){
       const chosen=(district||response||'').toLowerCase();
       if(!Object.hasOwn(DISTRICTS,chosen))throw new Error('마법마을 지역을 선택해 주세요.');
-      if(chosen==='career')return snapshot(action,requestId,{district:chosen,career:careerView()});
-      if(chosen==='pond'||chosen==='ocean')return snapshot(action,requestId,{district:chosen,pondShop:Resources.wallet(catalog,who)});
-      if(chosen==='kma')return snapshot(action,requestId,{district:chosen,
+      if(chosen==='career')return visit(chosen,{district:chosen,career:careerView()});
+      if(chosen==='pond'||chosen==='ocean')return visit(chosen,{district:chosen,pondShop:Resources.wallet(catalog,who)});
+      if(chosen==='kma')return visit(chosen,{district:chosen,
         challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote});
-      if(chosen==='practice')return snapshot(action,requestId,{district:chosen,
+      if(chosen==='practice')return visit(chosen,{district:chosen,
         challenges:paperOptions(practiceChallenges),publicPractice:true,
         completionBonus:practiceChallenges.completionBonus,
         difficultyNote:practiceChallenges.accuracyNote});
-      if(chosen==='shop')return snapshot(action,requestId,{district:chosen,shop:shopState()});
-      if(chosen==='garden')return snapshot(action,requestId,{district:chosen,
+      if(chosen==='shop')return visit(chosen,{district:chosen,shop:shopState()});
+      if(chosen==='garden')return visit(chosen,{district:chosen,
         ...mutateGarden({who,area:currentArea,action:'GARDEN_OPEN',slot:-1})});
-      if(chosen==='growth')return snapshot(action,requestId,{district:chosen,growth:growthMap()});
-      return snapshot(action,requestId,{district:chosen,missions:areaMissions(chosen)});
+      if(chosen==='growth')return visit(chosen,{district:chosen,growth:growthMap()});
+      return visit(chosen,{district:chosen,missions:areaMissions(chosen)});
     }
     if (action === 'SHOW_BEBSU') return snapshot(action, requestId, {
       challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote

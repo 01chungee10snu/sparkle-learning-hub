@@ -27,11 +27,12 @@ const play=subject=>{
 };
 Resource.configure(catalog);
 let wallet=Resource.wallet(catalog,'tae');
-assert.equal(Resource.FISH_SPECIES.length,16);
-assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='pond').length,6);
-assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='ocean').length,10);
+assert.equal(Resource.FISH_SPECIES.length,64);
+assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='pond').length,24);
+assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='ocean').length,40);
 assert(Resource.FISH_SPECIES.every(f=>f.art===`./assets/marine-premium-v25/${f.id}.webp`));
-const oceanMilestones=Resource.FISH_SPECIES.filter(f=>f.world==='ocean').map(f=>f.minSolved);
+const oceanMilestones=['clownfish','blue-tang','shrimp','hermit-crab','sea-crab','seahorse','octopus','sea-turtle','reef-shark','humpback-whale']
+ .map(id=>Resource.FISH_SPECIES.find(f=>f.id===id)?.minSolved);
 assert.deepEqual(oceanMilestones,[14,24,34,46,60,78,98,125,165,220]);
 assert.deepEqual(wallet.available,{math:0,korean:0,english:0,hanja:0});
 play('math'); play('korean'); play('english');
@@ -83,4 +84,4 @@ assert(Resource.wallet(catalog,'tae').fish.some(f=>f.id==='guppy'&&f.owned));
 assert.equal(Resource.wallet(catalog,'tae').fish.find(f=>f.id==='goldfish').feedDays,1);
 const independent=Resource.earnedResources(catalog,'tae');
 assert(independent.independentItems>=12);
-console.log('PASS_RESOURCE_ECONOMY: 4 subjects, 16 premium pond/ocean species, progressive learning gates, career unlock coexistence, sibling isolation, merge idempotence, once-per-day care, original stars untouched');
+console.log('PASS_RESOURCE_ECONOMY: 4 subjects, 64 original pond/ocean species, progressive learning gates, career unlock coexistence, sibling isolation, merge idempotence, once-per-day care, original stars untouched');

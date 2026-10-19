@@ -73,9 +73,15 @@ try{
  const init=await request('INIT');
  assert.equal(init.who,'tae');
  assert.equal(init.available,0);
+ assert.equal(init.firstVisitBonus?.locationId,'home','Only first real entry mints a welcome award');
+ assert.equal(init.resources.available.math,1,'The first location credits the learner resource ledger');
+ const repeatHome=await request('INIT');
+ assert.equal(repeatHome.firstVisitBonus,undefined,'A repeated entry never mints again');
+ assert.equal(repeatHome.resources.available.math,1);
  for(const id of ['math','korean','english','academy']){
   const area=await request('AREA_OPEN',{district:id});
   assert.equal(area.district,id);
+  assert.equal(area.firstVisitBonus?.locationId,id,'Successful first district entry grants the fixed award');
   assert(area.missions.games.length>=3);
   const filter=id==='academy'?null:id;
   if(filter)assert(area.missions.games.every(g=>g.subject===filter));
@@ -97,13 +103,17 @@ try{
  assert.equal(hanjaFirst.question.choices.length,4);
  await request('CANCEL');
  const pond=await request('AREA_OPEN',{district:'pond'});
+ assert.equal(pond.firstVisitBonus?.locationId,'pond');
  assert.equal(pond.pondShop.fish.filter(f=>f.owned).length,1);
  assert.equal(pond.pond.fish.length,1,'Unity pond snapshot must contain pond residents only');
  assert.equal(pond.pond.fish[0].id,'guppy');
  assert.deepEqual(Object.keys(pond.resources.available).sort(),['english','hanja','korean','math']);
  const ocean=await request('AREA_OPEN',{district:'ocean'});
  assert.equal(ocean.district,'ocean');
- assert.equal(ocean.pondShop.fish.filter(f=>f.world==='ocean').length,10);
+ assert.equal(ocean.firstVisitBonus?.locationId,'ocean');
+ const revisitOcean=await request('AREA_OPEN',{district:'ocean'});
+ assert.equal(revisitOcean.firstVisitBonus,undefined,'The same ocean does not mint an additional award');
+ assert.equal(ocean.pondShop.fish.filter(f=>f.world==='ocean').length,40);
  assert.equal(ocean.pondShop.fish.filter(f=>f.world==='ocean'&&f.owned).length,0);
  assert(ocean.pondShop.fish.filter(f=>f.world==='ocean').every(f=>f.art.endsWith('/'+f.id+'.webp')));
  const blockedOceanId='ocean-learning-gate';
@@ -158,6 +168,7 @@ try{
  assert.equal(storage.get(OLD_KEY_B),historical[1]);
  Progress.selectLearner('se');
  const sePond=await request('POND_OPEN');
+ assert.equal(sePond.firstVisitBonus?.locationId,'pond','Sibling independently receives first pond visit');
  assert.equal(sePond.pondShop.fish.find(f=>f.id==='guppy').feedDays,0,'Siblings keep separate ponds');
  assert.equal(Rewards.wallet(catalog,'se').available,0);
  const child=await finish25('magic-g1-challenge','magic-g1-basic');

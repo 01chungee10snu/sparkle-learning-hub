@@ -19,3 +19,23 @@
 @keyframes water-drift{from{transform:translate3d(-8px,2px,0) rotate(-3deg)}to{transform:translate3d(12px,-9px,0) rotate(4deg)}}
 @media(max-width:610px){#village-ui .vh-water-panorama{min-height:195px}#village-ui .vh-water-resident{width:24%;height:82px}#village-ui .vh-pond-fish{gap:8px}#village-ui .vh-fish-art{width:98px;height:98px}}
 @media(prefers-reduced-motion:reduce){#village-ui .vh-water-resident{animation:none}}
+/* v30: readable resource gift and bounded water-species browsing */
+#village-ui .vh-first-visit{position:absolute;z-index:35;left:50%;bottom:calc(104px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(94vw,480px);padding:15px 18px;border:3px solid #f1ca6a;border-radius:22px;background:#fffaf0;color:#543672;box-shadow:0 9px 32px #27234455;display:grid;gap:5px;pointer-events:none;text-align:center;font-size:18px;line-height:1.4}
+#village-ui .vh-first-visit[hidden]{display:none}
+#village-ui .vh-first-visit-title{font-size:clamp(22px,5vw,30px);font-weight:900}
+#village-ui .vh-first-visit-place{font-weight:750}
+#village-ui .vh-first-visit-amounts{font-size:clamp(19px,4.3vw,25px);font-weight:900;word-spacing:5px}
+#village-ui .vh-first-visit-enter{animation:vh-gift-appear .5s ease-out both}
+@keyframes vh-gift-appear{from{opacity:0;transform:translate(-50%,20px) scale(.94)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+#village-ui .vh-water-filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+#village-ui .vh-water-filter,#village-ui .vh-water-page-button{font-size:16px;line-height:1.3;font-weight:850;min-height:46px;padding:9px 13px;border:2px solid #96c8d5;border-radius:14px;background:#fff;color:#23546c;cursor:pointer}
+#village-ui .vh-water-filter[aria-pressed=true]{color:#fff;background:#246b88;border-color:#246b88}
+#village-ui .vh-water-filter:focus-visible,#village-ui .vh-water-page-button:focus-visible{outline:3px solid #de9f42;outline-offset:2px}
+#village-ui .vh-water-page-button:disabled{opacity:.48;cursor:default}
+#village-ui .vh-water-paging{display:flex;align-items:center;justify-content:center;gap:13px;margin:12px 0 20px}
+#village-ui .vh-water-page-number,#village-ui .vh-water-count,#village-ui .vh-water-empty{font-size:16px;font-weight:800;color:#31596d}
+#village-ui .vh-water-empty{padding:18px 9px;text-align:center}
+#village-ui .vh-water-panorama{content-visibility:auto;contain-intrinsic-size:auto 220px}
+@media(max-width:430px){#village-ui .vh-first-visit{bottom:calc(110px + env(safe-area-inset-bottom));padding:12px 10px}#village-ui .vh-water-filter{flex:1 1 auto;padding:8px 9px}}
+@media(prefers-reduced-motion:reduce){#village-ui .vh-first-visit-enter{animation:none}}
+#village-ui[data-reduced-motion=true] .vh-first-visit-enter{animation:none}

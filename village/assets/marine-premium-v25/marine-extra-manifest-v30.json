@@ -1,0 +1,728 @@
+{
+  "version": "v30-20261019",
+  "count": 48,
+  "pond": 18,
+  "ocean": 30,
+  "creatures": [
+    {
+      "id": "platy",
+      "name": "플래티",
+      "world": "pond",
+      "scientific_group": "fish",
+      "svg": "platy.svg",
+      "webp": "platy.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "black-molly",
+      "name": "블랙 몰리",
+      "world": "pond",
+      "scientific_group": "fish",
+      "svg": "black-molly.svg",
+      "webp": "black-molly.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "zebra-danio",
+      "name": "제브라다니오",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "zebra-danio.svg",
+      "webp": "zebra-danio.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "cherry-barb",
+      "name": "체리바브",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "cherry-barb.svg",
+      "webp": "cherry-barb.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "harlequin-rasbora",
+      "name": "할리퀸 라스보라",
+      "world": "pond",
+      "scientific_group": "fish",
+      "svg": "harlequin-rasbora.svg",
+      "webp": "harlequin-rasbora.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "dwarf-gourami",
+      "name": "드워프 구라미",
+      "world": "pond",
+      "scientific_group": "round",
+      "svg": "dwarf-gourami.svg",
+      "webp": "dwarf-gourami.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "bronze-corydoras",
+      "name": "브론즈 코리도라스",
+      "world": "pond",
+      "scientific_group": "catfish",
+      "svg": "bronze-corydoras.svg",
+      "webp": "bronze-corydoras.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "otocinclus",
+      "name": "오토싱클루스",
+      "world": "pond",
+      "scientific_group": "catfish",
+      "svg": "otocinclus.svg",
+      "webp": "otocinclus.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "medaka",
+      "name": "메다카",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "medaka.svg",
+      "webp": "medaka.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "white-cloud-minnow",
+      "name": "백운산 금사어",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "white-cloud-minnow.svg",
+      "webp": "white-cloud-minnow.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "celestial-pearl-danio",
+      "name": "갤럭시 라스보라",
+      "world": "pond",
+      "scientific_group": "fish",
+      "svg": "celestial-pearl-danio.svg",
+      "webp": "celestial-pearl-danio.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "rummy-nose-tetra",
+      "name": "러미노즈 테트라",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "rummy-nose-tetra.svg",
+      "webp": "rummy-nose-tetra.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "discus",
+      "name": "디스커스",
+      "world": "pond",
+      "scientific_group": "disk",
+      "svg": "discus.svg",
+      "webp": "discus.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "german-blue-ram",
+      "name": "저먼 블루 라미레지",
+      "world": "pond",
+      "scientific_group": "round",
+      "svg": "german-blue-ram.svg",
+      "webp": "german-blue-ram.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "pearl-gourami",
+      "name": "펄 구라미",
+      "world": "pond",
+      "scientific_group": "round",
+      "svg": "pearl-gourami.svg",
+      "webp": "pearl-gourami.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "panda-corydoras",
+      "name": "팬더 코리도라스",
+      "world": "pond",
+      "scientific_group": "catfish",
+      "svg": "panda-corydoras.svg",
+      "webp": "panda-corydoras.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "scarlet-badis",
+      "name": "스칼렛 바디스",
+      "world": "pond",
+      "scientific_group": "fish",
+      "svg": "scarlet-badis.svg",
+      "webp": "scarlet-badis.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "clown-killifish",
+      "name": "클라운 킬리피시",
+      "world": "pond",
+      "scientific_group": "slender",
+      "svg": "clown-killifish.svg",
+      "webp": "clown-killifish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "yellowtail-damselfish",
+      "name": "노랑꼬리자리돔",
+      "world": "ocean",
+      "scientific_group": "fish",
+      "svg": "yellowtail-damselfish.svg",
+      "webp": "yellowtail-damselfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "royal-gramma",
+      "name": "로열 그라마",
+      "world": "ocean",
+      "scientific_group": "fish",
+      "svg": "royal-gramma.svg",
+      "webp": "royal-gramma.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "copperband-butterflyfish",
+      "name": "구리띠나비고기",
+      "world": "ocean",
+      "scientific_group": "disk",
+      "svg": "copperband-butterflyfish.svg",
+      "webp": "copperband-butterflyfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "longnose-butterflyfish",
+      "name": "긴주둥이나비고기",
+      "world": "ocean",
+      "scientific_group": "disk",
+      "svg": "longnose-butterflyfish.svg",
+      "webp": "longnose-butterflyfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "porcupinefish",
+      "name": "가시복",
+      "world": "ocean",
+      "scientific_group": "puffer",
+      "svg": "porcupinefish.svg",
+      "webp": "porcupinefish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "yellow-boxfish",
+      "name": "노랑거북복",
+      "world": "ocean",
+      "scientific_group": "box",
+      "svg": "yellow-boxfish.svg",
+      "webp": "yellow-boxfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "long-spined-urchin",
+      "name": "긴가시성게",
+      "world": "ocean",
+      "scientific_group": "urchin",
+      "svg": "long-spined-urchin.svg",
+      "webp": "long-spined-urchin.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "common-starfish",
+      "name": "일반불가사리",
+      "world": "ocean",
+      "scientific_group": "star",
+      "svg": "common-starfish.svg",
+      "webp": "common-starfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "moon-jelly",
+      "name": "보름달물해파리",
+      "world": "ocean",
+      "scientific_group": "jelly",
+      "svg": "moon-jelly.svg",
+      "webp": "moon-jelly.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "lion-mane-jelly",
+      "name": "사자갈기해파리",
+      "world": "ocean",
+      "scientific_group": "jelly",
+      "svg": "lion-mane-jelly.svg",
+      "webp": "lion-mane-jelly.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "bluespotted-ribbontail-ray",
+      "name": "푸른점가오리",
+      "world": "ocean",
+      "scientific_group": "ray",
+      "svg": "bluespotted-ribbontail-ray.svg",
+      "webp": "bluespotted-ribbontail-ray.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "manta-ray",
+      "name": "대왕쥐가오리",
+      "world": "ocean",
+      "scientific_group": "manta",
+      "svg": "manta-ray.svg",
+      "webp": "manta-ray.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "bottlenose-dolphin",
+      "name": "큰돌고래",
+      "world": "ocean",
+      "scientific_group": "dolphin",
+      "svg": "bottlenose-dolphin.svg",
+      "webp": "bottlenose-dolphin.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "whale-shark",
+      "name": "고래상어",
+      "world": "ocean",
+      "scientific_group": "shark",
+      "svg": "whale-shark.svg",
+      "webp": "whale-shark.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "giant-squid",
+      "name": "대왕오징어",
+      "world": "ocean",
+      "scientific_group": "squid",
+      "svg": "giant-squid.svg",
+      "webp": "giant-squid.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "american-lobster",
+      "name": "아메리카바닷가재",
+      "world": "ocean",
+      "scientific_group": "lobster",
+      "svg": "american-lobster.svg",
+      "webp": "american-lobster.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "spiny-lobster",
+      "name": "닭새우",
+      "world": "ocean",
+      "scientific_group": "lobster",
+      "svg": "spiny-lobster.svg",
+      "webp": "spiny-lobster.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "cleaner-shrimp",
+      "name": "흰줄박이청소새우",
+      "world": "ocean",
+      "scientific_group": "shrimp",
+      "svg": "cleaner-shrimp.svg",
+      "webp": "cleaner-shrimp.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "nudibranch",
+      "name": "파란갯민숭달팽이",
+      "world": "ocean",
+      "scientific_group": "nudibranch",
+      "svg": "nudibranch.svg",
+      "webp": "nudibranch.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "giant-clam",
+      "name": "대왕조개",
+      "world": "ocean",
+      "scientific_group": "clam",
+      "svg": "giant-clam.svg",
+      "webp": "giant-clam.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "sea-anemone",
+      "name": "말미잘",
+      "world": "ocean",
+      "scientific_group": "anemone",
+      "svg": "sea-anemone.svg",
+      "webp": "sea-anemone.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "staghorn-coral",
+      "name": "사슴뿔산호",
+      "world": "ocean",
+      "scientific_group": "coral",
+      "svg": "staghorn-coral.svg",
+      "webp": "staghorn-coral.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "sea-cucumber",
+      "name": "해삼",
+      "world": "ocean",
+      "scientific_group": "cucumber",
+      "svg": "sea-cucumber.svg",
+      "webp": "sea-cucumber.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "leafy-seadragon",
+      "name": "나뭇잎해룡",
+      "world": "ocean",
+      "scientific_group": "seadragon",
+      "svg": "leafy-seadragon.svg",
+      "webp": "leafy-seadragon.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "flame-angelfish",
+      "name": "불꽃천사고기",
+      "world": "ocean",
+      "scientific_group": "disk",
+      "svg": "flame-angelfish.svg",
+      "webp": "flame-angelfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "feed",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "mandarinfish",
+      "name": "만다린피시",
+      "world": "ocean",
+      "scientific_group": "goby",
+      "svg": "mandarinfish.svg",
+      "webp": "mandarinfish.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "weedy-seadragon",
+      "name": "풀잎해룡",
+      "world": "ocean",
+      "scientific_group": "seadragon",
+      "svg": "weedy-seadragon.svg",
+      "webp": "weedy-seadragon.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "giant-pacific-octopus",
+      "name": "큰태평양문어",
+      "world": "ocean",
+      "scientific_group": "octopus",
+      "svg": "giant-pacific-octopus.svg",
+      "webp": "giant-pacific-octopus.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "beluga-whale",
+      "name": "흰고래",
+      "world": "ocean",
+      "scientific_group": "whale",
+      "svg": "beluga-whale.svg",
+      "webp": "beluga-whale.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    },
+    {
+      "id": "leatherback-turtle",
+      "name": "장수거북",
+      "world": "ocean",
+      "scientific_group": "turtle",
+      "svg": "leatherback-turtle.svg",
+      "webp": "leatherback-turtle.webp",
+      "px": [
+        1536,
+        1152
+      ],
+      "transparent": true,
+      "careMode": "observe",
+      "license": "Original project-authored vector drawing; no third-party source"
+    }
+  ]
+}

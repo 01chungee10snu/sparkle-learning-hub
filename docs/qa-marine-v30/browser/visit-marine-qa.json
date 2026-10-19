@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "summary": [
+    {
+      "device": "desktop",
+      "pass": true,
+      "waterSpecies": 40,
+      "firstVisitReceipts": {
+        "tae": 2,
+        "se": 1
+      },
+      "errors": []
+    },
+    {
+      "device": "galaxy",
+      "pass": true,
+      "waterSpecies": 40,
+      "firstVisitReceipts": {
+        "tae": 2,
+        "se": 1
+      },
+      "errors": []
+    },
+    {
+      "device": "tablet",
+      "pass": true,
+      "waterSpecies": 40,
+      "firstVisitReceipts": {
+        "tae": 2,
+        "se": 1
+      },
+      "errors": []
+    }
+  ]
+}

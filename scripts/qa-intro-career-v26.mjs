@@ -69,6 +69,7 @@ try{
    await page.locator('#vh-map').click();
    await page.locator('.vh-map-district-entry').filter({hasText:'푸른 바다'}).click();
    await page.waitForFunction(()=>document.querySelector('#vh-title')?.textContent.includes('푸른 바다'),null,{timeout:10000});
+   assert((await page.locator('#vh-counter').innerText()).includes('40종'));
    assert.equal(await page.locator('.vh-pond-fish').count(),10);
    const marineImages=page.locator('.vh-pond-fish .vh-fish-art img');
    assert.equal(await marineImages.count(),10);
@@ -80,6 +81,7 @@ try{
       img.addEventListener('error',()=>{clearTimeout(timer);reject(new Error('Marine art failed: '+img.src));},{once:true});
     }));
    }
+   for(let p=0;p<3;p++)await page.locator('.vh-water-paging').getByRole('button',{name:/다음/}).click();
    assert(await page.locator('.vh-pond-fish[data-species="reef-shark"]').innerText().then(t=>t.includes('학습을 통해 해금해요')));
    await page.screenshot({path:path.join(output,device.name+'-ocean-entry.png')});
    await page.locator('#vh-exit').click();

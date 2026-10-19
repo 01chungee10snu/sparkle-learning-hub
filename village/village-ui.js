@@ -66,6 +66,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' </div>',
     '</aside>',
     '<p id="village-toast" role="alert" hidden></p>',
+    '<div id="vh-first-visit" class="vh-first-visit" role="status" aria-live="polite" aria-atomic="true" hidden></div>',
     '<div id="village-dialog-wrap" hidden aria-busy="false">',
     ' <section class="vh-dialog" role="dialog" aria-modal="true" aria-labelledby="vh-title">',
     '  <header class="vh-dialog-title"><h2 id="vh-title" tabindex="-1">배움 이야기</h2>',
@@ -112,6 +113,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   const resourceMeta={math:['💎','수정'],korean:['🌸','꽃잎'],english:['🪶','깃털'],hanja:['🖋️','먹방울']};
   const resourceBalancesByWho={tae:null,se:null};
   let gainedFromAnswer=[];
+  const waterBrowse={pond:{filter:'all',page:0},ocean:{filter:'all',page:0}};
+  const firstVisitSeen=new Set();
+  let firstVisitTimer=0;
   let experimentalArt=false;
   // Decorative stories never change the authoritative host's questions, stars or IRT.
   let activeStory=null;
@@ -161,6 +165,25 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.toast.textContent = message;
     ui.toast.hidden = !message;
     if (message) console.warn('[마법마을]', message);
+  }
+  function showFirstVisitBonus(bonus) {
+    if(!bonus||!bonus.locationId||!bonus.amounts||typeof bonus.amounts!=='object')return;
+    const key=who+':'+bonus.locationId;
+    if(firstVisitSeen.has(key))return;
+    const parts=Object.entries(resourceMeta).map(([id,[emoji]])=>{
+      const n=Number(bonus.amounts[id]);
+      return Number.isSafeInteger(n)&&n>0?emoji+' +'+n:null;
+    }).filter(Boolean);
+    if(!parts.length)return;
+    firstVisitSeen.add(key);
+    const toast=$('vh-first-visit');
+    toast.replaceChildren(label('strong','🎁 첫 방문 선물!','vh-first-visit-title'),label('span',String(bonus.label||'새로운 장소'),'vh-first-visit-place'),label('span',parts.join('  '),'vh-first-visit-amounts'));
+    toast.hidden=false;
+    toast.classList.remove('vh-first-visit-enter');
+    void toast.offsetWidth;
+    toast.classList.add('vh-first-visit-enter');
+    window.clearTimeout(firstVisitTimer);
+    firstVisitTimer=window.setTimeout(()=>{toast.hidden=true;toast.classList.remove('vh-first-visit-enter');},6500);
   }
   function request(action, extra = {}) {
     if (busy) return;
@@ -878,7 +901,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     panorama.setAttribute('aria-label',ocean?'바다 보호구역 풍경':'연못 풍경');
     panorama.append(label('div',ocean?'산호초에서 먼바다까지, 함께 넓어지는 세상':'작은 연못에서 시작하는 생명의 이야기','vh-water-caption'));
     const residents=label('div','','vh-water-residents');
-    for(const resident of fishInWorld.filter(f=>f.owned)){
+    for(const resident of fishInWorld.filter(f=>f.owned).slice(0,8)){
       const avatar=label('div','','vh-water-resident');avatar.style.setProperty('--swim-index',fishInWorld.indexOf(resident));
       const art=document.createElement('img');art.src=resident.art;art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
       avatar.append(art);residents.append(avatar);
@@ -894,8 +917,37 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     ui.body.append(resources);
     paragraph('새로운 문제를 스스로 해결하면 과목별 자원을 얻어요. 학습 성취와 자원이 쌓이면 '+(ocean?'작은 생물부터 거북·상어·고래까지 서식지가 열려요.':'연못의 새로운 친구가 찾아와요.')+' 세 과목을 같은 날 배우면 균형 보너스도 받아요.','vh-story');
+    const browse=waterBrowse[world];
+    const toolbar=label('nav','','vh-water-filters');
+    toolbar.setAttribute('aria-label','물속 친구 탐색');
     const list=label('div','','vh-pond-species');
-    for(const fish of fishInWorld){
+    const paging=label('nav','','vh-water-paging');
+    paging.setAttribute('aria-label','물속 친구 페이지');
+    const counts=label('p','','vh-water-count');
+    const filters=[['all','전체'],['owned','보유'],['available','해금 가능']];
+    const renderPage=()=>{
+      const visible=fishInWorld.filter(f=>browse.filter==='owned'?f.owned:browse.filter==='available'?!f.owned&&f.canAdopt:true);
+      const pages=Math.max(1,Math.ceil(visible.length/10));
+      browse.page=Math.min(browse.page,pages-1);
+      counts.textContent='친구 '+visible.length+'종 · '+(browse.page+1)+' / '+pages+'쪽';
+      for(const control of toolbar.querySelectorAll('button'))control.setAttribute('aria-pressed',String(control.dataset.filter===browse.filter));
+      list.replaceChildren();
+      for(const fish of visible.slice(browse.page*10,browse.page*10+10))list.append(buildFishCard(fish));
+      if(!visible.length)list.append(label('p','아직 해당하는 친구가 없어요. 다른 분류도 살펴보세요.','vh-water-empty'));
+      paging.replaceChildren();
+      const prev=button('← 이전',()=>{browse.page--;renderPage();},'vh-water-page-button');
+      prev.disabled=browse.page===0;
+      const next=button('다음 →',()=>{browse.page++;renderPage();},'vh-water-page-button');
+      next.disabled=browse.page>=pages-1;
+      paging.append(prev,label('span',(browse.page+1)+' / '+pages,'vh-water-page-number'),next);
+    };
+    for(const [value,title] of filters){
+      const filter=button(title,()=>{browse.filter=value;browse.page=0;renderPage();},'vh-water-filter');
+      filter.dataset.filter=value;
+      toolbar.append(filter);
+    }
+    ui.body.append(toolbar,counts);
+    function buildFishCard(fish){
       const article=label('article','','vh-pond-fish');
       article.dataset.species=fish.id;
       const imageWrap=label('span','','vh-fish-emoji vh-fish-art');
@@ -917,9 +969,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         const adopt=button(fish.canAdopt?(ocean?'🌊 바다 보호구역 열기':'🐟 연못에 초대하기'):fish.meetsLearning?'자원을 모으는 중':'학습을 통해 해금해요',()=>request(ocean?'OCEAN_ADOPT':'POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
         adopt.disabled=!fish.canAdopt;copy.append(adopt);
       }
-      article.append(copy);list.append(article);
+      article.append(copy);return article;
     }
-    ui.body.append(list);
+    renderPage();
+    ui.body.append(list,paging);
     if(Object.values(data.deficits||{}).some(v=>v>0))
       paragraph('다른 기기의 구매 기록이 합쳐져 자원이 부족할 수 있습니다. 추가 교환은 잠시 중지하고 보호자와 기록을 확인해 주세요.','vh-small');
     ui.title.focus({preventScroll:true});
@@ -1358,6 +1411,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         })).filter(gain=>gain.amount>0);
       resourceBalancesByWho[who]=next;
     }
+    showFirstVisitBonus(data.firstVisitBonus);
     ui.stars.textContent=String(data.available??0);
     if(data.cosmetics&&typeof data.cosmetics==='object'){
       const equipped=Object.values(data.cosmetics).filter(Boolean);
