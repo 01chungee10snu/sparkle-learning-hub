@@ -1,4 +1,4 @@
-import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js';
+import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js?v=career-v29-20261019';
 import {academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT,SKKU_2025_RESULT_REPORT_PDF} from './career-academic-evidence-v28.js?v=skku-pdf-v28a';
 import {ARCHIVED_CAREER_NAMES} from './career-state.js';
 
@@ -12,6 +12,32 @@ const el=(tag,klass='',value='')=>{
  return node;
 };
 const small=(txt)=>el('p','career-detail-copy',txt);
+const CHILD_FIRST_CAREERS=Object.freeze([
+ 'career-410','career-395','career-376','doctor','veterinarian',
+ 'career-385','career-359','pilot','career-172','career-173',
+ 'career-354','dentist','career-180','career-142','career-426',
+ 'career-937','career-1441','career-262','career-322','game-designer',
+ 'career-332','career-10106','career-379','career-397','career-392',
+ 'career-344','career-267','career-264','career-294','career-398',
+ 'career-413','career-5','career-10115','robot-engineer','architect'
+]);
+const childFriendlyRank=new Map(CHILD_FIRST_CAREERS.map((id,index)=>[id,index]));
+const friendlyOrder=(a,b)=>(childFriendlyRank.get(a.id)??999)-(childFriendlyRank.get(b.id)??999)
+ ||a.name.localeCompare(b.name,'ko');
+function careerArtwork(c,kind){
+ const img=el('img',kind==='detail'?'career-detail-artwork':'career-card-artwork');
+ img.src=c.illustration;
+ img.alt=c.name+'의 어린이 직업 일러스트';
+ img.width=kind==='detail'?320:220;
+ img.height=kind==='detail'?260:180;
+ img.loading=kind==='detail'?'eager':'lazy';
+ img.decoding='async';
+ img.addEventListener('error',()=>{
+  img.replaceWith(el('span',kind==='detail'?'career-detail-icon':'career-card-icon',c.emoji));
+ },{once:true});
+ return img;
+}
+
 const sourceLink=(label,url)=>{
  const a=el('a','career-source-link',label+' ↗');
  a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;
@@ -37,12 +63,13 @@ export function mountCareerExplorer(container,{
  dreams=[],unlocked=[],available={},selectedId='',onSelect,onDream,onTravel,onUnlock
 }={}){
  if(!(container instanceof Element))throw new TypeError('Career container required');
- const state={group:'all',term:'',sort:'wage',selected:selectedId,
+ const state={group:'all',term:'',sort:'familiar',selected:selectedId,
               dreams:new Set(dreams),unlocked:new Set(unlocked)};
  const intro=el('p','career-promise','직업 100가지 · 어떤 꿈을 선택할까?');
- const ribbon=el('p','career-integrity','커리어넷 직업별 임금 중앙값을 기준으로 정렬할 수 있어요. 직업의 존엄성·사회적 위세·진입 시험 등수를 매긴 것이 아닙니다.');
- const socioeconomic=el('p','career-oecd-evidence',
-  '📊 OECD 2025: 한국 고등교육 이수 근로자의 소득은 고졸 근로자보다 집단 평균 31% 높았습니다. 공부는 선택지를 넓힐 수 있지만, 개개인의 시험점수나 소득을 보장하지 않습니다.');
+ const ribbon=el('p','career-integrity','먼저 익숙한 직업부터 만나봐요! 정렬은 바꿀 수 있고, 소득순이 직업의 가치 순위는 아니에요.');
+ const socioeconomic=el('details','career-oecd-evidence');
+ socioeconomic.append(el('summary','','📊 공부와 직업의 관계 · 근거 펼쳐보기'),
+   small('OECD 2025: 한국 고등교육 이수 근로자의 소득은 고졸 근로자보다 집단 평균 31% 높았습니다. 공부는 선택지를 넓힐 수 있지만, 개개인의 시험점수나 소득을 보장하지 않습니다.'));
  const layout=el('div','career-explorer'),filters=el('div','career-filters'),
    search=el('input','career-search'),sortControl=el('select','career-sort'),
    grid=el('div','career-grid'),details=el('section','career-details');
@@ -51,13 +78,16 @@ export function mountCareerExplorer(container,{
  search.setAttribute('aria-label','직업 이름 검색');
  sortControl.setAttribute('aria-label','직업 목록 정렬');
  for(const [key,name] of [
+  ['familiar','어린이에게 친숙한 순 ✨'],
+  ['favorites','내 꿈 후보 먼저 💖'],
   ['wage','연봉 중앙값 높은 순 (100개 내)'],
   ['wageAsc','연봉 중앙값 낮은 순 (100개 내)'],
-  ['name','이름 가나다순']
+  ['name','이름 가나다순'],
+  ['group','직업 분야별']
  ]){
   const option=el('option','',name);option.value=key;sortControl.append(option);
  }
- sortControl.value='wage';
+ sortControl.value='familiar';
  const toolbar=el('div','career-toolbar');
  toolbar.append(search,sortControl);
  filters.setAttribute('aria-label','직업 분야 선택');
@@ -77,20 +107,25 @@ export function mountCareerExplorer(container,{
   grid.replaceChildren();
   const listed=CAREERS.filter(c=>(state.group==='all'||c.group===state.group)&&
     (!state.term||(c.name+' '+c.mission).includes(state.term)));
-  if(state.sort==='name')listed.sort((a,b)=>a.name.localeCompare(b.name,'ko'));
-  else if(state.sort==='wageAsc')listed.reverse();
+  if(state.sort==='familiar')listed.sort(friendlyOrder);
+  else if(state.sort==='favorites')listed.sort((a,b)=>Number(state.dreams.has(b.id))-Number(state.dreams.has(a.id))||friendlyOrder(a,b));
+  else if(state.sort==='name')listed.sort((a,b)=>a.name.localeCompare(b.name,'ko'));
+  else if(state.sort==='group')listed.sort((a,b)=>a.group.localeCompare(b.group)||friendlyOrder(a,b));
+  else if(state.sort==='wageAsc')listed.sort((a,b)=>a.annualMedianWan-b.annualMedianWan);
+  else if(state.sort==='wage')listed.sort((a,b)=>b.annualMedianWan-a.annualMedianWan);
   count.textContent='직업 '+listed.length+'개 · 내 꿈 후보 '+state.dreams.size+'개 · 통계 상세 해금 '+state.unlocked.size+'개';
   for(const c of listed){
    const b=el('button','career-card');
    b.type='button';b.dataset.career=c.id;
    if(state.selected===c.id)b.setAttribute('aria-pressed','true');
-   const art=el('span','career-card-icon',c.emoji),
+   const art=careerArtwork(c,'card'),
      title=el('span','career-card-label',c.name),
      note=el('span','career-card-caption',c.mission),
      fav=el('span','career-saved-mark',
        [state.dreams.has(c.id)?'💖 내 꿈 후보':'',
         state.unlocked.has(c.id)?'📚 상세 열람 완료':''].filter(Boolean).join(' · '));
-   b.append(art,title,note,fav);
+   const peek=el('span','career-peek-label',state.unlocked.has(c.id)?'✨ 직업 통계 열림':'🔎 중요한 숫자는 배움으로 발견');
+   b.append(art,title,note,peek,fav);
    b.addEventListener('click',()=>showDetail(c.id));
    grid.append(b);
   }
@@ -99,10 +134,11 @@ export function mountCareerExplorer(container,{
  function showDetail(id){
   const c=CAREERS.find(c=>c.id===id);if(!c)return;
   state.selected=id;onSelect?.(id);details.replaceChildren();
+  layout.classList.add('career-detail-open');
   details.classList.add('selected');
   const backToList=()=>{
    state.selected='';onSelect?.('');details.replaceChildren();
-   details.classList.remove('selected');updateGrid();
+   details.classList.remove('selected');layout.classList.remove('career-detail-open');updateGrid();
    grid.scrollIntoView({block:'start',behavior:'auto'});
   };
   const back=()=>{
@@ -110,7 +146,7 @@ export function mountCareerExplorer(container,{
    b.type='button';b.addEventListener('click',backToList);return b;
   };
   details.append(back());
-  details.append(el('div','career-detail-icon',c.emoji),el('h3','career-detail-name',c.name));
+  details.append(careerArtwork(c,'detail'),el('h3','career-detail-name',c.name));
   const group=CAREER_GROUPS.find(g=>g.id===c.group);
   details.append(el('p','career-detail-category',group.emoji+' '+group.name));
   addDetail(details,'🌎 어떤 일을 할까?',c.mission);
@@ -192,7 +228,21 @@ export function mountCareerExplorer(container,{
    facts.append(study);
   }else{
    facts.classList.add('locked');
-   facts.append(small('🗝️ 연봉 중앙값, 시간당 환산, 학력분포 등 출처가 있는 상세 통계는 서로 다른 두 과목의 배움 화폐로 한 번 열면 계속 읽을 수 있어요.'));
+   facts.append(small('🌟 이 직업의 모습·하는 일·필요한 공부·체험 미션은 누구나 볼 수 있어요. 중요한 숫자 정보만 두 과목의 배움 화폐로 열어 봐요.'));
+   const evidence=academicSignalsForCareer(c);
+   addDetail(facts,'📚 먼저 알아보는 교육·자격 경로',evidence.mandatory);
+   const peek=el('div','career-locked-preview');
+   for(const [heading,description] of [
+    ['💰 연봉 중앙값','🔒 금액은 아직 비밀이에요'],
+    ['⏱️ 1시간당 환산','🔒 어느 정도일까요?'],
+    ['🎓 학력·입결·시험 비교','🔒 숫자 근거를 더 알아봐요']
+   ]){
+    const tile=el('div','career-locked-stat');
+    tile.append(el('strong','',heading),el('span','career-lock-value',description));
+    peek.append(tile);
+   }
+   facts.append(peek);
+   facts.append(small('보이는 자격 요건은 실제 준비 경로에 대한 설명입니다. 잠긴 숫자를 열어도 그 직업을 가지기 위한 필수 학생 석차가 생기는 것은 아니에요.'));
    const holdings=el('div','career-balance');
    for(const subject of subjectIds){
     const [emoji,name]=subjects[subject],value=Number(available[subject]||0);

@@ -1,0 +1,606 @@
+{
+  "version": 29,
+  "license": "Original generated vector portraits, project-owned, no third-party image dependencies",
+  "illustrations": [
+    {
+      "id": "ceo",
+      "name": "기업고위임원",
+      "src": "./assets/career-illustrations/ceo.svg",
+      "sha256": "4e508e12dd8c4278930e4d2a3cad88d6d5635ca1552dede9787ffbed82f4253c"
+    },
+    {
+      "id": "pilot",
+      "name": "비행기조종사",
+      "src": "./assets/career-illustrations/pilot.svg",
+      "sha256": "7adf396d85c18764e04281bb445d92fc8373245f2e57a6b5d458ceee59c86d83"
+    },
+    {
+      "id": "dentist",
+      "name": "치과의사",
+      "src": "./assets/career-illustrations/dentist.svg",
+      "sha256": "9e2d7481b6113f0853c30cdf197ecc899699feecd2539fdda652887e91b70d06"
+    },
+    {
+      "id": "career-37",
+      "name": "한의사",
+      "src": "./assets/career-illustrations/career-37.svg",
+      "sha256": "a6a956dd2553596f886727e8e03f9b28bde60c089dc676c0c21fdf61fc60cc63"
+    },
+    {
+      "id": "doctor",
+      "name": "일반의사",
+      "src": "./assets/career-illustrations/doctor.svg",
+      "sha256": "dd254b5fc5227c1c7f64dd420d907336922d39f81df00bbf6ec6a6cccde73026"
+    },
+    {
+      "id": "career-364",
+      "name": "이공학계열교수",
+      "src": "./assets/career-illustrations/career-364.svg",
+      "sha256": "04caeca489e3edb4ed46257f0e854f27bb395ae3c08275a586f385344c1898a3"
+    },
+    {
+      "id": "lawyer",
+      "name": "변호사",
+      "src": "./assets/career-illustrations/lawyer.svg",
+      "sha256": "eeff827c4997a82ad8bcc7fb6fab71d37dcf05efa03e7f3609c23b06292d7125"
+    },
+    {
+      "id": "judge",
+      "name": "판사",
+      "src": "./assets/career-illustrations/judge.svg",
+      "sha256": "2c4ebb4d70a1c2ebb92821b74c0c19ba6a6c23b0828ab949c87986f7fd1976d6"
+    },
+    {
+      "id": "accountant",
+      "name": "회계사",
+      "src": "./assets/career-illustrations/accountant.svg",
+      "sha256": "ecbb78204c8fe682583a498aa642b5eefc881eea176377fffa71ca0069d4acf5"
+    },
+    {
+      "id": "economist",
+      "name": "경제학연구원",
+      "src": "./assets/career-illustrations/economist.svg",
+      "sha256": "6c3aa74b5039f6c670723e3fcc1f79742b2fdd4e7924ec97bb80f5391e8de869"
+    },
+    {
+      "id": "career-199",
+      "name": "검사",
+      "src": "./assets/career-illustrations/career-199.svg",
+      "sha256": "937dc57dc5944ba7a4e922badce26b281fd2d7494b87357c416f7cf6f3b1888a"
+    },
+    {
+      "id": "career-10115",
+      "name": "디지털 헬스케어 기기 개발자",
+      "src": "./assets/career-illustrations/career-10115.svg",
+      "sha256": "5e9c4fa65c07f3fc9f8ee341205151484d9b08af6cfd2f948a210549c0daf77e"
+    },
+    {
+      "id": "robot-engineer",
+      "name": "지능형 로봇개발자",
+      "src": "./assets/career-illustrations/robot-engineer.svg",
+      "sha256": "27f5b41fcdf07450799fffd7de4086a63214cbfa570802a3ac7c02b4c642ce5b"
+    },
+    {
+      "id": "career-198",
+      "name": "감정평가사",
+      "src": "./assets/career-illustrations/career-198.svg",
+      "sha256": "c1b47b91307a329fe571fd2a62252bfd19053ddc9f72add34b971c2f7c9f6686"
+    },
+    {
+      "id": "career-224",
+      "name": "세무사",
+      "src": "./assets/career-illustrations/career-224.svg",
+      "sha256": "562a00e34859c223b445410cf9ede304f114d355a00b4b391edde7c22b7b747f"
+    },
+    {
+      "id": "career-8",
+      "name": "물리학연구원",
+      "src": "./assets/career-illustrations/career-8.svg",
+      "sha256": "f839883651d287d159c7a4780243d3d3fc5b9bc8a5d360b79194683206d0969f"
+    },
+    {
+      "id": "diplomat",
+      "name": "외교관",
+      "src": "./assets/career-illustrations/diplomat.svg",
+      "sha256": "edafad727a13e44786acc6f2bacf2246439dbd66528bfba604259b9a8e101ada"
+    },
+    {
+      "id": "ai-researcher",
+      "name": "인공지능 엔지니어",
+      "src": "./assets/career-illustrations/ai-researcher.svg",
+      "sha256": "bea302b86d33ada24589687907882576d551e99b861b0e6bb5be2f0d1e35535e"
+    },
+    {
+      "id": "career-374",
+      "name": "변리사",
+      "src": "./assets/career-illustrations/career-374.svg",
+      "sha256": "f077ee5716ddff17252ae72525d725ef902bc0266410dd30fbf79aa2e9fc7b63"
+    },
+    {
+      "id": "pharmacist",
+      "name": "약사 및 한약사",
+      "src": "./assets/career-illustrations/pharmacist.svg",
+      "sha256": "efbc709406df9c2a228de8745a0398c0156cb9fd0e4e036ba78c74c11e660142"
+    },
+    {
+      "id": "career-10116",
+      "name": "신소재 개발 연구원",
+      "src": "./assets/career-illustrations/career-10116.svg",
+      "sha256": "4af3e9a96ec125682a021490f29a3ccd46c26027bd3c68ffa0bb8dd2c6295079"
+    },
+    {
+      "id": "veterinarian",
+      "name": "수의사",
+      "src": "./assets/career-illustrations/veterinarian.svg",
+      "sha256": "9ff4c54ea0571c5ceb383f24b1708232bd54812acb18253311accd80710b422c"
+    },
+    {
+      "id": "career-950",
+      "name": "투자분석가(애널리스트)",
+      "src": "./assets/career-illustrations/career-950.svg",
+      "sha256": "b1dac1ed18de0ffe77625def8a0541916459e9d2f9ea0414b0a1fdd7e9e82a57"
+    },
+    {
+      "id": "career-244",
+      "name": "금융자산운용가(펀드매니저)",
+      "src": "./assets/career-illustrations/career-244.svg",
+      "sha256": "351c2de23e01f6767d1c4d00ca50e124c145f128f6e81c81020cc0b9f840ab51"
+    },
+    {
+      "id": "career-217",
+      "name": "보험계리인",
+      "src": "./assets/career-illustrations/career-217.svg",
+      "sha256": "ee9241c1a60209688142a063d631401419d85b522aa0e55878755b1a885e480e"
+    },
+    {
+      "id": "career-66",
+      "name": "로봇연구원",
+      "src": "./assets/career-illustrations/career-66.svg",
+      "sha256": "b2b8c10a5c3e4cd8e8e61e4af510250679a3ecfa0e6a732b46d40cf8ce0c536d"
+    },
+    {
+      "id": "career-104",
+      "name": "원자력연구원",
+      "src": "./assets/career-illustrations/career-104.svg",
+      "sha256": "8f8aedc83e8202f86d63941b427aaeba9f6053d18ed635358ef2c86a83d60bf0"
+    },
+    {
+      "id": "astronautical",
+      "name": "항공우주공학기술자",
+      "src": "./assets/career-illustrations/astronautical.svg",
+      "sha256": "b99ef768c967d305069294f4bcbc30c82512e5f1a5fe1dc9d5d6e8aa4f66a48b"
+    },
+    {
+      "id": "career-10105",
+      "name": "태양광발전연구 및 개발자",
+      "src": "./assets/career-illustrations/career-10105.svg",
+      "sha256": "16acc6b4907bb578f737dc8b5132a2a3474586886ae9b4190062e3c11e79af02"
+    },
+    {
+      "id": "career-148",
+      "name": "항공교통관제사",
+      "src": "./assets/career-illustrations/career-148.svg",
+      "sha256": "2b1180c94c41ebf5db88753d8a9a56d9872616a527bd8a7df9b898a6311f0a68"
+    },
+    {
+      "id": "career-202",
+      "name": "경영컨설턴트",
+      "src": "./assets/career-illustrations/career-202.svg",
+      "sha256": "e3d906f51464d2eb61f77de066379a19273e029907093591583f650ad50bd4df"
+    },
+    {
+      "id": "career-137",
+      "name": "토목공학기술자",
+      "src": "./assets/career-illustrations/career-137.svg",
+      "sha256": "c83a3907ba22e972a90cb1c3e36e7c97f3ad59590940876034eeaedd4d35cc9f"
+    },
+    {
+      "id": "career-56",
+      "name": "기계공학 기술자ㆍ연구원",
+      "src": "./assets/career-illustrations/career-56.svg",
+      "sha256": "8ef4fd365065273e46700c61eeb391189eb51da466829e25b53dee772df7059e"
+    },
+    {
+      "id": "career-10108",
+      "name": "배터리 기술자",
+      "src": "./assets/career-illustrations/career-10108.svg",
+      "sha256": "db1f5a2b553542d02624189479971ee1d31a8b0d419912ed0355d39c94f02b18"
+    },
+    {
+      "id": "architect",
+      "name": "건축사",
+      "src": "./assets/career-illustrations/architect.svg",
+      "sha256": "d4dc9909ca94b692586c922663d35b0822584f950dfdd685e6a779415c4d0e3a"
+    },
+    {
+      "id": "career-1436",
+      "name": "신약개발연구원",
+      "src": "./assets/career-illustrations/career-1436.svg",
+      "sha256": "f9d5388224ec464f86d007b3b46d64799d57623d82f8a1ea194a653f32c19b1a"
+    },
+    {
+      "id": "career-13",
+      "name": "생물학연구원",
+      "src": "./assets/career-illustrations/career-13.svg",
+      "sha256": "186636b6e802f8725d0df616a5340e65e66d00c9e400f4a250146e6306b90407"
+    },
+    {
+      "id": "career-322",
+      "name": "영화감독",
+      "src": "./assets/career-illustrations/career-322.svg",
+      "sha256": "3c162efa1550bfcaa503282710e44a4783c6620cc6c15bd7d05f16511bfd8d85"
+    },
+    {
+      "id": "semiconductor",
+      "name": "반도체공학기술자",
+      "src": "./assets/career-illustrations/semiconductor.svg",
+      "sha256": "667d08c3424aa1aa5cf118ac95a3f28aaa52766744f1424125fca68607ee1ba6"
+    },
+    {
+      "id": "career-5",
+      "name": "일기예보관",
+      "src": "./assets/career-illustrations/career-5.svg",
+      "sha256": "9094f98da99cc51c446f88ea5b9202238d07e9e4cc841f8eafb9685ce314a876"
+    },
+    {
+      "id": "career-10110",
+      "name": "양자 컴퓨팅 기술자",
+      "src": "./assets/career-illustrations/career-10110.svg",
+      "sha256": "cc4a632b32494d1985fefe27126f60be00641968bba4dc2aeece2cb71cf171d9"
+    },
+    {
+      "id": "career-119",
+      "name": "전자공학기술자",
+      "src": "./assets/career-illustrations/career-119.svg",
+      "sha256": "bb69aea524d5ef608111d325ae25045d9b19d4d274c5a6a9d2f9d447a3e18920"
+    },
+    {
+      "id": "game-designer",
+      "name": "게임기획자",
+      "src": "./assets/career-illustrations/game-designer.svg",
+      "sha256": "b714773afc0c2222e3841c5c6b1c2778c81994949a688146320916f6460be919"
+    },
+    {
+      "id": "career-1089",
+      "name": "자연계중등학교교사",
+      "src": "./assets/career-illustrations/career-1089.svg",
+      "sha256": "970833cfe0fa422ad811ec92573faecc302921e24d003af522a4e7b1c7fee8d2"
+    },
+    {
+      "id": "career-10032",
+      "name": "빅 데이터 전문가",
+      "src": "./assets/career-illustrations/career-10032.svg",
+      "sha256": "ed14dd6c53fc5e7e456c8e0e4cdd8ebb822682ee66a871284725fb9bba1bc4ea"
+    },
+    {
+      "id": "career-114",
+      "name": "전기공학기술자",
+      "src": "./assets/career-illustrations/career-114.svg",
+      "sha256": "c850052808134909b045158d3e1939ef3b0282d4cac4081ce90dc4b5adc5b9c9"
+    },
+    {
+      "id": "career-182",
+      "name": "농업기술자",
+      "src": "./assets/career-illustrations/career-182.svg",
+      "sha256": "7efae9a566269524ffcdffba6d06b2bf136ec297db21cbf1c6005d17f3c2c78b"
+    },
+    {
+      "id": "career-212",
+      "name": "도시 및 교통설계전문가",
+      "src": "./assets/career-illustrations/career-212.svg",
+      "sha256": "d6674ce223a6eee092286dc3866c0e7e824641f95dc6838ca0d875c0fd1e1923"
+    },
+    {
+      "id": "career-10005",
+      "name": "스마트 도시 전문가",
+      "src": "./assets/career-illustrations/career-10005.svg",
+      "sha256": "4929906f6a01566a3a041de27e4c5d67d1cb8d0b3adb72a5c8849ccfda84d85f"
+    },
+    {
+      "id": "career-232",
+      "name": "광고 및 홍보전문가",
+      "src": "./assets/career-illustrations/career-232.svg",
+      "sha256": "68d4b58f9d13a6a21dc0b53d9d734fcc82c6566177bd4faa229723dbbb2501a3"
+    },
+    {
+      "id": "career-1068",
+      "name": "마케팅전문가",
+      "src": "./assets/career-illustrations/career-1068.svg",
+      "sha256": "42db08f13b4d1be66ad38eafdfdf4a81da0449f41c8d6014bfe68e64235c63be"
+    },
+    {
+      "id": "career-397",
+      "name": "응급구조사",
+      "src": "./assets/career-illustrations/career-397.svg",
+      "sha256": "7cc654625ba150914323365baf85355725c5295884eff0be587007d09a496a91"
+    },
+    {
+      "id": "career-410",
+      "name": "초등학교교사",
+      "src": "./assets/career-illustrations/career-410.svg",
+      "sha256": "421d2a52233a8ec883e24daa78c951150706b183485d7ef56b38927feacfe02a"
+    },
+    {
+      "id": "career-262",
+      "name": "기자",
+      "src": "./assets/career-illustrations/career-262.svg",
+      "sha256": "8dc58cbd4f085d3b607dc410dc1aeaba229eae44c5f043f40b8e0ae01059f72c"
+    },
+    {
+      "id": "career-10076",
+      "name": "모바일앱개발자",
+      "src": "./assets/career-illustrations/career-10076.svg",
+      "sha256": "d0ea850629af5280a53ef9d2d6a1a887731e936b0fd2e9cf6fb9d520c2ae9cb8"
+    },
+    {
+      "id": "career-84",
+      "name": "산업안전관리원",
+      "src": "./assets/career-illustrations/career-84.svg",
+      "sha256": "37b6bdc97e3d198a7376432f2ef5a75ba275a8e4c20459dd5a600b4ad1199eb0"
+    },
+    {
+      "id": "career-385",
+      "name": "소방관",
+      "src": "./assets/career-illustrations/career-385.svg",
+      "sha256": "4317fd84e333ac43a87eff9223dd5deed4d33eae2e7512a70416c5b93918bed8"
+    },
+    {
+      "id": "career-149",
+      "name": "항공기정비원",
+      "src": "./assets/career-illustrations/career-149.svg",
+      "sha256": "4e83dddda3d0da76a3641180cc5b4fad7c15df10f171b57c36d2f9e505b17148"
+    },
+    {
+      "id": "career-398",
+      "name": "임상심리사",
+      "src": "./assets/career-illustrations/career-398.svg",
+      "sha256": "8f66a07473ba0cf143ad9807b026678a253df88d72c762e4736fc5c40ba7c1dc"
+    },
+    {
+      "id": "career-173",
+      "name": "조리사 및 주방장",
+      "src": "./assets/career-illustrations/career-173.svg",
+      "sha256": "2c2fee55fda963b927181ea9f4ae2d368c43c5698e7a1e4242b7eccc0fb7f6e8"
+    },
+    {
+      "id": "career-359",
+      "name": "경찰관",
+      "src": "./assets/career-illustrations/career-359.svg",
+      "sha256": "46d90585357849056d53f0125cc40b6882ca8760022565ab93982cad3c186a77"
+    },
+    {
+      "id": "career-10",
+      "name": "방사선사",
+      "src": "./assets/career-illustrations/career-10.svg",
+      "sha256": "875af04d96fef538a891469f77d04e88bd5705639f861c8671f0a687e509381b"
+    },
+    {
+      "id": "career-219",
+      "name": "부동산중개인",
+      "src": "./assets/career-illustrations/career-219.svg",
+      "sha256": "5ba4f105afc02ce387e14bb4ab651ec5fabd3449d6fd450468573bdd6790f7bb"
+    },
+    {
+      "id": "career-142",
+      "name": "트럭운전기사",
+      "src": "./assets/career-illustrations/career-142.svg",
+      "sha256": "33edfa2f1ef8ed67f00db41362fd11df304d60c3daed821ad37e6c70b0e4ab08"
+    },
+    {
+      "id": "career-413",
+      "name": "특수교사",
+      "src": "./assets/career-illustrations/career-413.svg",
+      "sha256": "ec7aaff48100011e891d1a1a7b0f1b56680962876be2b85d4a6d4328d69a3cf6"
+    },
+    {
+      "id": "cybersecurity",
+      "name": "정보보호전문가",
+      "src": "./assets/career-illustrations/cybersecurity.svg",
+      "sha256": "0c64e2c8bc40d444d2803900550c4a812e62ca43e42d48b92f0438f077070979"
+    },
+    {
+      "id": "career-332",
+      "name": "제품디자이너",
+      "src": "./assets/career-illustrations/career-332.svg",
+      "sha256": "0453733043b211c81ad62be368ace43459909328f6633f7ebbd5dac23435c36f"
+    },
+    {
+      "id": "career-33",
+      "name": "치과기공사",
+      "src": "./assets/career-illustrations/career-33.svg",
+      "sha256": "80f549ea1ed3f8b5010888901ff2971061458112a457e8352d8b409675d04297"
+    },
+    {
+      "id": "career-834",
+      "name": "시스템소프트웨어개발자",
+      "src": "./assets/career-illustrations/career-834.svg",
+      "sha256": "572cfea22b9359e79a53f318dedbbbb855e97fc12429f52c87eef446d9c07049"
+    },
+    {
+      "id": "career-10001",
+      "name": "3D 프린팅 전문가",
+      "src": "./assets/career-illustrations/career-10001.svg",
+      "sha256": "2d0de55a5e7c971a377e77a289e34cf99ecf9ef67fbf711d7cd6951b1f7f6620"
+    },
+    {
+      "id": "career-252",
+      "name": "법률사무원",
+      "src": "./assets/career-illustrations/career-252.svg",
+      "sha256": "954fc2cfcb98736242cf045c8f9839517c878ddee574858718b0046d8bdb5426"
+    },
+    {
+      "id": "career-208",
+      "name": "국제무역사무원",
+      "src": "./assets/career-illustrations/career-208.svg",
+      "sha256": "41cbf6c0ecaa9029184e7653cf3d0243bfa589ef8bfd2d0b69fc1e1090adc395"
+    },
+    {
+      "id": "career-354",
+      "name": "간호사",
+      "src": "./assets/career-illustrations/career-354.svg",
+      "sha256": "cabe8173efa4a5d3528ff64bb08730aece81e59836bdcd5b1f2f0099252fe5dd"
+    },
+    {
+      "id": "career-10106",
+      "name": "스마트팜 운영자",
+      "src": "./assets/career-illustrations/career-10106.svg",
+      "sha256": "cd810b337673e62f1871fcf19c26abf76fe0dfe62a8f77aed16bea06d9ff97a8"
+    },
+    {
+      "id": "career-344",
+      "name": "패션디자이너",
+      "src": "./assets/career-illustrations/career-344.svg",
+      "sha256": "d389f3d8686633f6b13e1e719bf3cbb979864402348863c0b7a2803222d9a3b2"
+    },
+    {
+      "id": "career-392",
+      "name": "스포츠트레이너",
+      "src": "./assets/career-illustrations/career-392.svg",
+      "sha256": "3eae220a7841388a7ac0abfbef5d71a26446036d33405c1c94410dbbd752b5fe"
+    },
+    {
+      "id": "career-267",
+      "name": "번역가",
+      "src": "./assets/career-illustrations/career-267.svg",
+      "sha256": "08f693a18d8d86cef00659682425e3c3d4ed590ff55dcf9d8200b16e8fbb2349"
+    },
+    {
+      "id": "career-258",
+      "name": "회계사무원",
+      "src": "./assets/career-illustrations/career-258.svg",
+      "sha256": "a0988d958c389aeeb29e3d55d6d86c5e57e689880169ba6b00931ebe1541dc89"
+    },
+    {
+      "id": "career-264",
+      "name": "통역가",
+      "src": "./assets/career-illustrations/career-264.svg",
+      "sha256": "ee9807067de04465cd081247014c61d196612a038d389bb733ce6e664428aa32"
+    },
+    {
+      "id": "career-937",
+      "name": "시각디자이너",
+      "src": "./assets/career-illustrations/career-937.svg",
+      "sha256": "970be56263bdef2a03765780a3c906a43e7d562910345f0cce47aa9be353fa13"
+    },
+    {
+      "id": "career-102",
+      "name": "용접원",
+      "src": "./assets/career-illustrations/career-102.svg",
+      "sha256": "2fc8bf5a7ac212e0c458ed5cee6dda3b89904118753f595ae1cb40b97def3501"
+    },
+    {
+      "id": "career-172",
+      "name": "제과사 및 제빵사",
+      "src": "./assets/career-illustrations/career-172.svg",
+      "sha256": "f7f87b24cd679fd91d50839bf94838200fdd604f0a3d1ed536badaf2f7887d90"
+    },
+    {
+      "id": "career-369",
+      "name": "물리치료사",
+      "src": "./assets/career-illustrations/career-369.svg",
+      "sha256": "9f99989697b7cd42b930fe866f0d4644cf3ac01f9d33fbf13735fb6a24c67c1c"
+    },
+    {
+      "id": "career-379",
+      "name": "사회복지사",
+      "src": "./assets/career-illustrations/career-379.svg",
+      "sha256": "ca3abffba6b50124c88aba443fbd776bba080bd82ccf8410a50858f86f89a366"
+    },
+    {
+      "id": "career-180",
+      "name": "바리스타",
+      "src": "./assets/career-illustrations/career-180.svg",
+      "sha256": "9399d3c8f519d49b5371d7ec38f201698393b9e09241d35335461cc673c4cd23"
+    },
+    {
+      "id": "career-395",
+      "name": "유치원교사",
+      "src": "./assets/career-illustrations/career-395.svg",
+      "sha256": "01778996ab090dce308ce04d8ec52cb2773e086edb845cebdeb5203932250e0d"
+    },
+    {
+      "id": "career-376",
+      "name": "보육교사",
+      "src": "./assets/career-illustrations/career-376.svg",
+      "sha256": "a2d4b5632b64f32d731c97e809f346150cbc11923d8b34bc1e671a37c5e9fe1c"
+    },
+    {
+      "id": "career-426",
+      "name": "택시운전기사",
+      "src": "./assets/career-illustrations/career-426.svg",
+      "sha256": "529bb55351c15041e3ce29147b1ab38b143613c8436dac88e7070b5d552e1f64"
+    },
+    {
+      "id": "career-1115",
+      "name": "주유원",
+      "src": "./assets/career-illustrations/career-1115.svg",
+      "sha256": "5aff44364604679630a6b3660778ce52026955587a9ceb2afa0d88008bac4e10"
+    },
+    {
+      "id": "career-253",
+      "name": "사무보조원",
+      "src": "./assets/career-illustrations/career-253.svg",
+      "sha256": "66f9b5293e97acaf61768a90c8b679b5becf0e46a10ecb1689c365d5d94ab7b9"
+    },
+    {
+      "id": "career-266",
+      "name": "드라마작가",
+      "src": "./assets/career-illustrations/career-266.svg",
+      "sha256": "36ea5b81e238ba8d31bb86f8d3d5a323af063d04deeb0c4dae10420b99ea5cb9"
+    },
+    {
+      "id": "career-358",
+      "name": "경비원",
+      "src": "./assets/career-illustrations/career-358.svg",
+      "sha256": "36e4f87f2a0517b6719b471d04d77aba38d172f6d9b020e21a26279e7940de90"
+    },
+    {
+      "id": "career-1116",
+      "name": "계산원 및 매표원",
+      "src": "./assets/career-illustrations/career-1116.svg",
+      "sha256": "566871c1b84a6a4f53f037881da523955b84165bbe1fe5dc70b6ccba6165e628"
+    },
+    {
+      "id": "career-243",
+      "name": "상점판매원",
+      "src": "./assets/career-illustrations/career-243.svg",
+      "sha256": "2bb766229cc74758d8ecec8d2d07fbfefcffca2548d5c962d6382e6c78d8a76b"
+    },
+    {
+      "id": "career-1128",
+      "name": "주방보조원",
+      "src": "./assets/career-illustrations/career-1128.svg",
+      "sha256": "1461ec3575805ee6860bbed0cc27f389c5dcc651ab4df452fcf1111b9721ae19"
+    },
+    {
+      "id": "career-1441",
+      "name": "작가",
+      "src": "./assets/career-illustrations/career-1441.svg",
+      "sha256": "31e140f2724231b30afd36f574c6c236830fbd6c570050966292e151ef604cb0"
+    },
+    {
+      "id": "career-353",
+      "name": "간병인",
+      "src": "./assets/career-illustrations/career-353.svg",
+      "sha256": "70da43d4e4a80f1f584037f265f5ec16e657156fb9a941c53606958e697df586"
+    },
+    {
+      "id": "career-356",
+      "name": "청소원",
+      "src": "./assets/career-illustrations/career-356.svg",
+      "sha256": "85a2760bbc70f8831bb77b48b7eb5685fb7d7f221ac9f8a598e543616a62e06b"
+    },
+    {
+      "id": "career-294",
+      "name": "모델",
+      "src": "./assets/career-illustrations/career-294.svg",
+      "sha256": "4abbbd61b3a1e35a5fef70f4be94b6b440da0f00aa7337f1eda5009d502bc5db"
+    },
+    {
+      "id": "career-352",
+      "name": "가사도우미",
+      "src": "./assets/career-illustrations/career-352.svg",
+      "sha256": "663741a407e4c4249dbc49b2e4d12285322eddcfba7e7b795ba23364573d5278"
+    }
+  ]
+}

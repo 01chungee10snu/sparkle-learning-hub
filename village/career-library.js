@@ -31,7 +31,7 @@ export const CAREERS=Object.freeze(CAREER_DATA.map(raw=>{
     !/^https:\/\/www\.career\.go\.kr\/cloud\/m\/job\/view\?seq=\d+$/.test(raw.sourceUrl)||
     raw.requiredStudentRankPer10000!==null)
     throw new Error('Career source audit failed');
- return Object.freeze({...raw,subjects:Object.freeze([...raw.subjects]),academic:academicSignalsForCareer(raw)});
+ return Object.freeze({...raw,illustration:'./assets/career-illustrations/'+raw.id+'.svg',subjects:Object.freeze([...raw.subjects]),academic:academicSignalsForCareer(raw)});
 }));
 if(CAREERS.length!==100||new Set(CAREERS.map(c=>c.id)).size!==100||
    new Set(CAREERS.map(c=>c.name)).size!==100)
