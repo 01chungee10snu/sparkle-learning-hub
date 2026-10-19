@@ -19,13 +19,30 @@ export const RESOURCE_TYPES=Object.freeze({
 });
 const zero=()=>({math:0,korean:0,english:0,hanja:0});
 const cost=(math,korean,english,hanja)=>Object.freeze({math,korean,english,hanja});
+// Premium illustrations are provided separately under village/assets. Thresholds
+// are game progression targets, not measurements of intelligence or ability.
+const creature=(id,name,world,costs,minimum,balanced,color,size,description,careMode='feed')=>Object.freeze({
+ id,name,world,emoji:'',color,size,cost:cost(...costs),minSolved:minimum,
+ minBalancedDays:balanced,art:'./assets/marine-premium-v25/'+id+'.webp',
+ careMode,description
+});
 export const FISH_SPECIES=Object.freeze([
- Object.freeze({id:'guppy',name:'무지개 구피',emoji:'🐟',color:'#ff8d59',size:0.45,cost:cost(0,0,0,0),description:'처음부터 함께 살아가는 알록달록한 물고기'}),
- Object.freeze({id:'goldfish',name:'황금 금붕어',emoji:'🐠',color:'#ffb640',size:0.65,cost:cost(3,2,2,1),description:'여러 과목의 배움을 모아 만나는 금빛 친구'}),
- Object.freeze({id:'neon',name:'네온 테트라',emoji:'🐟',color:'#36c6df',size:0.5,cost:cost(4,3,3,1),description:'파란 빛을 따라 무리를 지어 헤엄쳐요'}),
- Object.freeze({id:'betta',name:'비단 베타',emoji:'🐠',color:'#b778ee',size:0.7,cost:cost(4,4,3,2),description:'부드러운 지느러미를 펼치고 헤엄쳐요'}),
- Object.freeze({id:'koi',name:'연못 잉어',emoji:'🐟',color:'#f5efe2',size:0.85,cost:cost(6,4,4,3),description:'연못을 크게 돌며 긴 물결을 만들어요'}),
- Object.freeze({id:'angel',name:'별빛 엔젤피시',emoji:'🐠',color:'#ffe691',size:0.7,cost:cost(5,5,5,4),description:'고른 배움으로 나타나는 특별한 친구'})
+ creature('guppy','무지개 구피','pond',[0,0,0,0],0,0,'#ff8d59',.45,'처음부터 함께하는 연못 친구'),
+ creature('goldfish','황금 금붕어','pond',[3,2,2,1],4,0,'#ffb640',.65,'금빛 비늘이 반짝이는 연못 친구'),
+ creature('neon','네온 테트라','pond',[4,3,3,1],6,0,'#36c6df',.50,'푸른 줄무늬가 빛나는 작은 물고기'),
+ creature('betta','비단 베타','pond',[4,4,3,2],8,0,'#b778ee',.70,'긴 지느러미가 펼쳐지는 물고기'),
+ creature('koi','연못 잉어','pond',[6,4,4,3],10,0,'#f5efe2',.85,'연못에 잔잔한 물결을 만드는 잉어'),
+ creature('angel','별빛 엔젤피시','pond',[5,5,5,4],12,0,'#ffe691',.70,'넓은 지느러미가 아름다운 친구'),
+ creature('clownfish','산호 흰동가리','ocean',[7,5,5,4],14,0,'#ff9951',.52,'말미잘 곁에서 사는 작은 바닷물고기'),
+ creature('blue-tang','푸른 블루탱','ocean',[9,7,7,5],24,1,'#296dbd',.56,'산호초 사이를 헤엄치는 푸른 물고기'),
+ creature('shrimp','산호 새우','ocean',[13,9,8,7],34,1,'#ff9084',.38,'바다 바닥을 돌보는 작은 갑각류'),
+ creature('hermit-crab','소라게','ocean',[17,13,11,9],46,2,'#d7956b',.52,'자기 몸에 맞는 껍데기를 찾는 갑각류'),
+ creature('sea-crab','바다 게','ocean',[23,18,14,12],60,2,'#e66f68',.68,'옆으로 걸으며 바닷가를 탐험하는 게'),
+ creature('seahorse','별빛 해마','ocean',[30,23,19,15],78,3,'#eab84d',.65,'해초를 꼬리로 붙잡는 작은 바다 친구'),
+ creature('octopus','산호 문어','ocean',[39,31,25,22],98,4,'#bd8ad5',.80,'여덟 팔로 주위를 탐색하는 문어'),
+ creature('sea-turtle','푸른 바다거북','ocean',[54,42,34,28],125,5,'#67b9a3',.95,'긴 여정을 헤엄치는 보호 대상 바다거북','observe'),
+ creature('reef-shark','산호초 상어','ocean',[75,60,50,40],165,6,'#608ca2',1.12,'바다 생태계의 균형을 지키는 포식자','observe'),
+ creature('humpback-whale','혹등고래','ocean',[110,90,75,60],220,8,'#638bc0',1.65,'먼 바다를 이동하는 거대한 야생 고래','observe')
 ]);
 const BY_FISH=new Map(FISH_SPECIES.map(f=>[f.id,f]));
 const MAX_RECEIPTS=64,MAX_FEED_EVENTS=5000,DAY=86400000;
@@ -170,7 +187,10 @@ export function wallet(catalog,who=Progress.learner()){
   const owned=species.id==='guppy'||Boolean(p.adoptions[species.id]);
   const fed=Object.values(p.feedEvents).filter(e=>e.fishId===species.id).length;
   const canAfford=RESOURCE_SUBJECTS.every(s=>available[s]>=species.cost[s]);
-  return {...species,cost:{...species.cost},owned,feedDays:fed,growth:Math.min(3,Math.floor(fed/3)),fedToday:Boolean(p.feedEvents[dateKey(now())+'-'+species.id]),canAdopt:!owned&&canAfford&&RESOURCE_SUBJECTS.every(s=>deficits[s]===0)};
+  const meetsLearning=source.independentItems>=species.minSolved&&source.balancedDays>=species.minBalancedDays;
+  return {...species,cost:{...species.cost},owned,feedDays:fed,growth:Math.min(3,Math.floor(fed/3)),fedToday:Boolean(p.feedEvents[dateKey(now())+'-'+species.id]),meetsLearning,
+   remainingSolved:Math.max(0,species.minSolved-source.independentItems),remainingBalanced:Math.max(0,species.minBalancedDays-source.balancedDays),
+   canAdopt:!owned&&canAfford&&meetsLearning&&RESOURCE_SUBJECTS.every(s=>deficits[s]===0)};
  });
  const next=[...fish].filter(f=>!f.owned&&f.id!=='guppy').sort((a,b)=>{
   const aCost=RESOURCE_SUBJECTS.reduce((sum,s)=>sum+Math.max(0,a.cost[s]-available[s]),0);
@@ -188,6 +208,8 @@ export function adoptFish(id,catalog,who=Progress.learner(),storage=globalThis.l
  const state=loadResources(storage),p=state.profiles[who];
  if(p.adoptions[id])return {ok:true,duplicate:true,wallet:wallet(catalog,who)};
  const funds=wallet(catalog,who);
+ if(funds.uniqueCorrect<species.minSolved||funds.balancedDays<species.minBalancedDays)
+  return {ok:false,reason:'learning-milestone',wallet:funds};
  if(!RESOURCE_SUBJECTS.every(subject=>funds.available[subject]>=species.cost[subject]))
   return {ok:false,reason:'insufficient-resources',wallet:funds};
  p.adoptions[id]={id,at:now(),cost:{...species.cost}};

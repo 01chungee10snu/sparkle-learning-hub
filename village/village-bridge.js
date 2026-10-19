@@ -10,7 +10,7 @@ import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from '../platform/resource-economy.js?v=career-v27-20261019';
+import * as Resources from '../platform/resource-economy.js?v=ocean-v25-career-v29-20261019';
 import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
@@ -26,8 +26,9 @@ const DISTRICTS=Object.freeze({
  growth:{title:'🌟 성장의 탑',intro:'세 과목의 배움 길과 다음 도전의 근거를 살펴봐요.'},
  kma:{title:'🏆 뱁수 경시대회 성',intro:'KMA 한국수학학력평가 공개 기출의 1~25번을 차례로 풀어요.'},
  practice:{title:'🧩 마법 수학 훈련장',intro:'자체 제작 연습 25문항을 기본·도전·심화 난도로 풀어요.'},
- pond:{title:'🐠 생명 연못',intro:'서로 다른 학습 자원을 모아 여러 물고기를 키우고 하루에 한 번 먹이를 줘요.'},
- career:{title:'🏛️ 미래 직업 탐색관',intro:'의사·과학자·기업가 등 전문 직업 30가지를 탐험하고 내가 꿈꾸는 일을 모아요.'},
+ pond:{title:'🐠 생명 연못',intro:'연못의 여러 물고기에게 먹이를 주고 자라는 모습을 관찰해요.'},
+ ocean:{title:'🌊 푸른 바다',intro:'학습으로 산호초에서 먼바다까지 넓히고 작은 물고기부터 상어와 고래까지 돌보아요.'},
+ career:{title:'🏛️ 미래 직업 탐색관',intro:'공식 직업 근거를 연결한 100가지 직업을 탐험하고 내가 꿈꾸는 일을 모아요.'},
  shop:{title:'🎁 별빛 상점',intro:'학습으로 실제 모은 별을 선물과 교환해요.'},
  garden:{title:'🌱 성장 정원',intro:'물·햇빛·노래로 나무와 꽃을 키워요.'}
 });
@@ -201,7 +202,7 @@ export function createVillageHost(emit) {
       available: wallet.available,
       lifetime: wallet.lifetime,
       resources:{available:resourceWallet.available,earned:resourceWallet.earned,spent:resourceWallet.spent,deficits:resourceWallet.deficits,balancedDays:resourceWallet.balancedDays},
-      pond:{who,fish:resourceWallet.fish.filter(f=>f.owned).map(f=>({id:f.id,name:f.name,color:f.color,size:f.size,growth:f.growth,feedDays:f.feedDays})),owned:resourceWallet.fish.filter(f=>f.owned).length},
+      pond:{who,fish:resourceWallet.fish.filter(f=>f.owned&&f.world==='pond').map(f=>({id:f.id,name:f.name,color:f.color,size:f.size,growth:f.growth,feedDays:f.feedDays})),owned:resourceWallet.fish.filter(f=>f.owned&&f.world==='pond').length},
       // The canonical reward model awards verified answer/session/effort stars.
       reinforcementStars: wallet.effortStars||0,
       explanationStars: 0,
@@ -264,16 +265,25 @@ export function createVillageHost(emit) {
        '서로 다른 두 과목에서 배움 자원을 1개씩 모아요.':'직업사전 해금 기록을 안전하게 저장하지 못했어요.');
       return snapshot(action,requestId,{district:'career',career:{...careerView(),changed:itemId,unlockedNow:true}});
     }
-    if (action === 'POND_OPEN') return snapshot(action,requestId,{district:'pond',pondShop:Resources.wallet(catalog,who)});
-    if (action === 'POND_ADOPT') {
-      const result=Resources.adoptFish(itemId,catalog,who);
-      if(!result.ok)throw new Error(result.reason==='insufficient-resources'?'네 가지 배움 자원을 더 모아 보아요.':'물고기 영입 기록을 안전하게 저장하지 못했어요.');
-      return snapshot(action,requestId,{district:'pond',pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 연못에 사는 친구예요.':'새 물고기 친구가 연못에 왔어요!'});
+    if (action === 'POND_OPEN'||action==='OCEAN_OPEN') {
+      const world=action==='POND_OPEN'?'pond':'ocean';
+      return snapshot(action,requestId,{district:world,pondShop:Resources.wallet(catalog,who)});
     }
-    if (action === 'POND_FEED') {
+    if (action === 'POND_ADOPT'||action==='OCEAN_ADOPT') {
+      const world=action==='POND_ADOPT'?'pond':'ocean';
+      const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
+      if(!creature||creature.world!==world)throw new Error('선택한 생물이 사는 장소를 다시 확인해 주세요.');
+      const result=Resources.adoptFish(itemId,catalog,who);
+      if(!result.ok)throw new Error(result.reason==='learning-milestone'?'새로운 문제를 스스로 풀고 여러 과목을 고르게 배우면 만날 수 있어요.':result.reason==='insufficient-resources'?'네 가지 배움 자원을 더 모아 보아요.':'생물 기록을 안전하게 저장하지 못했어요.');
+      return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 함께하는 친구예요.':'새로운 생물 친구를 만났어요!'});
+    }
+    if (action === 'POND_FEED'||action==='OCEAN_FEED') {
+      const world=action==='POND_FEED'?'pond':'ocean';
+      const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
+      if(!creature||creature.world!==world)throw new Error('생물이 사는 장소를 다시 확인해 주세요.');
       const result=Resources.feedFish(itemId,catalog,who);
-      if(!result.ok)throw new Error('물고기 돌봄 기록을 저장하지 못했어요.');
-      return snapshot(action,requestId,{district:'pond',pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 먹이를 주었어요.':'물고기가 먹이를 먹고 헤엄쳐요!'});
+      if(!result.ok)throw new Error('생물 관찰 기록을 저장하지 못했어요.');
+      return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 만나 보았어요.':creature.careMode==='observe'?'야생 생물을 안전한 거리에서 관찰했어요!':'물고기 친구가 먹이를 먹고 헤엄쳐요!'});
     }
     if (action === 'SHOP_OPEN') return snapshot(action, requestId, {shop:shopState()});
     if (action === 'SHOP_BUY') {
@@ -347,7 +357,7 @@ export function createVillageHost(emit) {
       const chosen=(district||response||'').toLowerCase();
       if(!Object.hasOwn(DISTRICTS,chosen))throw new Error('마법마을 지역을 선택해 주세요.');
       if(chosen==='career')return snapshot(action,requestId,{district:chosen,career:careerView()});
-      if(chosen==='pond')return snapshot(action,requestId,{district:chosen,pondShop:Resources.wallet(catalog,who)});
+      if(chosen==='pond'||chosen==='ocean')return snapshot(action,requestId,{district:chosen,pondShop:Resources.wallet(catalog,who)});
       if(chosen==='kma')return snapshot(action,requestId,{district:chosen,
         challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote});
       if(chosen==='practice')return snapshot(action,requestId,{district:chosen,

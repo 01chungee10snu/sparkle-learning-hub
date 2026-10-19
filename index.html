@@ -5,8 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#4971ab">
 <title>태희·세희의 마법마을 — 꿈을 키우는 배움의 섬</title>
-<meta name="description" content="마법마을에 입장해 수학·국어·영어·한자와 30가지 미래 직업을 탐험하세요.">
+<meta name="description" content="태희 또는 세희를 선택해 마법마을이나 학습페이지로 바로 들어가고, 수학·국어·영어·한자·해양 생태·100가지 미래 직업을 탐험하세요.">
 <link rel="stylesheet" href="./entry-world.css?v=world-v26-20261019">
+<style>
+.entry-learner-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;max-width:100%}
+.entry-learner-choice{display:flex;align-items:center;gap:10px;min-height:72px;padding:8px 11px;border:2px solid #ffffff80;border-radius:18px;background:#173b6ab8;color:#fff;font:900 18px/1.2 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 16px #10285b55}
+.entry-learner-choice[aria-pressed="true"]{border-color:#fff0a4;background:linear-gradient(120deg,#6f4bc6,#416fc4);box-shadow:0 0 0 3px #fff3a144,0 7px 18px #10285b66}
+.entry-learner-choice img{width:54px;height:54px;object-fit:contain;border-radius:16px;background:#ffffffd9}
+.entry-learner-choice span{display:flex;flex-direction:column;text-align:left}.entry-learner-choice small{font-size:12px;color:#eef6ff;margin-top:3px}
+.entry-learner-choice:focus-visible{outline:4px solid #ffefa1;outline-offset:4px}
+@media(max-width:390px){.entry-learner-choice{font-size:16px;padding:7px}.entry-learner-choice img{width:46px;height:46px}}
+</style>
 </head>
 <body>
 <main id="entry-world" class="entry-world">
@@ -21,18 +30,36 @@
     <h1 id="entry-title"><span>태희와 세희의</span><strong>마법마을</strong></h1>
     <p class="entry-tagline">배움이 자라면 새로운 세상이 열려요.</p>
     <p id="world-kst-badge" class="entry-kst" aria-live="off">🌿 대한민국 시간에 따라 변하는 마법의 섬</p>
-    <div class="entry-game-actions">
-      <a class="entry-portal entry-portal-primary" href="./village/"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마법마을 입장하기</strong><small>3D 요정 마을을 탐험하고 친구를 만나요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
-      <a class="entry-portal entry-portal-study" href="./learning.html"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 가기</strong><small>수학·국어·영어·한자 문제를 바로 풀어요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+    <div id="entry-learner-choices" class="entry-learner-choices" role="group" aria-label="오늘 학습할 어린이 선택">
+      <button class="entry-learner-choice" type="button" data-learner="tae" aria-pressed="true"><img src="./village/assets/taehee_original.png" width="54" height="54" alt=""><span>태희<small>분홍 별 요정</small></span></button>
+      <button class="entry-learner-choice" type="button" data-learner="se" aria-pressed="false"><img src="./village/assets/sehee_original.png" width="54" height="54" alt=""><span>세희<small>연보라 달 요정</small></span></button>
     </div>
-    <p class="entry-world-notice">🧭 3D 마을 · 📜 한자 수련관 · 🏛️ 미래 직업 탐색관 · 🐠 생명 연못</p>
+    <div class="entry-game-actions">
+      <a id="entry-village-link" class="entry-portal entry-portal-primary" href="./village/?who=tae&amp;autostart=1"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마을 입장</strong><small>선택한 요정으로 3D 마을에 바로 들어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+      <a id="entry-learning-link" class="entry-portal entry-portal-study" href="./learning.html?who=tae"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 입장</strong><small>선택한 아이의 수학·국어·영어·한자를 바로 이어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+    </div>
+    <p class="entry-world-notice">🧭 3D 마을 · 📜 한자 수련관 · 🏛️ 100가지 미래 직업 · 🐠 생명 연못 · 🌊 푸른 바다</p>
   </section>
   <p class="entry-caption">한국 시간·계절에 따라 변하는 하늘과 마법의 섬 <span aria-hidden="true">✦</span> 오늘의 꿈을 발견해요</p>
 </main>
 <script type="module">
+import * as Progress from './platform/progress.js';
 import {koreaScene,applyKoreaScene} from './village/korea-season-clock.js?v=world-v26-20261019';
 function update(){applyKoreaScene(koreaScene());}
 update();setInterval(update,60000);
+const params=new URLSearchParams(location.search),requested=params.get('who');
+const initial=requested==='tae'||requested==='se'?requested:Progress.learner();
+const village=document.querySelector('#entry-village-link'),learning=document.querySelector('#entry-learning-link');
+function selectLearner(who){
+  if(who!=='tae'&&who!=='se')return;
+  Progress.selectLearner(who);
+  document.querySelectorAll('[data-learner]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.learner===who)));
+  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1';
+  learning.href='./learning.html?who='+encodeURIComponent(who);
+}
+document.querySelectorAll('[data-learner]').forEach(button=>button.addEventListener('click',()=>selectLearner(button.dataset.learner)));
+selectLearner(initial);
+if(location.search)history.replaceState(history.state,'',location.pathname+location.hash);
 </script>
 </body>
 </html>

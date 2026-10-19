@@ -33,6 +33,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./title-v15.css?v=title-v15-20261015">
 <link rel="stylesheet" href="./hanja-world.css?v=hanja-v1-20261016">
 <link rel="stylesheet" href="./pond-economy.css?v=fish-v24-20261018">
+<link rel="stylesheet" href="./ocean-world-v25.css?v=ocean-v25-20261019">
 <link rel="stylesheet" href="./career-world.css?v=career-v29-20261019">
 <link rel="stylesheet" href="./title-v26.css?v=world-v26-20261019">
 <link rel="stylesheet" href="./world-v26.css?v=world-v26-20261019">
@@ -60,7 +61,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
           </header>
           <figure class="title-art-wrap">
             <img class="title-art" src="./assets/illustrations/welcome.webp" alt="분홍 태희 요정과 연보라 세희 요정이 꽃나무와 마법학교 앞에서 함께 서 있는 마법마을" width="1200" height="520" decoding="async">
-            <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 한자 수련관</figcaption>
+            <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 푸른 바다 · 한자 수련관</figcaption>
           </figure>
           <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
         </section>
@@ -83,6 +84,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
             <span><img src="./assets/illustrations/english-icon.webp" alt="" width="30" height="30">영어 숲</span>
             <span>📜 한자 수련관</span>
             <span>🏛️ 직업 탐색관</span>
+            <span>🌊 푸른 바다</span>
           </div>
           <div class="title-actions">
             <button id="start"><span>🏰 마법마을 입장하기</span><small>3D 요정 마을로 떠나요</small></button>
@@ -103,11 +105,25 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 </div>
 <script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=ecology-v19-20261015","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=unified-20261013","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013"}}</script>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=career-v28-20261019';
+import { createVillageHost } from './village-bridge.js?v=ocean-v25-career-v29-20261019';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=career-v29-20261019';
+import { createVillageUI } from './village-ui.js?v=ocean-v25-career-v29-20261019';
 import * as CloudSync from '../platform/cloud-sync.js?v=world-v26-20261019';
 import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
+
+const entryParams=new URLSearchParams(location.search);
+const requestedWho=entryParams.get('who');
+const validWho=requestedWho==='tae'||requestedWho==='se';
+const autoStartRequested=validWho&&entryParams.get('autostart')==='1';
+if(validWho)Progress.selectLearner(requestedWho);
+for(const key of [...entryParams.keys()]){
+  if(key==='who'||key==='autostart'){entryParams.delete(key);continue;}
+  if(!['environmentPreview','motionPreview'].includes(key)||entryParams.get(key)!=='1')entryParams.delete(key);
+}
+const normalizedQuery=entryParams.toString();
+const normalizedUrl=location.pathname+(normalizedQuery?'?'+normalizedQuery:'')+location.hash;
+if(location.pathname+location.search+location.hash!==normalizedUrl)
+  history.replaceState(history.state,'',normalizedUrl);
 
 const status = document.querySelector('#status');
 const overlay = document.querySelector('#loading');
@@ -115,6 +131,12 @@ const canvas = document.querySelector('#canvas');
 const start = document.querySelector('#start');
 const lite = document.querySelector('#lite');
 const liteScene = document.querySelector('#lite-village-scene');
+const entryHeading=document.querySelector('#title-entry-heading');
+const autoStartShellNodes=[...document.querySelectorAll('.title-visual,.title-entry-eyebrow,#learner-choices,.title-destinations,.title-actions,.title-entry-links,.vh-storage-note')];
+function showAutoStartShell(active){
+  for(const node of autoStartShellNodes)node.hidden=active;
+  entryHeading.textContent=active?'선택한 요정으로 마법마을에 바로 들어가요':'나의 요정을 선택해요';
+}
 let liteMode = false;
 const syncEntryLearner=()=>{
   const who=Progress.learner(),name=Progress.LEARNERS[who]?.name||'요정';
@@ -132,6 +154,10 @@ for(const control of document.querySelectorAll('[data-learner]')){
  control.setAttribute('aria-pressed',String(control.dataset.learner===Progress.learner()));
 }
 syncEntryLearner();
+if(autoStartRequested){
+  showAutoStartShell(true);
+  status.textContent=Progress.LEARNERS[Progress.learner()].name+'의 3D 마법마을로 바로 들어가고 있어요.';
+}
 const meter = document.querySelector('#meter');
 const bar = document.querySelector('#bar');
 let instance = null;
@@ -249,6 +275,7 @@ start.addEventListener('click', async () => {
       status.textContent = '3D 웹 빌드를 불러오지 못했어요. 위 학습기록 링크를 통해 문제집을 사용할 수 있어요.';
       start.disabled = false;
       lite.disabled = false;
+      if(autoStartRequested)showAutoStartShell(false);
       return;
     }
       status.textContent = '마법마을과 여러 학습 지역을 불러오는 중이에요.';
@@ -320,8 +347,12 @@ start.addEventListener('click', async () => {
     start.disabled = false;
     lite.disabled = false;
     status.textContent = '3D 마을을 시작하지 못했어요. ' + (error?.message || '');
+    if(autoStartRequested)showAutoStartShell(false);
     console.error('[Village]', error);
   }
+});
+if(autoStartRequested)queueMicrotask(()=>{
+  if(!start.disabled)start.click();
 });
 </script>
 </body>
