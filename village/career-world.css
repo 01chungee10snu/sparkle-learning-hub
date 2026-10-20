@@ -45,6 +45,10 @@
 #village-ui .career-toolbar{display:grid;grid-template-columns:1fr minmax(200px,.72fr);gap:8px}
 #village-ui .career-toolbar .career-sort{min-height:53px;border:2px solid #c8b8db;border-radius:13px;padding:9px 11px;background:#fff;color:#4b3b67;font-size:clamp(14px,1.7vw,18px);font-weight:800;max-width:100%}
 #village-ui .career-fact-panel{display:grid;gap:8px;padding:14px;border:2px solid #c5c7ea;border-radius:17px;background:#fffdf9}
+#village-ui .career-guardian-disclosure{width:100%;border:2px solid #d6c9e6;border-radius:17px;background:#fffcf8;overflow:hidden}
+#village-ui .career-guardian-disclosure > summary{cursor:pointer;min-height:52px;padding:13px 14px;font-size:clamp(16px,2.2vw,20px);font-weight:850;color:#453f70;line-height:1.4}
+#village-ui .career-guardian-disclosure > summary:focus-visible{outline:3px solid #7654ac;outline-offset:-4px;border-radius:13px}
+#village-ui .career-guardian-disclosure .career-fact-panel{border:0;border-top:1px solid #d6c9e6;border-radius:0}
 #village-ui .career-fact-panel.locked{border-color:#dfc9d8;background:linear-gradient(130deg,#fff9ef,#f7f1ff)}
 #village-ui .career-fact-panel.unlocked{border-color:#a6d4b4;background:linear-gradient(130deg,#effff1,#f6fcff)}
 #village-ui .career-fact-panel h4{font-size:clamp(18px,2.4vw,24px);color:#453f70;margin:0}

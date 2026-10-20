@@ -99,7 +99,7 @@ for idx,(name,group,emoji,mission,try_it,subjects) in enumerate(selected,1):
  else:
   impact='안전한 생활과 지속 가능한 환경을 지키는 데 필요한 일을 해요.'
  display_subject={'math':'수학','korean':'국어','english':'영어','hanja':'한자'}
- journey='어릴 때는 '+ '·'.join(display_subject[s] for s in linked) + '를 배워 문제를 해결하고, 이후 실제 직업별 필요한 교육·기술·자격을 확인해요.'
+ journey='어릴 때는 '+ '·'.join(display_subject[s] for s in linked) + ' 등 여러 분야를 살펴보고, 자라면서 이 직업에 필요한 다양한 배움과 훈련 경로를 알아봐요.'
  entry={
   'id':id,'sourceCode':seq,'name':name,'emoji':emoji,'group':group,
   'mission':mission,'impact':impact,'journey':journey,'tryIt':try_it,

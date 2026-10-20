@@ -34,7 +34,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./hanja-world.css?v=hanja-v1-20261016">
 <link rel="stylesheet" href="./pond-economy.css?v=fish-v24-20261018">
 <link rel="stylesheet" href="./ocean-world-v25.css?v=child-safe-v32-20261019">
-<link rel="stylesheet" href="./career-world.css?v=child-safe-v32-20261019">
+<link rel="stylesheet" href="./career-world.css?v=child-ux-v33-20261020">
 <link rel="stylesheet" href="./title-v26.css?v=world-v26-20261019">
 <link rel="stylesheet" href="./world-v26.css?v=child-safe-v32-20261019">
 </head>
@@ -105,10 +105,10 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 </div>
 <script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=ecology-v19-20261015","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=child-safe-v32-20261019","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013"}}</script>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=child-safe-v32-20261019';
+import { createVillageHost } from './village-bridge.js?v=child-ux-v33-20261020';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=child-safe-v32-20261019';
-import * as CloudSync from '../platform/cloud-sync.js?v=world-v26-20261019';
+import { createVillageUI } from './village-ui.js?v=child-ux-v33-20261020';
+import * as CloudSync from '../platform/cloud-sync.js?v=child-ux-v33-20261020';
 import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
 
 const entryParams=new URLSearchParams(location.search);
@@ -250,7 +250,13 @@ lite.addEventListener('click',async()=>{
     liteScene.hidden=false;
     canvas.style.display='none';
     uiRoot.dataset.lite='true';
-    uiRoot.querySelector('#vh-help').textContent='학습 지역을 눌러 수학·국어·영어로 이동해요.';
+    uiRoot.querySelector('#vh-help').textContent='2D 모드에서는 학습 지역을 눌러 수학·국어·영어·한자를 배워요. 자유 이동은 3D 마을에서 할 수 있어요.';
+    // Without a 3D instance there is no free-roam or Unity character motion.
+    // Hide those nonfunctional buttons instead of leaving clickable dead ends.
+    for(const id of ['vh-home','vh-plaza','vh-run','vh-hop','vh-wave','vh-pose']){
+      const control=uiRoot.querySelector('#'+id);
+      if(control)control.hidden=true;
+    }
     const questControl=uiRoot.querySelector('#vh-quest');
     questControl.setAttribute('aria-label','추천하는 이야기 모험 열기');
     uiRoot.hidden=false;

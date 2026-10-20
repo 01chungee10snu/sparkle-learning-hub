@@ -34,8 +34,10 @@
     "check:marine": "node scripts/check-marine-gallery-v30.mjs && node scripts/check-first-visit-v30.mjs",
     "qa:marine": "node scripts/qa-marine-visits-v30.mjs",
     "check:child": "node scripts/check-child-language-v32.mjs && node scripts/check-question-integrity-v32.mjs && node scripts/check-game-illustrations-v32.mjs",
+    "check:balance": "node scripts/check-play-balance.mjs && node scripts/check-life-state-v16.mjs && node scripts/check-cloud-sync-v17.mjs",
     "check:art:mac": "/usr/bin/python3 scripts/check-art-raster-v32.py && node scripts/check-marine-gallery-v30.mjs && node scripts/check-game-illustrations-v32.mjs",
-    "qa:child": "node scripts/qa-child-safety-v32.mjs"
+    "qa:child": "node scripts/qa-child-safety-v32.mjs",
+    "qa:ux": "node scripts/qa-child-ux-v33.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

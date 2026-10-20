@@ -6,7 +6,8 @@ const storage={
   getItem:k=>map.has(k)?map.get(k):null,
   setItem:(k,v)=>map.set(k,v)
 };
-const start=createLifeStore({storage,namespace:'/test'});
+const balance={checkPlay:()=>({allowed:true}),recordPlay:()=>{}};
+const start=createLifeStore({storage,namespace:'/test',balance});
 const send=(who,area,type,fields={})=>start.dispatch({who,area,type,expectedRevision:start.snapshot(who,area).revision,...fields});
 const bad=fn=>assert.throws(fn,Error);
 assert.equal(LIFE_ACTIONS.length,9);
@@ -42,11 +43,11 @@ bad(()=>send('tae','plaza','DECORATE',{kind:'__proto__',value:'anything'}));
 bad(()=>send('tae','home','PLANT',{slot:2,species:'__proto__'}));
 bad(()=>send('tae','home','PLANT',{slot:6,species:'tomato'}));
 bad(()=>start.dispatch({who:'tae',type:'PLANT',slot:2,species:'tomato',expectedRevision:'6'}));
-assert.equal(createLifeStore({storage,namespace:'/test'}).snapshot('se','plaza').decor.pond,'reeds');
+assert.equal(createLifeStore({storage,namespace:'/test',balance}).snapshot('se','plaza').decor.pond,'reeds');
 const failing={getItem:k=>storage.getItem(k),setItem:()=>{throw Error('quota');}};
-bad(()=>createLifeStore({storage:failing,namespace:'/test'}).dispatch({who:'tae',type:'PLANT',slot:3,species:'tomato',expectedRevision:start.snapshot('tae').revision}));
+bad(()=>createLifeStore({storage:failing,namespace:'/test',balance}).dispatch({who:'tae',type:'PLANT',slot:3,species:'tomato',expectedRevision:start.snapshot('tae').revision}));
 assert.equal(start.snapshot('tae').plots.length,1);
-bad(()=>createLifeStore({storage:{getItem:()=>{throw Error('denied');},setItem:()=>{}},namespace:'/test'}).snapshot('tae'));
+bad(()=>createLifeStore({storage:{getItem:()=>{throw Error('denied');},setItem:()=>{}},namespace:'/test',balance}).snapshot('tae'));
 const key='sparkle-life-v16:/test',valid=map.get(key);
 for(const corrupt of ['{bad','null',JSON.stringify({...JSON.parse(valid),version:17}),JSON.stringify({...JSON.parse(valid),tae:{}})]){
   map.set(key,corrupt);

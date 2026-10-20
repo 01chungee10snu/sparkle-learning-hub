@@ -1,4 +1,4 @@
-import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js?v=career-v29-20261019';
+import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js?v=child-ux-v33-20261020';
 import {academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT,SKKU_2025_RESULT_REPORT_PDF} from './career-academic-evidence-v28.js?v=skku-pdf-v28a';
 import {ARCHIVED_CAREER_NAMES} from './career-state.js';
 
@@ -200,8 +200,8 @@ export function mountCareerExplorer(container,{
      study.append(el('strong','career-university-percentiles',
        '국어 '+u.percentiles[0]+' · 수학 '+u.percentiles[1]+' · 탐구1 '+u.percentiles[2]+' · 탐구2 '+u.percentiles[3]+' 백분위'));
      study.append(el('strong','career-rank-equivalent',
-       '1만 명 백분위 감각지표: 상위 약 '+money(u.per10000SubjectMeanEquivalent)+'명 수준에 해당'));
-     study.append(small('계산: (100 − 네 영역 백분위 평균 '+u.percentileMean+') × 100 = '+u.per10000SubjectMeanEquivalent+'명.'));
+       '네 영역의 단순 평균 백분위 '+u.percentileMean+' · 전국 석차로 환산 불가'));
+     study.append(small('국어·수학·탐구 2개 영역의 백분위를 단순 평균한 참고 지표입니다. 이를 1만 명 중 몇 등으로 환산하면 실제 전국 석차를 잘못 나타낼 수 있어요.'));
      study.append(small('⚠ '+u.caution));
      study.append(small('⚠ '+evidence.pathNote));
      study.append(sourceLink('대입정보포털 어디가 · 입학정보 확인',u.sourceUrl));
@@ -263,7 +263,12 @@ export function mountCareerExplorer(container,{
   }
   facts.append(sourceLink('커리어넷 원자료 무료로 확인',c.sourceUrl));
   facts.append(sourceLink('한국직업사전 직무·자격 기준',CAREER_SOURCES[0].url));
-  details.append(facts);
+  if(state.unlocked.has(id)){
+    const guardian=el('details','career-guardian-disclosure');
+    guardian.append(el('summary','','👨‍👩‍👧 보호자와 통계·출처 자세히 보기'));
+    guardian.append(facts);
+    details.append(guardian);
+  }else details.append(facts);
   const related=el('div','career-related');
   related.append(el('h4','','나의 마법마을 공부와 연결하기'));
   for(const subject of c.subjects){

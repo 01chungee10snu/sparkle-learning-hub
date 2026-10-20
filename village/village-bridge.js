@@ -1,3 +1,4 @@
+import {checkPlay,recordPlay} from '../platform/play-balance.js';
 import * as Progress from '../platform/progress.js';
 import * as Growth from '../platform/growth.js';
 import {gardenSnapshot,mutateGarden} from './garden-state.js';
@@ -237,8 +238,17 @@ export function createVillageHost(emit) {
     if (request.area==='home'||request.area==='plaza')currentArea=request.area;
     if(action.startsWith('GARDEN_')) {
       const selectedSlot=request.slot ?? (typeof response==='string'&&/^\d$/.test(response)?Number(response):-1);
+      const isCare=action==='GARDEN_PLANT'||action==='GARDEN_CARE';
+      if(isCare&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 만나고 다시 정원을 돌봐요!');
+      const gardenKey='sparkle-care-garden-v1:'+new URL('../',import.meta.url).pathname;
+      const previous=isCare?globalThis.localStorage.getItem(gardenKey):null;
       const result=mutateGarden({who,area:currentArea,action,slot:selectedSlot,
         species:request.species,care:request.care,expectedStage:request.expectedStage});
+      if(isCare)try{recordPlay(who);}catch(error){
+        try{if(previous===null)globalThis.localStorage.removeItem(gardenKey);
+            else globalThis.localStorage.setItem(gardenKey,previous);}catch{}
+        throw error;
+      }
       return action==='GARDEN_OPEN'?visit('garden',result):snapshot(action,requestId,result);
     }
 
@@ -280,24 +290,32 @@ export function createVillageHost(emit) {
       const world=action==='POND_ADOPT'?'pond':'ocean';
       const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
       if(!creature||creature.world!==world)throw new Error('선택한 생물이 사는 장소를 다시 확인해 주세요.');
+      if(!Resources.wallet(catalog,who).fish.find(f=>f.id===itemId)?.owned&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
       const result=Resources.adoptFish(itemId,catalog,who);
       if(!result.ok)throw new Error(result.reason==='learning-milestone'?'새로운 것을 조금 더 배우면 만날 수 있어요. 지금은 다른 친구를 만나 봐요.':result.reason==='insufficient-resources'?'다른 배움터에서도 꽃잎·깃털·수정 같은 재료를 찾아볼까요?':'동물 친구와 만난 기록을 저장하지 못했어요.');
+      if(!result.duplicate)recordPlay(who);
       return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 함께하는 친구예요.':'새로운 생물 친구를 만났어요!'});
     }
     if (action === 'POND_FEED'||action==='OCEAN_FEED') {
       const world=action==='POND_FEED'?'pond':'ocean';
       const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
       if(!creature||creature.world!==world)throw new Error('생물이 사는 장소를 다시 확인해 주세요.');
+      const alreadyFed=Resources.wallet(catalog,who).fish.find(f=>f.id===itemId)?.fedToday;
+      if(!alreadyFed&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
       const result=Resources.feedFish(itemId,catalog,who);
       if(!result.ok)throw new Error('생물 관찰 기록을 저장하지 못했어요.');
+      if(!result.duplicate)recordPlay(who);
       return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 만나 보았어요.':creature.careMode==='observe'?'야생 생물을 안전한 거리에서 관찰했어요!':'물고기 친구가 먹이를 먹고 헤엄쳐요!'});
     }
     if (action === 'SHOP_OPEN') return visit('shop',{shop:shopState()});
     if (action === 'SHOP_BUY') {
       if (typeof itemId!=='string' || itemId.length>80) throw new Error('선물 이름을 확인해 주세요.');
+      const selected=shopState().items.find(item=>item.id===itemId);
+      if(selected&&!selected.owned&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 만나고 다시 꾸며요!');
       const outcome=Rewards.purchaseReward(itemId,catalog,who);
       if (!outcome.ok) throw new Error(outcome.reason==='insufficient-stars'?
         '이 선물은 나중에 골라도 괜찮아요. 이미 받은 선물을 다시 써 볼까요?': '선물 고른 기록을 저장하지 못했어요. 보호자와 확인해 주세요.');
+      if(selected&&!outcome.duplicate)recordPlay(who);
       return snapshot(action, requestId, {shop:shopState(),itemChanged:itemId});
     }
     if (action === 'SHOP_EQUIP') {

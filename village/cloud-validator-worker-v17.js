@@ -1,9 +1,10 @@
+import {PLAY_BALANCE_KEY,mergeBalance} from '../platform/play-balance.js';
 // An isolated worker per validation job. Never import stateful app modules in the page.
 import {createLifeStore} from './life-state-v16.js';
 const CATALOG_URL=new URL('../games/catalog.json',import.meta.url);
 const readOnlyKeys=['sparkle-learning-progress-v3','fairy-math-garden-v1','sparkle-rewards-v1','sparkle-unity-village-v1','sparkle-family-settings-v1'];
 const GARDEN_KEY='sparkle-care-garden-v1:'+new URL('../',import.meta.url).pathname;
-const allowed=new Set([...readOnlyKeys,GARDEN_KEY,'sparkle:fairy-visual-style:v11:tae','sparkle:fairy-visual-style:v11:se']);
+const allowed=new Set([PLAY_BALANCE_KEY,...readOnlyKeys,GARDEN_KEY,'sparkle:fairy-visual-style:v11:tae','sparkle:fairy-visual-style:v11:se']);
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const clone=x=>JSON.parse(JSON.stringify(x));
 const safeJson=x=>JSON.stringify(x);
@@ -134,10 +135,12 @@ async function run({local,remote,base=null,namespace,prefer=null}){
  for(const id of Object.values(styles))if(F.safeStyle(id)!==id)throw Error('알 수 없는 요정 스타일입니다.');
  const {learner,createdAt,...learning}=progress;
  if(learning.unitGarden&&typeof learning.unitGarden==='object')delete learning.unitGarden.selected;
- const result={schema:17,learning,rewards,village,careGarden,life:mergedLife,settings,fairyStyles:styles};
+ const playBalance=mergeBalance(local.playBalance,remote.playBalance);
+ const result={schema:17,learning,rewards,village,careGarden,life:mergedLife,playBalance,settings,fairyStyles:styles};
  const hasConflictBackup=Boolean(Object.keys(conflictBackup.life).length||Object.keys(conflictBackup.careGarden).length||conflictBackup.settings);
  const writes={
   [P.KEY]:safeJson(result.learning.platform),
+  [PLAY_BALANCE_KEY]:safeJson(playBalance),
   [R.REWARDS_KEY]:safeJson(result.rewards.state),
   [V.VILLAGE_KEY]:safeJson(village),
   [GARDEN_KEY]:safeJson(careGarden),

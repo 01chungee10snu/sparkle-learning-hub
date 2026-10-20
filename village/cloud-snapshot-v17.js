@@ -1,3 +1,4 @@
+import {PLAY_BALANCE_KEY,loadBalance} from '../platform/play-balance.js';
 import * as Progress from '../platform/progress.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
@@ -24,7 +25,7 @@ const freshSettings=storage=>{
 };
 const keys=namespace=>[
  Progress.KEY,Progress.LEGACY_KEY,Rewards.REWARDS_KEY,Village.VILLAGE_KEY,
- Settings.SETTINGS_KEY,GARDEN_KEY,'sparkle-life-v16:'+namespace,styleStorageKey('tae'),styleStorageKey('se')
+ Settings.SETTINGS_KEY,GARDEN_KEY,PLAY_BALANCE_KEY,'sparkle-life-v16:'+namespace,styleStorageKey('tae'),styleStorageKey('se')
 ];
 const same=(a,b)=>a===b;
 function validateLocalLife(storage,namespace){
@@ -84,7 +85,7 @@ export function createCloudSnapshotAdapter({namespace='/',storage=globalThis.loc
   if(storage.getItem(journalKey)!==null)throw Error('복구되지 않은 동기화 기록이 있습니다.');
   for(const key of keys(namespace))storage.getItem(key);
   return {schema:17,learning:learningSnapshot(),rewards:Rewards.exportRewards(),
-   village:clone(Village.loadVillage(storage)),careGarden:careSnapshot(storage),life:validateLocalLife(storage,namespace),
+   village:clone(Village.loadVillage(storage)),careGarden:careSnapshot(storage),life:validateLocalLife(storage,namespace),playBalance:loadBalance(storage),
    settings:freshSettings(storage),
    fairyStyles:{tae:loadFairyStyle('tae',storage),se:loadFairyStyle('se',storage)}};
  }
@@ -139,7 +140,7 @@ export function createCloudSnapshotAdapter({namespace='/',storage=globalThis.loc
  }
  function readDuringApply(){
   return {schema:17,learning:learningSnapshot(),rewards:Rewards.exportRewards(),
-   village:clone(Village.loadVillage(storage)),careGarden:careSnapshot(storage),life:validateLocalLife(storage,namespace),
+   village:clone(Village.loadVillage(storage)),careGarden:careSnapshot(storage),life:validateLocalLife(storage,namespace),playBalance:loadBalance(storage),
    settings:freshSettings(storage),
    fairyStyles:{tae:loadFairyStyle('tae',storage),se:loadFairyStyle('se',storage)}};
  }

@@ -1,4 +1,4 @@
-import {CAREER_DATA} from './career-data-v27.js';
+import {CAREER_DATA} from './career-data-v27.js?v=child-ux-v33-20261020';
 import {academicSignalsForCareer} from './career-academic-evidence-v28.js';
 
 /** 100 deliberately sampled, source-documented professions.

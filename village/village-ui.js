@@ -1,5 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
-import {mountCareerExplorer} from './career-ui.js?v=child-safe-v32-20261019';
+import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
@@ -49,7 +49,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ' <button id="vh-pond" type="button" class="vh-shortcut">🐠 생명 연못</button>',
     ' <button id="vh-ocean" type="button" class="vh-shortcut vh-ocean-shortcut">🌊 푸른 바다</button>',
     ' <button id="vh-adaptive" type="button" class="vh-shortcut vh-learning-shortcut">🧠 오늘의 3걸음</button>',
-    ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">✨ 더 놀기</button>',
+    ' <button id="vh-more" type="button" class="vh-shortcut" aria-expanded="false" aria-controls="vh-extra-tools">🧭 더 둘러보기</button>',
     ' <div id="vh-extra-tools" hidden>',
     ' <button id="vh-run" type="button" class="vh-shortcut" aria-pressed="false">🏃 달리기</button>',
     ' <button id="vh-hop" type="button" class="vh-shortcut">🪽 살짝 날기</button>',
@@ -75,7 +75,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     '  <footer class="vh-dialog-footer"><button class="vh-secondary" id="vh-listen" type="button">🔊 읽어줘</button>',
     '   <button class="vh-secondary" id="vh-hint" type="button" hidden>💡 힌트</button>',
     '   <button class="vh-secondary" id="vh-exit" type="button">잠깐 쉬기</button>',
-    '   <p class="vh-small" id="vh-note">틀려도 괜찮아요. 하나씩 생각해요.</p></footer>',
+    '   <p class="vh-small" id="vh-note">답을 찾아가는 과정도 소중해요.</p></footer>',
     ' </section>',
     '</div>'
   ].join('');
@@ -202,6 +202,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
   function setZone(next) {
     if (phase !== 'explore' || busy || root.dataset.ready!=='true' || zone===next) return;
+    if (root.dataset.lite==='true') {
+      announce('가벼운 2D 모드에서는 학습 지역과 특별 장소를 선택해요. 자유 이동은 3D 마을에서 할 수 있어요.');
+      return;
+    }
     busy=true; ui.home.disabled=ui.plaza.disabled=ui.quest.disabled=ui.bebsu.disabled=true;
     zone = next;
     ui.home.setAttribute('aria-current',next === 'home'?'page':'false');
@@ -472,10 +476,15 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   ui.exit.addEventListener('click',close);
   ui.hint.addEventListener('click',()=>{if (phase==='question') request('HINT');});
   root.addEventListener('keydown',event=>{
-    if (ui.dialog.hidden || event.key!=='Tab') return;
-    const controls=[...ui.dialog.querySelectorAll('button,input,select,[tabindex="0"]')].filter(el=>!el.hidden&&!el.disabled&&el.getClientRects().length);
+    if (ui.dialog.hidden) return;
+    if (event.key==='Escape') {event.preventDefault();close();return;}
+    if (event.key!=='Tab') return;
+    const controls=[...ui.dialog.querySelectorAll('button,input,select,textarea,a[href],[tabindex="0"]')].filter(el=>!el.hidden&&!el.disabled&&el.getClientRects().length&&getComputedStyle(el).visibility!=='hidden');
     if(!controls.length)return;
     const first=controls[0],last=controls.at(-1);
+    if(!controls.includes(document.activeElement)) {
+      event.preventDefault();(event.shiftKey?last:first).focus();return;
+    }
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
   });
@@ -512,7 +521,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   function open() {
     collapseTools();
     sendToUnity("PAUSE_EXPLORE");
-    if (phase === 'explore') lastFocus = document.activeElement;
+    // The destination state is often assigned before open(); use visibility,
+    // not phase, to preserve the actual launcher for keyboard focus return.
+    if (ui.dialog.hidden) lastFocus = document.activeElement;
     ui.dialog.hidden = false;
     ui.controls.hidden = true;
     ui.help.hidden = true;
@@ -1149,7 +1160,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       gallery.append(card);
     }
     if(!model.routes.length)gallery.append(label('p',
-      '선택한 학년에서 추천 가능한 새 문제가 부족해요. 다른 과목이나 학년을 직접 골라 주세요.',
+      '이 학년의 새로운 문제를 모두 만났어요. 다른 과목이나 학년의 모험도 선택해 보세요.',
       'vh-story'));
     contentTarget.append(gallery);
     paragraph(model.explanation||'난도는 통계적으로 검증되지 않은 잠정 추정입니다.','vh-small');

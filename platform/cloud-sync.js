@@ -7,6 +7,7 @@ import * as VillageState from '../village/village-state.js?v=unified-20261013';
 import * as Relationships from '../village/relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from '../village/ecology-state.js?v=ecology-v19-20261015';
 import * as Resources from './resource-economy.js?v=career-v27-20261019';
+import * as PlayBalance from './play-balance.js?v=child-ux-v33-20261020';
 import * as Careers from '../village/career-state.js?v=career-v25-20261019';
 
 export const PAIRING_KEY='sparkle-family-pairing-code-v1';
@@ -118,13 +119,15 @@ export function buildLocalSnapshot(){
  return {...learning,familySettings:Settings.getSettings(),rewards:Rewards.exportRewards(),
   village:VillageState.loadVillage(),growthGoals:Progression.exportGoals(),
   relationships:Relationships.exportRelationships(),ecology:Ecology.exportEcology(),resources:Resources.exportResources(),
-  career:Careers.exportCareer(),cloudSnapshotVersion:1};
+  career:Careers.exportCareer(),playBalance:PlayBalance.loadBalance(),cloudSnapshotVersion:1};
 }
 function settingsAreDefaults(value){
  return value?.tae?.place==='우리 학교'&&value?.se?.place==='우리 어린이집';
 }
 export function applySnapshot(raw){
  if(!raw||raw.cloudSnapshotVersion!==1)throw new Error('마법마을 클라우드 기록 형식을 확인해 주세요.');
+ // Validate before changing any local learning history.
+ const incomingBalance=raw.playBalance?PlayBalance.validateBalance(raw.playBalance):null;
  Progress.importRecords(raw);
  if(raw.rewards)Rewards.importRewards(raw.rewards);
  if(raw.village)VillageState.saveVillage(VillageState.mergeVillage(VillageState.loadVillage(),raw.village));
@@ -133,6 +136,7 @@ export function applySnapshot(raw){
  if(raw.ecology)Ecology.importEcology(raw.ecology);
  if(raw.resources)Resources.importResources(raw.resources);
  if(raw.career)Careers.importCareer(raw.career);
+ if(incomingBalance)PlayBalance.importBalance(incomingBalance);
  if(raw.familySettings&&settingsAreDefaults(Settings.getSettings()))
   Settings.saveSettings(Settings.validateSettings(raw.familySettings));
  return true;

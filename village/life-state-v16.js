@@ -1,3 +1,4 @@
+import {checkPlay,recordPlay} from '../platform/play-balance.js';
 // Child-friendly, offline-first life play. No clock-based decay or quiz rewards.
 export const LIFE_CROPS = Object.freeze({
   carrot: Object.freeze({title:'당근',emoji:'🥕',steps:3}),
@@ -67,7 +68,7 @@ const validateRoot=(root)=>{
   if(!plain(root)||root.version!==16||!OWNERS.every(k=>validState(root[k]))||Object.keys(root).length!==4)fail('저장된 마을 정보가 올바르지 않아요. 기존 기록을 보존했어요.');
 };
 const canonical=(who,area,s)=>({...structuredClone(s),who,area});
-export function createLifeStore({storage,namespace='/'}={}){
+export function createLifeStore({storage,namespace='/',balance={checkPlay,recordPlay}}={}){
   if(typeof namespace!=='string'||namespace.length>512)fail('저장 위치가 올바르지 않아요.');
   const key='sparkle-life-v16:'+namespace;
   // Resolve storage on use so module imports work in Node and SSR.
@@ -98,6 +99,8 @@ export function createLifeStore({storage,namespace='/'}={}){
       if(!int(expectedRevision)||expectedRevision!==s.revision)fail('마을이 이미 변경되었어요. 새 화면을 확인해 주세요.');
       if(!LIFE_ACTIONS.includes(type))fail('놀이 종류를 확인해 주세요.');
       const {slot,species,care,id,expectedStage,expectedCycle,expectedStep,kind,value}=action;
+      const balanced=type!=='RENAME'&&(type!=='DECORATE'||s.decor[kind]!==value);
+      if(balanced&&!balance.checkPlay(who,{storage:store()}).allowed)fail('새로운 문제를 하나 풀고 다시 놀러 와요!');
       let message='';
       if(type==='PLANT'){
         if(!int(slot,0,5)||!has(LIFE_CROPS,species)||s.plots.some(p=>p.slot===slot))fail('씨앗이나 빈 밭을 확인해 주세요.');
@@ -143,7 +146,14 @@ export function createLifeStore({storage,namespace='/'}={}){
       if(s.revision>=MAX_COUNT)fail('마을 기록의 변경 한도를 확인해 주세요.');
       s.revision++;
       validateRoot(root);
-      try{store().setItem(key,JSON.stringify(root));}catch{fail('마을 기록을 저장하지 못했어요. 다시 시도해 주세요.');}
+      const previous=store().getItem(key);
+      try{
+        store().setItem(key,JSON.stringify(root));
+        if(balanced)balance.recordPlay(who,{storage:store()});
+      }catch(error){
+        try{if(previous===null)store().removeItem(key);else store().setItem(key,previous);}catch{}
+        fail(error?.message||'마을 기록을 저장하지 못했어요. 다시 시도해 주세요.');
+      }
       return {snapshot:canonical(who,area,s),message};
     }
   });
