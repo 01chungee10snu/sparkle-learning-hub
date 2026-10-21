@@ -19,12 +19,13 @@ for(const species of FISH_SPECIES){
  assert(Number.isInteger(species.minSolved)&&species.minSolved>=0,`Invalid learning gate: ${species.id}`);
  assert(Number.isInteger(species.minBalancedDays)&&species.minBalancedDays>=0);
  assert(RESOURCE_SUBJECTS.every(s=>Number.isInteger(species.cost[s])&&species.cost[s]>=0),`Bad four-resource cost ${species.id}`);
- assert(species.art===`./assets/marine-premium-v25/${species.id}.webp`,`Unexpected art path ${species.id}`);
- const art=path.join(folder,`${species.id}.webp`),source=path.join(folder,`${species.id}.svg`);
- const bytes=fs.readFileSync(art),svg=fs.readFileSync(source,'utf8');
+ const generated=species.world==='pond';
+ assert(species.art===(generated?`../assets/pond-originals-v34/${species.id}.webp`:`./assets/marine-premium-v25/${species.id}.webp`),`Unexpected art path ${species.id}`);
+ const art=path.resolve(repo,'village',species.art),source=path.join(folder,`${species.id}.svg`);
+ const bytes=fs.readFileSync(art),svg=generated?null:fs.readFileSync(source,'utf8');
  assert(bytes.length>=30_000 && bytes.length<=1_500_000,`Missing/oversized image ${species.id}: ${bytes.length}`);
  assert(bytes.toString('ascii',0,4)==='RIFF'&&bytes.toString('ascii',8,12)==='WEBP',`Invalid WebP ${species.id}`);
- assert(svg.length>=1600&&svg.length<=180_000&&svg.includes('<svg')&&svg.includes('</svg>'),`Missing/editability SVG ${species.id}`);
+ if(!generated)assert(svg.length>=1600&&svg.length<=180_000&&svg.includes('<svg')&&svg.includes('</svg>'),`Missing/editability SVG ${species.id}`);
  const hash=crypto.createHash('sha256').update(bytes).digest('hex');
  assert(!hashes.has(hash),`Reused identical image: ${species.id}`);
  hashes.add(hash);webpBytes+=bytes.length;
@@ -43,4 +44,4 @@ for(const world of Object.keys(speciesWorlds)){
 assert(FISH_SPECIES.find(s=>s.id==='humpback-whale')?.careMode==='observe');
 assert(FISH_SPECIES.find(s=>s.id==='reef-shark')?.careMode==='observe');
 assert(FISH_SPECIES.find(s=>s.id==='sea-turtle')?.careMode==='observe');
-console.log(`MARINE_GALLERY_V30_PASS ${ids.size} original creatures, 24 freshwater + 40 ocean, 128 files, distinct WebP SHA, rising learning/currency gates, ${(webpBytes/1_048_576).toFixed(1)} MiB compressed`);
+console.log(`MARINE_GALLERY_PASS ${ids.size} original creatures, 24 generated pond + 40 ocean, distinct WebP SHA, rising learning/currency gates, ${(webpBytes/1_048_576).toFixed(1)} MiB compressed`);

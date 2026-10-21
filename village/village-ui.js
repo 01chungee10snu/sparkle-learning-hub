@@ -1,4 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
+import {mountPondExperience} from './pond-experience.js?v=pond-v34-20261021';
 import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
@@ -114,6 +115,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   const resourceBalancesByWho={tae:null,se:null};
   let gainedFromAnswer=[];
   const waterBrowse={pond:{filter:'all',page:0},ocean:{filter:'all',page:0}};
+  let pondExperience=null,pondRefresh=null,pondSession=null,pondRuntimePrefix='';
+  const disposePond=()=>{const active=pondExperience;pondExperience=null;pondRefresh=null;active?.destroy();};
+  const syncPondActions=()=>{if(phase==='pond')for(const control of ui.body.querySelectorAll('[data-pond-action]'))control.disabled=control.dataset.pondAction==='blocked'||!pondExperience?.running;};
   const firstVisitSeen=new Set();
   let firstVisitTimer=0;
   let experimentalArt=false;
@@ -372,6 +376,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     root.dataset.reducedMotion=String(reducedMotion);
     $('vh-motion').setAttribute('aria-pressed',String(reducedMotion));
     $('vh-motion').textContent=reducedMotion?'🍃 움직임 켜기':'🍃 움직임 줄이기';
+    pondExperience?.setReducedMotion(reducedMotion);
     sendToUnity(reducedMotion?'MOTION_LOW':'MOTION_FULL');
   });
   $('vh-wave').addEventListener('click',()=>{if(safeExplore())sendToUnity('WAVE');});
@@ -499,6 +504,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     window.speechSynthesis.speak(utterance);
   });
   function close() {
+    disposePond();
     if (pendingRequest) retiredRequests.add(pendingRequest);
     if (retiredRequests.size>128) retiredRequests.delete(retiredRequests.values().next().value);
     pendingRequest='';
@@ -535,6 +541,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.title.focus({preventScroll:true});
   }
   function resetBody() {
+    disposePond();
     // Numeric submit stays pinned above the footer on small Galaxy screens.
     ui.dialog.querySelectorAll('.vh-number-submit').forEach(el=>el.remove());
     ui.dialog.querySelector('.vh-dialog-footer')?.classList.remove('vh-has-keypad');
@@ -898,17 +905,22 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     });
     ui.title.focus({preventScroll:true});
   }
-  function showWaterHabitat(data,notice='',world='pond'){
+  function showWaterHabitat(data,notice='',world='pond',session=null,action='',itemChanged=''){
     if(!data||!Array.isArray(data.fish))return;
+    if(world==='pond'&&pondExperience&&phase==='pond'){
+      pondSession=session||pondSession;pondRefresh?.(data,notice);
+      pondExperience.receive({ok:true,action,pondSession,itemChanged});syncPondActions();return;
+    }
     const ocean=world==='ocean',fishInWorld=data.fish.filter(f=>f.world===world);
     phase=world;open();resetBody();theme(ocean?'ocean':'garden');root.dataset.mode=world;
-    ui.title.textContent=ocean?'🌊 푸른 바다 · 해양생물 탐험':'🐠 생명 연못 · 물고기 키우기';
+    ui.title.textContent=ocean?'🌊 푸른 바다 · 해양생물 탐험':'🐠 생명 연못 · 물고기와 함께';
     ui.counter.textContent=fishInWorld.filter(f=>f.owned).length+' / '+fishInWorld.length+'종 만났어요';
     ui.listen.hidden=false;ui.hint.hidden=true;
-    voiceText=ocean?'바다에는 작은 물고기부터 상어와 고래까지 살아요. 다양한 과목을 배우면 더 넓은 바다를 만날 수 있어요.':'서로 다른 배움 자원을 모아 연못 물고기들에게 하루에 한 번 먹이를 줄 수 있어요.';
-    ui.note.textContent=ocean?'고래·상어·바다거북은 바다에서 자유롭게 살아요. 여기서는 거리를 지키며 모습을 관찰해요.':'연못 친구의 모습을 살펴보고 생명을 아끼는 마음을 배워요. 모은 별도 그대로 남아요.';
+    voiceText=ocean?'바다에는 작은 물고기부터 상어와 고래까지 살아요. 다양한 과목을 배우면 더 넓은 바다를 만날 수 있어요.':'연못을 보고 있는 시간 1분마다 배움 재료 하나를 써요. 물고기가 쉬는 동안 여러 배움터의 새 문제를 만나 봐요.';
+    ui.note.textContent=ocean?'고래·상어·바다거북은 바다에서 자유롭게 살아요. 여기서는 거리를 지키며 모습을 관찰해요.':'물고기에게 인사하고, 물결을 따라 함께 헤엄쳐요. 쉬는 동안 물고기도 안전하게 지내요.';
     if(notice)paragraph(notice,'vh-feedback');
-    const panorama=label('section','','vh-water-panorama '+(ocean?'vh-sea-panorama':'vh-pond-panorama'));
+    if(ocean){
+    const panorama=label('section','','vh-water-panorama vh-sea-panorama');
     panorama.setAttribute('aria-label',ocean?'바다 보호구역 풍경':'연못 풍경');
     panorama.append(label('div',ocean?'산호초에서 먼바다까지, 함께 넓어지는 세상':'작은 연못에서 시작하는 생명의 이야기','vh-water-caption'));
     const residents=label('div','','vh-water-residents');
@@ -918,12 +930,21 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       avatar.append(art);residents.append(avatar);
     }
     panorama.append(residents);ui.body.append(panorama);
+    }else{
+      pondSession=session||pondSession;
+      const prefix='pond-runtime-'+(++requestNumber)+'-';pondRuntimePrefix=prefix;
+      pondExperience=mountPondExperience(ui.body,{
+        fish:fishInWorld,status:pondSession,reducedMotion,
+        request:action=>Promise.resolve(sendRequest({action,requestId:prefix+(++requestNumber),area:zone})),
+        onLearn:()=>request('POND_LEARN'),onClose:close
+      });
+    }
     const resources=label('section','','vh-resource-grid');
     const currencies=[['math','💎','수정'],['korean','🌸','꽃잎'],['english','🪶','깃털'],['hanja','🖋️','먹방울']];
     for(const [id,emoji,name] of currencies){
       const card=label('div','','vh-resource-balance');
       card.append(label('strong',emoji+' '+name,'vh-resource-title'));
-      card.append(label('span',String(data.available?.[id]??0),'vh-resource-count'));
+      const amount=label('span',String(data.available?.[id]??0),'vh-resource-count');amount.dataset.pondResource=id;card.append(amount);
       resources.append(card);
     }
     ui.body.append(resources);
@@ -961,7 +982,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     function buildFishCard(fish){
       const article=label('article','','vh-pond-fish');
       article.dataset.species=fish.id;
-      const imageWrap=label('span','','vh-fish-emoji vh-fish-art');
+      const imageWrap=!ocean&&fish.owned?button('',()=>pondExperience?.focusFish(fish.id),'vh-fish-emoji vh-fish-art vh-fish-art-button'):label('span','','vh-fish-emoji vh-fish-art');
+      if(!ocean&&fish.owned)imageWrap.setAttribute('aria-label',fish.name+'와 함께 헤엄치기');
+      if(!ocean&&fish.owned){imageWrap.dataset.pondAction='available';imageWrap.disabled=!pondExperience?.running;}
       const art=document.createElement('img');art.src=fish.art+"?v=child-safe-v32-20261019";art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
       imageWrap.append(art);article.append(imageWrap);
       const copy=label('div','','vh-fish-copy');
@@ -971,6 +994,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         copy.append(label('p',(fish.careMode==='observe'?'관찰한 날 ':'돌본 날 ')+fish.feedDays+'번'+(who==='se'?'':' · 발견 '+(fish.growth+1)+'단계'),'vh-fish-growth'));
         const feed=button(fish.fedToday?'오늘 돌봄 완료 ✓':fish.careMode==='observe'?'🔭 멀리서 관찰하기':'🫧 오늘 먹이 주기',()=>request(ocean?'OCEAN_FEED':'POND_FEED',{itemId:fish.id}),'vh-pond-action');
         feed.disabled=fish.fedToday;
+        if(!ocean){feed.dataset.pondAction=fish.fedToday?'blocked':'available';feed.disabled=fish.fedToday||!pondExperience?.running;}
         copy.append(feed);
       }else{
         if(who==='se'){
@@ -983,16 +1007,23 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
         }
         const adopt=button(fish.canAdopt?(ocean?'🌊 바다 보호구역 살펴보기':'🐟 연못에 초대하기'):fish.meetsLearning?'배움 재료를 모으고 있어요':'새로운 배움 뒤에 만나요',()=>request(ocean?'OCEAN_ADOPT':'POND_ADOPT',{itemId:fish.id}),'vh-pond-action');
         adopt.disabled=!fish.canAdopt;copy.append(adopt);
+        if(!ocean){adopt.dataset.pondAction=fish.canAdopt?'available':'blocked';adopt.disabled=!fish.canAdopt||!pondExperience?.running;}
       }
       article.append(copy);return article;
     }
     renderPage();
     ui.body.append(list,paging);
+    if(!ocean)pondRefresh=(nextWallet,message='')=>{
+      data=nextWallet;fishInWorld.splice(0,fishInWorld.length,...data.fish.filter(f=>f.world==='pond'));
+      ui.counter.textContent=fishInWorld.filter(f=>f.owned).length+' / '+fishInWorld.length+'종 만났어요';
+      for(const [id] of currencies){const amount=resources.querySelector('[data-pond-resource="'+id+'"]');if(amount)amount.textContent=String(data.available?.[id]??0);}
+      renderPage();if(message)ui.note.textContent=message;
+    };
     if(Object.values(data.deficits||{}).some(v=>v>0))
       paragraph('다른 기기의 기록이 합쳐져 배움 재료의 수가 달라졌어요. 보호자와 기록을 확인한 뒤 다시 이용해 주세요.','vh-small');
     ui.title.focus({preventScroll:true});
   }
-  const showPond=(data,notice='')=>showWaterHabitat(data,notice,'pond');
+  const showPond=(data,notice='',session=null,action='',itemChanged='')=>showWaterHabitat(data,notice,'pond',session,action,itemChanged);
   const showOcean=(data,notice='')=>showWaterHabitat(data,notice,'ocean');
   function showShop(shop) {
     if (!shop || !Array.isArray(shop.items)) {announce('별 상점에 다시 들어와 주세요.');return;}
@@ -1229,11 +1260,13 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   function showQuestion(q) {
     if (!q) return;
     phase='question'; question=q; gameId=q.gameId;
+    root.dataset.questionId=q.questionId;root.dataset.gameId=q.gameId;root.dataset.questionSubject=q.subject||'';
     open(); resetBody();
     const skin=q.total===25?'tome':(q.gameId==='kind-dialogue'||q.gameId?.startsWith('hanja-'))?'scroll':'crystal';
     theme(skin);root.dataset.mode='question';
     ui.title.textContent=(q.gameId?.startsWith('hanja-')?'📜 ':'🧩 ')+(q.title || '생각해 볼까요?');
     ui.counter.textContent=(q.index || 1)+' / '+(q.total || 3);
+    if(q.pondGuided)paragraph('🌿 배움 산책 · '+({math:'수학',korean:'국어',english:'영어',hanja:'한자'}[q.subject]||'새로운 배움')+'에서 만난 이야기','pond-learning-progress');
     showRoundCue(Math.max(0,(q.index||1)-1),q.total||3);
     voiceText=[q.story,q.prompt,...(q.choices||[])].filter(Boolean).join('. ');
     if(skin==='tome'){
@@ -1298,7 +1331,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     if((result.recoveryEarned??0)>0)paragraph('🌱 어려웠던 문제를 스스로 다시 풀어냈어요!','vh-learning-bonus');
     paragraph(result.explanation || '차근차근 생각해 봐요.','vh-explanation');
     voiceText=result.explanation||'';
-    ui.body.append(button('다음 이야기 →',()=>request('NEXT'),'vh-wide'));
+    if(result.pondGuided)showPondLearningProgress(result.pondSession);
+    ui.body.append(button(result.pondGuided&&result.pondSession?.allowed?'연못에 다시 가기 →':'다음 이야기 →',()=>request('NEXT'),'vh-wide'));
     ui.note.textContent='다시 생각하는 순간도 소중한 배움이에요.';
     ui.listen.hidden = !voiceText;
     ui.title.focus({preventScroll:true});
@@ -1381,8 +1415,40 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.listen.hidden=true;ui.exit.hidden=true;
     ui.title.focus({preventScroll:true});
   }
+  function showPondLearningProgress(status){
+    const learning=status?.completedLearning||status?.learning;if(!learning)return;
+    const box=label('div','','pond-learning-progress');
+    box.append(label('strong','새 문제 '+(learning.done||0)+' / '+(learning.total||status.requiredItems||3)+'개를 만나 봤어요.'));
+    const subjects=label('div','','pond-learning-subjects');
+    for(const [id,n] of Object.entries(learning.counts||{}))if(n>0)subjects.append(label('span',(resourceMeta[id]?.[0]||'🌱')+' '+({math:'수학',korean:'국어',english:'영어',hanja:'한자'}[id]||id)+' '+n+'개'));
+    box.append(subjects,label('p','맞았는지와 관계없이 새로운 생각을 해 본 기록이 쌓여요.'));
+    ui.body.append(box);
+  }
+  function showPondLearningComplete(data){
+    phase='pond-learning-complete';open();resetBody();theme('garden');root.dataset.mode='pond-learning-complete';
+    ui.title.textContent='🌿 여러 배움터를 산책했어요';ui.counter.textContent='다시 만날 준비';
+    showRewardArt('bloom');
+    paragraph('여러 가지 새로운 생각을 만나 봤어요. 물고기에게 인사하러 갈까요? 지금 쉬어도 좋아요.','vh-story');
+    paragraph('다음 연못 방문에 필요한 배움 재료도 준비했어요.','vh-small');
+    ui.body.append(button('🐠 연못으로 돌아가기',()=>request('POND_OPEN'),'vh-wide'),button('🏡 마을에서 쉬기',close,'vh-secondary'));
+    ui.note.textContent='배움과 돌봄을 천천히 이어가요.';ui.listen.hidden=true;ui.hint.hidden=true;
+    ui.title.focus({preventScroll:true});
+  }
   function update(data) {
     if (!data || typeof data !== 'object') return;
+    // Heartbeats have their own channel: they never steal focus or retire a
+    // child's answer request, and never rebuild the animated scene every second.
+    if(data.requestId?.startsWith('pond-runtime-')){
+      if(!data.requestId.startsWith(pondRuntimePrefix))return;
+      if(data.pondRunning){$('vh-first-visit').hidden=true;window.clearTimeout(firstVisitTimer);}
+      if(data.pondSession)pondSession=data.pondSession;
+      if(data.resources?.available)for(const [id,value] of Object.entries(data.resources.available)){
+        if(!Number.isSafeInteger(value)||value<0)continue;
+        const hud=root.querySelector('[data-hud-resource="'+id+'"]');if(hud)hud.textContent=String(value);
+        const wallet=root.querySelector('[data-pond-resource="'+id+'"]');if(wallet)wallet.textContent=String(value);
+      }
+      pondExperience?.receive(data);syncPondActions();return;
+    }
     if(retiredRequests.has(data.requestId)||data.action==='CANCEL')return;
     if((data.action==='SUBMIT'||data.action==='HINT')&&phase!=='question')return;
     if(data.action==='NEXT'&&phase!=='feedback'&&phase!=='waiting')return;
@@ -1397,6 +1463,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       announce(data.error || '문제가 발생했어요. 다시 시도해 주세요.');
       return;
     }
+    if(data.pondSession)pondSession=data.pondSession;
     announce('');
     if (data.action === 'INIT') root.dataset.ready = 'true';
     if(data.action==='INIT'||data.action==='START'||data.action==='SHOW_BEBSU'||
@@ -1446,7 +1513,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     if(data.action.startsWith('GARDEN_'))showGarden(data);
     else if(data.action==='AREA_OPEN'){
       if(data.district==='career')showCareer(data.career);
-      else if(data.district==='pond')showPond(data.pondShop,data.pondNotice);
+      else if(data.district==='pond')showPond(data.pondShop,data.pondNotice,data.pondSession,data.action,data.itemChanged);
       else if(data.district==='ocean')showOcean(data.pondShop,data.pondNotice);
       else if(data.district==='kma'||data.district==='practice')showChallengePicker(data);
       else if(data.district==='shop')showShop(data.shop);
@@ -1455,7 +1522,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       else showAreaMissions(data.missions);
     }
     else if(['CAREER_OPEN','CAREER_TOGGLE','CAREER_UNLOCK'].includes(data.action))showCareer(data.career);
-    else if(['POND_OPEN','POND_ADOPT','POND_FEED'].includes(data.action))showPond(data.pondShop,data.pondNotice);
+    else if(['POND_OPEN','POND_ADOPT','POND_FEED'].includes(data.action))showPond(data.pondShop,data.pondNotice,data.pondSession,data.action,data.itemChanged);
     else if(['OCEAN_OPEN','OCEAN_ADOPT','OCEAN_FEED'].includes(data.action))showOcean(data.pondShop,data.pondNotice);
     else if(data.action==='SHOW_BEBSU'||data.action==='SHOW_PRACTICE')showChallengePicker(data);
     else if(data.action==='AREA_SET_STAGE')showGrowthTower(data.growth);
@@ -1463,7 +1530,8 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     else if(data.action==='ADAPTIVE_OFFER')showAdaptive(data.adaptive);
     else if(data.action==='RELATIONSHIP_OPEN')showFriends(data);
     else if(data.action==='ECOLOGY_OPEN')showEcology(data);
-    else if (data.action==='START' || data.action==='NEXT') {
+    else if(data.pondLessonComplete)showPondLearningComplete(data);
+    else if (data.action==='START' || data.action==='NEXT'||data.action==='POND_LEARN') {
       if (data.finished) {
         phase='waiting';
         ui.dialog.setAttribute('aria-busy','true');

@@ -4,14 +4,18 @@ import {EXTRA_SPECIES} from './marine-species-extra.js';
 import {FIRST_VISIT_REWARDS} from './first-visit-rewards.js';
 
 /**
- * Four distinct subject resources. Only independently correct, distinct items
- * pay resources. Legacy stars remain a separate, intact historical ledger.
+ * Four distinct subject resources. Ordinary problem rewards require independently
+ * correct, distinct items; first visits and completed mixed pond-learning cycles
+ * have separate, bounded receipts. Legacy stars retain their historical ledger.
  *
  * The client is a learning game, not a secure economy server: local storage
  * and family snapshot synchronization are eventually consistent. No academic
  * competence or financial value is represented.
  */
-export const RESOURCE_KEY='sparkle-subject-resources-v1';
+// Older cached writers discard unknown receipt fields. Keep new receipts in a
+// new key and merge legacy observations without ever letting v1 erase v2.
+export const RESOURCE_KEY='sparkle-subject-resources-v2';
+export const PREVIOUS_RESOURCE_KEY='sparkle-subject-resources-v1';
 export const RESOURCE_SUBJECTS=Object.freeze(['math','korean','english','hanja']);
 export const RESOURCE_TYPES=Object.freeze({
   math:Object.freeze({id:'math',name:'수정',emoji:'💎',color:'#387fa9'}),
@@ -21,11 +25,11 @@ export const RESOURCE_TYPES=Object.freeze({
 });
 const zero=()=>({math:0,korean:0,english:0,hanja:0});
 const cost=(math,korean,english,hanja)=>Object.freeze({math,korean,english,hanja});
-// Premium illustrations are provided separately under village/assets. Thresholds
+// Original illustrations are provided under assets and village/assets. Thresholds
 // are game progression targets, not measurements of intelligence or ability.
 const creature=(id,name,world,costs,minimum,balanced,color,size,description,careMode='feed')=>Object.freeze({
  id,name,world,emoji:'',color,size,cost:cost(...costs),minSolved:minimum,
- minBalancedDays:balanced,art:'./assets/marine-premium-v25/'+id+'.webp',
+ minBalancedDays:balanced,art:world==='pond'?'../assets/pond-originals-v34/'+id+'.webp':'./assets/marine-premium-v25/'+id+'.webp',
  careMode,description
 });
 export const FISH_SPECIES=Object.freeze([
@@ -53,7 +57,7 @@ const MAX_RECEIPTS=256,MAX_FEED_EVENTS=5000,DAY=86400000;
 const now=()=>Date.now();
 const validTimestamp=t=>Number.isSafeInteger(t)&&t>=0&&t<=now()+60000;
 const plain=v=>v&&typeof v==='object'&&!Array.isArray(v)&&(Object.getPrototypeOf(v)===Object.prototype||Object.getPrototypeOf(v)===null);
-const blankProfile=()=>({adoptions:{},feedEvents:{},careerUnlocks:{},visitBonuses:{}});
+const blankProfile=()=>({adoptions:{},feedEvents:{},careerUnlocks:{},visitBonuses:{},pondCharges:{},pondRefills:{}});
 const blank=()=>({version:1,profiles:{tae:blankProfile(),se:blankProfile()}});
 const copy=x=>JSON.parse(JSON.stringify(x));
 const validWho=who=>{if(!Object.hasOwn(Progress.LEARNERS,who))throw new Error('학습자 정보를 확인해 주세요.');return who;};
@@ -98,6 +102,19 @@ function clean(raw){
       throw new Error('직업사전 열람 영수증을 확인해 주세요.');
    result.profiles[who].careerUnlocks[id]={id,at:receipt.at,cost:{...zero(),...receipt.cost}};
   }
+  for(const name of ['pondCharges','pondRefills']){
+   const receipts=src[name]??{};
+   if(!plain(receipts)||Object.keys(receipts).length>100000)throw new Error('연못 재료 기록의 크기를 확인해 주세요.');
+   for(const [id,receipt] of Object.entries(receipts)){
+    const charge=name==='pondCharges',pattern=charge?/^pond-(0|[1-9][0-9]{0,5}):[1-5]$/:/^pond-(0|[1-9][0-9]{0,5})$/;
+    const maximum=who==='se'?3:5;
+    if(!pattern.test(id)||(charge&&Number(id.split(':')[1])>maximum)||!plain(receipt)||receipt.id!==id||!validTimestamp(receipt.at)||!plain(receipt.cost)||
+      Object.keys(receipt.cost).length!==4||RESOURCE_SUBJECTS.some(s=>!Number.isSafeInteger(receipt.cost[s])||receipt.cost[s]<0||receipt.cost[s]>maximum)||
+      (charge?RESOURCE_SUBJECTS.reduce((n,s)=>n+receipt.cost[s],0)!==1:RESOURCE_SUBJECTS.reduce((n,s)=>n+receipt.cost[s],0)>maximum))
+      throw new Error('연못 재료 영수증을 확인해 주세요.');
+    result.profiles[who][name][id]={id,at:receipt.at,cost:{...receipt.cost}};
+   }
+  }
  }
  return result;
 }
@@ -121,13 +138,21 @@ function merge(a,b){
    const old=merged.profiles[who].visitBonuses[id];
    if(!old||e.at<old.at)merged.profiles[who].visitBonuses[id]=e;
   }
+  for(const name of ['pondCharges','pondRefills'])for(const [id,e] of Object.entries(incoming.profiles[who][name])){
+   const old=merged.profiles[who][name][id];
+   // A minute and a completed learning cycle each have one stable receipt.
+   // Concurrent snapshots choose the same receipt rather than adding it twice.
+   if(!old||e.at<old.at||(e.at===old.at&&JSON.stringify(e.cost)<JSON.stringify(old.cost)))merged.profiles[who][name][id]=e;
+  }
  }
  return merged;
 }
 export function loadResources(storage=globalThis.localStorage){
  if(dirty)return clean(memory);
- try{const value=storage?.getItem(RESOURCE_KEY);
-  memory=value?clean(JSON.parse(value)):blank();storageOK=true;
+ try{const value=storage?.getItem(RESOURCE_KEY),legacy=storage?.getItem(PREVIOUS_RESOURCE_KEY);
+  memory=value?clean(JSON.parse(value)):blank();
+  if(legacy)memory=merge(memory,clean(JSON.parse(legacy)));
+  storageOK=true;
  }catch{storageOK=false;}
  return clean(memory);
 }
@@ -137,6 +162,8 @@ function persist(state,storage=globalThis.localStorage){
   if(!storage)throw new Error('storage unavailable');
   const old=storage.getItem(RESOURCE_KEY);
   if(old)merged=merge(clean(JSON.parse(old)),merged);
+  const legacy=storage.getItem(PREVIOUS_RESOURCE_KEY);
+  if(legacy)merged=merge(clean(JSON.parse(legacy)),merged);
   storage.setItem(RESOURCE_KEY,JSON.stringify(merged));
   memory=merged;dirty=false;storageOK=true;return true;
  }catch{storageOK=false;return false;}
@@ -203,15 +230,17 @@ export function awardFirstVisit(locationId,who=Progress.learner(),storage=global
  if(!persist(state,storage))throw new Error('첫 방문 기록을 저장하지 못했어요.');
  return {locationId,label:reward.label,amounts};
 }
-export function wallet(catalog,who=Progress.learner()){
+export function wallet(catalog,who=Progress.learner(),storage=globalThis.localStorage){
  validWho(who);configure(catalog);
- const state=loadResources(),p=state.profiles[who],source=earnedResources(catalog,who),spent=zero();
- for(const receipt of [...Object.values(p.adoptions),...Object.values(p.careerUnlocks)])
+ const state=loadResources(storage),p=state.profiles[who],source=earnedResources(catalog,who),spent=zero();
+ for(const receipt of [...Object.values(p.adoptions),...Object.values(p.careerUnlocks),...Object.values(p.pondCharges)])
   for(const subject of RESOURCE_SUBJECTS)spent[subject]+=receipt.cost[subject];
  const visitBonuses=Object.fromEntries(Object.entries(p.visitBonuses).map(([id,receipt])=>[id,{...receipt,cost:{...receipt.cost}}]));
  const visitAward=zero();
  for(const receipt of Object.values(p.visitBonuses))for(const subject of RESOURCE_SUBJECTS)visitAward[subject]+=receipt.cost[subject];
- const totalEarned=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,source.earned[subject]+visitAward[subject]]));
+ const pondAward=zero();
+ for(const receipt of Object.values(p.pondRefills))for(const subject of RESOURCE_SUBJECTS)pondAward[subject]+=receipt.cost[subject];
+ const totalEarned=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,source.earned[subject]+visitAward[subject]+pondAward[subject]]));
  const available=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,totalEarned[subject]-spent[subject])]));
  const deficits=Object.fromEntries(RESOURCE_SUBJECTS.map(subject=>[subject,Math.max(0,spent[subject]-totalEarned[subject])]));
  const fish=FISH_SPECIES.map(species=>{
@@ -228,7 +257,7 @@ export function wallet(catalog,who=Progress.learner()){
   const bCost=RESOURCE_SUBJECTS.reduce((sum,s)=>sum+Math.max(0,b.cost[s]-available[s]),0);
   return aCost-bCost;
  })[0];
- return {who,earned:totalEarned,learningEarned:source.earned,visitAward,visitBonuses,available,spent,deficits,balancedDays:source.balancedDays,
+ return {who,earned:totalEarned,learningEarned:source.earned,visitAward,visitBonuses,pondAward,available,spent,deficits,balancedDays:source.balancedDays,
    uniqueCorrect:source.independentItems,fish,next,careerUnlocked:Object.keys(p.careerUnlocks),
    storageAvailable:storageOK};
 }
@@ -260,6 +289,43 @@ export function feedFish(id,catalog,who=Progress.learner(),storage=globalThis.lo
  return {ok:true,duplicate:false,wallet:wallet(catalog,who)};
 }
 export function resourceStorageAvailable(){loadResources();return storageOK;}
+
+/** One resource for a completed active pond minute. The caller supplies only a
+ * stable cycle/minute identity; it cannot choose a cost or create a balance.
+ * Subject order rotates, skipping empty wallets. No negative balance is spent.
+ */
+export function spendPondMinute(cycleId,minute,catalog,who=Progress.learner(),storage=globalThis.localStorage){
+ validWho(who);configure(catalog);
+ if(!/^pond-(0|[1-9][0-9]{0,5})$/.test(cycleId)||!Number.isInteger(minute)||minute<1||minute>(who==='se'?3:5))throw new Error('연못 시간을 확인해 주세요.');
+ const id=cycleId+':'+minute,state=loadResources(storage),p=state.profiles[who];
+ if(p.pondCharges[id])return {ok:true,duplicate:true,receipt:copy(p.pondCharges[id])};
+ const funds=wallet(catalog,who,storage),offset=(Number(cycleId.slice(5))+minute-1)%RESOURCE_SUBJECTS.length;
+ const subject=Array.from({length:4},(_,n)=>RESOURCE_SUBJECTS[(offset+n)%4]).find(s=>funds.available[s]>0);
+ if(!subject)return {ok:false,reason:'insufficient-resources'};
+ const costs=zero();costs[subject]=1;
+ p.pondCharges[id]={id,at:now(),cost:costs};
+ if(!persist(state,storage))return {ok:false,reason:'storage-unavailable'};
+ return {ok:true,duplicate:false,receipt:copy(p.pondCharges[id])};
+}
+
+/** Completing a mixed learning cycle tops the wallet up to one full next visit.
+ * This is participation credit, independent of correctness rewards. A stable
+ * cycle receipt (including a zero top-up) prevents replay and cloud duplication.
+ */
+export function replenishPondResources(cycleId,catalog,who=Progress.learner(),storage=globalThis.localStorage){
+ validWho(who);configure(catalog);
+ if(!/^pond-(0|[1-9][0-9]{0,5})$/.test(cycleId))throw new Error('연못 배움 기록을 확인해 주세요.');
+ const state=loadResources(storage),p=state.profiles[who];
+ if(p.pondRefills[cycleId])return {ok:true,duplicate:true,receipt:copy(p.pondRefills[cycleId])};
+ const funds=wallet(catalog,who,storage),maximum=who==='se'?3:5;
+ let missing=Math.max(0,maximum-RESOURCE_SUBJECTS.reduce((n,s)=>n+funds.available[s],0));
+ const costs=zero(),subjects=who==='se'?['math','korean','english']:RESOURCE_SUBJECTS;
+ let index=Number(cycleId.slice(5))%subjects.length;
+ while(missing-->0){costs[subjects[index%subjects.length]]++;index++;}
+ p.pondRefills[cycleId]={id:cycleId,at:now(),cost:costs};
+ if(!persist(state,storage))return {ok:false,reason:'storage-unavailable'};
+ return {ok:true,duplicate:false,receipt:copy(p.pondRefills[cycleId])};
+}
 
 /** Permanent career fact unlock: exactly 1 credit each from 2 different
  * subjects, regardless of source salary or occupation status. Salary facts

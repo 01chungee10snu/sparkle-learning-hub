@@ -1,6 +1,7 @@
 import {mergeLegacy} from './legacy.js';
 import {gradeResponse,normalizeNumericResponse,NUMERIC_LIMIT} from './activities.js';
 import * as IRT from './irt.js';
+import * as ResponseLog from './response-log.js';
 import * as Retrieval from './retrieval.js?v=parent-v14-20261015';
 import * as MemoryModel from './memory-model.js?v=parent-v14-20261015';
 /** Device-local adapter. Keep this API when adding authenticated cloud persistence. */
@@ -35,13 +36,13 @@ const validRoundLength = (length, gameId, paperId) =>
  [3,5].includes(length) || (length === 25 &&
    ((isBebsuOriginal(gameId) && validPaperId(paperId)) ||
     (isMagicPractice(gameId) && /^magic-(?:g[1-6]|m[1-3])-(?:basic|challenge|advanced)$/.test(paperId||''))));
-let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map(),practicePapers=new Map();
+let allowedQuestions=new Map(),numericGames=new Set(),choiceLimits=new Map(),numericMins=new Map(),practicePapers=new Map(),catalogSubjects=new Map();
 const validPracticeItems=(gameId,paperId,ids)=>{
  if(!isMagicPractice(gameId)||ids.length!==25)return true;
  const expected=practicePapers.get(gameId)?.get(paperId);
  return Boolean(expected&&expected.length===25&&expected.every((id,i)=>id===ids[i]));
 };
-export function configureCatalog(catalog){allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));practicePapers=new Map(catalog.filter(g=>isMagicPractice(g.id)).map(g=>[g.id,new Map((g.papers||[]).map(p=>[p.paperId,p.questionIds]))]));}
+export function configureCatalog(catalog){catalogSubjects=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,g.subject]));allowedQuestions=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,new Set(g.questionIds||[])]));numericGames=new Set(catalog.filter(g=>g.kind==='quiz'&&g.modes?.includes('numeric')).map(g=>g.id));choiceLimits=new Map(catalog.filter(g=>g.kind==='quiz').map(g=>[g.id,Number.isInteger(g.maxChoices)&&g.maxChoices>=3&&g.maxChoices<=5?g.maxChoices:3]));numericMins=new Map(catalog.filter(g=>numericGames.has(g.id)).map(g=>[g.id,Number.isSafeInteger(g.numericMin)&&g.numericMin>= -NUMERIC_LIMIT&&g.numericMin<=0?g.numericMin:0]));practicePapers=new Map(catalog.filter(g=>isMagicPractice(g.id)).map(g=>[g.id,new Map((g.papers||[]).map(p=>[p.paperId,p.questionIds]))]));}
 const blankGame=()=>({records:{},round:null,finishedRounds:0,lastPlayed:0,completedRounds:[]});
 const blank=()=>({version:1,profiles:{tae:{games:{},stageSelections:{}},se:{games:{},stageSelections:{}}}});
 let memory=blank(),selected='tae',sequence=0,progressDirty=false;
@@ -149,6 +150,7 @@ export function saveStageSelection(subject,stage,who=learner()){
 }
 function updateGame(id,callback){if(!knownId(id)||!allowedQuestions.has(id))throw new Error('게임 이름을 확인해 주세요.');const state=load(),p=state.profiles[learner()];p.games[id]||=blankGame();const value=callback(p.games[id],p);save(state);return value;}
 export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
+ for(const q of game.questions)questionDefinitions.set(game.id+':'+q.id,q);
  const strategy=options.strategy??'adaptive',purpose=options.purpose??'';
  if(!LEARNING_STRATEGIES.has(strategy))throw new Error('학습 방식이 올바르지 않아요.');
  if(purpose&&!LEARNING_PURPOSES.has(purpose))throw new Error('학습 목적이 올바르지 않아요.');
@@ -206,19 +208,88 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
  if(ids.length<size||new Set(ids).size!==size)throw new Error('놀이에 필요한 문제가 부족해요.');
  g.round={id:uniqueId('round'),ids,...(paperId?{paperId}:{}),...(purpose?{purpose}:{}),...(strategy?{strategy}:{}),index:0,answers:[],finished:false,updatedAt:Date.now(),shownAt:Date.now(),hinted:false};g.lastPlayed=Date.now();return g.round;
  });}
-export function markHint(id){return updateGame(id,g=>{
+const guidedAnswers=new Map(),guidedHints=new Set(),questionDefinitions=new Map();
+function fingerprint(value){let h=2166136261;for(const c of String(value)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');}
+function stageFor(profile,who,subject){return profile.stageSelections?.[subject]?.stage??LEARNERS[who].defaultStage[subject];}
+function responseEvidence({gameId,q,subject,profile,who,attempt,eventType='answer',response,nextRecord=null}){
+ const item=IRT.itemAt(gameId,q.id),stage=stageFor(profile,who,subject);
+ const before=IRT.estimateSubject(profile.games,subject,stage);
+ const next=nextRecord?{...profile.games,[gameId]:{...profile.games[gameId],records:{...profile.games[gameId]?.records,[q.id]:nextRecord}}}:profile.games;
+ const after=nextRecord?IRT.estimateSubject(next,subject,stage):before;
+ return ResponseLog.appendEvent({version:1,eventId:attempt.id,learnerKey:who,eventType,sessionId:attempt.roundId,
+  gameId,questionId:q.id,subject,skill:item?.skill||subject,
+  itemVersion:'content-'+fingerprint(JSON.stringify(questionDefinitions.get(gameId+':'+q.id)||q)),submittedAt:attempt.at,
+  presentedAt:attempt.shownAt??null,responseMs:attempt.durationMs??null,
+  attemptIndex:ResponseLog.attemptIndex(who,gameId,q.id,{hint:eventType==='hint',minimum:profile.games[gameId]?.records[q.id]?.seen||0}),
+  isCorrect:eventType==='hint'?null:attempt.correct,hintUsed:attempt.assisted===true,
+  assistanceUsed:attempt.assisted===true||eventType==='retry',
+  independentFirst:eventType==='answer'&&!profile.games[gameId]?.records[q.id]&&!attempt.assisted,
+  difficulty:item?.b??null,guessing:item?.c??null,difficultySource:'editorial_provisional',
+  thetaBefore:before.theta,thetaAfter:after.theta,modelVersion:'provisional-1pl-guessing-v'+IRT.MODEL_VERSION,
+  ...(response!==undefined?{response}:{})});
+}
+function recordAnswer(game,q,response,g,profile,{roundId,shownAt,hinted=false,attemptId=uniqueId('attempt'),purpose='',strategy='adaptive'}={}){
+ questionDefinitions.set(game.id+':'+q.id,q);
+ const who=learner(),graded=gradeResponse(q,response),correct=graded.correct,prior=g.records[q.id];
+ const prev=prior?.best||0,best=Math.max(prev,correct?10:2),earned=best-prev,at=Math.max(Date.now(),g.lastPlayed+1);
+ const attempt={id:attemptId,correct,at,roundId,...(hinted?{assisted:true}:{}),
+  ...(shownAt?{durationMs:Math.min(600000,Math.max(0,at-shownAt))}:{}),...(purpose?{purpose}:{}),...(strategy?{strategy}:{})};
+ const nextRecord={best,seen:Math.min(100000,(prior?.seen||0)+1),attempts:cleanAttempts([...(prior?.attempts||[]),attempt]),
+  ...(prior?.firstAttempt?{firstAttempt:prior.firstAttempt}:!prior?{firstAttempt:attempt}:{})};
+ // Journal the complete event before advancing the compact game snapshot.
+ responseEvidence({gameId:game.id,q,subject:game.subject,profile,who,attempt:{...attempt,shownAt:shownAt||null},response:graded.response,nextRecord});
+ g.records[q.id]=nextRecord;g.lastPlayed=at;
+ return {id:q.id,...((q.interaction?.type??'choice')==='choice'?{choice:graded.response}:{}),response:graded.response,correct,earned,eventId:attempt.id};
+}
+export function markHint(id){return updateGame(id,(g,p)=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return false;
+ if(s.hinted)return true;
+ const at=Date.now(),subject=catalogSubjects.get(id)||IRT.itemAt(id,s.ids[s.index])?.subject;
+ responseEvidence({gameId:id,q:{id:s.ids[s.index]},subject,profile:p,who:learner(),eventType:'hint',
+  attempt:{id:uniqueId('hint'),roundId:s.id,at,shownAt:s.shownAt||null,assisted:true}});
  s.hinted=true;return true;
 });}
-export function answerQuestion(game,response){return updateGame(game.id,g=>{
+export function answerQuestion(game,response){return updateGame(game.id,(g,p)=>{
  const s=g.round;if(!s||s.finished||s.answers[s.index])return null;
  const q=game.questions.find(q=>q.id===s.ids[s.index]);if(!q)throw new Error('현재 문제를 다시 열어 주세요.');
- const graded=gradeResponse(q,response),correct=graded.correct,prev=g.records[q.id]?.best||0,best=Math.max(prev,correct?10:2),earned=best-prev,at=Math.max(Date.now(),g.lastPlayed+1,s.updatedAt+1);
- const attempt={id:uniqueId('attempt'),correct,at,roundId:s.id,...(s.hinted?{assisted:true}:{}),...(s.shownAt?{durationMs:Math.min(600000,Math.max(0,at-s.shownAt))}:{}),...(s.purpose?{purpose:s.purpose}:{}),...(s.strategy?{strategy:s.strategy}:{})};
- const prior=g.records[q.id];
- const attempts=cleanAttempts([...(prior?.attempts||[]),attempt]);
- g.records[q.id]={best,seen:Math.min(100000,(prior?.seen||0)+1),attempts,...(prior?.firstAttempt?{firstAttempt:prior.firstAttempt}:!prior?{firstAttempt:attempt}:{})};const a={id:q.id,...((q.interaction?.type??'choice')==='choice'?{choice:graded.response}:{}),response:graded.response,correct,earned};s.answers.push(a);s.updatedAt=at;g.lastPlayed=at;return a;
+ const a=recordAnswer(game,q,response,g,p,{roundId:s.id,shownAt:s.shownAt,hinted:s.hinted,purpose:s.purpose,strategy:s.strategy});
+ s.answers.push(a);s.updatedAt=g.lastPlayed;return a;
  });}
+/** One guided item leaves the child's unfinished ordinary round intact. */
+export function answerGuidedQuestion(game,questionId,response,{sessionId,shownAt,hinted=false}={}){
+ if(typeof sessionId!=='string'||!sessionId||sessionId.length>160||!allowedQuestions.get(game.id)?.has(questionId))throw Error('안내 문제를 다시 열어 주세요.');
+ const key=learner()+':'+sessionId+':'+game.id+':'+questionId;
+ if(guidedAnswers.has(key))return {...guidedAnswers.get(key),earned:0,duplicate:true};
+ return updateGame(game.id,(g,p)=>{
+  const q=game.questions.find(q=>q.id===questionId);if(!q)throw Error('안내 문제를 다시 열어 주세요.');
+  const suffix=fingerprint(key)+'-'+fingerprint('guided:'+key),roundId='round-guided-'+suffix,attemptId='attempt-guided-'+suffix;
+  const previous=[...(g.records[questionId]?.attempts||[]),g.records[questionId]?.firstAttempt].find(a=>a?.id===attemptId);
+  if(previous)return {id:questionId,correct:previous.correct,earned:0,duplicate:true};
+  const answer=recordAnswer(game,q,response,g,p,{roundId,shownAt,hinted:hinted||guidedHints.has(key),attemptId,purpose:'foundation'});
+  guidedAnswers.set(key,answer);if(guidedAnswers.size>1000)guidedAnswers.delete(guidedAnswers.keys().next().value);
+  return answer;
+ });
+}
+export function recordGuidedHint(game,questionId,{sessionId,shownAt}={}){
+ const key=learner()+':'+sessionId+':'+game.id+':'+questionId;
+ if(guidedHints.has(key))return false;
+ const q=game.questions.find(q=>q.id===questionId);if(!q||!sessionId)throw Error('안내 문제를 다시 열어 주세요.');
+ questionDefinitions.set(game.id+':'+q.id,q);
+ const p=load().profiles[learner()],suffix=fingerprint(key)+'-'+fingerprint('guided:'+key);
+ responseEvidence({gameId:game.id,q,subject:game.subject,profile:p,who:learner(),eventType:'hint',
+  attempt:{id:uniqueId('hint'),roundId:'round-guided-'+suffix,at:Date.now(),shownAt:shownAt||null,assisted:true}});
+ guidedHints.add(key);return true;
+}
+/** Feedback practice is retained but never counted again as independent IRT evidence. */
+export function recordPracticeRetry(game,questionId,response,{sessionId,shownAt,hinted=true}={}){
+ const q=game.questions.find(q=>q.id===questionId);if(!q)throw Error('연습 문제를 다시 열어 주세요.');
+ const p=load().profiles[learner()],graded=gradeResponse(q,response),roundId=sessionId||p.games[game.id]?.round?.id||'round-practice-'+fingerprint(Date.now());
+ const at=Date.now();
+ responseEvidence({gameId:game.id,q,subject:game.subject,profile:p,who:learner(),eventType:'retry',response:graded.response,
+  attempt:{id:uniqueId('retry'),roundId,correct:graded.correct,at,shownAt:shownAt||null,assisted:true,
+  ...(shownAt?{durationMs:Math.min(600000,Math.max(0,at-shownAt))}:{})}});
+ return {id:questionId,response:graded.response,correct:graded.correct,earned:0};
+}
 export function nextQuestion(id){return updateGame(id,g=>{
  const s=g.round;if(!s||s.finished||!s.answers[s.index])return s;
  s.index++;s.updatedAt=Math.max(Date.now(),s.updatedAt);s.shownAt=s.updatedAt;s.hinted=false;

@@ -1,4 +1,6 @@
 import {checkPlay,recordPlay} from '../platform/play-balance.js';
+import * as PondSession from '../platform/pond-session.js';
+import {choosePondQuestion} from '../platform/pond-learning-guide.js';
 import * as Progress from '../platform/progress.js';
 import * as Growth from '../platform/growth.js';
 import {gardenSnapshot,mutateGarden} from './garden-state.js';
@@ -11,7 +13,7 @@ import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
 import * as Relationships from './relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from './ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from '../platform/resource-economy.js?v=child-safe-v32-20261019';
+import * as Resources from '../platform/resource-economy.js';
 import * as Careers from './career-state.js?v=career-v25-20261019';
 
 const BEBSU_GAMES = ['g1','g2','g3','g4','g5','g6','m1','m2','m3']
@@ -52,6 +54,8 @@ export function createVillageHost(emit) {
   let preparation = null;
   const receipts = new Map();
   const cache = new Map();
+  let pondVisit=null,pondActive=false,guidedQuestion=null,lastGuidedSubject='';
+  function stopPond(){if(pondVisit)PondSession.closeVisit(pondVisit);pondVisit=null;pondActive=false;}
 
   async function prepare() {
     if (catalog) return catalog;
@@ -86,6 +90,7 @@ export function createVillageHost(emit) {
       throw new Error('마법 연습장 문제은행을 확인해 주세요.');
     Rewards.syncRewards(entries, Progress.learner());
     Resources.configure(entries);
+    PondSession.configure(entries);
     catalog = entries;
     return catalog;
   }
@@ -220,6 +225,29 @@ export function createVillageHost(emit) {
     });
   }
 
+  async function nextPondQuestion(action,requestId,who){
+    const status=PondSession.refreshLearning(who,{catalog});
+    if(status.allowed){guidedQuestion=null;return snapshot(action,requestId,{pondGuided:true,pondLessonComplete:true,pondSession:status});}
+    const stages=Object.fromEntries(['math','korean','english','hanja'].map(s=>[s,Progress.stageSelection(s,who)]));
+    const selection=choosePondQuestion({catalog,profile:Progress.exportRecords().platform.profiles[who],who,stages,learning:status.learning,lastSubject:lastGuidedSubject});
+    if(!selection)throw new Error('지금 단계에서 새 문제를 모두 만나 봤어요. 보호자와 다음 배움 단계를 살펴보거나 잠시 쉬어도 좋아요.');
+    const game=await loadGame(selection.gameId);
+    const item=game.questions.find(q=>q.id===selection.questionId);
+    if(!item)throw new Error('새로운 배움 문제를 다시 확인해 주세요.');
+    const sessionId='pond-'+(globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2));
+    guidedQuestion={game,item,who,sessionId,shownAt:Date.now(),hinted:false,answer:null};
+    lastGuidedSubject=game.subject;currentGame=game;currentGameId=game.id;currentWho=who;
+    const question=publicQuestion(game,{ids:[item.id],index:0,hinted:false},who);
+    return snapshot(action,requestId,{pondGuided:true,pondSession:status,question:{...question,subject:game.subject,pondGuided:true,index:(status.learning?.done||0)+1,total:status.learning?.total||status.requiredItems}});
+  }
+  const documentIsHidden=()=>globalThis.document?.hidden===true;
+  function requireActivePond(who){
+    if(!pondVisit||!pondActive||documentIsHidden())throw new Error('연못의 함께 보기 시작을 누른 뒤 물고기와 만나요.');
+    const status=PondSession.tickVisit(pondVisit,{active:true});
+    if(status.allowed===false){pondActive=false;throw new Error('물고기들이 잠깐 쉬어요. 여러 배움터의 새 문제를 만나 볼까요?');}
+    if(pondVisit.who&&pondVisit.who!==who){stopPond();throw new Error('선택한 아이의 연못을 다시 열어 주세요.');}
+  }
+
   async function execute(request) {
     if (!request || typeof request !== 'object' || Array.isArray(request))
       throw new Error('Unity 요청 형식이 올바르지 않아요.');
@@ -229,6 +257,50 @@ export function createVillageHost(emit) {
         requestId.length > 100) throw new Error('Unity 요청 식별자를 확인해 주세요.');
     await prepare();
     const who = Progress.learner();
+    if(pondVisit&&pondVisit.who&&pondVisit.who!==who)stopPond();
+    if(['CANCEL','START','POND_LEARN'].includes(action)||(action==='AREA_OPEN'&&district!=='pond')||action==='OCEAN_OPEN')stopPond();
+    if(['POND_BEGIN','POND_RESUME','POND_TICK','POND_PAUSE','POND_CLOSE'].includes(action)){
+      if(action==='POND_CLOSE'){stopPond();}
+      else if(action==='POND_PAUSE'){if(pondVisit)PondSession.pauseVisit(pondVisit);pondActive=false;}
+      else if(action==='POND_BEGIN'||action==='POND_RESUME'){
+        if(documentIsHidden())pondActive=false;
+        else{
+          pondVisit=pondVisit?await PondSession.resumeVisit(pondVisit):await PondSession.openVisit(who,{catalog});
+          pondActive=pondVisit.allowed===true;
+        }
+      }else if(pondVisit&&pondActive){
+        const result=PondSession.tickVisit(pondVisit,{active:!documentIsHidden()});
+        pondActive=result.allowed!==false&&!documentIsHidden();
+      }
+      const pondStatus=pondVisit?.status||PondSession.status(who,{catalog});
+      return respond(action,requestId,{who,pondSession:pondStatus,pondRunning:pondActive,resources:{available:Resources.wallet(catalog,who).available}});
+    }
+    if(action==='POND_LEARN'){
+      guidedQuestion=null;return nextPondQuestion(action,requestId,who);
+    }
+    if(guidedQuestion&&['HINT','SUBMIT','NEXT'].includes(action)){
+      const g=guidedQuestion;
+      if(g.who!==who||gameId!==g.game.id)throw new Error('선택한 아이와 배움 문제를 다시 확인해 주세요.');
+      if(action==='HINT'){
+        if(g.answer)throw new Error('풀이를 함께 살펴봐요.');
+        g.hinted=true;
+        Progress.recordGuidedHint?.(g.game,g.item.id,{sessionId:g.sessionId,shownAt:g.shownAt});
+        return snapshot(action,requestId,{pondGuided:true,hint:decorate(hintFor(g.item,g.game),who)});
+      }
+      if(action==='SUBMIT'){
+        if(g.answer)throw new Error('다음 이야기를 만나 볼까요?');
+        if(typeof response!=='string'||response.length>1024)throw new Error('답안 형식을 확인해 주세요.');
+        let answer;try{answer=JSON.parse(response);}catch{throw new Error('답안 정보를 읽을 수 없어요.');}
+        const result=Progress.answerGuidedQuestion(g.game,g.item.id,answer,{sessionId:g.sessionId,shownAt:g.shownAt,hinted:g.hinted});
+        if(!result)throw new Error('이미 답을 살펴봤어요. 다음 이야기로 가요.');
+        g.answer=result;
+        const status=PondSession.recordLearning(who,{gameId:g.game.id,itemId:g.item.id,subject:g.game.subject,at:Date.now(),correct:result.correct,assisted:g.hinted},{catalog});
+        Rewards.syncRewards(catalog,who);
+        return snapshot(action,requestId,{pondGuided:true,pondSession:status,correct:result.correct,earned:result.earned,recoveryEarned:0,explanation:(g.item.explanation||[]).map(t=>decorate(t,who)).join('\n')});
+      }
+      if(!g.answer)throw new Error('내 생각을 먼저 골라 보아요.');
+      guidedQuestion=null;return nextPondQuestion(action,requestId,who);
+    }
     const visit=(locationId,extras={})=>{
       const bonus=Resources.awardFirstVisit(locationId,who);
       if(extras.pondShop)extras.pondShop=Resources.wallet(catalog,who);
@@ -284,28 +356,32 @@ export function createVillageHost(emit) {
     }
     if (action === 'POND_OPEN'||action==='OCEAN_OPEN') {
       const world=action==='POND_OPEN'?'pond':'ocean';
-      return visit(world,{district:world,pondShop:Resources.wallet(catalog,who)});
+      const answer=visit(world,{district:world,pondShop:Resources.wallet(catalog,who)});
+      if(world==='pond')answer.pondSession=PondSession.refreshLearning(who,{catalog});
+      return answer;
     }
     if (action === 'POND_ADOPT'||action==='OCEAN_ADOPT') {
       const world=action==='POND_ADOPT'?'pond':'ocean';
       const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
       if(!creature||creature.world!==world)throw new Error('선택한 생물이 사는 장소를 다시 확인해 주세요.');
-      if(!Resources.wallet(catalog,who).fish.find(f=>f.id===itemId)?.owned&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
+      if(world==='pond')requireActivePond(who);
+      else if(!Resources.wallet(catalog,who).fish.find(f=>f.id===itemId)?.owned&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
       const result=Resources.adoptFish(itemId,catalog,who);
       if(!result.ok)throw new Error(result.reason==='learning-milestone'?'새로운 것을 조금 더 배우면 만날 수 있어요. 지금은 다른 친구를 만나 봐요.':result.reason==='insufficient-resources'?'다른 배움터에서도 꽃잎·깃털·수정 같은 재료를 찾아볼까요?':'동물 친구와 만난 기록을 저장하지 못했어요.');
-      if(!result.duplicate)recordPlay(who);
-      return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'이미 함께하는 친구예요.':'새로운 생물 친구를 만났어요!'});
+      if(world!=='pond'&&!result.duplicate)recordPlay(who);
+      return snapshot(action,requestId,{district:world,pondShop:result.wallet,...(world==='pond'?{pondSession:PondSession.status(who,{catalog})}:{}),itemChanged:itemId,pondNotice:result.duplicate?'이미 함께하는 친구예요.':'새로운 생물 친구를 만났어요!'});
     }
     if (action === 'POND_FEED'||action==='OCEAN_FEED') {
       const world=action==='POND_FEED'?'pond':'ocean';
       const creature=Resources.FISH_SPECIES.find(f=>f.id===itemId);
       if(!creature||creature.world!==world)throw new Error('생물이 사는 장소를 다시 확인해 주세요.');
       const alreadyFed=Resources.wallet(catalog,who).fish.find(f=>f.id===itemId)?.fedToday;
-      if(!alreadyFed&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
+      if(world==='pond')requireActivePond(who);
+      else if(!alreadyFed&&!checkPlay(who).allowed)throw new Error('새로운 문제를 하나 풀고 다시 놀러 와요!');
       const result=Resources.feedFish(itemId,catalog,who);
       if(!result.ok)throw new Error('생물 관찰 기록을 저장하지 못했어요.');
-      if(!result.duplicate)recordPlay(who);
-      return snapshot(action,requestId,{district:world,pondShop:result.wallet,itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 만나 보았어요.':creature.careMode==='observe'?'야생 생물을 안전한 거리에서 관찰했어요!':'물고기 친구가 먹이를 먹고 헤엄쳐요!'});
+      if(world!=='pond'&&!result.duplicate)recordPlay(who);
+      return snapshot(action,requestId,{district:world,pondShop:result.wallet,...(world==='pond'?{pondSession:PondSession.status(who,{catalog})}:{}),itemChanged:itemId,pondNotice:result.duplicate?'오늘은 이미 만나 보았어요.':creature.careMode==='observe'?'야생 생물을 안전한 거리에서 관찰했어요!':'물고기 친구가 먹이를 먹고 헤엄쳐요!'});
     }
     if (action === 'SHOP_OPEN') return visit('shop',{shop:shopState()});
     if (action === 'SHOP_BUY') {
@@ -382,7 +458,11 @@ export function createVillageHost(emit) {
       const chosen=(district||response||'').toLowerCase();
       if(!Object.hasOwn(DISTRICTS,chosen))throw new Error('마법마을 지역을 선택해 주세요.');
       if(chosen==='career')return visit(chosen,{district:chosen,career:careerView()});
-      if(chosen==='pond'||chosen==='ocean')return visit(chosen,{district:chosen,pondShop:Resources.wallet(catalog,who)});
+      if(chosen==='pond'||chosen==='ocean'){
+        const answer=visit(chosen,{district:chosen,pondShop:Resources.wallet(catalog,who)});
+        if(chosen==='pond')answer.pondSession=PondSession.refreshLearning(who,{catalog});
+        return answer;
+      }
       if(chosen==='kma')return visit(chosen,{district:chosen,
         challenges:paperOptions(challenges),difficultyNote:challenges.accuracyNote});
       if(chosen==='practice')return visit(chosen,{district:chosen,
@@ -404,10 +484,12 @@ export function createVillageHost(emit) {
       difficultyNote:practiceChallenges.accuracyNote
     });
     if (action === 'CANCEL') {
+      guidedQuestion=null;
       currentGame = null; currentGameId = ''; currentWho = '';
       return snapshot(action, requestId);
     }
     if (action === 'START') {
+      guidedQuestion=null;
       const game = await loadGame(gameId);
       if (Progress.learner() !== who)
         throw new Error('아이가 바뀌었어요. 새로 미션을 열어 주세요.');

@@ -13,10 +13,10 @@ for(const species of FISH_SPECIES){
  assert(Number.isInteger(species.minSolved)&&species.minSolved>=0);
  assert(Number.isInteger(species.minBalancedDays)&&species.minBalancedDays>=0);
  assert(RESOURCE_SUBJECTS.every(subject=>Number.isSafeInteger(species.cost[subject])&&species.cost[subject]>=0));
- assert(species.art===`./assets/marine-premium-v25/${species.id}.webp`,`unexpected artwork ${species.id}`);
+ assert(species.art===(species.world==='pond'?`../assets/pond-originals-v34/${species.id}.webp`:`./assets/marine-premium-v25/${species.id}.webp`),`unexpected artwork ${species.id}`);
  const art=path.resolve(root,'village',species.art);
  assert(fs.statSync(art).size>30000,`${species.id} production artwork missing/too small`);
- assert(fs.statSync(art.replace(/\.webp$/,'.svg')).size>1600,`${species.id} original SVG missing`);
+ if(species.world==='ocean')assert(fs.statSync(art.replace(/\.webp$/,'.svg')).size>1600,`${species.id} original SVG missing`);
 }
 const pond=FISH_SPECIES.filter(s=>s.world==='pond');
 const ocean=FISH_SPECIES.filter(s=>s.world==='ocean');

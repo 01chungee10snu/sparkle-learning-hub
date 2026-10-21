@@ -34,6 +34,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./hanja-world.css?v=hanja-v1-20261016">
 <link rel="stylesheet" href="./pond-economy.css?v=fish-v24-20261018">
 <link rel="stylesheet" href="./ocean-world-v25.css?v=child-safe-v32-20261019">
+<link rel="stylesheet" href="./pond-experience.css?v=pond-v34-20261021">
 <link rel="stylesheet" href="./career-world.css?v=child-ux-v33-20261020">
 <link rel="stylesheet" href="./title-v26.css?v=world-v26-20261019">
 <link rel="stylesheet" href="./world-v26.css?v=child-safe-v32-20261019">
@@ -103,12 +104,12 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
     </section>
   </main>
 </div>
-<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=ecology-v19-20261015","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=child-safe-v32-20261019","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013"}}</script>
+<script type="importmap">{"imports":{"../platform/progress.js":"../platform/progress.js?v=pond-v34-20261021","../platform/rewards.js":"../platform/rewards.js?v=unified-20261013","../platform/growth.js":"../platform/growth.js?v=unified-20261013","../platform/settings.js":"../platform/settings.js?v=unified-20261013","../platform/activities.js":"../platform/activities.js?v=unified-20261013","../platform/activity-ui.js":"../platform/activity-ui.js?v=unified-20261013","../platform/catalog.js":"../platform/catalog.js?v=child-safe-v32-20261019","../platform/irt.js":"../platform/irt.js?v=unified-20261013","../platform/legacy.js":"../platform/legacy.js?v=unified-20261013","../platform/reward-catalog.js":"../platform/reward-catalog.js?v=unified-20261013","../platform/village-adaptive.js":"../platform/village-adaptive.js?v=unified-20261013","../platform/motion.js":"../platform/motion.js?v=unified-20261013","./garden-state.js":"./garden-state.js?v=unified-20261013","./village-state.js":"./village-state.js?v=unified-20261013","../platform/resource-economy.js":"../platform/resource-economy.js?v=pond-v34-20261021","../platform/response-log.js":"../platform/response-log.js?v=pond-v34-20261021","../platform/pond-session.js":"../platform/pond-session.js?v=pond-v34-20261021","../platform/pond-learning-guide.js":"../platform/pond-learning-guide.js?v=pond-v34-20261021"}}</script>
 <script type="module">
-import { createVillageHost } from './village-bridge.js?v=child-ux-v33-20261020';
+import { createVillageHost } from './village-bridge.js?v=pond-v34-20261021';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=child-ux-v33-20261020';
-import * as CloudSync from '../platform/cloud-sync.js?v=child-ux-v33-20261020';
+import { createVillageUI } from './village-ui.js?v=pond-v34-20261021';
+import * as CloudSync from '../platform/cloud-sync.js?v=pond-v34-20261021';
 import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
 
 const entryParams=new URLSearchParams(location.search);
@@ -190,6 +191,12 @@ const ui = createVillageUI({
 });
 const deliver = message => {
   ui.update(message);
+  // Clock updates stay local while the pond is open. Sync on a pause/close or
+  // budget boundary, rather than schedule a full cloud snapshot every second.
+  if(['POND_BEGIN','POND_RESUME','POND_TICK','POND_PAUSE','POND_CLOSE'].includes(message?.action)){
+    if(message.ok&&(['POND_PAUSE','POND_CLOSE'].includes(message.action)||message.pondSession?.allowed===false))CloudSync.scheduleSync();
+    return;
+  }
   if(message?.ok)CloudSync.scheduleSync();
   if(message?.ok && message.cosmetics){
     const wear=JSON.stringify(message.cosmetics);

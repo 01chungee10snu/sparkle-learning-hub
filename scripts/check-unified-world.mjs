@@ -121,6 +121,10 @@ try{
  const blockedOcean=responses.findLast(r=>r.requestId===blockedOceanId);
  assert.equal(blockedOcean?.ok,false,'Ocean adoption must respect learning milestone before resource spend');
  assert(/새로운 것|새로운 문제/.test(blockedOcean?.error||''),'Learning gates should explain the next step without shaming the learner');
+ await host.handle(JSON.stringify({action:'POND_FEED',requestId:'paused-pond-feed',itemId:'guppy'}));
+ assert.equal(responses.findLast(r=>r.requestId==='paused-pond-feed')?.ok,false,'Paused preview cannot bypass the timed visit');
+ await request('POND_OPEN');
+ assert.equal((await request('POND_BEGIN')).pondRunning,true);
  const feed=await request('POND_FEED',{itemId:'guppy'});
  assert.equal(feed.pondShop.fish.find(f=>f.id==='guppy').feedDays,1);
  const repeatFeed=await request('POND_FEED',{itemId:'guppy'});

@@ -1,12 +1,14 @@
 import {CLOUD_CONFIG} from './cloud-config.js';
-import * as Progress from './progress.js?v=ecology-v19-20261015';
+import * as Progress from './progress.js';
+import * as ResponseLog from './response-log.js';
 import * as Rewards from './rewards.js?v=unified-20261013';
 import * as Settings from './settings.js?v=unified-20261013';
 import * as Progression from './progression.js?v=parent-v14-20261015';
 import * as VillageState from '../village/village-state.js?v=unified-20261013';
 import * as Relationships from '../village/relationship-state.js?v=ecology-v19-20261015';
 import * as Ecology from '../village/ecology-state.js?v=ecology-v19-20261015';
-import * as Resources from './resource-economy.js?v=career-v27-20261019';
+import * as Resources from './resource-economy.js';
+import * as PondSession from './pond-session.js';
 import * as PlayBalance from './play-balance.js?v=child-ux-v33-20261020';
 import * as Careers from '../village/career-state.js?v=career-v25-20261019';
 
@@ -41,7 +43,8 @@ export function isPaired(){return Boolean(pairingCode());}
 
 async function request(path,{method='POST',body=null}={}){
  if(!CLOUD_CONFIG.enabled)throw new Error('클라우드 연결이 꺼져 있어요.');
- const init={method,headers:{apikey:CLOUD_CONFIG.publishableKey}};
+ const init={method,headers:{apikey:CLOUD_CONFIG.publishableKey},
+  ...(globalThis.AbortSignal?.timeout?{signal:AbortSignal.timeout(15000)}:{})};
  if(body!==null){
   init.headers['Content-Type']='application/json';
   init.body=JSON.stringify(body);
@@ -62,6 +65,9 @@ function cleanCloudState(raw){
  return {version:STATE_VERSION,familyId:raw.familyId,deviceId:raw.deviceId,deviceKey:raw.deviceKey,
   revision:raw.revision,lastHash:typeof raw.lastHash==='string'?raw.lastHash:'',
   indexHash:typeof raw.indexHash==='string'?raw.indexHash:'',
+  responseSyncedAt:Number.isFinite(raw.responseSyncedAt)?raw.responseSyncedAt:0,
+  responseLogPending:raw.responseLogPending===true,
+  responseLogError:typeof raw.responseLogError==='string'?raw.responseLogError.slice(0,180):'',
   lastSyncedAt:Number.isFinite(raw.lastSyncedAt)?raw.lastSyncedAt:0,
   learners:raw.learners&&typeof raw.learners==='object'?raw.learners:{}};
 }
@@ -119,7 +125,7 @@ export function buildLocalSnapshot(){
  return {...learning,familySettings:Settings.getSettings(),rewards:Rewards.exportRewards(),
   village:VillageState.loadVillage(),growthGoals:Progression.exportGoals(),
   relationships:Relationships.exportRelationships(),ecology:Ecology.exportEcology(),resources:Resources.exportResources(),
-  career:Careers.exportCareer(),playBalance:PlayBalance.loadBalance(),cloudSnapshotVersion:1};
+  career:Careers.exportCareer(),playBalance:PlayBalance.loadBalance(),pondSession:PondSession.exportPond(),cloudSnapshotVersion:1};
 }
 function settingsAreDefaults(value){
  return value?.tae?.place==='우리 학교'&&value?.se?.place==='우리 어린이집';
@@ -128,6 +134,7 @@ export function applySnapshot(raw){
  if(!raw||raw.cloudSnapshotVersion!==1)throw new Error('마법마을 클라우드 기록 형식을 확인해 주세요.');
  // Validate before changing any local learning history.
  const incomingBalance=raw.playBalance?PlayBalance.validateBalance(raw.playBalance):null;
+ const incomingPond=raw.pondSession?PondSession.validatePond(raw.pondSession):null;
  Progress.importRecords(raw);
  if(raw.rewards)Rewards.importRewards(raw.rewards);
  if(raw.village)VillageState.saveVillage(VillageState.mergeVillage(VillageState.loadVillage(),raw.village));
@@ -137,6 +144,7 @@ export function applySnapshot(raw){
  if(raw.resources)Resources.importResources(raw.resources);
  if(raw.career)Careers.importCareer(raw.career);
  if(incomingBalance)PlayBalance.importBalance(incomingBalance);
+ if(incomingPond)PondSession.importPond(incomingPond);
  if(raw.familySettings&&settingsAreDefaults(Settings.getSettings()))
   Settings.saveSettings(Settings.validateSettings(raw.familySettings));
  return true;
@@ -163,6 +171,25 @@ async function pushSnapshot(code,state,snapshot,hash){
  });
  if(!result?.deviceId)throw new Error('가족 클라우드 저장 결과를 확인하지 못했어요.');
  return result;
+}
+
+/** Deliver immutable evidence separately from compact game snapshots. The RPC
+ * derives learner IDs from the paired family and acknowledges exact event IDs.
+ * A missing migration or network error keeps every event pending on this device.
+ */
+export async function syncResponseHistory(code=pairingCode()){
+ if(!code)return {uploaded:0,pending:true};
+ let uploaded=0;
+ for(let page=0;page<20;page++){
+  const events=await ResponseLog.pendingEvents({limit:100});
+  if(!events.length)return {uploaded,pending:false};
+  const result=await rpc('magic_family_append_responses',{p_code:code,p_events:events});
+  const expected=new Set(events.map(e=>e.eventId)),accepted=result?.eventIds;
+  if(!Array.isArray(accepted)||accepted.length!==expected.size||new Set(accepted).size!==expected.size||accepted.some(id=>!expected.has(id)))
+   throw Error('문제 풀이 기록의 저장 확인을 받지 못했어요. 이 기기에 계속 보관합니다.');
+  await ResponseLog.acknowledge(accepted);uploaded+=accepted.length;
+ }
+ return {uploaded,pending:(await ResponseLog.pendingEvents({limit:1})).length>0};
 }
 
 async function performSync(){
@@ -192,7 +219,13 @@ async function performSync(){
  }
  state={...state,revision,lastHash:hash,indexHash:archiveIndexed?hash:state.indexHash||'',lastSyncedAt:now()};
  saveCloudState(state);
- return {paired:true,downloaded,uploaded,archiveIndexed,indexError,lastSyncedAt:state.lastSyncedAt,familyId:state.familyId};
+ let responsesUploaded=0,responseLogPending=false,responseLogError='';
+ try{const result=await syncResponseHistory(code);responsesUploaded=result.uploaded;responseLogPending=result.pending;}
+ catch(error){responseLogPending=true;responseLogError='전체 응답 이력 전송 대기: '+String(error?.message||'연결 오류').slice(0,100);}
+ state={...state,responseLogPending,responseLogError,
+  responseSyncedAt:!responseLogPending&&!responseLogError?now():state.responseSyncedAt||0};
+ saveCloudState(state);
+ return {paired:true,downloaded,uploaded,archiveIndexed,indexError,responsesUploaded,responseLogPending,responseLogError,lastSyncedAt:state.lastSyncedAt,familyId:state.familyId};
 }
 export async function syncNow(){
  if(syncTimer){clearTimeout(syncTimer);syncTimer=null;}
@@ -215,5 +248,8 @@ export function status(){
  const state=cloudState();
  return {enabled:CLOUD_CONFIG.enabled,paired:isPaired(),secureContext:secureOrigin(),lastSyncedAt:state?.lastSyncedAt||0,
   dbIndexed:Boolean(state?.indexHash&&state.indexHash===state.lastHash),
-  familyId:state?.familyId||''};
+  familyId:state?.familyId||'',responseHistory:{...ResponseLog.status(),
+   confirmedAt:state?.responseSyncedAt||0,deliveryPending:state?.responseLogPending===true,
+   deliveryError:state?.responseLogError||''}};
 }
+globalThis.addEventListener?.('sparkle-response-recorded',()=>scheduleSync());

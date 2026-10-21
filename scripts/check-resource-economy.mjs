@@ -30,7 +30,7 @@ let wallet=Resource.wallet(catalog,'tae');
 assert.equal(Resource.FISH_SPECIES.length,64);
 assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='pond').length,24);
 assert.equal(Resource.FISH_SPECIES.filter(f=>f.world==='ocean').length,40);
-assert(Resource.FISH_SPECIES.every(f=>f.art===`./assets/marine-premium-v25/${f.id}.webp`));
+assert(Resource.FISH_SPECIES.every(f=>f.art===(f.world==='pond'?`../assets/pond-originals-v34/${f.id}.webp`:`./assets/marine-premium-v25/${f.id}.webp`)));
 const oceanMilestones=['clownfish','blue-tang','shrimp','hermit-crab','sea-crab','seahorse','octopus','sea-turtle','reef-shark','humpback-whale']
  .map(id=>Resource.FISH_SPECIES.find(f=>f.id===id)?.minSolved);
 assert.deepEqual(oceanMilestones,[14,24,34,46,60,78,98,125,165,220]);
@@ -84,4 +84,18 @@ assert(Resource.wallet(catalog,'tae').fish.some(f=>f.id==='guppy'&&f.owned));
 assert.equal(Resource.wallet(catalog,'tae').fish.find(f=>f.id==='goldfish').feedDays,1);
 const independent=Resource.earnedResources(catalog,'tae');
 assert(independent.independentItems>=12);
+// An older cached app writes only its known v1 fields. Those writes must not
+// erase minute charges or learning refills created by the current app.
+const legacy=structuredClone(Resource.exportResources());
+for(const p of Object.values(legacy.profiles)){delete p.pondCharges;delete p.pondRefills;}
+storage.setItem(Resource.PREVIOUS_RESOURCE_KEY,JSON.stringify(legacy));
+assert(Resource.spendPondMinute('pond-0',1,catalog,'tae',storage).ok);
+const charged=Resource.wallet(catalog,'tae',storage).available;
+storage.setItem(Resource.PREVIOUS_RESOURCE_KEY,JSON.stringify(legacy));
+assert.deepEqual(Resource.wallet(catalog,'tae',storage).available,charged);
+assert(Resource.exportResources(storage).profiles.tae.pondCharges['pond-0:1']);
+assert(Resource.spendPondMinute('pond-0',1,catalog,'tae',storage).duplicate);
+const newOnly=JSON.parse(storage.getItem(Resource.RESOURCE_KEY));
+assert(newOnly.profiles.tae.pondCharges['pond-0:1']);
+assert(newOnly.profiles.tae.adoptions.goldfish,'Legacy ownership survives the storage-key migration');
 console.log('PASS_RESOURCE_ECONOMY: 4 subjects, 64 original pond/ocean species, progressive learning gates, career unlock coexistence, sibling isolation, merge idempotence, once-per-day care, original stars untouched');
