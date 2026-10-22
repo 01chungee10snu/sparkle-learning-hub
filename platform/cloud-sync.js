@@ -63,7 +63,9 @@ function cleanCloudState(raw){
  if(!raw||raw.version!==STATE_VERSION||typeof raw.familyId!=='string'||typeof raw.deviceId!=='string'||
     typeof raw.deviceKey!=='string'||!Number.isSafeInteger(raw.revision)||raw.revision<0)return null;
  return {version:STATE_VERSION,familyId:raw.familyId,deviceId:raw.deviceId,deviceKey:raw.deviceKey,
-  revision:raw.revision,lastHash:typeof raw.lastHash==='string'?raw.lastHash:'',
+ revision:raw.revision,lastHash:typeof raw.lastHash==='string'?raw.lastHash:'',
+  canonicalVersion:Number.isSafeInteger(raw.canonicalVersion)&&raw.canonicalVersion>=0?raw.canonicalVersion:0,
+  canonicalHash:typeof raw.canonicalHash==='string'?raw.canonicalHash:'',
   indexHash:typeof raw.indexHash==='string'?raw.indexHash:'',
   responseSyncedAt:Number.isFinite(raw.responseSyncedAt)?raw.responseSyncedAt:0,
   responseLogPending:raw.responseLogPending===true,
@@ -95,7 +97,7 @@ async function ensurePaired(code=pairingCode()){
  const data=await rpc('magic_family_pair',{p_code:code,p_device_key:key,p_label:'Magic Village Web'});
  if(!data?.familyId||!data.deviceId)throw new Error('가족 기기 연결을 완료하지 못했어요.');
  state={version:STATE_VERSION,familyId:data.familyId,deviceId:data.deviceId,deviceKey:key,
-  revision:0,lastHash:'',lastSyncedAt:0,learners:data.learners||{}};
+  revision:0,lastHash:'',canonicalVersion:0,canonicalHash:'',lastSyncedAt:0,learners:data.learners||{}};
  return saveCloudState(state);
 }
 
@@ -106,7 +108,7 @@ export async function pairFamily(code){
  if(!data?.familyId||!data.deviceId)throw new Error('가족 기기 연결을 완료하지 못했어요.');
  if(!write(PAIRING_KEY,value))throw new Error('가족 동기화 코드를 이 기기에 저장할 수 없어요.');
  const state={version:STATE_VERSION,familyId:data.familyId,deviceId:data.deviceId,deviceKey:key,
-  revision:0,lastHash:'',lastSyncedAt:0,learners:data.learners||{}};
+  revision:0,lastHash:'',canonicalVersion:0,canonicalHash:'',lastSyncedAt:0,learners:data.learners||{}};
  saveCloudState(state);
  return {paired:true,familyId:data.familyId};
 }
@@ -173,6 +175,26 @@ async function pushSnapshot(code,state,snapshot,hash){
  return result;
 }
 
+async function pullCanonical(code){
+ const result=await rpc('magic_family_state_pull',{p_code:code});
+ if(!result||result.exists===false)return {exists:false,version:0,hash:'',payload:null};
+ if(result.exists!==true||!Number.isSafeInteger(Number(result.version))||Number(result.version)<1||
+    typeof result.contentSha256!=='string'||!result.payload)
+   throw new Error('가족 공용 기록의 버전을 확인하지 못했어요.');
+ return {exists:true,version:Number(result.version),hash:result.contentSha256,payload:result.payload,
+  updatedAt:Number(result.updatedAt)||0};
+}
+
+async function commitCanonical(code,state,expectedVersion,snapshot,hash){
+ const result=await rpc('magic_family_state_commit',{
+  p_code:code,p_device_key:state.deviceKey,p_expected_version:expectedVersion,
+  p_payload:snapshot,p_content_sha256:hash
+ });
+ if(!result||!Number.isSafeInteger(Number(result.version))||Number(result.version)<0)
+   throw new Error('가족 공용 기록의 저장 결과를 확인하지 못했어요.');
+ return {...result,version:Number(result.version)};
+}
+
 /** Deliver immutable evidence separately from compact game snapshots. The RPC
  * derives learner IDs from the paired family and acknowledges exact event IDs.
  * A missing migration or network error keeps every event pending on this device.
@@ -197,27 +219,60 @@ async function performSync(){
  const code=pairingCode();
  if(!code)throw new Error('이 기기를 가족 마법마을에 먼저 연결해 주세요.');
  let state=await ensurePaired(code);
- const remotes=await pullFamily(code);
- let downloaded=false;
- for(const remote of remotes){
-  if(remote?.payload&&remote.content_sha256!==state.lastHash){
-   applySnapshot(remote.payload);downloaded=true;
+ let downloaded=false,legacyImported=0,canonicalCommitted=false,conflictRetries=0;
+ let canonical=await pullCanonical(code);
+
+ // First migration to the canonical family head: fold the latest snapshot from
+ // every previously paired device into this device before creating version 1.
+ if(!canonical.exists){
+  const remotes=await pullFamily(code);
+  for(const remote of remotes)if(remote?.payload){
+   applySnapshot(remote.payload);legacyImported+=1;
   }
+  downloaded=legacyImported>0;
+ }else if(canonical.payload){
+  // Imports are merge operations for learning, resources, rewards, village and
+  // pond receipts, so offline work already on this device survives the pull.
+  applySnapshot(canonical.payload);
+  downloaded=canonical.hash!==state.canonicalHash;
  }
- const snapshot=buildLocalSnapshot(),hash=await sha256(snapshot);
- const remoteHasHash=remotes.some(row=>row?.content_sha256===hash);
- let uploaded=false,revision=state.revision||0;
+
+ let snapshot=null,hash='',commit=null;
+ for(let attempt=0;attempt<5;attempt++){
+  snapshot=buildLocalSnapshot();hash=await sha256(snapshot);
+  if(canonical.exists&&canonical.hash===hash){
+   commit={committed:false,conflict:false,unchanged:true,version:canonical.version,contentSha256:hash};
+   break;
+  }
+  commit=await commitCanonical(code,state,canonical.exists?canonical.version:0,snapshot,hash);
+  if(commit.conflict===true){
+   conflictRetries+=1;
+   canonical=commit.payload?{
+    exists:true,version:commit.version,hash:commit.contentSha256||'',payload:commit.payload,
+    updatedAt:Number(commit.updatedAt)||0
+   }:await pullCanonical(code);
+   if(canonical.payload)applySnapshot(canonical.payload);
+   downloaded=true;
+   continue;
+  }
+  canonicalCommitted=commit.committed===true;
+  canonical={exists:true,version:commit.version,hash:commit.contentSha256||hash,payload:snapshot};
+  break;
+ }
+ if(!commit||commit.conflict===true)
+  throw new Error('다른 기기의 새 기록과 합치는 중 충돌이 반복됐어요. 잠시 후 다시 동기화해 주세요.');
+
+ // The canonical transaction already creates a hash-addressed historical
+ // snapshot for indexing. Retain the old per-device revision counter only for
+ // compatibility with existing status data.
+ let uploaded=canonicalCommitted,revision=state.revision||0;
  let archiveIndexed=false,indexError='';
- if(!remoteHasHash){
-  const pushed=await pushSnapshot(code,state,snapshot,hash);
-  uploaded=Boolean(pushed.uploaded);
-  revision=Number(pushed.revision)||revision;
- }
- if(uploaded||state.indexHash!==hash){
+ if(state.indexHash!==hash){
   try{const indexed=await rpc('magic_family_index_snapshot',{p_code:code,p_content_sha256:hash});archiveIndexed=indexed?.indexed===true;}
   catch(error){indexError='정규화 학습 DB 반영 대기: '+String(error?.message||'연결 오류').slice(0,90);}
  }
- state={...state,revision,lastHash:hash,indexHash:archiveIndexed?hash:state.indexHash||'',lastSyncedAt:now()};
+ state={...state,revision,lastHash:hash,canonicalVersion:canonical.version,canonicalHash:hash,
+  indexHash:archiveIndexed?hash:state.indexHash||'',lastSyncedAt:now()};
  saveCloudState(state);
  let responsesUploaded=0,responseLogPending=false,responseLogError='';
  try{const result=await syncResponseHistory(code);responsesUploaded=result.uploaded;responseLogPending=result.pending;}
@@ -225,7 +280,9 @@ async function performSync(){
  state={...state,responseLogPending,responseLogError,
   responseSyncedAt:!responseLogPending&&!responseLogError?now():state.responseSyncedAt||0};
  saveCloudState(state);
- return {paired:true,downloaded,uploaded,archiveIndexed,indexError,responsesUploaded,responseLogPending,responseLogError,lastSyncedAt:state.lastSyncedAt,familyId:state.familyId};
+ return {paired:true,downloaded,uploaded,canonicalVersion:canonical.version,canonicalCommitted,
+  conflictRetries,legacyImported,archiveIndexed,indexError,responsesUploaded,responseLogPending,
+  responseLogError,lastSyncedAt:state.lastSyncedAt,familyId:state.familyId};
 }
 export async function syncNow(){
  if(syncTimer){clearTimeout(syncTimer);syncTimer=null;}
@@ -247,9 +304,15 @@ export async function autoSync(){
 export function status(){
  const state=cloudState();
  return {enabled:CLOUD_CONFIG.enabled,paired:isPaired(),secureContext:secureOrigin(),lastSyncedAt:state?.lastSyncedAt||0,
+  sourceOfTruth:'supabase-family-canonical-v1',canonicalVersion:state?.canonicalVersion||0,
   dbIndexed:Boolean(state?.indexHash&&state.indexHash===state.lastHash),
   familyId:state?.familyId||'',responseHistory:{...ResponseLog.status(),
    confirmedAt:state?.responseSyncedAt||0,deliveryPending:state?.responseLogPending===true,
    deliveryError:state?.responseLogError||''}};
 }
 globalThis.addEventListener?.('sparkle-response-recorded',()=>scheduleSync());
+globalThis.addEventListener?.('online',()=>scheduleSync(300));
+globalThis.addEventListener?.('focus',()=>scheduleSync(500));
+globalThis.document?.addEventListener?.('visibilitychange',()=>{
+ if(globalThis.document.visibilityState==='visible')scheduleSync(500);
+});
