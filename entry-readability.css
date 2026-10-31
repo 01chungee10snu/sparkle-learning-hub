@@ -1,0 +1,67 @@
+/* v36: legible child-facing landing page, not a scaled-down desktop hero. */
+.entry-world { min-width:0; }
+.entry-game-menu { min-width:0; }
+.entry-game-menu h1 { line-height:1.08; }
+.entry-tagline { line-height:1.4; }
+.entry-learner-choice { min-width:0; min-height:64px; }
+.entry-learner-choice small { font-size:clamp(14px,1.35vw,16px); line-height:1.25; }
+.entry-portal-text strong { font-size:clamp(23px,2.35vw,34px); }
+.entry-portal-text small { font-size:clamp(14px,1.3vw,17px); line-height:1.35; }
+.entry-world-notice { font-size:clamp(14px,1.25vw,17px); line-height:1.42; }
+.entry-portal, .entry-learner-choice { -webkit-tap-highlight-color:transparent; }
+
+@media (max-width:830px) {
+  .entry-game-menu { padding:12px 14px 19px; }
+  .entry-learner-choices { gap:9px; margin-bottom:11px; }
+  .entry-learner-choice { min-height:63px; font-size:19px; }
+  .entry-learner-choice img { width:50px; height:50px; flex-shrink:0; }
+  .entry-portal { min-height:75px; gap:9px; padding:9px 12px; }
+  .entry-portal-text strong { font-size:clamp(21px,5.3vw,27px); }
+  .entry-portal-text small { font-size:14px; }
+  .entry-world-notice { font-size:14px; margin-top:9px; }
+}
+@media (max-width:385px) and (orientation:portrait) {
+  .entry-game-menu { padding:8px 10px 14px; }
+  .entry-game-menu h1 { font-size:clamp(34px,9.4vw,41px); }
+  .entry-learner-choices { gap:7px; margin-bottom:8px; }
+  .entry-learner-choice { font-size:17px; padding:6px; gap:6px; }
+  .entry-learner-choice img { width:43px; height:43px; }
+  .entry-learner-choice small { font-size:13px; }
+  .entry-portal-text strong { font-size:21px; }
+  .entry-portal-text small { font-size:13px; }
+}
+/* Short portrait: prioritize the two portals; weather/decor can be revisited inside. */
+@media (max-height:620px) and (orientation:portrait) {
+  .entry-world { overflow-y:auto; align-items:flex-end; }
+  .entry-island-art { height:48%; opacity:.82; }
+  .entry-game-menu { padding-top:8px; padding-bottom:10px; }
+  .entry-chapter,.entry-world-notice { display:none; }
+  .entry-tagline { font-size:17px; margin:4px 0 6px; }
+  .entry-kst { padding:4px 8px; margin-bottom:6px; font-size:12px; }
+  .entry-learner-choice { min-height:52px; }
+  .entry-game-actions { gap:8px; }
+  .entry-portal { min-height:68px; }
+  .entry-portal-icon { font-size:32px; }
+}
+/* Landscape phone: two complete actions must remain visible, not clip at the fold. */
+@media (orientation:landscape) and (max-height:520px) {
+  .entry-world { align-items:center; overflow-y:auto; }
+  .entry-game-menu { width:min(48vw,440px); max-height:100dvh; overflow-y:auto; margin-left:2vw; padding:6px 10px; border-radius:16px; }
+  .entry-chapter,.entry-world-notice,.entry-caption { display:none; }
+  .entry-game-menu h1 { font-size:clamp(32px,4.3vw,43px); }
+  .entry-game-menu h1 span { font-size:.44em; }
+  .entry-tagline { margin:3px 0 5px; font-size:15px; }
+  .entry-kst { font-size:12px; padding:4px 8px; margin:0 0 6px; }
+  .entry-learner-choices { margin:0 0 6px; gap:6px; }
+  .entry-learner-choice { min-height:50px; font-size:17px; gap:5px; padding:3px 7px; border-radius:13px; }
+  .entry-learner-choice img { width:41px; height:41px; }
+  .entry-learner-choice small { font-size:12px; }
+  .entry-game-actions { gap:7px; }
+  .entry-portal { min-height:60px; padding:6px 9px; gap:9px; border-radius:15px; box-shadow:0 3px 0 #382760; }
+  .entry-portal-icon { font-size:27px; }
+  .entry-portal-text strong { font-size:20px; }
+  .entry-portal-text small { font-size:12px; line-height:1.23; }
+  .entry-arrow { font-size:27px; }
+  .entry-island-art { left:47%; width:53%; height:100%; top:0; }
+}
+@media (prefers-reduced-motion:reduce){ .entry-portal:active { transform:none; } }

@@ -34,8 +34,10 @@ try{
  assert.equal(await page.locator('#learner-choices .title-learner-art').count(),2,'Learner artwork missing');
  assert((await page.locator('.vh-entry-parent-link').getAttribute('href')).includes('learning.html?view=parents'),'Parent dashboard entry missing');
  assert.equal(await page.locator('#page > header').count(),0,'Standalone top bar must be removed');
- assert((await page.locator('.vh-entry-record-link').getAttribute('href')).includes('learning.html?view=workbooks'),
-   'Learning records should remain accessible before entering');
+ assert((await page.locator('.vh-entry-record-link').first().getAttribute('href')).includes('learning.html'),
+   'Learning page should remain accessible before entering');
+ assert((await page.locator('.vh-entry-record-link').nth(1).getAttribute('href')).includes('view=hanja'),
+   'Hanja training should remain accessible before entering');
  for(const size of [{width:320,height:568},{width:667,height:375}]){
    await page.setViewportSize(size);
    for(const selector of ['#start','#lite']){

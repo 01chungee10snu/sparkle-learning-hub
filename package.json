@@ -39,7 +39,8 @@
     "qa:child": "node scripts/qa-child-safety-v32.mjs",
     "qa:ux": "node scripts/qa-child-ux-v33.mjs",
     "check:pond": "node scripts/check-pond-session.mjs && node scripts/check-pond-guide.mjs && node scripts/check-response-log.mjs",
-    "qa:pond": "node scripts/qa-pond-v34.mjs"
+    "qa:pond": "node scripts/qa-pond-v34.mjs",
+    "qa:readable": "node scripts/qa-readable-viewport.mjs"
   },
   "dependencies": {
     "three": "0.180.0"
