@@ -103,34 +103,89 @@ export function skillEvidence(games,subject,stage=2){
   provisional:true
  })).sort((a,b)=>b.gap-a.gap||b.n-a.n||a.skill.localeCompare(b.skill));
 }
-export function selectQuestions({game,candidates,profile,size,stage}){
- if(!Array.isArray(candidates)||!candidates.length||!Number.isInteger(size)||size<1)return [];
+/**
+ * Child-facing challenge control is based only on independent FIRST answers.
+ * It is a selection heuristic, not an empirically calibrated proficiency claim.
+ * A run of successes lowers the desired probability of a correct response, so
+ * the next item is more demanding when the source bank contains one.
+ */
+export function responseTrend(games,subject,stage=2){
+ const evidence=evidenceFor(games,subject,20);
+ const streak=evidence.findIndex(e=>!e.correct);
+ const consecutive=streak===-1?evidence.length:streak;
+ const recent=evidence.slice(0,8);
+ const accuracy=recent.length?recent.filter(e=>e.correct).length/recent.length:0;
+ const model=estimate(evidenceFor(games,subject),STAGE_DIFFICULTY[stage]??0);
+ const challenge=consecutive>=7&&accuracy>=0.8?0.19:
+  consecutive>=4&&accuracy>=0.7?0.14:consecutive>=2?0.08:0;
+ const support=consecutive===0&&recent.length?0.09:0;
+ return {consecutive,accuracy,n:model.n,theta:model.theta,uncertainty:model.uncertainty,challenge,support,provisional:true};
+}
+/** A single guided preview of the NEXT stage; it never edits the chosen stage. */
+export function challengeStage(games,subject,stage){
+ if(!Object.hasOwn(STAGE_DIFFICULTY,stage))return stage;
+ if(stage>=4)return stage;
+ const trend=responseTrend(games,subject,stage);
+ const threshold=STAGE_DIFFICULTY[stage+1];
+ return trend.n>=6&&trend.consecutive>=4&&trend.accuracy>=0.75&&trend.theta>=threshold-0.65?stage+1:stage;
+}
+const seededTie=(value,rounds=0)=>{
+ let hash=2166136261;
+ for(const ch of value)hash=Math.imul(hash^ch.charCodeAt(0),16777619)>>>0;
+ return (hash+Math.imul(rounds%97,2654435761)>>>0)/4294967296;
+};
+/**
+ * Select diverse, age-appropriate questions near the student's current challenge.
+ * "review" chooses due/previously attempted questions before new material.
+ * Previous answers and paper-specific 25-item exams are handled by the caller.
+ */
+export function selectQuestions({game,candidates,profile,size,stage,strategy='adaptive',exclude=[],positionOffset=0,roundSize=size}){
+ if(!game||typeof game.id!=='string'||!SUBJECTS.has(game.subject)||!Array.isArray(candidates)||!candidates.length||
+    !Number.isInteger(size)||size<1||!Number.isInteger(positionOffset)||positionOffset<0||
+    !Number.isInteger(roundSize)||roundSize<size||positionOffset+size>roundSize||
+    !Array.isArray(exclude)||exclude.some(id=>typeof id!=='string'))return [];
  if(candidates.some(q=>!itemAt(game.id,q.id)))return [];
- const records=profile?.games?.[game.id]?.records||{};
+ const excluded=new Set(exclude),records=profile?.games?.[game.id]?.records||{};
  const observedFamilies=new Set(Object.entries(records).filter(([,r])=>r?.seen).map(([id])=>itemAt(game.id,id)?.family).filter(Boolean));
+ const trend=responseTrend(profile?.games||{},game.subject,stage);
  const model=estimateSubject(profile?.games||{},game.subject,stage);
  const skillNeeds=new Map(skillEvidence(profile?.games||{},game.subject,stage).filter(g=>g.n>=3).map(g=>[g.skill,g.gap]));
- const chosen=[],usedSkills=new Map(),usedFamilies=new Set();
- const goals=size===3?[0.84,0.72,0.62]:[0.84,0.74,0.68,0.61,0.76];
+ const recent=evidenceFor(profile?.games||{},game.subject,15);
+ const recentSkills=new Map(),recentModes=new Map();
+ for(const e of recent){recentSkills.set(e.item.skill,(recentSkills.get(e.item.skill)||0)+1);
+  recentModes.set(e.item.mode||'choice',(recentModes.get(e.item.mode||'choice')||0)+1);}
+ const chosen=[],usedSkills=new Map(),usedModes=new Map(),usedFamilies=new Set();
+ const cycle=roundSize===3?[0.84,0.73,0.62]:[0.84,0.74,0.65,0.59,0.73];
+ const rounds=profile?.games?.[game.id]?.finishedRounds||0;
  for(let i=0;i<size;i++){
-  const remaining=candidates.filter(q=>!chosen.includes(q.id)&&(!itemAt(game.id,q.id)?.family||!usedFamilies.has(itemAt(game.id,q.id).family)));
+  const remaining=candidates.filter(q=>!excluded.has(q.id)&&!chosen.includes(q.id)&&
+   (!itemAt(game.id,q.id).family||!usedFamilies.has(itemAt(game.id,q.id).family)));
   if(!remaining.length)break;
-  const fresh=remaining.filter(q=>!(records[q.id]?.seen)&&(!itemAt(game.id,q.id)?.family||!observedFamilies.has(itemAt(game.id,q.id).family)));
-  // New items prevent memorized responses from dominating learning paths.
-  const pool=fresh.length?fresh:remaining;
-  const target=goals[i%goals.length];
+  const fresh=remaining.filter(q=>!records[q.id]?.seen&&
+   (!itemAt(game.id,q.id).family||!observedFamilies.has(itemAt(game.id,q.id).family)));
+  const due=remaining.filter(q=>records[q.id]?.seen);
+  const pool=strategy==='review'&&due.length?due:(fresh.length>=size-i?fresh:remaining);
+  const index=(positionOffset+i)%cycle.length;
+  const target=clamp(cycle[index]-trend.challenge+trend.support,0.48,0.89);
   const ranked=pool.map(q=>{
    const item=itemAt(game.id,q.id),p=predicted(model.theta,item);
-   const seen=records[q.id]?.seen||0,last=records[q.id]?.attempts?.at(-1);
-   const skillPenalty=(usedSkills.get(item.skill)||0)*0.2;
-   const score=2*Math.abs(p-target)+skillPenalty+Math.min(8,seen)*0.12+(last?.correct?0.09:0)-Math.max(0,skillNeeds.get(item.skill)||0)*0.7;
-   return {q,score};
+   const seen=records[q.id]?.seen||0;
+   const mode=item.mode||'choice',difficulty=2.5*Math.abs(p-target);
+   const skillPenalty=(usedSkills.get(item.skill)||0)*0.28;
+   const modePenalty=(usedModes.get(mode)||0)*0.20;
+   const historyPenalty=(recentSkills.get(item.skill)||0)*0.028+(recentModes.get(mode)||0)*0.016;
+   const repeated=seen?0.23+Math.min(5,seen)*0.13:0;
+   const familyPenalty=item.family&&observedFamilies.has(item.family)?0.20:0;
+   const needBonus=Math.min(0.25,Math.max(0,skillNeeds.get(item.skill)||0)*0.55);
+   // Rotate near-ties across completed rounds; never randomize source IDs on reload.
+   const tie=seededTie(q.id,rounds)*0.06;
+   return {q,score:difficulty+skillPenalty+modePenalty+historyPenalty+repeated+familyPenalty-needBonus+tie};
   }).sort((a,b)=>a.score-b.score||a.q.id.localeCompare(b.q.id));
-  const pick=ranked[0].q;
+  const pick=ranked[0].q,item=itemAt(game.id,pick.id);
   chosen.push(pick.id);
-  if(itemAt(game.id,pick.id).family)usedFamilies.add(itemAt(game.id,pick.id).family);
-  const skill=itemAt(game.id,pick.id).skill;
-  usedSkills.set(skill,(usedSkills.get(skill)||0)+1);
+  if(item.family)usedFamilies.add(item.family);
+  usedSkills.set(item.skill,(usedSkills.get(item.skill)||0)+1);
+  usedModes.set(item.mode||'choice',(usedModes.get(item.mode||'choice')||0)+1);
  }
  return chosen.length===size?chosen:[];
 }

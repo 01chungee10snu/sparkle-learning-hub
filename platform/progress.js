@@ -161,12 +161,15 @@ export function beginRound(game,options={}){return updateGame(game.id,(g,p)=>{
  const size=paperId?25:(options.size??LEARNERS[learner()].roundSize);
  if(!validRoundLength(size,game.id,paperId))throw new Error('일반 놀이는 3·5문제, 경시대회는 25문제를 선택해 주세요.');
  let questions=game.questions;
+ const stage=options.level??stageSelection(game.subject);
  if(game.adventure===true){
-  const level=options.level??stageSelection(game.subject),minimum=Math.min(...game.questions.map(q=>q.level));
-  if(!Number.isInteger(level)||level<1||level>4||!Number.isInteger(minimum))throw new Error('놀이의 도전 단계를 확인해 주세요.');
+  const minimum=Math.min(...game.questions.map(q=>q.level));
+  if(!Number.isInteger(stage)||stage<1||stage>4||!Number.isInteger(minimum))throw new Error('놀이의 도전 단계를 확인해 주세요.');
+  // Preview at most ONE higher level after consistent, independent success.
+  // Learner's selected curriculum stage is never overwritten.
+  const level=IRT.challengeStage(p.games,game.subject,stage);
   questions=game.questions.filter(q=>q.level<=Math.max(level,minimum));
  }
- const stage=options.level??stageSelection(game.subject);
  let ids;
  if(paperId){
   if(isMagicPractice(game.id)){
@@ -290,8 +293,26 @@ export function recordPracticeRetry(game,questionId,response,{sessionId,shownAt,
   ...(shownAt?{durationMs:Math.min(600000,Math.max(0,at-shownAt))}:{})}});
  return {id:questionId,response:graded.response,correct:graded.correct,earned:0};
 }
-export function nextQuestion(id){return updateGame(id,g=>{
+export function nextQuestion(id,game=null){return updateGame(id,(g,p)=>{
  const s=g.round;if(!s||s.finished||!s.answers[s.index])return s;
+ // Keep already answered items, source-paper ordering, and reward accounting
+ // immutable. Only unattempted ADAPTIVE questions may be updated.
+ if(game){
+  if(game.id!==id||!Array.isArray(game.questions)||!game.questions.length||
+     !s.ids.every(qid=>game.questions.some(q=>q.id===qid)))
+   throw new Error('IRT 문항의 원문과 게임 목록을 확인해 주세요.');
+  const tail=s.ids.length-s.index-1;
+  if(tail>0&&!s.paperId&&s.strategy!=='review'&&IRT.bankSize()){
+   const prefix=s.ids.slice(0,s.index+1),stage=stageSelection(game.subject);
+   const priorLevel=game.adventure===true?
+    Math.max(stage,...s.ids.map(qid=>game.questions.find(q=>q.id===qid)?.level||stage)):stage;
+   const level=Math.max(priorLevel,IRT.challengeStage(p.games,game.subject,stage));
+   const available=game.adventure===true?game.questions.filter(q=>q.level<=level):game.questions;
+   const reranked=IRT.selectQuestions({game,candidates:available,profile:p,stage:level,
+    size:tail,exclude:prefix,positionOffset:s.index+1,roundSize:s.ids.length});
+   if(reranked.length===tail)s.ids.splice(s.index+1,tail,...reranked);
+  }
+ }
  s.index++;s.updatedAt=Math.max(Date.now(),s.updatedAt);s.shownAt=s.updatedAt;s.hinted=false;
  if(s.index===s.ids.length){s.finished=true;g.finishedRounds++;g.completedRounds=cleanCompleted([...g.completedRounds,{id:s.id,at:s.updatedAt,questionIds:[...s.ids],...(s.paperId?{paperId:s.paperId}:{}),...(s.purpose?{purpose:s.purpose}:{}),...(s.strategy?{strategy:s.strategy}:{})}],allowedQuestions.get(id),id);}
  return s;

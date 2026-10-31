@@ -8,6 +8,7 @@
 <meta name="description" content="태희 또는 세희를 선택해 마법마을이나 학습페이지로 바로 들어가고, 수학·국어·영어·한자·해양 생태·100가지 미래 직업을 탐험하세요.">
 <link rel="stylesheet" href="./entry-world.css?v=child-ux-v33-20261020">
 <link rel="stylesheet" href="./entry-readability.css?v=readability-v36-20261031">
+<link rel="stylesheet" href="./entry-readability-v37.css?v=readability-v37-20261031">
 <style>
 .entry-learner-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;max-width:100%}
 .entry-learner-choice{display:flex;align-items:center;gap:10px;min-height:72px;padding:8px 11px;border:2px solid #ffffff80;border-radius:18px;background:#173b6ab8;color:#fff;font:900 18px/1.2 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 16px #10285b55}
@@ -44,7 +45,7 @@
   <p class="entry-caption">한국 시간·계절에 따라 변하는 하늘과 마법의 섬 <span aria-hidden="true">✦</span> 오늘의 꿈을 발견해요</p>
 </main>
 <script type="module">
-import * as Progress from './platform/progress.js';
+import * as Progress from './platform/progress.js?v=irt-v37-20261031';
 import {koreaScene,applyKoreaScene} from './village/korea-season-clock.js?v=world-v26-20261019';
 function update(){applyKoreaScene(koreaScene());}
 update();setInterval(update,60000);

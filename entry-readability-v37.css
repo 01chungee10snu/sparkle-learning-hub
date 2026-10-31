@@ -1,0 +1,11 @@
+/* v37: readable labels instead of shrinking child-facing text. */
+.entry-learner-choice small{font-size:clamp(14px,1.5vw,16px);line-height:1.28}
+.entry-portal-text small{font-size:clamp(14px,1.45vw,17px);line-height:1.35}
+.entry-kst{font-size:clamp(13px,1.4vw,17px)}
+.entry-world-notice{font-size:clamp(14px,1.3vw,17px)}
+@media(max-width:385px){.entry-learner-choice small,.entry-portal-text small{font-size:14px}}
+@media(max-height:620px) and (orientation:portrait){.entry-world-notice{display:none}}
+@media(max-height:520px) and (orientation:landscape){
+ .entry-game-menu{padding-top:5px;padding-bottom:6px}
+ .entry-portal-text small,.entry-learner-choice small,.entry-kst{font-size:13px}
+}
