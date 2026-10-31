@@ -186,8 +186,24 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     toast.classList.remove('vh-first-visit-enter');
     void toast.offsetWidth;
     toast.classList.add('vh-first-visit-enter');
+    // AREA_OPEN renders the habitat after this callback. Put the reward in the
+    // dialog's normal flow on the next microtask, never over the fish/buttons.
+    queueMicrotask(()=>{
+      if(ui.dialog.hidden)return;
+      ui.body.querySelector('.vh-first-visit-inline')?.remove();
+      const inline=label('div','','vh-first-visit-inline');
+      inline.setAttribute('role','status');
+      inline.append(label('strong','🎁 첫 방문 선물'),
+       label('span',String(bonus.label||'새로운 장소')),
+       label('span',parts.join('  ')));
+      ui.body.prepend(inline);
+      toast.hidden=true;
+    });
     window.clearTimeout(firstVisitTimer);
-    firstVisitTimer=window.setTimeout(()=>{toast.hidden=true;toast.classList.remove('vh-first-visit-enter');},6500);
+    firstVisitTimer=window.setTimeout(()=>{
+      toast.hidden=true;toast.classList.remove('vh-first-visit-enter');
+      ui.body.querySelector('.vh-first-visit-inline')?.remove();
+    },6500);
   }
   function request(action, extra = {}) {
     if (busy) return;
@@ -1440,7 +1456,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     // child's answer request, and never rebuild the animated scene every second.
     if(data.requestId?.startsWith('pond-runtime-')){
       if(!data.requestId.startsWith(pondRuntimePrefix))return;
-      if(data.pondRunning){$('vh-first-visit').hidden=true;window.clearTimeout(firstVisitTimer);}
+      if(data.pondRunning){$('vh-first-visit').hidden=true;ui.body.querySelector('.vh-first-visit-inline')?.remove();window.clearTimeout(firstVisitTimer);}
       if(data.pondSession)pondSession=data.pondSession;
       if(data.resources?.available)for(const [id,value] of Object.entries(data.resources.available)){
         if(!Number.isSafeInteger(value)||value<0)continue;

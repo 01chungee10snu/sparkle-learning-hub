@@ -7,7 +7,7 @@ import {gardenSnapshot,mutateGarden} from './garden-state.js';
 import * as Rewards from '../platform/rewards.js';
 import * as Settings from '../platform/settings.js';
 import {recommendVillageRoutes} from '../platform/village-adaptive.js';
-import * as LearningDirector from '../platform/learning-director.js?v=pond-v22-20261017';
+import * as LearningDirector from '../platform/learning-director.js?v=irt-v37-20261031';
 import {retainedMemoryMoment} from '../platform/learning-moments.js?v=relationship-v18-20261015';
 import {validateCatalog, validateGame} from '../platform/catalog.js';
 import {addVillageCompletion, loadVillage, saveVillage, villageSummary} from './village-state.js';
@@ -553,7 +553,7 @@ export function createVillageHost(emit) {
         reflectionReason:reflection.reason,reflectionAdded:reflection.added});
     }
     if (action === 'NEXT') {
-      const round = Progress.nextQuestion(currentGameId);
+      const round = Progress.nextQuestion(currentGameId,currentGame);
       if (round?.finished) {
         Rewards.syncRewards(catalog, who);
         return snapshot(action, requestId, {finished: true, roundId: round.id});

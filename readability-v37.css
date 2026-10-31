@@ -1,0 +1,44 @@
+/* v37: readable child labels and full-length learning text. */
+#app .fairy-name{font-size:13px;line-height:1.25}
+#app .buddy-message small{font-size:14px}
+#app .home-more>summary span{font-size:14px}
+#app .game-card .subject-label{font-size:14px;line-height:1.3}
+#app .game-card .mode-badges,#app .game-card .game-progress{font-size:14px;line-height:1.35}
+#app .village-launch-copy small,#app .home-villages-heading p{font-size:14px;line-height:1.45}
+#app .subject-resource-strip b{font-size:15px;line-height:1.3;white-space:normal}
+#app .subject-resource-strip strong{font-size:22px}
+#app .wallet-stats span{font-size:15px}
+#app .paged-question .sequence-slots span{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;font-size:clamp(16px,2vw,20px);line-height:1.3}
+#app .paged-question .sequence-slots li{height:auto;min-height:48px;overflow:visible}
+#app .hanja-eyebrow{font-size:14px}
+#app .hanja-grade-tab small{font-size:15px}
+#app .hanja-flashcard strong{font-size:16px;line-height:1.35;min-height:0}
+#app .hanja-flashcard.flipped strong{font-size:17px}
+#app .hanja-lesson-stats span{font-size:15px}
+#app .hanja-irt-meta,#app .hanja-disclaimer{font-size:15px}
+@media(max-width:699px){
+ #app .subject-resource-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ #app .subject-resource-strip>span{flex-direction:row;gap:6px;min-height:47px;padding:8px}
+ #app .hanja-flash-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #app .hanja-flashcard{min-height:105px;padding:8px 6px}
+ #app .hanja-grade-tab small{font-size:14px}
+}
+@media(max-width:360px){#app .subject-resource-strip b{font-size:14px}}
+@media(max-height:520px) and (orientation:landscape){#app .hanja-flash-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Landscape quiz: answers stay onscreen instead of hiding under the footer. */
+@media(orientation:landscape) and (max-height:520px){
+ #app .shell{gap:4px;padding-bottom:2px}
+ #app .game-area{gap:4px}
+ #app .game-area .question-panel{padding:8px 12px;gap:4px}
+ #app .game-area .question-head{min-height:40px}
+ #app .game-area .question-head h1{font-size:clamp(20px,2.4vw,24px)}
+ #app .game-area .answers{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ #app .game-area .answer{min-width:0;min-height:48px;padding:6px 7px;font-size:clamp(18px,2.4vw,23px)}
+ #app .game-area .activity-head{min-height:42px}
+}
+
+@media(orientation:landscape) and (max-height:520px){
+ #app{grid-template-rows:53px minmax(0,1fr) 28px}
+ #app .footer{min-height:28px;display:flex;align-items:center;justify-content:space-between}
+}

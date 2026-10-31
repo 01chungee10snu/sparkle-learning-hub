@@ -1,0 +1,62 @@
+/* v37: legible long-form dictionary and child-friendly controls. */
+#village-ui .vh-dialog .vh-small{font-size:15px;line-height:1.42}
+#village-ui .vh-story{font-size:clamp(18px,2.4vw,23px);line-height:1.46}
+#village-ui .vh-prompt{font-size:clamp(21px,2.8vw,28px);line-height:1.42}
+#village-ui .vh-option{font-size:clamp(19px,2.5vw,24px)!important;min-height:52px!important}
+#village-ui .vh-progress{font-size:14px}
+#village-ui .vh-dialog .vh-secondary{font-size:17px!important;min-height:46px!important}
+#village-ui .vh-dialog .vh-wide{font-size:clamp(19px,2.2vw,23px)!important}
+#village-ui .vh-fish-milestone{font-size:16px}
+#village-ui[data-mode=career] .career-card-caption{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:clamp(15px,1.65vw,18px);line-height:1.4;white-space:normal;overflow-wrap:anywhere;word-break:keep-all}
+#village-ui[data-mode=career] .career-card{height:auto;min-height:265px;overflow:visible;justify-content:flex-start}
+#village-ui[data-mode=career] .career-peek-label{font-size:15px;line-height:1.25;white-space:normal}
+#village-ui[data-mode=career] .career-filter{font-size:16px;min-height:48px}
+#village-ui[data-mode=career] .career-integrity{font-size:16px;line-height:1.45}
+#village-ui[data-mode=career] .career-card-label{font-size:clamp(18px,2.15vw,23px)}
+#village-ui[data-mode=career] .career-count{font-size:16px}
+#village-ui .vh-first-visit-inline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 11px;padding:8px 11px;margin:0 0 10px;border:2px solid #efca6b;border-radius:15px;background:#fff9df;color:#533c68;font-size:16px;line-height:1.35;font-weight:800;text-align:center}
+#village-ui .vh-first-visit-inline strong{font-size:18px}
+#village-ui:has(#village-dialog-wrap:not([hidden]))>#vh-first-visit{display:none!important}
+#loading .title-learner-copy small{font-size:14px;line-height:1.3}
+#loading .title-entry-links a{font-size:clamp(14px,1.6vw,17px)!important;min-height:46px}
+#loading .title-actions small{font-size:14px;line-height:1.25}
+#loading .title-kicker{font-size:13px}
+#loading .title-learning-ribbon{font-size:14px}
+#loading .vh-storage-note small{font-size:13px;line-height:1.34}
+#loading .title-status{font-size:14px!important}
+#village-ui #village-info .vh-meta p{font-size:14px!important}
+#world-scene-clock{font-size:14px!important}
+@media(max-width:850px){
+ #village-ui[data-mode=career] .career-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #village-ui[data-mode=career] .career-card{min-height:290px;padding:10px!important}
+ #village-ui[data-mode=career] .career-card-artwork{height:120px}
+ #village-ui[data-mode=career] .career-card-caption{font-size:16px}
+ #loading .title-learning-ribbon{display:none}
+ #loading .title-actions small{font-size:13px}
+}
+@media(max-width:430px){
+ #village-ui[data-mode=career] .career-card{min-height:265px;padding:9px 7px!important}
+ #village-ui[data-mode=career] .career-card-artwork{height:105px}
+ #village-ui[data-mode=career] .career-card-caption{font-size:15px}
+ #village-ui[data-mode=career] .career-peek-label{font-size:14px}
+ #loading .title-entry-links a{font-size:14px!important}
+ #world-scene-clock{font-size:13px!important}
+}
+@media(max-width:365px){
+ #village-ui #vh-world-shortcuts>.vh-shortcut{font-size:14px!important}
+ #village-ui #village-info .vh-meta p{font-size:13px!important}
+ #village-ui[data-mode=career] .career-grid{grid-template-columns:minmax(0,1fr)}
+ #village-ui[data-mode=career] .career-card{min-height:0;display:grid;grid-template-columns:100px minmax(0,1fr);align-content:start;gap:5px 10px;padding:10px!important;text-align:left}
+ #village-ui[data-mode=career] .career-card-artwork{width:100px;height:105px;grid-row:1/5;grid-column:1}
+ #village-ui[data-mode=career] .career-card-label,#village-ui[data-mode=career] .career-card-caption,#village-ui[data-mode=career] .career-peek-label{grid-column:2;margin:0}
+ #village-ui[data-mode=career] .career-card-caption{font-size:16px}
+ #world-scene-clock{display:none!important}
+ #loading .title-kicker{display:none}
+}
+@media(max-height:550px) and (orientation:landscape){
+ #village-ui[data-mode=career] .career-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #village-ui[data-mode=career] .career-card{min-height:260px;padding:8px!important}
+ #village-ui[data-mode=career] .career-card-artwork{height:100px}
+ #village-ui[data-mode=career] .career-card-caption{font-size:15px}
+ #loading .vh-storage-note{display:none}
+}

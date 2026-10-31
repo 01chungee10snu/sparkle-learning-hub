@@ -34,6 +34,12 @@ function subjectState(catalog,who,subject,now,profile){
  const skills=IRT.skillEvidence(profile.games,subject,stage);
  const focus=skills.find(s=>s.n>=2&&s.gap>0.04)||skills.find(s=>s.n>=2)||null;
  const games=catalog.filter(e=>compatible(e,subject,stage));
+ // Consistently strong independent performance unlocks a guided preview of
+ // the next STAGE, without changing the learner's selected stage or grade.
+ if(rec.canAdvance){
+  const next=catalog.find(e=>isPlayable(e)&&e.growth===true&&e.subject===subject&&e.stage===stage+1);
+  if(next&&!games.some(e=>e.id===next.id))games.push(next);
+ }
  const due=games.map(entry=>({entry,...dueStats(entry,who,now,memory.factor)})).filter(x=>x.count>0)
    .sort((a,b)=>b.count-a.count||Progress.gameProgress(a.entry.id,who).lastPlayed-Progress.gameProgress(b.entry.id,who).lastPlayed||a.entry.id.localeCompare(b.entry.id));
  return {subject,stage,rec,focus,games,due,memory};
@@ -68,17 +74,23 @@ export function plan(catalog,{who=Progress.learner(),now=Date.now(),preferredSub
  });
  let challenge=null,challengeState=null;
  for(const state of challengeStates){
-  const ranked=state.games.filter(e=>!used.has(e.id)).map(entry=>({
-   entry,match:skillMatch(entry,state.focus?.skill),growth:Number(entry.growth===true),
-   rounds:Progress.gameProgress(entry.id,who).finishedRounds,last:Progress.gameProgress(entry.id,who).lastPlayed
-  })).sort((a,b)=>b.match-a.match||b.growth-a.growth||a.rounds-b.rounds||a.last-b.last||a.entry.id.localeCompare(b.entry.id));
+  const ranked=state.games.filter(e=>!used.has(e.id)).map(entry=>{
+   const record=Progress.gameProgress(entry.id,who),variety=new Set(entry.modes||[]).size;
+   const unseen=(entry.questionIds||[]).filter(id=>!record.records[id]?.seen).length;
+   return {entry,match:skillMatch(entry,state.focus?.skill),
+    higher:Number(entry.growth===true&&entry.stage===state.stage+1),
+    variety,unseen,rounds:record.finishedRounds,last:record.lastPlayed};
+  }).sort((a,b)=>b.higher-a.higher||b.match-a.match||a.rounds-b.rounds||
+   b.variety-a.variety||b.unseen-a.unseen||a.last-b.last||a.entry.id.localeCompare(b.entry.id));
   if(ranked.length){challenge=ranked[0].entry;challengeState=state;break;}
  }
  if(challenge){
   const focus=challengeState.focus;
-  const reason=focus&&focus.n>=2&&focus.gap>0.04?
+  const reason=challenge.growth===true&&challenge.stage>challengeState.stage?
+    '스스로 맞힌 새로운 문제들이 쌓여 한 단계 높은 문제를 맛봐요. 학년과 선택한 단계는 그대로예요.':
+   focus&&focus.n>=2&&focus.gap>0.04?
     '최근 풀이에서 더 연습할 가치가 있는 '+focus.skill+'을(를) 알맞은 난도로 연습해요.':
-    '현재 단계에서 새 문제를 적정 난도로 만나며 이해를 넓혀요.';
+    '이전에 만난 유형과 다른 방법으로, 현재 실력에 맞춰 조금 더 도전해요.';
   missions.push(mission(missions.length+1,'challenge',challenge,'adaptive',reason,focus?.skill||''));
   used.add(challenge.id);
  }
@@ -89,10 +101,12 @@ export function plan(catalog,{who=Progress.learner(),now=Date.now(),preferredSub
   const state=states.find(s=>s.subject===entry.subject),stage=state?.stage??1;
   if((entry.minStage??1)>stage||(entry.maxStage??4)<stage)return null;
   const focus=entry.subject===targetState.subject?targetState.focus:null;
+  const sourceModes=new Set(challenge?.modes||[]),modeDifference=(entry.modes||[]).filter(mode=>!sourceModes.has(mode)).length;
   return {entry,match:skillMatch(entry,focus?.skill),same:Number(entry.subject===targetState.subject),
-    rounds:Progress.gameProgress(entry.id,who).finishedRounds,last:Progress.gameProgress(entry.id,who).lastPlayed,
-    focus};
- }).filter(Boolean).sort((a,b)=>b.match-a.match||b.same-a.same||a.rounds-b.rounds||a.last-b.last||a.entry.id.localeCompare(b.entry.id));
+    modeDifference,rounds:Progress.gameProgress(entry.id,who).finishedRounds,
+    last:Progress.gameProgress(entry.id,who).lastPlayed,focus};
+ }).filter(Boolean).sort((a,b)=>b.match-a.match||b.modeDifference-a.modeDifference||b.same-a.same||
+   a.rounds-b.rounds||a.last-b.last||a.entry.id.localeCompare(b.entry.id));
  if(transferPool.length){
   const pick=transferPool[0],reason=pick.match>0&&pick.focus?.skill?
     pick.focus.skill+'을(를) 다른 이야기와 활동에서 다시 써 봐요.':
