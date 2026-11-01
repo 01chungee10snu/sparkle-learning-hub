@@ -10,10 +10,9 @@ const browser=await chromium.launch({headless:true,executablePath:'/Applications
  args:['--enable-webgl','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const cases=[];
 async function enter(page,who){
- await page.goto(base+'/',{waitUntil:'networkidle',timeout:100000});
- assert(page.url().includes('/village/'));
- await page.locator('[data-learner="'+who+'"]').click();
- await page.locator('#start').click();
+ // The current landing page is the learner-selector. The 3D route
+ // accepts who+autostart directly and starts the real Unity WebGL build.
+ await page.goto(base+'/village/?who='+who+'&autostart=1',{waitUntil:'domcontentloaded',timeout:100000});
  await page.waitForFunction(()=>document.querySelector('#loading').hidden&&document.querySelector('#village-ui').dataset.ready==='true',undefined,{timeout:180000});
  assert.equal(await page.locator('#village-ui').getAttribute('data-who'),who);
 }
@@ -26,7 +25,10 @@ for(const c of [{name:'tae-desktop',who:'tae',viewport:{width:1280,height:800}},
  try{
   await enter(page,c.who);
   const before=await page.locator('#vh-stars').innerText();
-  await page.locator('[data-district="english"]').click();
+  await page.locator('#vh-map').click();
+  await page.locator('.vh-map-district-entry').filter({hasText:'영어학교'}).click();
+  assert.match(await page.locator('#vh-help').textContent(),/영어 숲/,'Readability wayfinding names the destination');
+  await page.locator('.vh-mission-card .vh-route-title').first().waitFor({state:'visible',timeout:70000});
   const names=await page.locator('.vh-mission-card .vh-route-title').allInnerTexts();
   assert(names.length>=2,'English area empty');
   await page.locator('.vh-mission-card button').first().click();
@@ -38,7 +40,9 @@ for(const c of [{name:'tae-desktop',who:'tae',viewport:{width:1280,height:800}},
   assert.equal(game.subject,'english');
   await page.screenshot({path:path.join(out,c.name+'-english.png')});
   await page.locator('#vh-exit').click();
-  await page.locator('[data-district="practice"]').click();
+  await page.locator('#vh-map').click();
+  await page.locator('.vh-map-district-entry').filter({hasText:'마법 수학 훈련장'}).click();
+  await page.locator('.vh-challenge-select').first().waitFor({state:'visible',timeout:70000});
   await page.locator('.vh-challenge-select').first().selectOption('g1');
   await page.locator('.vh-challenge-select').nth(1).selectOption('magic-g1-basic');
   await page.getByRole('button',{name:/1번 문제부터 시작하기/}).click();
@@ -69,7 +73,9 @@ for(const c of [{name:'tae-desktop',who:'tae',viewport:{width:1280,height:800}},
   await page.getByRole('button',{name:'다음 이야기 →'}).click();
   await page.waitForFunction(()=>document.querySelector('#vh-counter')?.textContent?.replace(/\s/g,'')==='2/25');
   await page.locator('#vh-exit').click();
-  await page.locator('[data-district="practice"]').click();
+  await page.locator('#vh-map').click();
+  await page.locator('.vh-map-district-entry').filter({hasText:'마법 수학 훈련장'}).click();
+  await page.locator('.vh-challenge-select').first().waitFor({state:'visible',timeout:70000});
   await page.locator('.vh-challenge-select').first().selectOption('g1');
   await page.locator('.vh-challenge-select').nth(1).selectOption('magic-g1-basic');
   await page.getByRole('button',{name:/1번 문제부터 시작하기/}).click();

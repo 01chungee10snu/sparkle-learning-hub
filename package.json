@@ -44,7 +44,9 @@
     "check:adaptive": "node scripts/check-adaptive-diversity-v37.mjs",
     "qa:readable:v37": "node scripts/qa-readable-layout-v37.mjs",
     "check:refactor": "node scripts/check-refactor-v39.mjs",
-    "qa:refactor": "node scripts/qa-refactor-v39.mjs"
+    "qa:refactor": "node scripts/qa-refactor-v39.mjs",
+    "qa:3d:v39": "node scripts/qa-3d-v39.mjs",
+    "qa:cloud:canonical": "node scripts/qa-canonical-cloud-v35.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

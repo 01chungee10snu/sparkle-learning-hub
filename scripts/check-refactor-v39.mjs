@@ -58,4 +58,20 @@ assert.match(ui,/button\('🧠 다음 배움 3걸음'/,'Every completed round of
 assert.match(ui,/data-travel/,'Walking to a building has a readable destination caption');
 assert.match(ui,/root\.dataset\.lite==='true'&&data\.action==='NEXT'&&data\.roundId/,'2D fallback completes verified rounds through the host');
 assert.match(bridge,/questionId: item\.id,\s+subject: game\.subject/,'Subjects retained for next-learning recommendations');
+const entry=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const learning=readFileSync(new URL('../learning.html',import.meta.url),'utf8');
+for(const [name,document] of [['landing',entry],['learning',learning],['village',html]]){
+ assert.match(document,/progress\.js\?v=refactor-v39-20261102/,name+' loads current progress module');
+}
+for(const [name,document] of [['learning',learning],['village',html]]){
+ assert.match(document,/irt\.js\?v=refactor-v39-20261102/,name+' loads pattern-variety IRT');
+ assert.match(document,/activity-ui\.js\?v=refactor-v39-20261102/,name+' loads shared numeric input');
+}
+assert.match(html,/village-bridge\.js\?v=refactor-v39-20261102/);
+assert.match(html,/village-ui\.js\?v=refactor-v39-20261102/);
+assert.match(learning,/app\.js\?v=refactor-v39-20261102/);
+assert.match(ui,/\['practice','🧩 마법 수학 훈련장'\]/,'Full subject map exposes practice');
+assert.match(ui,/\['academy','🪄 마법학교'\]/,'Full subject map exposes academy');
+assert.match(ui,/\['growth','🌟 성장의 탑'\]/,'Full subject map exposes growth');
+
 console.log('PASS_REFACTOR_V39: shared keypad with positive lower bounds, signed canonicalization, UI parity, 2 visible story patterns, independent evidence unchanged, accessible next learning and wayfinding');

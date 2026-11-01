@@ -359,7 +359,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
     paragraph('어떤 친구를 만나러 갈까요?','vh-story vh-story-intro');
     const entries=label('div','','vh-map-district-buttons');
-    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
+    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['practice','🧩 마법 수학 훈련장'],['academy','🪄 마법학교'],['growth','🌟 성장의 탑'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
       entries.append(button(name,()=>travelToDistrict(id),'vh-map-district-entry'));
     ui.body.append(entries);
     const featured=new Set(recommendedStories(who).map(item=>item.id));
