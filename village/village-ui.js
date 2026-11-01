@@ -1,4 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
+import {applyNumericKey, normalizeNumericDraft, numericDraftReady} from '../platform/numeric-keypad.js';
 import {mountPondExperience} from './pond-experience.js?v=pond-v34-20261021';
 import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
@@ -231,6 +232,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.home.setAttribute('aria-current',next === 'home'?'page':'false');
     ui.plaza.setAttribute('aria-current',next === 'plaza'?'page':'false');
     ui.area.textContent = next === 'plaza' ? '가족 공용 광장' : '나의 마을';
+    ui.help.removeAttribute('data-travel');
     ui.help.textContent = root.dataset.lite==='true' ?
       '학습 지역을 골라 모험을 시작해요.' : next === 'plaza' ?
       '함께 피운 꽃을 구경하고 우체국 친구를 만나보세요.' :
@@ -342,6 +344,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     const chosenStory=activeStory;
     close();activeStory=chosenStory;
+    // A readable wayfinding caption supplements small signs inside the Unity build.
+    // It is UI-only, not a substitute for the real destination/hotspot.
+    ui.help.dataset.travel='true';
+    ui.help.textContent='🧭 '+(districtLabels[id]||'배움터')+'로 이동 중 · 건물 앞에 도착하면 시작해요!';
     sendToUnity('GO_TO_DISTRICT:'+id);
   }
   function storyMap() {
@@ -353,7 +359,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
     paragraph('어떤 친구를 만나러 갈까요?','vh-story vh-story-intro');
     const entries=label('div','','vh-map-district-buttons');
-    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
+    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['practice','🧩 마법 수학 훈련장'],['academy','🪄 마법학교'],['growth','🌟 성장의 탑'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
       entries.append(button(name,()=>travelToDistrict(id),'vh-map-district-entry'));
     ui.body.append(entries);
     const featured=new Set(recommendedStories(who).map(item=>item.id));
@@ -529,6 +535,11 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.dialog.hidden = true;
     ui.controls.hidden = false;
     ui.help.hidden = false;
+    ui.help.removeAttribute('data-travel');
+    ui.help.textContent=zone==='plaza'?
+      '함께 피운 꽃을 구경하고 친구를 만나보세요.':
+      root.dataset.lite==='true'?'학습 지역을 골라 모험을 시작해요.':
+      '바닥을 터치해 이동하고 친구를 만나보세요.';
     ui.shortcuts.hidden=false;
     ui.dialog.removeAttribute('data-theme');
     ui.dialog.querySelector('.vh-dialog').removeAttribute('data-theme');
@@ -614,43 +625,27 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     pad.setAttribute('aria-label','게임 숫자 키패드');
     const check=button('정답 확인 ✨',()=>submitNumeric(),'vh-wide vh-number-submit');
     check.disabled=true;
-    function clean(value){
-      const source=String(value??'').trim()
-        .replace(/[０-９]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xfee0))
-        .replace(/[−－]/g,'-');
-      const sign=allowMinus&&source.startsWith('-')?'-':'';
-      let digits=source.replace(/[^0-9]/g,'').slice(0,7);
-      if(digits.length>1)digits=digits.replace(/^0+(?=[0-9])/,'');
-      return sign+digits;
-    }
-    function ready(){
-      if(!/^-?[0-9]{1,7}$/.test(input.value))return false;
-      const value=Number(input.value);
-      return Number.isSafeInteger(value)&&value>=min&&value<=max;
-    }
+    const bounds={min,max};
     function refresh(){
-      const cleaned=clean(input.value);
+      const cleaned=normalizeNumericDraft(input.value,bounds);
       if(input.value!==cleaned)input.value=cleaned;
-      check.disabled=!ready();
-      live.textContent=input.value&&input.value!=='-'?
-        '입력한 답 '+input.value:'아직 답을 입력하지 않았어요';
+      check.disabled=!numericDraftReady(cleaned,bounds);
+      live.textContent=numericDraftReady(cleaned,bounds)?
+        '입력한 답 '+cleaned:cleaned&&cleaned!=='-'?
+        '답을 완성해 주세요. 현재 '+cleaned:'아직 답을 입력하지 않았어요';
     }
     function setValue(value){
       input.value=value;
       input.dispatchEvent(new Event('input',{bubbles:true}));
     }
     function press(value){
-      // Button taps must work even if Android refuses to launch its keyboard.
+      // The same reducer runs on phones and the normal HTML learning page.
       if(document.activeElement===input&&!input.readOnly)input.blur();
-      if(value==='back')setValue(input.value.slice(0,-1));
-      else if(value==='clear')setValue('');
-      else if(value==='minus'&&allowMinus)
-        setValue(input.value.startsWith('-')?input.value.slice(1):'-'+input.value);
-      else if(/^[0-9]$/.test(value))setValue(input.value+value);
+      setValue(applyNumericKey(input.value,value,bounds));
     }
     function submitNumeric(){
       refresh();
-      if(!ready()){
+      if(!numericDraftReady(input.value,bounds)){
         announce('숫자를 입력하고 답을 확인해 주세요.');
         return;
       }
@@ -1391,7 +1386,16 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     mostRecentRoundId=result.roundId||'';
     voiceText=result.memoryMoment==='memory-30'?'한 달 전 배운 것을 스스로 다시 기억했어요. 기억 수호수가 마을에 뿌리내렸어요.':result.memoryMoment==='memory-14'?'오래 지난 기억을 스스로 다시 꺼냈어요. 별빛 기억축제가 열렸어요.':result.memoryMoment==='memory-7'?'며칠 전 배운 것을 스스로 다시 기억했어요. 기억나비가 찾아왔어요.':'오늘도 새로운 것을 배웠어요. 마법마을이 조금 더 자랐어요.';
     if(mostRecentRoundId)ui.body.append(button('💬 배운 방법을 말로 설명하고 기록하기',()=>showReflection(mostRecentRoundId),'vh-reflect-cta'));
-    ui.body.append(button('🏡 마을로 돌아가기',close,'vh-wide'));
+    // Keep optional next learning available without forcing more play or changing the grade.
+    const nextSteps=label('div','','vh-completion-actions');
+    const nextSubject=['math','korean','english'].includes(question?.subject)?question.subject:'math';
+    nextSteps.append(
+      button('🧠 다음 배움 3걸음',()=>request('ADAPTIVE_OFFER',{
+        subject:nextSubject,grade:who==='se'?'K':'G1'
+      }),'vh-wide vh-next-learning'),
+      button('🏡 마을로 돌아가기',close,'vh-secondary vh-completion-home')
+    );
+    ui.body.append(nextSteps);
     ui.exit.hidden=true;
     ui.listen.hidden=false;
     ui.title.focus({preventScroll:true});
@@ -1551,6 +1555,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       if (data.finished) {
         phase='waiting';
         ui.dialog.setAttribute('aria-busy','true');
+        // Unity normally sends COMPLETE_WORLD after its celebration. The 2D
+        // fallback has no Unity instance, so finish through the SAME host
+        // transaction and idempotent completion ledger, not a client reward.
+        if(root.dataset.lite==='true'&&data.action==='NEXT'&&data.roundId){
+          queueMicrotask(()=>request('COMPLETE_WORLD',{roundId:data.roundId}));
+        }
         return;
       }
       if(data.answered){question=data.question;gameId=data.question.gameId;showFeedback(data);}

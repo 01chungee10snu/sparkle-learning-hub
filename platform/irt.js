@@ -1,3 +1,5 @@
+import {questionPattern, patternPenalty} from './question-variety.js';
+
 /** Provisional Bayesian 1PL-style IRT, adjusted for guessing on choice items.
  * Editorial difficulty anchors are not population-calibrated parameters.
  * Only a distinct item's earliest independent answer enters ability inference.
@@ -151,10 +153,18 @@ export function selectQuestions({game,candidates,profile,size,stage,strategy='ad
  const model=estimateSubject(profile?.games||{},game.subject,stage);
  const skillNeeds=new Map(skillEvidence(profile?.games||{},game.subject,stage).filter(g=>g.n>=3).map(g=>[g.skill,g.gap]));
  const recent=evidenceFor(profile?.games||{},game.subject,15);
- const recentSkills=new Map(),recentModes=new Map();
- for(const e of recent){recentSkills.set(e.item.skill,(recentSkills.get(e.item.skill)||0)+1);
-  recentModes.set(e.item.mode||'choice',(recentModes.get(e.item.mode||'choice')||0)+1);}
- const chosen=[],usedSkills=new Map(),usedModes=new Map(),usedFamilies=new Set();
+ const recentSkills=new Map(),recentModes=new Map(),recentPatterns=new Map();
+ const questionById=new Map((game.questions||[]).map(q=>[q.id,q]));
+ for(const e of recent){
+  recentSkills.set(e.item.skill,(recentSkills.get(e.item.skill)||0)+1);
+  recentModes.set(e.item.mode||'choice',(recentModes.get(e.item.mode||'choice')||0)+1);
+  if(e.id.startsWith(game.id+':')){
+   const past=questionById.get(e.id.slice(game.id.length+1));
+   const pattern=questionPattern(past);
+   if(pattern)recentPatterns.set(pattern,(recentPatterns.get(pattern)||0)+1);
+  }
+ }
+ const chosen=[],usedSkills=new Map(),usedModes=new Map(),usedFamilies=new Set(),usedPatterns=new Map();
  const cycle=roundSize===3?[0.84,0.73,0.62]:[0.84,0.74,0.65,0.59,0.73];
  const rounds=profile?.games?.[game.id]?.finishedRounds||0;
  for(let i=0;i<size;i++){
@@ -177,15 +187,19 @@ export function selectQuestions({game,candidates,profile,size,stage,strategy='ad
    const repeated=seen?0.23+Math.min(5,seen)*0.13:0;
    const familyPenalty=item.family&&observedFamilies.has(item.family)?0.20:0;
    const needBonus=Math.min(0.25,Math.max(0,skillNeeds.get(item.skill)||0)*0.55);
+   // Diversify the visible story/prompt templates as well as the topic and tap mode.
+   const variation=patternPenalty(q,usedPatterns,recentPatterns);
    // Rotate near-ties across completed rounds; never randomize source IDs on reload.
    const tie=seededTie(q.id,rounds)*0.06;
-   return {q,score:difficulty+skillPenalty+modePenalty+historyPenalty+repeated+familyPenalty-needBonus+tie};
+   return {q,score:difficulty+skillPenalty+modePenalty+historyPenalty+repeated+familyPenalty+variation-needBonus+tie};
   }).sort((a,b)=>a.score-b.score||a.q.id.localeCompare(b.q.id));
   const pick=ranked[0].q,item=itemAt(game.id,pick.id);
   chosen.push(pick.id);
   if(item.family)usedFamilies.add(item.family);
   usedSkills.set(item.skill,(usedSkills.get(item.skill)||0)+1);
   usedModes.set(item.mode||'choice',(usedModes.get(item.mode||'choice')||0)+1);
+  const pattern=questionPattern(pick);
+  if(pattern)usedPatterns.set(pattern,(usedPatterns.get(pattern)||0)+1);
  }
  return chosen.length===size?chosen:[];
 }

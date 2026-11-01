@@ -107,7 +107,7 @@ async function cloud(page,op,args=[]){return page.evaluate(async({op,args})=>{
 },{op,args});}
 async function seed(page,who,gameId,questionId,eventId,at){
  return page.evaluate(async({who,gameId,questionId,eventId,at})=>{
-  const P=await import('/platform/progress.js?v=pond-v34-20261021');
+  const P=await import('/platform/progress.js');
   const backup=P.exportRecords(),attempt={id:eventId,roundId:'round-'+eventId,correct:true,at};
   backup.platform.profiles[who].games[gameId]={
    records:{[questionId]:{best:10,seen:1,attempts:[attempt],firstAttempt:attempt}},
@@ -118,7 +118,7 @@ async function seed(page,who,gameId,questionId,eventId,at){
 }
 async function profiles(page){
  return page.evaluate(async()=>{
-  const P=await import('/platform/progress.js?v=pond-v34-20261021');
+  const P=await import('/platform/progress.js');
   return P.exportRecords().platform.profiles;
  });
 }

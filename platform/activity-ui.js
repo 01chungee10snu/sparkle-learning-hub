@@ -1,13 +1,18 @@
+import {applyNumericKey, numericDraftReady} from './numeric-keypad.js';
+
 /** Accessible tap-based activities. All visible data passes through the caller's esc(). */
 export const MODE_LABELS={choice:'골라요',build:'쌓아요',sequence:'순서 놀이',match:'짝 놀이',memory:'기억 놀이',numeric:'숫자로 답해요'};
 const shuffled=n=>{const a=Array.from({length:n},(_,i)=>i);for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 export function createDraft(q){const i=q.interaction;return !i||i.type==='choice'?null:i.type==='numeric'?{digits:''}:i.type==='build'?{amount:0}:i.type==='match'?{left:null,pairs:Array(i.left.length).fill(null),rightOrder:shuffled(i.right.length)}:{selected:[],revealed:i.type==='memory',tileOrder:shuffled(i.items.length)};}
 export function draftResponse(q,d){if(!q.interaction)return null;return q.interaction.type==='numeric'?d.digits:q.interaction.type==='build'?d.amount:q.interaction.type==='match'?d.pairs:[...d.selected];}
-export function ready(q,d){const i=q.interaction;if(!i||!d)return false;if(i.type==='numeric')return /^(0|-?[1-9][0-9]{0,6})$/.test(d.digits)&&Number(d.digits)>=(i.min??0)&&Number(d.digits)<=i.max;if(i.type==='build')return true;if(i.type==='match')return d.pairs.every(v=>Number.isInteger(v));return !d.revealed&&d.selected.length===i.items.length;}
+export function ready(q,d){const i=q.interaction;if(!i||!d)return false;if(i.type==='numeric')return numericDraftReady(d.digits,{min:i.min??0,max:i.max});if(i.type==='build')return true;if(i.type==='match')return d.pairs.every(v=>Number.isInteger(v));return !d.revealed&&d.selected.length===i.items.length;}
 export function interact(q,d,action,index){const i=q.interaction;if(!i||!d)return;
- if(action==='activity-digit'&&i.type==='numeric'&&Number.isInteger(index)&&index>=0&&index<=9){const text=d.digits+index,value=Number(text);if(text.replace('-','').length<=7&&value>=(i.min??0)&&value<=i.max)d.digits=String(value);}
- if(action==='activity-sign'&&i.type==='numeric'&&(i.min??0)<0){if(!d.digits)d.digits='-';else if(d.digits==='-')d.digits='';else {const value=-Number(d.digits);if(value>=(i.min??0)&&value<=i.max)d.digits=String(value);}}
- if(action==='activity-delete'&&i.type==='numeric')d.digits=d.digits.slice(0,-1);
+ if(action==='activity-digit'&&i.type==='numeric'&&Number.isInteger(index)&&index>=0&&index<=9)
+  d.digits=applyNumericKey(d.digits,String(index),{min:i.min??0,max:i.max});
+ if(action==='activity-sign'&&i.type==='numeric'&&(i.min??0)<0)
+  d.digits=applyNumericKey(d.digits,'minus',{min:i.min??0,max:i.max});
+ if(action==='activity-delete'&&i.type==='numeric')
+  d.digits=applyNumericKey(d.digits,'back',{min:i.min??0,max:i.max});
  if(action==='activity-plus'&&i.type==='build')d.amount=Math.min(i.max,d.amount+1);
  if(action==='activity-minus'&&i.type==='build')d.amount=Math.max(0,d.amount-1);
  if(action==='activity-tile'&&['sequence','memory'].includes(i.type)&&!d.revealed&&index>=0&&index<i.items.length&&!d.selected.includes(index))d.selected.push(index);

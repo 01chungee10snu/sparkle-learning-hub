@@ -1,0 +1,102 @@
+/* V39: high-legibility game UI; do not scale down text to defeat scrolling. */
+#village-ui {
+  --vh-child-text: #302846;
+  --vh-focus-ring: #5833b4;
+}
+
+/* A readable external wayfinding caption when 3D building signs are small. */
+#village-ui .vh-help[data-travel="true"] {
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(490px, calc(100% - 14px)) !important;
+  border: 2px solid #b99cdd;
+  border-radius: 15px;
+  padding: 9px 14px !important;
+  background: rgba(255, 250, 227, .98);
+  color: #3a275c;
+  font-size: clamp(17px, 2.4vw, 21px) !important;
+  line-height: 1.4 !important;
+  font-weight: 900;
+  white-space: normal;
+  word-break: keep-all;
+  box-shadow: 0 4px 15px rgba(56, 42, 87, .2);
+}
+
+/* Large choices, strong focus, and full sentences even in long-word questions. */
+#village-ui .vh-dialog .vh-options,
+#village-ui .vh-dialog .vh-pairs {
+  min-width: 0;
+  gap: 11px;
+}
+#village-ui .vh-dialog .vh-option {
+  min-width: 0;
+  min-height: 62px !important;
+  padding: 12px 14px !important;
+  color: var(--vh-child-text) !important;
+  font-size: clamp(20px, 2.45vw, 26px) !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+  text-align: left;
+}
+#village-ui .vh-dialog :is(.vh-option,.vh-number-key,.vh-secondary,.vh-wide,.vh-stepper,.vh-nav-item):focus-visible {
+  outline: 4px solid var(--vh-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+#village-ui .vh-dialog .vh-explanation {
+  font-size: clamp(17px, 2.2vw, 21px);
+  line-height: 1.55;
+  word-break: keep-all;
+}
+#village-ui .vh-dialog .vh-visual-label,
+#village-ui .vh-dialog .vh-pair-label {
+  font-size: clamp(17px, 2vw, 21px) !important;
+}
+
+/* The reward screen offers the next varied learning route OR a voluntary rest. */
+#village-ui .vh-completion-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 13px 0 4px;
+}
+#village-ui .vh-dialog .vh-completion-actions > button {
+  min-width: 0;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 10px 9px !important;
+  font-size: clamp(17px, 2.1vw, 21px) !important;
+  white-space: normal;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+#village-ui .vh-completion-home {
+  border: 2px solid #a38bc6 !important;
+}
+
+/* Keep the short plan understandable to children without tiny data labels. */
+#village-ui .vh-learning-loop-title {font-size: clamp(20px, 2.5vw, 25px);}
+#village-ui .vh-learning-step {gap: 8px; padding: 12px;}
+#village-ui .vh-learning-step .vh-route-title {font-size: clamp(18px, 2.2vw, 22px);}
+#village-ui .vh-learning-step .vh-small {font-size: 16px;line-height: 1.45;}
+#village-ui .vh-learning-step .vh-wide {min-height: 54px !important;}
+
+@media (min-width: 760px) and (min-height: 580px) {
+  #village-ui .vh-dialog:not([data-theme="tome"]) .vh-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 400px) {
+  #village-ui .vh-dialog .vh-option {font-size: 20px !important;min-height: 58px !important;padding: 10px 12px !important;}
+  #village-ui .vh-completion-actions {grid-template-columns: 1fr;gap: 8px;}
+  #village-ui .vh-dialog .vh-completion-actions > button {min-height: 52px !important;font-size: 18px !important;}
+  #village-ui .vh-learning-step {padding: 9px;}
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  #village-ui .vh-dialog .vh-option {min-height: 47px !important;font-size: 19px !important;padding: 7px 10px !important;}
+  #village-ui .vh-dialog .vh-completion-actions > button {min-height: 46px !important;font-size: 17px !important;}
+  #village-ui .vh-help[data-travel="true"] {max-width: 50vw !important; font-size: 16px !important;}
+}
+@media (prefers-reduced-motion: reduce) {
+  #village-ui .vh-option:active {transform: none;}
+}
