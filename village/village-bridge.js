@@ -133,6 +133,7 @@ export function createVillageHost(emit) {
     return {
       gameId: game.id,
       questionId: item.id,
+      subject: game.subject,
       title: decorate(item.title, who),
       story: decorate(item.story, who),
       prompt: decorate(item.prompt, who),
