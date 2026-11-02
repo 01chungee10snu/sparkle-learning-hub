@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "generator": "scripts/build-kenney-scenes-v40.py",
+  "license": "CC0-1.0",
+  "derivation": "Original isometric compositions from bundled Kenney Sketch Town tiles",
+  "entries": [
+    {
+      "name": "math",
+      "path": "assets/kenney-sketch-v40/composite/math.png",
+      "sha256": "60c238dbdfb582cecb3f9816dfb89a5d475cced48747652abd38eba77131e394"
+    },
+    {
+      "name": "korean",
+      "path": "assets/kenney-sketch-v40/composite/korean.png",
+      "sha256": "ac99a7b6749de27848e601fd4921c737f9b21e03f441fcbd51d486843237afe1"
+    },
+    {
+      "name": "english",
+      "path": "assets/kenney-sketch-v40/composite/english.png",
+      "sha256": "4773af87c4b89ebceb227cbe5a974f25ed6d63a4f3a9fca2dcb8cef9cb1015d9"
+    },
+    {
+      "name": "hanja",
+      "path": "assets/kenney-sketch-v40/composite/hanja.png",
+      "sha256": "56b3beb5e5c5262392c4055fcf8ec22e12bcd1cee011a6456d088c25ad294f1b"
+    },
+    {
+      "name": "kma",
+      "path": "assets/kenney-sketch-v40/composite/kma.png",
+      "sha256": "a2b3d27a528c9052a14cc8052c63de540616f293a9ad15dac49cc872ae805db8"
+    },
+    {
+      "name": "practice",
+      "path": "assets/kenney-sketch-v40/composite/practice.png",
+      "sha256": "f658d939311f817105cc524feaebcd8e082a282f3ea0240cdcf6d34e5a6f80a3"
+    },
+    {
+      "name": "academy",
+      "path": "assets/kenney-sketch-v40/composite/academy.png",
+      "sha256": "e9da0db5a36441fd26e7e5c56a785c3c5b65d9286bd559673871ee771f5a7226"
+    },
+    {
+      "name": "growth",
+      "path": "assets/kenney-sketch-v40/composite/growth.png",
+      "sha256": "fed504825b757b14d96c5e1039d9ab096c921b3cc48f226dcbfd1de920422273"
+    },
+    {
+      "name": "pond",
+      "path": "assets/kenney-sketch-v40/composite/pond.png",
+      "sha256": "12066c6ccc43c1a5ec36da7069a21354fa6826e0a52be85e847dd5a0e8738550"
+    },
+    {
+      "name": "ocean",
+      "path": "assets/kenney-sketch-v40/composite/ocean.png",
+      "sha256": "e41d73b3d9bab4c0563a9da8b35b7c416c20a850f6db593c103070f1e26790cf"
+    },
+    {
+      "name": "career",
+      "path": "assets/kenney-sketch-v40/composite/career.png",
+      "sha256": "8a8b606a113fb88dac9672d1b3bf200201d1397462a75aec8fdf11d4396d7d6e"
+    },
+    {
+      "name": "garden",
+      "path": "assets/kenney-sketch-v40/composite/garden.png",
+      "sha256": "f3efea1a0577abe39f20ad735138155706856172a29ce93accb181771014e9d2"
+    },
+    {
+      "name": "plaza",
+      "path": "assets/kenney-sketch-v40/composite/plaza.png",
+      "sha256": "d2e687f664c8f31e7f46af9bb2ae0fcc1d42619d09801cd2ab3708ea8bb23b4b"
+    },
+    {
+      "name": "island-scene",
+      "path": "assets/kenney-sketch-v40/composite/island-scene.png",
+      "sha256": "d50c6878517de492b911c3e0b297feaf2c03c7736291883d8a1f141cd9e254ba"
+    }
+  ]
+}

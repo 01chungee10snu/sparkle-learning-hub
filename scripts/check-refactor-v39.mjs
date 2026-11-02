@@ -5,6 +5,7 @@ import {readFileSync} from 'node:fs';
 import * as Numeric from '../platform/numeric-keypad.js';
 import * as Activity from '../platform/activity-ui.js';
 import * as IRT from '../platform/irt.js';
+import {WORLD_DESTINATIONS} from '../platform/world-art-v40.js';
 import {questionPattern, patternPenalty} from '../platform/question-variety.js';
 
 const bounds={min:100,max:999};
@@ -70,8 +71,8 @@ for(const [name,document] of [['learning',learning],['village',html]]){
 assert.match(html,/village-bridge\.js\?v=refactor-v39-20261102/);
 assert.match(html,/village-ui\.js\?v=refactor-v39-20261102/);
 assert.match(learning,/app\.js\?v=refactor-v39-20261102/);
-assert.match(ui,/\['practice','🧩 마법 수학 훈련장'\]/,'Full subject map exposes practice');
-assert.match(ui,/\['academy','🪄 마법학교'\]/,'Full subject map exposes academy');
-assert.match(ui,/\['growth','🌟 성장의 탑'\]/,'Full subject map exposes growth');
+assert(WORLD_DESTINATIONS.some(place=>place.id==='practice'), 'Full subject map exposes practice');
+assert(WORLD_DESTINATIONS.some(place=>place.id==='academy'), 'Full subject map exposes academy');
+assert(WORLD_DESTINATIONS.some(place=>place.id==='growth'), 'Full subject map exposes growth');
 
 console.log('PASS_REFACTOR_V39: shared keypad with positive lower bounds, signed canonicalization, UI parity, 2 visible story patterns, independent evidence unchanged, accessible next learning and wayfinding');

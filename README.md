@@ -4,6 +4,15 @@
 
 **서비스:** https://01chungee10snu.github.io/sparkle-learning-hub/
 
+## 2026-11-02 v40 공개 CC0 게임 에셋 아트 통합 (개발 브랜치)
+
+- 브랜치: `feat/magic-village-v40-open-art-20261102` (v39 운영판은 변경하지 않음).
+- **Kenney Sketch Town + Expansion (CC0)** 원본 28개와 조합 이미지 14개로 시작 화면·배움 카드·마을 지도를 같은 세계관으로 통일.
+- `platform/world-art-v40.js`에 13개 장소를 등록. 현재 Unity WebGL 건물 이동/핫스팟과 기존 학습·놀이 기록 구조를 보존.
+- IRT의 기존 복습·난이도·전이 추천을 유지한 채, 읽기 전용 `platform/adventure-loop-v40.js`로 오늘의 3걸음과 탐험을 연결.
+- 검증: `npm run check`, `npm run qa:world:v40`, `npm run qa:refactor`.
+- 라이선스 원본·SHA·마이그레이션 안전 계약: [v40 아트/데이터 통합 문서](docs/V40_ART_AND_MIGRATION_20261102.md).
+
 ## 2026-11-02 v39 리팩토링 검증 브랜치
 
 공통 숫자판 입력 결함 수정, 이야기·질문 패턴 다양화를 통한 적응형 출제,

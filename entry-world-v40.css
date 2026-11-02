@@ -1,0 +1,92 @@
+/* v40 — Sketch Town CC0: coherent map, legible entry, two original fairies. */
+.entry-world{
+  --sky-top:#71a8ce;--sky-mid:#b7ddec;--sky-bottom:#e7f4de;
+  --sea:#5d9a9f;--sea-light:#a6d8d2;--glass:#254d64;
+  background:radial-gradient(ellipse at 77% 38%,rgba(255,246,194,.66),transparent 44%),
+    linear-gradient(180deg,var(--sky-top),var(--sky-mid) 47%,#d6eacb 68%,var(--sea-light) 68.3%,var(--sea));
+}
+.entry-world .entry-island-art{
+  left:46%;top:12%;width:min(53vw,880px);height:auto;aspect-ratio:1200/760;
+  max-height:77dvh;object-fit:contain;mask-image:none;
+  padding:9px;background:#eff8d8;
+  border:5px solid #324c5d;border-radius:29px;
+  box-shadow:0 9px 0 #304b4d,0 26px 40px rgba(23,58,68,.29);
+  filter:none;animation:island-hover 7s ease-in-out infinite alternate;
+}
+.entry-world .entry-island-shadow{display:none}
+.entry-world .entry-game-menu{
+  width:min(460px,39vw);
+  padding:20px 18px 21px;
+  background:rgba(35,70,84,.88);
+  border:3px solid #f4d89e;border-radius:25px;
+  box-shadow:0 8px 0 #2e4f59,0 23px 37px #193a5270;
+  text-shadow:none;
+}
+.entry-world .entry-chapter{color:#ffe6a0}
+.entry-world .entry-game-menu h1{font-size:clamp(43px,4.6vw,72px);text-shadow:0 3px 0 #24374d}
+.entry-world .entry-game-menu h1 strong{color:#ffde89;text-shadow:0 3px 0 #475065}
+.entry-world .entry-tagline{color:#fffaf0}
+.entry-world .entry-kst{
+  background:#e4f2da;color:#314c45;border:2px solid #a9c6a1;
+  text-shadow:none;backdrop-filter:none;
+}
+#entry-world .entry-learner-choice{
+  background:#eff7ef;border:3px solid #b6d1ca;color:#304759;
+  box-shadow:0 4px 0 #173c3c;min-height:78px;
+}
+#entry-world .entry-learner-choice[aria-pressed=true]{
+  border-color:#ffdb84;background:#fff1bc;color:#2c3f4d;
+  box-shadow:0 0 0 3px #6a9d8a,0 5px 0 #173c3c;
+}
+#entry-world .entry-learner-choice small{color:#516973;font-size:clamp(12px,1.2vw,15px)}
+#entry-world .entry-portal{
+  min-height:88px;border:3px solid #ffdf97;border-radius:21px;
+  box-shadow:0 6px 0 #345062,0 12px 18px #152f3c70;
+}
+#entry-world .entry-portal-primary{background:linear-gradient(115deg,#8a64b7,#685a9b)}
+#entry-world .entry-portal-study{background:linear-gradient(115deg,#4b8c95,#367281);border-color:#ddf3c3}
+#entry-world .entry-portal-text strong{font-size:clamp(23px,2.4vw,31px)}
+#entry-world .entry-portal-text small{font-size:clamp(13px,1.1vw,15px)}
+#entry-world .entry-portal:focus-visible,#entry-world button:focus-visible{
+  outline:4px solid #ffda56;outline-offset:4px;
+}
+.entry-world .entry-world-notice{
+  color:#f7faef;background:rgba(15,51,58,.78);
+  font-size:clamp(13px,1.15vw,15px);line-height:1.4;margin-top:12px;
+}
+.entry-world .entry-caption{color:#143d53;text-shadow:0 1px 0 #fff}
+@media(max-width:830px){
+  .entry-world .entry-island-art{
+    top:2%;left:3%;width:94%;height:auto;max-height:44dvh;
+    border-width:3px;border-radius:20px;padding:5px;
+    object-fit:contain;
+  }
+  .entry-world .entry-game-menu{
+    width:min(98vw,540px);margin:0 auto 0;padding:13px 14px 19px;
+    background:rgba(35,69,82,.95);border-radius:22px 22px 0 0;
+    border-bottom:0;
+  }
+  .entry-world .entry-game-menu h1{font-size:clamp(37px,7.4vw,53px)}
+  .entry-world .entry-tagline{font-size:clamp(15px,3vw,19px)}
+  #entry-world .entry-learner-choice{min-height:64px}
+  #entry-world .entry-portal{min-height:74px;padding:10px 12px}
+  #entry-world .entry-portal-text strong{font-size:clamp(22px,5vw,27px)}
+  .entry-world .entry-world-notice{margin-top:9px;font-size:12px}
+}
+@media(max-width:480px) and (max-height:780px){
+  .entry-world{overflow-y:auto;align-items:flex-end}
+  .entry-world .entry-island-art{top:0;max-height:38dvh}
+  .entry-world .entry-game-menu{padding:10px 13px 15px}
+  .entry-world .entry-chapter{font-size:11px;margin-bottom:5px}
+  .entry-world .entry-kst{margin-bottom:8px}
+}
+@media(max-height:680px) and (orientation:landscape){
+  .entry-world .entry-game-menu{width:min(49vw,470px);margin-left:2vw;padding:8px 12px}
+  .entry-world .entry-island-art{width:46%;left:52%;top:8%;height:auto;max-height:88dvh}
+  #entry-world .entry-learner-choice{min-height:55px}
+  #entry-world .entry-portal{min-height:68px}
+  .entry-world .entry-world-notice{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .entry-world .entry-island-art,.entry-world .entry-clouds span{animation:none}
+}

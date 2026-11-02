@@ -1,4 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
+import {WORLD_DESTINATIONS,artPath,worldLocation} from '../platform/world-art-v40.js';
 import {applyNumericKey, normalizeNumericDraft, numericDraftReady} from '../platform/numeric-keypad.js';
 import {mountPondExperience} from './pond-experience.js?v=pond-v34-20261021';
 import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
@@ -149,6 +150,16 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     return element;
   };
   function scenicBanner(area, description='') {
+    if(worldLocation(area)){
+      const scene=label('figure','','vh-area-banner vh-v40-world-banner');
+      const image=document.createElement('img');
+      image.src=artPath(area,'../');
+      image.alt='';image.loading='lazy';image.decoding='async';
+      image.width=256;image.height=352;
+      scene.append(image);
+      if(description)scene.append(label('figcaption',description,'vh-area-caption'));
+      return scene;
+    }
     if(area==='hanja'){
       const scene=label('figure','','vh-area-banner vh-hanja-banner');
       scene.append(label('strong','📜 漢字','vh-hanja-banner-glyph'));
@@ -357,10 +368,17 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.counter.textContent='어디든 갈 수 있어요';
     ui.note.textContent='원하는 곳부터 시작해요. 오늘 쉬었다가 내일 놀아도 괜찮아요.';
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
-    paragraph('어떤 친구를 만나러 갈까요?','vh-story vh-story-intro');
-    const entries=label('div','','vh-map-district-buttons');
-    for(const [id,name] of [['math','💎 수학학교'],['korean','🌸 이야기 도서관'],['english','🪶 영어학교'],['hanja','🖋️ 한자 수련관'],['kma','🏆 경시대회 성'],['practice','🧩 마법 수학 훈련장'],['academy','🪄 마법학교'],['growth','🌟 성장의 탑'],['pond','🐠 생명 연못'],['ocean','🌊 푸른 바다'],['career','🏛️ 미래 직업 탐색관']])
-      entries.append(button(name,()=>travelToDistrict(id),'vh-map-district-entry'));
+    paragraph('장소를 눌러 바로 이동해요. 지도를 옆으로 넘기면 더 많은 장소가 보여요.','vh-story vh-story-intro');
+    const entries=label('div','','vh-map-district-buttons vh-v40-map');
+    for(const place of WORLD_DESTINATIONS.filter(item=>!['garden','plaza'].includes(item.id))){
+      const entry=button('',()=>travelToDistrict(place.id),'vh-map-district-entry vh-v40-map-place');
+      entry.setAttribute('aria-label',place.name+' · '+place.hint);
+      const image=document.createElement('img');
+      image.src=artPath(place.id,'../');image.alt='';image.loading='lazy';image.decoding='async';
+      image.width=256;image.height=352;
+      entry.append(image,label('strong',place.name,'vh-v40-map-label'),label('small',place.hint,'vh-v40-map-hint'));
+      entries.append(entry);
+    }
     ui.body.append(entries);
     const featured=new Set(recommendedStories(who).map(item=>item.id));
     const cards=label('div','','vh-story-map');
@@ -374,7 +392,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       card.append(badge,title,detail,start);
       cards.append(card);
     }
-    ui.body.append(cards);
+    const stories=label('details','','vh-v40-more-stories');
+    stories.append(label('summary','✨ 친구들과 이야기 모험 보기'),cards);
+    ui.body.append(stories);
     const free=label('details','','vh-story-freeroam');
     const heading=label('summary','🌳 문제 없이 자유롭게 탐험하기');
     free.append(heading);

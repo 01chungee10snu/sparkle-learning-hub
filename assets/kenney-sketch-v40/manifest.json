@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "packs": {
+    "base": {
+      "source": "https://opengameart.org/content/sketch-town",
+      "archive_url": "https://opengameart.org/sites/default/files/kenney_sketchtown_1.0.zip",
+      "archive_sha256": "bd8bb09cb33c922347c643242a04de5ea14206511efe1be5cd7b975a2563b77e",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "files": [
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_towerPurple_N.png",
+          "sha256": "e9b500ff8aa46802d3ac7b70abd79c3062f71b6804167ce669029435efa68a5b",
+          "bytes": 12931
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_towerGreen_N.png",
+          "sha256": "34a988a3af7a25c4b41e3013eab908f5cfef394c1ebfe483145889c6cdff151b",
+          "bytes": 12629
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_towerBrown_N.png",
+          "sha256": "f0fbdd9f99f49ceb0ec759f5e3e7762b85f76cb86852e591a46a1ba2965359de",
+          "bytes": 13337
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_towerBeige_N.png",
+          "sha256": "1cb1304aa4e708911d2b97ad944b62ab72c597f21245703884a577a579e78a64",
+          "bytes": 13070
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_gateOpen_N.png",
+          "sha256": "7b60074d292e2f7e83b98401960e3f58e1d05f688e5dd5b8ed5ba53af83f89bd",
+          "bytes": 11682
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_center_N.png",
+          "sha256": "86efe3e55d99978d7f1ccf3c54852767cc1d6e0d50db51ce0b0fb629d6059755",
+          "bytes": 6124
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_pathCrossing_N.png",
+          "sha256": "0224b210be69e41b468aa2f1c5ef9b647c87ae392b0eb24b93193fa0af875217",
+          "bytes": 7315
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_riverBridge_N.png",
+          "sha256": "c3c7bbd87019932c25a15c7c1ef1f2097728398f9fbfb4fd580f66095056aa15",
+          "bytes": 8989
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_waterRiver_N.png",
+          "sha256": "e53500cc267d4d123a87f12e697fe5b3c9108b7363299dcdcd34763c4da868d2",
+          "bytes": 5971
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_water_N.png",
+          "sha256": "f0c77368656a82f7e643f4248fd820cf142b3e0b6f1e06317c5522d0484aef59",
+          "bytes": 6243
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_river_N.png",
+          "sha256": "eb92929aee034e25f566f6d91b1b0f1cb224e61e8e6c67769775f0b54f1087d4",
+          "bytes": 7850
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/roof_gableBeige_N.png",
+          "sha256": "654de0e592f1cbc5ee7875774cc3ed88e5ec9a7a1326ba8c5e011aacca12c391",
+          "bytes": 6349
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/roof_churchBeige_N.png",
+          "sha256": "d32a30ebe1acca0e5e9351f348058afe424ba64b039078cd3ef06ea69ea1dfd5",
+          "bytes": 5848
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/roof_churchPurple_N.png",
+          "sha256": "8894feb9bb4bd2dbb9862afa5fef8fa03c9dc4d18c0d74893269e7dc522028ad",
+          "bytes": 5819
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/roof_gableGreen_N.png",
+          "sha256": "41b51b3590409b9e840dcceef19255eb9db464a9e1e640e8013422e550af7bf8",
+          "bytes": 6090
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/tree_single_N.png",
+          "sha256": "d57020040129a1aa8f41049e8e4e995a3c3d2f6bbade4e737799cd4e801010de",
+          "bytes": 5424
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/tree_multiple_N.png",
+          "sha256": "ee37eb3d2291b91287ca03bb27e046dd76aba4763bebbe55845ab8e2926779bb",
+          "bytes": 9553
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/rocks_grass_N.png",
+          "sha256": "7d4b8d43944f3d1ae04e71b72ab3d30e5b43645b90cb466ec50a2948e8cc0c29",
+          "bytes": 5366
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/building_door_N.png",
+          "sha256": "e4af75fecf0a68a790836522333cd30bd9b9954fbb6bfbe0ceace7383c636970",
+          "bytes": 8520
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/building_window_N.png",
+          "sha256": "bdf6a721b6f879979fc7ed9d2784566b2fbed485b654359a520ad67668714999",
+          "bytes": 8812
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/grass_path_N.png",
+          "sha256": "62cafe0a26647b31a502575e2f86de148e6e59ab1e6e698eb76b5f5f3d298255",
+          "bytes": 8308
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/water_fall_N.png",
+          "sha256": "150af0b79139b4f06d15ca7feb8248edac48c17d7eec13e7a7e6849b4b11c9ae",
+          "bytes": 6937
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/structure_arch_N.png",
+          "sha256": "9c174b44dbcb981e5051b345923d06c1a6fd711bf1c78ad226e9400750c86561",
+          "bytes": 12240
+        },
+        {
+          "path": "assets/kenney-sketch-v40/base/castle_tower_N.png",
+          "sha256": "c536f3a54ed1fff0cc631db42e88ef4d86a7828085708a7e11e6b23b37755768",
+          "bytes": 11077
+        }
+      ]
+    },
+    "expansion": {
+      "source": "https://opengameart.org/content/sketch-town-expansion",
+      "archive_url": "https://opengameart.org/sites/default/files/kenney_sketchtownexpansion.zip",
+      "archive_sha256": "46959e14f08eb73c2a0cf63148f37858b62684edfc66b997f822518f91feaceb",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "files": [
+        {
+          "path": "assets/kenney-sketch-v40/expansion/well_N.png",
+          "sha256": "6025ebdb773c1df37f7a3dbb2d1d0a35d38f365780e74bc53e879d90227239fe",
+          "bytes": 6260
+        },
+        {
+          "path": "assets/kenney-sketch-v40/expansion/tree_pineLarge_N.png",
+          "sha256": "ed3e5a1918c6ac7c56a72abee34ff604897b0e1876145ab17e9ef6f0973dd7dc",
+          "bytes": 7526
+        },
+        {
+          "path": "assets/kenney-sketch-v40/expansion/furrow_crop_N.png",
+          "sha256": "10250c671593f6fd81b0ba92f3781d8e07603942df78fd79b47777829a3e837e",
+          "bytes": 5198
+        },
+        {
+          "path": "assets/kenney-sketch-v40/expansion/fence_wood_N.png",
+          "sha256": "86ec8d63bc0909aee761ad5947a980b5d7181d527884b5a052e32159802d7f8b",
+          "bytes": 5261
+        }
+      ]
+    }
+  }
+}

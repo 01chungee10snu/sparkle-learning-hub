@@ -1,0 +1,76 @@
+/* v40: a readable coherent CC0 game world map, over the existing Unity host. */
+#village-ui{--v40-ink:#284752;--v40-green:#a5cfab;--v40-paper:#fffaeb}
+#village-ui .vh-dialog{
+  border:3px solid #80aead!important;border-radius:22px;
+  background:linear-gradient(180deg,#fffdf0,#f0f9e9);
+}
+#village-ui .vh-dialog-title{background:#e3f0df;border-radius:15px}
+#village-ui .vh-v40-map{
+  display:grid!important;grid-auto-flow:column;grid-template-columns:none!important;grid-template-rows:repeat(2,minmax(132px,1fr))!important;
+  grid-auto-columns:clamp(156px,22vw,214px);gap:10px;overflow-x:auto;overflow-y:hidden;
+  overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:auto;
+  padding:5px 3px 14px;max-width:100%;margin:9px 0 14px;
+}
+#village-ui .vh-v40-map-place{
+  display:flex!important;flex-direction:column;justify-content:center;align-items:center;
+  box-sizing:border-box;min-width:0;min-height:132px!important;max-height:170px;
+  padding:5px 8px 7px!important;gap:2px;scroll-snap-align:start;
+  border:3px solid #91b8aa!important;border-bottom:6px solid #5f928c!important;
+  border-radius:18px!important;background:linear-gradient(180deg,#f8ffe8,#e6f5e4)!important;
+  color:var(--v40-ink)!important;text-align:center!important;
+  box-shadow:0 4px 8px #244b4321;
+}
+#village-ui .vh-v40-map-place img{
+  display:block;width:82px;height:85px;object-fit:contain;
+  flex:0 0 85px;filter:drop-shadow(0 3px 1px #59756133);
+}
+#village-ui .vh-v40-map-label{
+  display:block;font-size:clamp(17px,2vw,23px)!important;line-height:1.22!important;
+  font-weight:900;white-space:normal;word-break:keep-all;
+}
+#village-ui .vh-v40-map-hint{
+  display:block;max-width:100%;font-size:clamp(12px,1.3vw,15px);
+  line-height:1.25;white-space:normal;word-break:keep-all;color:#416470;
+}
+#village-ui .vh-v40-map-place:focus-visible{
+  outline:4px solid #5773ae!important;outline-offset:2px;
+}
+#village-ui .vh-v40-more-stories,
+#village-ui .vh-story-freeroam{
+  border:2px solid #a8c4ae;border-radius:15px;background:#f5fbef;padding:8px 12px;
+  margin:8px 0;
+}
+#village-ui .vh-v40-more-stories summary{
+  padding:8px 6px;font-weight:900;font-size:clamp(18px,2.2vw,23px);
+  color:#2f5660;cursor:pointer;
+}
+#village-ui .vh-v40-world-banner{
+  display:grid;place-items:center;min-height:123px;
+  margin:0!important;border-radius:14px;
+  background:linear-gradient(130deg,#d9efca,#dceef1)!important;
+}
+#village-ui .vh-v40-world-banner img{
+  display:block;width:100%!important;height:120px!important;
+  object-fit:contain!important;object-position:center;
+  padding:2px;box-sizing:border-box;
+}
+#village-ui .vh-story-card{border:2px solid #a8c6b5;background:#fffdf5;border-radius:17px}
+#village-ui .vh-dialog .vh-option{min-height:64px!important;font-size:clamp(20px,2.6vw,27px)!important}
+#village-ui .vh-story-go{min-height:52px!important;font-size:clamp(18px,2vw,22px)!important}
+#lite-village-scene>picture img{
+  object-fit:contain;background:linear-gradient(150deg,#ceeac7,#a2d6d8);
+  border-radius:22px;max-height:76dvh;
+}
+#loading .title-art-wrap .title-art{object-fit:contain;background:#e8f4dc;border-radius:19px}
+#loading .title-learner-art{object-fit:contain}
+@media(max-width:650px){
+  #village-ui .vh-v40-map{grid-auto-columns:minmax(150px,44vw);grid-template-rows:repeat(2,minmax(126px,auto));gap:8px}
+  #village-ui .vh-v40-map-place{min-height:128px!important;padding:4px!important}
+  #village-ui .vh-v40-map-place img{width:70px;height:76px;flex-basis:76px}
+  #village-ui .vh-v40-map-label{font-size:18px!important}
+  #village-ui .vh-v40-more-stories summary{font-size:19px}
+  #village-ui .vh-v40-world-banner img{height:100px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #village-ui .vh-v40-map{scroll-behavior:auto}
+}
