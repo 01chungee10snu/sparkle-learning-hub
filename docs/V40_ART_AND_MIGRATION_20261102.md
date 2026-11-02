@@ -71,6 +71,13 @@ flowchart TB
 
 스크린샷/브라우저 QA는 `/tmp/sparkle-v40-art-qa/`에 기록. 운영 Supabase 및 실제 아이의 진도는 확인·수정하지 않았다.
 
+## 실제 화면 미리보기 (합성 브라우저 상태)
+
+- [모바일 시작 화면](previews/v40/galaxy-landing.png) · [모바일 학습 3걸음](previews/v40/galaxy-learning.png) · [모바일 마을 지도](previews/v40/galaxy-map.png)
+- [태블릿 시작 화면](previews/v40/tablet-landing.png)
+
+위 이미지는 가상 브라우저/합성 데이터로 캡처했으며 실제 자녀의 학습기록을 노출하지 않는다. UI QA 확인용이며 기기 실측 검수의 대체물이 아니다.
+
 ## 리스크와 정식 전환 게이트
 
 **이것은 프로덕션 v39를 교체한 릴리스가 아니라 격리 개발 브랜치의 v40 개발 빌드다.**
