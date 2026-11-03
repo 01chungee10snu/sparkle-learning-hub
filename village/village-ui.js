@@ -118,6 +118,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   let gainedFromAnswer=[];
   const waterBrowse={pond:{filter:'all',page:0},ocean:{filter:'all',page:0}};
   let pondExperience=null,pondRefresh=null,pondSession=null,pondRuntimePrefix='';
+  let blenderViewer=null;
+  const disposeBlenderViewer=()=>{
+    const viewer=blenderViewer;
+    blenderViewer=null;
+    viewer?.destroy();
+  };
   const disposePond=()=>{const active=pondExperience;pondExperience=null;pondRefresh=null;active?.destroy();};
   const syncPondActions=()=>{if(phase==='pond')for(const control of ui.body.querySelectorAll('[data-pond-action]'))control.disabled=control.dataset.pondAction==='blocked'||!pondExperience?.running;};
   const firstVisitSeen=new Set();
@@ -369,6 +375,36 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.note.textContent='원하는 곳부터 시작해요. 오늘 쉬었다가 내일 놀아도 괜찮아요.';
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
     paragraph('장소를 눌러 바로 이동해요. 지도를 옆으로 넘기면 더 많은 장소가 보여요.','vh-story vh-story-intro');
+    const blenderMenu=label('details','','vh-blender-map-details');
+    const blenderSummary=label('summary','🌍 입체 3D 지도로 둘러보기');
+    const blenderHost=label('div','','vh-blender-stage');
+    const blenderPoster=document.createElement('img');
+    blenderPoster.className='vh-blender-map-poster';
+    blenderPoster.src='../assets/blender-v41/blender-world-poster.webp';
+    blenderPoster.alt='Blender로 제작한 성과 정원, 연못이 있는 마법마을의 3D 모습';
+    blenderHost.append(blenderPoster);
+    blenderMenu.append(blenderSummary,blenderHost,
+      label('p','건물을 누르면 마법마을의 해당 장소로 연결돼요. 보통 지도도 그대로 사용할 수 있어요.'));
+    blenderMenu.addEventListener('toggle',async()=>{
+      if(!blenderMenu.isConnected)return;
+      if(!blenderMenu.open){blenderViewer?.setActive(false);return;}
+      if(blenderViewer){blenderViewer.setActive(true);return;}
+      try{
+        const module=await import('../platform/blender-v41-world.js?v=blender-v41-20261103');
+        if(!blenderMenu.isConnected||!blenderMenu.open)return;
+        const viewer=await module.mountBlenderWorld(blenderHost,{
+          modelUrl:'../assets/blender-v41/sparkle-magic-world-v41.glb',
+          mode:'map',
+          onDestination:id=>{if(worldLocation(id))travelToDistrict(id);}
+        });
+        if(!blenderMenu.isConnected||!blenderMenu.open){viewer.destroy();return;}
+        blenderViewer=viewer;
+      }catch(error){
+        blenderHost.dataset.blenderReady='false';
+        console.warn('[Blender map] static poster fallback:',error?.message||error);
+      }
+    });
+    ui.body.append(blenderMenu);
     const entries=label('div','','vh-map-district-buttons vh-v40-map');
     for(const place of WORLD_DESTINATIONS.filter(item=>!['garden','plaza'].includes(item.id))){
       const entry=button('',()=>travelToDistrict(place.id),'vh-map-district-entry vh-v40-map-place');
@@ -546,6 +582,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     window.speechSynthesis.speak(utterance);
   });
   function close() {
+    disposeBlenderViewer();
     disposePond();
     if (pendingRequest) retiredRequests.add(pendingRequest);
     if (retiredRequests.size>128) retiredRequests.delete(retiredRequests.values().next().value);
@@ -588,6 +625,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     ui.title.focus({preventScroll:true});
   }
   function resetBody() {
+    disposeBlenderViewer();
     disposePond();
     // Numeric submit stays pinned above the footer on small Galaxy screens.
     ui.dialog.querySelectorAll('.vh-number-submit').forEach(el=>el.remove());

@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./entry-readability.css?v=readability-v36-20261031">
 <link rel="stylesheet" href="./entry-readability-v37.css?v=readability-v37-20261031">
 <link rel="stylesheet" href="./entry-world-v40.css?v=kenney-v40-20261102">
+<link rel="stylesheet" href="./entry-blender-v41.css?v=blender-v41-20261103">
 <style>
 .entry-learner-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;max-width:100%}
 .entry-learner-choice{display:flex;align-items:center;gap:10px;min-height:72px;padding:8px 11px;border:2px solid #ffffff80;border-radius:18px;background:#173b6ab8;color:#fff;font:900 18px/1.2 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 16px #10285b55}
@@ -26,8 +27,9 @@
   <div class="entry-stars" aria-hidden="true"></div>
   <div class="entry-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="entry-island-shadow" aria-hidden="true"></div>
-  <img class="entry-island-art" src="./assets/kenney-sketch-v40/composite/island-scene.png"
-       width="1200" height="760" alt="잔디 위에 성과 나무와 건물이 있는 마법마을 섬" decoding="async">
+  <img class="entry-island-art" src="./assets/blender-v41/blender-world-poster.webp"
+       width="1280" height="768" alt="Blender로 제작한 입체 마법마을: 꽃과 나무, 성, 연못과 산책로" decoding="async">
+  <div id="entry-blender-stage" class="entry-blender-stage" aria-label="건물을 누르면 해당 배움터로 이동할 수 있는 입체 마법마을"></div>
   <section class="entry-game-menu" aria-labelledby="entry-title">
     <p class="entry-chapter"><span aria-hidden="true">✦</span> MAGIC LEARNING WORLD <span aria-hidden="true">✦</span></p>
     <h1 id="entry-title"><span>태희와 세희의</span><strong>마법마을</strong></h1>
@@ -48,20 +50,46 @@
 <script type="module">
 import * as Progress from './platform/progress.js?v=refactor-v39-20261102';
 import {koreaScene,applyKoreaScene} from './village/korea-season-clock.js?v=world-v26-20261019';
+const BLENDER_DESTINATIONS=new Set(['math','korean','english','hanja','kma','practice','academy','growth','pond','ocean','career']);
+const BLENDER_NAMES={math:'수학 정원',korean:'이야기 도서관',english:'영어학교',hanja:'한자 수련관',kma:'경시대회 성',practice:'마법 연습장',academy:'마법학교',growth:'성장의 탑',pond:'생명 연못',ocean:'푸른 바다',career:'직업 탐색관'};
 function update(){applyKoreaScene(koreaScene());}
 update();setInterval(update,60000);
 const params=new URLSearchParams(location.search),requested=params.get('who');
 const initial=requested==='tae'||requested==='se'?requested:Progress.learner();
 const village=document.querySelector('#entry-village-link'),learning=document.querySelector('#entry-learning-link');
+let selectedDestination='';
 function selectLearner(who){
   if(who!=='tae'&&who!=='se')return;
   Progress.selectLearner(who);
   document.querySelectorAll('[data-learner]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.learner===who)));
-  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1';
-  learning.href='./learning.html?who='+encodeURIComponent(who);
+  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1'+(selectedDestination?'&go='+selectedDestination:'');
+  learning.href='./learning.html?who='+encodeURIComponent(who)+(new Set(['math','korean','english','hanja']).has(selectedDestination)?'&subject='+selectedDestination:'');
 }
 document.querySelectorAll('[data-learner]').forEach(button=>button.addEventListener('click',()=>selectLearner(button.dataset.learner)));
 selectLearner(initial);
+// Renderer is progressive: children can enter the existing game even if GPU or model fails.
+const stage=document.querySelector('#entry-blender-stage');
+if(!navigator.connection?.saveData){
+  requestAnimationFrame(async()=>{
+    try{
+      const {mountBlenderWorld}=await import('./platform/blender-v41-world.js?v=blender-v41-20261103');
+      const runtime=await mountBlenderWorld(stage,{
+        modelUrl:'./assets/blender-v41/sparkle-magic-world-v41.glb',
+        onDestination:id=>{
+          if(!BLENDER_DESTINATIONS.has(id))return;
+          selectedDestination=id;
+          selectLearner(Progress.learner());
+          village.querySelector('.entry-portal-text small').textContent=BLENDER_NAMES[id]+'으로 이어서 모험해요';
+          village.setAttribute('aria-label',BLENDER_NAMES[id]+'으로 마을 입장');
+        }
+      });
+      window.addEventListener('pagehide',()=>runtime.destroy(),{once:true});
+    }catch(error){
+      stage.dataset.blenderReady='false';
+      console.warn('[Blender world] static poster fallback:',error?.message||error);
+    }
+  });
+}
 if(location.search)history.replaceState(history.state,'',location.pathname+location.hash);
 </script>
 </body>

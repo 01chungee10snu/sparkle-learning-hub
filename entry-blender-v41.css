@@ -1,0 +1,65 @@
+/* Blender-rendered fallback and real-time GPU world share the same framing. */
+.entry-blender-stage{
+  position:absolute;z-index:3;left:46%;top:12%;width:min(53vw,880px);
+  aspect-ratio:1280/768;max-height:77dvh;box-sizing:border-box;
+  border:5px solid #324c5d;border-radius:29px;background:#a4d2da;
+  box-shadow:0 9px 0 #304b4d,0 26px 40px #173a4460;
+  overflow:hidden;opacity:0;pointer-events:none;transition:opacity .32s ease;
+}
+.entry-blender-stage[data-blender-ready="true"]{opacity:1;pointer-events:auto}
+.entry-blender-stage .blender-v41-canvas,
+.vh-blender-stage .blender-v41-canvas{
+  display:block;width:100%;height:100%;touch-action:none;outline:0;
+}
+.blender-v41-labels{position:absolute;inset:0;pointer-events:none}
+.blender-v41-marker{
+  display:block;position:absolute;transform:translate(-50%,-50%);
+  max-width:122px;min-height:34px;min-width:66px;
+  font:900 clamp(12px,1.05vw,16px)/1.25 system-ui,sans-serif;
+  color:#253f4b;background:rgba(255,254,239,.94);
+  border:2px solid #668f99;border-radius:13px;
+  padding:6px 8px;box-shadow:0 3px 0 #366074;
+  pointer-events:auto;cursor:pointer;white-space:normal;word-break:keep-all;
+}
+.blender-v41-marker[data-selected="true"]{background:#ffe09d;border-color:#b2764f}
+.blender-v41-marker:focus-visible,.blender-v41-canvas:focus-visible{
+  outline:4px solid #ffd15c;outline-offset:3px;
+}
+.blender-v41-hints{
+  position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  margin:0;padding:4px 10px;border-radius:12px;
+  background:rgba(24,61,74,.85);color:#fff;white-space:nowrap;
+  font:800 clamp(10px,.9vw,13px)/1.3 system-ui,sans-serif;
+  pointer-events:none;max-width:95%;
+}
+.entry-world .entry-island-art{aspect-ratio:1280/768;object-fit:contain;background:#a5d3dd}
+@media(max-width:830px){
+  .entry-blender-stage{left:3%;top:2%;width:94%;max-height:44dvh;border-width:3px;border-radius:20px}
+  .entry-blender-stage .blender-v41-marker{
+    min-width:58px;min-height:31px;font-size:11px;padding:5px 6px;max-width:90px;
+  }
+  .entry-blender-stage .blender-v41-hints{font-size:10px;bottom:2px}
+}
+@media(max-height:680px) and (orientation:landscape){
+  .entry-blender-stage{left:52%;top:8%;width:46%;max-height:88dvh}
+}
+@media(prefers-reduced-motion:reduce){
+  .entry-blender-stage{transition:none}
+}
+
+/* Wayfinding rail: no projected-label collisions on phone or tablet. */
+.entry-blender-stage .blender-v41-labels{
+  display:flex;align-items:center;gap:6px;left:7px;right:7px;
+  top:auto;bottom:5px;height:auto;max-height:49px;overflow-x:auto;
+  padding:3px;scrollbar-width:thin;pointer-events:auto;
+}
+.entry-blender-stage .blender-v41-marker{
+  position:static!important;transform:none!important;flex:0 0 auto;
+  min-height:35px;max-width:none;font-size:clamp(12px,1.2vw,15px);
+  border-radius:11px;white-space:nowrap;padding:6px 9px;
+}
+.entry-blender-stage .blender-v41-hints{top:6px;bottom:auto}
+@media(max-width:830px){
+  .entry-blender-stage .blender-v41-labels{bottom:1px;max-height:42px}
+  .entry-blender-stage .blender-v41-marker{font-size:12px;min-height:31px}
+}

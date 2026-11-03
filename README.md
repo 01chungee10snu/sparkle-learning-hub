@@ -4,6 +4,15 @@
 
 **서비스:** https://01chungee10snu.github.io/sparkle-learning-hub/
 
+## 2026-11-03 v41 — Blender 3D 마법마을 (격리 개발 버전)
+
+- `feat/magic-village-v41-blender-world-20261103`: Blender 5.2.3 LTS에서 실제 입체 마법마을 제작. 편집 가능한 `.blend`, 게임용 `.glb`(약 1.1MB), Cycles 포스터 보존.
+- Kenney CC0 공개 3D 에셋 팩 3종에서 51개 원본을 검증하고, 13개 지역/6개 애니메이션을 구성.
+- 모바일·태블릿에서 손가락 회전, 장소 선택, 접근성 있는 큰 버튼으로 기존 Unity 모험과 학습 화면으로 이동. Unity 기존 지도에 선택형 Blender 3D 보기 추가.
+- `games/`, IRT, 보상, 학습기록, 가족 동기화, Unity WebGL 빌드는 **수정하지 않음**. 실기기 및 Unity 원본 씬 최종 교체는 후속 검증 대상.
+- 검증: `npm run check`, `npm run qa:blender:v41` 및 기존 `qa:3d:v39`, `qa:refactor`, `qa:cloud:canonical`.
+- 상세: [v41 Blender 3D 제작·라이선스·검증 기록](docs/V41_BLENDER_WORLD_20261103.md) · [갤럭시 화면](docs/previews/v41/galaxy-landing.png) · [태블릿 화면](docs/previews/v41/tablet-landing.png).
+
 ## 2026-11-02 v40 공개 CC0 게임 에셋 아트 통합 (개발 브랜치)
 
 - 브랜치: `feat/magic-village-v40-open-art-20261102` (v39 운영판은 변경하지 않음).

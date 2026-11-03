@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "origin": "Kenney",
+  "packs": [
+    {
+      "name": "fantasy-town",
+      "download_url": "https://opengameart.org/sites/default/files/kenney_fantasy-town-kit_2.0.zip",
+      "archive_sha256": "1a7530c09f4d2fa2cdee259876f089334f8b1f27fa86a0c4f54ef86cdd8676ef",
+      "original_license": "assets/blender-v41/source/LICENSE_fantasy-town.txt",
+      "models": [
+        {
+          "name": "wall-door",
+          "path": "assets/blender-v41/source/fantasy-town/wall-door.glb",
+          "bytes": 29276,
+          "sha256": "79b2d40db110ca96a6e77d4261da665fdf8c68f4c20c2afef5bce1c28ad72857"
+        },
+        {
+          "name": "wall",
+          "path": "assets/blender-v41/source/fantasy-town/wall.glb",
+          "bytes": 4792,
+          "sha256": "cab1dff37610e2a214237cc62ec0b1506e8fd76bb66c29f6c585b4b643b569c4"
+        },
+        {
+          "name": "wall-window-glass",
+          "path": "assets/blender-v41/source/fantasy-town/wall-window-glass.glb",
+          "bytes": 15708,
+          "sha256": "b0d666b1850d0b92734bdea736a062b4424fd909d13495f4a73719eb51bb41f4"
+        },
+        {
+          "name": "wall-window-round",
+          "path": "assets/blender-v41/source/fantasy-town/wall-window-round.glb",
+          "bytes": 22356,
+          "sha256": "ec911d8b3bd041ff46d5f5b21a04c2e1bcd006c51262866da94dc24a2c21e41c"
+        },
+        {
+          "name": "wall-window-shutters",
+          "path": "assets/blender-v41/source/fantasy-town/wall-window-shutters.glb",
+          "bytes": 23892,
+          "sha256": "58a641a03fc4a5a225663969cc257fcf4f2fc63c199b4aca16b612142ff9eed0"
+        },
+        {
+          "name": "wall-wood",
+          "path": "assets/blender-v41/source/fantasy-town/wall-wood.glb",
+          "bytes": 4808,
+          "sha256": "8699614fdbc99f565942709c0977c964e2c12f3b3c60098a6e2c397c973f08db"
+        },
+        {
+          "name": "wall-wood-door",
+          "path": "assets/blender-v41/source/fantasy-town/wall-wood-door.glb",
+          "bytes": 30744,
+          "sha256": "2aa4e982fcb6434be4e6051fcee7972799ff5350a3f36ca8bf71530b84608123"
+        },
+        {
+          "name": "wall-wood-window-shutters",
+          "path": "assets/blender-v41/source/fantasy-town/wall-wood-window-shutters.glb",
+          "bytes": 10612,
+          "sha256": "c45a63690760cd5de3842ffbe222092e8cd483524679c4ba92fef4d1e52f7248"
+        },
+        {
+          "name": "roof-gable",
+          "path": "assets/blender-v41/source/fantasy-town/roof-gable.glb",
+          "bytes": 7632,
+          "sha256": "4bb6bdbcadbb8ebeb69d720e29f6c2e57c99d98966baa41fd86914d3c13d6039"
+        },
+        {
+          "name": "roof-high",
+          "path": "assets/blender-v41/source/fantasy-town/roof-high.glb",
+          "bytes": 8088,
+          "sha256": "7d39cd8fdcb8bd652d8a40f5f54e5e3d2c41bc1bb84691334f75bc411024cb12"
+        },
+        {
+          "name": "roof-high-window",
+          "path": "assets/blender-v41/source/fantasy-town/roof-high-window.glb",
+          "bytes": 20732,
+          "sha256": "b5bea885f9dc0a2b1195748a1c4b9994e16256ab740b6cdc6783ebbcf8b96946"
+        },
+        {
+          "name": "roof",
+          "path": "assets/blender-v41/source/fantasy-town/roof.glb",
+          "bytes": 9324,
+          "sha256": "8f245dfc04b8e76b2833081462f7530c2aea9114a703161c1d9a4a975927347d"
+        },
+        {
+          "name": "roof-point",
+          "path": "assets/blender-v41/source/fantasy-town/roof-point.glb",
+          "bytes": 6180,
+          "sha256": "a7dfd157128e04105e976d7a47f772e95e4bd9f3d73b87a00b43861f406b94f8"
+        },
+        {
+          "name": "watermill",
+          "path": "assets/blender-v41/source/fantasy-town/watermill.glb",
+          "bytes": 53856,
+          "sha256": "177e76c12f43845303638d1375c323675c3937b053b8762042fe19d3d7d27c5d"
+        },
+        {
+          "name": "windmill",
+          "path": "assets/blender-v41/source/fantasy-town/windmill.glb",
+          "bytes": 71160,
+          "sha256": "72562df164f5fd36670521462da8f4161cf2c4c1c889799443f0fb44532ad5db"
+        },
+        {
+          "name": "fountain-round-detail",
+          "path": "assets/blender-v41/source/fantasy-town/fountain-round-detail.glb",
+          "bytes": 136888,
+          "sha256": "05cdd740e3175c2d3208d4cb6630a279a9b4cbc48393b28c92e3e40cca2a5d6b"
+        },
+        {
+          "name": "fountain-square-detail",
+          "path": "assets/blender-v41/source/fantasy-town/fountain-square-detail.glb",
+          "bytes": 32092,
+          "sha256": "c201d8e39a8699c5551c543f5dae7779b1303cce71d7769661e66282cd628f63"
+        },
+        {
+          "name": "lantern",
+          "path": "assets/blender-v41/source/fantasy-town/lantern.glb",
+          "bytes": 14984,
+          "sha256": "f270637e3083d6e84a30626ee05df2b09597a642985a7f5c3e4ab5bb1c7a8d55"
+        },
+        {
+          "name": "stall-green",
+          "path": "assets/blender-v41/source/fantasy-town/stall-green.glb",
+          "bytes": 27120,
+          "sha256": "2da2f7b31cde5d943d7c08c457bbb39797ef0a607921fde0b8455f338ce40205"
+        },
+        {
+          "name": "stall-red",
+          "path": "assets/blender-v41/source/fantasy-town/stall-red.glb",
+          "bytes": 24304,
+          "sha256": "aa20a630f417032c46aaefbc779fd2b3355b451bf05d31acc36fd664146866b1"
+        },
+        {
+          "name": "banner-green",
+          "path": "assets/blender-v41/source/fantasy-town/banner-green.glb",
+          "bytes": 10200,
+          "sha256": "5c9a1bb7d564270306fe438fd4a141fc6de0d102b355bbd1d2710249c489868a"
+        },
+        {
+          "name": "banner-red",
+          "path": "assets/blender-v41/source/fantasy-town/banner-red.glb",
+          "bytes": 9988,
+          "sha256": "4e4a83de16e5979d2b34bb206d3bf3703a9039711bc658b37e3738d43090703d"
+        },
+        {
+          "name": "fence",
+          "path": "assets/blender-v41/source/fantasy-town/fence.glb",
+          "bytes": 7672,
+          "sha256": "92261b9419108d84f3db0def5eadeffa783032029897562b1f512e4a7570ef48"
+        },
+        {
+          "name": "tree",
+          "path": "assets/blender-v41/source/fantasy-town/tree.glb",
+          "bytes": 18188,
+          "sha256": "e8d81b97297de62699b92559cee7b247da84b1815df2515e42fd5a318a30b8d7"
+        },
+        {
+          "name": "tree-high-round",
+          "path": "assets/blender-v41/source/fantasy-town/tree-high-round.glb",
+          "bytes": 13176,
+          "sha256": "7f372e338cbf5514a41e8d2afda81acd67277a4c5ad4e6e35a9acfa4a6e3bc4b"
+        }
+      ],
+      "textures": [
+        {
+          "path": "assets/blender-v41/source/fantasy-town/Textures/colormap.png",
+          "bytes": 11143,
+          "sha256": "4aac939dc33195e35caf8c382ee3cb170054da763577f22d3c22692ec6afccdf"
+        }
+      ]
+    },
+    {
+      "name": "castle",
+      "download_url": "https://opengameart.org/sites/default/files/kenney_castle-kit.zip",
+      "archive_sha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+      "original_license": "assets/blender-v41/source/LICENSE_castle.txt",
+      "models": [
+        {
+          "name": "tower-square",
+          "path": "assets/blender-v41/source/castle/tower-square.glb",
+          "bytes": 16564,
+          "sha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f"
+        },
+        {
+          "name": "tower-square-mid",
+          "path": "assets/blender-v41/source/castle/tower-square-mid.glb",
+          "bytes": 7744,
+          "sha256": "34a43b162b0984df0c691cb12fcd169ff374412deca0de5fdfdd702a9fa0c98f"
+        },
+        {
+          "name": "tower-square-top",
+          "path": "assets/blender-v41/source/castle/tower-square-top.glb",
+          "bytes": 13276,
+          "sha256": "5e98cdf2bf4d885edc3fa514719f80d63872e11c54ee629c11859223dad8489c"
+        },
+        {
+          "name": "tower-square-roof",
+          "path": "assets/blender-v41/source/castle/tower-square-roof.glb",
+          "bytes": 14036,
+          "sha256": "94215209b27f5274188d70906d2a4df357529abd878b6b916bfb61ac5e64d1c8"
+        },
+        {
+          "name": "tower-square-top-roof",
+          "path": "assets/blender-v41/source/castle/tower-square-top-roof.glb",
+          "bytes": 11256,
+          "sha256": "5516fb45c3158e03773e15e83f5fc8b9bafbbcb3f35fc8e1e06e823cdb01e3bb"
+        },
+        {
+          "name": "tower-square-mid-windows",
+          "path": "assets/blender-v41/source/castle/tower-square-mid-windows.glb",
+          "bytes": 30852,
+          "sha256": "68c186f978135ba77969cdbee502a1c0d9d8f40bd01e8aa33b7cc6859a2ba766"
+        },
+        {
+          "name": "tower-hexagon-roof",
+          "path": "assets/blender-v41/source/castle/tower-hexagon-roof.glb",
+          "bytes": 8400,
+          "sha256": "6bd3fb7fd8069419787e806990c9cf3869396e766a1b8cd16c2b3a1414961a0a"
+        },
+        {
+          "name": "flag",
+          "path": "assets/blender-v41/source/castle/flag.glb",
+          "bytes": 15192,
+          "sha256": "263fc3c7bedcfcd2b30f1aca6feb76c8f249f8f79dc9a694f47ec63b77b180d6"
+        },
+        {
+          "name": "gate",
+          "path": "assets/blender-v41/source/castle/gate.glb",
+          "bytes": 13880,
+          "sha256": "fdc3d5b07f619dcacbf2af36024dc9a356696e541f6ce409a5305be782665ec9"
+        },
+        {
+          "name": "bridge-straight",
+          "path": "assets/blender-v41/source/castle/bridge-straight.glb",
+          "bytes": 16832,
+          "sha256": "ef15989c3d5c7392563888bbedda86de3c1ec4b3013c71c61e25b5257a6f9180"
+        }
+      ],
+      "textures": [
+        {
+          "path": "assets/blender-v41/source/castle/Textures/colormap.png",
+          "bytes": 7529,
+          "sha256": "66fd49be148f32e88f6c8cace67120250d1943a7856601158ad0ff24651db0b0"
+        }
+      ]
+    },
+    {
+      "name": "nature",
+      "download_url": "https://opengameart.org/sites/default/files/Nature%20Kit%20%282.1%29.zip",
+      "archive_sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+      "original_license": "assets/blender-v41/source/LICENSE_nature.txt",
+      "models": [
+        {
+          "name": "tree_default",
+          "path": "assets/blender-v41/source/nature/tree_default.glb",
+          "bytes": 9428,
+          "sha256": "562d29638c902de3c7bee465d3a53bb77117efbc392ae04ed894faf6b5dc691d"
+        },
+        {
+          "name": "tree_detailed",
+          "path": "assets/blender-v41/source/nature/tree_detailed.glb",
+          "bytes": 31412,
+          "sha256": "c041daf2f0fb1d49e4325227cbcd58667adbe51e9b55e8c1f0a94b74cc521b3b"
+        },
+        {
+          "name": "tree_oak",
+          "path": "assets/blender-v41/source/nature/tree_oak.glb",
+          "bytes": 14644,
+          "sha256": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3"
+        },
+        {
+          "name": "tree_pineTallA_detailed",
+          "path": "assets/blender-v41/source/nature/tree_pineTallA_detailed.glb",
+          "bytes": 10708,
+          "sha256": "9ba6337460e718b8baf165b23c02f39455e3d5757b1911505410c46bc88a86b5"
+        },
+        {
+          "name": "tree_pineRoundD",
+          "path": "assets/blender-v41/source/nature/tree_pineRoundD.glb",
+          "bytes": 13748,
+          "sha256": "a5051944fbfae7900cef8314c4a5d977b6b29bcd4e4ae5dea9d80980e65a411a"
+        },
+        {
+          "name": "flower_purpleA",
+          "path": "assets/blender-v41/source/nature/flower_purpleA.glb",
+          "bytes": 7112,
+          "sha256": "f6fc34c96a03420a74fe36d4c2d0ec88f15204fcad99cd1416c3c4ecb22e48c4"
+        },
+        {
+          "name": "flower_redB",
+          "path": "assets/blender-v41/source/nature/flower_redB.glb",
+          "bytes": 8080,
+          "sha256": "1ed430a4ee2be9e86649e1ce22ec23162814a3f8c2ad133117315db19293fc16"
+        },
+        {
+          "name": "flower_yellowC",
+          "path": "assets/blender-v41/source/nature/flower_yellowC.glb",
+          "bytes": 7616,
+          "sha256": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3"
+        },
+        {
+          "name": "mushroom_redGroup",
+          "path": "assets/blender-v41/source/nature/mushroom_redGroup.glb",
+          "bytes": 14960,
+          "sha256": "29f02df0589dd2b09e8d2aff6a4662394dac5cfcf1fec701640dcbd6127e0802"
+        },
+        {
+          "name": "plant_bushDetailed",
+          "path": "assets/blender-v41/source/nature/plant_bushDetailed.glb",
+          "bytes": 10172,
+          "sha256": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406"
+        },
+        {
+          "name": "grass_leafs",
+          "path": "assets/blender-v41/source/nature/grass_leafs.glb",
+          "bytes": 4608,
+          "sha256": "8bc4c0b17c2e64c34e1acbf7c4a2fd8c04cfcd7155328e61767887b2ced112c7"
+        },
+        {
+          "name": "rock_largeB",
+          "path": "assets/blender-v41/source/nature/rock_largeB.glb",
+          "bytes": 8560,
+          "sha256": "caa8b025833d4dabf6d98fe2e96cf2fbd886693ac990df0db75f9d827194374b"
+        },
+        {
+          "name": "rock_smallD",
+          "path": "assets/blender-v41/source/nature/rock_smallD.glb",
+          "bytes": 4012,
+          "sha256": "d5a09ec917231fbaf5a0d6868e1c0320fd4cb139851dcefbe9e3794eec73ee6c"
+        },
+        {
+          "name": "bridge_wood",
+          "path": "assets/blender-v41/source/nature/bridge_wood.glb",
+          "bytes": 15692,
+          "sha256": "3da4c208b0f72b7f2ba42db521b62ec4b0278050c75256a6982c40d21aab5701"
+        },
+        {
+          "name": "sign",
+          "path": "assets/blender-v41/source/nature/sign.glb",
+          "bytes": 5040,
+          "sha256": "c658c21672ecd63c5d3e53f06f875d68e6509edb1ab7e3b75374df7c61e7dd0c"
+        },
+        {
+          "name": "fence_simple",
+          "path": "assets/blender-v41/source/nature/fence_simple.glb",
+          "bytes": 5712,
+          "sha256": "ecaf6c29532aa9fd305a8ef71df769d60748bd797f2eb1c63bdefc4edb8062a7"
+        }
+      ],
+      "textures": []
+    }
+  ]
+}

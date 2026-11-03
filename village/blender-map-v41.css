@@ -1,0 +1,60 @@
+/* Optional Blender 3D travel map; the existing accessible map cards remain. */
+#village-ui .vh-blender-map-details{
+  border:2px solid #9abcb6;border-radius:17px;
+  background:#eff8f0;padding:7px 10px;margin:12px 0;
+}
+#village-ui .vh-blender-map-details > summary{
+  font-size:clamp(20px,2.3vw,25px);font-weight:900;cursor:pointer;
+  min-height:52px;display:list-item;padding:10px 4px;color:#345869;
+}
+#village-ui .vh-blender-map-details summary:focus-visible{
+  outline:4px solid #c397ff;outline-offset:3px;border-radius:8px;
+}
+#village-ui .vh-blender-map-details > p{
+  font-size:15px;line-height:1.4;margin:8px 4px;color:#4c6870;
+}
+#village-ui .vh-blender-stage{
+  position:relative;width:100%;height:clamp(220px,32vw,360px);
+  border:3px solid #8fafb4;border-radius:18px;
+  background:#b9dce1;overflow:hidden;box-sizing:border-box;
+}
+#village-ui .vh-blender-stage .vh-blender-map-poster{
+  display:block;width:100%;height:100%;object-fit:contain;
+  position:absolute;inset:0;pointer-events:none;
+}
+#village-ui .vh-blender-stage[data-blender-ready="true"] .vh-blender-map-poster{display:none}
+#village-ui .vh-blender-stage .blender-v41-canvas{position:absolute;inset:0}
+#village-ui .vh-blender-stage .blender-v41-marker{
+  position:absolute;transform:translate(-50%,-50%);
+  min-width:58px;min-height:35px;max-width:124px;
+  padding:5px 7px;font-size:clamp(12px,1.4vw,16px);font-weight:900;
+  border:2px solid #749a9a;border-radius:12px;
+  background:#fffbe9;color:#244a56;box-shadow:0 3px 0 #6b898b;
+  cursor:pointer;pointer-events:auto;word-break:keep-all;
+}
+#village-ui .vh-blender-stage .blender-v41-marker:focus-visible{
+  outline:3px solid #ffb857;outline-offset:3px;
+}
+#village-ui .vh-blender-stage .blender-v41-labels{position:absolute;inset:0;pointer-events:none}
+#village-ui .vh-blender-stage .blender-v41-hints{
+  position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+  border-radius:12px;padding:5px 8px;margin:0;white-space:nowrap;
+  font-size:12px;background:#254a5ad9;color:#fff;pointer-events:none;
+}
+@media(max-width:700px){
+  #village-ui .vh-blender-stage{height:205px}
+  #village-ui .vh-blender-stage .blender-v41-marker{
+    max-width:80px;min-width:52px;min-height:31px;font-size:11px;padding:4px;
+  }
+  #village-ui .vh-blender-map-details{padding:6px}
+}
+
+#village-ui .vh-blender-stage .blender-v41-labels{
+  display:flex;gap:6px;left:5px;right:5px;top:auto;bottom:4px;
+  overflow-x:auto;align-items:center;pointer-events:auto;scrollbar-width:thin;
+}
+#village-ui .vh-blender-stage .blender-v41-marker{
+  position:static!important;transform:none!important;flex:0 0 auto;
+  min-height:33px;max-width:none;white-space:nowrap;font-size:13px;
+}
+#village-ui .vh-blender-stage .blender-v41-hints{top:5px;bottom:auto}

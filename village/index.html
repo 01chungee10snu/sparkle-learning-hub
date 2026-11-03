@@ -42,13 +42,14 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./readability-v37.css?v=readability-v37-20261031">
 <link rel="stylesheet" href="./readability-v39.css?v=refactor-v39-20261102">
 <link rel="stylesheet" href="./world-ui-v40.css?v=kenney-v40-20261102">
+<link rel="stylesheet" href="./blender-map-v41.css?v=blender-v41-20261103">
 </head>
 <body>
 <div id="page">
   <main id="game">
     <div id="lite-village-scene" hidden aria-label="가벼운 2D 마법마을 배경">
-      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/kenney-sketch-v40/composite/island-scene.png">
-      <img src="../assets/kenney-sketch-v40/composite/island-scene.png" width="1200" height="760" alt="" decoding="async"></picture>
+      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/blender-v41/blender-world-poster.webp">
+      <img src="../assets/blender-v41/blender-world-poster.webp" width="1200" height="760" alt="" decoding="async"></picture>
       <p>🧚 학습 지역을 눌러 모험을 시작해요.</p>
     </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
@@ -65,7 +66,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
             <span id="world-kst-badge" class="title-kst-badge">🌤️ 대한민국의 시간과 계절</span>
           </header>
           <figure class="title-art-wrap">
-            <img class="title-art" src="../assets/kenney-sketch-v40/composite/island-scene.png" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
+            <img class="title-art" src="../assets/blender-v41/blender-world-poster.webp" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
             <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 푸른 바다 · 한자 수련관</figcaption>
           </figure>
           <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
@@ -120,9 +121,11 @@ const entryParams=new URLSearchParams(location.search);
 const requestedWho=entryParams.get('who');
 const validWho=requestedWho==='tae'||requestedWho==='se';
 const autoStartRequested=validWho&&entryParams.get('autostart')==='1';
+const goDestination=entryParams.get('go');
+const validGo=validWho&&new Set(['math','korean','english','hanja','kma','practice','academy','growth','pond','ocean','career']).has(goDestination)?goDestination:null;
 if(validWho)Progress.selectLearner(requestedWho);
 for(const key of [...entryParams.keys()]){
-  if(key==='who'||key==='autostart'){entryParams.delete(key);continue;}
+  if(key==='who'||key==='autostart'||key==='go'){entryParams.delete(key);continue;}
   if(!['environmentPreview','motionPreview'].includes(key)||entryParams.get(key)!=='1')entryParams.delete(key);
 }
 const normalizedQuery=entryParams.toString();
@@ -359,6 +362,11 @@ start.addEventListener('click', async () => {
     uiRoot.hidden = false;
     gameClock.hidden=false;
     refreshSeason();
+    if(validGo) {
+      // Game-owned hot spots still control entry and learning; no direct answers.
+      if(validGo==='ocean')uiRoot.querySelector('#vh-ocean')?.click();
+      else instance.SendMessage('VillageRuntime','OnUiCommand','GO_TO_DISTRICT:'+validGo);
+    }
   } catch (error) {
     canvas.style.display = 'none';
     start.disabled = false;
