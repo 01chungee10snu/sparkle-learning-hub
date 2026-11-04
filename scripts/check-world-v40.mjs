@@ -8,7 +8,7 @@ const locations = new Set(WORLD_DESTINATIONS.map(place=>place.id));
 assert.equal(locations.size,WORLD_DESTINATIONS.length);
 for(const place of WORLD_DESTINATIONS){
   const src=artPath(place.id);
-  assert(src.startsWith('./assets/kenney-sketch-v40/'));
+  assert(src.startsWith('./assets/storybook-v44/'));
   assert(existsSync(new URL(src,root)), 'missing sprite '+place.id);
 }
 assert.equal(worldLocation('bad'),null);

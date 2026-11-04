@@ -45,7 +45,7 @@ const blender=file('assets/blender-v41/sparkle-magic-world-v41.blend');
 assert(blender.length>100000,'Blender editable source missing'); // Blender 5 may use compressed .blend files
 const html=file('index.html').toString('utf8');
 const ui=file('village/village-ui.js').toString('utf8');
-assert(html.includes('entry-blender-stage')&&html.includes('entry-blender-v41.css'));
+assert(html.includes('entry-storybook-v44.css')&&html.includes('assets/storybook-v44/entry.webp')); // Current UI uses real Unity renders; v41 source remains archived.
 assert(ui.includes('vh-blender-map-details')&&ui.includes('disposeBlenderViewer'));
 for(const name of ['platform/progress.js','platform/irt.js','platform/cloud-sync.js'])
   assert(fs.existsSync(new URL(name,root)));

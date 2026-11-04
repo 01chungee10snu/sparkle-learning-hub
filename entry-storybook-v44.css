@@ -1,0 +1,13 @@
+/* Entry art is a Unity-rendered view of the same native models used in play. */
+.entry-world{background:radial-gradient(ellipse at 72% 30%,#d7f2de 0,transparent 45%),linear-gradient(180deg,#90d3e5,#cce9d9 64%,#78bdcc);}
+.entry-world .entry-island-art{top:7%;left:43%;width:56%;height:70dvh;max-height:none;aspect-ratio:6/5;object-fit:cover;object-position:50% 44%;border:4px solid #f4ddb0;border-radius:32px;padding:0;box-shadow:0 9px 0 #557b76,0 22px 45px #36564a35;animation:none;}
+.entry-world .entry-game-menu{background:#2c5159f5;border-color:#f1d594;max-width:460px;}
+.entry-world .entry-caption{font-size:14px;color:#294f5b;text-shadow:none;}
+@media(max-width:830px){
+ .entry-world .entry-island-art{top:1.5%;left:2%;width:96%;height:35dvh;max-height:310px;object-position:50% 48%;border-width:3px;border-radius:23px;}
+ .entry-world .entry-game-menu{width:min(98vw,540px);}
+}
+@media(max-height:680px) and (orientation:landscape){
+ .entry-world .entry-island-art{top:4%;left:52%;width:46%;height:88dvh;max-height:none;}
+}
+@media(prefers-reduced-motion:reduce){.entry-world .entry-island-art{animation:none}}

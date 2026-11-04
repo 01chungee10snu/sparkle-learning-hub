@@ -1,5 +1,5 @@
 import {SPECIES,CARE} from './garden-state.js';
-import {WORLD_DESTINATIONS,artPath,worldLocation} from '../platform/world-art-v40.js';
+import {WORLD_DESTINATIONS,artPath,worldLocation} from '../platform/world-art-v40.js?v=storybook-v44-20261104';
 import {applyNumericKey, normalizeNumericDraft, numericDraftReady} from '../platform/numeric-keypad.js';
 import {mountPondExperience} from './pond-experience.js?v=pond-v34-20261021';
 import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
@@ -376,34 +376,15 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     voiceText='마음에 드는 장소를 골라서 마법 친구들의 이야기를 들어 보아요.';
     paragraph('장소를 눌러 바로 이동해요. 지도를 옆으로 넘기면 더 많은 장소가 보여요.','vh-story vh-story-intro');
     const blenderMenu=label('details','','vh-blender-map-details');
-    const blenderSummary=label('summary','🌍 입체 3D 지도로 둘러보기');
+    const blenderSummary=label('summary','🏰 새 마을 전체 모습 보기');
     const blenderHost=label('div','','vh-blender-stage');
     const blenderPoster=document.createElement('img');
     blenderPoster.className='vh-blender-map-poster';
-    blenderPoster.src='../assets/blender-v41/blender-world-poster.webp';
+    blenderPoster.src='../assets/storybook-v44/world.webp';
     blenderPoster.alt='Blender로 제작한 성과 정원, 연못이 있는 마법마을의 3D 모습';
     blenderHost.append(blenderPoster);
     blenderMenu.append(blenderSummary,blenderHost,
-      label('p','건물을 누르면 마법마을의 해당 장소로 연결돼요. 보통 지도도 그대로 사용할 수 있어요.'));
-    blenderMenu.addEventListener('toggle',async()=>{
-      if(!blenderMenu.isConnected)return;
-      if(!blenderMenu.open){blenderViewer?.setActive(false);return;}
-      if(blenderViewer){blenderViewer.setActive(true);return;}
-      try{
-        const module=await import('../platform/blender-v41-world.js?v=blender-v41-20261103');
-        if(!blenderMenu.isConnected||!blenderMenu.open)return;
-        const viewer=await module.mountBlenderWorld(blenderHost,{
-          modelUrl:'../assets/blender-v41/sparkle-magic-world-v41.glb',
-          mode:'map',
-          onDestination:id=>{if(worldLocation(id))travelToDistrict(id);}
-        });
-        if(!blenderMenu.isConnected||!blenderMenu.open){viewer.destroy();return;}
-        blenderViewer=viewer;
-      }catch(error){
-        blenderHost.dataset.blenderReady='false';
-        console.warn('[Blender map] static poster fallback:',error?.message||error);
-      }
-    });
+      label('p','실제 게임 공간의 모습이에요. 아래 장소 카드를 누르면 요정이 이동해요.'));
     ui.body.append(blenderMenu);
     const entries=label('div','','vh-map-district-buttons vh-v40-map');
     for(const place of WORLD_DESTINATIONS.filter(item=>!['garden','plaza'].includes(item.id))){

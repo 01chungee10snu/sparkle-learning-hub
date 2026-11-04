@@ -1,0 +1,29 @@
+{
+  "version": "storybook-v44-20261104",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 18372365,
+      "sha256": "873b1de328de2cd4a4c8f9d8d6a77f487cae86e91aa759de4ddc8903dc3f9417",
+      "oldBytes": 16497273
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70811,
+      "sha256": "07d7306491f2711bdb5adcfaaaeb245dec5bc909ef9361bf2e8ccf8ce74dfa87",
+      "oldBytes": 70769
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "81f4cdb378482a6dee3740a52f334875055b1e8d04ba9ea8e81bab7ba9ef2fc3",
+      "oldBytes": 117894
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6062880,
+      "sha256": "1a7dd465102356d7feca5f989c39283ed8213158ce207ac0d8c11b21d12797aa",
+      "oldBytes": 6062457
+    }
+  ]
+}

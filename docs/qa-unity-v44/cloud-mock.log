@@ -1,0 +1,5 @@
+
+> sparkle-learning-hub@1.4.0 qa:cloud:canonical
+> node scripts/qa-canonical-cloud-v35.mjs
+
+{"result":"PASS","environment":"two isolated Chromium contexts, synthetic records, mocked RPC","canonicalVersion":5,"commits":5,"conflicts":2,"deviceCount":2,"races":[{"baseVersion":1,"expectedVersions":[1,1],"winner":"A","loser":"B","conflicts":1,"conflictRetries":{"A":0,"B":1},"resultingVersion":3},{"baseVersion":3,"expectedVersions":[3,3],"winner":"B","loser":"A","conflicts":1,"conflictRetries":{"A":1,"B":0},"resultingVersion":5}],"idleSyncRounds":3,"expectedAttemptCount":5,"checks":["same-base concurrent commit barrier","CAS conflict detected","both browsers retried","tae/se separation including same question","no missing attempts","no repeated attempts","firstAttempt preserved","idle synchronization is idempotent","source-of-truth status"]}

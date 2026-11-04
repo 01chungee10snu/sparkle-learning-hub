@@ -17,7 +17,7 @@ import * as Resources from './platform/resource-economy.js';
 import * as PlayBalance from './platform/play-balance.js?v=child-ux-v33-20261020';
 import * as Careers from './village/career-state.js?v=career-v25-20261019';
 import {initMotion} from './platform/motion.js?v=unified-20261013';
-import {artPath} from './platform/world-art-v40.js';
+import {artPath} from './platform/world-art-v40.js?v=storybook-v44-20261104';
 import {buildJourney} from './platform/adventure-loop-v40.js';
 
 const app=document.querySelector('#app');

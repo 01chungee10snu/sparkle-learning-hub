@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./entry-readability.css?v=readability-v36-20261031">
 <link rel="stylesheet" href="./entry-readability-v37.css?v=readability-v37-20261031">
 <link rel="stylesheet" href="./entry-world-v40.css?v=kenney-v40-20261102">
-<link rel="stylesheet" href="./entry-blender-v41.css?v=blender-v41-20261103">
+<link rel="stylesheet" href="./entry-storybook-v44.css?v=storybook-v44-20261104">
 <style>
 .entry-learner-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;max-width:100%}
 .entry-learner-choice{display:flex;align-items:center;gap:10px;min-height:72px;padding:8px 11px;border:2px solid #ffffff80;border-radius:18px;background:#173b6ab8;color:#fff;font:900 18px/1.2 system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 16px #10285b55}
@@ -27,25 +27,24 @@
   <div class="entry-stars" aria-hidden="true"></div>
   <div class="entry-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="entry-island-shadow" aria-hidden="true"></div>
-  <img class="entry-island-art" src="./assets/blender-v41/blender-world-poster.webp"
-       width="1280" height="768" alt="Blender로 제작한 입체 마법마을: 꽃과 나무, 성, 연못과 산책로" decoding="async">
-  <div id="entry-blender-stage" class="entry-blender-stage" aria-label="건물을 누르면 해당 배움터로 이동할 수 있는 입체 마법마을"></div>
+  <img class="entry-island-art" src="./assets/storybook-v44/entry.webp"
+       width="1200" height="1000" alt="실제 Unity 마법마을의 무지개 배움성과 기와집" decoding="async">
   <section class="entry-game-menu" aria-labelledby="entry-title">
     <p class="entry-chapter"><span aria-hidden="true">✦</span> MAGIC LEARNING WORLD <span aria-hidden="true">✦</span></p>
     <h1 id="entry-title"><span>태희와 세희의</span><strong>마법마을</strong></h1>
-    <p class="entry-tagline">배움이 자라면 새로운 세상이 열려요.</p>
+    <p class="entry-tagline">한 걸음씩 배우고, 마을을 함께 키워요.</p>
     <p id="world-kst-badge" class="entry-kst" aria-live="off">🌿 대한민국 시간에 따라 변하는 마법의 섬</p>
     <div id="entry-learner-choices" class="entry-learner-choices" role="group" aria-label="오늘 학습할 어린이 선택">
       <button class="entry-learner-choice" type="button" data-learner="tae" aria-pressed="true"><img src="./village/assets/taehee_original.png" width="54" height="54" alt=""><span>태희<small>분홍 별 요정</small></span></button>
       <button class="entry-learner-choice" type="button" data-learner="se" aria-pressed="false"><img src="./village/assets/sehee_original.png" width="54" height="54" alt=""><span>세희<small>연보라 달 요정</small></span></button>
     </div>
     <div class="entry-game-actions">
-      <a id="entry-village-link" class="entry-portal entry-portal-primary" href="./village/?who=tae&amp;autostart=1"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마을 입장</strong><small>선택한 요정으로 3D 마을에 바로 들어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+      <a id="entry-village-link" class="entry-portal entry-portal-primary" href="./village/?who=tae&amp;autostart=1&amp;v=44"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마을 입장</strong><small>선택한 요정으로 3D 마을에 바로 들어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
       <a id="entry-learning-link" class="entry-portal entry-portal-study" href="./learning.html?who=tae"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 입장</strong><small>선택한 아이의 수학·국어·영어·한자를 바로 이어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
     </div>
     <p class="entry-world-notice">🧭 3D 마을 · 📜 한자 수련관 · 🏛️ 100가지 미래 직업 · 🐠 생명 연못 · 🌊 푸른 바다</p>
   </section>
-  <p class="entry-caption">한국 시간·계절에 따라 변하는 하늘과 마법의 섬 <span aria-hidden="true">✦</span> 오늘의 꿈을 발견해요</p>
+  <p class="entry-caption">무지개 배움성과 함께하는 마법마을 <span aria-hidden="true">✦</span> 오늘의 꿈을 발견해요</p>
 </main>
 <script type="module">
 import * as Progress from './platform/progress.js?v=refactor-v39-20261102';
@@ -62,34 +61,12 @@ function selectLearner(who){
   if(who!=='tae'&&who!=='se')return;
   Progress.selectLearner(who);
   document.querySelectorAll('[data-learner]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.learner===who)));
-  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1'+(selectedDestination?'&go='+selectedDestination:'');
+  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1&v=44'+(selectedDestination?'&go='+selectedDestination:'');
   learning.href='./learning.html?who='+encodeURIComponent(who)+(new Set(['math','korean','english','hanja']).has(selectedDestination)?'&subject='+selectedDestination:'');
 }
 document.querySelectorAll('[data-learner]').forEach(button=>button.addEventListener('click',()=>selectLearner(button.dataset.learner)));
 selectLearner(initial);
-// Renderer is progressive: children can enter the existing game even if GPU or model fails.
-const stage=document.querySelector('#entry-blender-stage');
-if(!navigator.connection?.saveData){
-  requestAnimationFrame(async()=>{
-    try{
-      const {mountBlenderWorld}=await import('./platform/blender-v41-world.js?v=blender-v41-20261103');
-      const runtime=await mountBlenderWorld(stage,{
-        modelUrl:'./assets/blender-v41/sparkle-magic-world-v41.glb',
-        onDestination:id=>{
-          if(!BLENDER_DESTINATIONS.has(id))return;
-          selectedDestination=id;
-          selectLearner(Progress.learner());
-          village.querySelector('.entry-portal-text small').textContent=BLENDER_NAMES[id]+'으로 이어서 모험해요';
-          village.setAttribute('aria-label',BLENDER_NAMES[id]+'으로 마을 입장');
-        }
-      });
-      window.addEventListener('pagehide',()=>runtime.destroy(),{once:true});
-    }catch(error){
-      stage.dataset.blenderReady='false';
-      console.warn('[Blender world] static poster fallback:',error?.message||error);
-    }
-  });
-}
+// Entry artwork is captured from the current Unity scene. The play button launches the actual game.
 if(location.search)history.replaceState(history.state,'',location.pathname+location.hash);
 </script>
 </body>

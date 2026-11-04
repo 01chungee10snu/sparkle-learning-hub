@@ -48,8 +48,8 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <div id="page">
   <main id="game">
     <div id="lite-village-scene" hidden aria-label="가벼운 2D 마법마을 배경">
-      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/blender-v41/blender-world-poster.webp">
-      <img src="../assets/blender-v41/blender-world-poster.webp" width="1200" height="760" alt="" decoding="async"></picture>
+      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/storybook-v44/world.webp">
+      <img src="../assets/storybook-v44/world.webp" width="1200" height="760" alt="" decoding="async"></picture>
       <p>🧚 학습 지역을 눌러 모험을 시작해요.</p>
     </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
@@ -66,7 +66,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
             <span id="world-kst-badge" class="title-kst-badge">🌤️ 대한민국의 시간과 계절</span>
           </header>
           <figure class="title-art-wrap">
-            <img class="title-art" src="../assets/blender-v41/blender-world-poster.webp" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
+            <img class="title-art" src="../assets/storybook-v44/world.webp" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
             <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 푸른 바다 · 한자 수련관</figcaption>
           </figure>
           <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
@@ -113,7 +113,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <script type="module">
 import { createVillageHost } from './village-bridge.js?v=refactor-v39-20261102';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=refactor-v39-20261102';
+import { createVillageUI } from './village-ui.js?v=storybook-v44-20261104';
 import * as CloudSync from '../platform/cloud-sync.js?v=canonical-v35-20261023';
 import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
 
@@ -238,7 +238,7 @@ async function prepareData(){
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=blender-habitats-v43-20261104';
+    const loaderUrl = './Build/' + name + '.loader.js?v=storybook-v44-20261104';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -309,13 +309,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=blender-habitats-v43-20261104',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=blender-habitats-v43-20261104',
-      codeUrl: base + '.wasm' + suffix + '?v=blender-habitats-v43-20261104',
+      dataUrl: base + '.data' + suffix + '?v=storybook-v44-20261104',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=storybook-v44-20261104',
+      codeUrl: base + '.wasm' + suffix + '?v=storybook-v44-20261104',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.43.0-blender-habitats'
+      productVersion: '0.44.0-storybook'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
