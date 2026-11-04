@@ -72,4 +72,10 @@ CLOUD_QA_ORIGIN=http://127.0.0.1:4644 npm run qa:cloud:canonical
 
 ## 공개 실행본 상태
 
-로컬 구현·Unity 빌드·브라우저 통합검증 완료. 운영 반영 여부와 공개 주소의 실제 응답은 `qa-unity-v44/deployment.json`에 별도 기록한다. 해당 파일에 확인 결과가 기록되기 전에는 배포 완료로 해석하지 않는다.
+**기존 운영 주소에 v44를 배포하고 공개 사이트에서 직접 검증했다.** 실행 주소: https://01chungee10snu.github.io/sparkle-learning-hub/?v=44
+
+- 운영 반영 커밋: `d9f0540ea9c585ad21394ba5c5b1e8aec0d98815`, GitHub Pages 실행 `41836935047`.
+- 공개 서버에서 내려받은 네 Unity 실행 파일의 SHA-256이 최종 검증본과 모두 일치한다.
+- 공개 주소의 독립 브라우저에서 태희·세희 프로필 각각 실제 건물 터치 → 문제 응답 → 연못·정원, 풍차 회전·움직임 줄이기 검사를 다시 통과했다. 이 검사도 실제 가족 기록을 읽거나 쓰지 않는 합성 상태다.
+- 확인 근거: [배포 확인](qa-unity-v44/deployment.json), [공개 주소 플레이 검사](qa-unity-v44/live-browser-storybook-qa.json), [공개 사이트 태블릿 캡처](qa-unity-v44/live-tablet-native-world.png), [공개 사이트 휴대전화 캡처](qa-unity-v44/live-galaxy-native-world.png).
+- 배포 전 운영 커밋 `702214c797df147cef8756d21264ad1f734de7b5`는 `backup/pre-storybook-v44-20261104`에 보존했다. 학습기록을 초기화하지 않고 이전 실행본으로 복구할 수 있다.

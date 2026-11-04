@@ -1,0 +1,56 @@
+{
+  "verifiedAt": "2026-11-04T13:22:35.436693+00:00",
+  "url": "https://01chungee10snu.github.io/sparkle-learning-hub/?v=44",
+  "version": "storybook-v44-20261104",
+  "commit": "d9f0540ea9c585ad21394ba5c5b1e8aec0d98815",
+  "pagesWorkflowRun": 41836935047,
+  "entryHtmlVerified": true,
+  "gameHtmlVerified": true,
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "httpStatus": 200,
+      "bytes": 18372365,
+      "sha256": "873b1de328de2cd4a4c8f9d8d6a77f487cae86e91aa759de4ddc8903dc3f9417",
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "httpStatus": 200,
+      "bytes": 70811,
+      "sha256": "07d7306491f2711bdb5adcfaaaeb245dec5bc909ef9361bf2e8ccf8ce74dfa87",
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.loader.js",
+      "httpStatus": 200,
+      "bytes": 117894,
+      "sha256": "81f4cdb378482a6dee3740a52f334875055b1e8d04ba9ea8e81bab7ba9ef2fc3",
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "httpStatus": 200,
+      "bytes": 6062880,
+      "sha256": "1a7dd465102356d7feca5f989c39283ed8213158ce207ac0d8c11b21d12797aa",
+      "matchesLocalBuild": true
+    }
+  ],
+  "rollbackBranch": "backup/pre-storybook-v44-20261104",
+  "productionDataTouched": false,
+  "liveBrowserVerified": true,
+  "liveBrowserProfiles": [
+    "tae",
+    "se"
+  ],
+  "liveGameplayChecks": [
+    "native 3D graphics",
+    "actual building tap",
+    "learning answer",
+    "pond",
+    "garden",
+    "rotating scenery",
+    "reduced motion"
+  ],
+  "state": "deployed-and-live-verified"
+}
