@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "environment": "spring/noon preview",
+  "productionDataTouched": false,
+  "results": [
+    {
+      "device": "tablet",
+      "who": "tae",
+      "nativeInstances": 256,
+      "nativeTriangles": 147326,
+      "directNativeTap": true,
+      "learningAnswer": true,
+      "pond": true,
+      "garden": true,
+      "jsErrors": 0
+    },
+    {
+      "device": "galaxy",
+      "who": "se",
+      "nativeInstances": 256,
+      "nativeTriangles": 148654,
+      "directNativeTap": true,
+      "learningAnswer": true,
+      "pond": true,
+      "garden": true,
+      "jsErrors": 0
+    }
+  ]
+}

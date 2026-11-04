@@ -4,6 +4,15 @@
 
 **서비스:** https://01chungee10snu.github.io/sparkle-learning-hub/
 
+## 2026-11-04 v42 — Blender 모델을 Unity 실제 게임에 적용
+
+- `feat/unity-blender-v42-20261104`: Blender에서 제작·변환한 **39종의 3D 자산을 실제 Unity Prefab/MeshRenderer로 적용**하고 새 WebGL 빌드 연결.
+- 기존 요정·NPC 원화, 8,462개 문항, IRT, 보상, 태희·세희의 학습기록 및 클라우드 데이터 구조 보존.
+- 11개 지역 이동 경로 검사, 모바일·태블릿 실제 Unity 건물 직접 터치 → 학습 → 연못·정원 시험 통과.
+- Unity 소스는 비공개 `sparkle-fairy-village` 저장소의 `feat/blender-runtime-v42-20261104`에 별도 보존.
+- 검증: `npm run check`, `npm run qa:native:v42`. **개발 브랜치이며 운영 main/Pages는 변경하지 않음.**
+- [적용 결과·검증 문서](docs/V42_UNITY_NATIVE_20261104.md) · [실제 Unity 태블릿 화면](docs/qa-unity-v42/tablet-native-world.png) · [모바일 학교](docs/qa-unity-v42/galaxy-native-school.png).
+
 ## 2026-11-03 v41 — Blender 3D 마법마을 (격리 개발 버전)
 
 - `feat/magic-village-v41-blender-world-20261103`: Blender 5.2.3 LTS에서 실제 입체 마법마을 제작. 편집 가능한 `.blend`, 게임용 `.glb`(약 1.1MB), Cycles 포스터 보존.

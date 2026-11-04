@@ -1,0 +1,33 @@
+{
+  "version": "blender-native-v42-20261104",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "oldBytes": 15990953,
+      "bytes": 16186424,
+      "sha256": "34503f78205a9b19bcfdb7ccfe130c144a521440545aec7ebb625d7f85efd5e6",
+      "changed": true
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "oldBytes": 70640,
+      "bytes": 70782,
+      "sha256": "cdbc4536ced70ef91b80f4bd930e5174b8872dc5b783d3ce64c9d364316bf948",
+      "changed": true
+    },
+    {
+      "file": "WebGL.loader.js",
+      "oldBytes": 117887,
+      "bytes": 117894,
+      "sha256": "cf5ce44b68e54ae0b94e5b54a00ec2a39b702058cc9023f7a7e79bf811909e40",
+      "changed": true
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "oldBytes": 6063784,
+      "bytes": 6037221,
+      "sha256": "18a05aac50eb96603fdad7489121f68f1a0eb1ba0671a3906f051876a33cf1ac",
+      "changed": true
+    }
+  ]
+}

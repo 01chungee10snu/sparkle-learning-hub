@@ -1,0 +1,10 @@
+{
+  "webBaseline": "dcba5b506c352a4efe647108d2dfab5ee4779bc9",
+  "webBaselineRef": "feat/magic-village-v41-blender-world-20261103",
+  "unitySourceRepository": "01chungee10snu/sparkle-fairy-village",
+  "unitySourceVisibility": "private",
+  "unitySourceBranch": "feat/blender-runtime-v42-20261104",
+  "unitySourceCommit": "c538d52b92f2a94926360b120de5d6b4cecc8f8e",
+  "webDevelopmentBranch": "feat/unity-blender-v42-20261104",
+  "productionMainChanged": false
+}
