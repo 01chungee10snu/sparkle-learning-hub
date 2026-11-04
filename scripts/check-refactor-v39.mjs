@@ -71,6 +71,8 @@ for(const [name,document] of [['learning',learning],['village',html]]){
 assert.match(html,/village-bridge\.js\?v=refactor-v39-20261102/);
 assert.match(html,/village-ui\.js\?v=refactor-v39-20261102/);
 assert.match(learning,/app\.js\?v=refactor-v39-20261102/);
+const threeDQA=readFileSync(new URL('./qa-3d-v39.mjs',import.meta.url),'utf8');
+assert.match(threeDQA,/import\(siteBase\+'\/platform\/progress\.js'\)/,'3D QA must work under GitHub Pages repository subpaths');
 assert(WORLD_DESTINATIONS.some(place=>place.id==='practice'), 'Full subject map exposes practice');
 assert(WORLD_DESTINATIONS.some(place=>place.id==='academy'), 'Full subject map exposes academy');
 assert(WORLD_DESTINATIONS.some(place=>place.id==='growth'), 'Full subject map exposes growth');

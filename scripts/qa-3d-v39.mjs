@@ -32,11 +32,12 @@ try{
    console.log('3D_ARRIVED',device.name);
    await page.locator('.vh-mission-card button').first().click();
    await page.locator('#village-ui[data-mode="question"]').waitFor({state:'visible',timeout:20000});
-   const q=await page.evaluate(async()=>{
-    const P=await import('/platform/progress.js');
+   // Resolve via the site base: GitHub Pages is served under /sparkle-learning-hub/.
+   const q=await page.evaluate(async(siteBase)=>{
+    const P=await import(siteBase+'/platform/progress.js');
     const p=P.exportRecords().platform.profiles[P.learner()];
     return Object.entries(p.games).find(([,g])=>g.round&&!g.round.finished)?.[0]||null;
-   });
+   },origin);
    assert(q,'A real English round should start');
    const game=await(await page.request.get(origin+'/games/'+q+'/game.json')).json();
    assert.equal(game.subject,'english');
