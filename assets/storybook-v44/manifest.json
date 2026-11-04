@@ -1,81 +1,81 @@
 {
   "version": 44,
-  "source": "Unity Editor render of the exact native play-space assets; not AI image generation",
+  "source": "Actual Unity Editor rendering of the current native play-space models; no generated concept image is used in the game",
   "files": [
     {
       "path": "assets/storybook-v44/entry.webp",
-      "bytes": 136034,
-      "sha256": "6188e984fe733ad5cf6f9b4fe49d7ac0efdaffc1f96e69024e651148a2b97061"
+      "bytes": 180336,
+      "sha256": "3bcb5b903e75561ce78d248da81ea38b830926ed0308efcb781e271acb4ead13"
     },
     {
       "path": "assets/storybook-v44/icons/academy.png",
-      "bytes": 139093,
-      "sha256": "75271c84d3e3a1852131578acc22b1c184527e6c775ba1ce9b1bd1e84da09886"
+      "bytes": 123744,
+      "sha256": "fcb410de8dd9f6d386f5c9bbda06f87a88eb27f5ef57ae8af4d71741ea273380"
     },
     {
       "path": "assets/storybook-v44/icons/career.png",
-      "bytes": 126979,
-      "sha256": "65a6b62f9ef8dc87f4d89fd593019a54df559d06b2f93f5d50a331dcd5211ee7"
+      "bytes": 107717,
+      "sha256": "82c0405970a924c5525ca82a215a453c49c1a4905a9418ce6d66125b0b7706a5"
     },
     {
       "path": "assets/storybook-v44/icons/english.png",
-      "bytes": 123238,
-      "sha256": "96888c5b08d79fc9deafafb189107645f262a4e4dce7d0af44a97b7e93861063"
+      "bytes": 106893,
+      "sha256": "8141c6a4bd2cc86084e4fd202fa05a0d45435986f84c4a9393cbb924c98543ef"
     },
     {
       "path": "assets/storybook-v44/icons/garden.png",
-      "bytes": 54803,
-      "sha256": "ec5557c04156b8c74490afa6d5443651874d2198dbeebb03a235144734ea98a0"
+      "bytes": 48353,
+      "sha256": "f28a16b571c3dcfa8f57b99b8d09744627281fb23075320c337eb8b248c7cb08"
     },
     {
       "path": "assets/storybook-v44/icons/growth.png",
-      "bytes": 139093,
-      "sha256": "75271c84d3e3a1852131578acc22b1c184527e6c775ba1ce9b1bd1e84da09886"
+      "bytes": 123744,
+      "sha256": "fcb410de8dd9f6d386f5c9bbda06f87a88eb27f5ef57ae8af4d71741ea273380"
     },
     {
       "path": "assets/storybook-v44/icons/hanja.png",
-      "bytes": 123349,
-      "sha256": "709f5a1f7c76f93c049b0524129f773ca49a10f446fd84becceab14be6a2d273"
+      "bytes": 107111,
+      "sha256": "7e798c803dd230a7e8ea10fbed40592337c88d493cc9184ed3f8d5065715cbcc"
     },
     {
       "path": "assets/storybook-v44/icons/kma.png",
-      "bytes": 105612,
-      "sha256": "9ab165a8a5a83f1fe8a289f32f139519f593101782b76a86ef914608f7058176"
+      "bytes": 94796,
+      "sha256": "e837c59eaa90aaa32f5cc07e7b9f67170e25947b05461e8343e457fa2087570f"
     },
     {
       "path": "assets/storybook-v44/icons/korean.png",
-      "bytes": 122530,
-      "sha256": "f917b1c9354e5818df18b78c2a4191e562c132e9c10939dcf69692fc2930bac0"
+      "bytes": 106466,
+      "sha256": "c63237573369b17fb1978e9399392e47dd183254125014dc183ae1092304328c"
     },
     {
       "path": "assets/storybook-v44/icons/math.png",
-      "bytes": 105612,
-      "sha256": "9ab165a8a5a83f1fe8a289f32f139519f593101782b76a86ef914608f7058176"
+      "bytes": 94796,
+      "sha256": "e837c59eaa90aaa32f5cc07e7b9f67170e25947b05461e8343e457fa2087570f"
     },
     {
       "path": "assets/storybook-v44/icons/ocean.png",
-      "bytes": 85862,
-      "sha256": "ede0676379677669462496a393baf2a78cd5220e6b085574d6179f0ac9f2564e"
+      "bytes": 73388,
+      "sha256": "2381099475f372035eebe0ebb750b64bf3564b49fd44022fd2c54f5f5d734bd2"
     },
     {
       "path": "assets/storybook-v44/icons/plaza.png",
-      "bytes": 15177,
-      "sha256": "1e7202850039cc4b202f7d403094f9f2b6e0f2ea9d7855a3617b6d2cfa2f8ff6"
+      "bytes": 15168,
+      "sha256": "305403826b7d12efe43ed6891b5527a7c1cc5e965fa40340434ff850ac78100c"
     },
     {
       "path": "assets/storybook-v44/icons/pond.png",
-      "bytes": 62650,
-      "sha256": "706ab2ad6986671cf3e55c3853e965714771217dc7e79cd47fabd4c6a4641440"
+      "bytes": 62632,
+      "sha256": "b1cc0eb3d0a9c017db41ee6e65b6ddfad8f8be1775159e2c1f56877bdd58c524"
     },
     {
       "path": "assets/storybook-v44/icons/practice.png",
-      "bytes": 122267,
-      "sha256": "d0afa49177806c6a57227a482e551b5ac56b9e3ac3dfc8c03ad69989267e7f61"
+      "bytes": 105408,
+      "sha256": "5aa022516c578245d8d05c85674f00bcd46a2721a8e47b439f02dcede55054b3"
     },
     {
       "path": "assets/storybook-v44/world.webp",
-      "bytes": 191712,
-      "sha256": "999017940add9090a968e1606d117819608ae86b6f66578df34a04ac2ed12d0b"
+      "bytes": 180336,
+      "sha256": "3bcb5b903e75561ce78d248da81ea38b830926ed0308efcb781e271acb4ead13"
     }
   ]
 }

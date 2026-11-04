@@ -1,0 +1,9 @@
+V44_NATIVE_READY tablet 260 556454
+V44_HABITAT_MOTION_PASS tablet 46 20
+V44_DIRECT_BUILDING_TAP_PASS tablet {"x":411.7127380371094,"y":378.7610778808594}
+V44_NATIVE_PLAY_PASS {"device":"tablet","who":"tae","nativeInstances":260,"nativeTriangles":556454,"premiumInstances":84,"bakedOcclusionInstances":84,"habitatInstances":46,"habitatKinds":18,"motionElements":20,"rotationVerified":true,"reducedMotionVerified":true,"decorationColliders":0,"directNativeTap":true,"learningAnswer":true,"pond":true,"garden":true,"jsErrors":0}
+V44_NATIVE_READY galaxy 265 559290
+V44_HABITAT_MOTION_PASS galaxy 46 20
+V44_DIRECT_BUILDING_TAP_PASS galaxy {"x":106.53536987304688,"y":417.3748474121094}
+V44_NATIVE_PLAY_PASS {"device":"galaxy","who":"se","nativeInstances":265,"nativeTriangles":559290,"premiumInstances":84,"bakedOcclusionInstances":84,"habitatInstances":46,"habitatKinds":18,"motionElements":20,"rotationVerified":true,"reducedMotionVerified":true,"decorationColliders":0,"directNativeTap":true,"learningAnswer":true,"pond":true,"garden":true,"jsErrors":0}
+V44_NATIVE_QA_ALL_PASS 2

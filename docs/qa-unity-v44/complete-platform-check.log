@@ -1,0 +1,131 @@
+
+> sparkle-learning-hub@1.4.0 check
+> node --check app.js && node --check village/village-ui.js && node --check village/fairy-styles-v11.js && node --check village/story-quests.js && node --check platform/progress.js && node --check platform/growth.js && node --check platform/progression.js && node scripts/check-progression.mjs && node --check platform/retrieval.js && node --check platform/memory-model.js && node --check platform/parent-dashboard.js && node --check platform/learning-director.js && node --check platform/cloud-config.js && node --check platform/cloud-sync.js && node scripts/check-learning-director.mjs && node --check platform/learning-moments.js && node scripts/check-learning-moments.mjs && node --check village/relationship-state.js && node scripts/check-relationship-state.mjs && node --check village/ecology-state.js && node scripts/check-ecology-state.mjs && node scripts/check-parent-personalization.mjs && node --check platform/activity-ui.js && node scripts/check.mjs && node scripts/check-growth.mjs && node scripts/build-irt-bank.mjs --verify && node scripts/check-irt.mjs && node scripts/check-hanja.mjs && node scripts/check-resource-economy.mjs && node scripts/check-season-career.mjs && node scripts/check-activities.mjs && node scripts/check-settings.mjs && node --check platform/motion.js && node scripts/check-rewards.mjs && node scripts/check-reward-integrity.mjs && node scripts/check-numeric.mjs && node scripts/check-bebsu-import.mjs --final && node scripts/check-village.mjs && node scripts/check-village-quality.mjs && node scripts/check-native-art.mjs && node scripts/check-care-garden.mjs && node scripts/check-unified-world.mjs && node scripts/check-marine-gallery-v30.mjs && node scripts/check-first-visit-v30.mjs && node scripts/check-child-language-v32.mjs && node scripts/check-question-integrity-v32.mjs && node scripts/check-game-illustrations-v32.mjs && node scripts/check-pond-session.mjs && node scripts/check-pond-guide.mjs && node scripts/check-response-log.mjs && node scripts/check-adaptive-diversity-v37.mjs && node scripts/check-refactor-v39.mjs && node scripts/check-world-v40.mjs && node scripts/check-blender-v41.mjs && node scripts/check-storybook-v44.mjs
+
+PROGRESSION_PASS
+LEARNING_DIRECTOR_PASS review:growth-math-3, challenge:measure-lab, transfer:school-shop
+LEARNING_MOMENTS_PASS {
+  kind: 'memory-14',
+  days: 14,
+  items: 2,
+  maxDelayDays: 16,
+  questionIds: [ 'q7', 'q14' ]
+} {
+  kind: 'memory-30',
+  days: 30,
+  items: 1,
+  maxDelayDays: 35,
+  questionIds: [ 'q' ]
+}
+RELATIONSHIP_STATE_PASS { visits: 4, memory7: 1, memory14: 1, memory30: 1 }
+ECOLOGY_STATE_PASS { events: 2, memory7: 1, memory14: 0, memory30: 1 }
+PARENT_PERSONALIZATION_PASS {
+  factor: 1.6,
+  halfLifeDays: 12.5,
+  weakFactor: 0.65,
+  mathDelayed: [
+    { days: 2, n: 0, correct: 0, rate: null },
+    { days: 4, n: 0, correct: 0, rate: null },
+    { days: 7, n: 6, correct: 6, rate: 1 },
+    { days: 14, n: 0, correct: 0, rate: null },
+    { days: 30, n: 0, correct: 0, rate: null }
+  ],
+  transfer: { n: 1, correct: 1, rate: 1 }
+}
+PASS: 66 published games; 8462 hub questions + 48 unit-garden questions; catalog, arithmetic and speech answers verified
+PASS: growth state migration, 3/5-question rounds, learner isolation, strict import, duplicate prevention, capped attempts, readiness gates, voluntary progression, review dates and backup roundtrip
+VERIFIED: 8462 item descriptors, 7360 source images, 4 quality groups; 38435a129992febec96d8fdf08c1be7e23b73cc86997ec1cbe7293c64741ce44
+PASS: 8462 descriptors, Bayesian updates, concept evidence, uncertainty, per-child isolation, new items, hinted exclusion, repeated-item protection and backup merge
+PASS_HANJA: 11 grades; 1,817 independent glyph families; 3,634 validated practice questions; 8,462-item IRT; sibling dedupe; assisted exclusion; five distinct glyphs/round; child UI
+PASS_RESOURCE_ECONOMY: 4 subjects, 64 original pond/ocean species, progressive learning gates, career unlock coexistence, sibling isolation, merge idempotence, once-per-day care, original stars untouched
+SEASON_CAREER_PASS 4 seasons × 4 KST periods, 100 source-matched careers, 6 groups, income/education provenance, no fabricated grade percentiles, 2-child isolation
+PASS: all five interactions, strict submissions, catalog levels, legacy answers, restore, learner isolation, 3/5 rounds, level sampling, duplicate prevention and unchanged reward/growth rules
+PASS: quota fallback survives profile changes, unsaved export, successful retry, older-key migration, old-tab isolation and v1 backup compatibility
+PASS: family settings validation, atomic updates, Unicode boundaries, plain-text placeholders, UTF-8 setup, fragment removal, no requests, persistence and blocked-storage fallback
+PASS: preserved legacy stars, two-child isolation, bounded effort, evidence-backed badges, safe spending, double-click prevention, family request completion, monotone old-backup merge, atomic validation, full backup restore and blocked-storage recovery; 48 unique gifts, five-slot outfits, free re-equipping and old-v1 outfit compatibility
+PASS: verified effort; no unconfigured imports; cleared-wallet memory; purchase write failure rollback and recovery; concurrent spend merge; game-round identity migration; forged receipt and sibling import atomicity; collision-free/long village IDs; derived family plaza; offline village persistence.
+PASS: faithful integer numeric grading, optional negative bounds and sign keypad, blank/zero keypad, unsafe input rejection, bounded drafts, >20 and signed response restore, mixed five-choice/numeric bank restore, legacy three-choice validation, 2/10 star rules, duplicate prevention, learner isolation, old backups and v2/v1→v3 migration with old-tab isolation
+{
+  "imported": 3805,
+  "arithmeticIndependentlyChecked": 125,
+  "originalAnswersMappedUnchanged": 3680,
+  "uniqueStableIds": 3805,
+  "negativeAnswers": 1,
+  "imageFilesVerified": 0
+}
+PASS: Unity village JS bridge; real quiz scoring, 5/3 rounds, learner isolation, duplicate block, no forged round, plaza and personal gardens, backup merge.
+PASS: actual-item-bank bridge quality; sequential/concurrent receipt replay, conflicting IDs atomicity, unanswered and replayed NEXT, real hint-assisted IRT exclusion, independent evidence, stale learner isolation, deferred START profile-switch atomicity and CANCEL late-submit protection; source visual retained.
+PASS exact native PNG taehee_original
+PASS exact native PNG sehee_original
+PASS exact native PNG star_yellow
+PASS exact native PNG star_blue
+PASS exact native PNG star_purple
+PASS exact native PNG star_rainbow
+PASS exact native PNG seed
+PASS exact native PNG sprout
+PASS exact native PNG bud
+PASS exact native PNG bloom
+PASS exact native PNG gift
+PASS exact native PNG heart
+PASS exact native PNG badge_book
+PASS exact native PNG badge_leaf
+PASS exact native PNG badge_crown
+PASS exact native PNG magic_dust
+PASS exact native PNG ui_mission_panel
+PASS exact native PNG ui_star_pill
+PASS exact native PNG ui_button
+PASS complete native art category contract
+PASS actual allowlist contains only the fourteen approved reward IDs
+PASS unknown and path-like native IDs render no image
+PASS decorative images have empty alt fixed dimensions and safe classes
+PASS actual app and village stage boundary 0/5
+PASS actual app and village stage boundary 1/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 3/5
+PASS actual app and village stage boundary 4/5
+PASS actual app and village stage boundary 5/5
+PASS actual app and village stage boundary 6/5
+PASS actual app and village stage boundary -2/5
+PASS actual app and village stage boundary 0.9/5
+PASS actual app and village stage boundary 1.9/5
+PASS actual app and village stage boundary 2/4
+PASS actual app and village stage boundary 1/3
+PASS actual app and village stage boundary 2/3
+PASS actual app and village stage boundary 3/3
+PASS actual app and village stage boundary NaN/5
+PASS actual app and village stage boundary Infinity/5
+PASS actual app and village stage boundary 2/5
+PASS actual app and village stage boundary 1/0
+PASS actual app and village stage boundary 1/-1
+PASS actual app and village stage boundary 1/1.5
+PASS actual app and village stage boundary 1/NaN
+PASS subject star variants follow the actual subject
+PASS locked and truthy-but-unconfirmed badges remain neutral
+PASS only confirmed known badges get earned art
+PASS actual gift catalog preserves specific art and fallback emoji
+PASS round cue counts confirmed answers and never mutates a round
+PASS native UI images are referenced by actual controls in both surfaces
+native-art PASS 50 checks; Rewards 14 + UI 3 + Characters 2 bytes verified; live Unity comparison false ; baseline model comparison false
+CARE_GARDEN_PASS 25 checks
+PASS_UNIFIED_WORLD 66 games, 8462 items, 8 native learning districts including Hanja academy, 27+27 papers, practice and KMA shared future wallet, repeat credit blocked, sibling isolation, historical keys untouched
+MARINE_GALLERY_PASS 64 original creatures, 24 generated pond + 40 ocean, distinct WebP SHA, rising learning/currency gates, 15.1 MiB compressed
+PASS_FIRST_VISIT_V30: per-child one-time awards, reload, merge earliest, tamper checks, v1 compatibility and learning gates
+Games 66; files 71; questions 8462; authored visible strings 42923; source/metadata strings excluded 307877
+Counts: {}
+PASS_CHILD_COPY_CONTENT_INTEGRITY 65 quiz sources, 8462 items, no answer/provenance/IRT drift
+PASS_GAME_ILLUSTRATIONS_V32 100 unique career vectors SHA-verified, 12 custom vector props, child navigation icons present
+PASS_POND_SESSION: real-time minute charges, age limits, wrong/hinted varied participation, fresh-item and completed-cycle dedupe, resource top-ups, pause/sleep/reload, sibling isolation, native/fallback tab ownership, immutable snapshot merges, legacy consumption migration, first-exposure recovery
+PASS_POND_GUIDE: first-attempt novelty, age/stage bounds, IRT ranking, subject distribution after wrong answers, finite-pool signal
+{"result":"PASS","events":17,"requests":1,"cases":["full history beyond compact cap","guided round preserved","guided duplicate","retry ordinal and IRT exclusion","hint content version","siblings isolated","offline queue","strict ACK","history retained after ACK","invalid event rejected"]}
+PASS_ADAPTIVE_DIVERSITY_V37: strong vs weak IRT, success streak, stage+1 preview, mixed modes, 5 live adaptive transitions, review and 25-paper immutability, hinted exclusion, sibling isolation, hanja family uniqueness
+PASS_REFACTOR_V39: shared keypad with positive lower bounds, signed canonicalization, UI parity, 2 visible story patterns, independent evidence unchanged, accessible next learning and wayfinding
+v40 art registry, license manifest, route policy: PASS
+BLENDER_V41_ASSET_AUDIT_PASS {
+  sourceModels: 51,
+  poi: 11,
+  animations: 6,
+  meshes: 119,
+  materials: 56,
+  bytes: 1096852
+}
+PASS_STORYBOOK_V44: current Unity binaries SHA-verified; 20 detailed native models, AO, 44 routes, two learner gameplay tests, 15 genuine Unity-rendered UI assets.
