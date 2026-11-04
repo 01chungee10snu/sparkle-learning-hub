@@ -1,0 +1,33 @@
+{
+  "version": "blender-habitats-v43-20261104",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "oldBytes": 16186424,
+      "bytes": 16497273,
+      "sha256": "21bfb80b866c0d0c136004cffb51d6e2c73371ba1800a0e922bf8036cc25f766",
+      "changed": true
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "oldBytes": 70782,
+      "bytes": 70769,
+      "sha256": "7b685cb5ef6640a9cafe7234f23949f3eed0c5ae39827e7a34ead3c6a8ecc69d",
+      "changed": true
+    },
+    {
+      "file": "WebGL.loader.js",
+      "oldBytes": 117894,
+      "bytes": 117894,
+      "sha256": "0881bda8d99081d6cd98e639ef4197b7ba7b3ac7943c3edeb46c24975a83a981",
+      "changed": true
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "oldBytes": 6037221,
+      "bytes": 6062457,
+      "sha256": "6c544d73eec7afbf1e7781c7d5db92650e956b34917effef615cf50d02e888a5",
+      "changed": true
+    }
+  ]
+}

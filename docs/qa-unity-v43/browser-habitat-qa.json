@@ -1,0 +1,41 @@
+{
+  "pass": true,
+  "environment": "spring/noon preview",
+  "productionDataTouched": false,
+  "results": [
+    {
+      "device": "tablet",
+      "who": "tae",
+      "nativeInstances": 302,
+      "nativeTriangles": 187314,
+      "habitatInstances": 46,
+      "habitatKinds": 18,
+      "motionElements": 20,
+      "rotationVerified": true,
+      "reducedMotionVerified": true,
+      "decorationColliders": 0,
+      "directNativeTap": true,
+      "learningAnswer": true,
+      "pond": true,
+      "garden": true,
+      "jsErrors": 0
+    },
+    {
+      "device": "galaxy",
+      "who": "se",
+      "nativeInstances": 302,
+      "nativeTriangles": 188642,
+      "habitatInstances": 46,
+      "habitatKinds": 18,
+      "motionElements": 20,
+      "rotationVerified": true,
+      "reducedMotionVerified": true,
+      "decorationColliders": 0,
+      "directNativeTap": true,
+      "learningAnswer": true,
+      "pond": true,
+      "garden": true,
+      "jsErrors": 0
+    }
+  ]
+}

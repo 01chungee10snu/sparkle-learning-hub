@@ -4,6 +4,14 @@
 
 **서비스:** https://01chungee10snu.github.io/sparkle-learning-hub/
 
+## 2026-11-04 v43 — Blender 물가·정원·움직임 확장
+
+- 기존 Unity 네이티브 환경 39종을 유지하고 새 Blender 자산 18종 추가(카탈로그 57종).
+- 연꽃·갈대·부두·작은 배·물레방아, 온실·꽃 아치·열매나무, 풍차·해안 바위·나비 날개 등 실제 게임 장면에 배치.
+- 개인 마을에 새 인스턴스 46개와 동작 요소 20개. 움직임 줄이기, 장식 터치 방해 방지, 기존 산책·학습 접근 경로 검증.
+- 검증: `npm run check`, `npm run qa:habitats:v43`. 운영 main/GitHub Pages는 변경하지 않음.
+- [변경·검증 보고서](docs/V43_BLENDER_HABITATS_20261104.md) · [실제 연못 주변](docs/qa-unity-v43/tablet-habitat-pond-world.png) · [실제 온실·풍차 주변](docs/qa-unity-v43/tablet-habitat-garden-world.png).
+
 ## 2026-11-04 v42 — Blender 모델을 Unity 실제 게임에 적용
 
 - `feat/unity-blender-v42-20261104`: Blender에서 제작·변환한 **39종의 3D 자산을 실제 Unity Prefab/MeshRenderer로 적용**하고 새 WebGL 빌드 연결.

@@ -238,7 +238,7 @@ async function prepareData(){
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=blender-native-v42-20261104';
+    const loaderUrl = './Build/' + name + '.loader.js?v=blender-habitats-v43-20261104';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -309,13 +309,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=blender-native-v42-20261104',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=blender-native-v42-20261104',
-      codeUrl: base + '.wasm' + suffix + '?v=blender-native-v42-20261104',
+      dataUrl: base + '.data' + suffix + '?v=blender-habitats-v43-20261104',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=blender-habitats-v43-20261104',
+      codeUrl: base + '.wasm' + suffix + '?v=blender-habitats-v43-20261104',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.42.0-blender-native'
+      productVersion: '0.43.0-blender-habitats'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';

@@ -1,0 +1,204 @@
+{
+  "version": 43,
+  "source_version": 42,
+  "assets": [
+    {
+      "id": "Habitat/flower_arch",
+      "file": "flower_arch.fbx",
+      "width": 3.0,
+      "height": 2.7,
+      "depth": 0.72,
+      "triangles": 4680,
+      "vertices": 2632,
+      "sha256": "fbde8506f37455198c69eaecc7f2e4b4b09a7e0e74a36d2d23dc8ddf343d79f4",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/glasshouse",
+      "file": "glasshouse.fbx",
+      "width": 3.1,
+      "height": 2.65,
+      "depth": 2.5,
+      "triangles": 4564,
+      "vertices": 2392,
+      "sha256": "62e235973d6cd15e5f02690c41b8a261627774352cba6b83d79fa114716d6be2",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/windmill_base",
+      "file": "windmill_base.fbx",
+      "width": 2.6,
+      "height": 4.0,
+      "depth": 2.6,
+      "triangles": 832,
+      "vertices": 448,
+      "sha256": "77dff228158adbee97f2724c7570e301c6ed86f1f78427122fa78b1b4e8932fd",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/windmill_sails",
+      "file": "windmill_sails.fbx",
+      "width": 3.2,
+      "height": 3.2,
+      "depth": 0.35,
+      "triangles": 3500,
+      "vertices": 1816,
+      "sha256": "3de7e78763ab3d9ae4e3f4febe84d0151d6fdaae2e7fce24599784107974bc1e",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/waterwheel",
+      "file": "waterwheel.fbx",
+      "width": 1.85,
+      "height": 1.85,
+      "depth": 0.55,
+      "triangles": 3404,
+      "vertices": 1752,
+      "sha256": "8412691aa6ee314f74a41084a6f395940143d65a12c878f4c62cb21904a94126",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/pond_reeds",
+      "file": "pond_reeds.fbx",
+      "width": 0.9,
+      "height": 1.0,
+      "depth": 0.75,
+      "triangles": 1824,
+      "vertices": 976,
+      "sha256": "7ed9faff942b891f23e17ad36b3ef2792206f5306e6426052371ec4828ed114e",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/lily_flower",
+      "file": "lily_flower.fbx",
+      "width": 0.65,
+      "height": 0.22,
+      "depth": 0.65,
+      "triangles": 732,
+      "vertices": 384,
+      "sha256": "df26c18d656fa4734194edd6c14768628be7e13816304143cf7de2d81dbdd3d7",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/wooden_pier",
+      "file": "wooden_pier.fbx",
+      "width": 1.25,
+      "height": 0.68,
+      "depth": 2.8,
+      "triangles": 1692,
+      "vertices": 888,
+      "sha256": "108d54426bd86f1157e6eb925c02341f553d7cac30652de9ca55404708911b28",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/rowboat",
+      "file": "rowboat.fbx",
+      "width": 1.05,
+      "height": 0.48,
+      "depth": 2.0,
+      "triangles": 1916,
+      "vertices": 994,
+      "sha256": "8b00ccb8ff7da8a91f2211994713bda0e790e6759c8e808fd59f5fec91308100",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/coastal_rocks",
+      "file": "coastal_rocks.fbx",
+      "width": 2.5,
+      "height": 0.8,
+      "depth": 1.8,
+      "triangles": 220,
+      "vertices": 132,
+      "sha256": "28c6700b0f318e0902a7c5124404bcc00984faffe88f9486f17ee6931d2bd9ca",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/crystal_cluster",
+      "file": "crystal_cluster.fbx",
+      "width": 0.85,
+      "height": 1.0,
+      "depth": 0.7,
+      "triangles": 170,
+      "vertices": 107,
+      "sha256": "28f1cdc84a01cda0defc089dbd127aba8baa0de74ac862a428c1787994f44a47",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/hanging_lantern",
+      "file": "hanging_lantern.fbx",
+      "width": 0.48,
+      "height": 0.85,
+      "depth": 0.48,
+      "triangles": 930,
+      "vertices": 477,
+      "sha256": "69163dbf92873b4479b39829458d17946a34ee62df9a2c879b91b12569e9197e",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/mushroom_seat",
+      "file": "mushroom_seat.fbx",
+      "width": 0.9,
+      "height": 0.55,
+      "depth": 0.9,
+      "triangles": 244,
+      "vertices": 138,
+      "sha256": "85ecf4d4105298a798b8edf49218771e984cb8400bc637772d7dc70dbd8b2c84",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/butterfly_wing",
+      "file": "butterfly_wing.fbx",
+      "width": 0.6,
+      "height": 0.5,
+      "depth": 0.075,
+      "triangles": 220,
+      "vertices": 120,
+      "sha256": "a4c97dc67752d69e76d70fd1a59b05b2edb1e5f81c2903091b6e66fa8fc6bf02",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/water_ring",
+      "file": "water_ring.fbx",
+      "width": 1.6,
+      "height": 0.022,
+      "depth": 1.6,
+      "triangles": 768,
+      "vertices": 384,
+      "sha256": "cadc8ce34f72ae7807c7801d5156c3d5c054c5ad024fab5b6f0c7c04b36d21c8",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/stream_ribbon",
+      "file": "stream_ribbon.fbx",
+      "width": 0.65,
+      "height": 2.0,
+      "depth": 0.1,
+      "triangles": 668,
+      "vertices": 348,
+      "sha256": "503ca2c87734ba3d1019a6ff3657ba58c43571e4e7eceb07d0aa5b93704436cd",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/orchard_tree",
+      "file": "orchard_tree.fbx",
+      "width": 2.2,
+      "height": 3.2,
+      "depth": 2.1,
+      "triangles": 916,
+      "vertices": 702,
+      "sha256": "9c9dca2e45294cbe8606fa6036325baf7899598d7ecf4c9683dd791d6ef07a01",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    },
+    {
+      "id": "Habitat/garden_path",
+      "file": "garden_path.fbx",
+      "width": 1.2,
+      "height": 0.1,
+      "depth": 2.6,
+      "triangles": 240,
+      "vertices": 144,
+      "sha256": "bd46e698598dd598b41a4aff113566962fc4d2a6aaae347326e19836c48a4bec",
+      "source": "Blender authored habitat, shared Kenney-compatible palette; orchard uses licensed v41 tree"
+    }
+  ]
+}

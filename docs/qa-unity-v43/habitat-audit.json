@@ -1,0 +1,950 @@
+{
+    "version": "blender-habitats-v43-20261104",
+    "newPrefabs": 18,
+    "retainedPrefabs": 39,
+    "routeChecks": 44,
+    "scenes": [
+        {
+            "area": "home",
+            "who": "tae",
+            "routes": 11,
+            "motionChanges": true,
+            "reducedMotionStable": true,
+            "habitat": {
+                "version": "blender-habitats-v43-20261104",
+                "assetKinds": 18,
+                "instances": 46,
+                "triangles": 39988,
+                "motionElements": 20,
+                "decorationColliders": 0,
+                "reducedMotion": false,
+                "focused": true,
+                "daypart": "noon",
+                "animationClock": 0.0,
+                "assets": [
+                    "Habitat/butterfly_wing",
+                    "Habitat/coastal_rocks",
+                    "Habitat/crystal_cluster",
+                    "Habitat/flower_arch",
+                    "Habitat/garden_path",
+                    "Habitat/glasshouse",
+                    "Habitat/hanging_lantern",
+                    "Habitat/lily_flower",
+                    "Habitat/mushroom_seat",
+                    "Habitat/orchard_tree",
+                    "Habitat/pond_reeds",
+                    "Habitat/rowboat",
+                    "Habitat/stream_ribbon",
+                    "Habitat/water_ring",
+                    "Habitat/waterwheel",
+                    "Habitat/windmill_base",
+                    "Habitat/windmill_sails",
+                    "Habitat/wooden_pier"
+                ],
+                "motions": [
+                    {
+                        "id": "Blender habitat / pond_reeds #0",
+                        "kind": "sway",
+                        "angle": 0.0,
+                        "x": -9.199999809265137,
+                        "y": 0.18000000715255738,
+                        "z": 0.6499999761581421,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #1",
+                        "kind": "sway",
+                        "angle": 2.1339828968048097,
+                        "x": -5.849999904632568,
+                        "y": 0.18000000715255738,
+                        "z": 0.800000011920929,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #2",
+                        "kind": "sway",
+                        "angle": 3.1803789138793947,
+                        "x": -6.900000095367432,
+                        "y": 0.18000000715255738,
+                        "z": 1.350000023841858,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #3",
+                        "kind": "float",
+                        "angle": 1.9985716342926026,
+                        "x": -8.600000381469727,
+                        "y": 0.2853585183620453,
+                        "z": 0.5,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #4",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -8.600000381469727,
+                        "y": 0.2549999952316284,
+                        "z": 0.5,
+                        "scale": 0.6322638988494873,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #5",
+                        "kind": "float",
+                        "angle": 1.1070530414581299,
+                        "x": -6.75,
+                        "y": 0.2528303265571594,
+                        "z": 0.6499999761581421,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #6",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -6.75,
+                        "y": 0.2549999952316284,
+                        "z": 0.6499999761581421,
+                        "scale": 0.5672541856765747,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / rowboat #7",
+                        "kind": "float",
+                        "angle": 359.15643310546877,
+                        "x": -6.050000190734863,
+                        "y": 0.23695027828216554,
+                        "z": 0.10000000149011612,
+                        "scale": 0.47999998927116396,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / windmill_sails #8",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": 8.699999809265137,
+                        "y": 2.549999952316284,
+                        "z": 8.180000305175782,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / waterwheel #9",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": -10.199999809265137,
+                        "y": 0.9100000262260437,
+                        "z": 4.21999979019165,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / stream_ribbon #10",
+                        "kind": "stream",
+                        "angle": 0.0,
+                        "x": -10.199999809265137,
+                        "y": 0.07999999821186066,
+                        "z": 4.300000190734863,
+                        "scale": 0.6806697249412537,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #11",
+                        "kind": "lantern",
+                        "angle": 2.953646183013916,
+                        "x": -18.0,
+                        "y": 2.0999999046325685,
+                        "z": 11.149999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #12",
+                        "kind": "lantern",
+                        "angle": 1.850653052330017,
+                        "x": 12.5,
+                        "y": 2.5999999046325685,
+                        "z": 8.899999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #13",
+                        "kind": "lantern",
+                        "angle": 359.8044738769531,
+                        "x": 8.699999809265137,
+                        "y": 2.4000000953674318,
+                        "z": 8.0,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #14",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #15",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #16",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": -9.232434272766114,
+                        "y": 1.5020321607589722,
+                        "z": 0.6390902400016785,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #17",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #18",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #19",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": 11.989356994628907,
+                        "y": 1.8509266376495362,
+                        "z": 7.058079719543457,
+                        "scale": 1.0,
+                        "active": true
+                    }
+                ]
+            }
+        },
+        {
+            "area": "home",
+            "who": "se",
+            "routes": 11,
+            "motionChanges": true,
+            "reducedMotionStable": true,
+            "habitat": {
+                "version": "blender-habitats-v43-20261104",
+                "assetKinds": 18,
+                "instances": 46,
+                "triangles": 39988,
+                "motionElements": 20,
+                "decorationColliders": 0,
+                "reducedMotion": false,
+                "focused": true,
+                "daypart": "noon",
+                "animationClock": 0.0,
+                "assets": [
+                    "Habitat/butterfly_wing",
+                    "Habitat/coastal_rocks",
+                    "Habitat/crystal_cluster",
+                    "Habitat/flower_arch",
+                    "Habitat/garden_path",
+                    "Habitat/glasshouse",
+                    "Habitat/hanging_lantern",
+                    "Habitat/lily_flower",
+                    "Habitat/mushroom_seat",
+                    "Habitat/orchard_tree",
+                    "Habitat/pond_reeds",
+                    "Habitat/rowboat",
+                    "Habitat/stream_ribbon",
+                    "Habitat/water_ring",
+                    "Habitat/waterwheel",
+                    "Habitat/windmill_base",
+                    "Habitat/windmill_sails",
+                    "Habitat/wooden_pier"
+                ],
+                "motions": [
+                    {
+                        "id": "Blender habitat / pond_reeds #0",
+                        "kind": "sway",
+                        "angle": 0.0,
+                        "x": -9.199999809265137,
+                        "y": 0.18000000715255738,
+                        "z": 0.6499999761581421,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #1",
+                        "kind": "sway",
+                        "angle": 2.1339828968048097,
+                        "x": -5.849999904632568,
+                        "y": 0.18000000715255738,
+                        "z": 0.800000011920929,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #2",
+                        "kind": "sway",
+                        "angle": 3.1803789138793947,
+                        "x": -6.900000095367432,
+                        "y": 0.18000000715255738,
+                        "z": 1.350000023841858,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #3",
+                        "kind": "float",
+                        "angle": 1.9985716342926026,
+                        "x": -8.600000381469727,
+                        "y": 0.2853585183620453,
+                        "z": 0.5,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #4",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -8.600000381469727,
+                        "y": 0.2549999952316284,
+                        "z": 0.5,
+                        "scale": 0.6322638988494873,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #5",
+                        "kind": "float",
+                        "angle": 1.1070530414581299,
+                        "x": -6.75,
+                        "y": 0.2528303265571594,
+                        "z": 0.6499999761581421,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #6",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -6.75,
+                        "y": 0.2549999952316284,
+                        "z": 0.6499999761581421,
+                        "scale": 0.5672541856765747,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / rowboat #7",
+                        "kind": "float",
+                        "angle": 359.15643310546877,
+                        "x": -6.050000190734863,
+                        "y": 0.23695027828216554,
+                        "z": 0.10000000149011612,
+                        "scale": 0.47999998927116396,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / windmill_sails #8",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": 8.699999809265137,
+                        "y": 2.549999952316284,
+                        "z": 8.180000305175782,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / waterwheel #9",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": -10.199999809265137,
+                        "y": 0.9100000262260437,
+                        "z": 4.21999979019165,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / stream_ribbon #10",
+                        "kind": "stream",
+                        "angle": 0.0,
+                        "x": -10.199999809265137,
+                        "y": 0.07999999821186066,
+                        "z": 4.300000190734863,
+                        "scale": 0.6806697249412537,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #11",
+                        "kind": "lantern",
+                        "angle": 2.953646183013916,
+                        "x": -18.0,
+                        "y": 2.0999999046325685,
+                        "z": 11.149999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #12",
+                        "kind": "lantern",
+                        "angle": 1.850653052330017,
+                        "x": 12.5,
+                        "y": 2.5999999046325685,
+                        "z": 8.899999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #13",
+                        "kind": "lantern",
+                        "angle": 359.8044738769531,
+                        "x": 8.699999809265137,
+                        "y": 2.4000000953674318,
+                        "z": 8.0,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #14",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #15",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #16",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": -9.232434272766114,
+                        "y": 1.5020321607589722,
+                        "z": 0.6390902400016785,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #17",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #18",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #19",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": 11.989356994628907,
+                        "y": 1.8509266376495362,
+                        "z": 7.058079719543457,
+                        "scale": 1.0,
+                        "active": true
+                    }
+                ]
+            }
+        },
+        {
+            "area": "plaza",
+            "who": "tae",
+            "routes": 11,
+            "motionChanges": true,
+            "reducedMotionStable": true,
+            "habitat": {
+                "version": "blender-habitats-v43-20261104",
+                "assetKinds": 18,
+                "instances": 45,
+                "triangles": 39320,
+                "motionElements": 19,
+                "decorationColliders": 0,
+                "reducedMotion": false,
+                "focused": true,
+                "daypart": "noon",
+                "animationClock": 0.0,
+                "assets": [
+                    "Habitat/butterfly_wing",
+                    "Habitat/coastal_rocks",
+                    "Habitat/crystal_cluster",
+                    "Habitat/flower_arch",
+                    "Habitat/garden_path",
+                    "Habitat/glasshouse",
+                    "Habitat/hanging_lantern",
+                    "Habitat/lily_flower",
+                    "Habitat/mushroom_seat",
+                    "Habitat/orchard_tree",
+                    "Habitat/pond_reeds",
+                    "Habitat/rowboat",
+                    "Habitat/water_ring",
+                    "Habitat/waterwheel",
+                    "Habitat/windmill_base",
+                    "Habitat/windmill_sails",
+                    "Habitat/wooden_pier"
+                ],
+                "motions": [
+                    {
+                        "id": "Blender habitat / pond_reeds #0",
+                        "kind": "sway",
+                        "angle": 0.0,
+                        "x": -12.300000190734864,
+                        "y": 0.18000000715255738,
+                        "z": -0.8500000238418579,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #1",
+                        "kind": "sway",
+                        "angle": 2.1339828968048097,
+                        "x": -8.950000762939454,
+                        "y": 0.18000000715255738,
+                        "z": -0.699999988079071,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #2",
+                        "kind": "sway",
+                        "angle": 3.1803789138793947,
+                        "x": -10.0,
+                        "y": 0.18000000715255738,
+                        "z": -0.1499999761581421,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #3",
+                        "kind": "float",
+                        "angle": 1.9985716342926026,
+                        "x": -11.700000762939454,
+                        "y": 0.2853585183620453,
+                        "z": -1.0,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #4",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -11.700000762939454,
+                        "y": 0.2549999952316284,
+                        "z": -1.0,
+                        "scale": 0.6322638988494873,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #5",
+                        "kind": "float",
+                        "angle": 1.1070530414581299,
+                        "x": -9.850000381469727,
+                        "y": 0.2528303265571594,
+                        "z": -0.8500000238418579,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #6",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -9.850000381469727,
+                        "y": 0.2549999952316284,
+                        "z": -0.8500000238418579,
+                        "scale": 0.5672541856765747,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / rowboat #7",
+                        "kind": "float",
+                        "angle": 359.15643310546877,
+                        "x": -9.15000057220459,
+                        "y": 0.23695027828216554,
+                        "z": -1.399999976158142,
+                        "scale": 0.47999998927116396,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / windmill_sails #8",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": 8.699999809265137,
+                        "y": 2.549999952316284,
+                        "z": 8.180000305175782,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / waterwheel #9",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": -12.700000762939454,
+                        "y": 0.9100000262260437,
+                        "z": -0.5,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #10",
+                        "kind": "lantern",
+                        "angle": 2.5513103008270265,
+                        "x": -18.0,
+                        "y": 2.0999999046325685,
+                        "z": 11.149999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #11",
+                        "kind": "lantern",
+                        "angle": 2.953646183013916,
+                        "x": 12.5,
+                        "y": 2.5999999046325685,
+                        "z": 8.899999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #12",
+                        "kind": "lantern",
+                        "angle": 1.850653052330017,
+                        "x": 8.699999809265137,
+                        "y": 2.4000000953674318,
+                        "z": 8.0,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #13",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #14",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #15",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": -12.399688720703125,
+                        "y": 1.6091021299362183,
+                        "z": -1.010022759437561,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #16",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #17",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #18",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": 11.862805366516114,
+                        "y": 1.8911640644073487,
+                        "z": 7.184785842895508,
+                        "scale": 1.0,
+                        "active": true
+                    }
+                ]
+            }
+        },
+        {
+            "area": "plaza",
+            "who": "se",
+            "routes": 11,
+            "motionChanges": true,
+            "reducedMotionStable": true,
+            "habitat": {
+                "version": "blender-habitats-v43-20261104",
+                "assetKinds": 18,
+                "instances": 45,
+                "triangles": 39320,
+                "motionElements": 19,
+                "decorationColliders": 0,
+                "reducedMotion": false,
+                "focused": true,
+                "daypart": "noon",
+                "animationClock": 0.0,
+                "assets": [
+                    "Habitat/butterfly_wing",
+                    "Habitat/coastal_rocks",
+                    "Habitat/crystal_cluster",
+                    "Habitat/flower_arch",
+                    "Habitat/garden_path",
+                    "Habitat/glasshouse",
+                    "Habitat/hanging_lantern",
+                    "Habitat/lily_flower",
+                    "Habitat/mushroom_seat",
+                    "Habitat/orchard_tree",
+                    "Habitat/pond_reeds",
+                    "Habitat/rowboat",
+                    "Habitat/water_ring",
+                    "Habitat/waterwheel",
+                    "Habitat/windmill_base",
+                    "Habitat/windmill_sails",
+                    "Habitat/wooden_pier"
+                ],
+                "motions": [
+                    {
+                        "id": "Blender habitat / pond_reeds #0",
+                        "kind": "sway",
+                        "angle": 0.0,
+                        "x": -12.300000190734864,
+                        "y": 0.18000000715255738,
+                        "z": -0.8500000238418579,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #1",
+                        "kind": "sway",
+                        "angle": 2.1339828968048097,
+                        "x": -8.950000762939454,
+                        "y": 0.18000000715255738,
+                        "z": -0.699999988079071,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / pond_reeds #2",
+                        "kind": "sway",
+                        "angle": 3.1803789138793947,
+                        "x": -10.0,
+                        "y": 0.18000000715255738,
+                        "z": -0.1499999761581421,
+                        "scale": 0.6800000071525574,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #3",
+                        "kind": "float",
+                        "angle": 1.9985716342926026,
+                        "x": -11.700000762939454,
+                        "y": 0.2853585183620453,
+                        "z": -1.0,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #4",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -11.700000762939454,
+                        "y": 0.2549999952316284,
+                        "z": -1.0,
+                        "scale": 0.6322638988494873,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / lily_flower #5",
+                        "kind": "float",
+                        "angle": 1.1070530414581299,
+                        "x": -9.850000381469727,
+                        "y": 0.2528303265571594,
+                        "z": -0.8500000238418579,
+                        "scale": 0.6499999761581421,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / water_ring #6",
+                        "kind": "ripple",
+                        "angle": 0.0,
+                        "x": -9.850000381469727,
+                        "y": 0.2549999952316284,
+                        "z": -0.8500000238418579,
+                        "scale": 0.5672541856765747,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / rowboat #7",
+                        "kind": "float",
+                        "angle": 359.15643310546877,
+                        "x": -9.15000057220459,
+                        "y": 0.23695027828216554,
+                        "z": -1.399999976158142,
+                        "scale": 0.47999998927116396,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / windmill_sails #8",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": 8.699999809265137,
+                        "y": 2.549999952316284,
+                        "z": 8.180000305175782,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Pivot / waterwheel #9",
+                        "kind": "rotate",
+                        "angle": 0.0,
+                        "x": -12.700000762939454,
+                        "y": 0.9100000262260437,
+                        "z": -0.5,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #10",
+                        "kind": "lantern",
+                        "angle": 2.5513103008270265,
+                        "x": -18.0,
+                        "y": 2.0999999046325685,
+                        "z": 11.149999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #11",
+                        "kind": "lantern",
+                        "angle": 2.953646183013916,
+                        "x": 12.5,
+                        "y": 2.5999999046325685,
+                        "z": 8.899999618530274,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / hanging_lantern #12",
+                        "kind": "lantern",
+                        "angle": 1.850653052330017,
+                        "x": 8.699999809265137,
+                        "y": 2.4000000953674318,
+                        "z": 8.0,
+                        "scale": 0.6000000238418579,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #13",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #14",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #15",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": -12.399688720703125,
+                        "y": 1.6091021299362183,
+                        "z": -1.010022759437561,
+                        "scale": 1.0,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #16",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": -0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": -0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Blender habitat / butterfly_wing #17",
+                        "kind": "wing",
+                        "angle": 0.0,
+                        "x": 0.09000000357627869,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "scale": 0.550000011920929,
+                        "active": true
+                    },
+                    {
+                        "id": "Butterfly flight #18",
+                        "kind": "flight",
+                        "angle": 0.0,
+                        "x": 11.862805366516114,
+                        "y": 1.8911640644073487,
+                        "z": 7.184785842895508,
+                        "scale": 1.0,
+                        "active": true
+                    }
+                ]
+            }
+        }
+    ]
+}
