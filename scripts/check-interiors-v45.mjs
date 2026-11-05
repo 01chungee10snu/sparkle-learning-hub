@@ -38,6 +38,7 @@ const baseline=json(dir+'protected-source-hashes.json');
 for(const f of baseline.files)assert.equal(hash(read(f.path)),f.sha256,'Protected learning authority changed: '+f.path);
 const html=read('village/index.html').toString();assert(html.includes("productVersion: '0.45.0-interiors'"));
 assert(html.includes('content-style-v45.css'));assert(html.includes(CONTENT_VERSION));
+const entry=read('index.html').toString();assert(entry.includes('&autostart=1&v=45'));assert(entry.includes("encodeURIComponent(who)+'&v=45'"),'Entry must not navigate to stale cached learning HTML');
 const ui=read('village/village-ui.js').toString();assert(ui.includes('mountContentWorld'));assert(ui.includes("contentWorld?.pulse(result.correct?'correct':'learn')"));
 const browser=json(dir+'browser-interiors-qa.json');assert.equal(browser.pass,true);assert.equal(browser.productionDataTouched,false);assert(browser.fallbackVerified);
 assert.deepEqual(browser.results.map(r=>r.who).sort(),['se','tae']);
