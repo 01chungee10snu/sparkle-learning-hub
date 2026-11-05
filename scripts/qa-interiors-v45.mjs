@@ -120,10 +120,13 @@ try{
    await page.waitForFunction(()=>document.querySelector('#village-ui')?.dataset.ready==='true');
    await page.locator('#vh-map').click();await page.waitForFunction(()=>document.querySelector('#village-ui')?.dataset.interior==='commons');
    assert.equal(await page.locator('#village-ui').getAttribute('data-interior-renderer'),'render');
+   // CDN requests are asynchronous; a room-state change is not an image-load ACK.
+   await page.waitForFunction(()=>{const img=document.querySelector('.v45-room-fallback');return img?.complete&&img.naturalWidth>0;},null,{timeout:15000});
    assert(await page.locator('.v45-room-fallback').evaluate(img=>img.complete&&img.naturalWidth>0));
    await page.screenshot({path:output+'/compact-2d-fallback.png'});
    await page.goto(origin+'/learning.html?who=se',{waitUntil:'domcontentloaded'});
    await page.waitForFunction(()=>document.body.dataset.contentRoom==='commons');
+   await page.waitForFunction(()=>{const img=document.querySelector('.v45-study-vignette');return img?.complete&&img.naturalWidth>0;},null,{timeout:15000});
    assert(await page.locator('.v45-study-vignette').evaluate(img=>img.complete&&img.naturalWidth>0));
    await page.screenshot({path:output+'/compact-standalone-learning.png'});
    assert.deepEqual(errors,[]);

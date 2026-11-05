@@ -87,4 +87,18 @@ npm run check
 INTERIOR_QA_ORIGIN=http://127.0.0.1:4655 npm run qa:interiors:v45
 ```
 
-최종 배포 상태와 운영 주소 검증은 [배포 기록](qa-interiors-v45/deployment.json)에 별도로 보존한다. 배포 확인 전에는 개발본 완료와 운영 반영을 구분한다.
+## 6. 운영 반영 확인 — 2026-11-05
+
+**v45 운영 배포 및 공개 주소 플레이 검사 완료.** 실제 접속 주소는 https://01chungee10snu.github.io/sparkle-learning-hub/?v=45 이다.
+
+공개 주소에서 태희·세희의 독립 합성 상태로 13종 공간 전환(태블릿 전체 13종), 실제 학습 응답·힌트·피드백, 모바일 회차 완료, 마을 복귀 후 건물 재터치, 연못·정원·바다·상점과 2D 대체 화면을 검사했다. 공개 주소의 숫자 입력·짝짓기·수량 조작도 세로/가로 두 크기에서 통과했다. 네 WebGL 파일은 로컬 최종 빌드와 SHA-256이 일치한다.
+
+첫 공개 검사에서 2D 대체 이미지가 CDN에서 내려오기 전에 판정하는 테스트 경합을 발견했다. 실제 이미지가 HTTP 200으로 전달되는 것을 확인하고, 명시적 로딩 완료 조건을 기다린 뒤 전체 공개 검사를 재실행해 통과했다. 이 수정은 테스트 대기 조건만 변경하며 앱 실행 코드는 바꾸지 않는다.
+
+입장 버튼도 `v=45`로 맞춰 이전 HTML 캐시를 피한다. 복구 태그 `backup-before-interiors-v45-20261105`는 이전 v44 운영본을 가리키며 데이터 초기화 없이 실행 파일만 복구할 수 있다.
+
+- [배포 및 파일 검증](qa-interiors-v45/deployment.json)
+- [공개 주소 내부 콘텐츠 검사](qa-interiors-v45/live-browser-interiors-qa.json) · [공개 입력 검사](qa-interiors-v45/live-interaction-qa.json)
+- 실제 공개 화면: [영어 교실](qa-interiors-v45/live-tablet-english.png) · [도서관](qa-interiors-v45/live-tablet-korean.png) · [상점](qa-interiors-v45/live-tablet-shop.png) · [모바일 학습 완료](qa-interiors-v45/live-galaxy-completion.png)
+
+검증은 합성 브라우저 상태이며 운영 가족 데이터는 건드리지 않았다. 물리적 iPad·갤럭시 성능과 실제 가족 기기의 서버 승계를 검증한 것으로 해석하지 않는다.

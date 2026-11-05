@@ -1,0 +1,69 @@
+{
+  "version": "interiors-v45-20261105",
+  "url": "https://01chungee10snu.github.io/sparkle-learning-hub/?v=45",
+  "pagesWorkflowRun": 41969018790,
+  "verifiedAt": "2026-11-05T04:48:06.116696+00:00",
+  "productionDataTouched": false,
+  "rollbackTag": "backup-before-interiors-v45-20261105",
+  "gameHtmlVerified": true,
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 20332183,
+      "sha256": "ae72b4d0e58670e94f09ec509db3096e9cac10c2f56fe7a9d3b4f98672d3ed8a",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6063876,
+      "sha256": "4cf83ccf687a0ea6440c9d5deedf4673db456aa94b0eb2a4af5bda1bfb116c38",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70857,
+      "sha256": "4dc10cce4e8be98c87d7c6ea5b974febc1d9b18c85c4b8d802eb5df92d332e9f",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "5de868a7440a3c4f510c64de966cdc72d5893eee0894d21f4814941f34c3a89d",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    }
+  ],
+  "state": "deployed-and-live-verified",
+  "runtimeCommit": "cc0bb2049f5e001b0b735318d24f39c55ccb99bc",
+  "entryCommit": "ba8e3f9fa74fed524a14bd01e0472dce98dd1551",
+  "entryLinksVerified": true,
+  "liveBrowserVerified": true,
+  "fallbackVerified": true,
+  "liveInputVerified": true,
+  "profiles": [
+    "tae",
+    "se"
+  ],
+  "roomsVerified": 13,
+  "roomCount": 13,
+  "propCount": 32,
+  "physicalDeviceVerified": false,
+  "productionCloudTested": false,
+  "testEnvironment": "Isolated Chromium contexts with synthetic records and blocked production Supabase requests",
+  "checks": [
+    "native Unity interior meshes",
+    "13 room transitions",
+    "literal question object",
+    "answer and hint acknowledgement",
+    "full learner round completion",
+    "exterior restoration and native building retap",
+    "pond/ocean/garden/shop/career views",
+    "compact fallback and standalone learning",
+    "numeric/matching/quantity inputs in portrait and landscape",
+    "semantic counts, answer indices and event handlers",
+    "four deployed binary SHA-256 matches"
+  ]
+}
