@@ -1,0 +1,37 @@
+{
+  "baseline": "d5ea49197b12609c3a97b4d646a2cf6b05a32e02",
+  "files": [
+    {
+      "path": "platform/progress.js",
+      "sha256": "5bc7e3b1c86287ad7536d666a31fa200836f8da240787701cffab19f594b33c7"
+    },
+    {
+      "path": "platform/irt.js",
+      "sha256": "a39f3efcd87f97bbf3537810ec22e08376bd41adfef9e8053d5678b87f355dd1"
+    },
+    {
+      "path": "platform/rewards.js",
+      "sha256": "da87cb65bbf5972587a0af5f5ad4b9cd12bdb7879d2eb800c5bc6a58654ffa92"
+    },
+    {
+      "path": "platform/cloud-sync.js",
+      "sha256": "21aa3a32c5ba699a6d4cfdd091e9fbfb3e9ca68880ba8baa68f85538823caa3a"
+    },
+    {
+      "path": "platform/resource-economy.js",
+      "sha256": "d22ec267b7c95830151cc0b92c5ca0034d118075565d199c89ea900fc1d027ff"
+    },
+    {
+      "path": "platform/pond-session.js",
+      "sha256": "3781f97c28b6d7c171b7f6655f2da9173220a494ea0c83fd3100a8171fbd093e"
+    },
+    {
+      "path": "platform/play-balance.js",
+      "sha256": "f5e9b6429324d2b46998e4276b8b9eb4b0d130ec1ae7ab511beb7eb26ef3712a"
+    },
+    {
+      "path": "games/irt-bank.json",
+      "sha256": "45f5c1fa2ac080bf110c603f7f908cc9c7d12ef5741e7a54f2ae9ffda5aeda03"
+    }
+  ]
+}

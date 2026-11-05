@@ -1,7 +1,9 @@
 import {SPECIES,CARE} from './garden-state.js';
+import {mountContentWorld} from './content-world-v45.js?v=interiors-v45-20261105';
+import {contentArt,decorateCountedObjects} from '../platform/content-art-v45.js?v=interiors-v45-20261105';
 import {WORLD_DESTINATIONS,artPath,worldLocation} from '../platform/world-art-v40.js?v=storybook-v44-20261104';
 import {applyNumericKey, normalizeNumericDraft, numericDraftReady} from '../platform/numeric-keypad.js';
-import {mountPondExperience} from './pond-experience.js?v=pond-v34-20261021';
+import {mountPondExperience} from './pond-experience.js?v=interiors-v45-20261105';
 import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
 import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
@@ -118,7 +120,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   let gainedFromAnswer=[];
   const waterBrowse={pond:{filter:'all',page:0},ocean:{filter:'all',page:0}};
   let pondExperience=null,pondRefresh=null,pondSession=null,pondRuntimePrefix='';
-  let blenderViewer=null;
+  let blenderViewer=null,contentWorld=null;
   const disposeBlenderViewer=()=>{
     const viewer=blenderViewer;
     blenderViewer=null;
@@ -563,6 +565,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     window.speechSynthesis.speak(utterance);
   });
   function close() {
+    contentWorld?.close();
     disposeBlenderViewer();
     disposePond();
     if (pendingRequest) retiredRequests.add(pendingRequest);
@@ -806,6 +809,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     phase='choose'; open();resetBody();
     const practice=result.publicPractice===true;
+    root.dataset.mode='district';root.dataset.district=practice?'practice':'kma';
     ui.title.textContent=practice?'🧩 마법 수학 훈련장':'🏆 뱁수 수학 경시대회';
     ui.counter.textContent='25개의 수학 이야기';
     ui.note.textContent=practice?
@@ -858,6 +862,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   function showAreaMissions(missions){
     if(!missions||!Array.isArray(missions.games))return;
     phase='choose';open();resetBody();theme('scroll');root.dataset.mode='district';
+    root.dataset.district=missions.id||'';
     ui.title.textContent=missions.title;
     ui.counter.textContent=missions.games.length+'가지 배움';
     ui.note.textContent='학습 기록은 태희·세희별로 보존되며, 문제와 별은 기존 배움터 기록을 이어 사용해요.';
@@ -1104,6 +1109,9 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       const card=label('article','','vh-shop-item');
       const icon=label('span',item.emoji||'✦','vh-shop-icon');
       icon.setAttribute('aria-hidden','true');
+      const object=document.createElement('img');object.className='v45-shop-object';object.alt='';object.width=64;object.height=64;
+      object.src=contentArt('props',({light:'lantern',background:'globe',friend:'chest',mark:'star',title:'scroll'})[item.category]||'chest');
+      icon.prepend(object);
       card.append(icon,label('strong',item.title,'vh-shop-name'));
       card.append(label('p',item.description||'','vh-shop-description'));
       const command=item.equipped?'SHOP_UNEQUIP':item.owned?'SHOP_EQUIP':'SHOP_BUY';
@@ -1355,20 +1363,21 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   }
   function showRoundCue(answered,total) {
     const stage=nativeProgressArt(answered,total),image=document.createElement('img');
-    image.src='./assets/'+stage+'.png';image.alt='';image.width=20;image.height=20;image.className='vh-round-image';
+    image.src=contentArt('props',({seed:'seed',sprout:'sprout',bud:'sprout',bloom:'flower'})[stage.split('/').pop()]||'seed');image.alt='';image.width=20;image.height=20;image.className='vh-round-image';
     ui.counter.dataset.stage=stage;ui.counter.setAttribute('aria-label',Math.min(total,Math.max(0,answered))+' / '+total+'개 답 확인');
     ui.counter.prepend(image);
   }
   function showRewardArt(id) {
     const holder=label('div','','vh-reward-art');
     const img=document.createElement('img');
-    img.src='./assets/'+id+'.png'; img.alt=''; img.width=88; img.height=88;
+    img.src=contentArt('props',id.includes('star')?'star':id==='bloom'?'flower':id==='sprout'?'sprout':'chest'); img.alt=''; img.width=88; img.height=88;
     holder.append(img);ui.body.append(holder);
   }
   function showFeedback(result) {
     phase='feedback'; open();resetBody();
     theme(question?.total===25?'tome':gameId==='kind-dialogue'?'scroll':'crystal');
     root.dataset.mode='feedback';
+    contentWorld?.pulse(result.correct?'correct':'learn');
     ui.title.textContent=result.correct ? '🌟 멋진 발견!' : '🌱 다시 생각하는 힘';
     ui.counter.textContent='이번 문제';
     showRoundCue(question?.index||1,question?.total||3);
@@ -1390,6 +1399,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
   function complete(result) {
     phase='complete';open();resetBody();
     theme('celebrate');root.dataset.mode='complete';
+    contentWorld?.pulse('complete');
     const isChallenge=question?.total===25&&
       (gameId.startsWith('bebsu-')||gameId.startsWith('magic-'));
     ui.title.textContent=isChallenge?
@@ -1571,6 +1581,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     }
     if(data.action.startsWith('GARDEN_'))showGarden(data);
     else if(data.action==='AREA_OPEN'){
+      root.dataset.district=data.district||'';
       if(data.district==='career')showCareer(data.career);
       else if(data.district==='pond')showPond(data.pondShop,data.pondNotice,data.pondSession,data.action,data.itemChanged);
       else if(data.district==='ocean')showOcean(data.pondShop,data.pondNotice);
@@ -1608,6 +1619,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       const old=ui.body.querySelector('.vh-hint-text');
       if(!old){paragraph(data.hint,'vh-explanation vh-hint-text');}
       ui.hint.disabled=true;
+      contentWorld?.pulse('hint');
       voiceText=data.hint||voiceText;
       ui.note.textContent='힌트를 보고 내 힘으로 답을 골라요.';
     } else if(data.action==='SUBMIT') {
@@ -1618,6 +1630,11 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       showReflectionResult(data);
     }
   }
+  contentWorld=mountContentWorld({root,sendToUnity,getContext:()=>({
+    subject:question?.subject||root.dataset.questionSubject||'',
+    gameId:question?.gameId||gameId||'',total:question?.total||0,visual:question?.visual||null,
+    district:root.dataset.district||''
+  })});
   return {update,announce,close,
     syncMotion:()=>sendToUnity(reducedMotion?'MOTION_LOW':'MOTION_FULL'),
     syncAvatarStyle};

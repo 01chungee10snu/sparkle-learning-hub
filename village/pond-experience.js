@@ -23,7 +23,7 @@ export function mountPondExperience(container,{fish=[],status=null,request,onLea
   header.append(timeLabel,time,cost,progress);
   const scene=node('div','pond-scene');scene.dataset.motion=reducedMotion?'reduced':'full';
   const backdrop=document.createElement('img');backdrop.className='pond-scene-art';
-  backdrop.src='../assets/pond-originals-v34/pond-landscape.webp';backdrop.alt='햇살이 물결에 비치는 수초와 연꽃의 연못';
+  backdrop.src='../assets/interiors-v45/rooms/pond-playfield.webp';backdrop.addEventListener('error',()=>{backdrop.src='../assets/pond-originals-v34/pond-landscape.webp';},{once:true});backdrop.alt='햇살이 물결에 비치는 수초와 연꽃의 연못';
   backdrop.width=1536;backdrop.height=1024;backdrop.decoding='async';
   const rays=node('div','pond-light-rays');rays.setAttribute('aria-hidden','true');
   const layer=node('div','pond-fish-layer');

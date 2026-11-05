@@ -1,0 +1,25 @@
+{
+  "version": "interiors-v45-20261105",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 20332183,
+      "sha256": "ae72b4d0e58670e94f09ec509db3096e9cac10c2f56fe7a9d3b4f98672d3ed8a"
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6063876,
+      "sha256": "4cf83ccf687a0ea6440c9d5deedf4673db456aa94b0eb2a4af5bda1bfb116c38"
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70857,
+      "sha256": "4dc10cce4e8be98c87d7c6ea5b974febc1d9b18c85c4b8d802eb5df92d332e9f"
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "5de868a7440a3c4f510c64de966cdc72d5893eee0894d21f4814941f34c3a89d"
+    }
+  ]
+}

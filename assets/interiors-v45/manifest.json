@@ -1,0 +1,241 @@
+{
+  "version": 45,
+  "source": "Unity render of original Blender FBX interiors; transparent prop margins cropped only",
+  "files": [
+    {
+      "path": "assets/interiors-v45/rooms/career.webp",
+      "bytes": 42604,
+      "sha256": "b3a4beb4ca3961a23c24921238d0b4d9897b0225b67647a8d7e7dda57e6bde81"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/challenge.webp",
+      "bytes": 41276,
+      "sha256": "8fa75aaaf892b9c8c622ea9eed1e19e66150aef1f42cef7f27e7c84b90d38523"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/commons.webp",
+      "bytes": 47820,
+      "sha256": "1519985066cac7eb5d21882b4aeb49f6d2468e57a2b8655e3a4a6a8ac1d7a836"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/english.webp",
+      "bytes": 36814,
+      "sha256": "5d8dfda6d5a396b4d95222644de24c7a0d299b7bcc6d3199d8bd04c582158269"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/garden.webp",
+      "bytes": 41530,
+      "sha256": "0270620b3fd5db5014166d75414d1dac1e7f9944f4229358e706c8bf48d96853"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/growth.webp",
+      "bytes": 40432,
+      "sha256": "1b5108a9d5dca46a135ec48ad0af4556a0c707ff38b1c2ad628ca87e53d18d26"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/hanja.webp",
+      "bytes": 41258,
+      "sha256": "f5a622c9f09aca01c9ffa5a730ef0fadf7be12478adaae0a2ee69b12d1b13620"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/korean.webp",
+      "bytes": 47948,
+      "sha256": "0f98e6b69212721c8660fdeb537549e2127fc9dafbfcde12248657dec6d8c040"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/math.webp",
+      "bytes": 46534,
+      "sha256": "9aaa5b839af5d90e37fc524813756151512394b081ee7945407a2c01cd63355b"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/ocean-playfield.webp",
+      "bytes": 46780,
+      "sha256": "196133b6962ab31c014ec06be2d4eee5f17fa4b0234785123072919814ded421"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/ocean.webp",
+      "bytes": 48424,
+      "sha256": "2528387c0e398403ba97a16dc8b71e3da050c4d55b8df621655a7d692e95b579"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/pond-playfield.webp",
+      "bytes": 39680,
+      "sha256": "8bb411d6d95a2c0763acb856482d7d0ecd4d16cb7d82c6472ecc5c63a36be9a6"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/pond.webp",
+      "bytes": 32008,
+      "sha256": "3d1a92518aa2a2f019b04ea851d9ae19171d098acb0d9ef98a6030df70b3fe7e"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/practice.webp",
+      "bytes": 40876,
+      "sha256": "f2cb0f6e34cb1b843cb4afa4def9f85d702b7cb94320fc2ed04c3f5cac12acb3"
+    },
+    {
+      "path": "assets/interiors-v45/rooms/shop.webp",
+      "bytes": 43994,
+      "sha256": "8ce0ecb884104527c45e55f9278e17050fe5ff9a3ed4f2430ac3ac0c39091008"
+    },
+    {
+      "path": "assets/interiors-v45/props/abacus.png",
+      "bytes": 42005,
+      "sha256": "6c7c4cbdcc1d7d18167262fba4292cdf611ab6f5392373103dbc403bed8d78e3"
+    },
+    {
+      "path": "assets/interiors-v45/props/apple.png",
+      "bytes": 21426,
+      "sha256": "de97322213930b89583b00c9b306c1e600f720ada1871b5be4e4d58598934583"
+    },
+    {
+      "path": "assets/interiors-v45/props/balance.png",
+      "bytes": 14866,
+      "sha256": "044fcebf9bf69181156e17ebb4be72f7b2d82915a51299f37a7c41254bd22508"
+    },
+    {
+      "path": "assets/interiors-v45/props/ball.png",
+      "bytes": 32761,
+      "sha256": "ff0d52fc0ed99d6713ca230f1d7c7d2f6bcbf970b3ec002053c69f73ce068ab0"
+    },
+    {
+      "path": "assets/interiors-v45/props/banana.png",
+      "bytes": 16471,
+      "sha256": "c816c8a5f758d626aab37566945f77020d0fdd6e46ae354d14ede5e803f7f52c"
+    },
+    {
+      "path": "assets/interiors-v45/props/book.png",
+      "bytes": 21324,
+      "sha256": "a498808dbf431e0e0649e59bf95585120ce01debebef41742d9981d9c7b22715"
+    },
+    {
+      "path": "assets/interiors-v45/props/brush.png",
+      "bytes": 5580,
+      "sha256": "5b5d475eafc01594b6157579d492f5f492705c555fa81161fa0e7f2babcaf413"
+    },
+    {
+      "path": "assets/interiors-v45/props/carrot.png",
+      "bytes": 9643,
+      "sha256": "f6fe99edc2f4505d5e776987918f56d16651233a619f55c03000855e62492a76"
+    },
+    {
+      "path": "assets/interiors-v45/props/cat.png",
+      "bytes": 29267,
+      "sha256": "829404062b9f76f17b011f8f8e1a3647e9ab352e8212b22fb06c01453507e2af"
+    },
+    {
+      "path": "assets/interiors-v45/props/chest.png",
+      "bytes": 26116,
+      "sha256": "6429496b91bf066e48db650f2e4c986d90986b6f46a3e037197040d3127b5813"
+    },
+    {
+      "path": "assets/interiors-v45/props/crystal.png",
+      "bytes": 2939,
+      "sha256": "0415df676dc6871703eb1a22b44a9e18f193084a4ebf92436527c67b6e633e21"
+    },
+    {
+      "path": "assets/interiors-v45/props/cube.png",
+      "bytes": 21510,
+      "sha256": "0e4204dcd1cc96232e317b510e579a5417f67096e834fcb8b6821daa16cf3326"
+    },
+    {
+      "path": "assets/interiors-v45/props/cup.png",
+      "bytes": 24531,
+      "sha256": "eeb5d24af13a088af411a9087bd8441a34c9b239d7c661256a45c252b029aaa3"
+    },
+    {
+      "path": "assets/interiors-v45/props/dog.png",
+      "bytes": 33982,
+      "sha256": "bd180bae2d10e11b16f7205525b65458bbb57091b519b51cc2f41ac9fd514d7c"
+    },
+    {
+      "path": "assets/interiors-v45/props/fish.png",
+      "bytes": 17337,
+      "sha256": "df3556b36b5424fa60adf1d46d64bbae837a53084bedca7716fd26bc8882229b"
+    },
+    {
+      "path": "assets/interiors-v45/props/flower.png",
+      "bytes": 19789,
+      "sha256": "918ff186c9251645bd2bdd0537b92bb4eb5ff7bca59f5b8145a40b46b06e70ab"
+    },
+    {
+      "path": "assets/interiors-v45/props/frame.png",
+      "bytes": 27489,
+      "sha256": "1d0de3370aae46d6bd099c696e56c86730673efc60d9e18dd56d9998f9fd10cd"
+    },
+    {
+      "path": "assets/interiors-v45/props/globe.png",
+      "bytes": 32300,
+      "sha256": "07bb7772d3f1d93388456c4507066a9185b08c25a776e675f912cfa682b193d5"
+    },
+    {
+      "path": "assets/interiors-v45/props/hourglass.png",
+      "bytes": 11543,
+      "sha256": "9471ece2928e9d1b74919fba57eb1e0f37831e7557d1e8cc9867a18ba4595e4e"
+    },
+    {
+      "path": "assets/interiors-v45/props/lantern.png",
+      "bytes": 8831,
+      "sha256": "a37dcc27cf67311d22e7aa49fb334a7110ef646c7aafe0b3c82a7b2cde1859b4"
+    },
+    {
+      "path": "assets/interiors-v45/props/note.png",
+      "bytes": 9624,
+      "sha256": "060b5a3aeb8157d06ec69f094259ce60b586512896a332a422742fded281a83e"
+    },
+    {
+      "path": "assets/interiors-v45/props/rabbit.png",
+      "bytes": 23724,
+      "sha256": "18062163a0705c2a11c3338ab5941c425bf0ab9675aaa3a2a72053809a2ca746"
+    },
+    {
+      "path": "assets/interiors-v45/props/scroll.png",
+      "bytes": 15781,
+      "sha256": "180251b04d61ada596f3b5c44c5e4f725b998899bf10515f8783f3fbd994cc50"
+    },
+    {
+      "path": "assets/interiors-v45/props/seed.png",
+      "bytes": 16408,
+      "sha256": "a6df02ed9dd3ce5282e0163d87fb2dba20fd5d07d2318cbcec1cfa1067e3ac4f"
+    },
+    {
+      "path": "assets/interiors-v45/props/shell.png",
+      "bytes": 21513,
+      "sha256": "0e0d54042bdfd16da198646cd6e697d4339d0a5ee42a0f441560cbedfbd44037"
+    },
+    {
+      "path": "assets/interiors-v45/props/sprout.png",
+      "bytes": 13651,
+      "sha256": "d5bd0e053ce0768b57ea6f6a4ab7319b9c31a0a272061a452ae2f4dc77b69362"
+    },
+    {
+      "path": "assets/interiors-v45/props/star.png",
+      "bytes": 6060,
+      "sha256": "d1b9e29655b7126fdbe26bb93f5c703356a574c2ee4723d52c349460c445b72a"
+    },
+    {
+      "path": "assets/interiors-v45/props/strawberry.png",
+      "bytes": 31613,
+      "sha256": "eb84f5a856860f616a9f4038dc90929ec34257617e5d52e068582a332d8eb7d9"
+    },
+    {
+      "path": "assets/interiors-v45/props/sun.png",
+      "bytes": 12058,
+      "sha256": "773697d027011ae55dc0bfe347afbc06a196909d4e12a782ef366e3141b79a22"
+    },
+    {
+      "path": "assets/interiors-v45/props/tree.png",
+      "bytes": 18900,
+      "sha256": "58a0d8fbf5a906dfb3d2db3658fd91e6941f8f6d55d7d91b31b8e2a81d58005f"
+    },
+    {
+      "path": "assets/interiors-v45/props/trophy.png",
+      "bytes": 23881,
+      "sha256": "9e901e1d6749376c6310d612e4010a62f0761625ce318f3627a81d1c854cf0df"
+    },
+    {
+      "path": "assets/interiors-v45/props/watering.png",
+      "bytes": 20956,
+      "sha256": "a64e0358389fb052887c36c73341f093017cac71564e044f604d8c92e4b1ae48"
+    }
+  ]
+}

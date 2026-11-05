@@ -61,7 +61,10 @@ try{
       await page.locator('.world-v40-journey').waitFor({state:'visible',timeout:25000});
       assert.equal(await page.locator('.world-v40-step').count(),3,'Three learning missions should remain present');
       assert.equal(await page.locator('.world-v40-explore').count(),1,'Child can still explore village');
-      const assetCheck=await page.locator('.world-v40-journey img').evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0));
+      const assetCheck=await page.locator('.world-v40-journey img').evaluateAll(async imgs=>{
+        await Promise.all(imgs.map(async img=>{img.loading='eager';try{await img.decode();}catch{}}));
+        return imgs.every(img=>img.complete&&img.naturalWidth>0);
+      });
       assert(assetCheck,'Learning route sprites load from the same pack');
       assert((await page.locator('.world-v40-explore').getAttribute('href')).includes('who='+device.who));
       await page.screenshot({path:screenshotDir+'/'+device.name+'-learning.png'});
