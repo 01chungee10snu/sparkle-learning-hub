@@ -69,3 +69,12 @@ npm run check
 모바일 실제 실행 캡처: [태희 390×844](qa-cohesive-v46/mobile-tae-390x844.png) · [세희 390×844](qa-cohesive-v46/mobile-se-390x844.png). 새 독립 브라우저 상태로 촬영했으며 실제 가족 데이터를 사용하지 않았다.
 
 현재 런타임 검증 연결: `qa-cohesive-v46/release-binding.json`. 공개 배포 상태는 `qa-cohesive-v46/deployment.json`에서 구분한다.
+
+
+## 운영 배포 확인
+
+2026-11-05 v46 공개 배포 및 실제 주소 검증 완료. 실행본 커밋 `e4d6a5950ed1e1754947bca975438b8c84b81c07`, Unity 소스 `5ad33e75bd4f1035baf54e41fa42f0b444f4c415`. 네 실행 파일·프런트 연결 모듈·두 요정 그림의 공개 응답 SHA가 검증본과 일치한다.
+
+두 요정 각각 네 화면 크기, 애니메이션을 켠 걷기·중앙 유지·내부 활동 후 복귀를 공개 사이트에서 통과했다. 공개 도감/친구/꾸미기/직업 및 선물/보호자 화면도 검사했다. 내부 13개 공간 전체 검사는 같은 실행본의 로컬 서버 검사이며 실제 가족 데이터를 사용하지 않았다.
+
+배포 기록: [deployment.json](qa-cohesive-v46/deployment.json). 실제 공개 게임 캡처: [태희](qa-cohesive-v46/live-tae-390x844.png) · [세희](qa-cohesive-v46/live-se-390x844.png).

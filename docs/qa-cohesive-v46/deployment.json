@@ -1,0 +1,77 @@
+{
+  "version": "cohesive-v46-20261105",
+  "runtimeCommit": "e4d6a5950ed1e1754947bca975438b8c84b81c07",
+  "url": "https://01chungee10snu.github.io/sparkle-learning-hub/?v=46&heroes=public",
+  "checkedAt": "2026-11-05T11:07:59.183842+00:00",
+  "productionDataTouched": false,
+  "rollbackTag": "backup-before-cohesive-v46-20261105",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 24229849,
+      "sha256": "3dae82f520488c300dc6b83144ec02fd87628e4a736d162167fa89bae4a6ec36",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6074407,
+      "sha256": "3e66e04322c876f63a4b446a984f9db2b1ef4286f58db79c765bec7c5c2edf09",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70857,
+      "sha256": "f3a1b09916e81587a18dae41c2f4384a1439656fee08d8d16eb27c3a72cda49a",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "768189a56bab6a305ccfd7c112254f9d513d38e92f9840a9d75d15942f099764",
+      "httpStatus": 200,
+      "matchesLocalBuild": true
+    }
+  ],
+  "state": "deployed-and-live-verified",
+  "verifiedAt": "2026-11-05T11:10:43.093124+00:00",
+  "pagesWorkflowRun": 42016249546,
+  "pagesDeploymentSucceeded": true,
+  "unitySourceCommit": "5ad33e75bd4f1035baf54e41fa42f0b444f4c415",
+  "liveBrowserVerified": true,
+  "liveMobileCentreVerified": true,
+  "profiles": [
+    "tae",
+    "se"
+  ],
+  "viewports": [
+    "390x844",
+    "360x740",
+    "844x390",
+    "768x1024"
+  ],
+  "animationEnabledDuringCentreTest": true,
+  "movementAndInteriorReturnVerified": true,
+  "publicFairySource": "Frakassets / Pixor Fairy CC0-1.0",
+  "sourceDownloadVerified": true,
+  "legacyCharacterSpritesInTestedWorld": 0,
+  "modelLinkedImages": 272,
+  "localInteriorRoomsVerified": 13,
+  "physicalDeviceVerified": false,
+  "productionCloudTested": false,
+  "testEnvironment": "Independent Chromium contexts; synthetic states; production Supabase blocked; software WebGL",
+  "checks": [
+    "both public-source fairy heroes",
+    "screen centre after animation",
+    "walking and turning",
+    "portrait and landscape",
+    "camera restoration after indoor activity",
+    "centre not covered by HUD",
+    "native NPCs and pond fish",
+    "wardrobe/friends/ocean/career views",
+    "standalone gifts and parent views",
+    "deployed binary and character-image SHA matches"
+  ]
+}

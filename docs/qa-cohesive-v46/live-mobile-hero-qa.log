@@ -1,0 +1,7 @@
+
+> sparkle-learning-hub@1.4.0 qa:mobile-heroes:v46
+> node scripts/qa-mobile-heroes-v46.mjs
+
+V46_MOBILE_HERO_PASS tae max error 0.07868801959492809 pixels
+V46_MOBILE_HERO_PASS se max error 0.0001400570659689775 pixels
+V46_PUBLIC_FAIRIES_AND_CENTRE_ALL_PASS

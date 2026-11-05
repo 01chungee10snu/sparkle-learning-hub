@@ -1,0 +1,245 @@
+{
+  "pass": true,
+  "productionDataTouched": false,
+  "physicalDeviceVerified": false,
+  "results": [
+    {
+      "who": "tae",
+      "source": "Pixor Fairy / Frakassets / CC0-1.0",
+      "samples": [
+        {
+          "label": "390x844",
+          "x": 0.49999988079071045,
+          "y": 0.4999999701976776,
+          "errorPixels": 0.0000528597433304186,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "label": "360x740",
+          "x": 0.49999988079071045,
+          "y": 0.4999999701976776,
+          "errorPixels": 0.00004825031889757795,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 360,
+            "height": 740
+          }
+        },
+        {
+          "label": "844x390",
+          "x": 0.4999999701976776,
+          "y": 0.4999999701976776,
+          "errorPixels": 0.00002770872426532657,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          }
+        },
+        {
+          "label": "768x1024",
+          "x": 0.49999988079071045,
+          "y": 0.4999999701976776,
+          "errorPixels": 0.00009650505554713072,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        {
+          "label": "after-interior-return",
+          "x": 0.49999988079071045,
+          "y": 0.5,
+          "errorPixels": 0.00004649162292480469,
+          "worldX": 0,
+          "worldZ": -12.298004150390625,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        }
+      ],
+      "moving": [
+        {
+          "label": "walking-0",
+          "x": 0.5000338554382324,
+          "y": 0.5000919103622437,
+          "errorPixels": 0.07868801959492809,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-1",
+          "x": 0.4999997913837433,
+          "y": 0.5000001192092896,
+          "errorPixels": 0.00012939245862333398,
+          "worldX": 0,
+          "worldZ": -6.858999729156494,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-2",
+          "x": 0.49999988079071045,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00006849961206666983,
+          "worldX": 0,
+          "worldZ": -8.496999740600586,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-3",
+          "x": 0.4999997615814209,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.0001057194866608372,
+          "worldX": 0,
+          "worldZ": -10.282001495361328,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-4",
+          "x": 0.4999997913837433,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00009565683872721854,
+          "worldX": 0,
+          "worldZ": -11.991403579711914,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        }
+      ],
+      "animationEnabled": true,
+      "hudDoesNotCoverHero": true,
+      "centredWhileMoving": true,
+      "exteriorRestored": true,
+      "jsErrors": 0
+    },
+    {
+      "who": "se",
+      "source": "Pixor Fairy / Frakassets / CC0-1.0",
+      "samples": [
+        {
+          "label": "390x844",
+          "x": 0.49999991059303284,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00006120909482935959,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "label": "360x740",
+          "x": 0.49999991059303284,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.000054602539494508674,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 360,
+            "height": 740
+          }
+        },
+        {
+          "label": "844x390",
+          "x": 0.4999999701976776,
+          "y": 0.5000001192092896,
+          "errorPixels": 0.0000528597433304186,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          }
+        },
+        {
+          "label": "768x1024",
+          "x": 0.49999991059303284,
+          "y": 0.5000001192092896,
+          "errorPixels": 0.0001400570659689775,
+          "worldX": 0,
+          "worldZ": -3.799999952316284,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        {
+          "label": "after-interior-return",
+          "x": 0.5,
+          "y": 0.5000001192092896,
+          "errorPixels": 0.00010061264038085938,
+          "worldX": 0,
+          "worldZ": -12.657804489135742,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        }
+      ],
+      "moving": [
+        {
+          "label": "walking-0",
+          "x": 0.49999988079071045,
+          "y": 0.5,
+          "errorPixels": 0.00004649162292480469,
+          "worldX": 0,
+          "worldZ": -5.349799156188965,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-1",
+          "x": 0.5,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00005030632019042969,
+          "worldX": 0,
+          "worldZ": -7.2649993896484375,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-2",
+          "x": 0.49999991059303284,
+          "y": 0.5,
+          "errorPixels": 0.000034868717193603516,
+          "worldX": 0,
+          "worldZ": -8.886199951171875,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-3",
+          "x": 0.5,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00005030632019042969,
+          "worldX": 0,
+          "worldZ": -10.700601577758789,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        },
+        {
+          "label": "walking-4",
+          "x": 0.4999997913837433,
+          "y": 0.5000000596046448,
+          "errorPixels": 0.00009565683872721854,
+          "worldX": 0,
+          "worldZ": -12.347003936767578,
+          "source": "Pixor Fairy / Frakassets / CC0-1.0; Blender-adapted pink and lavender variants"
+        }
+      ],
+      "animationEnabled": true,
+      "hudDoesNotCoverHero": true,
+      "centredWhileMoving": true,
+      "exteriorRestored": true,
+      "jsErrors": 0
+    }
+  ]
+}
