@@ -1,0 +1,7 @@
+
+> sparkle-learning-hub@1.4.0 qa:cohesive:v46
+> node scripts/qa-cohesive-v46.mjs
+
+V46_COHESIVE_BROWSER_PASS {"device":"tablet","who":"tae","nativeHero":true,"nativeActors":13,"nativeMarine":2,"legacySprites":0,"cohesiveInstances":118,"portraits":true,"friends":true,"wardrobe":true,"pond":true,"ocean":true,"career":true,"waveVerified":true,"jsErrors":0}
+V46_COHESIVE_BROWSER_PASS {"device":"galaxy","who":"se","nativeHero":true,"nativeActors":13,"nativeMarine":2,"legacySprites":0,"cohesiveInstances":122,"portraits":true,"friends":true,"wardrobe":true,"pond":true,"ocean":true,"career":true,"waveVerified":true,"jsErrors":0}
+V46_COHESIVE_ALL_PASS

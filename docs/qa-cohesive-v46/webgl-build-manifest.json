@@ -1,0 +1,25 @@
+{
+  "version": "cohesive-v46-20261105",
+  "files": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 24229849,
+      "sha256": "3dae82f520488c300dc6b83144ec02fd87628e4a736d162167fa89bae4a6ec36"
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6074407,
+      "sha256": "3e66e04322c876f63a4b446a984f9db2b1ef4286f58db79c765bec7c5c2edf09"
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70857,
+      "sha256": "f3a1b09916e81587a18dae41c2f4384a1439656fee08d8d16eb27c3a72cda49a"
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "768189a56bab6a305ccfd7c112254f9d513d38e92f9840a9d75d15942f099764"
+    }
+  ]
+}

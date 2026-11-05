@@ -1,0 +1,74 @@
+{
+  "source": "Pixor Fairy",
+  "author": "Frakassets",
+  "license": "CC0-1.0",
+  "sourceBlendSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468",
+  "derivatives": [
+    {
+      "id": "Character/tae",
+      "file": "Character_tae.fbx",
+      "webGroup": "characters",
+      "webKey": "tae",
+      "aliases": [
+        "Characters/taehee_original"
+      ],
+      "runtime": true,
+      "width": 2.9139550504588905,
+      "height": 3.8,
+      "depth": 1.717309185534252,
+      "triangles": 23806,
+      "vertices": 12073,
+      "pieces": [
+        "Body",
+        "Head",
+        "LegL",
+        "WingR",
+        "ArmR",
+        "ArmL",
+        "WingL",
+        "LegR"
+      ],
+      "sha256": "2ebcc362727bec97a338e9f9103c448aa819384b48a787b6ab5a8270a626fc34",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "Frakassets/Pixor Fairy CC0 imported body, face, hair, limbs and wings; smoothed and recolored; original flower wreath, facial highlights and dress trim added",
+      "sourceAsset": "Pixor library Fairy",
+      "sourceAuthor": "Frakassets",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://pixor.art/library/crystals/fairy/",
+      "sourceSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468"
+    },
+    {
+      "id": "Character/se",
+      "file": "Character_se.fbx",
+      "webGroup": "characters",
+      "webKey": "se",
+      "aliases": [
+        "Characters/sehee_original"
+      ],
+      "runtime": true,
+      "width": 2.798930508993408,
+      "height": 3.65,
+      "depth": 1.6495206650526366,
+      "triangles": 23806,
+      "vertices": 12073,
+      "pieces": [
+        "ArmL",
+        "Head",
+        "Body",
+        "WingR",
+        "ArmR",
+        "LegL",
+        "LegR",
+        "WingL"
+      ],
+      "sha256": "43f578db115009dfd14f0509fafe238a224344be4f04997ead02b2a68e98c8e1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "Frakassets/Pixor Fairy CC0 imported body, face, hair, limbs and wings; smoothed and recolored; original flower wreath, facial highlights and dress trim added",
+      "sourceAsset": "Pixor library Fairy",
+      "sourceAuthor": "Frakassets",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://pixor.art/library/crystals/fairy/",
+      "sourceSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468"
+    }
+  ]
+}

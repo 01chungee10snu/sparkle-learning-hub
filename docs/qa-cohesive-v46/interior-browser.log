@@ -1,0 +1,15 @@
+
+> sparkle-learning-hub@1.4.0 qa:interiors:v45
+> node scripts/qa-interiors-v45.mjs
+
+V45_LEARNING_RESTORE_PASS tablet {"font":24.576,"height":102.4375}
+V45_ROOM_PASS math
+V45_ROOM_PASS korean
+V45_ROOM_PASS hanja
+V45_ROOM_PASS challenge
+V45_ROOM_PASS practice
+V45_ROOM_PASS growth
+V45_CONTENT_PASS {"device":"tablet","who":"tae","rooms":["commons","english","math","korean","hanja","challenge","practice","growth","pond","garden","ocean","shop","career"],"nativeInteriors":true,"learningAnswer":true,"hintVisual":true,"literalObjectVerified":true,"completionVerified":false,"feedbackVisual":true,"exteriorRestored":true,"directBuildingRetap":true,"answerFont":24.576,"answerHeight":102.4375,"jsErrors":0}
+V45_LEARNING_RESTORE_PASS galaxy {"font":21,"height":146.796875}
+V45_CONTENT_PASS {"device":"galaxy","who":"se","rooms":["commons","english","pond","garden","ocean","shop"],"nativeInteriors":true,"learningAnswer":true,"hintVisual":true,"literalObjectVerified":false,"completionVerified":true,"feedbackVisual":true,"exteriorRestored":true,"directBuildingRetap":true,"answerFont":21,"answerHeight":146.796875,"jsErrors":0}
+V45_INTERIOR_QA_PASS 2

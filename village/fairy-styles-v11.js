@@ -1,6 +1,7 @@
+import {characterArt} from '../platform/cohesive-art-v46.js?v=cohesive-v46-20261105';
 /** The original 1254px character PNGs are immutable; variant art is layered in Unity. */
 export const FAIRY_STYLES=Object.freeze([
-  Object.freeze({id:'classic',icon:'🧚',name:'처음 만난 요정',detail:'원래의 분홍 별 · 연보라 달빛 모습을 그대로',
+  Object.freeze({id:'classic',icon:'🧚',name:'처음 만난 요정',detail:'분홍 별 · 연보라 달빛의 새 입체 요정',
     theme:'original'}),
   Object.freeze({id:'garden',icon:'🌸',name:'꽃정원 수호자',detail:'꽃잎 · 새싹 · 연한 꽃빛이 따라와요',theme:'garden'}),
   Object.freeze({id:'starlight',icon:'🌙',name:'달빛 별지기',detail:'작은 별과 반짝이는 마법 먼지',theme:'starlight'}),
@@ -28,5 +29,5 @@ export function findFairyStyle(style){
   return FAIRY_STYLES.find(s=>s.id===style)||FAIRY_STYLES[0];
 }
 export function fairyPortrait(who){
-  return who==='se'?'./assets/sehee_original.png':'./assets/taehee_original.png';
+  return characterArt(who==='se'?'se':'tae');
 }

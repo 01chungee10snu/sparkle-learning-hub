@@ -1,3 +1,4 @@
+import {careerArt} from '../platform/cohesive-art-v46.js?v=cohesive-v46-20261105';
 import {CAREERS,CAREER_GROUPS,CAREER_SOURCES} from './career-library.js?v=child-ux-v33-20261020';
 import {academicSignalsForCareer,HEALTHCARE_MEDIAN_CONTEXT,SKKU_2025_RESULT_REPORT_PDF} from './career-academic-evidence-v28.js?v=skku-pdf-v28a';
 import {ARCHIVED_CAREER_NAMES} from './career-state.js';
@@ -26,14 +27,15 @@ const friendlyOrder=(a,b)=>(childFriendlyRank.get(a.id)??999)-(childFriendlyRank
  ||a.name.localeCompare(b.name,'ko');
 function careerArtwork(c,kind){
  const img=el('img',kind==='detail'?'career-detail-artwork':'career-card-artwork');
- img.src=c.illustration+"?v=child-safe-v32-20261019";
+ img.src=careerArt(c.id)||c.illustration;
  img.alt=c.name+'의 어린이 직업 일러스트';
  img.width=kind==='detail'?320:220;
  img.height=kind==='detail'?260:180;
  img.loading=kind==='detail'?'eager':'lazy';
  img.decoding='async';
  img.addEventListener('error',()=>{
-  img.replaceWith(el('span',kind==='detail'?'career-detail-icon':'career-card-icon',c.emoji));
+  if(img.src!==new URL(c.illustration,document.baseURI).href)img.src=c.illustration;
+  else img.replaceWith(el('span',kind==='detail'?'career-detail-icon':'career-card-icon',c.emoji));
  },{once:true});
  return img;
 }

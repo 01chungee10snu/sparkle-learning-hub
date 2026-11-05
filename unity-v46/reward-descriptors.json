@@ -1,0 +1,290 @@
+[
+  {
+    "id": "sun-spark",
+    "title": "햇살 반짝이",
+    "category": "light",
+    "emoji": "☀️"
+  },
+  {
+    "id": "mint-gems",
+    "title": "민트 보석빛",
+    "category": "light",
+    "emoji": "💎"
+  },
+  {
+    "id": "trail-stars",
+    "title": "반짝 별 꼬리",
+    "category": "light",
+    "emoji": "✨"
+  },
+  {
+    "id": "coral-orbit",
+    "title": "살구빛 궤도",
+    "category": "light",
+    "emoji": "🟠"
+  },
+  {
+    "id": "ocean-stars",
+    "title": "바다 별빛",
+    "category": "light",
+    "emoji": "💙"
+  },
+  {
+    "id": "halo",
+    "title": "빛나는 꽃 고리",
+    "category": "light",
+    "emoji": "🌸"
+  },
+  {
+    "id": "rainbow-orbit",
+    "title": "무지개 별빛",
+    "category": "light",
+    "emoji": "🌈"
+  },
+  {
+    "id": "comet",
+    "title": "혜성 날개",
+    "category": "light",
+    "emoji": "☄️"
+  },
+  {
+    "id": "galaxy-glow",
+    "title": "은하수 반짝임",
+    "category": "light",
+    "emoji": "🌌"
+  },
+  {
+    "id": "bg-sky",
+    "title": "하늘빛 배움터",
+    "category": "background",
+    "emoji": "🩵"
+  },
+  {
+    "id": "bg-leaf",
+    "title": "새싹빛 배움터",
+    "category": "background",
+    "emoji": "🌱"
+  },
+  {
+    "id": "bg-peach",
+    "title": "복숭아빛 배움터",
+    "category": "background",
+    "emoji": "🍑"
+  },
+  {
+    "id": "bg-ocean",
+    "title": "바다빛 배움터",
+    "category": "background",
+    "emoji": "🌊"
+  },
+  {
+    "id": "bg-lemon",
+    "title": "레몬빛 배움터",
+    "category": "background",
+    "emoji": "🍋"
+  },
+  {
+    "id": "bg-lilac",
+    "title": "라일락빛 배움터",
+    "category": "background",
+    "emoji": "💜"
+  },
+  {
+    "id": "bg-rose",
+    "title": "장미빛 배움터",
+    "category": "background",
+    "emoji": "🌷"
+  },
+  {
+    "id": "bg-rainbow",
+    "title": "무지개빛 배움터",
+    "category": "background",
+    "emoji": "🌈"
+  },
+  {
+    "id": "friend-rabbit",
+    "title": "토끼 친구",
+    "category": "friend",
+    "emoji": "🐰"
+  },
+  {
+    "id": "friend-cat",
+    "title": "고양이 친구",
+    "category": "friend",
+    "emoji": "🐱"
+  },
+  {
+    "id": "friend-bear",
+    "title": "곰 친구",
+    "category": "friend",
+    "emoji": "🐻"
+  },
+  {
+    "id": "friend-fox",
+    "title": "여우 친구",
+    "category": "friend",
+    "emoji": "🦊"
+  },
+  {
+    "id": "friend-owl",
+    "title": "부엉이 친구",
+    "category": "friend",
+    "emoji": "🦉"
+  },
+  {
+    "id": "friend-butterfly",
+    "title": "나비 친구",
+    "category": "friend",
+    "emoji": "🦋"
+  },
+  {
+    "id": "friend-penguin",
+    "title": "펭귄 친구",
+    "category": "friend",
+    "emoji": "🐧"
+  },
+  {
+    "id": "friend-whale",
+    "title": "고래 친구",
+    "category": "friend",
+    "emoji": "🐳"
+  },
+  {
+    "id": "mark-flower",
+    "title": "꽃 응원 마크",
+    "category": "mark",
+    "emoji": "🌼"
+  },
+  {
+    "id": "mark-leaf",
+    "title": "새싹 응원 마크",
+    "category": "mark",
+    "emoji": "🌱"
+  },
+  {
+    "id": "mark-ribbon",
+    "title": "리본 응원 마크",
+    "category": "mark",
+    "emoji": "🎀"
+  },
+  {
+    "id": "mark-heart",
+    "title": "하트 응원 마크",
+    "category": "mark",
+    "emoji": "💗"
+  },
+  {
+    "id": "mark-clover",
+    "title": "네잎클로버 마크",
+    "category": "mark",
+    "emoji": "🍀"
+  },
+  {
+    "id": "mark-cherry",
+    "title": "체리 응원 마크",
+    "category": "mark",
+    "emoji": "🍒"
+  },
+  {
+    "id": "mark-moon",
+    "title": "달 응원 마크",
+    "category": "mark",
+    "emoji": "🌙"
+  },
+  {
+    "id": "mark-palette",
+    "title": "알록달록 응원 마크",
+    "category": "mark",
+    "emoji": "🎨"
+  },
+  {
+    "id": "title-curious",
+    "title": "궁금한 탐험가",
+    "category": "title",
+    "emoji": "🔎"
+  },
+  {
+    "id": "title-number",
+    "title": "숫자 여행자",
+    "category": "title",
+    "emoji": "🔢"
+  },
+  {
+    "id": "title-word",
+    "title": "낱말 수집가",
+    "category": "title",
+    "emoji": "📚"
+  },
+  {
+    "id": "title-hello",
+    "title": "인사 여행자",
+    "category": "title",
+    "emoji": "👋"
+  },
+  {
+    "id": "title-thinker",
+    "title": "생각 정원사",
+    "category": "title",
+    "emoji": "🌻"
+  },
+  {
+    "id": "title-maker",
+    "title": "상상 발명가",
+    "category": "title",
+    "emoji": "💡"
+  },
+  {
+    "id": "title-story",
+    "title": "이야기 작가",
+    "category": "title",
+    "emoji": "✏️"
+  },
+  {
+    "id": "title-space",
+    "title": "별빛 모험가",
+    "category": "title",
+    "emoji": "🚀"
+  },
+  {
+    "id": "story",
+    "title": "함께 이야기 읽기",
+    "category": "family",
+    "emoji": "📖"
+  },
+  {
+    "id": "drawing",
+    "title": "함께 그림 그리기",
+    "category": "family",
+    "emoji": "🖍️"
+  },
+  {
+    "id": "paperfold",
+    "title": "함께 종이접기",
+    "category": "family",
+    "emoji": "🧩"
+  },
+  {
+    "id": "walk",
+    "title": "함께 산책하기",
+    "category": "family",
+    "emoji": "🌳"
+  },
+  {
+    "id": "experiment",
+    "title": "함께 작은 실험",
+    "category": "family",
+    "emoji": "🔬"
+  },
+  {
+    "id": "cooking",
+    "title": "함께 간식 만들기",
+    "category": "family",
+    "emoji": "🥣"
+  },
+  {
+    "id": "picnic",
+    "title": "함께 소풍 계획하기",
+    "category": "family",
+    "emoji": "🧺"
+  }
+]

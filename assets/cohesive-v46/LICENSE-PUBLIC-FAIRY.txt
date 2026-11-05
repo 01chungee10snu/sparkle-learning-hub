@@ -1,0 +1,11 @@
+Public source used for the two learner heroes
+
+Fairy — Frakassets / Pixor
+Declared dedication: CC0-1.0
+Source: https://pixor.art/library/crystals/fairy/
+Publisher licence: https://pixor.art/library/license/
+
+The publisher permits modification and commercial or personal game use.
+The pink and lavender variants edit the original meshes and add original decoration.
+See credits.json for source hashes and modifications. This notice does not change
+the licence of any other app code, data or art. Original character files are preserved.

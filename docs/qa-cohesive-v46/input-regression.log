@@ -1,0 +1,6 @@
+
+> sparkle-learning-hub@1.4.0 qa:content-inputs:v45
+> node scripts/qa-content-interactions-v45.mjs
+
+V45_INTERACTION_PASS {"viewport":"compact","numericInput":true,"numericMetrics":{"height":54.796875,"font":26},"matching":true,"counting":true,"semanticPreservation":true,"jsErrors":0}
+V45_INTERACTION_PASS {"viewport":"landscape","numericInput":true,"numericMetrics":{"height":54.796875,"font":26},"matching":true,"counting":true,"semanticPreservation":true,"jsErrors":0}

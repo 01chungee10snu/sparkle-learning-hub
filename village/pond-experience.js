@@ -1,3 +1,4 @@
+import {marineArt} from '../platform/cohesive-art-v46.js?v=cohesive-v46-20261105';
 /** A quiet, touch-friendly pond. The host owns every second and every receipt. */
 const SUBJECTS={math:['💎','수정'],korean:['🌸','꽃잎'],english:['🪶','깃털'],hanja:['🖋️','먹방울']};
 const clamp=(value,lo,hi)=>Math.max(lo,Math.min(hi,value));
@@ -70,7 +71,7 @@ export function mountPondExperience(container,{fish=[],status=null,request,onLea
   function addFish(f,index){
     const el=control('',()=>react(actor),'pond-swimmer');el.dataset.fish=f.id;
     el.setAttribute('aria-label',f.name+'에게 인사하기');el.disabled=true;
-    const image=document.createElement('img');image.src=f.art;image.alt='';image.width=220;image.height=180;image.decoding='async';
+    const image=document.createElement('img');image.src=marineArt(f.id)||f.art;image.addEventListener('error',()=>{image.src=f.art;},{once:true});image.alt='';image.width=220;image.height=180;image.decoding='async';
     el.append(image);layer.append(el);
     const actor={fish:f,el,image,x:18+(index%4)*21,y:32+Math.floor(index/4)*28,targetX:18+(index%4)*21,targetY:32+Math.floor(index/4)*28,flip:index%2===1,phase:index*1.71,reactionUntil:0,reaction:''};
     el.style.setProperty('--fish-size',String(clamp(110+(f.size||.5)*45,126,175))+'px');

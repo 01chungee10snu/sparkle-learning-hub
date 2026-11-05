@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "version": "cohesive-v46-20261105",
+  "productionDataTouched": false,
+  "results": [
+    {
+      "device": "tablet",
+      "who": "tae",
+      "nativeHero": true,
+      "nativeActors": 13,
+      "nativeMarine": 2,
+      "legacySprites": 0,
+      "cohesiveInstances": 118,
+      "portraits": true,
+      "friends": true,
+      "wardrobe": true,
+      "pond": true,
+      "ocean": true,
+      "career": true,
+      "waveVerified": true,
+      "jsErrors": 0
+    },
+    {
+      "device": "galaxy",
+      "who": "se",
+      "nativeHero": true,
+      "nativeActors": 13,
+      "nativeMarine": 2,
+      "legacySprites": 0,
+      "cohesiveInstances": 122,
+      "portraits": true,
+      "friends": true,
+      "wardrobe": true,
+      "pond": true,
+      "ocean": true,
+      "career": true,
+      "waveVerified": true,
+      "jsErrors": 0
+    }
+  ],
+  "standaloneGifts": true,
+  "parentReport": true
+}

@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "version": "interiors-v45-20261105",
+  "productionDataTouched": false,
+  "results": [
+    {
+      "device": "tablet",
+      "who": "tae",
+      "rooms": [
+        "commons",
+        "english",
+        "math",
+        "korean",
+        "hanja",
+        "challenge",
+        "practice",
+        "growth",
+        "pond",
+        "garden",
+        "ocean",
+        "shop",
+        "career"
+      ],
+      "nativeInteriors": true,
+      "learningAnswer": true,
+      "hintVisual": true,
+      "literalObjectVerified": true,
+      "completionVerified": false,
+      "feedbackVisual": true,
+      "exteriorRestored": true,
+      "directBuildingRetap": true,
+      "answerFont": 24.576,
+      "answerHeight": 102.4375,
+      "jsErrors": 0
+    },
+    {
+      "device": "galaxy",
+      "who": "se",
+      "rooms": [
+        "commons",
+        "english",
+        "pond",
+        "garden",
+        "ocean",
+        "shop"
+      ],
+      "nativeInteriors": true,
+      "learningAnswer": true,
+      "hintVisual": true,
+      "literalObjectVerified": false,
+      "completionVerified": true,
+      "feedbackVisual": true,
+      "exteriorRestored": true,
+      "directBuildingRetap": true,
+      "answerFont": 21,
+      "answerHeight": 146.796875,
+      "jsErrors": 0
+    }
+  ],
+  "fallbackVerified": true
+}

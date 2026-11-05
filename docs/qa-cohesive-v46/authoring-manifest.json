@@ -1,0 +1,5595 @@
+{
+  "version": 46,
+  "versionTag": "cohesive-v46-20261105",
+  "source": "Original Blender scenery and content, with two attributed CC0 Pixor Fairy-derived playable heroes",
+  "assets": [
+    {
+      "id": "Character/tae",
+      "file": "Character_tae.fbx",
+      "webGroup": "characters",
+      "webKey": "tae",
+      "aliases": [
+        "Characters/taehee_original"
+      ],
+      "runtime": true,
+      "width": 2.9139550504588905,
+      "height": 3.8,
+      "depth": 1.717309185534252,
+      "triangles": 23806,
+      "vertices": 12073,
+      "pieces": [
+        "Body",
+        "Head",
+        "LegL",
+        "WingR",
+        "ArmR",
+        "ArmL",
+        "WingL",
+        "LegR"
+      ],
+      "sha256": "2ebcc362727bec97a338e9f9103c448aa819384b48a787b6ab5a8270a626fc34",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "Frakassets/Pixor Fairy CC0 imported body, face, hair, limbs and wings; smoothed and recolored; original flower wreath, facial highlights and dress trim added",
+      "sourceAsset": "Pixor library Fairy",
+      "sourceAuthor": "Frakassets",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://pixor.art/library/crystals/fairy/",
+      "sourceSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468"
+    },
+    {
+      "id": "Character/se",
+      "file": "Character_se.fbx",
+      "webGroup": "characters",
+      "webKey": "se",
+      "aliases": [
+        "Characters/sehee_original"
+      ],
+      "runtime": true,
+      "width": 2.798930508993408,
+      "height": 3.65,
+      "depth": 1.6495206650526366,
+      "triangles": 23806,
+      "vertices": 12073,
+      "pieces": [
+        "ArmL",
+        "Head",
+        "Body",
+        "WingR",
+        "ArmR",
+        "LegL",
+        "LegR",
+        "WingL"
+      ],
+      "sha256": "43f578db115009dfd14f0509fafe238a224344be4f04997ead02b2a68e98c8e1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "Frakassets/Pixor Fairy CC0 imported body, face, hair, limbs and wings; smoothed and recolored; original flower wreath, facial highlights and dress trim added",
+      "sourceAsset": "Pixor library Fairy",
+      "sourceAuthor": "Frakassets",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://pixor.art/library/crystals/fairy/",
+      "sourceSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468"
+    },
+    {
+      "id": "Character/npc_bunny",
+      "file": "Character_npc_bunny.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_bunny",
+      "aliases": [
+        "World/npc_bunny"
+      ],
+      "runtime": true,
+      "width": 1.2429756808107022,
+      "height": 3.2000000000000006,
+      "depth": 1.646281108331203,
+      "triangles": 3836,
+      "vertices": 1948,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ae7334ed06ebfb92fba82014eaff83f3c7ac2cbb2100b63c4883f1a317a56173",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_cat",
+      "file": "Character_npc_cat.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_cat",
+      "aliases": [
+        "World/npc_cat"
+      ],
+      "runtime": true,
+      "width": 2.0284156115179104,
+      "height": 3.2,
+      "depth": 1.8622951383521487,
+      "triangles": 3108,
+      "vertices": 1586,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "86be7db4d427c1bfe82569c6bf4d514d9f4c33be581f9438c9bf595733bda1da",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_owl",
+      "file": "Character_npc_owl.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_owl",
+      "aliases": [
+        "World/npc_owl"
+      ],
+      "runtime": true,
+      "width": 2.205483544085071,
+      "height": 3.2,
+      "depth": 1.6541125553629703,
+      "triangles": 6516,
+      "vertices": 3304,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "354d6ef9fc38859788a67701386d1a88760237e75b56e10021a9693a49d9115a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_squirrel",
+      "file": "Character_npc_squirrel.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_squirrel",
+      "aliases": [
+        "World/npc_squirrel"
+      ],
+      "runtime": true,
+      "width": 2.4163438828270545,
+      "height": 3.2,
+      "depth": 2.3028901568408355,
+      "triangles": 4340,
+      "vertices": 2200,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7c43f674f2d75769083b4b897d8f5c93ab67d0f6171952021baf33ad0bf86cc5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_butterfly",
+      "file": "Character_npc_butterfly.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_butterfly",
+      "aliases": [
+        "World/butterfly"
+      ],
+      "runtime": true,
+      "width": 2.8091941294178415,
+      "height": 2.0,
+      "depth": 0.49427574421300446,
+      "triangles": 4760,
+      "vertices": 2416,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d6bd41b4ff846a7f28aa17315fd5811ed5f8c6de832f4987bca1d3be7b970cb2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_teacher",
+      "file": "Character_npc_teacher.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_teacher",
+      "aliases": [
+        "Bebsu/brown"
+      ],
+      "runtime": true,
+      "width": 2.70805994665997,
+      "height": 3.2,
+      "depth": 2.1118522936532313,
+      "triangles": 3864,
+      "vertices": 1966,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6a9b7e60674ae9bdfd84a82060b971ab05cc7ce78d14377ed15510e0a17d4feb",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_scholar",
+      "file": "Character_npc_scholar.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_scholar",
+      "aliases": [
+        "Bebsu/pink"
+      ],
+      "runtime": true,
+      "width": 2.70805994665997,
+      "height": 3.2,
+      "depth": 2.1118522936532313,
+      "triangles": 3864,
+      "vertices": 1966,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b09e0d9ff5b50b342db508099fa5eaade6dd8f41d77ae1326735d332b9efb605",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Character/npc_turtle",
+      "file": "Character_npc_turtle.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_turtle",
+      "aliases": [],
+      "runtime": false,
+      "width": 10.175213939274128,
+      "height": 3.1999999999999997,
+      "depth": 7.904157324466811,
+      "triangles": 4508,
+      "vertices": 2290,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6bc542df5ae0cba2dea2ee4b61ef78a2c809ff31c4bf8648e9ac055054f990e8",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "turtle"
+    },
+    {
+      "id": "Character/npc_fox",
+      "file": "Character_npc_fox.fbx",
+      "webGroup": "characters",
+      "webKey": "npc_fox",
+      "aliases": [],
+      "runtime": false,
+      "width": 2.4088981366995865,
+      "height": 3.2,
+      "depth": 2.3063830058200048,
+      "triangles": 3084,
+      "vertices": 1568,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d8f2d2b67364acb6c1dbe44b5b88ba9ffe7d98642e720e94749f70dbce905c48",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Marine/guppy",
+      "file": "Marine_guppy.fbx",
+      "webGroup": "marine",
+      "webKey": "guppy",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8984680440988522,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "5bdd39f3409b4992d0098f5de6626e2f0b0f0620a4bfbe7a5e74296f3c4cb6b4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/goldfish",
+      "file": "Marine_goldfish.fbx",
+      "webGroup": "marine",
+      "webKey": "goldfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "9fc26569e9b1c2b43129fdee3f2ccaf2e61d853b8044e1cdb1564c6109c50a66",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/neon",
+      "file": "Marine_neon.fbx",
+      "webGroup": "marine",
+      "webKey": "neon",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 3468,
+      "vertices": 1770,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "c068ed882697e1af6d76cc59ca5f0df1d5341320f7486ec37cef8ead3afa0fd5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/betta",
+      "file": "Marine_betta.fbx",
+      "webGroup": "marine",
+      "webKey": "betta",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.9296938431276938,
+      "depth": 0.5095970698446799,
+      "triangles": 2992,
+      "vertices": 1534,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "8721b0b865a6b3731cc0b7a3ad287825d4332fd23d3db55a8fbfdc513811eade",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/koi",
+      "file": "Marine_koi.fbx",
+      "webGroup": "marine",
+      "webKey": "koi",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 3916,
+      "vertices": 2002,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "bff097a0f21d782a63937e466fde05bbd8d8f8ee760633cb843b91206ce7a430",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/angel",
+      "file": "Marine_angel.fbx",
+      "webGroup": "marine",
+      "webKey": "angel",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.4494257720263377,
+      "depth": 0.5095970698446799,
+      "triangles": 3260,
+      "vertices": 1676,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "6d62a5caa7c00265cedc8bc13fdc23c82cf0123e6963b7e28ac4c7c8c7324dab",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/platy",
+      "file": "Marine_platy.fbx",
+      "webGroup": "marine",
+      "webKey": "platy",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "65bfaac895cf9411d2f757b2ba6d1c4606fdcd56b79e9b1fdac9d6c44a265688",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/black-molly",
+      "file": "Marine_black-molly.fbx",
+      "webGroup": "marine",
+      "webKey": "black-molly",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "5ccfdcb662a3a8d120ff09e37537126a33129231a1fbff95e0ce92f7cdbfb14b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/zebra-danio",
+      "file": "Marine_zebra-danio.fbx",
+      "webGroup": "marine",
+      "webKey": "zebra-danio",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 4588,
+      "vertices": 2338,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "0799d9cfab2a386fe1ef408a379ca5ca380a5871f566a5b25fc5f1e5dcc28f17",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/cherry-barb",
+      "file": "Marine_cherry-barb.fbx",
+      "webGroup": "marine",
+      "webKey": "cherry-barb",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 3736,
+      "vertices": 1906,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "dbcd09783b1f4130ea3965c230e4111b5e16a65c509ed9f7d7456b1ceec59dd7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/harlequin-rasbora",
+      "file": "Marine_harlequin-rasbora.fbx",
+      "webGroup": "marine",
+      "webKey": "harlequin-rasbora",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2924,
+      "vertices": 1498,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "27039fbb0348f9837a90e6a7c39a2bcaf7cd3dd46a44beb97d94a7a15149bb3a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/dwarf-gourami",
+      "file": "Marine_dwarf-gourami.fbx",
+      "webGroup": "marine",
+      "webKey": "dwarf-gourami",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.885057567127393,
+      "depth": 0.5095970698446799,
+      "triangles": 4720,
+      "vertices": 2414,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "9817a00a7d8467fc44b8f9b5b6084b17fe5ee4ca6b8af5748fefcb7fb2165d84",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/bronze-corydoras",
+      "file": "Marine_bronze-corydoras.fbx",
+      "webGroup": "marine",
+      "webKey": "bronze-corydoras",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6667823988989356,
+      "depth": 0.4746558918784255,
+      "triangles": 3252,
+      "vertices": 1670,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "75adb2d84b40c1161e54f92d274a2fe0d232cf9efe9ca307b767600e3df892df",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/otocinclus",
+      "file": "Marine_otocinclus.fbx",
+      "webGroup": "marine",
+      "webKey": "otocinclus",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.579852869592696,
+      "depth": 0.4746558918784255,
+      "triangles": 3812,
+      "vertices": 1954,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "c4d036a91b143f096e7e8035cdec4e70e724553e0674f3901eb559e4df0ba2b0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/medaka",
+      "file": "Marine_medaka.fbx",
+      "webGroup": "marine",
+      "webKey": "medaka",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "00e8b38904d02a5ae69186c73c38615f958a9d28aac16b5ec8cb2bce1b7273bd",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/white-cloud-minnow",
+      "file": "Marine_white-cloud-minnow.fbx",
+      "webGroup": "marine",
+      "webKey": "white-cloud-minnow",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 3468,
+      "vertices": 1770,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "5bdc3331a2344257acafd7158abc6daa6c32354f8a0a71157e598a2b83691ef0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/celestial-pearl-danio",
+      "file": "Marine_celestial-pearl-danio.fbx",
+      "webGroup": "marine",
+      "webKey": "celestial-pearl-danio",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 6748,
+      "vertices": 3502,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "c5cc6a9d364c845decd023b50a875024c0a1d02e827cda4a6247f0c7d9ee3cb5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/rummy-nose-tetra",
+      "file": "Marine_rummy-nose-tetra.fbx",
+      "webGroup": "marine",
+      "webKey": "rummy-nose-tetra",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 3736,
+      "vertices": 1906,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "4f82171f91c584ee68ad106b82b647bc34fb6334685c1ceac148dfc8e646a2f7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/discus",
+      "file": "Marine_discus.fbx",
+      "webGroup": "marine",
+      "webKey": "discus",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.3103452885792106,
+      "depth": 0.5095970698446799,
+      "triangles": 7100,
+      "vertices": 3692,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "c2a5746ce675499467351cec1459b07c8f725cc674aa425fc2e277f3d1af6b89",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/german-blue-ram",
+      "file": "Marine_german-blue-ram.fbx",
+      "webGroup": "marine",
+      "webKey": "german-blue-ram",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 6748,
+      "vertices": 3502,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "8ddd6c127e88c50be6296a3fb0610400f6539b89b7220f69c793ddc85f754f87",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/pearl-gourami",
+      "file": "Marine_pearl-gourami.fbx",
+      "webGroup": "marine",
+      "webKey": "pearl-gourami",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.885057567127393,
+      "depth": 0.5095970698446799,
+      "triangles": 6832,
+      "vertices": 3550,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "beba25a8480a09087ce4ea10727043b9d90c7f12f9ba2c37d5b2c87153c0c29b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/panda-corydoras",
+      "file": "Marine_panda-corydoras.fbx",
+      "webGroup": "marine",
+      "webKey": "panda-corydoras",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6667823988989356,
+      "depth": 0.4746558918784255,
+      "triangles": 4072,
+      "vertices": 2088,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "2521bb7c29444131c16b2266dc67f26ddfaad7d65ff1043ec02c386caa5a660f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/scarlet-badis",
+      "file": "Marine_scarlet-badis.fbx",
+      "webGroup": "marine",
+      "webKey": "scarlet-badis",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 6748,
+      "vertices": 3502,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "bab91b6150ecf7c39c004b30eb1636edbb2e0a55df8c2b50f27060273a154b0b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/clown-killifish",
+      "file": "Marine_clown-killifish.fbx",
+      "webGroup": "marine",
+      "webKey": "clown-killifish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6225379866582419,
+      "depth": 0.5095970698446799,
+      "triangles": 4636,
+      "vertices": 2366,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "1c6411b3241fd2df4a3a98ee713b7abf3233267108c5a93b277d2b5282a9e075",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/clownfish",
+      "file": "Marine_clownfish.fbx",
+      "webGroup": "marine",
+      "webKey": "clownfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 4204,
+      "vertices": 2146,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "2c2f69cd0355edb5a8786598f9547b4674c98d8001f35dbe98cf1d1e8695d57d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/yellowtail-damselfish",
+      "file": "Marine_yellowtail-damselfish.fbx",
+      "webGroup": "marine",
+      "webKey": "yellowtail-damselfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "ec9938c4f65e929257433c6c5f6c53a2aa02a286b5b7e0c4e7a83364790ff003",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/royal-gramma",
+      "file": "Marine_royal-gramma.fbx",
+      "webGroup": "marine",
+      "webKey": "royal-gramma",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 3484,
+      "vertices": 1778,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "74ad8c0c7e60e9ef76b1391732793ccdcbc92dddfb29ff365276e2bd967958bc",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/copperband-butterflyfish",
+      "file": "Marine_copperband-butterflyfish.fbx",
+      "webGroup": "marine",
+      "webKey": "copperband-butterflyfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.9509769027231635,
+      "depth": 0.4456818853628568,
+      "triangles": 5068,
+      "vertices": 2588,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "7e19bede38e813ab6a1755511276aa8fdb578e235ab7520b4888de836984721b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/blue-tang",
+      "file": "Marine_blue-tang.fbx",
+      "webGroup": "marine",
+      "webKey": "blue-tang",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 2908,
+      "vertices": 1486,
+      "pieces": [
+        "Tail",
+        "Body"
+      ],
+      "sha256": "30d8bbaccc3e2fff42cb82c0d8cfe1776c11836f58fff155152221c6404a7b3c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/longnose-butterflyfish",
+      "file": "Marine_longnose-butterflyfish.fbx",
+      "webGroup": "marine",
+      "webKey": "longnose-butterflyfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.9509769027231635,
+      "depth": 0.4456818853628568,
+      "triangles": 3340,
+      "vertices": 1708,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "8139a95e3ad3d8e2a2b1488c128076186e80b029018d82f3343e9cf7dfb49fd5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/porcupinefish",
+      "file": "Marine_porcupinefish.fbx",
+      "webGroup": "marine",
+      "webKey": "porcupinefish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.57173301333783,
+      "triangles": 3748,
+      "vertices": 1966,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "e87171d6e7ee3ae8908f76e53b75bc91a58369f63d832ac74dd972a8b15f4cfa",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/yellow-boxfish",
+      "file": "Marine_yellow-boxfish.fbx",
+      "webGroup": "marine",
+      "webKey": "yellow-boxfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7285103871488543,
+      "depth": 0.5095970698446799,
+      "triangles": 6016,
+      "vertices": 3136,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "25585dd9bc28508a8eb376cfc348da330dce858d1395bd0c83b4ef13b7036e81",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/shrimp",
+      "file": "Marine_shrimp.fbx",
+      "webGroup": "marine",
+      "webKey": "shrimp",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.6616339380951923,
+      "depth": 0.8906301158055354,
+      "triangles": 6084,
+      "vertices": 3164,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e4dbed72954513038d17838e8059e69951742d045e15edce00536d2f2149352a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/long-spined-urchin",
+      "file": "Marine_long-spined-urchin.fbx",
+      "webGroup": "marine",
+      "webKey": "long-spined-urchin",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6434269252785836,
+      "height": 1.4994101260112593,
+      "depth": 1.65,
+      "triangles": 1872,
+      "vertices": 1068,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a663a3f689c9888dec5866dd5a24411bc87a2a1b7414fa1c4d1783acf7d8cba9",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "urchin"
+    },
+    {
+      "id": "Marine/common-starfish",
+      "file": "Marine_common-starfish.fbx",
+      "webGroup": "marine",
+      "webKey": "common-starfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.11190187145577914,
+      "depth": 1.5692431681689256,
+      "triangles": 1510,
+      "vertices": 791,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "16ad70f2b094a7f3e60d7e8e15c42b2a06928a53627faa62a17a60e26c9b2cef",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "starfish-5"
+    },
+    {
+      "id": "Marine/moon-jelly",
+      "file": "Marine_moon-jelly.fbx",
+      "webGroup": "marine",
+      "webKey": "moon-jelly",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.6408371845463472,
+      "depth": 1.5385139840594577,
+      "triangles": 7080,
+      "vertices": 3686,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "27fb5b1af44416eb42d35b1b299b8dc9fa25a0c77c039b0ec94f48e95c2e4a47",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "jellyfish"
+    },
+    {
+      "id": "Marine/hermit-crab",
+      "file": "Marine_hermit-crab.fbx",
+      "webGroup": "marine",
+      "webKey": "hermit-crab",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8440516434469618,
+      "depth": 1.0286004753800047,
+      "triangles": 6900,
+      "vertices": 3562,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3227b8f624a017585261dedd198ea8f773b96d92b04e023207f2a8152c151a77",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/lion-mane-jelly",
+      "file": "Marine_lion-mane-jelly.fbx",
+      "webGroup": "marine",
+      "webKey": "lion-mane-jelly",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.6408371845463472,
+      "depth": 1.5385139840594577,
+      "triangles": 7704,
+      "vertices": 4070,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "52dd19612a8e490257d4872fb79f11d94c7e5c03cf03c87ccff74ecfa4409597",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "jellyfish"
+    },
+    {
+      "id": "Marine/bluespotted-ribbontail-ray",
+      "file": "Marine_bluespotted-ribbontail-ray.fbx",
+      "webGroup": "marine",
+      "webKey": "bluespotted-ribbontail-ray",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.3660808573168317,
+      "height": 0.18133064936479626,
+      "depth": 1.65,
+      "triangles": 3524,
+      "vertices": 1822,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2e5a431c02e8c228e692c8de738e763dafcd5ebeb826bf4afcd294d3343b195d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "ray"
+    },
+    {
+      "id": "Marine/manta-ray",
+      "file": "Marine_manta-ray.fbx",
+      "webGroup": "marine",
+      "webKey": "manta-ray",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.5266577274850537,
+      "height": 0.18133064936479626,
+      "depth": 1.65,
+      "triangles": 2068,
+      "vertices": 1070,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e84cf694d81ebdf26f9bd874f925820f73a2320b877977169c129faf1bc41e62",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "ray"
+    },
+    {
+      "id": "Marine/sea-crab",
+      "file": "Marine_sea-crab.fbx",
+      "webGroup": "marine",
+      "webKey": "sea-crab",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8668310015894676,
+      "depth": 1.1668473318525279,
+      "triangles": 4644,
+      "vertices": 2432,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "99fba77b628bc23ec4f12e0d2b2cc77e610f78fd9039824304ba0467c683b70f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/bottlenose-dolphin",
+      "file": "Marine_bottlenose-dolphin.fbx",
+      "webGroup": "marine",
+      "webKey": "bottlenose-dolphin",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.5919772182263887,
+      "depth": 0.7434960368103415,
+      "triangles": 2988,
+      "vertices": 1518,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7aac0ebf9bf361dcfead1900e47cbb9cabe5236d462a4e67906093e7f706ad24",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "cetacean"
+    },
+    {
+      "id": "Marine/whale-shark",
+      "file": "Marine_whale-shark.fbx",
+      "webGroup": "marine",
+      "webKey": "whale-shark",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8884616036386932,
+      "depth": 0.809800412823634,
+      "triangles": 9868,
+      "vertices": 5138,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f4c7161eaeb7122cea9d1b8f99f0d293713a987629d12c6b22087939712fc1c2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "shark"
+    },
+    {
+      "id": "Marine/giant-squid",
+      "file": "Marine_giant-squid.fbx",
+      "webGroup": "marine",
+      "webKey": "giant-squid",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8326563054994283,
+      "depth": 1.237786041142103,
+      "triangles": 10812,
+      "vertices": 5668,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c3fe5fb619186e3d7b454ca2fdf75fe068b1f10c1d0a732265243854ed4d5170",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "squid-10"
+    },
+    {
+      "id": "Marine/seahorse",
+      "file": "Marine_seahorse.fbx",
+      "webGroup": "marine",
+      "webKey": "seahorse",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.3381234058780065,
+      "height": 1.65,
+      "depth": 0.3877739135921265,
+      "triangles": 2956,
+      "vertices": 1526,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "afb899dbb6ba89b13e30119421c951eea1cb223b5cc1e99d4290850654b1bb1a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "seahorse"
+    },
+    {
+      "id": "Marine/american-lobster",
+      "file": "Marine_american-lobster.fbx",
+      "webGroup": "marine",
+      "webKey": "american-lobster",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.6616339380951923,
+      "depth": 0.8906301158055354,
+      "triangles": 6732,
+      "vertices": 3492,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2d22d1a8cb40c5bbf0ce21d5abd1a0b954b7938c291169b86df4cf2faf8a9493",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/spiny-lobster",
+      "file": "Marine_spiny-lobster.fbx",
+      "webGroup": "marine",
+      "webKey": "spiny-lobster",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.6616339380951923,
+      "depth": 0.8906301158055354,
+      "triangles": 5396,
+      "vertices": 2796,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d49198020a401dd3df6d4dd99131759601fbc430b2a5b96c5246facac0b87d4b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/cleaner-shrimp",
+      "file": "Marine_cleaner-shrimp.fbx",
+      "webGroup": "marine",
+      "webKey": "cleaner-shrimp",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6500000000000001,
+      "height": 0.6616339380951923,
+      "depth": 0.8906301158055354,
+      "triangles": 6120,
+      "vertices": 3184,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6e2707d545d89cbe4da8656057bb6f51b4e9c376b1828c03b7f2d8200fe50b17",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "crustacean"
+    },
+    {
+      "id": "Marine/octopus",
+      "file": "Marine_octopus.fbx",
+      "webGroup": "marine",
+      "webKey": "octopus",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6466978368718392,
+      "height": 0.99043170434306,
+      "depth": 1.65,
+      "triangles": 9788,
+      "vertices": 5128,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "28b58b5369e4410e0debbc353d218fdcf5189c72b422ced22ea19ca44a774967",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "octopus-8"
+    },
+    {
+      "id": "Marine/nudibranch",
+      "file": "Marine_nudibranch.fbx",
+      "webGroup": "marine",
+      "webKey": "nudibranch",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.770758903459937,
+      "depth": 0.7219767385469748,
+      "triangles": 3200,
+      "vertices": 1652,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cce64a09daca5d801cf7bc28b2e07ea1d1648cbf04ef0af95dce1f6b12f71570",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "nudibranch"
+    },
+    {
+      "id": "Marine/giant-clam",
+      "file": "Marine_giant-clam.fbx",
+      "webGroup": "marine",
+      "webKey": "giant-clam",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8032897461155012,
+      "depth": 1.4654606420990879,
+      "triangles": 4616,
+      "vertices": 2340,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9df4a96b3f44a649a91e2c7a95999dcc5c2753b8be11a3534d21a22bdb15393d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "clam"
+    },
+    {
+      "id": "Marine/sea-anemone",
+      "file": "Marine_sea-anemone.fbx",
+      "webGroup": "marine",
+      "webKey": "sea-anemone",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.2051974545364097,
+      "depth": 1.65,
+      "triangles": 3212,
+      "vertices": 1728,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "116914ea3d67bd728894fb23a4338d192b451070edaf2250469343c2500f257b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "anemone"
+    },
+    {
+      "id": "Marine/sea-turtle",
+      "file": "Marine_sea-turtle.fbx",
+      "webGroup": "marine",
+      "webKey": "sea-turtle",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.5189080083732038,
+      "depth": 1.2817282922211077,
+      "triangles": 4508,
+      "vertices": 2290,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6a0734bebf8ddcc5c3bff66776df3103b727e790518a399f5b808274d0ec5115",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "turtle"
+    },
+    {
+      "id": "Marine/staghorn-coral",
+      "file": "Marine_staghorn-coral.fbx",
+      "webGroup": "marine",
+      "webKey": "staghorn-coral",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.213975047168246,
+      "height": 1.65,
+      "depth": 1.2203392963023916,
+      "triangles": 1220,
+      "vertices": 660,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d2382a3ca7b31e692be2c94517e48387df3792a6990df1711d5d7209260e4aee",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "coral"
+    },
+    {
+      "id": "Marine/sea-cucumber",
+      "file": "Marine_sea-cucumber.fbx",
+      "webGroup": "marine",
+      "webKey": "sea-cucumber",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.5122253715171717,
+      "depth": 0.5983517968054782,
+      "triangles": 3024,
+      "vertices": 1562,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "54083d7ded18df11d252902822a7b0a0d0e0d6a5b1301db474d83c1adb49d254",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "sea-cucumber"
+    },
+    {
+      "id": "Marine/leafy-seadragon",
+      "file": "Marine_leafy-seadragon.fbx",
+      "webGroup": "marine",
+      "webKey": "leafy-seadragon",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.3381234058780065,
+      "height": 1.65,
+      "depth": 0.3877739135921265,
+      "triangles": 4468,
+      "vertices": 2300,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2dc6e38f9a5c5589d69801d4baf29a532cbb2c312f31a325431e1d0d0479856f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "seahorse"
+    },
+    {
+      "id": "Marine/reef-shark",
+      "file": "Marine_reef-shark.fbx",
+      "webGroup": "marine",
+      "webKey": "reef-shark",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.8884616036386932,
+      "depth": 0.809800412823634,
+      "triangles": 3148,
+      "vertices": 1610,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c7e83fe2de738815fcfb083e9ac06980e4806dc0692095d81d20af84d3e6601a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "shark"
+    },
+    {
+      "id": "Marine/flame-angelfish",
+      "file": "Marine_flame-angelfish.fbx",
+      "webGroup": "marine",
+      "webKey": "flame-angelfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 1.0873563836303075,
+      "depth": 0.5095970698446799,
+      "triangles": 4636,
+      "vertices": 2366,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "4efe963f6e05539daffa0b233b11e2c40be4dfaa9b6f8a4bf5744a88035f832e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/mandarinfish",
+      "file": "Marine_mandarinfish.fbx",
+      "webGroup": "marine",
+      "webKey": "mandarinfish",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.7158667205376968,
+      "depth": 0.5095970698446799,
+      "triangles": 6748,
+      "vertices": 3502,
+      "pieces": [
+        "Body",
+        "Tail"
+      ],
+      "sha256": "1d1502e68a76c44bbdd33a14ae33a7c1f76cc43cdabaa42bb55efb279091a557",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "fish"
+    },
+    {
+      "id": "Marine/weedy-seadragon",
+      "file": "Marine_weedy-seadragon.fbx",
+      "webGroup": "marine",
+      "webKey": "weedy-seadragon",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.3381234058780065,
+      "height": 1.65,
+      "depth": 0.3877739135921265,
+      "triangles": 4468,
+      "vertices": 2300,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ef60d40f1d05dd571d0968585de4542e7270c8f295e8cf94660e4fdc3931bc53",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "seahorse"
+    },
+    {
+      "id": "Marine/humpback-whale",
+      "file": "Marine_humpback-whale.fbx",
+      "webGroup": "marine",
+      "webKey": "humpback-whale",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.6548437791969643,
+      "depth": 0.8224535329612215,
+      "triangles": 3788,
+      "vertices": 1946,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "507907d7b583ee33437f2c86d4f642a538c47d1686ecd6f80d29effa8e578876",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "cetacean"
+    },
+    {
+      "id": "Marine/giant-pacific-octopus",
+      "file": "Marine_giant-pacific-octopus.fbx",
+      "webGroup": "marine",
+      "webKey": "giant-pacific-octopus",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.6466978368718392,
+      "height": 0.99043170434306,
+      "depth": 1.65,
+      "triangles": 9788,
+      "vertices": 5128,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8c350865b151d8125e720878929999cdbc9d50ae5b311a6897a807eb2661e135",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "octopus-8"
+    },
+    {
+      "id": "Marine/beluga-whale",
+      "file": "Marine_beluga-whale.fbx",
+      "webGroup": "marine",
+      "webKey": "beluga-whale",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.5517187484633176,
+      "depth": 0.8224535329612215,
+      "triangles": 3492,
+      "vertices": 1768,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a1f5893386869fe9b7598c57d9268ff8852ba3f137e7b73d2635c5e2d680f1ae",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "cetacean"
+    },
+    {
+      "id": "Marine/leatherback-turtle",
+      "file": "Marine_leatherback-turtle.fbx",
+      "webGroup": "marine",
+      "webKey": "leatherback-turtle",
+      "aliases": [],
+      "runtime": true,
+      "width": 1.65,
+      "height": 0.5217908793269945,
+      "depth": 1.2817282922211077,
+      "triangles": 6244,
+      "vertices": 3214,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6dd2ab9c29e6bec74b58e3e38914a0b83ccc43501431f552918f79387f9da415",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": "turtle"
+    },
+    {
+      "id": "Icon/star",
+      "file": "Icon_star.fbx",
+      "webGroup": "icons",
+      "webKey": "star",
+      "aliases": [
+        "Rewards/star_yellow"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.20151633955651932,
+      "depth": 1.6167961276050733,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e461ec0e2bdc5af80aa69a040c2215ed6e430faa5cbbbe4036ee5d6fcd929f77",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/crystal",
+      "file": "Icon_crystal.fbx",
+      "webGroup": "icons",
+      "webKey": "crystal",
+      "aliases": [],
+      "runtime": false,
+      "width": 0.888920825771949,
+      "height": 1.7,
+      "depth": 0.6229302561440928,
+      "triangles": 20,
+      "vertices": 12,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b14f7a49e7b7adf0778b3f24a54b1695ff0438b7bd617be5075b1dfd3b1f11df",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/flower",
+      "file": "Icon_flower.fbx",
+      "webGroup": "icons",
+      "webKey": "flower",
+      "aliases": [
+        "Rewards/bloom"
+      ],
+      "runtime": true,
+      "width": 1.0786206737511512,
+      "height": 1.7000000000000002,
+      "depth": 1.0786206737511512,
+      "triangles": 1776,
+      "vertices": 914,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "439c6888217bc9bc43f6cdf71f72710ee5e5b1e4da79d9468440cf4c2e215d47",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/feather",
+      "file": "Icon_feather.fbx",
+      "webGroup": "icons",
+      "webKey": "feather",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.3725190481252967,
+      "height": 1.7,
+      "depth": 0.1186122887988116,
+      "triangles": 3444,
+      "vertices": 1764,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "329e3e7d49a512508887e49b65d2ff0fb6dfd22ae1176d785418451eab4bb9f7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/ink",
+      "file": "Icon_ink.fbx",
+      "webGroup": "icons",
+      "webKey": "ink",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.6999999999999997,
+      "height": 1.4290248619207104,
+      "depth": 1.3278548542965032,
+      "triangles": 300,
+      "vertices": 160,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "804c2e6ec309c18b041f2706eae0ccafcc4c8e6459a873127caf1fa6eba4d04a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/seed",
+      "file": "Icon_seed.fbx",
+      "webGroup": "icons",
+      "webKey": "seed",
+      "aliases": [
+        "Rewards/seed"
+      ],
+      "runtime": true,
+      "width": 1.168027847289576,
+      "height": 1.7,
+      "depth": 0.7906976141370017,
+      "triangles": 396,
+      "vertices": 200,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "1ed75392b665571ca57cafe11a4d77e2f3dbb47080849edb95eb52ef25178f22",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/water",
+      "file": "Icon_water.fbx",
+      "webGroup": "icons",
+      "webKey": "water",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.7716312328562669,
+      "depth": 0.7073285981787977,
+      "triangles": 940,
+      "vertices": 476,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "72b00b9b97e5418c65353e5c65f472e9100bffa717f91be1d5a9165fef455a39",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/book",
+      "file": "Icon_book.fbx",
+      "webGroup": "icons",
+      "webKey": "book",
+      "aliases": [
+        "Rewards/badge_book"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.3386237443421946,
+      "depth": 1.1754944791709208,
+      "triangles": 1332,
+      "vertices": 692,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "166b86e76e86b8c3602acab9852fcd70ec0080caae941c51391a7ba90d3bee95",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/scroll",
+      "file": "Icon_scroll.fbx",
+      "webGroup": "icons",
+      "webKey": "scroll",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.28058253501686176,
+      "depth": 1.6339806436514803,
+      "triangles": 900,
+      "vertices": 464,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d36ca6fa4089c1c4cd43eb7556e0ec268e354289c97d3da98546e3e5cb3a49a7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/trophy",
+      "file": "Icon_trophy.fbx",
+      "webGroup": "icons",
+      "webKey": "trophy",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7000000000000002,
+      "height": 1.3730769830342604,
+      "depth": 1.0863906155622303,
+      "triangles": 1256,
+      "vertices": 636,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f127e174a85aaac55ae43543b134f09c79ac8de1fd2a576fcf872f657e902585",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/chest",
+      "file": "Icon_chest.fbx",
+      "webGroup": "icons",
+      "webKey": "chest",
+      "aliases": [
+        "Rewards/gift"
+      ],
+      "runtime": true,
+      "width": 1.6999999999999997,
+      "height": 1.2972015086202102,
+      "depth": 1.300373222925369,
+      "triangles": 756,
+      "vertices": 392,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "790c77786b0238878ca974c102116ac6f7f3e561f1f631d7aabefe7f45eb84e0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/crown",
+      "file": "Icon_crown.fbx",
+      "webGroup": "icons",
+      "webKey": "crown",
+      "aliases": [
+        "Rewards/badge_crown"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 1.1036289518600206,
+      "depth": 1.6423718841431842,
+      "triangles": 1956,
+      "vertices": 1018,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "4470cce36fd4e94f98125cf76865c47a611ed8d18f49f373a1790ff13b9666fb",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/leaf",
+      "file": "Icon_leaf.fbx",
+      "webGroup": "icons",
+      "webKey": "leaf",
+      "aliases": [
+        "Rewards/badge_leaf"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.3483112005965147,
+      "depth": 0.8674918546059841,
+      "triangles": 888,
+      "vertices": 468,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7baec1e730f5428e26d78d5a7c0d8d92b18d2e961af729d9aed447eb9faa1aa7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/magic_dust",
+      "file": "Icon_magic_dust.fbx",
+      "webGroup": "icons",
+      "webKey": "magic_dust",
+      "aliases": [
+        "Rewards/magic_dust"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 1.1477401733181811,
+      "depth": 0.8419291479485315,
+      "triangles": 828,
+      "vertices": 420,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b2d2d62532b267953b80af2ed5f16a1d897497a2d4ab3d8e77a6089af423de71",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/globe",
+      "file": "Icon_globe.fbx",
+      "webGroup": "icons",
+      "webKey": "globe",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.3508746181133646,
+      "height": 1.7,
+      "depth": 1.1103438211990369,
+      "triangles": 2288,
+      "vertices": 1158,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c73d22cccbf1bf31094c431693481bc9ee1e53f57b3773b1ed5a98551953ccdb",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/sprout",
+      "file": "Icon_sprout.fbx",
+      "webGroup": "icons",
+      "webKey": "sprout",
+      "aliases": [
+        "Rewards/sprout"
+      ],
+      "runtime": true,
+      "width": 1.2512000226974487,
+      "height": 1.6999999999999997,
+      "depth": 1.2512000226974487,
+      "triangles": 600,
+      "vertices": 312,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "03c4574af788ef1c13e5577c032659e134e316a2e57342aa760a153483aa8fc0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/bud",
+      "file": "Icon_bud.fbx",
+      "webGroup": "icons",
+      "webKey": "bud",
+      "aliases": [
+        "Rewards/bud"
+      ],
+      "runtime": true,
+      "width": 1.0639455768245467,
+      "height": 1.7,
+      "depth": 1.0639455768245467,
+      "triangles": 1644,
+      "vertices": 844,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "86d71cedd272ffd02ee5f686d62bca1c4e85946d71d0ea55127442e953ab5fee",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/star_blue",
+      "file": "Icon_star_blue.fbx",
+      "webGroup": "icons",
+      "webKey": "star_blue",
+      "aliases": [
+        "Rewards/star_blue"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.20151633955651932,
+      "depth": 1.6167961276050733,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "94109a3b046b7e00e4d7bb87050b705b404b012cc0c6d2f564b344d023b03bb2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/star_purple",
+      "file": "Icon_star_purple.fbx",
+      "webGroup": "icons",
+      "webKey": "star_purple",
+      "aliases": [
+        "Rewards/star_purple"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.20151633955651932,
+      "depth": 1.6167961276050733,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "89a66e83960c101be46bcc74487b21949c05dcfc60f612ce4f6683f052f19522",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/star_rainbow",
+      "file": "Icon_star_rainbow.fbx",
+      "webGroup": "icons",
+      "webKey": "star_rainbow",
+      "aliases": [
+        "Rewards/star_rainbow"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 0.20151633955651932,
+      "depth": 1.6167961276050733,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7880502bd0d93cb81718f27657842414c26d3da6823b46f9bfc269e508c14181",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/home",
+      "file": "Icon_home.fbx",
+      "webGroup": "icons",
+      "webKey": "home",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.5175610985775787,
+      "depth": 1.7,
+      "triangles": 688,
+      "vertices": 358,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a960b6a5fe9e2baea653ead5093c01200c73e1585053ae5161f5054ccfe92066",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/map",
+      "file": "Icon_map.fbx",
+      "webGroup": "icons",
+      "webKey": "map",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.4250000308926515,
+      "depth": 1.7,
+      "triangles": 1184,
+      "vertices": 612,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "802c47faac7eb596cdc061551cf1027d59f928612aa7b5e0887097a043e41165",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/garden",
+      "file": "Icon_garden.fbx",
+      "webGroup": "icons",
+      "webKey": "garden",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.8632164941754268,
+      "depth": 1.7,
+      "triangles": 1188,
+      "vertices": 604,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8a219994cb2d5b1a6e76830f57b4300dee6097de644499b82e431a522cc9e104",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/pond",
+      "file": "Icon_pond.fbx",
+      "webGroup": "icons",
+      "webKey": "pond",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.9267073805161282,
+      "depth": 1.7,
+      "triangles": 2440,
+      "vertices": 1240,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "0d462bd32631277f3a38a38a73c553d24d3a23e3dd8b427fe466ed7ee8e479ee",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/ocean",
+      "file": "Icon_ocean.fbx",
+      "webGroup": "icons",
+      "webKey": "ocean",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.9267073805161282,
+      "depth": 1.7,
+      "triangles": 2440,
+      "vertices": 1240,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "49968988212f5a3ba577d5fdcd3bad290d6280e4f13d32268c6dd81e3bc69442",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/shop",
+      "file": "Icon_shop.fbx",
+      "webGroup": "icons",
+      "webKey": "shop",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.012873473076182,
+      "depth": 1.7,
+      "triangles": 1004,
+      "vertices": 520,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d240bbad4a1a00ac2c800715506aae303f494f9388987e93264ee8f56dd9552e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/career",
+      "file": "Icon_career.fbx",
+      "webGroup": "icons",
+      "webKey": "career",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.3532623621306392,
+      "depth": 1.7,
+      "triangles": 848,
+      "vertices": 432,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6cb7b632e8ede894f967773ca11881afed6be33b1d61dddc1a9dd9e5cb3d3d45",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/growth",
+      "file": "Icon_growth.fbx",
+      "webGroup": "icons",
+      "webKey": "growth",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.067683030055933,
+      "depth": 1.7,
+      "triangles": 848,
+      "vertices": 440,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d89f47c334a3291eb210d4dd04e5030051cf9580b060313765ace6f16b648cbd",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/listen",
+      "file": "Icon_listen.fbx",
+      "webGroup": "icons",
+      "webKey": "listen",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.4525152615150176,
+      "depth": 1.7,
+      "triangles": 1620,
+      "vertices": 836,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7d55f10c52047d0cd412c0c3c26f22684d456854f2af594ca086b9a4e491bdff",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/hint",
+      "file": "Icon_hint.fbx",
+      "webGroup": "icons",
+      "webKey": "hint",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.316463406345874,
+      "depth": 1.7,
+      "triangles": 588,
+      "vertices": 306,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9b6166feb089a9e7afa15d5b2eb06dedfc1dbe0aa16cf44e38f40cc47848f14e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/close",
+      "file": "Icon_close.fbx",
+      "webGroup": "icons",
+      "webKey": "close",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.4716463591701783,
+      "depth": 1.7,
+      "triangles": 336,
+      "vertices": 176,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8bbc131d1132d1b6ae5ec82bc981ab4c3fc8954cbced2569d42603e312f34d1d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/check",
+      "file": "Icon_check.fbx",
+      "webGroup": "icons",
+      "webKey": "check",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.47682931199448264,
+      "depth": 1.7,
+      "triangles": 436,
+      "vertices": 228,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5f9fd432f6007d82c649dae39f57164cd3ea9b9c724b10e5ba8d383294ff5e0e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/settings",
+      "file": "Icon_settings.fbx",
+      "webGroup": "icons",
+      "webKey": "settings",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.5390243751743163,
+      "depth": 1.7,
+      "triangles": 1496,
+      "vertices": 768,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "336c0fdb312f75f19391f9561b3060aedc2255cbdad173e83789f9f256d57416",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/records",
+      "file": "Icon_records.fbx",
+      "webGroup": "icons",
+      "webKey": "records",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.5466379309279563,
+      "depth": 1.7,
+      "triangles": 1580,
+      "vertices": 820,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "418fb65c467a4901b8d08a9beb37226b9b0c1d3add6a9fe2704ce00dadcd4861",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/parent",
+      "file": "Icon_parent.fbx",
+      "webGroup": "icons",
+      "webKey": "parent",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.5466379309279563,
+      "depth": 1.7,
+      "triangles": 1580,
+      "vertices": 820,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c14c38673e1a51cd19c5ef81b563ea09badfa4e325a9a8e42dc69070401add92",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/heart",
+      "file": "Icon_heart.fbx",
+      "webGroup": "icons",
+      "webKey": "heart",
+      "aliases": [
+        "Rewards/heart"
+      ],
+      "runtime": true,
+      "width": 1.7,
+      "height": 1.3238084431724586,
+      "depth": 1.7,
+      "triangles": 388,
+      "vertices": 200,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8ee5f332e927e674973c7a5b7f4a6da80cf8db2b26c76d6c7f065b0b04968afb",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/friend",
+      "file": "Icon_friend.fbx",
+      "webGroup": "icons",
+      "webKey": "friend",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.5407572211551541,
+      "height": 1.7,
+      "depth": 1.5407572211551541,
+      "triangles": 4084,
+      "vertices": 2076,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d3f6af4baed26c9193d2dd77d31690479c9fcfb22365428fc08bd22d91b7ba62",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/moon",
+      "file": "Icon_moon.fbx",
+      "webGroup": "icons",
+      "webKey": "moon",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.4768292811018311,
+      "depth": 1.7,
+      "triangles": 2264,
+      "vertices": 1160,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d442049b1c8cac2d3290ccdafbb0408b2739a564094e812400f4932061d84a62",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/sun",
+      "file": "Icon_sun.fbx",
+      "webGroup": "icons",
+      "webKey": "sun",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.549390280822925,
+      "depth": 1.7,
+      "triangles": 688,
+      "vertices": 350,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cdc05ea207d639960ca95fa1d715d2a1690b0e0af34b4d0d4159c1d5c2463133",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/wardrobe",
+      "file": "Icon_wardrobe.fbx",
+      "webGroup": "icons",
+      "webKey": "wardrobe",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 1.4512193765688468,
+      "depth": 1.7,
+      "triangles": 844,
+      "vertices": 436,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "227cce4ce51a36d0128f323fb2ede436ec4a41ac2747117f8d477d037a914a02",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/arrow",
+      "file": "Icon_arrow.fbx",
+      "webGroup": "icons",
+      "webKey": "arrow",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.4612805153068727,
+      "depth": 1.7,
+      "triangles": 456,
+      "vertices": 240,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7b3faca378ea2195148dc75ddf81f56bc1488272a3f94fe87becc2aa8918bf49",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/play",
+      "file": "Icon_play.fbx",
+      "webGroup": "icons",
+      "webKey": "play",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.4457316877266112,
+      "depth": 1.7,
+      "triangles": 249,
+      "vertices": 131,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c5cd72bcb290ac24ad2cf20571649e3ec36d7fc94b3d561c969e39e940449297",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Icon/pause",
+      "file": "Icon_pause.fbx",
+      "webGroup": "icons",
+      "webKey": "pause",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7,
+      "height": 0.5338414532426635,
+      "depth": 1.7,
+      "triangles": 464,
+      "vertices": 240,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2d4d39854cf514c1af2b5b96f7ddcf4ade9f209a628e5316e97189757cfbc5d0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_blue",
+      "file": "Scenery_flowers_blue.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_blue",
+      "aliases": [
+        "World/flowers_blue"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d001cd78ea41a3ed2c73a2cec7ac36c33bb338b0cc0fc5978e49e1de0e8eea72",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_coral",
+      "file": "Scenery_flowers_coral.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_coral",
+      "aliases": [
+        "World/flowers_coral"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c455ec92d4620c06bec97836474ae7cb3b1ac9b1b2774c5ec16f65892fd9e991",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_lilac",
+      "file": "Scenery_flowers_lilac.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_lilac",
+      "aliases": [
+        "World/flowers_lilac"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "71037e8a746fa869569f960f4d9a23d40d0f659337c5fcc0656aab9132f37da9",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_pink",
+      "file": "Scenery_flowers_pink.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_pink",
+      "aliases": [
+        "World/flowers_pink"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "35e8b91d7f12a80aec410e3e1a939819b72ec090638e9c6b83e72ccd7e6c2555",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_sun",
+      "file": "Scenery_flowers_sun.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_sun",
+      "aliases": [
+        "World/flowers_sun"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "dff81cea29497841e224f80462763f69c737b5f21377cd92233a7b0ddad2896e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Scenery/flowers_white",
+      "file": "Scenery_flowers_white.fbx",
+      "webGroup": "scenery",
+      "webKey": "flowers_white",
+      "aliases": [
+        "World/flowers_white"
+      ],
+      "runtime": true,
+      "width": 1.5,
+      "height": 0.8223784866502353,
+      "depth": 0.39184524032884327,
+      "triangles": 1908,
+      "vertices": 996,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f2b7b40f869c537915f62946dbbf33faa17989daaefaba6f75f7edf9ccd582be",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Career/ceo",
+      "file": "Career_ceo.fbx",
+      "webGroup": "careers",
+      "webKey": "ceo",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11024,
+      "vertices": 5616,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d8fe604aa0c5384e038ed924edb02c3cd4e8cfa051ceda362dee7826acbf5f42",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "briefcase",
+        "chart"
+      ]
+    },
+    {
+      "id": "Career/pilot",
+      "file": "Career_pilot.fbx",
+      "webGroup": "careers",
+      "webKey": "pilot",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4000000000000004,
+      "height": 2.833669451132066,
+      "depth": 3.367998004644659,
+      "triangles": 11976,
+      "vertices": 6108,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "770f52069f6343d57e6fd77cdd45976cb8f5ca1dcf2515aaa4e3de65106f7f0f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "plane",
+        "headphones"
+      ]
+    },
+    {
+      "id": "Career/dentist",
+      "file": "Career_dentist.fbx",
+      "webGroup": "careers",
+      "webKey": "dentist",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11716,
+      "vertices": 5970,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "07205a3052eb9cedcdb6e47047e8d3ddb3c58c4d03b285f20a767e3414b0ea56",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "tooth",
+        "microscope"
+      ]
+    },
+    {
+      "id": "Career/career-37",
+      "file": "Career_career-37.fbx",
+      "webGroup": "careers",
+      "webKey": "career-37",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11316,
+      "vertices": 5772,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e2dc23632a3b7ffeca36a43c691186d0cb0b0fc0ac674f6a9715ae93e7636ae9",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "plant",
+        "medicine"
+      ]
+    },
+    {
+      "id": "Career/doctor",
+      "file": "Career_doctor.fbx",
+      "webGroup": "careers",
+      "webKey": "doctor",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11316,
+      "vertices": 5786,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "910a40c4402bd9c5656782eb116b781645ce16bcf15f38167d7958c32c935a4a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "stethoscope",
+        "medicine"
+      ]
+    },
+    {
+      "id": "Career/career-364",
+      "file": "Career_career-364.fbx",
+      "webGroup": "careers",
+      "webKey": "career-364",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.779729781540925,
+      "depth": 3.4,
+      "triangles": 12272,
+      "vertices": 6248,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "06143d50e078227016edbdc0f6b86f81797d314182032cdb443357b77b5736cb",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "board",
+        "atom"
+      ]
+    },
+    {
+      "id": "Career/lawyer",
+      "file": "Career_lawyer.fbx",
+      "webGroup": "careers",
+      "webKey": "lawyer",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11508,
+      "vertices": 5876,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9f45bdf1da9cf21d2e4d1090b16ee82640342ae025c60b8c69e67da16de58b76",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "gavel",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/judge",
+      "file": "Career_judge.fbx",
+      "webGroup": "careers",
+      "webKey": "judge",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7457525968988037,
+      "depth": 3.395483224075958,
+      "triangles": 10228,
+      "vertices": 5226,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9dd2881ef11ac344aafcf08738edf88d3d104d38e4123402ef44c8991989cfca",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "scale",
+        "gavel"
+      ]
+    },
+    {
+      "id": "Career/accountant",
+      "file": "Career_accountant.fbx",
+      "webGroup": "careers",
+      "webKey": "accountant",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13496,
+      "vertices": 6900,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9137c6807c110c546644425d11a489d12f2153b9e66217313d3ca9e46da3009b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "abacus",
+        "chart"
+      ]
+    },
+    {
+      "id": "Career/economist",
+      "file": "Career_economist.fbx",
+      "webGroup": "careers",
+      "webKey": "economist",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11756,
+      "vertices": 6004,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c46412d3ccbad8e842295548faa7b636517135905d40de741319417d767b034b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chart",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/career-199",
+      "file": "Career_career-199.fbx",
+      "webGroup": "careers",
+      "webKey": "career-199",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10500,
+      "vertices": 5356,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "56689b7897c3158d6a3ab0e6bf39d61f6e26f0fb09366aa1234ce8302dd7c510",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "gavel",
+        "scroll"
+      ]
+    },
+    {
+      "id": "Career/career-10115",
+      "file": "Career_career-10115.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10115",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11780,
+      "vertices": 6022,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6199ebf7e76fcb104084b03b8234d836ad1da0d200f5675aa97a9dbccf1276a6",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "phone",
+        "stethoscope"
+      ]
+    },
+    {
+      "id": "Career/robot-engineer",
+      "file": "Career_robot-engineer.fbx",
+      "webGroup": "careers",
+      "webKey": "robot-engineer",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 15284,
+      "vertices": 7826,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5c178100b824c579b18979ee0bc8acbccc1a878a8e1decdb4ada216aff076d28",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "robot",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-198",
+      "file": "Career_career-198.fbx",
+      "webGroup": "careers",
+      "webKey": "career-198",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10448,
+      "vertices": 5340,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e533481c0eab02b115c1c0dfc3245456daf16dc6009a44a9d1a1146ce2633194",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "house",
+        "scale"
+      ]
+    },
+    {
+      "id": "Career/career-224",
+      "file": "Career_career-224.fbx",
+      "webGroup": "careers",
+      "webKey": "career-224",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13928,
+      "vertices": 7120,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "bb54a682ba6c313264f9a8ab8d10ad34cfe441e93493d7df9a79c859bdee40e8",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "abacus",
+        "scroll"
+      ]
+    },
+    {
+      "id": "Career/career-8",
+      "file": "Career_career-8.fbx",
+      "webGroup": "careers",
+      "webKey": "career-8",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12600,
+      "vertices": 6412,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "28695f05c4b52f0d9a7b38b54a0216fbddecf69df4e73635374759ca466bae51",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "atom",
+        "microscope"
+      ]
+    },
+    {
+      "id": "Career/diplomat",
+      "file": "Career_diplomat.fbx",
+      "webGroup": "careers",
+      "webKey": "diplomat",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12268,
+      "vertices": 6238,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c5a8a56aa7e675516b1607438729656e8900fd057ef8a6620962c1d313368f56",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "globe",
+        "briefcase"
+      ]
+    },
+    {
+      "id": "Career/ai-researcher",
+      "file": "Career_ai-researcher.fbx",
+      "webGroup": "careers",
+      "webKey": "ai-researcher",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14708,
+      "vertices": 7534,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "01255dce71c49ce5e4535c6d95f1b70c6258c37f0855987d3eba5a911e09425a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "computer",
+        "robot"
+      ]
+    },
+    {
+      "id": "Career/career-374",
+      "file": "Career_career-374.fbx",
+      "webGroup": "careers",
+      "webKey": "career-374",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11432,
+      "vertices": 5844,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3eb14ae81e763b4de4c26cc3569314783086261e2dd3f848a1e1a2c9ed132d23",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "scroll",
+        "chip"
+      ]
+    },
+    {
+      "id": "Career/pharmacist",
+      "file": "Career_pharmacist.fbx",
+      "webGroup": "careers",
+      "webKey": "pharmacist",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11824,
+      "vertices": 6020,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3792e96df43d4e251d3aa0f75da2d3ad6942b6e65c5c699a6fc1188afeda0cb4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "medicine",
+        "flask"
+      ]
+    },
+    {
+      "id": "Career/career-10116",
+      "file": "Career_career-10116.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10116",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11572,
+      "vertices": 5896,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c3088e94d2c56246dafbdabb8d0e56b9e0afad15b6e5d8263ac29a51b8e61774",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "flask",
+        "microscope"
+      ]
+    },
+    {
+      "id": "Career/veterinarian",
+      "file": "Career_veterinarian.fbx",
+      "webGroup": "careers",
+      "webKey": "veterinarian",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14216,
+      "vertices": 7254,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ac50bc502ef006e1a0caad7939fed86bc8245774779a4c04eb79fcfd8f905dee",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "stethoscope",
+        "pet"
+      ]
+    },
+    {
+      "id": "Career/career-950",
+      "file": "Career_career-950.fbx",
+      "webGroup": "careers",
+      "webKey": "career-950",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13520,
+      "vertices": 6924,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "16702127e588191235aa2f08474c837c0d89aea5db8044f9c4232a2e805a9c6a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chart",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-244",
+      "file": "Career_career-244.fbx",
+      "webGroup": "careers",
+      "webKey": "career-244",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10448,
+      "vertices": 5324,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c83a92ba8f873c4945bd0f58dfae1f80e106d6c742aa767758f889bb68338a51",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "briefcase",
+        "chart"
+      ]
+    },
+    {
+      "id": "Career/career-217",
+      "file": "Career_career-217.fbx",
+      "webGroup": "careers",
+      "webKey": "career-217",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14232,
+      "vertices": 7282,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ed86cef8c923c324bc79610235ccd4fa171f6e3d3ba7f31c4b63711e87b76576",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "abacus",
+        "scale"
+      ]
+    },
+    {
+      "id": "Career/career-66",
+      "file": "Career_career-66.fbx",
+      "webGroup": "careers",
+      "webKey": "career-66",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11580,
+      "vertices": 5906,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "fa9e46ec2a0d5f33b5776a3261a753a736778fa859a941bbafb6878a65ca04dc",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "robot",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/career-104",
+      "file": "Career_career-104.fbx",
+      "webGroup": "careers",
+      "webKey": "career-104",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13200,
+      "vertices": 6704,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "01b2e90454851f92c257091fe4e02bdf3f465499b4a0cd6cccd3aab6efdcc0e5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "atom",
+        "flask"
+      ]
+    },
+    {
+      "id": "Career/astronautical",
+      "file": "Career_astronautical.fbx",
+      "webGroup": "careers",
+      "webKey": "astronautical",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12020,
+      "vertices": 6118,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9b0e30de4cde8333750d20ec7b8a58bd95acab119e9ffa793f4bbc8b66f361a5",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "rocket",
+        "plane"
+      ]
+    },
+    {
+      "id": "Career/career-10105",
+      "file": "Career_career-10105.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10105",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11060,
+      "vertices": 5646,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "15ed125663c3e850791dc13cef2497a72216f67b9cdbc3bdf54d404608854a13",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "solar",
+        "battery"
+      ]
+    },
+    {
+      "id": "Career/career-148",
+      "file": "Career_career-148.fbx",
+      "webGroup": "careers",
+      "webKey": "career-148",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11348,
+      "vertices": 5790,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7aa1a91447041851ee6e6f306acda78210743904ef383a40aff536cadad57360",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "headphones",
+        "plane"
+      ]
+    },
+    {
+      "id": "Career/career-202",
+      "file": "Career_career-202.fbx",
+      "webGroup": "careers",
+      "webKey": "career-202",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11024,
+      "vertices": 5616,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8bd0e217cef0a0d2f2f29601f70bef80a70a4aecc642e06fe4a35d38a024488b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chart",
+        "briefcase"
+      ]
+    },
+    {
+      "id": "Career/career-137",
+      "file": "Career_career-137.fbx",
+      "webGroup": "careers",
+      "webKey": "career-137",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 11764,
+      "vertices": 6016,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6e8a58e8b956230893a7af691f841a0bf12e4a16e09fa8df8527e40736a765c6",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "bridge",
+        "house"
+      ]
+    },
+    {
+      "id": "Career/career-56",
+      "file": "Career_career-56.fbx",
+      "webGroup": "careers",
+      "webKey": "career-56",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 12312,
+      "vertices": 6276,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "0387183c9df43ebadeeb6a6eb977b57d7e3224c447bc73b5caa63909693f062a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "wrench",
+        "robot"
+      ]
+    },
+    {
+      "id": "Career/career-10108",
+      "file": "Career_career-10108.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10108",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11880,
+      "vertices": 6046,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7509c165998331dbe78c30cf62745982fa429bc575b7bb8b438f7540e3d361fe",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "battery",
+        "flask"
+      ]
+    },
+    {
+      "id": "Career/architect",
+      "file": "Career_architect.fbx",
+      "webGroup": "careers",
+      "webKey": "architect",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 11452,
+      "vertices": 5840,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "02ee105ce04e015c11f25c58baa7b924cf90533fc18473660d49e40304e39219",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "house",
+        "scroll"
+      ]
+    },
+    {
+      "id": "Career/career-1436",
+      "file": "Career_career-1436.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1436",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11824,
+      "vertices": 6020,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "276981c7cac4d1dd9777d29ceee263ee6d7442a73e8f184373b0ec2c415550b1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "flask",
+        "medicine"
+      ]
+    },
+    {
+      "id": "Career/career-13",
+      "file": "Career_career-13.fbx",
+      "webGroup": "careers",
+      "webKey": "career-13",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11064,
+      "vertices": 5648,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "642f24fb929994cf68a0e082164e2fda33932c8f0e73845f9950ea921bafd869",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "microscope",
+        "plant"
+      ]
+    },
+    {
+      "id": "Career/career-322",
+      "file": "Career_career-322.fbx",
+      "webGroup": "careers",
+      "webKey": "career-322",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10560,
+      "vertices": 5390,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "34e7971c10716c12e0e850cb5a10369d84540b0c665024b1ccf37b266549a589",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "camera",
+        "board"
+      ]
+    },
+    {
+      "id": "Career/semiconductor",
+      "file": "Career_semiconductor.fbx",
+      "webGroup": "careers",
+      "webKey": "semiconductor",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13628,
+      "vertices": 6992,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9100cb9f25474daefec1464f2d5de68cba2942f5fc0c796b6fbc613d964b22cd",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chip",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-5",
+      "file": "Career_career-5.fbx",
+      "webGroup": "careers",
+      "webKey": "career-5",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13936,
+      "vertices": 7086,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "711373c8476e86e0d957ca82d3c3b661603ab9a30c9e0cae7f4c4972c36501c4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "cloud",
+        "globe"
+      ]
+    },
+    {
+      "id": "Career/career-10110",
+      "file": "Career_career-10110.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10110",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 15188,
+      "vertices": 7756,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8d1e8a9bcbd4ce22a5284bd1fbb9f4a9cb81fcf0ca71dbb2feb0f91a6bd90f1d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "atom",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-119",
+      "file": "Career_career-119.fbx",
+      "webGroup": "careers",
+      "webKey": "career-119",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10500,
+      "vertices": 5364,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f7f970139abe81a55140a9ee5ae3ecaaeedf90123b003604c11e58e5ed7be3b4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chip",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/game-designer",
+      "file": "Career_game-designer.fbx",
+      "webGroup": "careers",
+      "webKey": "game-designer",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14884,
+      "vertices": 7608,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5d9376e8da374c5e33b6e1f7cad9983ff7bd15062ec187cceeba8ff6f1b5b448",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "computer",
+        "trophy"
+      ]
+    },
+    {
+      "id": "Career/career-1089",
+      "file": "Career_career-1089.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1089",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12128,
+      "vertices": 6172,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "47dc1e799114063675c9a977de4201e4f12f2c3e2da33881bc96388c069627ef",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "board",
+        "atom"
+      ]
+    },
+    {
+      "id": "Career/career-10032",
+      "file": "Career_career-10032.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10032",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13520,
+      "vertices": 6924,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3f03ce63187a8729f26176aeec68d72ec78b3c448e87413bf518f60df362a32f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "computer",
+        "chart"
+      ]
+    },
+    {
+      "id": "Career/career-114",
+      "file": "Career_career-114.fbx",
+      "webGroup": "careers",
+      "webKey": "career-114",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10740,
+      "vertices": 5470,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "dbdc4899fdc3aa948dc6e39b611811ccef2ff868b1264b93a9b9a0e781a094ce",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "battery",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/career-182",
+      "file": "Career_career-182.fbx",
+      "webGroup": "careers",
+      "webKey": "career-182",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10920,
+      "vertices": 5564,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ea0fd941b5d433bb18de40a7be1a1f3380bf51e0fd86ed9e992b2b447fd6ccc8",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "plant",
+        "watering"
+      ]
+    },
+    {
+      "id": "Career/career-212",
+      "file": "Career_career-212.fbx",
+      "webGroup": "careers",
+      "webKey": "career-212",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12880,
+      "vertices": 6574,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "4a220f374d3b4ab519ef7aabd1c2ff69849b85a553a99bdac56658020163095c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "bridge",
+        "globe"
+      ]
+    },
+    {
+      "id": "Career/career-10005",
+      "file": "Career_career-10005.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10005",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10972,
+      "vertices": 5610,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9f0d8f92ee521b492c2a1ef66338ae7dd800d3bbc435b44240a4c898861f9b89",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "house",
+        "chip"
+      ]
+    },
+    {
+      "id": "Career/career-232",
+      "file": "Career_career-232.fbx",
+      "webGroup": "careers",
+      "webKey": "career-232",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11076,
+      "vertices": 5644,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d5a5d0287792559917cf2f39606d238b109a8d87c72bf0ed644afd393734c1a1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "microphone",
+        "board"
+      ]
+    },
+    {
+      "id": "Career/career-1068",
+      "file": "Career_career-1068.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1068",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10932,
+      "vertices": 5568,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d316f0b701961f452cf20f637530288ab3b702cf754aec769fd8ab32960d91ad",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chart",
+        "microphone"
+      ]
+    },
+    {
+      "id": "Career/career-397",
+      "file": "Career_career-397.fbx",
+      "webGroup": "careers",
+      "webKey": "career-397",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11272,
+      "vertices": 5758,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7aa9bf3b651cec5bff7fb369f0a6bb5e35e3cf1955c51bd758186cfb4420de08",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "stethoscope",
+        "heart"
+      ]
+    },
+    {
+      "id": "Career/career-410",
+      "file": "Career_career-410.fbx",
+      "webGroup": "careers",
+      "webKey": "career-410",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11324,
+      "vertices": 5788,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9b6b953376249b3da178b83edd9539bfc27202221155b362c75b74204580d8b3",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "board",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/career-262",
+      "file": "Career_career-262.fbx",
+      "webGroup": "careers",
+      "webKey": "career-262",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11032,
+      "vertices": 5618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9b1549482cb0f6902ea83d42be8ac8dde6bc71924cc5e4140dff8c13ad2bb6e7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "microphone",
+        "camera"
+      ]
+    },
+    {
+      "id": "Career/career-10076",
+      "file": "Career_career-10076.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10076",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14852,
+      "vertices": 7600,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6038ecf8aeb9c40814cebfc758e9cc1256e8a8709ad47d267d1631fc7d0608b6",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "phone",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-84",
+      "file": "Career_career-84.fbx",
+      "webGroup": "careers",
+      "webKey": "career-84",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 10948,
+      "vertices": 5572,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "af1c1bd925f5854ed683f6a59c1b26d2ce00b19a86a54ba77d8942ab4cec103b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "shield",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/career-385",
+      "file": "Career_career-385.fbx",
+      "webGroup": "careers",
+      "webKey": "career-385",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 11344,
+      "vertices": 5772,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "efce2f1bb1ca803b49853c45d1fa2825791481b07fb50a54699b0a4c161fc335",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "shield",
+        "watering"
+      ]
+    },
+    {
+      "id": "Career/career-149",
+      "file": "Career_career-149.fbx",
+      "webGroup": "careers",
+      "webKey": "career-149",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4000000000000004,
+      "height": 2.8937477270199423,
+      "depth": 3.367998004644659,
+      "triangles": 11828,
+      "vertices": 6020,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "90d8ff64bcb1ff7f746212c756a2bae95c97484287ee5b2cc4b7344c96151169",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "plane",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/career-398",
+      "file": "Career_career-398.fbx",
+      "webGroup": "careers",
+      "webKey": "career-398",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10852,
+      "vertices": 5540,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c008b055474a9190e5547ab3095e8696d9d965652c4806f3a8db71c89fdc89cf",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "heart",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/career-173",
+      "file": "Career_career-173.fbx",
+      "webGroup": "careers",
+      "webKey": "career-173",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 3.295243114455415,
+      "depth": 3.4,
+      "triangles": 13028,
+      "vertices": 6644,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f573f104527aadce9b6b409cca72a095635ad754e36f55cd940f8abc39eca08b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "pan",
+        "bread"
+      ]
+    },
+    {
+      "id": "Career/career-359",
+      "file": "Career_career-359.fbx",
+      "webGroup": "careers",
+      "webKey": "career-359",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.860594371066295,
+      "depth": 3.4,
+      "triangles": 12248,
+      "vertices": 6244,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7c18e87cbfd45b3478d74f7a7840162162410b537e0faf928abf0928c4e197c1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "shield",
+        "headphones"
+      ]
+    },
+    {
+      "id": "Career/career-10",
+      "file": "Career_career-10.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13560,
+      "vertices": 6948,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "0e834bb46828ad38b119c7fc793226c8844a232fb3d7a4e70764bf9f8d2e7439",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "microscope",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-219",
+      "file": "Career_career-219.fbx",
+      "webGroup": "careers",
+      "webKey": "career-219",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10420,
+      "vertices": 5310,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "754d6269264cac223286c2a74a25578dafbe861524fae87d1e7049cb7792e193",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "house",
+        "briefcase"
+      ]
+    },
+    {
+      "id": "Career/career-142",
+      "file": "Career_career-142.fbx",
+      "webGroup": "careers",
+      "webKey": "career-142",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.860594371066295,
+      "depth": 3.4,
+      "triangles": 12084,
+      "vertices": 6158,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8708880517d15f05bf52bf7f93f7a5243e6b2862395e8a031ff91f6519c05c78",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "steering",
+        "chest"
+      ]
+    },
+    {
+      "id": "Career/career-413",
+      "file": "Career_career-413.fbx",
+      "webGroup": "careers",
+      "webKey": "career-413",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10132,
+      "vertices": 5168,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2b41f3b98e18f10553f7851842b4cbb23623869a63dcfd26bf06beb4a3f01ac4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "board",
+        "heart"
+      ]
+    },
+    {
+      "id": "Career/cybersecurity",
+      "file": "Career_cybersecurity.fbx",
+      "webGroup": "careers",
+      "webKey": "cybersecurity",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13712,
+      "vertices": 7014,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "fc7444ef4abe15e38126f3e5d40a142c999b8298659c0c4533f54ca554bd02e1",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "lock",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-332",
+      "file": "Career_career-332.fbx",
+      "webGroup": "careers",
+      "webKey": "career-332",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12080,
+      "vertices": 6158,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a234011937356de623bbd9e13fd802a43dcad3282692aa7286d604b8cd7f3e41",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chair",
+        "palette"
+      ]
+    },
+    {
+      "id": "Career/career-33",
+      "file": "Career_career-33.fbx",
+      "webGroup": "careers",
+      "webKey": "career-33",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11752,
+      "vertices": 5978,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "352ece7a5f804e871084a1289738b6e131367e9d5e5bbeefe6ebd8d7f75fe55f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "tooth",
+        "wrench"
+      ]
+    },
+    {
+      "id": "Career/career-834",
+      "file": "Career_career-834.fbx",
+      "webGroup": "careers",
+      "webKey": "career-834",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13628,
+      "vertices": 6992,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cbef7d1e5603bd944a1e4ccbb64c5ed3591c2db7f1f667d70e4a4deab9c7d556",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "computer",
+        "chip"
+      ]
+    },
+    {
+      "id": "Career/career-10001",
+      "file": "Career_career-10001.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10001",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14060,
+      "vertices": 7196,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7e2ffa4acdfcb42346838331dc59ae71310c29bb62702cd9abee80923c1672f9",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "printer",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-252",
+      "file": "Career_career-252.fbx",
+      "webGroup": "careers",
+      "webKey": "career-252",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10500,
+      "vertices": 5356,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d16bbf51bba6f3ae72120600d9b66de289e82142645444089eff3d0ee6d31570",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "scroll",
+        "gavel"
+      ]
+    },
+    {
+      "id": "Career/career-208",
+      "file": "Career_career-208.fbx",
+      "webGroup": "careers",
+      "webKey": "career-208",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 12424,
+      "vertices": 6326,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "576aec4c1bb42f411354e8c66f0d5d4d42beadca1ef39b611ab86be7930fc3dc",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "globe",
+        "chest"
+      ]
+    },
+    {
+      "id": "Career/career-354",
+      "file": "Career_career-354.fbx",
+      "webGroup": "careers",
+      "webKey": "career-354",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11488,
+      "vertices": 5870,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8af2986dd4c045d4797d6ce93b71ead2961eb1b921c30c8038f04557e3f9696d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "stethoscope",
+        "heart"
+      ]
+    },
+    {
+      "id": "Career/career-10106",
+      "file": "Career_career-10106.fbx",
+      "webGroup": "careers",
+      "webKey": "career-10106",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11204,
+      "vertices": 5716,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "165fab860c219f907db4295415d525a89066121850bcc6d49c4ae988fa1b099a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "plant",
+        "phone"
+      ]
+    },
+    {
+      "id": "Career/career-344",
+      "file": "Career_career-344.fbx",
+      "webGroup": "careers",
+      "webKey": "career-344",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10108,
+      "vertices": 5156,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "4f4731d7edd0f564d1c5e74a29b86ab7db96a8f94075df4f8c65ba5eb7cee529",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "dress",
+        "brush"
+      ]
+    },
+    {
+      "id": "Career/career-392",
+      "file": "Career_career-392.fbx",
+      "webGroup": "careers",
+      "webKey": "career-392",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10436,
+      "vertices": 5320,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d5197503db2314362e3b8d8e57eb1d4ac9a5a9d3e61491309c46937093ab14f7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "dumbbell",
+        "heart"
+      ]
+    },
+    {
+      "id": "Career/career-267",
+      "file": "Career_career-267.fbx",
+      "webGroup": "careers",
+      "webKey": "career-267",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13000,
+      "vertices": 6626,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cae78c4a44bdd240e209a9985479c8b6ecbfc6201c6647710eb96fe9aef43097",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "book",
+        "globe"
+      ]
+    },
+    {
+      "id": "Career/career-258",
+      "file": "Career_career-258.fbx",
+      "webGroup": "careers",
+      "webKey": "career-258",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13928,
+      "vertices": 7120,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "58b867bd522ac4bfa21d43979d17af5bc3aca0927bbe64c7a6206469fec1a80c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "abacus",
+        "scroll"
+      ]
+    },
+    {
+      "id": "Career/career-264",
+      "file": "Career_career-264.fbx",
+      "webGroup": "careers",
+      "webKey": "career-264",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13616,
+      "vertices": 6934,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2f5268a1438f5c45b1c3eff56678d4e1c7fe210ad74cbf052fa21a7bf397ae1a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "headphones",
+        "globe"
+      ]
+    },
+    {
+      "id": "Career/career-937",
+      "file": "Career_career-937.fbx",
+      "webGroup": "careers",
+      "webKey": "career-937",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14816,
+      "vertices": 7578,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "09d01e9e31e16d84b4ef10b3852e158267bcc4b43798d33c79c219211fec5115",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "palette",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-102",
+      "file": "Career_career-102.fbx",
+      "webGroup": "careers",
+      "webKey": "career-102",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.9212434978582604,
+      "depth": 3.4,
+      "triangles": 10948,
+      "vertices": 5572,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "0a8a2e2a789ad7b78e027069846308cf3cfefa3f7400009c3ace997dd31a086a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "wrench",
+        "shield"
+      ]
+    },
+    {
+      "id": "Career/career-172",
+      "file": "Career_career-172.fbx",
+      "webGroup": "careers",
+      "webKey": "career-172",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 3.295243114455415,
+      "depth": 3.4,
+      "triangles": 13604,
+      "vertices": 6936,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "712ea3a26b9a196e6432c3723391b4313822e0f2efd242a1419c41ce0904202f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "bread",
+        "pan"
+      ]
+    },
+    {
+      "id": "Career/career-369",
+      "file": "Career_career-369.fbx",
+      "webGroup": "careers",
+      "webKey": "career-369",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10896,
+      "vertices": 5574,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "58bf26d964e3415b7e1857e5561c16b1dc3969fcc1777ef14f884f099dd9fd9f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "dumbbell",
+        "stethoscope"
+      ]
+    },
+    {
+      "id": "Career/career-379",
+      "file": "Career_career-379.fbx",
+      "webGroup": "careers",
+      "webKey": "career-379",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10852,
+      "vertices": 5540,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "153d89968406b8fd98269ac85005d0f3ff280da7854b1bb8fff7bcfc6aeffeb2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "heart",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/career-180",
+      "file": "Career_career-180.fbx",
+      "webGroup": "careers",
+      "webKey": "career-180",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11648,
+      "vertices": 5926,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "1e7b123ce1de9cffcf760a38370c2c7ac1a75fefd9e101b2494a16acea6f147b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "coffee",
+        "pan"
+      ]
+    },
+    {
+      "id": "Career/career-395",
+      "file": "Career_career-395.fbx",
+      "webGroup": "careers",
+      "webKey": "career-395",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13828,
+      "vertices": 7044,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "77d27b38a252400520b27ef2774cbf90169b8b591ba977c82e83765527b57f5b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "board",
+        "toy"
+      ]
+    },
+    {
+      "id": "Career/career-376",
+      "file": "Career_career-376.fbx",
+      "webGroup": "careers",
+      "webKey": "career-376",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 14548,
+      "vertices": 7416,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "750e98b5d96f683d103f3b27df7834b3826ded30dd3ffb328f86cd2deff5be43",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "toy",
+        "book"
+      ]
+    },
+    {
+      "id": "Career/career-426",
+      "file": "Career_career-426.fbx",
+      "webGroup": "careers",
+      "webKey": "career-426",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.860594371066295,
+      "depth": 3.4,
+      "triangles": 12552,
+      "vertices": 6394,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "6add3febbe24ce4f420486ff84b298ddb34d4620fc41491dd969a7099dc4cc2c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "steering",
+        "phone"
+      ]
+    },
+    {
+      "id": "Career/career-1115",
+      "file": "Career_career-1115.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1115",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10196,
+      "vertices": 5202,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9bd822de79b84658e0e00614214c80295ef9630a174f87d39e73f1b9b664ffaf",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "fuel",
+        "shield"
+      ]
+    },
+    {
+      "id": "Career/career-253",
+      "file": "Career_career-253.fbx",
+      "webGroup": "careers",
+      "webKey": "career-253",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13952,
+      "vertices": 7144,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "8bee5ba15a21070cabe18a390d6ac80a768a6f2ba69214f4b70d78f1a4f19ee2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "scroll",
+        "computer"
+      ]
+    },
+    {
+      "id": "Career/career-266",
+      "file": "Career_career-266.fbx",
+      "webGroup": "careers",
+      "webKey": "career-266",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11856,
+      "vertices": 6054,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "71a55641d2147f65c5b8ffa2138b5a811e2546c04f4a49d3e2edb01a394fe338",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "book",
+        "camera"
+      ]
+    },
+    {
+      "id": "Career/career-358",
+      "file": "Career_career-358.fbx",
+      "webGroup": "careers",
+      "webKey": "career-358",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.860594371066295,
+      "depth": 3.4,
+      "triangles": 10960,
+      "vertices": 5578,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "97cb304f101f3b1717e2d99a6fb9f7733a833fcc8e463d193b9bc47c8b3f71d8",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "shield",
+        "lock"
+      ]
+    },
+    {
+      "id": "Career/career-1116",
+      "file": "Career_career-1116.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1116",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 13928,
+      "vertices": 7120,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "094188077d3b5ace5dab3768a6652de61cd452f496fa4088422d5cd978a57171",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "abacus",
+        "scroll"
+      ]
+    },
+    {
+      "id": "Career/career-243",
+      "file": "Career_career-243.fbx",
+      "webGroup": "careers",
+      "webKey": "career-243",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11312,
+      "vertices": 5764,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "668fa5d4a5c6d3b11f48f6fe30ea470a319bb88c345612b8f87e258e39dc4173",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chest",
+        "briefcase"
+      ]
+    },
+    {
+      "id": "Career/career-1128",
+      "file": "Career_career-1128.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1128",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 3.295243114455415,
+      "depth": 3.4,
+      "triangles": 12220,
+      "vertices": 6226,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cfb395edc8b98f5df99bdfd967dc4a2e18f6c5c80d52ceeb9803ddd3a1e70985",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "pan",
+        "plant"
+      ]
+    },
+    {
+      "id": "Career/career-1441",
+      "file": "Career_career-1441.fbx",
+      "webGroup": "careers",
+      "webKey": "career-1441",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10844,
+      "vertices": 5540,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "db7b0517ed04927f6f6395d35769dda2095e31161643e3e16bf254ee14e3c822",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "book",
+        "brush"
+      ]
+    },
+    {
+      "id": "Career/career-353",
+      "file": "Career_career-353.fbx",
+      "webGroup": "careers",
+      "webKey": "career-353",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11488,
+      "vertices": 5870,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c3dd8260db93b778c0d741b1310a3aafdfd245189926c3001f130f0ea3659bc0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "heart",
+        "stethoscope"
+      ]
+    },
+    {
+      "id": "Career/career-356",
+      "file": "Career_career-356.fbx",
+      "webGroup": "careers",
+      "webKey": "career-356",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10608,
+      "vertices": 5408,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "4c18d754962d393dedda914dd2caf7b25aa262bfee688ac5ea44c3f2e2ec389a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "broom",
+        "watering"
+      ]
+    },
+    {
+      "id": "Career/career-294",
+      "file": "Career_career-294.fbx",
+      "webGroup": "careers",
+      "webKey": "career-294",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 10544,
+      "vertices": 5378,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5942933f5076512470b6d588097ccfd9cf50f2e78a9bb3cbd7872606e1aef445",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "camera",
+        "dress"
+      ]
+    },
+    {
+      "id": "Career/career-352",
+      "file": "Career_career-352.fbx",
+      "webGroup": "careers",
+      "webKey": "career-352",
+      "aliases": [],
+      "runtime": false,
+      "width": 3.4,
+      "height": 2.7494050812153548,
+      "depth": 3.4,
+      "triangles": 11000,
+      "vertices": 5616,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "143f8018fc10979bc362b558a8b81151927b7b61f4495364775b0cd1531aee4d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": [
+        "chest",
+        "broom"
+      ]
+    },
+    {
+      "id": "Gift/sun-spark",
+      "file": "Gift_sun-spark.fbx",
+      "webGroup": "gifts",
+      "webKey": "sun-spark",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 0.6140244315079749,
+      "depth": 1.8999999999999997,
+      "triangles": 688,
+      "vertices": 350,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "aa6deba706f71c20d4056ed9bc149e687ff74fbf2aaf167c493e9be7a645a2ae",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mint-gems",
+      "file": "Gift_mint-gems.fbx",
+      "webGroup": "gifts",
+      "webKey": "mint-gems",
+      "aliases": [],
+      "runtime": false,
+      "width": 0.9934997464510018,
+      "height": 1.9,
+      "depth": 0.6962161686316332,
+      "triangles": 20,
+      "vertices": 12,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "be437f7a99b899884f0d6a83f9efb84cafa45d2849a1e04df7890d0ce6346c92",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/trail-stars",
+      "file": "Gift_trail-stars.fbx",
+      "webGroup": "gifts",
+      "webKey": "trail-stars",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9000000000000001,
+      "height": 1.251280895779262,
+      "depth": 0.9734867254575752,
+      "triangles": 828,
+      "vertices": 420,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "63a98d5263b27963eea7f337fb2e64c7234e56f216053277ad643a72e7ac7f6e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/coral-orbit",
+      "file": "Gift_coral-orbit.fbx",
+      "webGroup": "gifts",
+      "webKey": "coral-orbit",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.7463235110431188,
+      "depth": 0.16764705331293567,
+      "triangles": 1392,
+      "vertices": 708,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f1ace4ed1bb1f9c767ffe337dccd9404f525a171576816e93d69ed68cfe74da2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/ocean-stars",
+      "file": "Gift_ocean-stars.fbx",
+      "webGroup": "gifts",
+      "webKey": "ocean-stars",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.22522414421022746,
+      "depth": 1.8070074367350817,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3fbaa9682f6bfe47e4598ca1209c337cd4fa3c77a93e6d1e4cf4a01ea451c3f4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/halo",
+      "file": "Gift_halo.fbx",
+      "webGroup": "gifts",
+      "webKey": "halo",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.9,
+      "depth": 0.16101694244252546,
+      "triangles": 1728,
+      "vertices": 880,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "055d5fd8c1725c6715afcb19111654f4ef45c856c69ff83031df0f5fc2f200fc",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/rainbow-orbit",
+      "file": "Gift_rainbow-orbit.fbx",
+      "webGroup": "gifts",
+      "webKey": "rainbow-orbit",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.7463235110431188,
+      "depth": 0.16764705331293567,
+      "triangles": 1392,
+      "vertices": 708,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7bb86a4bc685c361221d2b42bbc502935ab51e08a51933abfd4121b1eb1e3c6b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/comet",
+      "file": "Gift_comet.fbx",
+      "webGroup": "gifts",
+      "webKey": "comet",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.4989257880970233,
+      "depth": 1.7964312346658606,
+      "triangles": 348,
+      "vertices": 180,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "d678fc0a3d699c26ba92a66293a1d776892b73e3acffdc24b3ce74baa2917868",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/galaxy-glow",
+      "file": "Gift_galaxy-glow.fbx",
+      "webGroup": "gifts",
+      "webKey": "galaxy-glow",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.22522414421022746,
+      "depth": 1.8070074367350817,
+      "triangles": 276,
+      "vertices": 140,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c341c9e9dd02c33e378585616702039396ce4ec02a5f5339d302a5145243f58b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-sky",
+      "file": "Gift_bg-sky.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-sky",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c7e27795f345fa44ff097a72cac9bf0fc14c23b3a52614a96edd51faa6898478",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-leaf",
+      "file": "Gift_bg-leaf.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-leaf",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "cc3ec27e089dc81ccc70def93cf81e1c0596c4523cbb942c09aa2b57fd4859fa",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-peach",
+      "file": "Gift_bg-peach.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-peach",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f0612a6120c8c6580796c7853c3d06b897c8e4f6bd829ea970b816e1a7d1bf21",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-ocean",
+      "file": "Gift_bg-ocean.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-ocean",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "57b443dad7a4253d415fa6f763c0d117c4ec862a64c70798c768ea34f57da860",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-lemon",
+      "file": "Gift_bg-lemon.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-lemon",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "552179ec19473d30de77b30d4c7daf6a8a4b7dbe662efb6b110467d9f0a6c418",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-lilac",
+      "file": "Gift_bg-lilac.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-lilac",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "179e000d1d5d19b7aa5930306a11dfe50f97d7adb7bc6ceaf7447edfbc24f043",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-rose",
+      "file": "Gift_bg-rose.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-rose",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.3677419248778412,
+      "triangles": 1212,
+      "vertices": 618,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b321372bc88d0b4929b2eacc21bc7b8a62a0e1f67cea98f95d23f14f7bee2e90",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/bg-rainbow",
+      "file": "Gift_bg-rainbow.fbx",
+      "webGroup": "gifts",
+      "webKey": "bg-rainbow",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4464517392328242,
+      "depth": 0.4229032373552395,
+      "triangles": 1392,
+      "vertices": 718,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ef64f17bf5fc9f74afa62992434d79bdd3735f0c89eacc72272896abbba6076a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-rabbit",
+      "file": "Gift_friend-rabbit.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-rabbit",
+      "aliases": [],
+      "runtime": false,
+      "width": 0.7380168104813543,
+      "height": 1.9,
+      "depth": 0.9774794080716516,
+      "triangles": 3836,
+      "vertices": 1948,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "92b62ef07d3e666d801912a08511819fb6b1ee05017ac37b4566614a621df003",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-cat",
+      "file": "Gift_friend-cat.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-cat",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.204371769338759,
+      "height": 1.8999999999999997,
+      "depth": 1.105737738396588,
+      "triangles": 3108,
+      "vertices": 1586,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e1960f9e031b40cd9129d0942f8b0f346c9206fb3043c5a7f26aea419ea03244",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-bear",
+      "file": "Gift_friend-bear.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-bear",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.1937172712782642,
+      "height": 1.9,
+      "depth": 0.8753928632459802,
+      "triangles": 5112,
+      "vertices": 2584,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5d3c50e13a5ce18c31369b384974dcf40eee98e864613f35a3f64480d5521a47",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-fox",
+      "file": "Gift_friend-fox.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-fox",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.319626344170341,
+      "height": 1.9,
+      "depth": 0.893090732240324,
+      "triangles": 4348,
+      "vertices": 2198,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "c9ae64e925d857c182a23250e89c795e803c7fff02bbe8f5458652cf5d9b7c15",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-owl",
+      "file": "Gift_friend-owl.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-owl",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.3095058543005107,
+      "height": 1.9,
+      "depth": 0.9821293297467634,
+      "triangles": 6516,
+      "vertices": 3304,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b73f8903a69085bb54722cd491174b096060ba824a5b077a9c698286d5e33078",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-butterfly",
+      "file": "Gift_friend-butterfly.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-butterfly",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.352701103923881,
+      "depth": 0.3343036724198645,
+      "triangles": 4760,
+      "vertices": 2416,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a691bb5866eb9621b103d259b23699728747abbf3a1bc61f1ee1f46e7f4b15de",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-penguin",
+      "file": "Gift_friend-penguin.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-penguin",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.6000000278852133,
+      "height": 1.9,
+      "depth": 0.9833331683458213,
+      "triangles": 3204,
+      "vertices": 1622,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e7e8c439b21fd1f7fb7c1080b84a88fe2ece8738ebf0503daf23785ae2e947c6",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/friend-whale",
+      "file": "Gift_friend-whale.fbx",
+      "webGroup": "gifts",
+      "webKey": "friend-whale",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.7540625336207469,
+      "depth": 0.9470677046220126,
+      "triangles": 3788,
+      "vertices": 1946,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "62b1e1ac2eaa87fe5335925689611edd0ee4bbcd4adb70b64bcfe682fe2df72a",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-flower",
+      "file": "Gift_mark-flower.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-flower",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.2055172236042278,
+      "height": 1.9000000000000001,
+      "depth": 1.2055172236042278,
+      "triangles": 1776,
+      "vertices": 914,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "34c1ca60c4970cb853091dedc13520f7716d02ed42e625d1ffc0dd7a32ed20a7",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-leaf",
+      "file": "Gift_mark-leaf.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-leaf",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.3984000253677369,
+      "height": 1.9,
+      "depth": 1.3984000253677369,
+      "triangles": 600,
+      "vertices": 312,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "be1239448e02d998ed97d465c243b765bb8286f0289a170e5f4fe1302e1241bc",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-ribbon",
+      "file": "Gift_mark-ribbon.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-ribbon",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.3258799119260432,
+      "depth": 0.46557291238984666,
+      "triangles": 1560,
+      "vertices": 790,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3188373bcaf64b9dafd6b3a207ed83ce26cd9aad79230096fb73a6e0e7bbea9d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-heart",
+      "file": "Gift_mark-heart.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-heart",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.71571323189353,
+      "depth": 0.299249999044463,
+      "triangles": 140,
+      "vertices": 72,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "f84b761288a0481a680daa945b95140fe9e6af03949ade7c1a4dd3b9d010378d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-clover",
+      "file": "Gift_mark-clover.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-clover",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.403280753689413,
+      "height": 1.9,
+      "depth": 0.30506101562297383,
+      "triangles": 1932,
+      "vertices": 980,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5a8ab6b465568e51e154c028365899ee6f696bcf31f8451757993298564846b2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-cherry",
+      "file": "Gift_mark-cherry.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-cherry",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.7443151866114792,
+      "height": 1.9,
+      "depth": 0.8227899269747275,
+      "triangles": 2108,
+      "vertices": 1072,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "3df1adbf07103e3e0113b73a34864083ec703eaafaa95c5fb636dca8a21ec55c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-moon",
+      "file": "Gift_mark-moon.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-moon",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 0.5329268435843995,
+      "depth": 1.8999999999999997,
+      "triangles": 2264,
+      "vertices": 1160,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "0221a4dd1603c881c5a0a532e97dd331bdf03265e148843733eca9962f8527d2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/mark-palette",
+      "file": "Gift_mark-palette.fbx",
+      "webGroup": "gifts",
+      "webKey": "mark-palette",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.7100005986011464,
+      "depth": 0.5564286442314135,
+      "triangles": 1764,
+      "vertices": 898,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2a043899d1811f35e5cf4d8e705acd14eb7c10760dbcb8c176f36e9c45e363c4",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-curious",
+      "file": "Gift_title-curious.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-curious",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.5098010437737603,
+      "height": 1.9,
+      "depth": 1.2409725060459824,
+      "triangles": 2288,
+      "vertices": 1158,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "dd74fcf422447567ed7cc7ccddceb653e6899e431255e3d5d13b95136ffbf3bf",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-number",
+      "file": "Gift_title-number.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-number",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9000000000000001,
+      "height": 1.7064541786833343,
+      "depth": 0.28272612774429984,
+      "triangles": 3648,
+      "vertices": 1880,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "ba2b3795cbd07cda3d775fb4ed75b0e3e729e006ecc54209042db069f655b174",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-word",
+      "file": "Gift_title-word.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-word",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.37846183191186455,
+      "depth": 1.3137879473086762,
+      "triangles": 1332,
+      "vertices": 692,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b53415781dc7213065eb4676b01d88e31b49f41dca141063e243ef7030263f1f",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-hello",
+      "file": "Gift_title-hello.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-hello",
+      "aliases": [],
+      "runtime": false,
+      "width": 0.9665882491484016,
+      "height": 1.9,
+      "depth": 0.786692245990079,
+      "triangles": 8868,
+      "vertices": 4512,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7348514142157d4592cfcbc8dac03aac17bc5a680e583b7401bbc4ce23ef3aa2",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-thinker",
+      "file": "Gift_title-thinker.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-thinker",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.2055172236042278,
+      "height": 1.9000000000000001,
+      "depth": 1.2055172236042278,
+      "triangles": 1776,
+      "vertices": 914,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "a3b59c371453aecebabe2d11dd4bc7907c8c30a42f5df235212b9720b1af3b8e",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-maker",
+      "file": "Gift_title-maker.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-maker",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.3977013541080896,
+      "height": 1.9,
+      "depth": 0.5678161458179183,
+      "triangles": 1656,
+      "vertices": 854,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "2e35f1b5d01c61bbbaed0c30310b2fb4f0d70b80997eb17be48954cba02f9dab",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-story",
+      "file": "Gift_title-story.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-story",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.23241589038463106,
+      "depth": 0.2324158730682994,
+      "triangles": 132,
+      "vertices": 72,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "71fc6983955afabce3a63578bd7aa8eaa04745661b6dd01c81383ccf3a290261",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/title-space",
+      "file": "Gift_title-space.fbx",
+      "webGroup": "gifts",
+      "webKey": "title-space",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.1176470274743746,
+      "height": 1.9000000000000001,
+      "depth": 0.6649997468555746,
+      "triangles": 1468,
+      "vertices": 744,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "e9aa36ae2327940f09d19b53b519cb3d395c845e4adcefe4a0c149c3fb18611c",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/story",
+      "file": "Gift_story.fbx",
+      "webGroup": "gifts",
+      "webKey": "story",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 0.37846183191186455,
+      "depth": 1.3137879473086762,
+      "triangles": 1332,
+      "vertices": 692,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "7eb5dcf7ad78b40c7a02eeabc30f83fc0b0342a9aac2bd1d1e38a934af5c809d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/drawing",
+      "file": "Gift_drawing.fbx",
+      "webGroup": "gifts",
+      "webKey": "drawing",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.7100005986011464,
+      "depth": 0.5564286442314135,
+      "triangles": 1764,
+      "vertices": 898,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "fc236585d71532decaef76a05aaaad324d394869fda15625d881be6fd27ded3b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/paperfold",
+      "file": "Gift_paperfold.fbx",
+      "webGroup": "gifts",
+      "webKey": "paperfold",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.9,
+      "height": 1.2892857200637156,
+      "depth": 0.9364285841401745,
+      "triangles": 20,
+      "vertices": 14,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "81491a798923e0e7e459b3e355301c7125adc4d5d4e00a29ff045b0c2a16140d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/walk",
+      "file": "Gift_walk.fbx",
+      "webGroup": "gifts",
+      "webKey": "walk",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.5126197489977158,
+      "height": 1.9,
+      "depth": 1.2858930262797543,
+      "triangles": 2264,
+      "vertices": 1162,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "020b6ce0d6c041994d86f5b369422570d53b3c508a091370797acc6796f38c0b",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/experiment",
+      "file": "Gift_experiment.fbx",
+      "webGroup": "gifts",
+      "webKey": "experiment",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.26635097744099,
+      "height": 1.9,
+      "depth": 0.8104646376390977,
+      "triangles": 508,
+      "vertices": 268,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "9b90984e8dcef88f3ea06111a0cc9cd239da7787527bbfd2495ef5334da16cff",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/cooking",
+      "file": "Gift_cooking.fbx",
+      "webGroup": "gifts",
+      "webKey": "cooking",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 0.3166667022795066,
+      "depth": 1.2905661586851167,
+      "triangles": 740,
+      "vertices": 378,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "b15bb7c1141393488c934459731218b33f920cbe5bfc1a6b58350808254a12a0",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    },
+    {
+      "id": "Gift/picnic",
+      "file": "Gift_picnic.fbx",
+      "webGroup": "gifts",
+      "webKey": "picnic",
+      "aliases": [],
+      "runtime": false,
+      "width": 1.8999999999999997,
+      "height": 1.4498134508108231,
+      "depth": 1.4533583079754124,
+      "triangles": 756,
+      "vertices": 392,
+      "pieces": [
+        "Body"
+      ],
+      "sha256": "5057e6ffa28fe02bc2496b60cb22ec88a931c763cd632d121b1ebdade7ccd18d",
+      "ao": "offline hemisphere rays in vertex alpha",
+      "meaning": ""
+    }
+  ],
+  "marineExpected": 64,
+  "careersExpected": 100,
+  "fullExport": true,
+  "giftsExpected": 48
+}

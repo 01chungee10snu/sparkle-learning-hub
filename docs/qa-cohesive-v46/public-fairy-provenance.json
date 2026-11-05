@@ -1,0 +1,22 @@
+{
+  "asset": "Fairy",
+  "publisher": "Frakassets / Pixor",
+  "license": "CC0-1.0",
+  "page": "https://pixor.art/library/crystals/fairy/",
+  "licensePage": "https://pixor.art/library/license/",
+  "sourceBlendSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468",
+  "sourceGLBSha256": "d4cd0e331e607de9c0a08503e77adb76baf930108fcd966a13161fc150fca30a",
+  "variants": [
+    "tae",
+    "se"
+  ],
+  "modifications": [
+    "Imported public body/head/hair/limbs/wings meshes",
+    "Smoothed surfaces and vertex ambient occlusion",
+    "Pink and lavender palettes",
+    "Original flower wreath, curls, face highlights and dress trim",
+    "Articulated pivots matched to existing movement and wave controls"
+  ],
+  "priorOriginalArtPreserved": true,
+  "purchasedAssets": false
+}

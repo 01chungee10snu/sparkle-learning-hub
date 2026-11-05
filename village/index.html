@@ -43,14 +43,15 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <link rel="stylesheet" href="./readability-v39.css?v=refactor-v39-20261102">
 <link rel="stylesheet" href="./world-ui-v40.css?v=kenney-v40-20261102">
 <link rel="stylesheet" href="./blender-map-v41.css?v=blender-v41-20261103">
-<link rel="stylesheet" href="../content-style-v45.css?v=interiors-v45-20261105">
+<link rel="stylesheet" href="../content-style-v45.css?v=cohesive-v46-20261105">
+<link rel="stylesheet" href="../cohesive-style-v46.css?v=cohesive-v46-20261105">
 </head>
 <body>
 <div id="page">
   <main id="game">
     <div id="lite-village-scene" hidden aria-label="가벼운 2D 마법마을 배경">
-      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/storybook-v44/world.webp">
-      <img src="../assets/storybook-v44/world.webp" width="1200" height="760" alt="" decoding="async"></picture>
+      <picture><source media="(max-width:760px) and (orientation:portrait)" srcset="../assets/cohesive-v46/scenes/world.webp">
+      <img src="../assets/cohesive-v46/scenes/world.webp" width="1200" height="760" alt="" decoding="async"></picture>
       <p>🧚 학습 지역을 눌러 모험을 시작해요.</p>
     </div>
     <canvas id="canvas" tabindex="0" aria-label="마법마을 3D 게임"></canvas>
@@ -67,7 +68,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
             <span id="world-kst-badge" class="title-kst-badge">🌤️ 대한민국의 시간과 계절</span>
           </header>
           <figure class="title-art-wrap">
-            <img class="title-art" src="../assets/storybook-v44/world.webp" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
+            <img class="title-art" src="../assets/cohesive-v46/scenes/world.webp" alt="잔디와 물길 사이에 성과 나무가 서 있는 마법마을" width="1200" height="760" decoding="async">
             <figcaption>마법학교 · 직업 탐색관 · 생명 연못 · 푸른 바다 · 한자 수련관</figcaption>
           </figure>
           <div class="title-learning-ribbon" aria-label="오늘의 학습 흐름"><span>↻ 다시 떠올리고</span><b>→</b><span>✦ 알맞게 도전하고</span><b>→</b><span>⌁ 다른 곳에 써보기</span></div>
@@ -77,18 +78,18 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
           <h2 id="title-entry-heading">나의 요정을 선택해요</h2>
           <div id="learner-choices" class="title-learner-choices" role="group" aria-label="마법마을에 들어갈 어린이">
             <button type="button" data-learner="tae" aria-pressed="true">
-              <img class="title-learner-art" src="./assets/taehee_original.png" alt="" width="1254" height="1254">
+              <img class="title-learner-art" src="../assets/cohesive-v46/characters/tae.png" alt="" width="1254" height="1254">
               <span class="title-learner-copy"><strong>태희</strong><small>분홍 별 요정 · 나의 마을</small></span>
             </button>
             <button type="button" data-learner="se" aria-pressed="false">
-              <img class="title-learner-art" src="./assets/sehee_original.png" alt="" width="1254" height="1254">
+              <img class="title-learner-art" src="../assets/cohesive-v46/characters/se.png" alt="" width="1254" height="1254">
               <span class="title-learner-copy"><strong>세희</strong><small>연보라 달 요정 · 나의 마을</small></span>
             </button>
           </div>
           <div class="title-destinations" aria-label="마법마을 학습 지역">
-            <span><img src="./assets/illustrations/math-icon.webp" alt="" width="30" height="30">수학 정원</span>
-            <span><img src="./assets/illustrations/korean-icon.webp" alt="" width="30" height="30">이야기 도서관</span>
-            <span><img src="./assets/illustrations/english-icon.webp" alt="" width="30" height="30">영어 숲</span>
+            <span><img src="../assets/storybook-v44/icons/math.png" alt="" width="30" height="30">수학 정원</span>
+            <span><img src="../assets/storybook-v44/icons/korean.png" alt="" width="30" height="30">이야기 도서관</span>
+            <span><img src="../assets/storybook-v44/icons/english.png" alt="" width="30" height="30">영어 숲</span>
             <span>📜 한자 수련관</span>
             <span>🏛️ 직업 탐색관</span>
             <span>🌊 푸른 바다</span>
@@ -114,7 +115,7 @@ button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible{outl
 <script type="module">
 import { createVillageHost } from './village-bridge.js?v=refactor-v39-20261102';
 import * as Progress from '../platform/progress.js';
-import { createVillageUI } from './village-ui.js?v=interiors-v45-20261105';
+import { createVillageUI } from './village-ui.js?v=cohesive-v46-20261105';
 import * as CloudSync from '../platform/cloud-sync.js?v=canonical-v35-20261023';
 import {koreaScene,applyKoreaScene,SEASONS,DAYPARTS} from './korea-season-clock.js?v=world-v26-20261019';
 
@@ -239,7 +240,7 @@ async function prepareData(){
 
 async function discoverBuild() {
   for (const name of ['WebGL', 'sparkle-fairy-village']) {
-    const loaderUrl = './Build/' + name + '.loader.js?v=interiors-v45-20261105';
+    const loaderUrl = './Build/' + name + '.loader.js?v=cohesive-v46-20261105';
     try {
       const result = await fetch(loaderUrl, {method:'HEAD', cache:'no-store'});
       if (result.ok) return {name, loaderUrl};
@@ -310,13 +311,13 @@ start.addEventListener('click', async () => {
     const suffix=compressed ? '.unityweb' : '';
     canvas.style.display = 'block';
     instance = await createUnityInstance(canvas, {
-      dataUrl: base + '.data' + suffix + '?v=interiors-v45-20261105',
-      frameworkUrl: base + '.framework.js' + suffix + '?v=interiors-v45-20261105',
-      codeUrl: base + '.wasm' + suffix + '?v=interiors-v45-20261105',
+      dataUrl: base + '.data' + suffix + '?v=cohesive-v46-20261105',
+      frameworkUrl: base + '.framework.js' + suffix + '?v=cohesive-v46-20261105',
+      codeUrl: base + '.wasm' + suffix + '?v=cohesive-v46-20261105',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'Family Learning',
       productName: 'Sparkle Fairy Village',
-      productVersion: '0.45.0-interiors'
+      productVersion: '0.46.0-cohesive'
     }, progress => {
       bar.style.width = Math.round(progress * 100) + '%';
       status.textContent = '마법마을 로딩 ' + Math.round(progress * 100) + '%';
@@ -389,5 +390,6 @@ if(autoStartRequested)queueMicrotask(()=>{
   if(!start.disabled)start.click();
 });
 </script>
+<script type="module">import {mountCohesiveUI} from "./cohesive-ui-v46.js?v=cohesive-v46-20261105";mountCohesiveUI();</script>
 </body>
 </html>

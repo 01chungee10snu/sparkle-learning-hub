@@ -1,0 +1,361 @@
+{
+  "baseline": "50874ed84c752b89ae03ecdba3753e2570f36ef7",
+  "files": [
+    {
+      "path": "games/bebsu-challenges.json",
+      "sha256": "46c72d386e7b5715bfbae69cb211b775bac8d4b42e7f5d308f316c70d209c8be"
+    },
+    {
+      "path": "games/bebsu-foundation/game.json",
+      "sha256": "d50160378ac80fcfabe001cdd38c1369fbf31139c9ca05cfb35ae203259fd264"
+    },
+    {
+      "path": "games/bebsu-g1-generated/game.json",
+      "sha256": "b47091fc793fa59edaf7b0d11dc244392d45b7b2726c2145a97a4e48e9f58e0f"
+    },
+    {
+      "path": "games/bebsu-g1-original/game.json",
+      "sha256": "b00c84be8de138663a5dad32d1c2c4b7d48dbb9504f0c7ea67abbbf4008d105f"
+    },
+    {
+      "path": "games/bebsu-g2-original/game.json",
+      "sha256": "ec8c89257bd3dde4767bbc2c76e784fa45e5e7310f98721b2696b2f9fd3b07cf"
+    },
+    {
+      "path": "games/bebsu-g3-original/game.json",
+      "sha256": "da7043f275e927231a4358fdeb3535f75811d8b582f26aade398419ed729c020"
+    },
+    {
+      "path": "games/bebsu-g4-original/game.json",
+      "sha256": "2ba1cf21be9bf391f4ebfbade758042733c60691d8ffd599775a152834cc86e1"
+    },
+    {
+      "path": "games/bebsu-g5-original/game.json",
+      "sha256": "0cefbcc2383b89bb14e38897fa4092ed8572a3d9abd0cb6b453ca175d41349f5"
+    },
+    {
+      "path": "games/bebsu-g6-original/game.json",
+      "sha256": "36f01df7ac48f60b06bd7fd62a5fe4b52d7c3423c48c828fdc76f0307d3b721d"
+    },
+    {
+      "path": "games/bebsu-m-original/game.json",
+      "sha256": "82aa38f38fb167d0e76b09a841de72fa640ae121d4cadc5aa234bdeca0749aec"
+    },
+    {
+      "path": "games/bebsu-m1-original/game.json",
+      "sha256": "34170a3fd3e38f6999840a241aa609c5b46eeea867f810858f0e62631edd0a15"
+    },
+    {
+      "path": "games/bebsu-m2-original/game.json",
+      "sha256": "fac03202cf20c6dc9c957e243429af1dcc2640b4ead2e6326fac434b34b84e87"
+    },
+    {
+      "path": "games/bebsu-m3-original/game.json",
+      "sha256": "afd3d01996184346bbc7032bdbe07a0df1bf724bfe9f319af26f84528d971af0"
+    },
+    {
+      "path": "games/block-patterns/game.json",
+      "sha256": "2f59ab97c12dd5b7b79dae02f07b6ac684c227df09b6825c0f3594eea01fc9b0"
+    },
+    {
+      "path": "games/catalog.json",
+      "sha256": "64768b07e915ae0c5bef357b7d094b168f473f1f9878fe760134b8ecf70a3990"
+    },
+    {
+      "path": "games/classroom-bag/game.json",
+      "sha256": "46985030ff514bffed953b492d48183b30362eb290ae9e690c8ca7f70133f617"
+    },
+    {
+      "path": "games/clue-library/game.json",
+      "sha256": "facd91e57c8f4c3d68301b362b586763f599240accea764809eed5e524bdbdeb"
+    },
+    {
+      "path": "games/day-order/game.json",
+      "sha256": "2ac6c69ed2929bc8067aed5bf184cd4f5d45093b3b577fa26f880aaf2dad9f76"
+    },
+    {
+      "path": "games/english-rainbow/game.json",
+      "sha256": "1c3925d1977c88ca60e799773c3366e9f15c47aa718d3509c8c278eb52b80107"
+    },
+    {
+      "path": "games/growth-english-1/game.json",
+      "sha256": "4ffa928fc937d98e5094a69339c255c1437ee6d57d698d333d53ca1ca1422f6f"
+    },
+    {
+      "path": "games/growth-english-2/game.json",
+      "sha256": "5ab02b1464303ef67976b9c127874a11ddcd9fb30da6fd4b6cadb10a4c1149d7"
+    },
+    {
+      "path": "games/growth-english-3/game.json",
+      "sha256": "d46e42d99b84e0346c52e99161335586469b297a73985b2fa2450429c39f2239"
+    },
+    {
+      "path": "games/growth-english-4/game.json",
+      "sha256": "daabf6cdfc159b1ebd4b98322701e92847fa7b073ea9bb88733fd245f8c0bdae"
+    },
+    {
+      "path": "games/growth-korean-1/game.json",
+      "sha256": "c8a0de950227bae9deaa0373c9cc25458a305f01fa177f47aae47e855467113d"
+    },
+    {
+      "path": "games/growth-korean-2/game.json",
+      "sha256": "bbfd124f66d2221afbe1b35cc744502e15a74468189b04a136734d77eed89207"
+    },
+    {
+      "path": "games/growth-korean-3/game.json",
+      "sha256": "6f571d75586b8133f052b465991020a914d8d20d51937ffba3944484d120d234"
+    },
+    {
+      "path": "games/growth-korean-4/game.json",
+      "sha256": "db3c170afb0748b130ba2c4e9aa1231a68a87cc3efb1a412a56e3b0ae035fdc3"
+    },
+    {
+      "path": "games/growth-math-1/game.json",
+      "sha256": "33276aa1474287794c1969f4aff961ba0cb2792d6d3f5ff3e6b37711eb9a0f45"
+    },
+    {
+      "path": "games/growth-math-2/game.json",
+      "sha256": "84140ba7866c994bf6ef99f0df2c14fa45d314c5b293ab70fd7b56082c456a27"
+    },
+    {
+      "path": "games/growth-math-3/game.json",
+      "sha256": "b85d441c4281d8a8d77be1cdee9b21655bcec34019558443acbb5f46ea5c5b88"
+    },
+    {
+      "path": "games/growth-math-4/game.json",
+      "sha256": "c673c18ba59ac74df3202a353603da08af3e7478c1a0d5e9a586bf26b0372840"
+    },
+    {
+      "path": "games/hanja-h3/game.json",
+      "sha256": "0be5e0e9909a3110e7e4a18c019e68c47f6662f7f8ef467d6f28f682688375e7"
+    },
+    {
+      "path": "games/hanja-h3ii/game.json",
+      "sha256": "9d15ec7c2ac3a0e15492d6bd65f26d67c8d11303c7c407caf8b62ac145afddbb"
+    },
+    {
+      "path": "games/hanja-h4/game.json",
+      "sha256": "8816afec4e5b64028ee2ab287951eace793dc629b3068c41b56f1f1d092504e2"
+    },
+    {
+      "path": "games/hanja-h4ii/game.json",
+      "sha256": "10c15c415ce4fcb38b37bfd90e70a826e98075150e66b8993139182f3f5a11ab"
+    },
+    {
+      "path": "games/hanja-h5/game.json",
+      "sha256": "fa271649c62eac831be36da3f061783f191a25737b50b275a36f8f4b6ad4e2b5"
+    },
+    {
+      "path": "games/hanja-h5ii/game.json",
+      "sha256": "5036fcd889ac014478a2df97e5609045ddd4ea1ca59e81ccdc8b5622e21ac67c"
+    },
+    {
+      "path": "games/hanja-h6/game.json",
+      "sha256": "acc64e8a31d159a1ead88d9c853b315d5fffd6be8b8b4dbecace4eab6faec325"
+    },
+    {
+      "path": "games/hanja-h6ii/game.json",
+      "sha256": "206baa3eee713816121dd3b8af5c0bb405fe5f7386ff654dc3a6e2bc51f87e4b"
+    },
+    {
+      "path": "games/hanja-h7/game.json",
+      "sha256": "2ca455f3c582ddec1484c9be951be52032a7451d1bb2285be24c89f67d4315af"
+    },
+    {
+      "path": "games/hanja-h7ii/game.json",
+      "sha256": "226c9618b559f72900acc14241045f15d6b46fe33be191696147c987e052ca25"
+    },
+    {
+      "path": "games/hanja-h8/game.json",
+      "sha256": "98b0ac72a969e86b31cba4ea53ce493ecd1f1bc7e012d4867d5be2606df0f14a"
+    },
+    {
+      "path": "games/irt-bank.json",
+      "sha256": "45f5c1fa2ac080bf110c603f7f908cc9c7d12ef5741e7a54f2ae9ffda5aeda03"
+    },
+    {
+      "path": "games/kind-dialogue/game.json",
+      "sha256": "729611157ce17ff71499d5a9eecbcbe2cb8c3512e40e6961eec5ce141d4065d6"
+    },
+    {
+      "path": "games/listening-missions/game.json",
+      "sha256": "a25bbaf7591c89c19e1deadc7dd010b7a4a58e3bdeb0e11cb17a1cc63c9bd1a2"
+    },
+    {
+      "path": "games/magic-g1-challenge/game.json",
+      "sha256": "9f1fa5de3084d5084ac97c733cb2b214b47ab5a9cea7e932b2a3679e74823527"
+    },
+    {
+      "path": "games/magic-g2-challenge/game.json",
+      "sha256": "747c6501a42f683a89e75d114db7bfb456b625dd571e30b0d63aaa267c5660e0"
+    },
+    {
+      "path": "games/magic-g3-challenge/game.json",
+      "sha256": "40467babf6f12d0e40f41098b85e1a4db4970c3fa4cc8788ef1d354b1fd9d5f3"
+    },
+    {
+      "path": "games/magic-g4-challenge/game.json",
+      "sha256": "8b16a76a457310e1e109f1a41f705003d3ad02453ee05d61d3f90165855839f3"
+    },
+    {
+      "path": "games/magic-g5-challenge/game.json",
+      "sha256": "5e22fc371172abfc598304c73d0be31379074bb54c3b47da84e53836f4444e79"
+    },
+    {
+      "path": "games/magic-g6-challenge/game.json",
+      "sha256": "94499e208149c830f245593b3219a5a03647ff9cf64f682b3920a9a943275f67"
+    },
+    {
+      "path": "games/magic-m1-challenge/game.json",
+      "sha256": "8ddff8e8a1de584c2c8f86a4274465caf51ca5ec4d093465d04cd8d89e059352"
+    },
+    {
+      "path": "games/magic-m2-challenge/game.json",
+      "sha256": "928a8f3f391e75462e59be2c8d71709971877daec2c7baf96411caac287c4b23"
+    },
+    {
+      "path": "games/magic-m3-challenge/game.json",
+      "sha256": "8a4afc57de1c36708e4f215288fcc76345854a5049ca6deab3bdafbea87be7e5"
+    },
+    {
+      "path": "games/magic-practice-challenges.json",
+      "sha256": "51f20b622425de96a33429d4e545510fe88e24e71b6cfa16973db606c1a501b8"
+    },
+    {
+      "path": "games/measure-lab/game.json",
+      "sha256": "dee09f8b494a1e8a43124b9d1b3536849203ff26373b96ca0de7ede96adbb84c"
+    },
+    {
+      "path": "games/number-picnic/game.json",
+      "sha256": "272e425f0da0981ccc8f367ca78b977bd7684ad273dfd5fdf294bdcf95c8e7c9"
+    },
+    {
+      "path": "games/phonics-train/game.json",
+      "sha256": "80c62270ab0bba2ea2cc8e1e90928e53b33e7fca8a1ca91c735635418ccf07ee"
+    },
+    {
+      "path": "games/picture-pairs/game.json",
+      "sha256": "8ed937e90490f727d8503b3b2ede398e9f43a654d9ce27b3aecedf5bd8c647dd"
+    },
+    {
+      "path": "games/school-shop/game.json",
+      "sha256": "3050a16e7833ee6dd851d29769f42113f1dac49e39702f7fc7503bc535ccab08"
+    },
+    {
+      "path": "games/sentence-picnic/game.json",
+      "sha256": "b7c6d35d3444dada73cc369fda99e40d28ddc102d2175ceca7b38cba878f6606"
+    },
+    {
+      "path": "games/sharing-kitchen/game.json",
+      "sha256": "87dba0cc004cf3a553d031a2e465365d72a017ae0f93fea864e076f4f6db6ae9"
+    },
+    {
+      "path": "games/snack-count/game.json",
+      "sha256": "e4b7b6d57405df14a028fc1ceaad3d5a22cd6cc2ac1c30e340a45c6757875990"
+    },
+    {
+      "path": "games/sound-workshop/game.json",
+      "sha256": "7db98bc4e6c6d3f09379b188a30c36b33a39530deb6310f8cc6ba77e5367eb6d"
+    },
+    {
+      "path": "games/story-sequence/game.json",
+      "sha256": "0e804c29ce911005f20216696e75b42fb572dcc1ebd6b85ce519376d16a1debd"
+    },
+    {
+      "path": "games/time-day/game.json",
+      "sha256": "bd36691299f069925bb02a5aabadb8338e7ce48bf6badafc3e919bc77353f056"
+    },
+    {
+      "path": "games/unit-garden/game.json",
+      "sha256": "4c968afa566a5b932d04f08b1c8a070b83d25a5334bb6c5f2f860dc58f3bd4b2"
+    },
+    {
+      "path": "games/word-builder/game.json",
+      "sha256": "7b768b6d0402ebb19a99fb6835ec1fbaeceb4d3266b5a5c6a915e48ef1d8a467"
+    },
+    {
+      "path": "games/word-forest/game.json",
+      "sha256": "72a614bfad05ca9e718ab17ba472bfa79e258d3fe3e17a183dde6cbf58b72c6b"
+    },
+    {
+      "path": "games/world-greetings/game.json",
+      "sha256": "684fc753d2f75855bcc5a0a3eb53219abcac0e60d6996196bfde218ebb3c38bb"
+    },
+    {
+      "path": "supabase/migrations/20261017000700_subject_resources_and_pond_history.sql",
+      "sha256": "ccff56a24b95ebab6389c5c53b2336b3599dfb51c1c722172e0a5776d1f4ec3b"
+    },
+    {
+      "path": "supabase/migrations/20261021000800_learning_response_events.sql",
+      "sha256": "b4afd3e8de72f39700aa7a96743e9e487bdbd9bf41b39f501ef30241d52ca2a1"
+    },
+    {
+      "path": "supabase/migrations/20261023000900_family_canonical_state.sql",
+      "sha256": "c0496db1d81187f5837c41ffe99513f278561e8c547c24249a767892252d61d9"
+    },
+    {
+      "path": "platform/progress.js",
+      "sha256": "5bc7e3b1c86287ad7536d666a31fa200836f8da240787701cffab19f594b33c7"
+    },
+    {
+      "path": "platform/irt.js",
+      "sha256": "a39f3efcd87f97bbf3537810ec22e08376bd41adfef9e8053d5678b87f355dd1"
+    },
+    {
+      "path": "platform/rewards.js",
+      "sha256": "da87cb65bbf5972587a0af5f5ad4b9cd12bdb7879d2eb800c5bc6a58654ffa92"
+    },
+    {
+      "path": "platform/cloud-sync.js",
+      "sha256": "21aa3a32c5ba699a6d4cfdd091e9fbfb3e9ca68880ba8baa68f85538823caa3a"
+    },
+    {
+      "path": "platform/resource-economy.js",
+      "sha256": "d22ec267b7c95830151cc0b92c5ca0034d118075565d199c89ea900fc1d027ff"
+    },
+    {
+      "path": "platform/pond-session.js",
+      "sha256": "3781f97c28b6d7c171b7f6655f2da9173220a494ea0c83fd3100a8171fbd093e"
+    },
+    {
+      "path": "platform/play-balance.js",
+      "sha256": "f5e9b6429324d2b46998e4276b8b9eb4b0d130ec1ae7ab511beb7eb26ef3712a"
+    },
+    {
+      "path": "platform/parent-dashboard.js",
+      "sha256": "e2f015f5326d02c34d9bbe9a10b68d27037d2bf1e29406d4f560e5cc9f4ab885"
+    },
+    {
+      "path": "village/career-library.js",
+      "sha256": "319c4a53d8d3e785a2031ec491b0c87e53be84140a36386eb119f03d363f832c"
+    },
+    {
+      "path": "village/career-data-v27.js",
+      "sha256": "b970c3447ccf2c69e8945058d617857aab07cce6799a98ad24ac999bd70c1470"
+    },
+    {
+      "path": "village/career-state.js",
+      "sha256": "a391a19e85375bbdd9dcef7c7f2f46adea90ac0c8b5cd7ad4628721e37661117"
+    },
+    {
+      "path": "village/garden-state.js",
+      "sha256": "99e52fc602844dee88bbce39718608c3573f3a2e718dcd0ea4b7f1faedda097c"
+    },
+    {
+      "path": "village/relationship-state.js",
+      "sha256": "acc77274ccde26fe04ef359544cac2094246651376f523c8f89b76148a77ecd7"
+    },
+    {
+      "path": "village/ecology-state.js",
+      "sha256": "d0392661301f78f9af5f89c6f7efd757b5ba5ecbc129614eca48117e8720f07e"
+    },
+    {
+      "path": "platform/reward-catalog.js",
+      "sha256": "7d0fbb85d21433a15efacbe8267c5f36c516184423e78f37d22ec2986204bd21"
+    },
+    {
+      "path": "village/life-state-v16.js",
+      "sha256": "5ca78465fd8391a5c9587ee0f5b875c929c9166ee1aa61279ab21db8885a0e02"
+    }
+  ]
+}

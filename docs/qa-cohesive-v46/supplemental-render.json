@@ -1,0 +1,19 @@
+{
+  "renderOnlyAssets": 148,
+  "runtimeRebuilt": false,
+  "reason": "100 career and 48 gift models rendered offline; only character, marine and selected icon/scenery models are in Resources.",
+  "scenes": [
+    {
+      "path": "assets/cohesive-v46/scenes/entry.webp",
+      "sha256": "3e6d23a7028a64f8d0e658b13355bdfbe8b6fa218d12b947c2b008cd6c4b986f",
+      "bytes": 140598,
+      "source": "Current Unity scene rendered by Editor; not a generated concept"
+    },
+    {
+      "path": "assets/cohesive-v46/scenes/world.webp",
+      "sha256": "c633b5072ee0dd6b4467dece76f2041cde0878165d89bc3f00f02fe2990f426d",
+      "bytes": 186178,
+      "source": "Current Unity scene rendered by Editor; not a generated concept"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "verifiedAt": "2026-11-05T11:00:00.614467+00:00",
+  "version": "cohesive-v46-20261105",
+  "sourceGLBDownloadedAndMatched": true,
+  "sourceGLBSha256": "d4cd0e331e607de9c0a08503e77adb76baf930108fcd966a13161fc150fca30a",
+  "sourceBlendSha256": "b5b790eb6586217c6f84f5b2617ea0e814b1cdb494bc3d2acc1349c047c11468",
+  "mobileProofSha256": "8e9432c81f3ede2d4e8fb332452d9b6b4ee7c8b334ad42250d42dfe2c75abc0c",
+  "binaryFiles": [
+    {
+      "file": "WebGL.data.unityweb",
+      "bytes": 24229849,
+      "sha256": "3dae82f520488c300dc6b83144ec02fd87628e4a736d162167fa89bae4a6ec36"
+    },
+    {
+      "file": "WebGL.wasm.unityweb",
+      "bytes": 6074407,
+      "sha256": "3e66e04322c876f63a4b446a984f9db2b1ef4286f58db79c765bec7c5c2edf09"
+    },
+    {
+      "file": "WebGL.framework.js.unityweb",
+      "bytes": 70857,
+      "sha256": "f3a1b09916e81587a18dae41c2f4384a1439656fee08d8d16eb27c3a72cda49a"
+    },
+    {
+      "file": "WebGL.loader.js",
+      "bytes": 117894,
+      "sha256": "768189a56bab6a305ccfd7c112254f9d513d38e92f9840a9d75d15942f099764"
+    }
+  ],
+  "productionDataTouched": false,
+  "unitySourceCommit": "5ad33e75bd4f1035baf54e41fa42f0b444f4c415",
+  "cohesiveProofSha256": "5e68cf92c335ae0193cc6cd5eb6224c1a1aed13fc39fbf18b6f30af4007b1689",
+  "interiorProofSha256": "7e0652ff0bc0616b5dec205d8f535f4bbe13c9985a3915d5cca144f01579b1ad"
+}

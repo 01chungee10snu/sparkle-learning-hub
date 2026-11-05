@@ -1,12 +1,13 @@
+import {marineArt,characterArt,cohesiveArt,rewardArt} from '../platform/cohesive-art-v46.js?v=cohesive-v46-20261105';
 import {SPECIES,CARE} from './garden-state.js';
 import {mountContentWorld} from './content-world-v45.js?v=interiors-v45-20261105';
 import {contentArt,decorateCountedObjects} from '../platform/content-art-v45.js?v=interiors-v45-20261105';
 import {WORLD_DESTINATIONS,artPath,worldLocation} from '../platform/world-art-v40.js?v=storybook-v44-20261104';
 import {applyNumericKey, normalizeNumericDraft, numericDraftReady} from '../platform/numeric-keypad.js';
-import {mountPondExperience} from './pond-experience.js?v=interiors-v45-20261105';
-import {mountCareerExplorer} from './career-ui.js?v=child-ux-v33-20261020';
+import {mountPondExperience} from './pond-experience.js?v=cohesive-v46-20261105';
+import {mountCareerExplorer} from './career-ui.js?v=cohesive-v46-20261105';
 import {STORY_QUESTS, STORY_DISTRICTS, findStory, recommendedStories, describeStoryForSpeech, storyCompletionText} from './story-quests.js';
-import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js';
+import {FAIRY_STYLES, findFairyStyle, fairyPortrait, loadFairyStyle, saveFairyStyle} from './fairy-styles-v11.js?v=cohesive-v46-20261105';
 // DOM-driven game HUD, designed for readable mobile buttons and accessibility.
 // It never scores an answer: the established learning platform remains authoritative.
 function nativeProgressArt(answered,total){
@@ -95,7 +96,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const destination=root.querySelector('[data-district="'+key+'"]');
     if(!destination)continue;
     const icon=document.createElement('img');
-    icon.src='./assets/illustrations/'+key+'-icon.webp';
+    icon.src=artPath(key,'../');
     icon.alt='';icon.width=30;icon.height=30;icon.loading='lazy';
     const name=document.createElement('span');name.textContent=title;
     destination.replaceChildren(icon,name);
@@ -382,7 +383,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const blenderHost=label('div','','vh-blender-stage');
     const blenderPoster=document.createElement('img');
     blenderPoster.className='vh-blender-map-poster';
-    blenderPoster.src='../assets/storybook-v44/world.webp';
+    blenderPoster.src='../assets/cohesive-v46/scenes/world.webp';
     blenderPoster.alt='Blender로 제작한 성과 정원, 연못이 있는 마법마을의 3D 모습';
     blenderHost.append(blenderPoster);
     blenderMenu.append(blenderSummary,blenderHost,
@@ -477,10 +478,12 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       scene.setAttribute('aria-label',kind.title+' 성장 모습');
       const visual=label('div','','vh-growing-plant');
       const art=plant.stage===0?'seed':plant.stage===1?'sprout':plant.stage===2?'bud':null;
-      if(art){const image=document.createElement('img');image.src='./assets/'+art+'.png';image.alt='';visual.append(image);}
-      else if(['flowers_pink','flowers_sun'].includes(plant.species)){
-        const image=document.createElement('img');image.src='./assets/gameplay/'+plant.species+'.png';image.alt='';visual.append(image);
-      } else visual.textContent=kind.emoji;
+      if(art){const image=document.createElement('img');image.src=cohesiveArt('icons',art);image.alt='';visual.append(image);}
+      else {
+        const image=document.createElement('img');
+        image.src=plant.species.startsWith('flowers_')?cohesiveArt('scenery',plant.species):'../assets/storybook-v44/icons/garden.png';
+        image.alt=kind.title;visual.append(image);
+      }
       visual.style.setProperty('--plant-scale',String(.65+.35*plant.stage/kind.steps));
       scene.append(visual,label('figcaption',plant.stage===0?'내가 심은 씨앗':plant.stage===1?'작은 새싹':plant.stage===2?'쑥쑥 자라는 중':finished?'내가 가꾼 '+kind.title:'더 크게 자라는 '+kind.title));
       if(data.action==='GARDEN_CARE'){
@@ -981,7 +984,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const residents=label('div','','vh-water-residents');
     for(const resident of fishInWorld.filter(f=>f.owned).slice(0,8)){
       const avatar=label('div','','vh-water-resident');avatar.style.setProperty('--swim-index',fishInWorld.indexOf(resident));
-      const art=document.createElement('img');art.src=resident.art+"?v=child-safe-v32-20261019";art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
+      const art=document.createElement('img');art.src=marineArt(resident.id)||resident.art;art.addEventListener('error',()=>{art.src=resident.art;},{once:true});art.alt=resident.name;art.width=170;art.height=125;art.loading='lazy';art.decoding='async';
       avatar.append(art);residents.append(avatar);
     }
     panorama.append(residents);ui.body.append(panorama);
@@ -1040,7 +1043,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
       const imageWrap=!ocean&&fish.owned?button('',()=>pondExperience?.focusFish(fish.id),'vh-fish-emoji vh-fish-art vh-fish-art-button'):label('span','','vh-fish-emoji vh-fish-art');
       if(!ocean&&fish.owned)imageWrap.setAttribute('aria-label',fish.name+'와 함께 헤엄치기');
       if(!ocean&&fish.owned){imageWrap.dataset.pondAction='available';imageWrap.disabled=!pondExperience?.running;}
-      const art=document.createElement('img');art.src=fish.art+"?v=child-safe-v32-20261019";art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
+      const art=document.createElement('img');art.src=marineArt(fish.id)||fish.art;art.addEventListener('error',()=>{art.src=fish.art;},{once:true});art.alt=fish.name+' 일러스트';art.width=144;art.height=116;art.loading='lazy';art.decoding='async';
       imageWrap.append(art);article.append(imageWrap);
       const copy=label('div','','vh-fish-copy');
       copy.append(label('strong',fish.name,'vh-fish-name'));
@@ -1107,10 +1110,10 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     const gallery=label('div','','vh-shop-grid');
     for(const item of selected){
       const card=label('article','','vh-shop-item');
-      const icon=label('span',item.emoji||'✦','vh-shop-icon');
+      const icon=label('span','','vh-shop-icon');
       icon.setAttribute('aria-hidden','true');
       const object=document.createElement('img');object.className='v45-shop-object';object.alt='';object.width=64;object.height=64;
-      object.src=contentArt('props',({light:'lantern',background:'globe',friend:'chest',mark:'star',title:'scroll'})[item.category]||'chest');
+      object.src=rewardArt(item.id)||contentArt('props','chest');
       icon.prepend(object);
       card.append(icon,label('strong',item.title,'vh-shop-name'));
       card.append(label('p',item.description||'','vh-shop-description'));
@@ -1145,7 +1148,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     for(const relation of data.relationships){
       const [emoji,name]=meta[relation.id]||['✨',relation.id];
       const card=label('article','',`vh-friend-card ${relation.level||'new'}`);
-      card.append(label('span',emoji,'vh-friend-icon'));
+      const portrait=label('span','','vh-friend-icon');const friendImage=document.createElement('img');friendImage.src=characterArt(relation.id==='tutor'?'npc_teacher':'npc_'+relation.id);friendImage.alt='';friendImage.width=76;friendImage.height=88;portrait.append(friendImage);card.append(portrait);
       const copy=label('div','','vh-friend-copy');
       copy.append(label('strong',name,'vh-friend-name'));
       copy.append(label('span',levels[relation.level]||levels.new,'vh-friend-level'));
@@ -1270,7 +1273,7 @@ export function createVillageUI({root, sendToUnity, sendRequest}) {
     stage.setAttribute('aria-label','마법마을 안에서 직접 움직이는 학습');
     const scenery=label('div','','vh-spatial-landscape');
     const guide=document.createElement('img');
-    guide.src='./assets/gameplay/npc_bunny.png';guide.alt='토끼 친구';guide.className='vh-spatial-guide';
+    guide.src=characterArt('npc_bunny');guide.alt='토끼 친구';guide.className='vh-spatial-guide';
     scenery.append(guide);
     scenery.append(label('span',q.gameId==='kind-dialogue'?'📚 이야기 도서관':
       '✨ 마법마을 체험 학습','vh-spatial-place'));

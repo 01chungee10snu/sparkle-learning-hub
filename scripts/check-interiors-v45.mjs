@@ -29,18 +29,20 @@ assert.equal(audit.interiorTests.find(r=>r.room==='english').taskObject,'cat');
 const models=json(dir+'authoring-manifest.json');assert.equal(models.assets.length,45);
 const atlas=json('assets/interiors-v45/manifest.json');assert.equal(atlas.files.length,47);
 for(const f of atlas.files){assert(f.path.startsWith('assets/interiors-v45/'));const b=read(f.path);assert.equal(b.length,f.bytes);assert.equal(hash(b),f.sha256);}
-const manifest=json(dir+'webgl-build-manifest.json');assert.equal(manifest.version,CONTENT_VERSION);assert.equal(manifest.files.length,4);
+const currentRuntime=existsSync(new URL('docs/qa-cohesive-v46/webgl-build-manifest.json',root));
+const runtimeDir=currentRuntime?'docs/qa-cohesive-v46/':dir;
+const manifest=json(runtimeDir+'webgl-build-manifest.json');assert.equal(manifest.version,currentRuntime?'cohesive-v46-20261105':CONTENT_VERSION);assert.equal(manifest.files.length,4);
 for(const f of manifest.files){
  assert(/^WebGL\.(data\.unityweb|framework\.js\.unityweb|loader\.js|wasm\.unityweb)$/.test(f.file));
  const b=read('village/Build/'+f.file);assert(b.length>10000);assert.equal(b.length,f.bytes);assert.equal(hash(b),f.sha256);
 }
 const baseline=json(dir+'protected-source-hashes.json');
 for(const f of baseline.files)assert.equal(hash(read(f.path)),f.sha256,'Protected learning authority changed: '+f.path);
-const html=read('village/index.html').toString();assert(html.includes("productVersion: '0.45.0-interiors'"));
-assert(html.includes('content-style-v45.css'));assert(html.includes(CONTENT_VERSION));
-const entry=read('index.html').toString();assert(entry.includes('&autostart=1&v=45'));assert(entry.includes("encodeURIComponent(who)+'&v=45'"),'Entry must not navigate to stale cached learning HTML');
+const html=read('village/index.html').toString();assert(html.includes(currentRuntime?"productVersion: '0.46.0-cohesive'":"productVersion: '0.45.0-interiors'"));
+assert(html.includes('content-style-v45.css'));assert(html.includes(currentRuntime?'cohesive-v46-20261105':CONTENT_VERSION));
+const entry=read('index.html').toString();assert(entry.includes('&autostart=1&v='+(currentRuntime?'46':'45')));assert(entry.includes("encodeURIComponent(who)+'&v="+(currentRuntime?'46':'45')+"'"),'Entry must not navigate to stale cached learning HTML');
 const ui=read('village/village-ui.js').toString();assert(ui.includes('mountContentWorld'));assert(ui.includes("contentWorld?.pulse(result.correct?'correct':'learn')"));
-const browser=json(dir+'browser-interiors-qa.json');assert.equal(browser.pass,true);assert.equal(browser.productionDataTouched,false);assert(browser.fallbackVerified);
+const browser=json(currentRuntime?runtimeDir+'interior-browser-regression.json':dir+'browser-interiors-qa.json');assert.equal(browser.pass,true);assert.equal(browser.productionDataTouched,false);assert(browser.fallbackVerified);
 assert.deepEqual(browser.results.map(r=>r.who).sort(),['se','tae']);
 assert.equal(new Set(browser.results.flatMap(r=>r.rooms)).size,13);
 assert(browser.results.some(r=>r.completionVerified),'Full native learning round not verified');

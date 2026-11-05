@@ -20,6 +20,7 @@
 .entry-learner-choice:focus-visible{outline:4px solid #ffefa1;outline-offset:4px}
 @media(max-width:390px){.entry-learner-choice{font-size:16px;padding:7px}.entry-learner-choice img{width:46px;height:46px}}
 </style>
+<link rel="stylesheet" href="./cohesive-style-v46.css?v=cohesive-v46-20261105">
 </head>
 <body>
 <main id="entry-world" class="entry-world">
@@ -27,7 +28,7 @@
   <div class="entry-stars" aria-hidden="true"></div>
   <div class="entry-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="entry-island-shadow" aria-hidden="true"></div>
-  <img class="entry-island-art" src="./assets/storybook-v44/entry.webp"
+  <img class="entry-island-art" src="./assets/cohesive-v46/scenes/entry.webp"
        width="1200" height="1000" alt="실제 Unity 마법마을의 무지개 배움성과 기와집" decoding="async">
   <section class="entry-game-menu" aria-labelledby="entry-title">
     <p class="entry-chapter"><span aria-hidden="true">✦</span> MAGIC LEARNING WORLD <span aria-hidden="true">✦</span></p>
@@ -35,12 +36,12 @@
     <p class="entry-tagline">한 걸음씩 배우고, 마을을 함께 키워요.</p>
     <p id="world-kst-badge" class="entry-kst" aria-live="off">🌿 대한민국 시간에 따라 변하는 마법의 섬</p>
     <div id="entry-learner-choices" class="entry-learner-choices" role="group" aria-label="오늘 학습할 어린이 선택">
-      <button class="entry-learner-choice" type="button" data-learner="tae" aria-pressed="true"><img src="./village/assets/taehee_original.png" width="54" height="54" alt=""><span>태희<small>분홍 별 요정</small></span></button>
-      <button class="entry-learner-choice" type="button" data-learner="se" aria-pressed="false"><img src="./village/assets/sehee_original.png" width="54" height="54" alt=""><span>세희<small>연보라 달 요정</small></span></button>
+      <button class="entry-learner-choice" type="button" data-learner="tae" aria-pressed="true"><img src="./assets/cohesive-v46/characters/tae.png" width="54" height="54" alt=""><span>태희<small>분홍 별 요정</small></span></button>
+      <button class="entry-learner-choice" type="button" data-learner="se" aria-pressed="false"><img src="./assets/cohesive-v46/characters/se.png" width="54" height="54" alt=""><span>세희<small>연보라 달 요정</small></span></button>
     </div>
     <div class="entry-game-actions">
-      <a id="entry-village-link" class="entry-portal entry-portal-primary" href="./village/?who=tae&amp;autostart=1&amp;v=45"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마을 입장</strong><small>선택한 요정으로 3D 마을에 바로 들어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
-      <a id="entry-learning-link" class="entry-portal entry-portal-study" href="./learning.html?who=tae&amp;v=45"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 입장</strong><small>선택한 아이의 수학·국어·영어·한자를 바로 이어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+      <a id="entry-village-link" class="entry-portal entry-portal-primary" href="./village/?who=tae&amp;autostart=1&amp;v=46"><span class="entry-portal-icon" aria-hidden="true">🏰</span><span class="entry-portal-text"><strong>마을 입장</strong><small>선택한 요정으로 3D 마을에 바로 들어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
+      <a id="entry-learning-link" class="entry-portal entry-portal-study" href="./learning.html?who=tae&amp;v=46"><span class="entry-portal-icon" aria-hidden="true">📚</span><span class="entry-portal-text"><strong>학습페이지 입장</strong><small>선택한 아이의 수학·국어·영어·한자를 바로 이어가요</small></span><span class="entry-arrow" aria-hidden="true">›</span></a>
     </div>
     <p class="entry-world-notice">🧭 3D 마을 · 📜 한자 수련관 · 🏛️ 100가지 미래 직업 · 🐠 생명 연못 · 🌊 푸른 바다</p>
   </section>
@@ -61,13 +62,14 @@ function selectLearner(who){
   if(who!=='tae'&&who!=='se')return;
   Progress.selectLearner(who);
   document.querySelectorAll('[data-learner]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.learner===who)));
-  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1&v=45'+(selectedDestination?'&go='+selectedDestination:'');
-  learning.href='./learning.html?who='+encodeURIComponent(who)+'&v=45'+(new Set(['math','korean','english','hanja']).has(selectedDestination)?'&subject='+selectedDestination:'');
+  village.href='./village/?who='+encodeURIComponent(who)+'&autostart=1&v=46'+(selectedDestination?'&go='+selectedDestination:'');
+  learning.href='./learning.html?who='+encodeURIComponent(who)+'&v=46'+(new Set(['math','korean','english','hanja']).has(selectedDestination)?'&subject='+selectedDestination:'');
 }
 document.querySelectorAll('[data-learner]').forEach(button=>button.addEventListener('click',()=>selectLearner(button.dataset.learner)));
 selectLearner(initial);
 // Entry artwork is captured from the current Unity scene. The play button launches the actual game.
 if(location.search)history.replaceState(history.state,'',location.pathname+location.hash);
 </script>
+<script type="module">import {mountCohesiveUI} from "./village/cohesive-ui-v46.js?v=cohesive-v46-20261105";mountCohesiveUI();</script>
 </body>
 </html>

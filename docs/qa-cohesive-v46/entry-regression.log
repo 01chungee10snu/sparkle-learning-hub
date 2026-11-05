@@ -1,0 +1,8 @@
+
+> sparkle-learning-hub@1.4.0 qa:world:v40
+> node scripts/qa-world-v40.mjs
+
+PASS_V40_WORLD {"device":"galaxy","profile":"se","viewport":"390x844","sprites":28,"mapPlaces":11,"learningSteps":3,"errors":0}
+PASS_V40_WORLD {"device":"tablet","profile":"tae","viewport":"1024x768","sprites":28,"mapPlaces":11,"learningSteps":3,"errors":0}
+PASS_V40_WORLD {"device":"compact","profile":"se","viewport":"360x740","sprites":28,"mapPlaces":11,"learningSteps":3,"errors":0}
+PASS_V40_ART_QA 3 independent devices /tmp/sparkle-v46-entry-qa
